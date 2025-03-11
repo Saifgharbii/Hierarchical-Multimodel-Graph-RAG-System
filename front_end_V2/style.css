@@ -57,6 +57,7 @@ body {
 .conversation-item {
   transition: all var(--transition-speed) var(--animation-curve);
   border-left: 3px solid transparent;
+  cursor: pointer; /* Added cursor style to indicate clickability */
 }
 
 .conversation-item:hover {
@@ -102,7 +103,7 @@ body {
 
 /* Assistant Card */
 .assistant-card {
-  transition: transform var(--transition-speed) var(--animation-curve), 
+  transition: transform var(--transition-speed) var(--animation-curve),
               box-shadow var(--transition-speed) ease,
               border-color 0.2s ease;
   border-radius: 0.75rem;
@@ -119,6 +120,7 @@ body {
 /* Chat Interface */
 .chat-messages-area {
   overflow-y: auto;
+  padding-bottom: 20px; /* Added padding to prevent last message from being hidden */
 }
 
 .chat-input-container {
@@ -264,12 +266,12 @@ body {
       height: auto;
       max-height: 50vh;
   }
-  
+
   .main-content {
       height: auto;
       min-height: 50vh;
   }
-  
+
   .settings-button-container {
       display: none;
   }
