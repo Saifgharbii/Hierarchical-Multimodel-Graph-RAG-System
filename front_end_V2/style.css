@@ -1,0 +1,284 @@
+/* 
+* LLMChat Custom Styles
+* Custom CSS to supplement Bootstrap for the LLMChat SPA
+*/
+
+:root {
+  --transition-speed: 0.3s;
+  --hover-elevation: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --primary-gradient: linear-gradient(135deg, #4a89dc, #5e9cea);
+  --animation-curve: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ---------- General Styles ---------- */
+body {
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Sidebar Styles ---------- */
+.sidebar {
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+  background-color: #f8f9fa;
+}
+
+/* Navbar Styles */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar-brand {
+  transition: transform 0.3s var(--animation-curve);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+/* Conversation Items */
+.conversation-item {
+  transition: all 0.2s var(--animation-curve);
+  border-left: 3px solid transparent;
+}
+
+.conversation-item:hover {
+  background-color: rgba(13, 110, 253, 0.08);
+  transform: translateX(3px);
+}
+
+.conversation-item.active {
+  background-color: rgba(13, 110, 253, 0.15);
+  border-left: 3px solid #0d6efd;
+}
+
+
+.conversation-actions {
+  display: none;
+}
+
+.conversation-item:hover .conversation-actions {
+  display: block;
+}
+
+/* ---------- Main Content Area Styles ---------- */
+.main-content {
+  height: calc(100vh - 56px);
+  background-color: #ffffff;
+  position: relative;
+}
+
+/* Settings Button */
+.settings-button-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+}
+
+.settings-button-container .btn {
+  transition: transform 0.3s var(--animation-curve), background-color 0.3s ease;
+}
+
+.settings-button-container .btn:hover {
+  transform: rotate(30deg);
+}
+
+/* Assistant Card */
+.assistant-card {
+  transition: transform var(--transition-speed) var(--animation-curve), 
+              box-shadow var(--transition-speed) ease,
+              border-color 0.2s ease;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border-color: transparent;
+}
+
+.assistant-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--hover-elevation);
+  border-color: rgba(74, 137, 220, 0.2);
+}
+
+/* Chat Interface */
+.chat-messages-area {
+  overflow-y: auto;
+}
+
+.chat-input-container {
+  background-color: #f8f9fa;
+}
+
+.chat-input-container .form-control {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  border-radius: 20px 0 0 20px;
+}
+
+.chat-input-container .form-control:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(13, 110, 253, 0.15);
+}
+
+.chat-input-container .btn {
+  border-radius: 0 20px 20px 0;
+}
+
+/* ---------- Settings Modal Styles ---------- */
+/* Reset Button */
+.btn {
+  transition: all 0.25s var(--animation-curve);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+}
+
+/* Ripple effect for buttons */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.btn:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+.reset-btn {
+  color: #6c757d;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.reset-btn:hover {
+  color: #0d6efd;
+}
+
+/* Form Range Custom Styling */
+.form-range::-webkit-slider-thumb {
+  transition: transform 0.2s ease;
+}
+
+.form-range::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.form-range::-moz-range-thumb {
+  background: #0d6efd;
+}
+
+.form-range::-ms-thumb {
+  background: #0d6efd;
+}
+
+/* Form Switch Custom Styling */
+.form-check-input:checked {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-item {
+  animation: fadeInUp 0.3s forwards;
+}
+
+.ripple {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Ripple animation */
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* ---------- Media Queries ---------- */
+/* Adjustments for smaller screens */
+@media (max-width: 767.98px) {
+  .sidebar {
+      height: auto;
+      max-height: 50vh;
+  }
+  
+  .main-content {
+      height: auto;
+      min-height: 50vh;
+  }
+  
+  .settings-button-container {
+      display: none;
+  }
+}
+
+/* Custom form control sizes */
+.form-control-xs {
+  height: calc(1.5em + 0.5rem + 2px);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+/* Renaming in-place styling */
+.editing .conversation-title {
+  display: none;
+}
+
+.editing .edit-input {
+  display: block !important;
+}
+
+.edit-input {
+  display: none;
+}
