@@ -1,0 +1,49 @@
+venv
+model_cache
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+front_end/node_modules
+front_end/.pnp
+front_end/.pnp.js
+front_end/.yarn/install-state.gz
+
+# testing
+front_end/coverage
+
+# next.js
+front_end/.next/
+front_end/out/
+
+# production
+front_end/build
+
+# misc
+front_end/.DS_Store
+front_end/*.pem
+
+# debug
+front_end/npm-debug.log*
+front_end/yarn-debug.log*
+front_end/yarn-error.log*
+
+# local env files
+front_end/.env*.local
+
+# vercel
+front_end/.vercel
+front_end/*.npmrc
+front_end/bunfig.toml
+
+# typescript
+front_end/*.tsbuildinfo
+front_end/next-env.d.ts
+
+front_end/package-lock.json
+
+# Sentry Config File
+front_end/.env.sentry-build-plugin
+
+front_end/app/db/*
+
