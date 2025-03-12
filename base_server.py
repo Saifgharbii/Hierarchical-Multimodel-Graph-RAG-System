@@ -20,7 +20,8 @@ db = client.llm_chat_db
 
 # LLM API configuration
 LLM_API_KEY = os.getenv("LLM_API_KEY")
-LLM_API_URL = os.getenv("LLM_API_URL", "https://api.llmprovider.com/generate")
+LLM_default_url = "http://127.0.0.1:5001/generate"
+LLM_API_URL = os.getenv("LLM_API_URL", LLM_default_url)
 
 @app.route('/api/chat/message', methods=['POST'])
 def handle_message():
@@ -78,11 +79,13 @@ def handle_message():
     # Prepare request to LLM API
     llm_request_data = {
         "messages": conversation_history + [{"role": "user", "content": message}],
+        "settings" : {
         "system_prompt": system_prompt,
         "max_tokens": max_tokens,
         "temperature": temperature,
         "top_p": top_p,
         "top_k": top_k
+        }
     }
     
     # Call LLM API
@@ -99,7 +102,7 @@ def handle_message():
         timestamp = datetime.datetime.utcnow()
         bot_message_data = {
             "conversationId": conversation_id,
-            "role": "bot",
+            "role": "assistant",
             "content": llm_message,
             "timestamp": timestamp
         }
