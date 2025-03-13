@@ -45,7 +45,9 @@ def handle_message():
     # Create a new conversation if no conversation_id is provided
     if not conversation_id:
         conversation_id = str(uuid.uuid4())
+
         title = generate_title(message)
+
         
         # Create a new conversation in MongoDB
         db.conversations.insert_one({
@@ -192,15 +194,15 @@ def get_conversation_messages(conversation_id):
 
 def generate_title(first_message):
     """Generate a title based on the first message of a conversation"""
-    # In a real implementation, you might want to:
-    # 1. Use the LLM to generate a title
-    # 2. Extract keywords from the message
-    # 3. Take the first few words
-    
     # Simple implementation - truncate first message
-    if len(first_message) > 30:
-        return first_message[:30] + "..."
-    return first_message
+    headers = {"Authorization": f"Bearer {LLM_API_KEY}"}
+    llm_response = requests.post("http://127.0.0.1:5001/generate-title", json={"message" : first_message}, headers=headers)
+    llm_response.raise_for_status()
+
+    # Extract the LLM's response text
+    title = llm_response.json()
+    title = title["response"]
+    return title
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(host='0.0.0.0',debug=True, port=5000)
