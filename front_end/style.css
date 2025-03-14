@@ -1,41 +1,135 @@
 :root {
-  /* Colors */
-  --color-primary: #0d6efd;
-  --color-secondary: #6c757d;
-  --color-background: #ffffff;
-  --color-sidebar: #f8f9fa;
-  --color-hover: rgba(13, 110, 253, 0.08);
-  --color-active: rgba(13, 110, 253, 0.15);
-  --color-shadow: rgba(0, 0, 0, 0.1);
-  --color-shadow-light: rgba(0, 0, 0, 0.05);
-  --color-gradient-start: #4a89dc;
-  --color-gradient-end: #5e9cea;
-
-  /* Transitions and Animations */
-  --transition-speed: 0.7s;
-  --animation-curve: cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  /* Shadows */
-  --shadow-hover: 0 8px 16px var(--color-shadow);
-  --shadow-navbar: 0 2px 10px var(--color-shadow-light);
-  --shadow-button-hover: 0 4px 12px rgba(13, 110, 253, 0.25);
-  --shadow-input-focus: 0 2px 8px rgba(13, 110, 253, 0.15);
-
-  /* Gradients */
+  /* Colors - Dark Mode Values */
+  --color-primary: #1208d4;      
+  --color-secondary: #a1a9b0;    
+  --color-background: #121212;   
+  --color-sidebar: #1e1e1e;      
+  --color-discussion-text: #0d6efd;
+  --color-hover: rgba(78, 123, 255, 0.15); 
+  --color-active: rgba(78, 123, 255, 0.25); 
+  --color-shadow: rgba(0, 0, 0, 0.3);  
+  --color-shadow-light: rgba(0, 0, 0, 0.2); 
+  --color-gradient-start: #000000;   
+  --color-gradient-end: #1208d4;     
+   
+  /* Shadows - Adjusted for Dark Mode */
+  --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-navbar: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --shadow-button-hover: 0 4px 12px rgba(78, 123, 255, 0.35);
+  --shadow-input-focus: 0 2px 8px rgba(78, 123, 255, 0.25);
+  
+  /* Gradients - Using the Updated Color Variables */
   --primary-gradient: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
 }
 
 /* ---------- General Styles ---------- */
+
 body {
   overflow-x: hidden;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-color: var(--color-background);
 }
 
+header.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; 
+  width: 100%;
+}
+
+main.container-fluid {
+  padding-top: 56px; 
+}
+
+
+.row.vh-100 {
+  min-height: 100%;
+  margin-top: 0;
+}
+.Sign{color:#1208d4}
+
+
+.form-control, 
+.input-group-text, 
+input, 
+textarea, 
+select {
+  background-color: #2d2d2d !important;
+  border-color: #000000 !important;
+  color: white !important;
+}
+
+.input-group-text.bg-light,
+input.bg-light,
+.bg-light {
+  background-color: #2d2d2d !important;
+  color: white !important;
+  border-color: #000000 !important;
+}
+
+
+.assistant-bubble {
+  background-color: #2d2d2d;
+  color: white;
+  border: 1px solid #000000;
+}
+
+
+.modal-content {
+  background-color: var(--color-sidebar);
+  border: 1px solid #000000;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: #000000;
+  background-color: var(--color-sidebar);
+  color: white;
+}
+
+.modal-body {
+  background-color: var(--color-sidebar);
+  color: white;
+}
+
+
+.card {
+  background-color: var(--color-sidebar);
+  border: 1px solid white;
+  color: white;
+}
+
+
+.border,
+.border-top,
+.border-bottom,
+.border-start,
+.border-end {
+  border-color: #000000 !important;
+}
+
+/* Step 7: Ensure dropdown menus follow the dark theme */
+.dropdown-menu {
+  background-color: #2d2d2d;
+  border-color: #000000;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #3d3d3d;
+}
+
 /* ---------- Sidebar Styles ---------- */
 .sidebar {
-  height: calc(100vh - 56px);
-  overflow-y: auto;
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
   background-color: var(--color-sidebar);
 }
 
@@ -49,9 +143,6 @@ body {
   transition: transform var(--transition-speed) var(--animation-curve);
 }
 
-.navbar-brand:hover {
-  transform: scale(1.05);
-}
 
 /* Conversation Items */
 .conversation-item {
@@ -78,17 +169,46 @@ body {
   display: block;
 }
 
+.col-md-3.col-lg-2.sidebar {
+  position: fixed;
+  height: calc(100vh - 56px); 
+  overflow-y: hidden; 
+  z-index: 900; 
+  top: 56px; 
+}
+
+
 /* ---------- Main Content Area Styles ---------- */
 .main-content {
   height: calc(100vh - 56px);
   background-color: var(--color-background);
   position: relative;
 }
+.col-md-9.col-lg-10.main-content {
+  margin-left: 25%; 
+  height: calc(100vh - 56px);
+  overflow-y: auto; 
+}
+
+
+/* Ajustement pour les grands écrans */
+@media (min-width: 992px) {
+  .col-md-9.col-lg-10.main-content {
+    margin-left: 16.66667%; /* Équivalent à col-lg-2 */
+  }
+}
+
+/* Renforcer le défilement de la liste de conversations */
+.conversation-list {
+  overflow-y: auto;
+  max-height: calc(100vh - 56px - 120px); /* Hauteur de la fenêtre moins la hauteur du header et des boutons du haut */
+}
+
 
 /* Settings Button */
 .settings-button-container {
-  position: absolute;
-  top: 1rem;
+  position: fixed;
+  top: 68px;
   right: 1rem;
   z-index: 100;
 }
@@ -96,35 +216,57 @@ body {
 .settings-button-container .btn {
   transition: transform var(--transition-speed) var(--animation-curve), background-color var(--transition-speed) ease;
 }
-
-.settings-button-container .btn:hover {
-  transform: rotate(30deg);
+.bi-arrow-counterclockwise{
+  margin-right: 5px;
 }
 
+
 /* Assistant Card */
+.mb-4{
+  color: white ;
+}
+
 .assistant-card {
-  transition: transform var(--transition-speed) var(--animation-curve),
-              box-shadow var(--transition-speed) ease,
-              border-color 0.2s ease;
-  border-radius: 0.75rem;
+  border-radius: 0.6rem;
   overflow: hidden;
-  border-color: transparent;
+  
 }
 
 .assistant-card:hover {
-  transform: translateY(-8px) scale(1.02);
+
   box-shadow: var(--shadow-hover);
   border-color: rgba(74, 137, 220, 0.2);
 }
 
 /* Chat Interface */
 .chat-messages-area {
+  color: white;
   overflow-y: auto;
-  padding-bottom: 20px; /* Added padding to prevent last message from being hidden */
+  padding-bottom: 90px; /* Added padding to prevent last message from being hidden */
 }
+#chatInterfacePlaceholder{
+  --bs-text-opacity: 1;
+  color: var(--color-secondary) ;
+}
+
+
 
 .chat-input-container {
   background-color: var(--color-sidebar);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: calc(100% - 25%); 
+  z-index: 900; 
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: 12fr 1fr; /* Correct spacing */
+  gap: 20px; /* 'gap' is the modern alternative to 'grid-gap' */
+}
+@media (min-width: 992px) {
+  .chat-input-container {
+    width: calc(100% - 16.66667%); /* Ajuster la largeur selon col-lg-2 */
+  }
 }
 
 .chat-input-container .form-control {
@@ -141,6 +283,61 @@ body {
   border-radius: 0 20px 20px 0;
 }
 
+/* Style for active upload buttons */
+button[title="Attach file"].active i,
+button[title="Upload image"].active i {
+  color: var(--color-primary) !important;
+}
+
+/* Ajustement des bulls de conversation */
+/* Conteneur des messages */
+#messagesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Rangée de message */
+.message-row {
+  display: flex;
+  max-width: 80%;
+}
+
+/* Message utilisateur */
+.user-message {
+  margin-left: 50%;
+  margin-right: 50px;
+  background-color: var(--color-discussion-text);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 18px 18px 4px 18px;
+  align-self: flex-end;
+}
+
+/* Message assistant */
+.assistant-message {
+  display: flex;
+  margin-right: auto;
+  align-self: flex-start;
+}
+
+.assistant-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.assistant-bubble {
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 18px 18px 18px 4px;
+}
+
 /* ---------- Settings Modal Styles ---------- */
 /* Reset Button */
 .btn {
@@ -150,14 +347,10 @@ body {
 }
 
 .btn-primary {
-  background: var(--primary-gradient);
   border: none;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-button-hover);
-}
+
 
 /* Ripple effect for buttons */
 .btn::after {
@@ -298,3 +491,86 @@ body {
 .edit-input {
   display: none;
 }
+
+
+
+/*drag and drop files */
+
+.file-preview-container {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: var(--color-sidebar);
+}
+
+.file-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(78, 123, 255, 0.1);
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.file-preview:hover {
+  background-color: rgba(78, 123, 255, 0.2);
+  cursor: pointer;
+}
+
+.preview-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.preview-content i {
+  font-size: 1.2rem;
+  margin-right: 10px;
+  color: var(--color-primary);
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-name {
+  font-weight: 500;
+  margin-bottom: 2px;
+  color: white;
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-size {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  color: #cccccc;
+}
+
+.remove-file {
+  background: none;
+  border: none;
+  color: var(--color-secondary);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.remove-file:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ff6b6b;
+}
+
+/* Style pour la zone de drop pendant le drag-and-drop */
+.drag-highlight {
+  background-color: rgba(78, 123, 255)}
+
