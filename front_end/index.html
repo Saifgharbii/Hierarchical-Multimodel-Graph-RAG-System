@@ -16,10 +16,10 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <header  class="navbar navbar-expand-lg navbar-light bg-black border-bottom">
         <div class="container-fluid">
             <!-- Brand Logo -->
-            <a class="navbar-brand fw-bold" href="#">
+            <a class="navbar-brand fw-bold text-white" href="#">
                 <i class="bi bi-chat-dots-fill text-primary me-2"></i>LLMChat
             </a>
 
@@ -34,29 +34,29 @@
                 <ul class="navbar-nav ms-auto">
                     <!-- Optional GitHub and Feedback buttons -->
                     <li class="nav-item me-2">
-                        <a class="nav-link btn btn-outline-secondary btn-sm" href="#">
-                            <i class="bi bi-github me-1"></i>Star on GitHub
+                        <a class="nav-link btn btn-outline-secondary btn-sm text-white " href="#">
+                            <i class="bi bi-github  me-1"></i>Star on GitHub
                         </a>
                     </li>
                     <li class="nav-item me-2">
-                        <a class="nav-link btn btn-outline-secondary btn-sm" href="#">
+                        <a class="nav-link btn btn-outline-secondary btn-sm text-white " href="#">
                             <i class="bi bi-chat-text me-1"></i>Feedback
                         </a>
                     </li>
                     <!-- Auth Buttons -->
                     <li class="nav-item me-2">
-                        <a class="nav-link btn btn-outline-primary btn-sm" href="#">Sign In</a>
+                        <a class="nav-link btn btn-outline-primary btn-sm text-white " href="#">Sign In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary btn-sm text-white" href="#">Sign Up</a>
+                        <a class="nav-link btn btn-primary btn-sm Sign " href="#">Sign Up</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Main Content Container -->
-    <div class="container-fluid">
+    <main  class="container-fluid">
         <div class="row vh-100">
             <!-- Sidebar (Conversation Management) -->
             <div class="col-md-3 col-lg-2 sidebar p-0 border-end">
@@ -107,7 +107,7 @@
                             <div class="card assistant-card">
                                 <div class="card-body">
                                     <h5 class="card-title">Invoice Generator</h5>
-                                    <p class="card-text text-muted">Create professional invoices quickly based on your
+                                    <p class="card-text ">Create professional invoices quickly based on your
                                         business details and client information.</p>
                                     <button class="btn btn-outline-primary">
                                         <i class="bi bi-plus-lg me-2"></i>Add to chat
@@ -118,7 +118,7 @@
                     </div>
 
                     <!-- Placeholder for Chat Interface -->
-                    <div id="chatInterfacePlaceholder" class="text-center text-muted mt-5">
+                    <div id="chatInterfacePlaceholder" class="text-center mt-5">
                         <i class="bi bi-chat-dots display-1"></i>
                         <p class="mt-3">Select a conversation from the sidebar or start a new chat</p>
                     </div>
@@ -128,21 +128,23 @@
                 <div id="chatInterface" class="d-none flex-grow-1 d-flex flex-column">
                     <!-- Chat messages would go here in a real application -->
                     <div class="flex-grow-1 p-4 chat-messages-area">
-                        <p class="text-center text-muted">Chat messages will appear here</p>
+                        <div id="messagesContainer">
+                            <!-- Les messages apparaîtront ici -->
+                        </div>
                     </div>
 
                     <!-- Chat Input -->
                     <div class="chat-input-container p-3 border-top">
-                        <div class="input-group">
-                            <input type="text" class="form-control shadow-sm" placeholder="Type your message...">
-                            <button class="btn btn-primary" title="Send">
+
+                        <div id="chatForm" class="input-group">
+                            <input type="text" id="userInput" class="form-control shadow-sm" placeholder="Type your message...">
+                            <button type="submit" class="btn btn-primary" title="Send">
                                 <i class="bi bi-send"></i>
                             </button>
                         </div>
+                        
+                    
                         <div class="d-flex justify-content-between align-items-center mt-2">
-                            <div class="text-muted small">
-                                <i class="bi bi-lightning-charge"></i> AI powered by LLMChat
-                            </div>
                             <div>
                                 <button class="btn btn-sm btn-link text-decoration-none p-1" title="Attach file">
                                     <i class="bi bi-paperclip"></i>
@@ -159,7 +161,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main >
 
     <!-- Settings Modal -->
     <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
@@ -352,6 +354,8 @@
     <script src="static/js/settings-manager.js"></script>
     <script src="static/js/conversation-manager.js"></script>
     <script src="static/js/main.js"></script>
+    <script src="script.js"></script>
+    <script src="script_interface.js"></script>
 </body>
 
 </html>
