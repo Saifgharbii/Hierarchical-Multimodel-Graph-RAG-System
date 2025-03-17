@@ -22,12 +22,37 @@ function addMessageToUI(role, content) {
     const messageContent = document.createElement('div');
     messageContent.className = role === 'user' ? 'message-bubble user-bubble' : 'message-bubble bot-bubble';
 
-    let formattedContent = content.replace(/```([\s\S]*?)```/g, function(match, p1) {
-        return `<pre><code>${escapeHtml(p1)}</code></pre>`;
-    });
+    let formattedContent = content;
 
-    formattedContent = formattedContent.replace(/`([^`]+)`/g, '<code>$1</code>');
+    // Apply Markdown formatting only to assistant messages
+    if (role === 'assistant') {
+        // Format code blocks
+        formattedContent = formattedContent.replace(/```([\s\S]*?)```/g, function(match, p1) {
+            return `<pre><code>${escapeHtml(p1)}</code></pre>`;
+        });
 
+        // Format inline code
+        formattedContent = formattedContent.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+        // Format bold text
+        formattedContent = formattedContent.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+
+        // Format italic text
+        formattedContent = formattedContent.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+        // Format headers
+        formattedContent = formattedContent.replace(/^### (.*$)/gm, '<h3>$1</h3>');
+        formattedContent = formattedContent.replace(/^## (.*$)/gm, '<h2>$1</h2>');
+        formattedContent = formattedContent.replace(/^# (.*$)/gm, '<h1>$1</h1>');
+
+        // Format lists
+        formattedContent = formattedContent.replace(/^\- (.*$)/gm, '<li>$1</li>');
+
+        // Format links
+        formattedContent = formattedContent.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+    }
+
+    // Line breaks for all messages
     formattedContent = formattedContent.replace(/\n/g, '<br>');
 
     messageContent.innerHTML = formattedContent;
@@ -36,6 +61,16 @@ function addMessageToUI(role, content) {
     messagesArea.appendChild(messageDiv);
 
     messagesArea.scrollTop = messagesArea.scrollHeight;
+}
+
+// Make sure you have this escapeHtml function defined somewhere
+function escapeHtml(unsafe) {
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
 
 function addLoadingMessageToUI() {
