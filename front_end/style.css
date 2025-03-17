@@ -1,7 +1,7 @@
 :root {
   /* Colors - Dark Mode Values */
-  --color-primary: #1208d4;      
-  --color-secondary: #a1a9b0;    
+  --color-primary: rgb(74, 137, 220);      
+  --color-secondary: #ffffff;    
   --color-background: #121212;   
   --color-sidebar: #1e1e1e;      
   --color-discussion-text: #0d6efd;
@@ -23,6 +23,11 @@
 }
 
 /* ---------- General Styles ---------- */
+
+input::placeholder,
+*::placeholder { /* Include textarea if needed */
+  color: white; /* Your desired color */
+}
 
 body {
   overflow-x: hidden;
@@ -82,6 +87,17 @@ input.bg-light,
   border: 1px solid #000000;
 }
 
+#renameModal .modal-content {
+  background-color: var(--color-sidebar);
+  color: white;
+}
+
+#renameInput {
+  background-color: #2d2d2d !important;
+  color: white !important;
+  border-color: #000000 !important;
+}
+
 .modal-header,
 .modal-footer {
   border-color: #000000;
@@ -97,7 +113,7 @@ input.bg-light,
 
 .card {
   background-color: var(--color-sidebar);
-  border: 1px solid white;
+  border: 1px solid var(--color-primary);
   color: white;
 }
 
@@ -143,12 +159,18 @@ input.bg-light,
   transition: transform var(--transition-speed) var(--animation-curve);
 }
 
+/* Fix for conversation titles appearing black */
+.conversation-title {
+  color: white !important; /* Ensure text is visible on dark background */
+}
 
 /* Conversation Items */
 .conversation-item {
-  transition: all var(--transition-speed) var(--animation-curve);
+  transition: all 0.2s ease;
   border-left: 3px solid transparent;
-  cursor: pointer; /* Added cursor style to indicate clickability */
+  cursor: pointer;
+  color: white !important; /* Ensure all text within conversation items is white */
+  padding: 10px 15px; /* Add proper padding */
 }
 
 .conversation-item:hover {
@@ -161,8 +183,40 @@ input.bg-light,
   border-left: 3px solid var(--color-primary);
 }
 
+.conversation-list {
+  overflow-y: auto;
+  max-height: calc(100vh - 56px - 120px);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.conversation-group h6.text-muted {
+  color: var(--color-primary) !important;
+}
+
+/* Style for conversation timestamps and metadata */
+.conversation-meta {
+  color: var(--color-secondary) !important;
+  font-size: 0.8rem;
+}
+
 .conversation-actions {
   display: none;
+}
+
+.conversation-actions .btn {
+  color: var(--color-secondary) !important;
+  background: none;
+  border: none;
+  padding: 4px;
+  margin-left: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.conversation-actions .btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
 .conversation-item:hover .conversation-actions {
@@ -214,7 +268,7 @@ input.bg-light,
 }
 
 .settings-button-container .btn {
-  transition: transform var(--transition-speed) var(--animation-curve), background-color var(--transition-speed) ease;
+  /*transition: transform var(--transition-speed) var(--animation-curve), background-color var(--transition-speed) ease;*/
 }
 .bi-arrow-counterclockwise{
   margin-right: 5px;
@@ -223,7 +277,7 @@ input.bg-light,
 
 /* Assistant Card */
 .mb-4{
-  color: white ;
+  color: var(--color-primary);
 }
 
 .assistant-card {
@@ -235,7 +289,7 @@ input.bg-light,
 .assistant-card:hover {
 
   box-shadow: var(--shadow-hover);
-  border-color: rgba(74, 137, 220, 0.2);
+  border-color: rgba(241, 243, 245, 0.925);
 }
 
 /* Chat Interface */
@@ -246,7 +300,7 @@ input.bg-light,
 }
 #chatInterfacePlaceholder{
   --bs-text-opacity: 1;
-  color: var(--color-secondary) ;
+  color: var(--color-secondary) !important;
 }
 
 
@@ -270,7 +324,7 @@ input.bg-light,
 }
 
 .chat-input-container .form-control {
-  transition: box-shadow var(--transition-speed) ease, transform 0.2s ease;
+  /*transition: box-shadow var(--transition-speed) ease, transform 0.2s ease;*/
   border-radius: 20px 0 0 20px;
 }
 
@@ -303,11 +357,16 @@ button[title="Upload image"].active i {
   max-width: 80%;
 }
 
+#userInput::placeholder,
+#conversationTitleSearch::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important; /* Adjust the alpha value for brightness */
+}
+
 /* Message utilisateur */
 .user-message {
-  margin-left: 50%;
+  margin-left: 30%;
   margin-right: 50px;
-  background-color: var(--color-discussion-text);
+  background-color: #0d6efd;
   color: white;
   padding: 10px 15px;
   border-radius: 18px 18px 4px 18px;
@@ -316,9 +375,13 @@ button[title="Upload image"].active i {
 
 /* Message assistant */
 .assistant-message {
-  display: flex;
-  margin-right: auto;
-  align-self: flex-start;
+  margin-right: 30%;
+  margin-left: 50px;
+  background-color: #5f6165;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 18px 18px 4px 18px;
+  align-self: flex-end;
 }
 
 .assistant-icon {
@@ -341,7 +404,7 @@ button[title="Upload image"].active i {
 /* ---------- Settings Modal Styles ---------- */
 /* Reset Button */
 .btn {
-  transition: all 0.25s var(--animation-curve);
+  /*transition: all 0.25s var(--animation-curve);*/
   position: relative;
   overflow: hidden;
 }
@@ -372,7 +435,7 @@ button[title="Upload image"].active i {
 }
 
 .reset-btn {
-  color: var(--color-secondary);
+  color: var(--color-secondary) !important;
   background: none;
   border: none;
   padding: 0;
@@ -486,10 +549,22 @@ button[title="Upload image"].active i {
 
 .editing .edit-input {
   display: block !important;
+  background-color: #2d2d2d !important;
+  border: 1px solid #000000 !important;
+  color: white !important;
+  border-radius: 4px;
+  padding: 4px 8px;
+  width: 100%;
 }
 
 .edit-input {
   display: none;
+}
+
+.edit-input:focus {
+  outline: none;
+  box-shadow: var(--shadow-input-focus);
+  border-color: var(--color-primary) !important;
 }
 
 
@@ -555,7 +630,7 @@ button[title="Upload image"].active i {
 .remove-file {
   background: none;
   border: none;
-  color: var(--color-secondary);
+  color: var(--color-secondary) !important;
   cursor: pointer;
   padding: 5px;
   border-radius: 50%;
