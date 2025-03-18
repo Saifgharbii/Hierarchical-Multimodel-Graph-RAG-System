@@ -128,6 +128,10 @@ def handle_message():
         print(f"Error calling LLM API: {e}")
         return jsonify({"error": "Failed to get response from LLM service"}), 500
 
+"""
+Mongo DB management functionalities
+"""
+
 @app.route('/api/chat/conversations', methods=['GET'])
 def get_conversations():
     """Retrieve a list of all conversations"""
