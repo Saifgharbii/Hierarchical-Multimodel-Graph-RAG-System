@@ -162,10 +162,14 @@ def analyze(filename):
 
 
 
-print(analyze("22104-i30.docx"))
-tables = extract_tables(filename='../../../Zindi Dataset/RAG dataset/22104-i30.docx')
 
-with open('.\\json_tables\\output.json', 'w', encoding='utf-8') as f:
+docx_file = "../Testing Docx/22104-i30.docx"
+output_file = ".\\tables_testing"
+
+print(analyze(docx_file))
+tables = extract_tables(filename=docx_file)
+
+with open(f'{output_file}\\22104-i30.json', 'w', encoding='utf-8') as f:
     json.dump(dict(enumerate(tables)), f, ensure_ascii=False, indent=4)
 
 
