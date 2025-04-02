@@ -1,0 +1,55 @@
+"Characteristic parameter","","","","","","Influence quantity","","","","",""
+"Communica-
+tion service 
+availability: 
+target value","Communication 
+service reliability: 
+mean time 
+between failure","End-to-end 
+latency 
+(note 6)","Transfer 
+interval 
+(note 1) 
+(note 7)","Service bit 
+rate: user 
+experienced 
+data rate 
+(note 2) 
+(note 7)","Battery 
+lifetime 
+[year] 
+(note 3)","Message 
+Size 
+[byte] 
+(note 7)","Survival 
+time  
+(note 7)","UE speed","UE 
+density 
+[UE / m²]","Range 
+[m] 
+(note 4)","Remarks"
+"99.99 %","≥ 1 week","< 100 ms","100 ms 
+to 60 s","≤ 1 Mbit/s","≥ 5","20 
+(note 5)","3 x transfer 
+interval","stationary","Up to 1","< 500","Process monitoring, 
+e.g. temperature 
+sensor (A.2.3.2)"
+"99.99 %","≥ 1 week","< 100 ms","≤ 1 s","≤ 200 kbit/s","≥ 5","25 k","3 x transfer 
+interval","stationary","Up to 0.05","< 500","Asset monitoring, e.g. 
+vibration sensor 
+(A.2.3.2)"
+"99.99 %","≥ 1 week","< 100 ms","≤ 1 s","≤ 2 Mbit/s","≥ 5","250 k","3 x transfer 
+interval","stationary","Up to 0.05","< 500","Asset monitoring, e.g. 
+thermal camera 
+(A.2.3.2)"
+"NOTE 1:  The transfer interval deviates around its target value by < ± 25 %. 
+NOTE 2:  The traffic is predominantly mobile originated. 
+NOTE 3: 
+Industrial sensors can use a wide variety of batteries depending on the use case, but in general they are highly constrained in terms of battery size. 
+NOTE 4:  Distance between the gNB and the UE. 
+NOTE 5:  The application-level messages in this use case are typically transferred over Ethernet. For small messages, the minimum Ethernet frame size of 64 bytes applies and dictates 
+the minimum size of the PDU sent over the air interface.  
+NOTE 6: 
+It applies to both UL and DL unless stated otherwise. 
+NOTE 7:  
+It applies to UL.","","","","","","","","","","",""

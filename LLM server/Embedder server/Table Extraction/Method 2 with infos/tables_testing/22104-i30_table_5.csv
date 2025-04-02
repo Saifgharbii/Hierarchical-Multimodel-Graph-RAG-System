@@ -1,0 +1,184 @@
+0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+Characteristic parameter (KPI),Characteristic parameter (KPI),Characteristic parameter (KPI),Characteristic parameter (KPI),Characteristic parameter (KPI),Influence quantity,Influence quantity,Influence quantity,Influence quantity,Influence quantity,Influence quantity,Influence quantity,Influence quantity,Influence quantity,Influence quantity,Influence quantity,
+Communication service availability,Communication service reliability: mean time between failures,"Max Allowed End-to-end latency (note 1) 
+(note 5)",Service bit rate: user-experienced data rate (note 5),Service bit rate: user-experienced data rate (note 5),Message size [byte] (note 5),Message size [byte] (note 5),Survival time,Survival time,UE speed (note 6),UE speed (note 6),# of UEs,# of UEs,# of UEs,Service Area (note 3),Service Area (note 3),Remarks
+> 99.999 9 %,~ 1 week,10 ms,UL: > 10 Mbit/s,UL: > 10 Mbit/s,–,–,–,–,≤ 50 km/h,≤ 50 km/h,"≤ 2,000","≤ 2,000","≤ 2,000",≤ 1 km2,≤ 1 km2,Mobile robots – video streaming (A.2.2.3)
+99.999 9 % to 99.999 999 %,~ 1 month,< 30 ms,> 5 Mbit/s,> 5 Mbit/s,–,–,–,–,< 8 km/h (linear movement),< 8 km/h (linear movement),TBD,TBD,TBD,TBD,TBD,Mobile control panels - parallel data transmission (A.2.4.1)
+99.999 999 %,1 day,"<8 ms
+(note 8)",250 kbit/s,250 kbit/s,40 to 250,40 to 250,16 ms,16 ms,quasi-static; up to 10 km/h,quasi-static; up to 10 km/h,2 or more,2 or more,2 or more,30 m x 30 m,30 m x 30 m,Mobile Operation Panel: Emergency stop (emergency stop events) (A.2.4.1A)
+99.999 9 %,–,< 50 ms,"0.59 kbit/s
+28 kbit/s","0.59 kbit/s
+28 kbit/s",< 100,< 100,–,–,stationary,stationary,10 km-² to 100 km-²,10 km-² to 100 km-²,10 km-² to 100 km-²,TBD,TBD,Smart grid millisecond level precise load control (A.4.5)
+> 99.9 %,~ 1 month,< 10 ms,–,–,–,–,–,–,< 8 km/h (linear movement),< 8 km/h (linear movement),≥ 3,≥ 3,≥ 3,20 m x 20 m x 4 m,20 m x 20 m x 4 m,Augmented reality; bi-directional transmission to image processing server (A.2.4.2)
+99.999 9 % to 99.999 999 %,~ 10 years,"< 1 ms
+(note 4)",25 Mbit/s,25 Mbit/s,–,–,–,–,stationary,stationary,2 to 5,2 to 5,2 to 5,"100 m x
+30 m x 10 m","100 m x
+30 m x 10 m",Wired-2-wireless 100 Mbit/s link replacement (A.2.2.4)
+99.999 9 % to 99.999 999 %,~ 10 years,"< 1 ms
+(note 4)",500 Mbit/s,500 Mbit/s,–,–,–,–,stationary,stationary,2 to 5,2 to 5,2 to 5,"100 m x
+30 m x 10 m","100 m x
+30 m x 10 m",Wired-2-wireless 1 Gbit/s link replacement (A.2.2.4)
+> 99.9 %,–,"DL: < 10 ms
+UL:<1 s
+(rural)","DL: < 10 ms
+UL:<1 s
+(rural)","DL: > 100 kbit/s UL: > 5 Gbit/s
+(note 9)","DL: > 100 kbit/s UL: > 5 Gbit/s
+(note 9)",–,–,–,–,stationary,stationary,> 100,,,Distributed energy storage; energy storage station video (A.4.6),Distributed energy storage; energy storage station video (A.4.6)
+> 99.99 %,–,< 100 ms (note 10);,< 100 ms (note 10);,DL:<1 Mbit/s,DL:<1 Mbit/s,–,–,–,–,–,–,–,–,–,Advanced metering (A.4.7),Advanced metering (A.4.7)
+> 99.999 %,–,20 ms,20 ms,–,–,< 100 byte,< 100 byte,–,–,–,–,–,several km2,several km2,Distributed automated switching for isolation and service restoration (A.4.4.1) (note 7),Distributed automated switching for isolation and service restoration (A.4.4.1) (note 7)
+> 99.999 9 %,,< 3 ms,< 3 ms,–,–,160 byte,160 byte,–,–,–,–,–,–,–,Distributed Energy Resources (DERs) and micro-grids (A.4.9) (note 7),Distributed Energy Resources (DERs) and micro-grids (A.4.9) (note 7)
+"NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range).","NOTE 1:	Unless otherwise specified, all communication includes 1 wireless link (UE to network node or network node to UE) rather than two wireless links (UE to UE).
+NOTE 2:	(void)
+NOTE 3:	Length x width x height.
+NOTE 4:	Scheduled aperiodic traffic with transfer interval (max end-to-end allowed latency < transfer interval). 
+NOTE 5:	It applies to both UL and DL unless stated otherwise.
+NOTE 6:	It applies to both linear movement and rotation unless stated otherwise. 
+NOTE 7:	Communication includes two wireless links (UE to UE).
+NOTE 8:	The mobile operation panel is connected wirelessly to the 5G system. If the mobile robot/production line is also connected wirelessly to the 5G system, the communication includes two wireless links.
+NOTE 9:	The service bit rate in one energy storage station can be calculated as follows:12.5 Mbytes/s x 50 containers x 8 = 5 Gbit/s.
+NOTE 10:	The maximum allowed end-to-end latency is for accuracy fee control. It is the delay for one-way communication between the backend system and the 5G IoT device. The distance between the two is 40 km or lower (city range)."
