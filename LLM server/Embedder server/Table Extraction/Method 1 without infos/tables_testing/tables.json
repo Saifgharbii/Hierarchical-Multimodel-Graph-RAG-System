@@ -1,0 +1,2809 @@
+{
+    "Table 1": [
+        {
+            "3GPP TS 26.258 V18.0.0 (2023-09)": "Technical Specification"
+        },
+        {
+            "3GPP TS 26.258 V18.0.0 (2023-09)": "3rd Generation Partnership Project;\nTechnical Specification Group Services and System Aspects;\nCodec for Immersive Voice and Audio Services;\nC code (floating-point)\n(Release 18)"
+        },
+        {
+            "3GPP TS 26.258 V18.0.0 (2023-09)": ""
+        },
+        {
+            "3GPP TS 26.258 V18.0.0 (2023-09)": ""
+        },
+        {
+            "3GPP TS 26.258 V18.0.0 (2023-09)": ""
+        },
+        {
+            "3GPP TS 26.258 V18.0.0 (2023-09)": "The present document has been developed within the 3rd Generation Partnership Project (3GPP TM) and may be further elaborated for the purposes of 3GPP.\nThe present document has not been subject to any approval process by the 3GPP Organizational Partners and shall not be implemented.\nThis Specification is provided for future development work within 3GPP only. The Organizational Partners accept no liability for any use of this Specification.\nSpecifications and Reports for implementation of the 3GPP TM system should be obtained via the 3GPP Organizational Partners' Publications Offices."
+        }
+    ],
+    "Table 2": [
+        {
+            "": "3GPP\nPostal address\n\n3GPP support office address\n650 Route des Lucioles - Sophia Antipolis\nValbonne - FRANCE\nTel.: +33 4 92 94 42 00 Fax: +33 4 93 65 47 16\nInternet\nhttps://www.3gpp.org"
+        },
+        {
+            "": "Copyright Notification\nNo part may be reproduced except as authorized by written permission.\nThe copyright and the foregoing restriction extend to reproduction in all media.\n\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nUMTS™ is a Trade Mark of ETSI registered for the benefit of its members\n3GPP™ is a Trade Mark of ETSI registered for the benefit of its Members and of the 3GPP Organizational Partners\nLTE™ is a Trade Mark of ETSI registered for the benefit of its Members and of the 3GPP Organizational Partners\nGSM® and the GSM logo are registered and owned by the GSM Association"
+        }
+    ],
+    "Table 3: Table 1: Source code directory structure": [
+        {
+            "Directory": "readme.txt",
+            "Description": "information on how to compile and use"
+        },
+        {
+            "Directory": "Makefile",
+            "Description": "UNIX style encoder Makefile"
+        },
+        {
+            "Directory": "Workspace_msvc/",
+            "Description": "Directory for the MSVC 2017 (or newer) project files"
+        },
+        {
+            "Directory": "apps/",
+            "Description": "Source code files used solely for the encoder/decoder/renderer applications; these applications make use of the libraries built from lib_com, lib_dec, lib_enc, lib_rend, and lib_util"
+        },
+        {
+            "Directory": "lib_com/",
+            "Description": "Source code files used both in encoder and decoder"
+        },
+        {
+            "Directory": "lib_dec/",
+            "Description": "Source code files used solely in the decoder"
+        },
+        {
+            "Directory": "lib_enc/",
+            "Description": "Source code files used solely in the encoder"
+        },
+        {
+            "Directory": "lib_rend/",
+            "Description": "Source code files used solely in the renderer"
+        },
+        {
+            "Directory": "lib_util/",
+            "Description": "Source code files solely for utility functions used by the applications"
+        }
+    ],
+    "Table 4: Table 2: Audio track configurations": [
+        {
+            "Audio format (designator)": "Mono (M)",
+            "Number of tracks": "1",
+            "Index": "1",
+            "Configuration \n(incl. ordering)": "M",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        },
+        {
+            "Audio format (designator)": "Stereo (ST)",
+            "Number of tracks": "2",
+            "Index": "1,2",
+            "Configuration \n(incl. ordering)": "L, R",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        },
+        {
+            "Audio format (designator)": "Binaural (BIN)",
+            "Number of tracks": "2",
+            "Index": "1,2",
+            "Configuration \n(incl. ordering)": "L, R",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1 (MC51)",
+            "Number of tracks": "6",
+            "Index": "1",
+            "Configuration \n(incl. ordering)": "CH_A+030_E+00",
+            "Azimuth Range": "+30",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1 (MC51)",
+            "Number of tracks": "6",
+            "Index": "2",
+            "Configuration \n(incl. ordering)": "CH_A-030_E+00",
+            "Azimuth Range": "-30",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1 (MC51)",
+            "Number of tracks": "6",
+            "Index": "3",
+            "Configuration \n(incl. ordering)": "CH_A+000_E+00",
+            "Azimuth Range": "0",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1 (MC51)",
+            "Number of tracks": "6",
+            "Index": "4",
+            "Configuration \n(incl. ordering)": "LFE",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1 (MC51)",
+            "Number of tracks": "6",
+            "Index": "5",
+            "Configuration \n(incl. ordering)": "CH_A+110_E+00",
+            "Azimuth Range": "+100 … +120",
+            "Elevation Range": "0 … +15"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1 (MC51)",
+            "Number of tracks": "6",
+            "Index": "6",
+            "Configuration \n(incl. ordering)": "CH_A-110_E+00",
+            "Azimuth Range": "-100 … -120",
+            "Elevation Range": "0 ... +15"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1 (MC71)",
+            "Number of tracks": "8",
+            "Index": "1",
+            "Configuration \n(incl. ordering)": "CH_A+030_E+00",
+            "Azimuth Range": "+30 ... +45",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1 (MC71)",
+            "Number of tracks": "8",
+            "Index": "2",
+            "Configuration \n(incl. ordering)": "CH_A-030_E+00",
+            "Azimuth Range": "-30 … -45",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1 (MC71)",
+            "Number of tracks": "8",
+            "Index": "3",
+            "Configuration \n(incl. ordering)": "CH_A+000_E+00",
+            "Azimuth Range": "0",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1 (MC71)",
+            "Number of tracks": "8",
+            "Index": "4",
+            "Configuration \n(incl. ordering)": "LFE",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1 (MC71)",
+            "Number of tracks": "8",
+            "Index": "5",
+            "Configuration \n(incl. ordering)": "CH_A+110_E+00",
+            "Azimuth Range": "+85 … +110",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1 (MC71)",
+            "Number of tracks": "8",
+            "Index": "6",
+            "Configuration \n(incl. ordering)": "CH_A-110_E+00",
+            "Azimuth Range": "-85 … -110",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1 (MC71)",
+            "Number of tracks": "8",
+            "Index": "7",
+            "Configuration \n(incl. ordering)": "CH_A+135_E+00",
+            "Azimuth Range": "+120 … +150",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1 (MC71)",
+            "Number of tracks": "8",
+            "Index": "8",
+            "Configuration \n(incl. ordering)": "CH_A-135_E+00",
+            "Azimuth Range": "-120 … -150",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1+4 (MC514)",
+            "Number of tracks": "10",
+            "Index": "1",
+            "Configuration \n(incl. ordering)": "CH_A+030_E+00",
+            "Azimuth Range": "+30",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1+4 (MC514)",
+            "Number of tracks": "10",
+            "Index": "2",
+            "Configuration \n(incl. ordering)": "CH_A-030_E+00",
+            "Azimuth Range": "-30",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1+4 (MC514)",
+            "Number of tracks": "10",
+            "Index": "3",
+            "Configuration \n(incl. ordering)": "CH_A+000_E+00",
+            "Azimuth Range": "0",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1+4 (MC514)",
+            "Number of tracks": "10",
+            "Index": "4",
+            "Configuration \n(incl. ordering)": "LFE",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1+4 (MC514)",
+            "Number of tracks": "10",
+            "Index": "5",
+            "Configuration \n(incl. ordering)": "CH_A+110_E+00",
+            "Azimuth Range": "+100 … +120",
+            "Elevation Range": "0 … +15"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1+4 (MC514)",
+            "Number of tracks": "10",
+            "Index": "6",
+            "Configuration \n(incl. ordering)": "CH_A-110_E+00",
+            "Azimuth Range": "-100 … -120",
+            "Elevation Range": "0 … +15"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1+4 (MC514)",
+            "Number of tracks": "10",
+            "Index": "7",
+            "Configuration \n(incl. ordering)": "CH_A+030_E+35",
+            "Azimuth Range": "+30 … +45",
+            "Elevation Range": "+30 … +55"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1+4 (MC514)",
+            "Number of tracks": "10",
+            "Index": "8",
+            "Configuration \n(incl. ordering)": "CH_A-030_E+35",
+            "Azimuth Range": "-30 … -45",
+            "Elevation Range": "+30 … +55"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1+4 (MC514)",
+            "Number of tracks": "10",
+            "Index": "9",
+            "Configuration \n(incl. ordering)": "CH_A+110_E+35",
+            "Azimuth Range": "+100 … +135",
+            "Elevation Range": "+30 … +55"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 5.1+4 (MC514)",
+            "Number of tracks": "10",
+            "Index": "10",
+            "Configuration \n(incl. ordering)": "CH_A-110_E+35",
+            "Azimuth Range": "-100 … -135",
+            "Elevation Range": "+30 … +55"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1+4 (MC714)",
+            "Number of tracks": "12",
+            "Index": "1",
+            "Configuration \n(incl. ordering)": "CH_A+030_E+00",
+            "Azimuth Range": "+30 … +45",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1+4 (MC714)",
+            "Number of tracks": "12",
+            "Index": "2",
+            "Configuration \n(incl. ordering)": "CH_A-030_E+00",
+            "Azimuth Range": "-30 … -45",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1+4 (MC714)",
+            "Number of tracks": "12",
+            "Index": "3",
+            "Configuration \n(incl. ordering)": "CH_A+000_E+00",
+            "Azimuth Range": "0",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1+4 (MC714)",
+            "Number of tracks": "12",
+            "Index": "4",
+            "Configuration \n(incl. ordering)": "LFE",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1+4 (MC714)",
+            "Number of tracks": "12",
+            "Index": "5",
+            "Configuration \n(incl. ordering)": "CH_A+135_E+00",
+            "Azimuth Range": "+120 … +150",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1+4 (MC714)",
+            "Number of tracks": "12",
+            "Index": "6",
+            "Configuration \n(incl. ordering)": "CH_A-135_E+00",
+            "Azimuth Range": "-120 … -150",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1+4 (MC714)",
+            "Number of tracks": "12",
+            "Index": "7",
+            "Configuration \n(incl. ordering)": "CH_A+090_E+00",
+            "Azimuth Range": "+85 … +110",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1+4 (MC714)",
+            "Number of tracks": "12",
+            "Index": "8",
+            "Configuration \n(incl. ordering)": "CH_A-090_E+00",
+            "Azimuth Range": "-85 … -110",
+            "Elevation Range": "0"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1+4 (MC714)",
+            "Number of tracks": "12",
+            "Index": "9",
+            "Configuration \n(incl. ordering)": "CH_A+030_E+35",
+            "Azimuth Range": "+30 … +45",
+            "Elevation Range": "+30 … +55"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1+4 (MC714)",
+            "Number of tracks": "12",
+            "Index": "10",
+            "Configuration \n(incl. ordering)": "CH_A-030_E+35",
+            "Azimuth Range": "-30 … -45",
+            "Elevation Range": "+30 … +55"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1+4 (MC714)",
+            "Number of tracks": "12",
+            "Index": "11",
+            "Configuration \n(incl. ordering)": "CH_A+135_E+35",
+            "Azimuth Range": "+100 … +150",
+            "Elevation Range": "+30 … +55"
+        },
+        {
+            "Audio format (designator)": "Multi-channel 7.1+4 (MC714)",
+            "Number of tracks": "12",
+            "Index": "12",
+            "Configuration \n(incl. ordering)": "CH_A-135_E+35",
+            "Azimuth Range": "-100 … -150",
+            "Elevation Range": "+30 … +55"
+        },
+        {
+            "Audio format (designator)": "FOA (SBA1)",
+            "Number of tracks": "4",
+            "Index": "1…4",
+            "Configuration \n(incl. ordering)": "Ambisonics components with  0,1,2,3",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        },
+        {
+            "Audio format (designator)": "HOA* \n(SBA)",
+            "Number of tracks": "",
+            "Index": "1…",
+            "Configuration \n(incl. ordering)": "Ambisonics components with  0,1, 2,… -1",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        },
+        {
+            "Audio format (designator)": "Mono objects (OBA)",
+            "Number of tracks": "1…4",
+            "Index": "1…4",
+            "Configuration \n(incl. ordering)": "Object(s) with ID 1…4",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        },
+        {
+            "Audio format (designator)": "Metadata-assisted spatial audio, mono (MASA1)",
+            "Number of tracks": "1",
+            "Index": "1",
+            "Configuration \n(incl. ordering)": "M",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        },
+        {
+            "Audio format (designator)": "Metadata-assisted spatial audio, stereo (MASA2)",
+            "Number of tracks": "2",
+            "Index": "1,2",
+            "Configuration \n(incl. ordering)": "L, R",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        },
+        {
+            "Audio format (designator)": "Combined mono MASA and OBA",
+            "Number of tracks": "2...5",
+            "Index": "1..4\n2...5",
+            "Configuration \n(incl. ordering)": "Object(s) with ID 1…4\nM MASA",
+            "Azimuth Range": "-\n-",
+            "Elevation Range": "-\n-"
+        },
+        {
+            "Audio format (designator)": "Combined stereo MASA and OBA",
+            "Number of tracks": "3...6",
+            "Index": "1..4\n5,6",
+            "Configuration \n(incl. ordering)": "Object(s) with ID 1…4\nL, R MASA",
+            "Azimuth Range": "-\n-",
+            "Elevation Range": "-\n-"
+        },
+        {
+            "Audio format (designator)": "Combined \nHOA* \n(SBA)\nand OBA",
+            "Number of tracks": "",
+            "Index": "1…",
+            "Configuration \n(incl. ordering)": "Object(s) with ID 1…4\nAmbisonics components with  0,1, 2,… -1",
+            "Azimuth Range": "-",
+            "Elevation Range": "-"
+        }
+    ],
+    "Table 5": [],
+    "Table 6": [],
+    "Table 7: Table 3: JBM trace file entry format": [
+        {
+            "Name": "rtpSeqNo",
+            "Unit": "1",
+            "Description": "RTP sequence number of played out speech frame. -1 if no corresponding RTP packet for the speech frame exists."
+        },
+        {
+            "Name": "rtpTs",
+            "Unit": "ms",
+            "Description": "RTP time stamp of played out speech frame. -1 if no corresponding RTP packet for the speech frame exists"
+        },
+        {
+            "Name": "rcvTime",
+            "Unit": "ms",
+            "Description": "Absolute reception time of the RTP packet that corresponds to the speech frame. -1 if no corresponding RTP packet for the speech frame exists."
+        },
+        {
+            "Name": "playtime",
+            "Unit": "ms",
+            "Description": "Absolute play time (i.e. the time at which the PCM data is made available by the decoder). Can be floating-point value."
+        },
+        {
+            "Name": "active",
+            "Unit": "0 or 1",
+            "Description": "Binary entry, which is set to 1 for active speech frames (i.e. frames that are neither SID nor NO_DATA)"
+        }
+    ],
+    "Table 8": [
+        {
+            "Offset": "0",
+            "Format": "string",
+            "Length \n(in bytes)": "8",
+            "Description": "File identifier: “IVASHRTF”"
+        },
+        {
+            "Offset": "8",
+            "Format": "integer",
+            "Length \n(in bytes)": "4",
+            "Description": "Size of file in bytes (header of file included)"
+        },
+        {
+            "Offset": "12",
+            "Format": "integer",
+            "Length \n(in bytes)": "2",
+            "Description": "Number of entries (HR filters)"
+        },
+        {
+            "Offset": "14",
+            "Format": "integer",
+            "Length \n(in bytes)": "4",
+            "Description": "Max size of raw data (HR filter in binary format)"
+        }
+    ],
+    "Table 9": [
+        {
+            "Offset": "0",
+            "Format": "integer",
+            "Length \n(in bytes)": "4",
+            "Description": "Renderer type\n\nThe renderer type is defined according to the enumeration RENDERER_TYPE among the following values:  \n- RENDERER_BINAURAL_FASTCONV\n- RENDERER_BINAURAL_FASTCONV_ROOM\n- RENDERER_BINAURAL_PARAMETRIC_ROOM\n- RENDERER_BINAURAL_OBJECTS_TD\n- RENDERER_BINAURAL_MIXER_CONV\n- RENDERER_BINAURAL_MIXER_CONV_ROOM"
+        },
+        {
+            "Offset": "4",
+            "Format": "integer",
+            "Length \n(in bytes)": "4",
+            "Description": "Input audio configuration\n\nThe input audio configuration is defined according to the enumeration  BINAURAL_INPUT_AUDIO_CONFIG among the following values:\n- BINAURAL_INPUT_AUDIO_CONFIG_COMBINED\n- BINAURAL_INPUT_AUDIO_CONFIG_HOA3\n- BINAURAL_INPUT_AUDIO_CONFIG_HOA2\n- BINAURAL_INPUT_AUDIO_CONFIG_FOA\n- BINAURAL_INPUT_AUDIO_CONFIG_UNDEFINED"
+        },
+        {
+            "Offset": "8",
+            "Format": "integer",
+            "Length \n(in bytes)": "4",
+            "Description": "Sampling frequency (16000, 32000, 48000)"
+        },
+        {
+            "Offset": "12",
+            "Format": "integer",
+            "Length \n(in bytes)": "4",
+            "Description": "Raw data size in bytes"
+        }
+    ],
+    "Table 10: Table 4: Reference Vector entry format": [
+        {
+            "Name": "xlistener",
+            "Unit": "m",
+            "Description": "x axis position of the listener."
+        },
+        {
+            "Name": "ylistener",
+            "Unit": "m",
+            "Description": "y axis position of the listener."
+        },
+        {
+            "Name": "zlistener",
+            "Unit": "m",
+            "Description": "z axis position of the listener."
+        },
+        {
+            "Name": "xreference",
+            "Unit": "m",
+            "Description": "x axis position of the acoustic reference."
+        },
+        {
+            "Name": "yreference",
+            "Unit": "m",
+            "Description": "y axis position of the acoustic reference."
+        },
+        {
+            "Name": "zreference",
+            "Unit": "m",
+            "Description": "z axis position of the acoustic reference."
+        }
+    ],
+    "Table 11: Table 5: External orientation entry format": [
+        {
+            "Name": "Quaternion_W",
+            "Format": "float",
+            "Description": "Quaternion basis element W",
+            "Default value": "-",
+            "Permissive values": "-1.0 ... 1.0"
+        },
+        {
+            "Name": "Quaternion_X",
+            "Format": "float",
+            "Description": "Quaternion basis element X",
+            "Default value": "-",
+            "Permissive values": "-1.0 ... 1.0"
+        },
+        {
+            "Name": "Quaternion_Y",
+            "Format": "float",
+            "Description": "Quaternion basis element Y",
+            "Default value": "-",
+            "Permissive values": "-1.0 ... 1.0"
+        },
+        {
+            "Name": "Quaternion_Z",
+            "Format": "float",
+            "Description": "Quaternion basis element Z",
+            "Default value": "-",
+            "Permissive values": "-1.0 ... 1.0"
+        },
+        {
+            "Name": "HeadRotIndicator",
+            "Format": "float",
+            "Description": "Indication how to handle head rotations (optional)",
+            "Default value": "1",
+            "Permissive values": "0, 1, 2"
+        },
+        {
+            "Name": "ExtOriIndicator",
+            "Format": "float",
+            "Description": "Indication how to handle external orientations (optional)",
+            "Default value": "1",
+            "Permissive values": "0, 1, 2"
+        },
+        {
+            "Name": "ExtIntrpFlag",
+            "Format": "float",
+            "Description": "Flag to enable/disable external orientation interpolation (optional)",
+            "Default value": "0",
+            "Permissive values": "0, 1"
+        },
+        {
+            "Name": "ExtIntrpNFrames",
+            "Format": "float",
+            "Description": "Number of frames to the external orientation interpolation target (optional)",
+            "Default value": "0",
+            "Permissive values": "0 – 500"
+        }
+    ],
+    "Table 12: Table 6 : Scene Description File Syntax": [
+        {
+            "Line no.": "1",
+            "Type": "string",
+            "Description": "Path to a “multitrack” audio file. This shall be a single multichannel wav/pcm\nfile that contains all input audio. For example, channels 1-4 can be an FOA scene,\nchannel 5 – an object and channels 6-11 – a 5.1 channel bed.\nThe path given shall be relative to the location of the config file.\nThis path has lower priority than the one given on the command line: it is\nignored if the –inputAudio argument to the renderer executable is specified."
+        },
+        {
+            "Line no.": "2",
+            "Type": "integer",
+            "Description": "Contains number of inputs. An input may either be an Ambisonics scene, an\nobject or a channel bed. This does not correspond the total number of channels in the input audio file.\nThe renderer simultaneously supports:\n- 1 Ambisonics input\n- 1 Channel-based input\n- 1 MASA input\n- Up to 4 audio objects (ISM) inputs"
+        },
+        {
+            "Line no.": "Following lines",
+            "Type": "",
+            "Description": "Definition of each of the inputs. Inputs may be listed in any order. They are not required to be listed in the same order as in the audio file.\nAmbisonics:\n\nChannel-based:\n\nMASA:\n\nAudio Objects, Option 1:\n\nor\nAudio Objects, Option 2:"
+        }
+    ],
+    "Table 13: The following key-value pairs are supported:": [
+        {
+            "Key": "gain_dB",
+            "Type": "float",
+            "Description": "Applied gain to input in dB"
+        },
+        {
+            "Key": "lfe_matrix",
+            "Type": "string",
+            "Description": "CSV file containing a LFE panning matrix. File containing a  containing a matrix of dimensions [ num_input_lfe x num_output_channels ] \nwith elements specifying linear routing gain.\nIf specified, overrides the output LFE position option and the default behavior which attempts to map input to output LFE channel(s)"
+        },
+        {
+            "Key": "lfe_gain_dB",
+            "Type": "float",
+            "Description": "Applied gain to input LFE in dB. Applicable only to formats containing an LFE."
+        },
+        {
+            "Key": "lfe_azi",
+            "Type": "float",
+            "Description": "Azimuth defining LFE position on sphere; alternative to lfe_matrics."
+        },
+        {
+            "Key": "lfe_ele",
+            "Type": "float",
+            "Description": "Elevation defining LFE position on sphere; alternative to lfe_matrics."
+        }
+    ],
+    "Table 14: -\tISM with 2 defined positions (-90,0) and (90,0). Channel 11 in the input file. The object will start at position (-90,0) and stay there for 5 frames, then move to (90,0) and stay there for 5 frames. This trajectory is looped ver the duration of the input audio file.": [],
+    "Table 15: Table A.1: MASA format descriptive common metadata parameters": [
+        {
+            "Field": "Format descriptor",
+            "Bits": "64",
+            "Description": "Defines the MASA format for IVAS. Eight 8-bit ASCII characters:\n01001001, 01010110, 01000001, 01010011,\n01001101, 01000001, 01010011, 01000001\nValues stored as 8 consecutive 8-bit unsigned integers."
+        },
+        {
+            "Field": "Channel audio format",
+            "Bits": "16",
+            "Description": "Combined following fields stored in two bytes.\nValue stored as a single 16-bit unsigned integer."
+        },
+        {
+            "Field": "Number of directions",
+            "Bits": "(1)",
+            "Description": "Number of directions described by the spatial metadata.\nEach direction is associated with a set of direction dependent spatial metadata.\nRange of values: [1, 2]"
+        },
+        {
+            "Field": "Number of channels",
+            "Bits": "(1)",
+            "Description": "Number of transport channels in the format.\nRange of values: [1, 2]"
+        },
+        {
+            "Field": "Source format",
+            "Bits": "(2)",
+            "Description": "Describes the original format from which MASA was created."
+        },
+        {
+            "Field": "(Variable description)",
+            "Bits": "(12)",
+            "Description": "Further description fields based on the values of ‘Number of channels’ and ‘Source format’ fields. \nWhen all bits are not used, zero padding is applied."
+        }
+    ],
+    "Table 16: Table A.2a: MASA format spatial metadata parameters (dependent of number of directions)": [
+        {
+            "Field": "Direction index",
+            "Bits": "16",
+            "Description": "Direction of arrival of the sound at a time-frequency parameter interval. Spherical representation at about 1-degree accuracy. \nRange of values: “covers all directions at about 1° accuracy” \nValues stored as 16-bit unsigned integers."
+        },
+        {
+            "Field": "Direct-to-total energy ratio",
+            "Bits": "8",
+            "Description": "Energy ratio for the direction index (i.e., time-frequency subframe). \nCalculated as energy in direction / total energy. \nRange of values: [0.0, 1.0] \nValues stored as 8-bit unsigned integers with uniform spacing of mapped values."
+        },
+        {
+            "Field": "Spread coherence",
+            "Bits": "8",
+            "Description": "Spread of energy for the direction index (i.e., time-frequency subframe). \nDefines the direction to be reproduced as a point source or coherently around the direction. \nRange of values: [0.0, 1.0] \nValues stored as 8-bit unsigned integers with uniform spacing of mapped values."
+        }
+    ],
+    "Table 17: Table A.2b: MASA format spatial metadata parameters (independent of number of directions)": [
+        {
+            "Field": "Diffuse-to-total energy ratio",
+            "Bits": "8",
+            "Description": "Energy ratio of non-directional sound over surrounding directions. \nCalculated as energy of non-directional sound / total energy. \nRange of values: [0.0, 1.0] \n(Parameter is independent of number of directions provided.) \nValues stored as 8-bit unsigned integers with uniform spacing of mapped values."
+        },
+        {
+            "Field": "Surround coherence",
+            "Bits": "8",
+            "Description": "Coherence of the non-directional sound over the surrounding directions. \nRange of values: [0.0, 1.0] \n(Parameter is independent of number of directions provided.) \nValues stored as 8-bit unsigned integers with uniform spacing of mapped values."
+        },
+        {
+            "Field": "Remainder-to-total energy ratio",
+            "Bits": "8",
+            "Description": "Energy ratio of the remainder (such as microphone noise) sound energy to fulfil requirement that sum of energy ratios is 1. \nCalculated as energy of remainder sound / total energy. \nRange of values: [0.0, 1.0] \n(Parameter is independent of number of directions provided.) \nValues stored as 8-bit unsigned integers with uniform spacing of mapped values."
+        }
+    ],
+    "Table 18: Table A.3. MASA spatial metadata frequency bands": [
+        {
+            "Band": "1",
+            "LF (Hz)": "0",
+            "HF (Hz)": "400",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "2",
+            "LF (Hz)": "400",
+            "HF (Hz)": "800",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "3",
+            "LF (Hz)": "800",
+            "HF (Hz)": "1200",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "4",
+            "LF (Hz)": "1200",
+            "HF (Hz)": "1600",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "5",
+            "LF (Hz)": "1600",
+            "HF (Hz)": "2000",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "6",
+            "LF (Hz)": "2000",
+            "HF (Hz)": "2400",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "7",
+            "LF (Hz)": "2400",
+            "HF (Hz)": "2800",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "8",
+            "LF (Hz)": "2800",
+            "HF (Hz)": "3200",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "9",
+            "LF (Hz)": "3200",
+            "HF (Hz)": "3600",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "10",
+            "LF (Hz)": "3600",
+            "HF (Hz)": "4000",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "11",
+            "LF (Hz)": "4000",
+            "HF (Hz)": "4400",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "12",
+            "LF (Hz)": "4400",
+            "HF (Hz)": "4800",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "13",
+            "LF (Hz)": "4800",
+            "HF (Hz)": "5200",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "14",
+            "LF (Hz)": "5200",
+            "HF (Hz)": "5600",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "15",
+            "LF (Hz)": "5600",
+            "HF (Hz)": "6000",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "16",
+            "LF (Hz)": "6000",
+            "HF (Hz)": "6400",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "17",
+            "LF (Hz)": "6400",
+            "HF (Hz)": "6800",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "18",
+            "LF (Hz)": "6800",
+            "HF (Hz)": "7200",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "19",
+            "LF (Hz)": "7200",
+            "HF (Hz)": "7600",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "20",
+            "LF (Hz)": "7600",
+            "HF (Hz)": "8000",
+            "BW (Hz)": "400"
+        },
+        {
+            "Band": "21",
+            "LF (Hz)": "8000",
+            "HF (Hz)": "10000",
+            "BW (Hz)": "2000"
+        },
+        {
+            "Band": "22",
+            "LF (Hz)": "10000",
+            "HF (Hz)": "12000",
+            "BW (Hz)": "2000"
+        },
+        {
+            "Band": "23",
+            "LF (Hz)": "12000",
+            "HF (Hz)": "16000",
+            "BW (Hz)": "4000"
+        },
+        {
+            "Band": "24",
+            "LF (Hz)": "16000",
+            "HF (Hz)": "24000",
+            "BW (Hz)": "8000"
+        }
+    ],
+    "Table 19: The unique format descriptor code is provided at the beginning of every MASA format metadata frame. It specifies MASA format for the IVAS codec.": [
+        {
+            "Required bit value": "01001001, 01010110, 01000001, 01010011, 01001101, 01000001, 01010011, 01000001",
+            "Decoded value": "“IVASMASA”",
+            "Additional description": "Unique format descriptor"
+        }
+    ],
+    "Table 20: This parameter field indicates how many directions are described in current MASA format frame. Size of the metadata associated with the current frame depends on the number of directions.": [
+        {
+            "Bit value": "0",
+            "Decoded value": "1 direction",
+            "Additional description": "-"
+        },
+        {
+            "Bit value": "1",
+            "Decoded value": "2 directions",
+            "Additional description": "-"
+        }
+    ],
+    "Table 21: This parameter field indicates how many transport channels are used for the MASA format. This parameter is required by the codec or renderer in some form to read the correct number of channels. Some additional channel format descriptors further depend on the number of channels.": [
+        {
+            "Bit value": "0",
+            "Decoded value": "1 channel",
+            "Additional description": "-"
+        },
+        {
+            "Bit value": "1",
+            "Decoded value": "2 channels",
+            "Additional description": "-"
+        }
+    ],
+    "Table 22: This parameter field describes the format of source signals that were used to form the MASA format input file/stream. This parameter provides additional information that can benefit encoding, decoding, and/or rendering. First bit value (00) is the default value.": [
+        {
+            "Bit value": "00",
+            "Decoded value": "Default/Other",
+            "Additional description": "Audio originates from unknown format(s) including mixed sources"
+        },
+        {
+            "Bit value": "01",
+            "Decoded value": "Microphone grid",
+            "Additional description": "Audio originates from various (irregular) microphone grids (e.g., smartphones or other UEs)"
+        },
+        {
+            "Bit value": "10",
+            "Decoded value": "Channel-based",
+            "Additional description": "Audio originates from premixed channel-based audio (e.g., 5.1)"
+        },
+        {
+            "Bit value": "11",
+            "Decoded value": "Ambisonics",
+            "Additional description": "Audio originates from Ambisonics format"
+        }
+    ],
+    "Table 23: Table A.4: Transport definition field for Source formats: Default/Other and Microphone grid": [
+        {
+            "Bit value": "000",
+            "Decoded value": "Unknown/Other",
+            "Additional description": "Default"
+        },
+        {
+            "Bit value": "001",
+            "Decoded value": "Omni",
+            "Additional description": "-"
+        },
+        {
+            "Bit value": "010",
+            "Decoded value": "Subcardioid",
+            "Additional description": "-"
+        },
+        {
+            "Bit value": "011",
+            "Decoded value": "Cardioid",
+            "Additional description": "-"
+        },
+        {
+            "Bit value": "100",
+            "Decoded value": "Supercardioid",
+            "Additional description": "-"
+        },
+        {
+            "Bit value": "101",
+            "Decoded value": "Hypercardioid",
+            "Additional description": "-"
+        },
+        {
+            "Bit value": "110",
+            "Decoded value": "Dipole",
+            "Additional description": "-"
+        },
+        {
+            "Bit value": "111",
+            "Decoded value": "Binaural",
+            "Additional description": "-"
+        }
+    ],
+    "Table 24: Table A.5: Channel angles for directive patterns for Source formats: Default/Other and Microphone grid": [
+        {
+            "Bit value": "000",
+            "Decoded value": "Unspecified",
+            "Additional description": "Default"
+        },
+        {
+            "Bit value": "001",
+            "Decoded value": "±90 deg.",
+            "Additional description": "-"
+        },
+        {
+            "Bit value": "010",
+            "Decoded value": "±70 deg.",
+            "Additional description": "XY stereo"
+        },
+        {
+            "Bit value": "011",
+            "Decoded value": "±55 deg.",
+            "Additional description": "XY stereo, ORTF stereo"
+        },
+        {
+            "Bit value": "100",
+            "Decoded value": "±45 deg.",
+            "Additional description": "NOS stereo, XY stereo, Blumlein pair"
+        },
+        {
+            "Bit value": "101",
+            "Decoded value": "±30 deg.",
+            "Additional description": "-"
+        },
+        {
+            "Bit value": "110",
+            "Decoded value": "±0 deg.",
+            "Additional description": "AB stereo. Needs spacing for stereo image."
+        },
+        {
+            "Bit value": "111",
+            "Decoded value": "Reserved",
+            "Additional description": "-"
+        }
+    ],
+    "Table 25: Table A.6: Channel distance for Source formats: Default/Other and Microphone grid": [
+        {
+            "Bit value": "000000",
+            "Decoded value": "Unspecified",
+            "Additional description": "Distance is not specified, or it is unknown"
+        },
+        {
+            "Bit value": "000001",
+            "Decoded value": "0 m / coincident",
+            "Additional description": "No distance between microphones, i.e., they are coincident"
+        },
+        {
+            "Bit value": "000010",
+            "Decoded value": "< 0.01 m",
+            "Additional description": "Distances smaller than 0.01 m"
+        },
+        {
+            "Bit value": "000011",
+            "Decoded value": "0.01 m",
+            "Additional description": "(Distances formed with equation above)"
+        },
+        {
+            "Bit value": "…",
+            "Decoded value": "…",
+            "Additional description": "(Distances formed with equation above)"
+        },
+        {
+            "Bit value": "111110",
+            "Decoded value": "1 m",
+            "Additional description": "(Distances formed with equation above)"
+        },
+        {
+            "Bit value": "111111",
+            "Decoded value": "> 1 m",
+            "Additional description": "Distances larger than 1 m"
+        }
+    ],
+    "Table 26: Table A.7: Channel layout field for the channel-based source format": [
+        {
+            "Bit value": "000",
+            "Decoded value": "Unknown/Other",
+            "Additional description": "Unknown layout or other (3D) layout. Default option."
+        },
+        {
+            "Bit value": "001",
+            "Decoded value": "Other planar",
+            "Additional description": "Other 2D layout"
+        },
+        {
+            "Bit value": "010",
+            "Decoded value": "2.0",
+            "Additional description": "CICP2 positions, ITU order"
+        },
+        {
+            "Bit value": "011",
+            "Decoded value": "5.1",
+            "Additional description": "CICP6 positions, ITU order"
+        },
+        {
+            "Bit value": "100",
+            "Decoded value": "5.1+2",
+            "Additional description": "CICP14 positions azimuth, 35° elevation, ITU order"
+        },
+        {
+            "Bit value": "101",
+            "Decoded value": "5.1+4",
+            "Additional description": "CICP16 positions azimuth, 35° elevation, ITU order"
+        },
+        {
+            "Bit value": "110",
+            "Decoded value": "7.1",
+            "Additional description": "CICP12 positions, ITU order"
+        },
+        {
+            "Bit value": "111",
+            "Decoded value": "7.1+4",
+            "Additional description": "CICP19 positions azimuth, 35° elevation, ITU order"
+        }
+    ],
+    "Table 27: Table B.1: Syntax of payloadRendConfig": [
+        {
+            "Syntax": "payloadRendConfig() {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "if ( hasAcEnv ) {",
+            "Bits": "1",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "payloadAcEnv();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}\n\tif ( hasDirectivity ) {\n\t\tpayloadDirectivity();\n\t}",
+            "Bits": "1",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        }
+    ],
+    "Table 28: Table Table B.2: Syntax of payloadAcEnv": [
+        {
+            "Syntax": "payloadAcEnv() {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "payloadFreqGrid();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "revNrElements = GetCountOrIndex();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "for ( e = 0; e < revNrElements; e++ ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "revAcEnvID[e] =  GetCountOrIndex ();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "payloadLateReverb();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "if ( hasEarlyReflections ) {",
+            "Bits": "1",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "payloadEarlyReflections();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        }
+    ],
+    "Table 29: Table B.3: Syntax of payloadFreqGrid()": [
+        {
+            "Syntax": "payloadFreqGrid () {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "fgdNrGrids = GetCountOrIndex();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "for ( g = 0; g < fgdNrGrids; g++ ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "fgdMethod;",
+            "Bits": "2",
+            "Mnemonic": "uimsbf"
+        },
+        {
+            "Syntax": "if ( fgdMethod == 'Individual frequencies' ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "fgdNrBands[g] = GetCountOrIndex();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "for ( b = 0; b < fgdNrBands[g]; b++ ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "fgdCenterFreq[g][b] = GetFrequency();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "else if ( fgdMethod == 'Start-Hop-Amount' ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "fgdNrBands[g] = GetCountOrIndex();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "fgdCenterFreq[g][0] = GetFrequency();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "frequencyHop = LUT( frequencyHopCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "for ( b = 1; b < fgdNrBands[g]; b++ ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "fgdCenterFreq[g][b] = fgdCenterFreq[g][b - 1] * frequencyHop;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "else if (fgdMethod == 'Default banding') {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "fgdDefaultGrid;",
+            "Bits": "4",
+            "Mnemonic": "uimsbf"
+        },
+        {
+            "Syntax": "if ( fgdIsSubGrid ) {",
+            "Bits": "1",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "fgdDefaultGridOffset;",
+            "Bits": "3",
+            "Mnemonic": "uimsbf"
+        },
+        {
+            "Syntax": "fgdDefaultGridNrBands;",
+            "Bits": "6",
+            "Mnemonic": "uimsbf"
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        }
+    ],
+    "Table 30: fgdMethod\tIndicates the method with which the frequency grid is coded.": [
+        {
+            "Bits": "0b00",
+            "Meaning": "Individual frequencies"
+        },
+        {
+            "Bits": "0b01",
+            "Meaning": "Start-Hop-Amount"
+        },
+        {
+            "Bits": "0b10",
+            "Meaning": "Default banding"
+        },
+        {
+            "Bits": "0b11",
+            "Meaning": "Reserved"
+        }
+    ],
+    "Table 31: frequencyHopCode\tIndicates the hop-factor for the frequency banding.": [
+        {
+            "Bits": "0b0010",
+            "Meaning": "2(1/12)"
+        },
+        {
+            "Bits": "0b0011",
+            "Meaning": "2(1/6)"
+        },
+        {
+            "Bits": "0b0000",
+            "Meaning": "2(1/4)"
+        },
+        {
+            "Bits": "0b01",
+            "Meaning": "2(1/3)"
+        },
+        {
+            "Bits": "0b0001",
+            "Meaning": "2(1/2)"
+        },
+        {
+            "Bits": "0b11",
+            "Meaning": "21"
+        },
+        {
+            "Bits": "0b10",
+            "Meaning": "22"
+        }
+    ],
+    "Table 32: Table B.4: fgdDefaultGrid code table": [
+        {
+            "Bits": "0b0000",
+            "fgdCenterFreq[g] in Hz": "{31.5, 63, 125, 250, 500, 1000, 2000, 4000, 8000, 16000}",
+            "fgdNrBands[g]": "10",
+            "Description": "Octave – ISO"
+        },
+        {
+            "Bits": "0b0001",
+            "fgdCenterFreq[g] in Hz": "{25, 50, 100, 200, 400, 800, 1600, 3150, 6300, 12500}",
+            "fgdNrBands[g]": "10",
+            "Description": "Octave alternative"
+        },
+        {
+            "Bits": "0b0010",
+            "fgdCenterFreq[g] in Hz": "{20, 25, 31.5, 40, 50, 63, 80, 100, 125, 160, 200, 250, 315,\n400, 500, 630, 800, 1000, 1250, 1600, 2000, 2500, 3150,\n4000, 5000, 6300, 8000, 10000, 12500, 16000, 20000}",
+            "fgdNrBands[g]": "31",
+            "Description": "1/3 octave – ISO"
+        },
+        {
+            "Bits": "0b0011",
+            "fgdCenterFreq[g] in Hz": "{25, 100, 400, 1600, 6300}",
+            "fgdNrBands[g]": "5",
+            "Description": "2 Octave – ISO"
+        },
+        {
+            "Bits": "0b0100",
+            "fgdCenterFreq[g] in Hz": "{125, 250, 500, 1000, 2000, 4000}",
+            "fgdNrBands[g]": "6",
+            "Description": "Octave subset"
+        },
+        {
+            "Bits": "0b0101",
+            "fgdCenterFreq[g] in Hz": "{25, 250, 2500}",
+            "fgdNrBands[g]": "3",
+            "Description": ""
+        },
+        {
+            "Bits": "0b0110",
+            "fgdCenterFreq[g] in Hz": "{27, 56, 89, 126, 168, 214, 265, 323, 387, 459, 539, 628, 727,\n839, 963, 1101,1256, 1429, 1621, 1836, 2077, 2345, 2644,\n2978, 3351, 3767, 4232, 4750, 5329, 5975, 6697, 7502, 8401,\n9405, 10525, 11775, 13171, 14729, 16468, 18410, 20577}",
+            "fgdNrBands[g]": "41",
+            "Description": "1 ERB scale"
+        },
+        {
+            "Bits": "0b0111",
+            "fgdCenterFreq[g] in Hz": "{27, 89, 168, 265, 387, 539, 727, 963, 1256, 1621, 2077, 2644, \n3351, 4232, 5329, 6697, 8401, 10525, 13171, 16468, 20577}",
+            "fgdNrBands[g]": "21",
+            "Description": "2 ERB scale"
+        },
+        {
+            "Bits": "0b1000",
+            "fgdCenterFreq[g] in Hz": "{50, 150, 250, 350, 450, 570, 700, 840, 1000, 1170, 1370,\n1600, 1850, 2150, 2150, 2500, 2900, 3400, 4000, 4800,\n5800, 7000, 8500, 10500, 13500}",
+            "fgdNrBands[g]": "25",
+            "Description": "Bark scale"
+        },
+        {
+            "Bits": "0b1001",
+            "fgdCenterFreq[g] in Hz": "Reserved",
+            "fgdNrBands[g]": "",
+            "Description": ""
+        },
+        {
+            "Bits": "0b1010",
+            "fgdCenterFreq[g] in Hz": "Reserved",
+            "fgdNrBands[g]": "",
+            "Description": ""
+        },
+        {
+            "Bits": "0b1011",
+            "fgdCenterFreq[g] in Hz": "Reserved",
+            "fgdNrBands[g]": "",
+            "Description": ""
+        },
+        {
+            "Bits": "0b1100",
+            "fgdCenterFreq[g] in Hz": "Reserved",
+            "fgdNrBands[g]": "",
+            "Description": ""
+        },
+        {
+            "Bits": "0b1101",
+            "fgdCenterFreq[g] in Hz": "Reserved",
+            "fgdNrBands[g]": "",
+            "Description": ""
+        },
+        {
+            "Bits": "0b1110",
+            "fgdCenterFreq[g] in Hz": "Reserved",
+            "fgdNrBands[g]": "",
+            "Description": ""
+        },
+        {
+            "Bits": "0b1111",
+            "fgdCenterFreq[g] in Hz": "Reserved",
+            "fgdNrBands[g]": "",
+            "Description": ""
+        }
+    ],
+    "Table 33: Table B.5: Syntax of payloadLateReverb": [
+        {
+            "Syntax": "payloadLateReverb() {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "revFreqGridIdx[e] = GetCountOrIndex();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "revPredelay[e] = GetDuration();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "for ( b = 0; b < fgdNrBands[revFreqGridIdx[e]]; b++ ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "revRT60[e][b] = GetDuration();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "for ( b = 0; b < fgdNrBands[revFreqGridIdx[e]]; b++ ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "revDSR[e][b] = LUT( dsrCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        }
+    ],
+    "Table 34: Table B.6: Syntax of payloadEarlyReflections": [
+        {
+            "Syntax": "payloadEarlyReflections() {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "for ( n = 0; n < 3; n++ ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "erSize[e][n] = GetDistance( true );",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "for ( n = 0; n < 6; n++ ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "erAbsCoeff[e][n] = LUT( absorptionCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "If ( hasListenerOrigin ) {",
+            "Bits": "1",
+            "Mnemonic": "bslfb"
+        },
+        {
+            "Syntax": "sign.x = isPositiveX ? 1 : -1;",
+            "Bits": "1",
+            "Mnemonic": "bslfb"
+        },
+        {
+            "Syntax": "sign.y = isPositiveY ? 1 : -1;",
+            "Bits": "1",
+            "Mnemonic": "bslfb"
+        },
+        {
+            "Syntax": "erListenerOrigin[e].x = sign.x * GetDistance( true );",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "erListenerOrigin[e].y = sign.y * GetDistance( true );",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "erListenerOrigin[e].z = GetDistance( true );",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "lowComplexity;",
+            "Bits": "1",
+            "Mnemonic": "bslfb"
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        }
+    ],
+    "Table 35: Table B.7: Syntax of GetCountOrIndex": [
+        {
+            "Syntax": "number = GetCountOrIndex() {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "number = LUT( countOrIndexLoCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "if ( isLargerNumber ) {",
+            "Bits": "1",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "numberHi = LUT( countOrIndexHiCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "number = number + numberHi * 64;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "return number;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        }
+    ],
+    "Table 36: Table B.8: Syntax of GetDuration": [
+        {
+            "Syntax": "duration = GetDuration() {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "deciSeconds = LUT( deciSecondsCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "duration = deciSeconds;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "if ( addMilliseconds ) {",
+            "Bits": "1",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "miliSeconds = LUT( milliSecondsCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "duration = duration + miliSeconds;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "if ( addMicroseconds ) {",
+            "Bits": "1",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "microseconds = LUT( microsecondsCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "duration = duration + microseconds;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "if ( addSeconds ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "seconds = LUT( secondsCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "duration = duration + seconds;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "return duration;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        }
+    ],
+    "Table 37: Table B.8: Syntax of GetDistance": [
+        {
+            "Syntax": "distance = GetDistance( isSmallScene ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "meters = LUT( metersCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "distance = meters;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "if ( isSmallScene == false ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "if ( addHectometers ) {",
+            "Bits": "1",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "hectometers = LUT( hectometersCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "distance = distance + hectometers * 100;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "while ( addKilometers ) {",
+            "Bits": "1",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "kilometers = LUT( kilometersCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "distance = distance + kilometers * 1000;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "if ( addCentimeters ) {",
+            "Bits": "1",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "centimeters = LUT( centimetersCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "distance = distance + centimeters / 100;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "return distance;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        }
+    ],
+    "Table 38: Table B.9: Syntax of GetFrequency": [
+        {
+            "Syntax": "frequency = GetFrequency() {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "frequency = LUT( frequencyCode );",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "if ( moreAccuracy ) {",
+            "Bits": "1",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "frequency = frequency * 2^((frequencyRefine + 1) / 51);",
+            "Bits": "4",
+            "Mnemonic": "uimsbf"
+        },
+        {
+            "Syntax": "return frequency;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        }
+    ],
+    "Table 39: Table B.10: countOrIndexLoCode look-up table": [
+        {
+            "Code": "1011011",
+            "Value": "52"
+        },
+        {
+            "Code": "1011010",
+            "Value": "53"
+        },
+        {
+            "Code": "1011001",
+            "Value": "54"
+        },
+        {
+            "Code": "1011000",
+            "Value": "55"
+        },
+        {
+            "Code": "1010111",
+            "Value": "56"
+        },
+        {
+            "Code": "1010110",
+            "Value": "57"
+        },
+        {
+            "Code": "1010101",
+            "Value": "58"
+        },
+        {
+            "Code": "1010100",
+            "Value": "59"
+        },
+        {
+            "Code": "1010011",
+            "Value": "60"
+        },
+        {
+            "Code": "1010010",
+            "Value": "61"
+        },
+        {
+            "Code": "1010001",
+            "Value": "62"
+        },
+        {
+            "Code": "1010000",
+            "Value": "63"
+        },
+        {
+            "Code": "",
+            "Value": ""
+        }
+    ],
+    "Table 40: Table B.11: countOrIndexHiCode look-up table": [
+        {
+            "Code": "001",
+            "Value": "1"
+        },
+        {
+            "Code": "000",
+            "Value": "2"
+        },
+        {
+            "Code": "110",
+            "Value": "3"
+        },
+        {
+            "Code": "101",
+            "Value": "4"
+        },
+        {
+            "Code": "100",
+            "Value": "5"
+        },
+        {
+            "Code": "0111",
+            "Value": "6"
+        },
+        {
+            "Code": "0101",
+            "Value": "7"
+        },
+        {
+            "Code": "1111",
+            "Value": "8"
+        },
+        {
+            "Code": "1110",
+            "Value": "9"
+        },
+        {
+            "Code": "01101",
+            "Value": "10"
+        },
+        {
+            "Code": "01001",
+            "Value": "11"
+        },
+        {
+            "Code": "01000",
+            "Value": "12"
+        },
+        {
+            "Code": "011001",
+            "Value": "13"
+        },
+        {
+            "Code": "0110001",
+            "Value": "14"
+        },
+        {
+            "Code": "0110000",
+            "Value": "15"
+        }
+    ],
+    "Table 41: Table B.12: deciSecondsCode look-up table": [
+        {
+            "Code": "110",
+            "Value": "0"
+        },
+        {
+            "Code": "100",
+            "Value": "0.1"
+        },
+        {
+            "Code": "101",
+            "Value": "0.2"
+        },
+        {
+            "Code": "0110",
+            "Value": "0.3"
+        },
+        {
+            "Code": "0111",
+            "Value": "0.4"
+        },
+        {
+            "Code": "111",
+            "Value": "0.5"
+        },
+        {
+            "Code": "0100",
+            "Value": "0.6"
+        },
+        {
+            "Code": "0101",
+            "Value": "0.7"
+        },
+        {
+            "Code": "0010",
+            "Value": "0.8"
+        },
+        {
+            "Code": "0011",
+            "Value": "0.9"
+        },
+        {
+            "Code": "000",
+            "Value": "1"
+        }
+    ],
+    "Table 42: Table B.13: millisecondsCode look-up table": [
+        {
+            "Code": "10100",
+            "Value": "0.08"
+        },
+        {
+            "Code": "0010011",
+            "Value": "0.081"
+        },
+        {
+            "Code": "0010000",
+            "Value": "0.082"
+        },
+        {
+            "Code": "0010001",
+            "Value": "0.083"
+        },
+        {
+            "Code": "0010110",
+            "Value": "0.084"
+        },
+        {
+            "Code": "0010111",
+            "Value": "0.085"
+        },
+        {
+            "Code": "0010100",
+            "Value": "0.086"
+        },
+        {
+            "Code": "0010101",
+            "Value": "0.087"
+        },
+        {
+            "Code": "1101010",
+            "Value": "0.088"
+        },
+        {
+            "Code": "1101011",
+            "Value": "0.089"
+        },
+        {
+            "Code": "10101",
+            "Value": "0.09"
+        },
+        {
+            "Code": "1101000",
+            "Value": "0.091"
+        },
+        {
+            "Code": "1101001",
+            "Value": "0.092"
+        },
+        {
+            "Code": "1101110",
+            "Value": "0.093"
+        },
+        {
+            "Code": "1101111",
+            "Value": "0.094"
+        },
+        {
+            "Code": "1101100",
+            "Value": "0.095"
+        },
+        {
+            "Code": "1101101",
+            "Value": "0.096"
+        },
+        {
+            "Code": "1100010",
+            "Value": "0.097"
+        },
+        {
+            "Code": "1100011",
+            "Value": "0.098"
+        },
+        {
+            "Code": "110000",
+            "Value": "0.099"
+        }
+    ],
+    "Table 43: Table B.14: microsecondsCode look-up table": [
+        {
+            "Code": "110100000",
+            "Value": "0.00081"
+        },
+        {
+            "Code": "111010",
+            "Value": "0.00082"
+        },
+        {
+            "Code": "110100001",
+            "Value": "0.00083"
+        },
+        {
+            "Code": "111011",
+            "Value": "0.00084"
+        },
+        {
+            "Code": "110100110",
+            "Value": "0.00085"
+        },
+        {
+            "Code": "111000",
+            "Value": "0.00086"
+        },
+        {
+            "Code": "110100111",
+            "Value": "0.00087"
+        },
+        {
+            "Code": "111001",
+            "Value": "0.00088"
+        },
+        {
+            "Code": "110100100",
+            "Value": "0.00089"
+        },
+        {
+            "Code": "111110",
+            "Value": "0.00090"
+        },
+        {
+            "Code": "110100101",
+            "Value": "0.00091"
+        },
+        {
+            "Code": "111111",
+            "Value": "0.00092"
+        },
+        {
+            "Code": "110111010",
+            "Value": "0.00093"
+        },
+        {
+            "Code": "111100",
+            "Value": "0.00094"
+        },
+        {
+            "Code": "110111011",
+            "Value": "0.00095"
+        },
+        {
+            "Code": "111101",
+            "Value": "0.00096"
+        },
+        {
+            "Code": "110111000",
+            "Value": "0.00097"
+        },
+        {
+            "Code": "11000",
+            "Value": "0.00098"
+        },
+        {
+            "Code": "110111001",
+            "Value": "0.00099"
+        },
+        {
+            "Code": "",
+            "Value": ""
+        }
+    ],
+    "Table 44: Table B.15: secondsCode look-up table": [
+        {
+            "Code": "101001",
+            "Value": "25"
+        },
+        {
+            "Code": "0101001",
+            "Value": "26"
+        },
+        {
+            "Code": "0101000",
+            "Value": "27"
+        },
+        {
+            "Code": "1010001",
+            "Value": "28"
+        },
+        {
+            "Code": "10100001",
+            "Value": "29"
+        },
+        {
+            "Code": "10100000",
+            "Value": "30"
+        }
+    ],
+    "Table 45: Table B.16: metersCode look-up table": [
+        {
+            "Code": "11100010",
+            "Value": "80"
+        },
+        {
+            "Code": "11100011",
+            "Value": "81"
+        },
+        {
+            "Code": "11100000",
+            "Value": "82"
+        },
+        {
+            "Code": "11100001",
+            "Value": "83"
+        },
+        {
+            "Code": "11100110",
+            "Value": "84"
+        },
+        {
+            "Code": "11100111",
+            "Value": "85"
+        },
+        {
+            "Code": "11100100",
+            "Value": "86"
+        },
+        {
+            "Code": "11100101",
+            "Value": "87"
+        },
+        {
+            "Code": "11111010",
+            "Value": "88"
+        },
+        {
+            "Code": "11111011",
+            "Value": "89"
+        },
+        {
+            "Code": "11111000",
+            "Value": "90"
+        },
+        {
+            "Code": "11111001",
+            "Value": "91"
+        },
+        {
+            "Code": "11111110",
+            "Value": "92"
+        },
+        {
+            "Code": "11111111",
+            "Value": "93"
+        },
+        {
+            "Code": "11111100",
+            "Value": "94"
+        },
+        {
+            "Code": "11111101",
+            "Value": "95"
+        },
+        {
+            "Code": "11110010",
+            "Value": "96"
+        },
+        {
+            "Code": "11110011",
+            "Value": "97"
+        },
+        {
+            "Code": "11110000",
+            "Value": "98"
+        },
+        {
+            "Code": "11110001",
+            "Value": "99"
+        }
+    ],
+    "Table 46: Table B.17: hectometersCode look-up table": [
+        {
+            "Code": "000",
+            "Value": "0"
+        },
+        {
+            "Code": "001",
+            "Value": "1"
+        },
+        {
+            "Code": "110",
+            "Value": "2"
+        },
+        {
+            "Code": "111",
+            "Value": "3"
+        },
+        {
+            "Code": "100",
+            "Value": "4"
+        },
+        {
+            "Code": "101",
+            "Value": "5"
+        },
+        {
+            "Code": "0110",
+            "Value": "6"
+        },
+        {
+            "Code": "0111",
+            "Value": "7"
+        },
+        {
+            "Code": "0100",
+            "Value": "8"
+        },
+        {
+            "Code": "0101",
+            "Value": "9"
+        }
+    ],
+    "Table 47: Table B.18: kilometersCode table": [
+        {
+            "Code": "10",
+            "Value": "1"
+        },
+        {
+            "Code": "011",
+            "Value": "2"
+        },
+        {
+            "Code": "001",
+            "Value": "3"
+        },
+        {
+            "Code": "000",
+            "Value": "4"
+        },
+        {
+            "Code": "111",
+            "Value": "5"
+        },
+        {
+            "Code": "0101",
+            "Value": "6"
+        },
+        {
+            "Code": "0100",
+            "Value": "7"
+        },
+        {
+            "Code": "1101",
+            "Value": "8"
+        },
+        {
+            "Code": "11001",
+            "Value": "9"
+        },
+        {
+            "Code": "11000",
+            "Value": "10"
+        }
+    ],
+    "Table 48: Table B.19: centimetersCode look-up table": [
+        {
+            "Code": "100010",
+            "Value": "80"
+        },
+        {
+            "Code": "100011",
+            "Value": "81"
+        },
+        {
+            "Code": "100000",
+            "Value": "82"
+        },
+        {
+            "Code": "100001",
+            "Value": "83"
+        },
+        {
+            "Code": "100110",
+            "Value": "84"
+        },
+        {
+            "Code": "100111",
+            "Value": "85"
+        },
+        {
+            "Code": "100100",
+            "Value": "86"
+        },
+        {
+            "Code": "100101",
+            "Value": "87"
+        },
+        {
+            "Code": "1111010",
+            "Value": "88"
+        },
+        {
+            "Code": "1111011",
+            "Value": "89"
+        },
+        {
+            "Code": "1111000",
+            "Value": "90"
+        },
+        {
+            "Code": "1111001",
+            "Value": "91"
+        },
+        {
+            "Code": "1111110",
+            "Value": "92"
+        },
+        {
+            "Code": "1111111",
+            "Value": "93"
+        },
+        {
+            "Code": "1111100",
+            "Value": "94"
+        },
+        {
+            "Code": "1111101",
+            "Value": "95"
+        },
+        {
+            "Code": "111010",
+            "Value": "96"
+        },
+        {
+            "Code": "111011",
+            "Value": "97"
+        },
+        {
+            "Code": "111000",
+            "Value": "98"
+        },
+        {
+            "Code": "111001",
+            "Value": "99"
+        }
+    ],
+    "Table 49: Table B.20: frequencyCode look-up table": [
+        {
+            "Code": "010100",
+            "Value": "10000"
+        },
+        {
+            "Code": "010101",
+            "Value": "12500"
+        },
+        {
+            "Code": "0010",
+            "Value": "16000"
+        },
+        {
+            "Code": "10000",
+            "Value": "20000"
+        },
+        {
+            "Code": "10001010",
+            "Value": "25000"
+        },
+        {
+            "Code": "10001011",
+            "Value": "31500"
+        },
+        {
+            "Code": "1000100",
+            "Value": "40000"
+        }
+    ],
+    "Table 50: Table B.21: dsrCode look-up table": [
+        {
+            "Code": "010110",
+            "Value": "-30"
+        },
+        {
+            "Code": "011010010",
+            "Value": "-29"
+        },
+        {
+            "Code": "011010011",
+            "Value": "-28"
+        },
+        {
+            "Code": "011010000",
+            "Value": "-27"
+        },
+        {
+            "Code": "011010001",
+            "Value": "-26"
+        },
+        {
+            "Code": "011010110",
+            "Value": "-25"
+        },
+        {
+            "Code": "011010111",
+            "Value": "-24"
+        },
+        {
+            "Code": "011010100",
+            "Value": "-23"
+        },
+        {
+            "Code": "011010101",
+            "Value": "-22"
+        },
+        {
+            "Code": "010111010",
+            "Value": "-21"
+        },
+        {
+            "Code": "010111011",
+            "Value": "-20"
+        },
+        {
+            "Code": "010111000",
+            "Value": "-19"
+        },
+        {
+            "Code": "010111001",
+            "Value": "-18"
+        },
+        {
+            "Code": "010111110",
+            "Value": "-17"
+        },
+        {
+            "Code": "010111111",
+            "Value": "-16"
+        },
+        {
+            "Code": "010111100",
+            "Value": "-15"
+        },
+        {
+            "Code": "010111101",
+            "Value": "-14"
+        },
+        {
+            "Code": "10001010",
+            "Value": "-13"
+        },
+        {
+            "Code": "10001011",
+            "Value": "-12"
+        },
+        {
+            "Code": "10001000",
+            "Value": "-11"
+        },
+        {
+            "Code": "10001001",
+            "Value": "-10"
+        },
+        {
+            "Code": "",
+            "Value": ""
+        },
+        {
+            "Code": "",
+            "Value": ""
+        },
+        {
+            "Code": "",
+            "Value": ""
+        },
+        {
+            "Code": "",
+            "Value": ""
+        },
+        {
+            "Code": "",
+            "Value": ""
+        },
+        {
+            "Code": "",
+            "Value": ""
+        },
+        {
+            "Code": "",
+            "Value": ""
+        },
+        {
+            "Code": "",
+            "Value": ""
+        },
+        {
+            "Code": "",
+            "Value": ""
+        }
+    ],
+    "Table 51: Table B.22: absorptionCode look-up table": [
+        {
+            "Code": "110",
+            "Value": "0"
+        },
+        {
+            "Code": "100",
+            "Value": "0.1"
+        },
+        {
+            "Code": "101",
+            "Value": "0.2"
+        },
+        {
+            "Code": "0110",
+            "Value": "0.3"
+        },
+        {
+            "Code": "0111",
+            "Value": "0.4"
+        },
+        {
+            "Code": "111",
+            "Value": "0.5"
+        },
+        {
+            "Code": "0100",
+            "Value": "0.6"
+        },
+        {
+            "Code": "0101",
+            "Value": "0.7"
+        },
+        {
+            "Code": "0010",
+            "Value": "0.8"
+        },
+        {
+            "Code": "0011",
+            "Value": "0.9"
+        },
+        {
+            "Code": "000",
+            "Value": "1"
+        }
+    ],
+    "Table 52: Table B.23: Syntax of payloadDirectivity": [
+        {
+            "Syntax": "payloadDirectivity() {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "directivityCount =  GetCountOrIndex ();",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "for ( i = 0; i < directivityCount; i++ ) {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "directivityIndex =  GetCountOrIndex ();",
+            "Bits": "var",
+            "Mnemonic": "vlclbf"
+        },
+        {
+            "Syntax": "ia[directivityIndex] = getAngle();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "oa[directivityIndex] = getAngle();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "og[directivityIndex] = getOuterGain();",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        }
+    ],
+    "Table 53: Table B.24: Syntax of GetAngle": [
+        {
+            "Syntax": "angle = GetAngle() {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "angle = angleCode * 20.0;",
+            "Bits": "5",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "return angle;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        }
+    ],
+    "Table 54: Table B.25: Syntax of GetOuterGain": [
+        {
+            "Syntax": "outerGain = GetAngle() {",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "log_gain = -90.0 + outerGainCode * 3.0;",
+            "Bits": "5",
+            "Mnemonic": "bslbf"
+        },
+        {
+            "Syntax": "outerGain = 10^(log_gain/20);",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "return outerGain;",
+            "Bits": "",
+            "Mnemonic": ""
+        },
+        {
+            "Syntax": "}",
+            "Bits": "",
+            "Mnemonic": ""
+        }
+    ],
+    "Table 55: Table B.26: angleCode look-up table": [
+        {
+            "Code": "01111",
+            "Value": "15"
+        },
+        {
+            "Code": "10000",
+            "Value": "16"
+        },
+        {
+            "Code": "10001",
+            "Value": "17"
+        },
+        {
+            "Code": "10010",
+            "Value": "18"
+        },
+        {
+            "Code": "",
+            "Value": ""
+        }
+    ],
+    "Table 56: Table B.27: outerGainCode look-up table": [
+        {
+            "Code": "11110",
+            "Value": "30"
+        },
+        {
+            "Code": "",
+            "Value": ""
+        },
+        {
+            "Code": "",
+            "Value": ""
+        },
+        {
+            "Code": "",
+            "Value": ""
+        },
+        {
+            "Code": "",
+            "Value": ""
+        },
+        {
+            "Code": "",
+            "Value": ""
+        }
+    ],
+    "Table 57": [
+        {
+            "Change history": "New version"
+        },
+        {
+            "Change history": ""
+        },
+        {
+            "Change history": "0.0.1"
+        },
+        {
+            "Change history": "0.1.0"
+        },
+        {
+            "Change history": "0.2.0"
+        },
+        {
+            "Change history": "1.0.0"
+        },
+        {
+            "Change history": "18.0.0"
+        }
+    ]
+}
