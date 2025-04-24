@@ -1,0 +1,679 @@
+{
+    "document_name": "22990-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "This document studies if further enhancements to the 5G system are feasible or not for the support of Off-Network for Rail.\nThis document collects all Off-Network use cases from SA1 Study on Future Railway Mobile Communication System (FRMCS) in order to refine them and new use cases to support Off-Network for Rail in clause 5 for Communication Applications.\nThe potential new service requirements are also consolidated in clause 5.\nThe results of gap analysis identify limitations, missing requirements and existing functionalities supported by 3GPP in clause 5.\nFollowing the gap analysis, the assessment of technical feasibility, complexity and overhead of normative 3GPP adjustments to support limitations, missing requirements and functionalities as required by Off-Network for Rail is considered in clause 8.\nPotential requirements are then consolidated in clause 9.\nThe conclusions and recommendations are proposed in clause 10 to conclude if further enhancements to the 5G system are needed and feasible for the support of Off-Network for Rail.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document analyses Rail Off-Network use cases in order to derive potential requirements and investigate if normative adjustments are feasible or not.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 22.289: \"Mobile Communication System for Railways\".\n[3]\t3GPP TS 22.179: \"Mission Critical Push To Talk (MCPTT)\".\n[4]\t3GPP TS 22.280: \"Mission Critical Services Common Requirements (MCCoRe)\".\n[5]\t3GPP TS 22.281: \"Mission Critical Video services\".\n[6]\t3GPP TS 22.282: \"Mission Critical Data services\".\n[7]\t3GPP TS 22.261: \"Service requirements for the 5G system\".\n[8]\t3GPP TS 22.185: \"Service requirements for V2X services\".\n[9]\t3GPP TS 22.186: \"Enhancement of 3GPP support for V2X scenarios\".\n[10]\tUIC MG-7900: “Future Railway Mobile Communication System Use Cases”.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nexample: text used to clarify abstract rules by applying them literally.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\n<symbol>\t<Explanation>\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\n<ACRONYM>\t<Explanation>\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tOverview",
+            "description": "The present document is a 900 series Technical Report (TR) written by 3GPP TSG SA WG1 (SA1). Such a TR is not normative, i.e. cannot be used for implementation directly. It is primarily written by SA1 to summarise the high-level Off-Network communication needs of the railway community and to identify the corresponding requirements.\nRail Context\nFuture rail communication is an important part of the digitalization of rail operations. In addition to network-oriented communication, this also includes that without involving the network. GSM-R already used this and was called Direct Mode to describe the ability of a User Equipment to communicate directly with each other, independent of the network.\nOff-Network is a new terminology for the Rail sector, already introduced within 3GPP MCX specifications. UIC will promote the use of Off-Network to replace Direct Mode. But unfortunately, the terminology has slight differences in the meaning. For example, the Rail sector considers use of Off-Network communications where no network services are available either due to network failure (e.g. coverage, capacity, etc.) or due to lack of coverage (remote area's). In 3GPP MCX specifications, Off-Network communications can be setup even when network services are available.\nIn addition to voice communication, Off-Network communication will also increasingly be used for the exchange of train safety data in the future.\nExamples of use cases which require Direct Mode:\nAutomatic Train Protection (ATP) data communication\nAutomatic Train Operation (ATO) data communication\nCritical real-time video\nVirtual Coupling data communication\nVirtual Coupling data communication is the only use case where Off-Network is the intended mode of operation (also called “default mode”) even if the network is available.\nAll other use cases shall consider Network-Oriented mode as the default mode when the network is available (for the first and following attachments) and shifting to Off-Network when the network is not available.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tCommunication Applications related use cases",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This clause describes use cases of Communication Applications (e.g. Virtual Coupling data communication).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tTrackside Maintenance Warning System communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tDescription",
+                            "text_content": "Generally, trackside maintenance occurs during daily train operation. For safety reasons, trackside maintenance staff need to be informed about approaching trains entering the worksite. Thus, the intention of a trackside warning system is to inform trackside staff about the approaching train to keep rail capacity available while working on the tracks.\nThe trackside maintenance warning system consists of a single or multiple train detector entity(ies) (sensors, lookout man or interlocking station information + communication device), and a single or multiple warning entity(ies). The train detector entity is responsible to detect the approaching train and to trigger the alarm to the warning entities (as an option, the alarm should be triggered to a central/control entity also that relays the alarm to all warning entities). The warning entity indicates trackside workers about the approaching train on existing or adjacent tracks in form of visual signal e.g. flashing light and audio signal e.g. tone/horn. In large worksites or areas of high-speed trains, multiple warning entities can be spread out along the worksite to repeat the train approaching indication. In addition, the trackside maintenance staff will receive the train approaching indication on its FRMCS Equipment (i.e. wearable device).\nWhen the train has cleared the warning zone, the indication is withdrawn automatically by the warning system, by the interlocking or manually by an authorised operator located inside or at the edge of the warning zone.\nThe Trackside Maintenance Warning System (TMWS) in Figure 5.2.1-1 is a comprehensive system designed to alert maintenance personnel of potential trackside hazards. The system utilizes a combination of visual and auditory cues to provide real-time information about trackside conditions, such as trackside debris, trackside equipment, and trackside personnel. The system is designed to be user-friendly and easy to operate, with a user-friendly interface that allows maintenance personnel to quickly and efficiently identify and address trackside hazards. The system is also designed to be scalable and adaptable, with the ability to be expanded and updated as needed to meet the changing needs of the railway industry.\nFigure 5.2.1-1: Description of the Trackside Maintenance Warning System\nTrain detector entities and warning entities constitute the warning system that requires secured/safe continuous radio transmission of data between the sensors and the warning entities (e.g. keep alive messages for robustness and location information of entities/workers to differentiate between the tracks with a lateral distance accuracy of less than 1 meter). In addition, it encompasses the secured/safe radio transmission of the train approaching indication (i.e. start/stop transmitting the indication to the track workers) among the warning system and the FRMCS Equipment of the trackside staff. Train detection is outside scope of the warning system.\nDue to the fact that such a warning system deployment is temporary and on-network communication services are not always available at the track, the FRMCS System provides necessary off-network communication services for the trackside warning system. Trackside maintenance warning system in off-network mode is well suited for small, short-term construction sites but should also be relevant for large and long-term construction sites.\nThe maximum train speed in the warning zone is 500 kmph.\nNote: no speed limit applies in worksites in some Countries.\nCommunications between train detector entities located at both edges of the warning zone are not supported by the Trackside maintenance warning system.\nAs a deployment option, communication between the approaching train and the trackside warning system should be supported to e.g. avoid train detectors.\nFixed and moving worksites e.g. carrying out inspection work are supported by the Trackside maintenance warning system.\nOne-way (i.e. one train detector entity) and two-way (i.e. two train detector entities) traffic protection are supported by the Trackside maintenance warning system.\nThe minimum configuration of a warning system is:\n-\tOne train detector entity located closed or inside the worksite (i.e. detection by visual detection)\n-\tOne warning entity located inside the worksite\nThe maximum configuration of a warning system is:\n-\tTwo train detector entities located at both edges of the warning zone\n-\tThe maximum number of warning entities is 30, located inside the worksite\n-\tThe maximum number of workers (e.g. wearing warning devices through FRMCS Equipment) located inside the worksite is 50.\nDifferent groups of workers can work at the same time along the worksite.\nWorkers or work group can join/leave the worksite based on their locations.\nThe warning system shall be flexible enough to easily setup.\nEnergy efficiency of the warning system for battery-powered entities is not supported.\nConfiguration and control of the warning system shall be available locally.\nConfiguration and control of the warning system should be available through on-network communication.\nPositioning of the train detectors with accurate distance from the worksite is in the scope of the warning system with distance accuracy of +/- 1 meter.\nThe trackside maintenance warning system communication shall be reliable in tunnels, in bad weather conditions and in unfavourable geographical conditions.\nMultiple and flexible use of spectrum bands shall be supported.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tPre-conditions",
+                            "text_content": "The FRMCS Users as part of the warning system are authorised to initiate, transmit/receive data and terminate the trackside maintenance warning system communication.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tService Flows",
+                            "text_content": "The entitled FRMCS User initiate, transmit/receive and terminate the trackside maintenance warning system communication.\nA secure data communication application is used for the trackside maintenance warming system communication. The communication requests the QoS class which matches the application category of XXX within the FRMCS System.\nEditor’s note: applications categories applicable to Off-Network communications will be an outcome of the present study.\nThe arbitration is managed by the Arbitration application.\nEditor’s note: the Arbitration application use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\nThe metadata are recorded by the Data recording application.\nEditor’s note: the Data recording application use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\nThe communication is secured by the Assured data communication.\nEditor’s note: the Assured data communication use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\nThe identities, presence and functional addressing is managed by the Role management & presence.\nEditor’s note: the Role management & presence use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\nThe authorisation of communication is managed by the Authorisation of communication.\nEditor’s note: the Authorisation of communication use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\nThe authorisation of application is managed by the Authorisation of application.\nEditor’s note: the Authorisation of application use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\nThe location of the FRMCS Equipment is managed by the Location services.\nEditor’s note: the Location services use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.4\tPost-conditions",
+                            "text_content": "The entitled FRMCS User(s) as part of the warning system is able to securely exchange data in the appropriate area to intended FRMCS User(s).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "TS 22.280 [4], 22.179 [32], 22.281 [5] and 22.282 [6] have a set of specific requirements on Off-Network MCX Services (including MCCoRe and MCData Services for Off-Network).\nTS 22.289 [2] has a set of performance requirements for Off-Network communications for Rail to be refined based on outcomes of the present study.\nTS 22.261 [7] has no requirement on 5G Proximity Services.\nTS 22.185 [8] and 22.186 [9] have a set of specific requirements on 5G Proximity Services to support V2X communications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.6\tPotential New Requirements needed to support the use case and gap analysis",
+                            "text_content": "Editor’s note : the following potential new MCX requirements are relevant for SA6.\n[PR 5.2.6.1-1] The FRMCS System shall be able to initiate data communication for Trackside Maintenance Warning System to FRMCS Users upon a request from a functional identity entitled to initiate such communication.\n[PR 5.2.6.1-2] The FRMCS System shall be able to select FRMCS user(s) to deliver the Trackside Maintenance Warning System data based on their functional identity and location either periodically or as a onetime request.\n[PR 5.2.6.1-3] The FRMCS System shall allow FRMCS Users to join an ongoing data communication for Trackside Maintenance Warning System based on their functional identity and location.\n[PR 5.2.6.1-4] The FRMCS System shall allow FRMCS Users to leave an ongoing data communication for Trackside Maintenance Warning System based on their functional identity and location.\n[PR 5.2.6.1-5] The FRMCS System shall be able to terminate data communication for Trackside Maintenance Warning System upon a request received from a functional identity entitled to terminate the communication.\n[PR 5.2.6.1-6] The FRMCS System shall allow configuration (e.g. functional identities of maintenance staff and warning entities) and control of the Trackside Maintenance Warning System when the FRMCS Equipment are served by a 3GPP RAT.\n[PR 5.2.6.1-7] The FRMCS System shall allow configuration (e.g. functional identities of maintenance staff and warning entities) and control of the Trackside Maintenance Warning System when the FRMCS Equipment are not served by a 3GPP RAT.\nEditor’s note : the following potential new requirements are relevant for SA2 and RAN.\n[PR 5.2.6.2-1] The FRMCS System shall support the following traffic characteristics of data transfer for data communication for Trackside Maintenance Warning System:\nNote:\tThis table is intended to be aligned with TS 22.289 table 5.2.2-2 [2]\nTable 5.2.6.2-1: Traffic characteristics for Trackside Maintenance Warning System\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Note:\tThis table is intended to be aligned with TS 22.289 table 5.2.2-2 [2]",
+                                    "table number": 1,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tRemote Control of Engines communications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tDescription",
+                            "text_content": "It shall be possible for a remote driver to operate/control an engine (e.g. control movement and speed) of a vehicle typically for shunting operation in depots, shunting yards and/or for banking via a ground-based system or an on-board system located at opposite ends of the engine.\nThe figure depicts a remote control system for engines, illustrating the various components and their functions. The system includes a central control unit, a steering wheel, and a control panel, all connected to the engine through cables and wires. The central control unit is responsible for monitoring the engine's performance and controlling its speed and direction. The steering wheel allows the operator to adjust the engine's speed and direction, while the control panel provides real-time data and feedback to the operator. The system is designed to be user-friendly and intuitive, with a clear and easy-to-understand interface for the operator to operate the engine.\nFigure 5.3.1-1: Description of the Remote Control of Engines\nFigure 5.3.1-2: Pictures of the Remote Control of Engines in operation\nOnboard system should have a distinct and unambiguous audible or visual warning device that indicates to nearby personnel that the vehicle is under active remote control and subject to movement.\nRemote driver/ground-based entity and controlled engine(s)/onboard entity constitute the remote control of engines system that requires secured/safe continuous radio transmission of data between the remote driver and the controlled engine(s)s (e.g. keep alive messages for robustness, dynamic speed and brake control, report direction of travel and speed of the vehicle).\nA remote driver shall be able to control up to 10 engines but only one engine at a time. To supply sufficient power, a locomotive may consist of one or more engines operated from a single remote driver. In that case, commands from the remote control shall be synchronized. A single onboard system is used to control the engines. Only one communication from the remote driver to the onboard system is required.\nA remote driver having the capability to control more than one engine should have a mean to prevent simultaneous control over more than one locomotive.\nIf on-network mode is available, the remote driver shall be able to exchange data with the traffic control system to automatically operate the track switches to free the tracks before remotely operating the train.\nIf on-network mode is available, trains have to be geographically tracked by the traffic control system to prevent from traveling past predetermined boundaries (i.e. remote control zones to e.g. avoid other train movements).\nIf on-network mode is available, the system shall alert the traffic control system when a safety case happens to the remote driver (e.g. remote driver down) including the accurate location of the remote driver.\nAs an option, real-time video monitoring of tracks from onboard system in the cab or from trackside to the remote driver should be required simultaneously to the transmission of data for remote control of engines.\nThe remote control of engines is designed to be fail-safe so that if communication is lost the vehicle is brought to a stop automatically.\nDue to the fact that very low latency is required, and on-network communication services are not always available at the depot, the FRMCS System provides necessary off-network communication services for the remote control of engines even if on-network communication services are available.\nThe maximum speed of the train remotely controlled shall be restricted not to exceed 40 kmph.\nThe remote control of engines shall be flexible enough to easily setup.\nConfiguration and control of the remote control of engines shall be available locally.\nIt shall be possible for a remote driver to awaken an onboard entity.\nThe remote control of engines communication shall be reliable in depots, in tunnels, with clear line of sight.\nMultiple and flexible use of spectrum bands shall be supported.\nAs an option, the remote control application should be used to remotely control by maintenance staff other equipment such as overhead cranes in depots, see below:\nFigure 5.3.1-3: Alternative of Remote Control Application\nThe remote control of overhead cranes has the same requirements on communication characteristics as the remote control of engines.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Figure 5.3.1-1: Description of the Remote Control of Engines",
+                                    "table number": 2,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "As an option, the remote control application should be used to remotely control by maintenance staff other equipment such as overhead cranes in depots, see below:",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.3.2\tPre-conditions",
+                            "text_content": "The FRMCS User is authorised to initiate, transmit/receive data/video and terminate the remote control of engines communication.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.3\tService Flows",
+                            "text_content": "The entitled FRMCS User initiate, transmit/receive and terminate the remote control of engines communication.\nA secure data communication application is used for the remote control of engines communication. The communication requests the QoS class which matches the application category of XXX within the FRMCS System.\nEditor’s note: applications categories applicable to Off-Network communications will be an outcome of the present study.\nThe arbitration is managed by the Arbitration application.\nEditor’s note: the Arbitration application use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\nThe metadata are recorded by the Data recording application.\nEditor’s note: the Data recording application use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\nThe communication is secured by the Assured data communication.\nEditor’s note: the Assured data communication use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\nThe identities, presence and functional addressing is managed by the Role management & presence.\nEditor’s note: the Role management & presence use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\nThe authorisation of communication is managed by the Authorisation of communication.\nEditor’s note: the Authorisation of communication use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\nThe authorisation of application is managed by the Authorisation of application.\nEditor’s note: the Authorisation of application use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\nThe location of the FRMCS Equipment is managed by the Location services.\nEditor’s note: the Location services use case in Off-Network mode is FFS in the context of FS_OFFNETRAIL.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.4\tPost-conditions",
+                            "text_content": "The entitled FRMCS User is able to securely exchange data/video in the appropriate area to intended FRMCS User(s).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "TS 22.280 [4], 22.179 [3], 22.281 [5] and 22.282 [6] have a set of specific requirements on Off-Network MCX Services (including MCCoRe and MCData Services for Off-Network).\nTS 22.289 [2] has a set of performance requirements for Off-Network communications for Rail to be refined based on outcomes of the present study.\nTS 22.261 [7] has no requirement on 5G Proximity Services.\nTS 22.185 [8] and 22.186 [9] have a set of specific requirements on 5G Proximity Services to support V2X communications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "Editor’s note : the following potential new MCX requirements are relevant for SA6.\n[PR 5.3.6.1-1] The FRMCS System shall be able to initiate data communication for Remote Control of Engines to FRMCS User(s) upon a request from a functional identity entitled to initiate such communication.\n[PR 5.3.6.1-2] The FRMCS System shall be able to select one or multiple FRMCS user(s) to deliver the Remote Control of Engines data based on their functional identity and location either periodically or as a onetime request.\n[PR 5.3.6.1-3] The FRMCS System shall be able to limit the number of FRMCS User(s) to be selected to deliver the Remote Control of Engines data at any one time.\n[PR 5.3.6.1-4] An entitled FRMCS User shall be able to awake an FRMCS Equipment.\n[PR 5.3.6.1-5] The FRMCS System shall be able to terminate data communication for Remote Control of Engines upon a request received from a functional identity entitled to terminate the communication.\n[PR 5.3.6.1-6] The FRMCS System shall allow local configuration (e.g. functional identities of engines and remote drivers) and control of the Remote Control of Engines even when the FRMCS Equipment is served by a 3GPP RAT.\nEditor’s note : the following potential new requirements are relevant for SA2 and RAN.\n[PR 5.3.6.2-1] If the FRMCS Equipment is served by a 3GPP RAT, using NR for direct communication for Remote Control of Engines shall not interfere with on-network services.\n[PR 5.3.6.2-2] The FRMCS System shall support the following traffic characteristics for communication for Remote Control of Engines:\nNote:\tThis table is intended to be aligned with TS 22.289 table 5.2.2-2 [2]\nTable 5.3.6.2-1: Traffic characteristics for Remote Control of Engines\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Note:\tThis table is intended to be aligned with TS 22.289 table 5.2.2-2 [2]",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tTrain integrity monitoring data communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tDescription",
+                            "text_content": "The Train Integrity is an on-board function responsible for verifying the completeness of a train composition, while the train is in operation, to guarantee safety on tracks. Train integrity consists concretely in monitoring the status of the train’s tail to check that last wagon is regularly advancing in a coherent way in relation to the movement of the remaining train. The event of accidental train separation constitutes a serious danger for the next train, being a possible unexpected obstacle on the line, and therefore it needs to be promptly reported to the rail signalling system.\nThe main difference between train integrity monitoring in on-network mode and off-network mode consists in train integrity criteria that (1) is based on communication liveliness in on-network mode, whereas (2) requires verifying train tail coherent movement respect to front cabin, based on train tail odometry data (i.e. position, speed or acceleration of train tail and front cabin) in off-network mode. In fact, off-network communication between train tail and front cabin could be present also after train splitting with limited distance of separated waggons.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tPre-conditions",
+                            "text_content": "The On-board Train Integrity (OTI) entities (i.e. the FRMCS Users) are authorised to initiate Train Integrity Monitoring Data Communication.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.3\tService Flows",
+                            "text_content": "James is the lead driver of a cargo train of 1 000 metres long with 50 wagons that are not fully equipped with power supply.\nThe front cabin, the train tail wagon and, optionally some or all of the intermediate wagons to offer more flexibility in train composition, are equipped with On-board Train Integrity (OTI) entities connected to UEs in off-network mode at the lower part of the wagons (i.e. no direct line-of-sight between OTI entities). UEs may not be dedicated to On-board Train Integrity.\nJames powers on the front cabin before starting to operate the train. The OTI entities establish communications with each other and begin exchanging status (i.e. position, speed or acceleration information, and if supported wagon diagnostic information) via the connected UEs in off-network mode. The train integrity status is “Confirmed” (all wagons connected and operational). The Train Integrity system shall avoid pairing James’ OTI entities with other trains’ OTI entities in proximity.\nTrain Integrity data exchanges are encrypted to prevent eavesdropping.\nTrain Integrity data exchanges are recorded in case something bad happens (e.g. wrong pairing between OTI entities) and somebody wants to review the incident later.\nJames starts running its train to its destination on non-electrical lines where there is no network coverage. The Train Integrity Monitoring procedure restarts every 30 seconds (configurable timer) until the train stops running.\nThe figure depicts a train with its wheels and axles clearly visible, indicating that the train is in good condition and has not experienced any significant damage. The presence of the train's wheels and axles is crucial for the safe and efficient operation of the train, as it ensures that the train can move smoothly and safely. The image also shows the train's headlights and taillights, which are essential for visibility and signaling. Overall, the image provides a clear and detailed view of the train's condition, allowing for a better understanding of its overall condition and safety.\nFigure 5.4.3-1: Train integrity confirmed\nFor some reason, the train tail splits off of James’ train. The Train Integrity system detects the event and the train integrity status becomes “Lost”.\nIn the meantime, James is communicating with its train operating centre to prepare its next mission. The Train Integrity system informs on-board signalling system about train integrity status. The on-board signalling system takes priority on James ongoing communication to inform him thus allowing him to intervene rapidly and appropriately (e.g. reducing the speed and breaking the train in a safe location).\nThe figure depicts a train with its integrity lost, indicating a potential issue with the train's electrical or mechanical systems. This could be due to a malfunction, a defect in the train's components, or a failure in the train's control system. The presence of the train in the image suggests that the issue is of concern to the railway system, as it could potentially lead to accidents or disruptions in the transportation of passengers or goods.\nFigure 5.4.3-2: Train integrity lost\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.4\tPost-conditions",
+                            "text_content": "Train integrity status can be continuously exchanged between On-board Train Integrity (OTI) entities to warm accidental train separation and avoid any rail safety issue.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "TS 22.280 [4], 22.179 [3], 22.281 [5] and 22.282 [6] have a set of specific requirements on Off-Network MCX Services (including MCCoRe and MCData Services for Off-Network).\nTS 22.289 [2] has a set of performance requirements for Off-Network communications for Rail to be refined based on outcomes of the present study.\nTS 22.261 [7] has no requirement on 5G Proximity Services.\nTS 22.185 [8] and 22.186 [9] have a set of specific requirements on 5G Proximity Services to support V2X communications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.4.6.1-1] The FRMCS Service in Off-Network mode shall be able to initiate data communication for Train Integrity Monitoring to relevant FRMCS Users upon a request from a functional identity entitled to initiate such communication.\n[PR 5.4.6.1-2] The FRMCS Service in Off-Network mode shall provide the necessary communication means to support Train Integrity Monitoring.\n[PR 5.4.6.1-3] The FRMCS Service in Off-Network mode shall allow arbitration for Train Integrity Monitoring communication.\n[PR 5.4.6.1-4] The FRMCS Service in Off-Network mode shall allow FRMCS Users to join an ongoing data communication for Train Integrity Monitoring based on their functional identity and location.\n[PR 5.4.6.1-5] The FRMCS Service in Off-Network mode shall allow FRMCS Users to leave an ongoing data communication for Train Integrity Monitoring based on their functional identity and location.\n[PR 5.4.6.1-6] The FRMCS Service in Off-Network mode shall provide means to obtain and exchange odometry information of FRMCS Users (e.g. position, speed or acceleration).\n[PR 5.4.6.1-7] When an FRMCS Equipment in Off-Network mode is simultaneously used by multiple FRMCS Users, each of the FRMCS Users shall be individually addressable.\n[PR 5.4.6.1-8] The FRMCS Service in Off-Network mode shall be able to terminate data communication for Train Integrity Monitoring upon a request received from a functional identity entitled to terminate such communication.\n[PR 5.4.6.1-9] The FRMCS Service in Off-Network mode shall provide the means to record Train Integrity Monitoring data communication and communication related information (e.g. FRMCS Users involved) to an external system.\n[PR 5.4.6.1-10] The FRMCS Service Security Framework shall provide mechanisms in Off-Network mode to cover identity management, authentication, authorisation and data protection in respect to Train Integrity Monitoring.\n[PR 5.4.6.2-1] The FRMCS Equipment power consumption in Off-Network mode shall be minimised.\n[PR 5.4.6.2-2] The FRMCS Service in Off-Network mode shall support the following traffic characteristics of data transfer for direct data communication for Train Integrity Monitoring:\nNote:\tThis table is intended to be aligned with TS 22.289 table 5.2.2-2 [2]\nTable 5.4.6.2-1: Traffic characteristics for Train Integrity Monitoring\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Note:\tThis table is intended to be aligned with TS 22.289 table 5.2.2-2 [2]",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.5\tShunting communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.5.1\tDescription",
+                            "text_content": "Changing the locomotive of a train, coupling/uncoupling wagons, changing the order in which wagons are arranged in a train are all kinds of shunting movements. Shunting movements can be differentiated from other regular movements: this main point of differentiation is that almost all shunting is done within a single station or a shunting yard.\nShunting movements between shunting members can be ordered by radio, in on-network or in off-network modes. This section describes shunting communications in off-network mode where a ground user e.g. controller/dispatcher is not necessary.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.2\tPre-conditions",
+                            "text_content": "The Shunting members (i.e. the FRMCS Users) of the shunting team #1 (i.e. Shunting Service Area #1 and Shunting Team ID #1) are authorised to initiate Shunting Communications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.3\tService Flows",
+                            "text_content": "A cargo train has to prepared by coupling the main locomotive to the rest of the wagons. A Shunting Service Area is defined to avoid any other train movements in the same area. There is no network coverage in this Shunting service area.\nBob has been assigned the role of the shunting leader of a shunting team in charge of this operation. Bob prepares its mission together with James, which has been assigned the role of the shunting driver. The shunting team members are all equipped with a Shunting device connected to a UE. They are operating their UEs in off-network mode and have selected their role and shunting service area to enable voice and data exchanges between the shunting members. The Shunting group voice and data communications are encrypted to prevent eavesdropping.\nBob exchanges with the shunting members secured and reliable information required to perform safe shunting movements of trains, (e.g. issuing route requests, route confirmation, giving driving commands, confirmation for driving commands, etc.). Bob receives confirmation upon successful reception of the message for all shunting members.\nService Flow#1 (shunting movements ordered by human): James, located in the front cabin (indoor) and without direct line-of-sight of the track, pushes a group of wagons (i.e. going backwards), continuously and securely ordered by Bob, located at train tail (outdoor or indoor) as a lookout man. To do so, Bob enables an assured safety link function that periodically send tones or keep alive messages to the shunting members. Bob may shout orders periodically into his Shunting device. Bob’s orders take priority on the periodic assured safety link tones and every team member is able to hear him.\nIf the voice/data can not be exchanged for more than 2 seconds (configurable time), every member of the shunting team is informed, thus allowing them to intervene rapidly and appropriately (e.g. James breaking the train).\nWhen Bob orders James to stop its train, he disables the assured safety link function and invites Dave, a member of another shunting team located on the trackside, to be part of their shunting team to couple James’ train to the rest of the wagons. Shunting team members of both teams are now part of the same shunting team.\nDave, James and Bob are simultaneously talking to each other to couple James’ train safely.\nDave notices that another worker is in the area and, to avoid collision with James’ train shouts a warning into his UE. Dave’s warning takes priority, and member of the shunting team is able to hear him to intervene rapidly and appropriately (e.g. James breaking the train).\nShunting communications are recorded (e.g. shunting members composition) in case something bad happens and somebody wants to review the incident later.\nService Flow#2 (shunting movements self-controlled using video by the driver): James, located in the front cabin (indoor) and without direct line-of-sight of the track, pushes a group of wagons (i.e. going backwards), continuously and securely monitoring the track using video communication with camera connected to a UE located at the train tail.\nIf the video can not be exchanged for more than 2 seconds (configurable time), James is informed, thus allowing him to intervene rapidly and appropriately (e.g. James braking the train).\nShunting video communications are recorded (including metadata e.g. timestamp, originator, receiver, roles) in case something bad happens and somebody wants to review the incident later.\nFigure 5 illustrates various examples of shunting communication signals, highlighting the importance of proper signal routing and management in 5G networks.\nFigure 5.5.3-1: Examples of Shunting communications\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.4\tPost-conditions",
+                            "text_content": "Shunting movement orders can be continuously exchanged between the Shunting members of the shunting team to avoid any rail safety issue while shunting.\nShunting videos can be continuously exchanged between the Driver and the shunting cameras to avoid any rail safety issue while shunting.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "TS 22.280 [4], 22.179 [3], 22.281 [5] and 22.282 [6] have a set of specific requirements on Off-Network MCX Services (including MCCoRe and MCData Services for Off-Network).\nTS 22.289 [2] has a set of performance requirements for Off-Network communications for Rail to be refined based on outcomes of the present study.\nTS 22.261 [7] has no requirement on 5G Proximity Services.\nTS 22.185 [8] and 22.186 [9] have a set of specific requirements on 5G Proximity Services to support V2X communications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.5.6.1-1] The FRMCS Service in Off-Network mode shall be able to initiate voice, data and video communication for Shunting movements to relevant FRMCS Users upon a request from a functional identity entitled to initiate such communication.\n[PR 5.5.6.1-2] The FRMCS Service in Off-Network mode shall provide the necessary communication means to support Shunting.\n[PR 5.5.6.1-3] The FRMCS Service in Off-Network mode shall allow the multi-talker control.\n[PR 5.5.6.1-4] The FRMCS Service in Off-Network mode shall provide the means to enable/disable continuous monitoring of the communication links to all involved FRMCS Users of a specific voice, data or video group communication.\n[PR 5.5.6.1-5] An authorised FRMCS User in Off-Network mode shall be able to enable/disable continuous monitoring of the communication links to all involved FRMCS Users of a specific voice, data or video group communication.\n[PR 5.5.6.1-6] If a degradation or loss of a communication link is detected, the remaining FRMCS Users shall be informed. The ongoing communications among the remaining FRMCS Users shall continue.\n[PR 5.5.6.1-7] The FRMCS Service in Off-Network mode shall allow arbitration for Shunting communication.\n[PR 5.5.6.1-8] The FRMCS Service in Off-Network mode shall allow FRMCS Users to join an ongoing voice and data communication for Shunting based on their functional identity and location.\n[PR 5.5.6.1-9] An authorised FRMCS User shall be able to invite another FRMCS User to join a voice communication, based on his functional identity, FRMCS User Identity, or FRMCS Equipment Identity, even if his already involved in another active communication.\n[PR 5.5.6.1-10] When accepting a communication invitation, in case the FRMCS User has an active voice communication, the FRMCS User shall be able to leave, terminate or merge the voice communication(s).\n[PR 5.5.6.1-11] The FRMCS User sending the invitation shall be informed if the targeted FRMCS User receives, accepts, rejects or ignores the invitation.\n[PR 5.5.6.1-12] All involved FRMCS User shall be informed when group communication status of an FRMCS user changes e.g. join, leave, on hold, terminate, invite, merge.\n[PR 5.5.6.1-13] The FRMCS Service in Off-Network mode shall allow FRMCS Users to leave an ongoing voice and data communication for Shunting based on their functional identity and location.\n[PR 5.5.6.1-14] The FRMCS Service in Off-Network mode shall be able to terminate voice, data and video communication for Shunting upon a request received from a functional identity entitled to terminate such communication.\n[PR 5.5.6.1-15] The FRMCS Service in Off-Network mode shall provide the means to record Shunting communication and communication related information (e.g. FRMCS Users involved and their roles) to an external system.\n[PR 5.5.6.1-16] The FRMCS Service Security Framework shall provide mechanisms in Off-Network mode to cover identity management, authentication, authorisation and data protection in respect to Shunting.\n[PR 5.5.6.2-1] The FRMCS Service in Off-Network mode shall not interfere with FRMCS Services in On-Network mode.\n[PR 5.5.6.2-2] The FRMCS Service in Off-Network mode shall support the following traffic characteristics of voice, data and video transfer for direct communication for Shunting:\nNote: this table is intended to be aligned with TS 22.289 table 5.2.2-2 [2]\nTable 5.5.6.2-1: Traffic characteristics for Shunting communications\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Note: this table is intended to be aligned with TS 22.289 table 5.2.2-2 [2]",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.6\tTrain ready for departure communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.6.1\tDescription",
+                            "text_content": "Station departure and the platform/train interface is one of the biggest risk areas in railway operations today.\nRail operators implement various different processes for managing station departure with similar objective of ensuring that passengers are safely onboard the train and that the train can safely depart the platform.\nTrain departure communications includes (1) driver to controller communication and (2) conductor to driver communication. Train ready message sent from the driver to the controller is typically used in main railway stations, in on-network mode. Train ready for departure from a platform involving platform staff (e.g. chief conductor) and driver sent from the platform staff to the driver, is typically used in remote station e.g. rural area, in off-network mode. Another train ready for departure communication scenario in remote stations involves the driver and platform camera(s) to check closing doors and that no passengers are left on the platform without any platform staff.\nThis section describes Train ready for departure communications in off-network mode. No service handover between on-network and off-network modes is foreseen.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.2\tPre-conditions",
+                            "text_content": "The Chief conductor (i.e. the FRMCS User) is authorised to initiate Train ready for departure Communications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.3\tService Flows",
+                            "text_content": "Monday, 9:30 in the morning. James has been assigned the role of the lead driver of train #12345. His train #12345 stands in platform A, located in a rural railway station where there is no network coverage. The train is ready for boarding. His train should leave at 10:00. James is located in the front cabin (indoor).\nService Flow#1 (driver and platform staff): Bob has been assigned the role of the chief conductor in charge of ensuring a safe boarding for passengers. He stands in platform A, near the train tail.\nJames and Bob are equipped with devices connected to a UE. They are operating their UEs in off-network mode and have selected their role and platform area to enable data exchanges between each other. The data communications are encrypted to prevent eavesdropping.\nPassengers are boarding.\n09:59. Train is ready for departure but Bob notes that a Family is running not to miss train #12345. 10:03. All passengers are onboard. Doors are closing. When all doors are safely closed, Bob sends a secured and reliable “Train #12345 is ready for departure” message to James. Bob receives confirmation upon successful reception of the message by James. James acknowledges the message and starts running his train.\nTrain ready for departure message is recorded (e.g. timestamp, originator, receiver, roles, content) in case something bad happens and somebody wants to review the incident later.\nService Flow#2 (driver and platform camera(s)): two fixed cameras are located on platform A. Camera C1 is located one near the train tail, camera C2 is located at the front cabin. Each camera is connected to a UE operating in off-network mode. Each camera has automatically selected its role and platform area (via static or dynamic configuration) to enable video exchanges with the driver’s UE. The video communication is encrypted to prevent eavesdropping.\nPassengers are boarding.\n09:59. Train is ready for departure, but a Family is running not to miss train #12345. 10:03. All passengers are onboard. James enables video from camera C1 to check passengers on the platform. Then James switch video from camera C1 to C2. James may also enable video from both cameras C1 and C2. Doors are closing. When all doors are safely closed, James disable videos from cameras C1 and C2. James starts running his train.\nTrain ready for departure video is recorded (including metadata e.g. timestamp, originator, receiver) in case something bad happens and somebody wants to review the incident later.\nThe figure depicts a train in the process of being prepared for departure, with various communication equipment and signaling systems highlighted.\nFigure 5.6.3-1: Train ready for departure communications\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.4\tPost-conditions",
+                            "text_content": "Train ready for departure messages are safely exchanged between the Chief Conductor and the Lead Driver to avoid any safety related issue for passengers before departure.\nTrain ready for departure videos are safely exchanged between the Chief Conductor and the Fixed Cameras to avoid any safety related issue for passengers before departure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "TS 22.280 [4], 22.179 [3], 22.281 [5] and 22.282 [6] have a set of specific requirements on Off-Network MCX Services (including MCCoRe and MCData Services for Off-Network).\nTS 22.289 [2] has a set of performance requirements for Off-Network communications for Rail to be refined based on outcomes of the present study.\nTS 22.261 [7] has no requirement on 5G Proximity Services.\nTS 22.185 [8] and 22.186 [9] have a set of specific requirements on 5G Proximity Services to support V2X communications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.6.6.1-1] The FRMCS Service in Off-Network mode shall be able to initiate data and video communications for Train Ready for Departure to relevant FRMCS User upon a request from a functional identity entitled to initiate such communication.\n[PR 5.6.6.1-2] The FRMCS Service in Off-Network mode shall provide the necessary communication means to support Train Ready for Departure.\n[PR 5.6.6.1-3] The FRMCS Service in Off-Network mode shall allow arbitration for Train Ready for Departure communication.\n[PR 5.6.6.1-4] The FRMCS Service in Off-Network mode shall be able to terminate data and video communications for Train Ready for Departure upon a request received from a functional identity entitled to terminate such communication.\n[PR 5.6.6.1-5] The FRMCS Service in Off-Network mode shall provide the means to record Train Ready for Departure communication and communication related information (e.g. FRMCS Users involved and their roles) to an external system.\n[PR 5.6.6.1-6] The FRMCS Service Security Framework shall provide mechanisms in Off-Network mode to cover identity management, authentication, authorisation and data protection in respect to Train Ready for Departure.\n[PR 5.6.6.2-1] The FRMCS Service in Off-Network mode shall support the following traffic characteristics of data and video transfer for direct communication for Train Ready for Departure:\nNote:\tThis table is intended to be aligned with TS 22.289 table 5.2.2-2 [2]\nTable 5.6.6.2-1: Traffic characteristics for Train Ready for Departure communication\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Note:\tThis table is intended to be aligned with TS 22.289 table 5.2.2-2 [2]",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.7\tAutonomous Train Control and Operation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.7.1\tDescription",
+                            "text_content": "This section describes autonomous train control and operation in off-network mode, where no network is available. In legacy train control systems, trains typically decide its movement by interacting with trackside devices (e.g. track circuits, balise, radio block system) or communicating with a trackside server. If a train can autonomously figure out the positions of the nearby trains and decide its movement authority, the transport capacity of the railway will be enhanced. In the autonomous train control system whose service concept is aligned to the eV2X service, trains share its position by exchanging the information without any centralized server, and each train decides how far it can be authorized to move based on the position information. It is expected that main application area will be mass transportation such as subway.\nThe figure depicts a 7.1-1 autonomous train control scenario, illustrating the various components and their interactions. The train is depicted in a dynamic pose, with the driver's cab visible at the top, while the train's wheels and other components are shown in a more detailed view. The figure includes a representation of the train's control system, with various sensors and actuators, as well as a representation of the train's onboard computer. The figure also includes a representation of the train's braking system, with the brake lights and brake pads clearly visible. The figure is a visual representation of the complex and interconnected system that makes up an autonomous train control system.\nFigure 5.7.1-1 An example of autonomous train control scenario\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.2\tPre-conditions",
+                            "text_content": "1. Trains know the overall schedule, and the user equipment of each train is connected to the user equipment of the other trains operating at the same time in on-network mode. If on-network mode is not available, the user equipment is connected to the user equipment of other trains in proximity using off-network mode.\n2. A user equipment of each train is able to establish a connection with the object controller for the nearby point machine, where the point machine is a trackside element.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.3\tService Flows",
+                            "text_content": "1. A train gets started and try registration to the currently operating trains. As a result of the registration, every train positions are known before running.\n2. The train gets the responses of the registration from the other trains and estimates the positions of the trains.\n3. The train decides its movement authority based on the position information and starts moving.\n4. The train positions in the corresponding areas are shared through broadcasting or multicasting. Here, the train position information is updated in a periodic manner.\n5. Based on the periodically updated information, each train updates its movement authority and conduct train control based on it.\n6. If the train needs to connect to the nearby point machine, the train sends switch command with a reliable mechanism in the application layer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.4\tPost-conditions",
+                            "text_content": "The autonomous train control is achieved by activating movement authority for each train or activating object controller for nearby point machine.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "The potential new requirement in the followings have been considered only in TR 22.989 V18.0.0.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.7.6.1-1] The FRMCS System shall provide a reliable mechanism to discover a FRMCS UEs in proximity in off-network.\n[PR 5.7.6.1-2] The FRMCS System shall be able to share the train position periodically from one single UE to multiple FRMCS UEs in proximity for train control in off-network.\n[PR 5.7.6.1-3] The FRMCS System shall be able to transmit train control data originated from one FRMCS UE to another FRMCS UE in off-network.\n[PR 5.7.6.2-1] The FRMCS Service in Off-Network mode shall support the following traffic characteristics of data transfer for direct communication for autonomous train control and operation:\nTable 5.7.6.2-1: Traffic characteristics for autonomous train control and operation communication – off network communication\nNote:\tThis table is intended to be included in Section 6.2.2.3-1 of TS 22.289 [2]\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "[PR 5.7.6.2-1] The FRMCS Service in Off-Network mode shall support the following traffic characteristics of data transfer for direct communication for autonomous train control and operation:",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.8\tVirtual Coupling",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.8.1\tDescription",
+                            "text_content": "One of the important missions that the future railway service should achieve is to increase its transport capacity. A straight-forward solution is to minimize the distance between successive trains so that train interval is reduced. It is difficult to do so in a legacy train control system, because the successive trains need to have distance as much as a safety margin, which should be larger than the full braking distance.\nThe figure depicts a simplified representation of a safety-critical system, specifically focusing on the sharing of acceleration and braking control information to shorten the safety margin. This system is designed to ensure that the vehicle maintains a safe speed and deceleration, reducing the risk of accidents. The figure shows the flow of information between different components, such as the accelerator and brake pedal, and the steering wheel, to ensure that the vehicle's control system can react quickly and effectively to changing conditions. The figure also highlights the importance of communication between the different components, as well as the need for redundancy to ensure the system's reliability. Overall, the figure provides a clear and concise representation of the safety-critical system's design and operation.\nFigure 5.8.1-2 Sharing acceleration and braking control information to shorten safety margin\nThis safety margin can be further shortened if the successive trains share control information (acceleration and braking) and apply it to its own train control. As shown in Figure 5.8.1-1, the safety margin can be shortened if the following train (T1) immediately knows that the leading train (T2) starts braking and also triggers braking. This is the fundamental principle and the main purpose of virtual coupling. Figure 5.8.2 shows the basic concept of the virtual coupling scenario. Multiple trains which are in close distance move together as they are physically coupled. As the distance between two trains gets smaller, the control information of a train should be delivered to the other in shorter time.\nThe figure depicts a virtual coupling scenario in a 5G network, illustrating the concept of virtual coupling between base stations (BSs) and users. The diagram shows the various components involved, such as the base station (BS), user equipment (UE), and scatterers. Virtual coupling is a technique used to improve the performance of 5G networks by allowing the BSs to share resources with the UE, reducing the need for additional infrastructure. The figure highlights the importance of proper design and implementation of virtual coupling in 5G networks to ensure optimal performance and reliability.\nFigure 5.8.1-2 The concept of virtual coupling scenario\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.2\tPre-conditions",
+                            "text_content": "1. The leading and following trains in operation recognize each other and have just got configured to be coupled virtually. Here, the recognition is achieved by on-network or off-network.\n2. The user equipments for train control support device to device communications in the perspective of transport layer.\nThe figure depicts the overall procedure of virtual coupling in a 5G network, illustrating the steps involved in establishing a virtual link between two nodes. The figure shows the use of optical fibers, which are essential for transmitting data over long distances. The figure also highlights the importance of proper alignment and alignment of the optical fibers to ensure reliable communication.\nFigure 5.8.1-3 Overall procedure of virtual coupling\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.3\tService Flows",
+                            "text_content": "1. The following train begins to approach to the leading train by exchanging the information about their position. The two trains, which are far enough to allow a certain amount of end-to-end latency, are initially connected through the on-network.\n2. As the following train approaches to the leading train, they start exchanging the information about movement control and each train then controls itself while considering the control of the other train. The two trains, which are still far enough to allow a certain amount of end-to-end latency, keep the connection through the on-network.\n3. As the following train further approaches to the leading train, the safe braking distance gets shorter and they are required to have a connection of which end-to-end latency is very short for delicate train control. At this moment, they seamlessly switch the connection from the on-network to off-network. Each train can maintain the on-network connection, as an auxiliary connection, as long as it is within the coverage.\n4. As the following train even further approaches the leading train so that the distance between the tail-end of the leading train and the front-end of the following train becomes shorter than the safe braking distance, the off-network connection requires extremely high reliability as well as short end-to-end latency to prevent potential accidents. In this case, two trains can be regarded as if they are physically coupled, communicating via wireless train backbone (WLTB).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.4\tPost-conditions",
+                            "text_content": "For safety train operation, integrity needs to be checked for train control information delivery in the perspective of application or transport layer. Any error on integrity check shall be immediately reported to the train control application.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "The potential new requirement in the followings have been considered only in TR 22.989 V18.0.0.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "Note:\tOff-network is used even when network coverage is available.\n[PR 5.8.6.1-1] The FRMCS system shall be able to provide integrity protection for off-network train control communication.\n[PR 5.8.6.1-2] The FRMCS System shall support seamless service continuity between on-network based connection and off-network based connection\n[PR 5.8.6.1-3] The FRMCS System shall support UEs capable of utilizing off-network and on-network communications at the same time.\n[PR 5.8.6.1-4] The FRMCS System shall provide a mechanism to change the QoS requirements of the off-network communication adaptively.\n[PR 5.8.6.2-1] The FRMCS system shall be able to provide integrity protection for off-network train control communication\n[PR 5.8.6.2-2] The FRMCS Service in Off-Network mode shall support the following traffic characteristics of data transfer for direct communication for virtual coupling:\nNote:\tThis table is intended to be included in Section 6.2.2.3-1 of TS 22.289 [2]\nTable 5.8.6.2-1: Traffic characteristics for Virtual coupling communication\n[PR 5.8.6.2-3] The FRMCS System shall establish an immediate communication session between entities for virtual coupling.\nEditor’s note: The requirement above is FFS\n[PR 5.8.6.2-4] The FRMCS System shall support seamless service continuity between on-network based connection and off-network based connection.\nEditor’s note: The requirement above is FFS\n[PR 5.8.6.2-5] The FRMCS System shall support UEs capable of utilizing off-network and on-network communications at the same time.\nEditor’s note: The requirement above is FFS\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Note:\tThis table is intended to be included in Section 6.2.2.3-1 of TS 22.289 [2]",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.9\tMonitoring and control of critical infrastructure communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.9.1\tDescription",
+                            "text_content": "Monitoring and controlling critical infrastructure such as train detection, signals and indicators, movable infrastructure, level crossing elements, including barrier controls, vehicle sensors, lighting controls and alarms, are essential part of operating trains in areas where no network is available e.g. rural areas, harbours.\nMonitoring and controlling critical infrastructure can be done by radio, in on-network or in off-network modes. This section describes monitoring and control of critical infrastructure communications in off-network mode, where no network is available. No service handover between on-network and off-network modes is foreseen.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.9.2\tPre-conditions",
+                            "text_content": "The Chief conductor (i.e. the FRMCS User) is authorised to initiate Monitoring or controlling critical infrastructure communications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.9.3\tService Flows",
+                            "text_content": "Monday, 9:30 in the morning. James has been assigned the role of the lead driver of train #12345. His train #12345 stands in platform A, located in a Harbour railway station where there is no network coverage. The train is ready for boarding and starts running at 10:00. James is located in the front cabin (indoor).\nBefore leaving the Harbour area, James has to run its train through many level crossings. In order to run safely the level crossing (LX), James has to detect vehicles in the level crossing area using fixed video camera of this area.\nJames is equipped with an onboard device with display connected to a UE. LX surveillance camera is also connected to a UE. James and the camera are operating their UEs in off-network mode and have selected their role to enable video exchanges. The video communications are encrypted to prevent eavesdropping.\nWhen James approaching the LX, James enables video from LX surveillance camera to detect vehicles. James primarily relies on the remote LX surveillance camera vision to identify obstacles (e.g. vehicles) and to make decision on whether to enter the LX area. When no vehicles are detected, James is allowed to run its train through the LX area. When the train has left the LX area, James disable videos from LX surveillance camera. James continues running his train to next LX.\nThe figure depicts a network monitoring and control system for critical infrastructure communication, illustrating the various components and their functions.\nFigure 5.9.3-1: Monitoring and control of critical infrastructure communications\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.9.4\tPost-conditions",
+                            "text_content": "Monitoring and controlling critical infrastructure videos are safely exchanged between the Chief Conductor and the Fixed Cameras to avoid any safety related issue at level crossings.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.9.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "TS 22.280 [4], 22.179 [3], 22.281 [5] and 22.282 [6] have a set of specific requirements on Off-Network MCX Services (including MCCoRe and MCData Services for Off-Network).\nTS 22.289 [2] has a set of performance requirements for Off-Network communications for Rail to be refined based on outcomes of the present study.\nTS 22.261 [7] has no requirement on 5G Proximity Services.\nTS 22.185 [8] and 22.186 [9] have a set of specific requirements on 5G Proximity Services to support V2X communications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.9.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.9.6.1-1] The FRMCS Service in Off-Network mode shall be able to initiate video communications for Monitoring and controlling critical infrastructure to relevant FRMCS User upon a request from a functional identity entitled to initiate such communication.\n[PR 5.9.6.1-2] The FRMCS Service in Off-Network mode shall provide the necessary communication means to support Monitoring and controlling critical infrastructure.\n[PR 5.9.6.1-3] The FRMCS Service in Off-Network mode shall allow arbitration for Monitoring and controlling critical infrastructure.\n[PR 5.9.6.1-4] The FRMCS Service in Off-Network mode shall be able to terminate video communications for Monitoring and controlling critical infrastructure upon a request received from a functional identity entitled to terminate such communication.\n[PR 5.9.6.1-5] The FRMCS Service in Off-Network mode shall provide the means to record Monitoring and controlling critical infrastructure communication and communication related information (e.g. FRMCS Users involved and their roles) to an external system.\n[PR 5.9.6.1-6] The FRMCS Service Security Framework shall provide mechanisms in Off-Network mode to cover identity management, authentication, authorisation and data protection in respect to Monitoring and controlling critical infrastructure.\n[PR 5.9.6.2-1] The FRMCS Service in Off-Network mode shall support the following traffic characteristics of video transfer for direct communication for Monitoring and controlling critical infrastructure:\nNote: this table is intended to be aligned with TS 22.289 table 5.2.2-2 [2]\nTable 5.9.6.2-1: Traffic characteristics for Monitoring and controlling critical infrastructure communication\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Note: this table is intended to be aligned with TS 22.289 table 5.2.2-2 [2]",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tVoid.",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tVoid.",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tVoid.",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tVoid.",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tIdentified issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This section summarizes open points identified by SA1 as part of the gap analysis of the use cases captured above, e.g. about limitations, missing requirements and gaps in existing functionalities supported by 3GPP.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.2\tIdentified issue 1: Communication range",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.2.1\tDescription",
+                            "text_content": "Some of the use cases described in clauses 5, 6 and 7 of the present document (e.g. the Trackside Maintenance Warning System communication) require communication range of up to several kilometres (e.g. 8.5 km) along rail tracks including tunnels, bad weather conditions, unfavourable geographical conditions, and non-Line-of-Sight (NLOS) between UEs i.e. obstructions.\nCommunication range is to be understood as the maximum distance between users operating UEs without performance degradations. Users may be stationary, pedestrians or in motion up to 500 kmph.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.2.2\tLimitations, missing requirements and gaps",
+                            "text_content": "<Describe limitations, missing requirements and gaps in existing functionalities supported by 3GPP, identified during this study.>\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "8.3\tIdentified issue 2: MCX Support",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.x.1\tDescription",
+                            "text_content": "Some of the use cases described in clauses 5, 6 and 7 of the present document (refer to subclauses describing requirements to the Service layer) require support of MCX Services.\nThe following MCX capabilities should be supported by Off-Network for Rail.\nDue to the nature of Off-Network communication, it is expected that the functionality of those MCX capabilities might be reduced compared to On-Network communication.\nMCX Service common capabilities:\nGroup communications,\nPrivate communications,\nLate Communication Entry,\nFunctional Alias,\nLocation Service,\nE2E Security,\nUser Authentication and Service Authorization,\nService Arbitration,\nQoS and Priority,\nPerformance Monitoring and Exposure Service,\nRecording Metadata,\nTransition from Off-Network to On-Network (and vice-versa) (i.e. Service Continuity),\nService Configuration (i.e. local + central when transiting from Off-Network to On-Network),\nMCX Service Types:\nMCPTT,\nMCData,\nMCVideo.\nMCX Service capabilities per Service Type:\nMCPTT\nFloor Control,\nMulti-Talker Control.\nMCData\nSDS,\nIP Connectivity.\nMCVideo\nVideo Streams.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.x.2\tLimitations, missing requirements and gaps",
+                            "text_content": "<Describe limitations, missing requirements and gaps in existing functionalities supported by 3GPP, identified during this study.>\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "8.x\tIdentified issue y: <Identified issue title>",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.x.1\tDescription",
+                            "text_content": "<Describe the issue (i.e. problem statement).>\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.x.2\tLimitations, missing requirements and gaps",
+                            "text_content": "<Describe limitations, missing requirements and gaps in existing functionalities supported by 3GPP, identified during this study.>\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "9\tConsolidated potential requirements",
+            "description": "\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "10\tConclusion and recommendations",
+            "description": "This technical report identifies several use cases, and potential new requirements for 5GS support of Rail Off-Network. Some open points identified as part of the gap analysis of the use cases have been collected and detailed in clause 8 (e.g., communication range, MCX support).\nA further step is necessary to identify limitations, missing requirements and gaps in existing functionalities supported by 3GPP before any potential normative work. This step could be performed by external bodies involved in the definition of Rail Off-Network use cases (e.g., UIC, ETSI TC RT).\nIt is therefore recommended to wait for further gap analysis before finalizing consolidated requirements in this TR and trigger potential subsequent normative work (if deemed necessary).\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 11,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

@@ -1,0 +1,404 @@
+{
+    "document_name": "36903-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies a general method used to derive Test Tolerances for Radio Resource Management tests, and establishes a system for relating the Test Tolerances to the measurement uncertainties of the Test System.\nThe test cases which have been analysed to determine Test Tolerances are included as .zip files.\nThe present document is applicable from Release 8 up to the release indicated on the front page of the present Terminal conformance specifications.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document unless the context in which the reference is made suggests a different Release is relevant (information on the applicable release in a particular context can be found in e.g. test case title, description or applicability, message description or content).\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\tETSI ETR 273-1-2: \"Improvement of radiated methods of measurement (using test sites) and evaluation of the corresponding measurement uncertainties; Part 1: Uncertainties in the measurement of mobile radio equipment characteristics; Sub-part 2: Examples and annexes\".\n[3]\t3GPP TS 34.121-1: \"Terminal conformance specification, Radio transmission and reception (FDD), Release 8\".\n[4]\t3GPP TS 36.521-1: \"User Equipment (UE) conformance specification, Radio transmission and reception Part 1: conformance testing, Release 8\".\n[5]\t3GPP TS 36.521-3: \"User Equipment (UE) conformance specification, Radio transmission and reception Part 3: Radio Resource Management (RRM) conformance testing, Release 8\".\n[6]\t3GPP TS 36.141: \"E-UTRA Base Station (BS) conformance testing, Release 8\"\n[7]\t3GPP TS 36.211: \"E-UTRA Physical Channels and Modulation, Release 8\"\n[8]\t3GPP TS 37.571-1: “Universal Terrestrial Radio Access (UTRA) and Evolved UTRA (E-UTRA) and Evolved Packet Core (EPC); User Equipment (UE) conformance specification for UE positioning; Part 1: Terminal conformance”.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TR 21.905 [1] apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nOther definitions used in the present document are listed in 3GPP TS 36.521-3 [5] or 3GPP TS 36.141 [6].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Symbols used in the present document are listed in 3GPP TR 21.905 [1], 3GPP TS 36.521-3 [5] or 3GPP TS 36.141 [6].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nOther abbreviations used in the present document are listed in 3GPP TS 36.521-3 [5] or 3GPP TS 36.141 [6].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral Principles",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tPrinciple of Superposition",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For multi-cell tests there are several cells each generating various Physical channels. In general cells are combined along with AWGN, so the signal and noise seen by the UE may be determined by more than one cell.\nSince several cells may contribute towards the overall power applied to the UE, a number of test system uncertainties affect the signal and noise seen by the UE. The aim of the superposition method is to vary each controllable parameter of the test system separately, and to establish its effect on the critical parameters as seen by the UE receiver. The superposition principle then allows the effect of each test system uncertainty to be added, to calculate the overall effect.\nThe contributing test system uncertainties shall form a minimum set for the superposition principle to be applicable.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tSensitivity analysis",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "A change in any one channel level or channel ratio generated at source does not necessarily have a 1:1 effect at the UE. The effect of each controllable parameter of the test system on the critical parameters as seen by the UE receiver shall therefore be established. As a consequence of the sensitivity scaling factors not necessarily being unity, the test system uncertainties cannot be directly applied as test tolerances to the critical parameters as seen by the UE.\nEXAMPLE:\tIn many of the tests described, the Ês / Iot is one of the critical parameters at the UE. Scaling factors are used to model the sensitivity of the Ês / Iot to each test system uncertainty. When the scaling factors have been determined, the superposition principle then allows the effect of each test system uncertainty to be added, to give the overall variability in the critical parameters as seen at the UE.\nThere are often constraints on several parameters at the UE. The aim of the sensitivity analysis, together with the acceptable test system uncertainties, is to ensure that the variability in each of these parameters is controlled within the limits necessary for the specification to apply. The test has then been conducted under valid conditions.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tStatistical combination of uncertainties",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The acceptable uncertainties of the test system are specified as the measurement uncertainty tolerance interval for a specific measurement that contains 95 % of the performance of a population of test equipment, in accordance with 3GPP TS 36.521-3 [5] clause F.1. In the RRM tests covered by the present document, the Test System shall enable the stimulus signals in the test case to be adjusted to within the specified range, with an uncertainty not exceeding the specified values.\nThe method given in the present document combines the acceptable uncertainties of the test system, to give the overall variability in the critical parameters as seen at the UE. Since the process does not add any new uncertainties, the method of combination should be chosen to maintain the same tolerance interval for the combined uncertainty as is already specified for the contributing test system uncertainties.\nThe basic principle for combining uncertainties is in accordance with ETR 273-1-2 [2]. In summary, the process requires 3 steps:\na)\tExpress the value of each contributing uncertainty as a one standard deviation figure, from knowledge of its numeric value and its distribution.\nb)\tCombine all the one standard deviation figures as root-sum-squares, to give the one standard deviation value for the combined uncertainty.\nc)\tExpand the combined uncertainty by a coverage factor, according to the tolerance interval required.\nProvided that the contributing uncertainties have already been obtained using this method, using a coverage factor of 2, further stages of combination can be achieved by performing step b) alone, since steps a) and c) simply divide by 2 and multiply by 2 respectively.\nThe root-sum-squares method is therefore used to maintain the same tolerance interval for the combined uncertainty as is already specified for the contributing test system uncertainties. In some cases where correlation between contributing uncertainties has an adverse effect, the method is modified in accordance with clause 4.4.5 of the present document.\nIn each analysis, the uncertainties are assumed to be uncorrelated, and are added result root-sum-square unless otherwise stated.\nThe combination of uncertainties is performed using dB values for simplicity. It has been shown that using dB uncertainty values gives a slightly worse combined uncertainty result than using linear values for the uncertainties. The analysis method therefore errs on the safe side.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tCorrelation between uncertainties",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The statistical (root-sum-square) addition of uncertainties is based on the assumption that the uncertainties are independent of each other. For realisable test systems, the uncertainties may not be fully independent. The validity of the method used to add uncertainties depends on both the type of correlation and on the way in which the uncertainties affect the test requirements.\nClauses 4.4.1 to 4.4.3 give examples to illustrate different types of correlation.\nClauses 4.4.4 to 4.4.7 show how the scenarios applicable to multi-cell RRM tests are treated.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.4.1\tUncorrelated uncertainties",
+                            "text_content": "The graph shows an example of two test system uncertainties, A and B, which affect a test requirement. Each sample from a population of test systems has a specific value of error in parameter A, and a specific value of error in parameter B. Each dot on the graph represents a sample from a population of test systems, and is plotted according to its error values for parameters A and B.\nThe figure depicts a test system with two test requirements, illustrating the impact of test uncertainties on the system. The system includes a test requirement 1 and a test requirement 2, with test uncertainties represented by the shaded areas. The figure shows how the uncertainties affect the system's performance, with the shaded areas representing the range of possible values for the test requirements. The system's response to the uncertainties is depicted by the dashed lines, showing how the system adapts to the changes in the test requirements.\nFigure 4.4.1.1: Example of two test system uncertainties affecting a test requirement\n\nIt can be seen that a positive value of error in parameter A, for example, is equally likely to occur with either a positive or a negative value of error in parameter B. This is expected when two parameters are uncorrelated, such as two uncertainties which arise from different and unrelated parts of the test system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.4.2\tPositively correlated uncertainties",
+                            "text_content": "The graph shows an example of two test system uncertainties, A and B, which affect a test requirement. Each sample from a population of test systems has a specific value of error in parameter A, and a specific value of error in parameter B. Each dot on the graph represents a sample from a population of test systems, and is plotted according to its error values for parameters A and B.\nThe figure depicts a test system with two test requirements, illustrating the impact of two uncertainties on the test requirements. The uncertainties are represented by different colored lines, with one line representing a high uncertainty and the other a low uncertainty. The figure shows how the test requirements are affected by these uncertainties, highlighting the importance of considering these factors in testing and ensuring the reliability of the system.\nFigure 4.4.2.1: Example of two test system uncertainties affecting a test requirement\n\nIt can be seen that a positive value of error in parameter A, for example, is more likely to occur with a positive value of error in parameter B and less likely to occur with a negative value of error in parameter B. This can occur when the two uncertainties arise from similar parts of the test system, or when one component of the uncertainty affects both parameters in a similar way.\nIn an extreme case, if the error in parameter A and the error in parameter B came from the same sources of uncertainty, and no others, the dots would lie on a straight line of  slope +1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.4.3\tNegatively correlated uncertainties",
+                            "text_content": "The graph shows an example of two test system uncertainties, A and B, which affect a test condition. Each sample from a population of test systems has a specific value of error in parameter A, and a specific value of error in parameter B. Each dot on the graph represents a sample from a population of test systems, and is plotted according to its error values for parameters A and B.\nThe figure depicts a test system with two test uncertainties affecting a test condition. The first uncertainty is represented by a red circle, while the second uncertainty is represented by a blue circle. The red circle indicates a high uncertainty, while the blue circle indicates a low uncertainty. The test system is shown with a test condition, and the uncertainties are shown as a visual representation of the system's performance under different conditions.\nFigure 4.4.3.1: Example of two test system uncertainties affecting a test condition\n\nIt can be seen that a positive value of error in parameter A, for example, is more likely to occur with a negative value of error in parameter B and less likely to occur with a positive value of error in parameter B. This effect can theoretically occur, and is included for completeness, but is unlikely in a practical test system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.4.4\tTreatment of uncorrelated uncertainties",
+                            "text_content": "If two uncertainties are uncorrelated, they are added statistically in the analysis. Provided that each uncertainty is already expressed as an expanded uncertainty with coverage factor 2, the contributing uncertainties are added root-sum-squares to give a combined uncertainty which also has coverage factor 2, and the 95% tolerance interval is maintained.\nThis is the default assumption.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.4.5\tTreatment of positively correlated uncertainties with adverse effect",
+                            "text_content": "If two test system uncertainties are positively correlated, and if they affect the value of a critical parameter in the same direction, the combined effect may be greater than predicted by adding the contributing uncertainties root-sum-squares.\nIn this scenario the two uncertainties are added worst-case in the analysis. Provided that each uncertainty is already expressed as an expanded uncertainty with coverage factor 2, the combined uncertainty will cover a 95% tolerance interval even when the two contributing uncertainties are fully correlated. If the two contributing uncertainties are less than fully correlated, the combined uncertainty will cover a tolerance interval greater than 95%.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.4.6\tTreatment of positively correlated uncertainties with beneficial effect",
+                            "text_content": "If two test system uncertainties are positively correlated, and if they affect the value of a critical parameter in opposite directions, the combined effect will be less than predicted by adding the contributing uncertainties root-sum-squares.\nIn this scenario the two uncertainties are added statistically in the analysis. Provided that each uncertainty is already expressed as an expanded uncertainty with coverage factor 2, the combined uncertainty will cover a 95% tolerance interval when the two contributing uncertainties are uncorrelated. If the two contributing uncertainties are positively correlated, the combined uncertainty will cover a tolerance interval greater than 95%.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.4.7\tTreatment of negatively correlated uncertainties",
+                            "text_content": "Negatively correlated uncertainties are excluded by the assumptions. This has been agreed as an acceptable restriction on practical test systems, as the mechanisms which produce correlation generally arise from similarities between two parts of the test system, and therefore produce positive correlation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tGrouping of test cases defined in TS 36.521-3",
+            "description": "The Test cases are grouped from the viewpoint of efficiently defining the uncertainties and test tolerances. Tests in the same group generally have the same type of uncertainties, given in more detail in Annex B.\nA group of test cases having significant differences from those already listed, in respect of uncertainties and test tolerance analysis, will require a new row in the Table.\nTable 5-1: Test case groups for test tolerance analysis\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table 5-1: Test case groups for test tolerance analysis",
+                    "table number": 1,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5A\tGrouping of test cases defined in TS 37.571-1",
+            "description": "The Test cases are grouped from the viewpoint of efficiently defining the uncertainties and test tolerances. Tests in the same group generally have the same type of uncertainties, given in more detail in Annex C.\nA group of test cases having significant differences from those already listed, in respect of uncertainties and test tolerance analysis, will require a new row in the Table.\nTable 5 A-1: Test case groups for test tolerance analysis for ECID and OTDOA positioning test cases\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table 5 A-1: Test case groups for test tolerance analysis for ECID and OTDOA positioning test cases",
+                    "table number": 2,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "6\tDetermination of Test System Uncertainties",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The uncertainty of a test system when making measurements reduces the ability of the test system to distinguish between conformant and non-conformant test subjects. The aim is therefore to minimise uncertainty, subject to a number of practical constraints:\na)\tA vendor’s test system should be reproducible in the required quantities.\nb)\tA choice of test systems should be available from different vendors.\nc)\tThe uncertainties should allow reasonable freedom of test system implementation\nd)\tThe test system can be run automatically\ne)\tThe test system may include several radio access technologies\nf)\tIt should be possible to maintain calibration of deployed test systems over reasonable spans of time and environmental conditions\nIn practice therefore within 3GPP the acceptable uncertainty of the test system is the smallest value that can be agreed between the test system vendors represented, consistent with the above constraints. The uncertainty will not therefore be as low as could be achieved, for example, by a national standards laboratory.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tUncertainty figures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The actual figures for the acceptable uncertainty of a test system are defined in Annex F of 36.521-3 [5] and Annex C of 37.571-1 [8]. To avoid maintenance issues with figures in separate specifications, the uncertainties are not formally defined within the present document, but informative guidelines are provided in Annex B and Annex C of the present document.\nIn many cases the default uncertainties in Annex B of the present document are the same as used for UTRA in TS 34.121-1 [3] to allow similar calibration methods to be used. Where E-UTRA has different requirements, or parameters are specified in a different way, the uncertainties may differ.\nIn some cases the default uncertainties in Annex B of the present document are the same as used for equivalent base station test specifications, which have sometimes been agreed earlier than the UE test specifications.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tDetermination of Test Tolerances",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The general principles given in the present document are applied to each test case, according to the applicable uncertainties and requirements to obtain a correct verdict.\nThe test cases which have been analysed to determine Test Tolerances are included the present document as .zip files. The name of the zip file indicates the test cases covered.\nAnnex A gives the rationale for their inclusion.\nThe documents (and spreadsheets where applicable) used to derive the test tolerances for each test case are included in the present document as zip files.\nThe aim is to provide a reference to completed test cases, so that test tolerances for similar test cases can be derived on a common basis. The information on test case grouping in section 5 can be used to identify similarities.\n\nThis annex contains suggested uncertainties, grouped according to types of test case. The aim is to provide a consistent set of uncertainties across similar test cases to allow efficient implementation.\nThis Annex is informative only, as the acceptable uncertainties of a test system are defined in Annex F of 36.521-3 [5].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "B.0\tAWGN and Fading",
+            "description": "The following uncertainties and parameters are suggested for E-UTRA AWGN and Fading:\nTable B.0-1: Parameters for E-UTRA AWGN and Fading\n\nValues are chosen to be the same as the performance tests in section 8 of TS 36.521-1 [4].\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.0-1: Parameters for E-UTRA AWGN and Fading",
+                    "table number": 3,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.1\tGroup A: E-UTRA Intra-frequency mobility",
+            "description": "The following uncertainties and parameters are suggested for E-UTRA Intra-frequency mobility tests:\nTable B.1-1: Maximum Test System Uncertainty for E-UTRA Intra-frequency mobility\n\nValues are chosen to be the same as equivalent parameters for UTRA in TS 34.121-1 [3].\nThis choice forms a minimum set, so the superposition principle can be applied.\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.1-1: Maximum Test System Uncertainty for E-UTRA Intra-frequency mobility",
+                    "table number": 4,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.2\tGroup B: E-UTRA Inter-frequency mobility",
+            "description": "The following uncertainties and parameters are suggested for E-UTRA Inter-frequency mobility tests:\nTable B.2-1: Maximum Test System Uncertainty for E-UTRA Inter-frequency mobility\n\nNoc values are chosen to be the same as the smallest existing downlink signal uncertainty in TS 36.521-1 [4].\nÊs / Noc values are chosen to be the same as intra-frequency in B.1.\nThis choice forms a minimum set, so the superposition principle can be applied.\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.2-1: Maximum Test System Uncertainty for E-UTRA Inter-frequency mobility",
+                    "table number": 5,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.3\tGroup C: E-UTRA Intra-frequency UE reporting accuracy",
+            "description": "The following uncertainties and parameters are suggested for E-UTRA Intra-frequency UE reporting accuracy tests:\nTable B.3-1: Maximum Test System Uncertainty for E-UTRA Intra-frequency UE reporting accuracy\n\nIn these tests the UE measures the power of Cells over specific Physical Resource Block (PRB) numbers #22 to #27. The generic AWGN parameters values similar to those used in performance tests are therefore unsuitable, because the AWGN flatness specification would allow a large deviation for the power in PRBs #22 to #27.\nIn addition, these tests have separate constraints on the RSRP or RSRQ reported values (derived from UE measurements over PRBs #22 to #27), and on the overall power Io, specified over BWConfig.\nTwo sets of parameters are therefore given. The set averaged over the configured bandwidth have similar values to those already proposed for other tests. The set averaged over PRBs #22 to #27 have wider values, but constraining the deviation enough not to widen the RSRP or RSRQ reporting range too much.\nThe Noc value averaged over BWConfig is chosen to be the same as the smallest existing downlink signal uncertainty in TS 36.521-1 [4].\nThe Noc value for PRBs #22-27 is chosen to allow some deviation for these specific PRBs compared to the “averaged over BWConfig“ figure, but reasonably small compared to the UE reporting accuracy.\nThe Ês / Noc values averaged over BWConfig are chosen to be the same as intra-frequency in B.1.\nThe Ês / Noc values for PRBs #22-27 are chosen to allow some deviation for these specific PRBs compared to the “averaged over BWConfig“ figure, but reasonably small compared to the UE reporting accuracy.\nThis choice forms a minimum set (separately for PRBs #22-27, and for “averaged over BWConfig“), so the superposition principle can be applied.\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.3-1: Maximum Test System Uncertainty for E-UTRA Intra-frequency UE reporting accuracy",
+                    "table number": 6,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.4\tGroup D: E-UTRA Inter-frequency UE reporting accuracy",
+            "description": "The following uncertainties and parameters are suggested for E-UTRA Inter-frequency UE reporting accuracy tests:\nTable B.4-1: Maximum Test System Uncertainty for E-UTRA Inter-frequency UE reporting accuracy\n\nIn these tests the UE measures the power of Cells over specific Physical Resource Block (PRB) numbers #22 to #27. The generic AWGN parameters values similar to those used in performance tests are therefore unsuitable, because the AWGN flatness specification would allow a large deviation for the power in PRBs #22 to #27.\nIn addition, these tests have separate constraints on the RSRP or RSRQ reported values (derived from UE measurements over PRBs #22 to #27), and on the overall power Io, specified over BWConfig.\nTwo sets of parameters are therefore given. The set averaged over the configured bandwidth have similar values to those already proposed for other tests. The set averaged over PRBs #22 to #27 have wider values, but constraining the deviation enough not to widen the RSRP or RSRQ reporting range too much.\nThe Noc value averaged over BWConfig is chosen to be the same as the smallest existing downlink signal uncertainty in TS 36.521-1 [4].\nThe Noc value for PRBs #22-27 is chosen to allow some deviation for these specific PRBs compared to the “averaged over BWConfig“ figure, but reasonably small compared to the UE reporting accuracy.\nThe Ês / Noc values averaged over BWConfig are chosen to be the same as inter-frequency in B.2.\nThe Ês / Noc values for PRBs #22-27 are chosen to allow some deviation for these specific PRBs compared to the “averaged over BWConfig“ figure, but reasonably small compared to the UE reporting accuracy.\nThis choice forms a minimum set (separately for PRBs #22-27, and for “averaged over BWConfig“), so the superposition principle can be applied.\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.4-1: Maximum Test System Uncertainty for E-UTRA Inter-frequency UE reporting accuracy",
+                    "table number": 7,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.5\tGroup E: E-UTRA Random Access",
+            "description": "The following uncertainties and parameters are suggested for E-UTRA Random Access tests:\nTable B.5-1: Maximum Test System Uncertainty for E-UTRA Random Access\n\nThe downlink Noc and Ês / Noc values are chosen to be the same as intra-frequency in B.3. The downlink signal uncertainties are critical for random access tests because the UE uses RSRP to calculate path loss, and hence to set the uplink power to the desired value.\nThe uplink power absolute signal measurement uncertainty value is chosen to be the same as the Maximum Output Power test 6.2.2 in Annex F of TS 36.521-1 [4]. The uplink power relative signal measurement uncertainty value is chosen to be the same as the Relative Power control test 6.3.5.2 in Annex F of TS 36.521-1 [4].\nThe uncertainty for uplink signal transmit timing relative to downlink measurement was derived by taking 25% of the tightest UE core requirement, which is 12 * Ts for ≥3 MHz Channel bandwidth, giving a ±3*Ts uncertainty.\nThe timing uncertainty is expressed in units of TS = 1 / (15000 x 2048) seconds, the basic timing unit defined in TS 36.211 [7].\nThese choices form a minimum set, so the superposition principle can be applied.\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.5-1: Maximum Test System Uncertainty for E-UTRA Random Access",
+                    "table number": 8,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.6\tGroup F: E-UTRA Transmit timing and Timing advance",
+            "description": "The following uncertainties and parameters are suggested for E-UTRA Transmit timing and Timing advance tests:\nTable B.6-1: Maximum Test System Uncertainty for E-UTRA Transmit timing and Timing advance\n\nThe downlink uncertainty values are chosen to be the same as the performance tests in section 8 of TS 36.521-1 [4]. For Transmit timing and Timing advance tests, neither the absolute level of Noc nor the signal to noise ratio is critical.\nThe uncertainty for uplink signal transmit timing relative to downlink measurement was derived by taking 25% of the tightest UE core requirement, which is 12 * Ts for ≥3 MHz Channel bandwidth, giving a ±3*Ts uncertainty.\nThe uncertainty for relative UE timing adjustment was derived by taking 25% of the tightest UE core requirement, which is 2 * Ts for ≥10 MHz Channel bandwidth, giving a ±0.5 * Ts uncertainty.\nBoth timing uncertainties are expressed in units of TS = 1 / (15000 x 2048) seconds, the basic timing unit defined in TS 36.211 [7].\nThese choices form a minimum set, so the superposition principle can be applied.\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.6-1: Maximum Test System Uncertainty for E-UTRA Transmit timing and Timing advance",
+                    "table number": 9,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.7\tGroup G: E-UTRA In-sync and Out-of-sync",
+            "description": "The following uncertainties and parameters are suggested for E-UTRA In-sync and Out-of-sync tests:\nTable B.7-1: Maximum Test System Uncertainty for E-UTRA In-sync and Out-of-sync\n\nValues are chosen to be the same as the performance tests in section 8 of TS 36.521-1 [4]. For In-sync and Out-of-sync tests, as with performance tests, the absolute level of Noc is not critical, but the signal to noise ratio is critical.\nThis choice forms a minimum set, so the superposition principle can be applied.\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.7-1: Maximum Test System Uncertainty for E-UTRA In-sync and Out-of-sync",
+                    "table number": 10,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.8\tGroup H: E-UTRA to UTRA Inter-RAT mobility",
+            "description": "The following uncertainties and parameters are suggested for E-UTRAN cell in Table B.8-1 and for UTRAN cell in Table B.8-2.\nTable B.8-1: Maximum Test System Uncertainty for E-UTRAN cell E-UTRA to UTRA Inter-RAT mobility\n\nTable B.8-2: Maximum Test System Uncertainty for UTRAN cell E-UTRA to UTRA Inter-RAT mobility\n\nÊs / Noc and Îor / Ioc are chosen to be similar to equivalent parameters in W-CDMA. The absolute levels of Noc and Ioc are specified as ±0.7dB, similar to the uncertainty for other absolute power values such as RefSens. The Ec / Ior is specified as ± 0.1dB, similar to the uncertainty in TS 34.121-1.\nThis choice forms a minimum set, so the superposition principle can be applied.\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.8-1: Maximum Test System Uncertainty for E-UTRAN cell E-UTRA to UTRA Inter-RAT mobility",
+                    "table number": 11,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.8-2: Maximum Test System Uncertainty for UTRAN cell E-UTRA to UTRA Inter-RAT mobility",
+                    "table number": 12,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.9\tGroup I: E-UTRA to GSM Inter-RAT mobility",
+            "description": "The following uncertainties and parameters are suggested for E-UTRAN cell in Table B.9-1 and for GSM cell in Table B.9-2.\nTable B.9-1: Maximum Test System Uncertainty for E-UTRAN cell E-UTRA to GSM Inter-RAT mobility\n\nTable B.9-2: Maximum Test System Uncertainty for UTRAN cell E-UTRA to GSM Inter-RAT mobility\n\nNoc values are chosen to be the same as the smallest existing downlink signal uncertainty in TS 36.521-1 [4].\nÊs / Noc values are chosen to be the same as intra-frequency in B.1.\nThe GSM cell signal level is specified as ±0.7 dB, similar to the uncertainty for other absolute power values such as E-UTRA RefSens.\nThis choice forms a minimum set, so the superposition principle can be applied.\nThis annex contains suggested uncertainties, grouped according to types of test case. The aim is to provide a consistent set of uncertainties across similar test cases to allow efficient implementation.\nThis Annex is informative only, as the acceptable uncertainties of a test system are defined in Annex C of 37.571-1 [8].\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.9-1: Maximum Test System Uncertainty for E-UTRAN cell E-UTRA to GSM Inter-RAT mobility",
+                    "table number": 13,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.9-2: Maximum Test System Uncertainty for UTRAN cell E-UTRA to GSM Inter-RAT mobility",
+                    "table number": 14,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 15,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

@@ -1,0 +1,509 @@
+{
+    "document_name": "23700-76-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "The ad hoc group call allows authorised users to combine a set of MCX users based on implementation-specific criteria into a group call. The main characteristics of this ad hoc group call are:\na)\tThe ad hoc group does not exist until it is spontaneously created during the call.\nb)\tThe ad hoc group ceases to exist when the call terminates.\nc)\tThe ad hoc group does not support 'persistent state' communication, e.g. emergency state.\nMCX users that are combined in an ad hoc group call can be served by the same or different MCX systems. The ad hoc group call uses a common security level, priority level, floor control method, and set of operational characteristics for the participants during the call. As with any group call, the priority level can change dynamically.\nThe ad hoc group is used for a single call and it does not persist when the call is terminated. Authorized users can recreate the ad hoc group for subsequent calls, or request creation of a permanent MCX group from the participants in the ad hoc group call.\nThis technical report identifies the key issues and corresponding solutions with recommendations for the normative work.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document studies solutions to satisfy the requirements identified to support Ad hoc group communication for MCX services. It identifies enhancements to be included in the technical specifications for MCPTT, MCVideo, MCData and in the common functional architecture to support Ad hoc group communications. Requirements for this study are taken from 3GPP TS 22.280 [3].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 22.179: \"Mission Critical Push to Talk (MCPTT); Stage 1\".\n[3]\t3GPP TS 22.280: \"Mission Critical Services Common Requirements (MCCoRe)\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\n\nAd hoc Group Communication: The combining of a multiplicity of MCX Users into a group for the duration of a communication and when the communication is terminated the group no longer exists.\nFor the purposes of the present document, the following terms given in 3GPP TS 22.280 [3] apply\nMCX UE\nMCX User\nMission Critical\nMission Critical Service\nFunctional alias\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\n<symbol>\t<Explanation>\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\n<ABBREVIATION>\t<Expansion>\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tKey issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tKey issue 1 – Ad hoc group communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements for MCX service Ad hoc group communication are captured in 3GPP TS 22.280 [3] clause 6.15.5.\nAd hoc group communication enables authorized MCX users to combine a random set of MCX Users into a group communication. The ad hoc group does not exist until it is spontaneously created during the communication and it ceases to exist once the communication is terminated. The participants of the ad hoc group communication may be served by the same or different MC systems.\nHence it is required to study the following:\n-\tProcedures for establishing and release of the ad hoc group communication.\n-\tProcedures for establishing the ad hoc group communication with end-to-end encryption support.\n-\tIdentify whether new information flows are required or existing information flows can be enhanced to support the ad hoc group communication set up.\n-\tHow to support different mechanisms for determining the participants list for the ad hoc group communication. It could be supplied by the initiator of the ad hoc group call or determined by the MCX system based on some pre-defined criteria.\n-\tHow to support a mechanism for the initiator of an MCX Service ad hoc group communication to request that the list of participants be determined and updated by the MCX Service system using a specific pre-defined criteria.\n-\tIdentify whether any changes are required to the existing MCX functional architecture for supporting the ad hoc group communication.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tKey issue 2 – Network topology hiding from MC service client while establishing Ad hoc group communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Ad hoc group communication enables authorized MCX users to combine a random set of MCX Users into a group communication. To best utilize the network resources, achieve best network performance and provide service resilience, a network operator normally deploys more than one MC service servers to serve its customers. This is applicable for all types of group communication and especially true in ad hoc group communications when it enables authorized users to combine a random set of MCX users into a group communication. This kind of deployment topology cannot be exposed and learned by the third party and only be controlled by the network operator. Ad hoc group is created spontaneously by the initiating client during the communication set up and therefore it leaves no choice for the network operators to decide on where to host the communication beforehand.\nHence it is required to study the following:\n-\tHow the group ID used for the ad hoc group communication can be created by MC service client and managed when establishing the ad hoc group communication.\n-\tWhether and how to support the ad hoc group communication without exposing the network topology.\n-\tWhether and how to support the ad hoc group communication with dynamically allocated network resources (such as the MC service server that will host the communication).\nNOTE:\tThis key issue also applies to existing specification of temporary groups creation by MC service client (e.g user regroup)\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tKey issue 3 – Configuration parameters for Ad hoc group communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "3GPP TS 22.280[3] has defined several requirements related to configuration of parameters required for ad hoc group communication by the administrator and initiator of the ad hoc group communication. Hence it is required to study the following :\n-\tIdentify the required system or service level configuration parameters and document them.\n-\tIdentify the user level configuration parameters and document them.\n-\tIdentify the default parameters to be configured which will be applied when these parameters are not supplied as part of the ad hoc group communication request by the initiator.\n-\tHow the MCX server shall be able to determine whether the user is authorized to initiate ad hoc group communication.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tKey issue 4 – Modifying participants list of on-going ad hoc group communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "During the course of an on-going ad hoc group communication, the initiator of the ad hoc group communication can be able to add or remove particpants from the communication or the MCX system can add or remove participants based on some pre-defined criteria. This key issue is to identify the information flows and procedures required between the MCX client and MCX server to add/remove particpants to/from an on-going ad hoc group communication.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.5\tKey issue 5 – Ad hoc group emergency alert",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Ad hoc group emergency alert enables MC service users to send an MC service emergency alert also to an ad hoc group. The participants of the ad hoc emergency alert group may be served by multiple MC systems.\nIt is required to study the following:\n-\tHow the solution for the ad hoc group communication can be reused for the ad hoc group emergency alert.\n-\tProcedures for initiating and cancelling an ad hoc group emergency alert.\n-\tSupport of a functional alias as target for sending an alert notification.\n-\tWhether any new information flows are required or whether existing ad hoc group information flows can be enhanced to support ad hoc group emergency alerts.\n-\tWhether the participants list for the ad hoc group emergency alert needs any modification compared to an ad hoc group communication.\n-\tWhether any changes are required to the existing MC functional model to support the ad hoc group emergency alert.\n-\tClarify whether and which additional information along with the alert indication is useful.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tArchitectural requirements",
+            "description": "NOTE:\tNo architectural requirements were identified.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "6\tArchitectural enhancements",
+            "description": "NOTE:\tNo architectural enhancements were identified.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "7\tSolutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tSolution 1: Ad hoc group communication set up for MCX service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.1.1\tGeneral",
+                            "text_content": "This solution addresses the key issue 1 described in the clause 4.1 to support ad hoc group communication set up for MCX service. Information flows and procedures that are required to address the key issue 1 are addressed in this section.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.2\tInformation flows",
+                            "text_content": "Table 7.1.2.1-1 describes the information flow ad hoc group communication request from the MC service client to the MC service server.\nTable 7.1.2.1-1 Ad hoc Group communication request information elements\n\nTable 7.1.2.2-1 describes the information flow ad hoc group communication request return from the MC service server to the MC service client.\nTable 7.1.2.2-1 Ad hoc group communication request return information elements\n\nTable 7.1.2.3-1 describes the information flow AHGC share security material command from the MC service client to MC service server.\nTable 7.1.2.3-1 AHGC share security material command information elements\n\nTable 7.1.2.4-1 describes the information flow ad hoc group communication request from the MC service server to the MC service client.\nTable 7.1.2.4-1 Ad hoc group communication request information elements\n\nTable 7.1.2.5-1 describes the information flow ad hoc group communication response from the MC service server to the MC service client.\nTable 7.1.2.5-1 Ad hoc group communication response information elements\n\nTable 7.1.2.6-1 describes the information flow ad hoc group communication response from the MC service client to the MC service server.\nTable 7.1.2.6-1 Ad hoc group communication response information elements\n\nTable 7.1.2.7-1 describes the information flow ad hoc group communication release request from the MC service server to the MC service client.\nTable 7.1.2.7-1 Ad hoc group communication release request information elements\n\nTable 7.1.2.8-1 describes the information flow ad hoc group communication release response from the MC service server to the MC service client.\nTable 7.1.2.8-1 Ad hoc group communication release response information elements\n\nTable 7.1.2.9-1 describes the information flow ad hoc group communication get userlist from one MC service server to another MC service server.\nTable 7.1.2.9-1: Ad hoc group communication get userlist\n\nTable 7.1.2.10-1 describes the information flow ad hoc group communication get userlist response from one MC service server to another MC service server.\nTable 7.1.2.10-1: Ad hoc group communication get userlist response\n\nTable 7.1.2.11-1 describes the information flow group call notify from MC service server to MC service client.\nTable 7.1.2.11-1: Group Call Notify\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.1.2.1-1 Ad hoc Group communication request information elements",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.1.2.2-1 Ad hoc group communication request return information elements",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.1.2.3-1 AHGC share security material command information elements",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.1.2.4-1 Ad hoc group communication request information elements",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.1.2.5-1 Ad hoc group communication response information elements",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.1.2.6-1 Ad hoc group communication response information elements",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.1.2.7-1 Ad hoc group communication release request information elements",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.1.2.8-1 Ad hoc group communication release response information elements",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.1.2.9-1: Ad hoc group communication get userlist",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.1.2.10-1: Ad hoc group communication get userlist response",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.1.2.11-1: Group Call Notify",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.1.3\tProcedure",
+                            "text_content": "Figure 7.1.3.1.1-1 below illustrates the ad hoc group communication setup procedure initiated by an authorized user.\nPre-conditions:\n1.\tThe authorized user at MC service client 1 wants to invite MC service users at MC service client 2, MC service client 3 and MC service client 4 for the ad hoc group communication.\n2.\tNumber of participants being invited for the communication is within the limit for non pre-configured approach.\n3.\tEnd-to-End encryption is supported for this ad hoc group communication.\n4.\tMC service client 1 is aware of the MC service IDs of the participants and has all the security related information required to communicate with the participants of the ad hoc group communication.\nNOTE:\tSelection of MC service IDs of the participants can be manual or from the user profile configuration data or by any other means. This is left for the implementation.\n\n\nThe figure depicts an ad hoc group communication setup, showing a group of nodes connected by a wireless network. The setup includes a base station (BS), a group of nodes (G), and a wireless network (W). The nodes are connected by a wireless link, and the BS provides radio access to the group. The setup is designed to allow for flexible and efficient communication within the group.\nFigure 7.1.3.1.1-1: Ad hoc group communication setup\n1.\tUser at MC service client 1 would like to initiate an ad hoc group communication. MC service client 1 initiates the ad hoc group communication by sending the ad hoc group communication request containing the list of participants to the MC service server. Encryption supported information element shall be set to true since end-to -end encryption is supported. The ad hoc group communication request may also contain block sharing participants list indicator information element set to true if the originating user want to suppress sharing of the participants list to other users. The ad hoc group communication request may include the MC service group ID that is created by the MC service client 1 or not include the MC service group ID that allow the MC service server to assign one for use.  An SDP offer containing the MC service client media parameters is included. If there is a floor request to transmit, then the ad hoc group communication request contains an indication of an implicit floor request. If the MC service user of MC service client 1 has selected a functional alias, then the ad hoc group communication request contains that functional alias. If the ad hoc group communication request contains an implicit floor request it may also include location information.\nIf the MC service user at MC service client 1 initiates an MC service emergency ad hoc group communication or the MC service emergency state is already set for the MC service client 1 (due to a previously triggered MC service emergency alert):\ni.\tthe MC service ad hoc group communication request shall contain an emergency indicator;\nii.\tif the MC service emergency state is not set already, MC service client 1 sets its MC service emergency state. The MC service emergency state of MC service client 1 is retained until explicitly cancelled by the user of MC service client 1.\n2.\tThe MC service server accepts the ad hoc group communication request if the ad hoc group communication is supported and authorized. Otherwise reject the ad hoc group communication request and do not continue with the rest of the steps. If authorised, it validates whether the number of invited participants is within the configured limit before proceeding with the communication setup.\nIf functional alias is present, the MC service server checks whether the provided functional alias is allowed to be used and has been activated for the user.\nIf location information was included in the ad hoc group communication request, the MC service server checks the privacy policy of the MC service user to decide if the location information of MC service client 1 can be provided to other users on the communication (refer to Annex A.3 \"Authorisation to provide location information to other MC service users on a communication when talking\").\nIf an emergency indicator is present in the received MC service ad hoc group communication request, the MC service ad hoc group is considered to be in the in-progress emergency state until this ad hoc group communication is terminated; and\nIf an imminent peril indicator is present in the received MC service ad hoc group communication request, the MC service ad hoc group is considered to be in the in-progress imminent peril state until this ad hoc group communication is terminated.\nThe MC service server considers the ad hoc group communication participants as implicitly affiliated to the ad hoc group.\n3.\tThe MC service server shall send the ad hoc group communication request return message to MC service client 1 containing the below:\ni.\tThe MC service ad hoc group ID (e.g. either provided by MC service client 1 which is acceptable to the MC service server or generated by the MC service server in the case where the MC service ad hoc group ID created by the MC service client 1 is not acceptable or the case where the MC service ad hoc group ID was not provided by MC service client 1); and\nii.\tResult of whether the ad hoc group communication is authorized or not\nIf the ad hoc group communication request is not authorized, MC service client 1 shall not proceed with the rest of the steps.\n4a-4c.\tMC service client 1 sends AHGC share security material command targeting each of the participants containing the security material to be shared with the participants for use in this ad hoc group communication.\nNOTE 1:\tIf end-to-end encryption is not supported, then the ad hoc group communication security material requests are not sent.\n5a-5c.\tThe MC service server sends the ad hoc group communication requests towards the MC service clients of the invited users based on step 1. While sending the ad hoc group communication requests, the MC service server shall remove the information elements that are not required to be conveyed to the target MC service clients (e.g. Block sharing participants list indicator, MC service ID list of the users who are required to acknowledge)\n6a-6c.\tThe receiving MC service clients are notified about the incoming ad hoc group communication.\n7a-7c.\tThe receiving MC service clients accept the ad hoc group communication requests and send ad hoc group communication responses to the MC service server. The response may also contain a functional alias of the responding MC service user, which is verified (valid and activated for the user) by the MC service server.\n8.\tThe MC service server sends the ad hoc group communication response to MC service client 1 through the signalling path to inform about successful communication establishment.\nNOTE 2:\tSteps 5 to step 7 can start to occur before all of step 4 is completed since the MC service server do not require to wait for the previous ad hoc group communication request to complete before sending the ad hoc group request to another participant.\n9.\tIf the initiating MC service user requires the acknowledgement from the invited MC service users, and the required MC service users do not acknowledge the communication setup within a configured time (the \"acknowledged communication setup timeout\"), then the MC service server may proceed with or abandon the communication and then notify the initiating MC service user that the acknowledgements did not include all required members according to ad hoc group communication policy from the user profile configuration. The MC service server may notify the initiating MC service user of all MC service users who did not acknowledge the ad hoc group communication request within the configured time. This notification may be sent to the initiating MC service user by the MC service server more than once during the communication when MC service users join or leave the MC service ad hoc group communication.\n10.\tMC service client 1, MC service client 2, MC service client 3 and MC service client 4 establish media plane and floor control resources.\nNOTE 3:\tStep 10 can occur any time following step 8 if the conditions to proceed with the communication are met.\n\nThe procedure focuses on the case where the MC service server releases an ongoing MC service ad hoc group communication for all the participants of that ad hoc group communication, since at least one of the release conditions are met e.g., due to hang time expiry, last participant leaving, second last participant leaving, initiator leaving.\nFigure 7.1.3.1.2-1 below illustrates the signalling control plane procedure for the MC service server initiating termination an ongoing ad hoc group communication.\nThe figure depicts a release 2 ad hoc group communication system, showing a group of nodes connected by a wireless network. The system includes a base station (BS), a group of nodes (G), and a wireless network (W). The BS provides radio access to the G, and the W connects the G to the internet. The figure illustrates the communication process, including the transmission of data packets, the reception of data packets, and the establishment of a connection between the G and the internet.\nFigure 7.1.3.1.2-1: Release ad hoc group communication\n1.\tIt is assumed that MC service users on MC service client 1, client 2 and client 3 are already part of the ongoing ad hoc group communication.\n2.\tMC service server would like to release the MC service ad hoc group communication which is ongoing e.g., due to hang time expiry, last participant leaving, second last participant leaving, initiator leaving.\n3.\tMC service server identifies the participants of the ongoing ad hoc group communication and generates ad hoc group communication release request to release ongoing session. The MC service server cancels the in-progress emergency state or in-progress imminent peril state of the ad hoc group if the ad hoc group communication is an emergency or imminent peril communication respectively.\n4.\tMC service server sends ad hoc group communication release request via SIP core towards each participant of the ongoing ad hoc group communication.\n5.\tMC service users are notified about the release of the ad hoc group communication.\n6.\tMC service client(s) receiving ad hoc group communication release request, acknowledge towards the MC service server by sending an ad hoc group communication release response.\nNOTE:\tIf the participants list is not suppressed by the initiator of the ad hoc group communication, the MC service client(s) may choose to store the list of participants for easy re-initiation of another ad hoc group communication with the same participants.\n7.\tMC service client 1, client 2 and client 3 have successfully released the floor control and media plane resources associated with the ad hoc group communication that is terminated and the ad hoc group ceases to exist (i.e., further communication is not possible over the same ad hoc group.\nFigure 7.1.3.1.3-1 below illustrates the ad hoc group communication setup procedure initiated by the MC service user and MC service client 1 wherein the list of participants is determined by the MC service server based on the citeria received from the MC service client.\nPre-conditions:\n1.\tThe MC service user at MC service client 1 is authorized to initate ad hoc group communication.\n2.\tThe MC service user at MC service client 1 wants to invite MC service users who are satisying certain criteria for the ad hoc group communication.\nThe figure depicts a network setup where MC service servers determine the ad hoc group communication participants.\nFigure 7.1.3.1.3-1: Ad hoc group communication participants determined by MC service server\n\n1.\tUser at MC service client 1 would like to initiate an ad hoc group communication in-order to invite the participants satisfying specific criteria. MC service client 1 initiates the ad hoc group communication by sending the ad hoc group communication request containing the details of the criteria to be applied by the MC service server for determining the participants list. If end-to-end encryption is supported Encryption supported information element shall be set to true and pre-configured ad hoc group identity whose configuration is to be applied is included. The ad hoc group communication request may include the MC service group ID that is created by the MC service client 1 or not include the MC service group ID that allow the MC service server to assign one for use.  An SDP offer containing the MC service client media parameters is included. If there is a floor request to transmit, then the ad hoc group communication request contains an indication of an implicit floor request. If the MC service user of MC service client 1 has selected a functional alias, then the ad hoc group communication request contains that functional alias. If the ad hoc group communication request contains an implicit floor request it may also include location information.\nIf the MC service user at MC service client 1 initiates an MC service emergency ad hoc group communication or the MC service emergency state is already set for the MC service client 1 (due to a previously triggered MC service emergency alert):\ni.\tthe MC service ad hoc group communication request shall contain an emergency indicator;\nii.\tif the MC service emergency state is not set already, MC service client 1 sets its MC service emergency state. The MC service emergency state of MC service client 1 is retained until explicitly cancelled by the user of MC service client 1.\n2.\tThe MC service server accepts the ad hoc group communication request if the ad hoc group communication is supported and authorized. Otherwise reject the ad hoc group communication request and do not continue with the rest of the steps.\nIf functional alias is present, the MC service server checks whether the provided functional alias is allowed to be used and has been activated for the user.\nIf location information was included in the ad hoc group communication request, the MC service server checks the privacy policy of the MC service user to decide if the location information of MC service client 1 can be provided to other users on the communication (refer to Annex A.3 \"Authorisation to provide location information to other MC service users on a communication when talking\").\nIf an emergency indicator is present in the received MC service ad hoc group communication request, the MC service ad hoc group is considered to be in the in-progress emergency state until this ad hoc group communication is terminated; and\nIf an imminent peril indicator is present in the received MC service ad hoc group communication request, the MC service ad hoc group is considered to be in the in-progress imminent peril state until this ad hoc group communication is terminated.\n3.\tThe MC service server shall send the ad hoc group communication request return message to MC service client 1 containing the below:\ni.\tThe MC service ad hoc group ID (e.g. either provided by MC service client 1 which is acceptable to the MC service server or generated by the MC service server in the case where the MC service ad hoc group ID created by the MC service client 1 is not acceptable or the case where the MC service ad hoc group ID was not provided by MC service client 1); and\nii.\tResult of whether the ad hoc group communication is authorized or not\nIf the ad hoc group communication request is not authorized, MC service server and client 1 shall not proceed with the rest of the steps.\n4.\tThe MC service server determines the list of participants to be invited for the ad hoc group communication based on the information present in the information element Criteria for determining the participants. This information element could carry either criteria or indicator identifying the criteria or combination of both.\n5.\tThe MC service server sends the ad hoc group communication requests towards the MC service clients 2 and 3. While sending the ad hoc group communication requests, the MC service server shall remove the information elements that are not required to be conveyed to the target MC service clients. This request carries the pre-configured group ID whose configuration is to be applied for this ad hoc group communication if end-to-end encryption is requested. The MC service server considers the ad hoc group communication participants as implicitly affiliated to the ad hoc group.\n6.\tThe receiving MC service clients are notified about the incoming ad hoc group communication.\n7.\tThe receiving MC service clients accept the ad hoc group communication requests and send ad hoc group communication responses to the MC service server. The response may also contain a functional alias of the responding MC service user, which is verified (valid and activated for the user) by the MC service server.\n8.\tThe MC service server sends the ad hoc group communication response to MC service client 1 through the signalling path to inform about successful communication establishment.\n9.\tThe MC service server may notify the initiating MC service user of all MC service users who acknowledged the ad hoc group communication request and joined the ad hoc group communication. This notification may be sent to the initiating MC service user by the MC service server more than once during the communication when MC service users join or leave the MC service ad hoc group communication.\n10.\tMC service client 1, MC service client 2 and MC service client 3 establish media plane and floor control resources.\nFigure 7.1.3.2.1-1 below illustrates the ad hoc group communication setup procedure initiated by an authorized user involving the MC service users from multiple MC system.\nPre-conditions:\n1.\tThe authorized user at MC service client 1 wants to invite MC service users at MC service client 2, MC service client 3 and MC service client 4 for the ad hoc group communication.\n2.\tMC service client 1 and MC service client 2 are registered to the MC service provider 1. MC service client 3 and MC service client 4 are registered to MC service provider 2.\n3.\tNumber of participants being invited for the communication is within the limit.\n4.\tEnd-to-End encryption is supported for this ad hoc group communication.\n5.\tMC service client 1 has all the security related information required to communicate with the participants of the ad hoc group communication.\nThe figure depicts a setup for ad hoc group communication, showing multiple MC systems connected to a central base station (BS). The setup includes a central controller (CC), which manages the communication between the MCs. The figure illustrates the use of various communication protocols, such as the Enhanced Shortest Path First (E-SPF) protocol, to ensure efficient communication.\nFigure 7.1.3.2.1-1: Ad hoc group communication setup involving multiple MC systems\n1-5a.\tSame as described in sub-clause 7.1.3.1.1.\n5b-5c.\tThe MC service server sends the ad hoc group communication requests for MC service client 3 and MC service client 4 to the MC service server 2. While sending the ad hoc group communication requests, the MC service server shall remove the information elements that are not required to be conveyed to the target MC service clients (e.g. Block sharing participants list indicator, MC service ID list of the users who are required to acknowledge) and shall include the security key material as received in steps 4b and 4c.\n6a-6b.\tThe MC service server 2 forwards the ad hoc group communication requests to the MC service client 3 and MC service client 4.\n7a-7c.\tThe receiving MC service clients are notified about the incoming ad hoc group communication.\n8.\tThe MC service client 2 accept the ad hoc group communication request and send ad hoc group communication response to the MC service server 1.\n9a-9b.\tThe MC service client 3 and MC service client 4 accepts the ad hoc group communication request and sends ad hoc group communication responses to the MC service server 2.\n10a-10b.\tThe MC service server 2 forwards the responses to the MC service server 1.\n11.\tThe MC service server sends the ad hoc group communication response to MC service client 1 through the signalling path to inform about successful communication establishment.\n12.\tThe MC service server may notify the initiating MC service user of all MC service users who acknowledged the ad hoc group communication request and joined the ad hoc group communication. This notification may be sent to the initiating MC service user by the MC service server more than once during the communication when MC service users join or leave the MC service ad hoc group communication.\n13.\tMC service client 1, MC service client 2, MC service client 3 and MC service client 4 establish media plane and floor control resources.\nNOTE:\tHow to handle the end-to-end encryption when the MC service client 1 does not have the required security related information to communicate with the participants of the ad hoc group communication is in the scope of SA3.\nFigure 7.1.3.2.2-1 below illustrates the ad hoc group communication setup procedure initiated by an authorized user wherein the list of participants is determined by the MC service server based on the citeria received from the MC service client and determined MC service users are from multiple MC systems.\nPre-conditions:\n1.\tThe MC service user at MC service client 1 is authorized to initate ad hoc group communication.\n2.\tEnd-to-End encryption is supported for this ad hoc group communication.\nThe figure depicts a setup for ad hoc group communication, where multiple MC systems are connected to a central node. The setup includes a central node, which serves as the coordinator, and multiple MC systems connected to it. The central node is responsible for routing messages and coordinating the communication. The MC systems are connected to the central node through a network of optical fibers, which allows for high-speed data transmission. The setup is designed to be flexible and scalable, allowing for the addition of more MC systems as needed.\nFigure 7.1.3.2.2-1: Ad hoc group communication setup involving multiple MC systems\n1-4.\tSame as described in sub-clause 7.1.3.1.3.\n5.\tMC service server 1 if it needs to involve the partner system based on the agreement and based on the criteria for determining the participants list, sends the ad hoc group communication get userlist request to the MC service server 2. This request carries the criteria specified in the step 1 .\n6.\tMC service server 2 evaluates the criteria and determines the particpants satisfying the criteria and sends the response containing the list of MC service users satisfying the criteria\n7.\tThe MC service server 1 sends the ad hoc group communication request towards the MC service server 2. This request carries the list of MC service users who needs to be invited for this ad hoc group communication and are registered with MC service server 2. It also carries the pre-configured group ID whose configuration is to be applied for this ad hoc group communication if end-to-end encryption is requested.\n8a-8b.\tThe MC service server 2 sends the ad hoc group communication request towards the MC service client 3 and MC service client 4.\n9.\tThe MC service server 1 sends the ad hoc group communication requests towards the MC service client 2. While sending the ad hoc group communication request, the MC service server shall remove the information elements that are not required to be conveyed to the target MC service clients. This request carries the pre-configured group ID whose configuration is to be applied for this ad hoc group communication if end-to-end encryption is requested. The MC service server considers the ad hoc group communication participants as implicitly affiliated to the ad hoc group.\n10a-10c.\tThe receiving MC service clients are notified about the incoming ad hoc group communication.\n11.\tThe MC service client 2 accept the ad hoc group communication request and send ad hoc group communication response to the MC service server 1.\n12a-12b.\tThe MC service client 3 and MC service client 4 accepts the ad hoc group communication request and sends ad hoc group communication responses to the MC service server 2.\n13a-13b.\tThe MC service server 2 forwards the responses to the MC service server 1.\n14.\tThe MC service server 1 sends the ad hoc group communication response to MC service client 1 through the signalling path to inform about successful communication establishment.\n15.\tThe MC service server 1 may notify the initiating MC service user of all MC service users who acknowledged the ad hoc group communication request and joined the ad hoc group communication. This notification may be sent to the initiating MC service user by the MC service server 1 more than once during the communication when MC service users join or leave the MC service ad hoc group communication.\n16.\tMC service client 1, MC service client 2, MC service client 3 and MC service client 4 establish media plane and floor control resources.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.4\tSolution Evaluation",
+                            "text_content": "The procedures proposed as part of this solution handles the ad hoc group communication setup and release as per the key issue 1. It also achieves the end-to-end security as per the stage-1 requirements. This solution introduces a new set of information flows required for ad hoc group communication. It also proposes a mechanism for the ad hoc group communication setup wherein the particpants of the communication is determined by the MC service server based on the criteria which is either pre-defined or supplied by the initiator of the communication.\nFurther the proposed solutions provide flexibility for the deployments to use the ad hoc group ID provided by the MC service client or the MC service server can generate and share the same to the initiator of the ad hoc group communication. This solution may require additional deployment considerations e.g. to configure the maximum number of participants allowed to participate in an ad hoc group communication, to meet the Stage 1 group call KPIs.\nThe procedures proposed as part of this solution implicitly handles the Key issue #2 related to network topology hiding from MC service client while establishing Ad hoc group communication by having the ad hoc group ID generated by the MC service server.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.2\tSolution 2: Ad hoc group call involving multiple MC systems",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.2.1\tGeneral",
+                            "text_content": "This solution pertains to key issue#1. The key characteristics of ad hoc group call are the following:\n-\tThe ad hoc group does not exist until it is spontaneously created during the ad hoc group call setup.\n-\tThe ad hoc group ceases to exist when the communication terminates with the ad hoc group call release.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.2\tSolution description",
+                            "text_content": "Figure 7.2.2.1.1-1 illustrates the procedure for ad hoc group call setup procedure.\nPre-conditions:\n1.\tThe security aspects of sharing the user information between primary and partner MC systems shall be governed as per the service provider agreement between them. In this case, we consider the partner MC system does not share their users' information to the primary MC system.\n2.\tThe authorized MC service user/dispatcher belongs to the primary MC system.\n3.\tThe MC service server of the primary MC system is where the authorized MC service user/dispatcher creates the ad hoc group.\n4.\tSome users of the ad hoc group may belong to partner MC systems.\n5.\tThe ad hoc group identity and ad hoc group configuration for an ad hoc group have been preconfigured in MC service client and other participants of ad hoc group have also received the relevant security related information to allow them to communicate in an ad hoc group communication.\n6.\tThe call initiating MC service client is aware of a suitable preconfigured ad hoc group whose configuration has been preconfigured in the MC service UEs who are the participants of the ad hoc group.\nThe figure depicts a setup for an ad hoc group call, showing the various components and their arrangement. The setup includes a base station (BS), a group of users (UG), and a router (R). The diagram illustrates the setup process, including the placement of the base station, the distribution of the users, and the routing of the data. The figure is used to demonstrate the concept of ad hoc group calls, which are a type of wireless communication where users are connected to a central point without the need for a dedicated network infrastructure.\nFigure 7.2.2.1.1-1: Ad hoc group call setup\n1.\tThe MC service client of authorized user initiates a group call with multiple users from primary and partner MC systems. A group call request message with the information of the MC service IDs and the pre-configured ad hoc group is routed to the MC service server of the primary MC system.\n2.\tThe MC service server of the primary MC system forms the ad hoc group by using MC service users' information and the configuration of the preconfigured ad hoc group received in step 1 and assigns a MC service group ID for the newly formed ad hoc group. It identifies the appropriate MC service server responsible for the MC service users of the ad hoc group. The MC service users are automatically affiliated to the ad hoc group.\nNOTE 1:\tThe newly formed ad hoc group information including the MC service group ID and the list of users is held in dynamic data in the MC service server.\n3.\tThe MC service server of the primary MC system sends the group call request to the affiliated group members of the ad hoc group belonging to the primary MC system.\n4.\tThe MC service clients receive in the group call request the information of the MC service group ID for the ad hoc group and further notify their corresponding MC service user. The affiliated group members of the ad hoc group of the primary MC system may accept or reject the call and respond with the group call response.\n5.\tThe primary MC service server further initiates a group call request message to the MC service server of the partner MC system for the ad hoc group's MC service users' belonging to partner MC system.\n6.\tUpon receiving the group call request message from the MC service server of the primary MC system, the MC service server of the partner MC system initiates a call invitation to its MC service users and sends the group call request to the MC service users of the partner MC system.\n7.\tThe MC service clients receive in the group call request the information of the MC service group ID for the ad hoc group and further notify their corresponding MC service user. The MC service users upon receipt of the invitation may accept or reject the call, and respond with the group call response.\n8.\tThe MC service server of the partner MC system provides a group call response message to the MC service server of the primary MC system with success or failure result and/or detailed reason information in case of failure.\n9.\tThe MC service server of the primary MC system provides a group call response message to the MC service client of the authorized MC service user upon receiving response to the corresponding group call request with the MC service server of the partner MC system. The group call response will consist of the success or failure result and/or detailed reason information in case of failure. The MC service client 1 receives the MC service group ID assigned for the ad hoc group via this step.\nNOTE 2:\tThe group call response message is triggered depending on the conditions to proceed with the call.\n10.\tUpon successful group call setup, a group call is established amongst the multiple group members from primary and partner MC systems. The media plane and floor control resources are established.\nThis procedure focuses on the case where an MC service server initiates the termination of an ongoing MC service ad hoc group call for all the participants of that group call, since at least one of the termination conditions are met e.g., due to hang time expiry, last participant leaving, second last participant leaving, initiator leaving, or minimum number of affiliated MC service group members are not present.\nProcedures in figure 7.2.2.2-1 are the signalling control plane procedures for the MC service server initiating termination of an ongoing MC service ad hoc group call.\nThe figure depicts a 2.2.2.2 Ad Hoc group call release, showing the release process for a specific group call. The release is depicted in a graphical format, with the release status, release time, and release duration clearly labeled. The figure is a visual representation of the release process, allowing users to understand the steps involved in releasing a group call.\nFigure 7.2.2.2-1: Ad hoc group call release\n1.\tIt is assumed that MC service users on MC service client 1, client 2 belonging to primary MC system and client 3 belonging to partner MC system are already part of the ongoing ad hoc group call (e.g. as a result of ad hoc group call setup as specified in clause 7.2.2.1.1).\n2.\tThe MC service server would like to release the MC service group call which is ongoing e.g., due to hang time expiry, last participant leaving, second last participant leaving, initiator leaving, or minimum number of affiliated MC service group members are not present.\n3.\tThe MC service server identifies the participants of the ongoing ad hoc group call and generates group call release request to release ongoing session.\n4.\tThe MC service server sends a group call release request via SIP core towards each participant of the ongoing group call. If the participants belong to partner MC system, then group call release request is sent to the partner MC service server, which further sends the group call release request to the MC service clients.\n5.\tThe MC service users are notified about the release of the ad hoc group call.\n6.\tThe MC service client(s) receiving group call release request, send acknowledgement towards the MC service server by sending a group call release response.\n7.\tThe MC service client 1, client 2 and client 3 have successfully released the floor control and media plane resources associated with the group call that is terminated. The MC service servers remove the ad hoc group information from the dynamic data held in the MC service servers and thus the ad hoc group ceases to exist.\nTable 7.3.2.1.1-1 describes the information flow group call request from the MC service client to the MC service server. The group call request information flow specified in MC service specifications is to be updated accordingly as shown in bold.\nTable 7.3.2.1.1-1 Group call request information elements\n\nTable 7.3.2.1.2-1 describes the information flow group call request between the MC service servers. The group call request information flow specified in MC service specifications is to be updated accordingly as shown in bold.\nTable 7.3.2.1.2-1 Group call request information elements\n\nTable 7.3.2.1.3-1 describes the information flow group call request from the MC service server to the MC service client. The group call request information flow specified in MC service specifications is to be updated accordingly as shown in bold.\nTable 7.3.2.1.3-1 Group call request information elements\n\nTable 7.3.2.1.4-1 describes the information flow group call response from the MC service server to the MC service client. No change is expected to the group call response information flow specified in MC service specifications.\nTable 7.3.2.1.4-1 Group call response information elements\n\nTable 7.3.2.1.5-1 describes the information flow group call response between the MC service servers. No change is expected to the group call response information flow specified in MC service specifications.\nTable 7.3.2.1.5-1 Group call response information elements\n\nTable 7.3.2.1.6-1 describes the information flow group call response from the MC service client to the MC service server. No change is expected to the group call response information flow specified in MC service specifications.\nTable 7.3.2.1.6-1 Group call response information elements\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3.2.1.1-1 Group call request information elements",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3.2.1.2-1 Group call request information elements",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3.2.1.3-1 Group call request information elements",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3.2.1.4-1 Group call response information elements",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3.2.1.5-1 Group call response information elements",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3.2.1.6-1 Group call response information elements",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.3.3\tSolution Evaluation",
+                            "text_content": "This is a viable solution to setup and release an ad hoc group call where the ad hoc group is created during the group call setup and the ad hoc group is removed when the group call is released thus the ad hoc group ceases to exist. This procedure achieves the required performance and security as per the stage 1 requirements for a group call. The group call security is achieved via the use of a preconfigured ad hoc group information and its group security information is applied on the ad hoc group call.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.3\tSolution 3: Configuration parameters required for Ad hoc group communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.3.1\tGeneral",
+                            "text_content": "This solution addresses the key issue 3 described in clause 4.3 on configuration parameters required for supporting ad hoc group communication. This clause identifies the list of configuration parameters and which category of the configuration data they belong to.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.3.2\tMC service configuration data",
+                            "text_content": "Table 7.3.2-1 describes MCPTT service configuration data required for the ad hoc group communication.\nTable 7.3.2-1: MCPTT service configuration data (on-network)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3.2-1: MCPTT service configuration data (on-network)",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.3.3\tMC service user profile configuration data",
+                            "text_content": "Table 7.3.3-1 describes MCPTT user profile configuration data required for the ad hoc group communication.\nTable 7.3.3-1: MCPTT user profile configuration data (on-network)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3.3-1: MCPTT user profile configuration data (on-network)",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.3.4\tSolution Evaluation",
+                            "text_content": "This solution provides additional configuration parameters that are required to support MCX ad hoc group communication procedures. Parameters proposed as part of this solution are based on the requirements specified in 3GPP TS 22.280 [3].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.4\tSolution 4: Modifying participants list of on-going ad hoc group communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.4.1\tGeneral",
+                            "text_content": "This solution addresses the key issue 4 described in clause 4.4 on Modifying participants list of on-going ad hoc group communication. Information flows and procedures that are required to address the key issue 4 are addressed in this section.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.4.2\tInformation flows",
+                            "text_content": "Table 7.4.2.1-1 describes the information flow Modify ad hoc Group call participants request from the MC service client to the MC service server.\nTable 7.4.2.1-1 Modify ad hoc group call participants request information elements\n\nTable 7.4.2.2-1 describes the information flow Modify ad hoc group call participants response from the MC service server to the MC service client.\nTable 7.4.2.2-1 Modify Ad hoc group call participants response information elements\n\nTable 7.4.2.3-1 describes the information flow ad hoc group call leave request from the MC service server to the MC service client.\nTable 7.4.2.3-1 Ad hoc group call leave request information elements\n\nTable 7.4.2.4-1 describes the information flow Ad hoc group call leave response from the MC service client to the MC service server.\nTable 7.4.2.4-1 Ad hoc group call leave response information elements\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.4.2.1-1 Modify ad hoc group call participants request information elements",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.4.2.2-1 Modify Ad hoc group call participants response information elements",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.4.2.3-1 Ad hoc group call leave request information elements",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.4.2.4-1 Ad hoc group call leave response information elements",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.4.3\tProcedure",
+                            "text_content": "Figure 7.4.3.1-1 below illustrates the modification of ad hoc group communication participants procedure by the initiator of the ad hoc group communication.\nPre-conditions:\n1.\tThe MC service client 1 is the initiator of the ad hoc group communication.\n2.\tThe MC service users on MC service client 1, MC service client 3 to MC service client n are on an ongoing ad hoc group communication.\n3.\tThe MC service user 1 requests to remove the user of MC service client 3 from the ad hoc group communication and add user of MC service client 2 into the on-going ad hoc group communication.\n\nThe figure depicts a modification of ad hoc group communication by the initiator, showing how the initiator can modify the group communication participants.\nFigure 7.4.3.1-1: Modification of ad hoc group communication participants by the initiator\n1.\tThe MC service client 1 sends the modify ad hoc group call participants request to the MC service server inorder to remove MC service client 3 from the ongoing ad hoc group communication and add MC service client 2 into it.\n2.\tThe MC service server verifies whether the MC service client 1 is authorized to add or remove(modify) the participants of the on-going ad hoc group communication.\n3.\tThe MC service server sends the modify ad hoc group communication participants response to the MC service client 1.\n4.\tThe MC service server sends the ad hoc group call leave request to the MC service client 3 in order to remove it from the on-going ad hoc group communication.\n5.\tThe MC service client 3 notifies the user of the ad hoc group call leave request.\n6.\tThe MC service client 3 sends the ad hoc group call leave response to the MC service server.\n7.\tThe MC service server removes the MC service client 3 from the ongoing ad hoc group communication.\n8.\tMC service client 1 sends AHGC share security material command to the MC service targeting MC service client 2 containing the security material to be shared with the MC service client 2 for use in this ad hoc group communication.\nNOTE:\tSteps 8 to 11 can occur at any time following step 3.\n9.\tThe MC service server sends the ad hoc group communication request towards MC service client 2.\n10.\tThe receiving MC service client 2 notifies the user about the incoming ad hoc group communication.\n11.\tThe MC service client 2 accepts the ad hoc group communication request and send ad hoc group communication responses to the MC service server. The response may also contain a functional alias of the responding MC service user, which is verified (valid and activated for the user) by the MC service server.\n12. The MC service server may notify the initiating MC service user of all the users who are added to the on-going ad hoc group communication. This notification may be sent to the initiating MC service user by the MC service server more than once during the call when MC service users join or leave the ad hoc group communication.\n13.\tThe MC service server may notify the participants about the change in the participants list of on-going ad hoc group communication.\nFigure 7.4.3.2-1 below illustrates the modification of ad hoc group communication participants procedure by the MC service server.\nPre-conditions:\n1.\tThe MC service client 1 is the initiator of the ad hoc group communication.\n2.\tMC service server determined the participants for the ad hoc group communication based on the criteria specified by the MC service client 1 while initiating the ad hoc group communication.\n3.\tMC service server continuously evaluates the criteria to monitor the list of users who meets or not meets the criteria for participating in the on-going ad hoc group communication.\n4.\tThe MC service server detects that the MC service client 5 satisfies the criteria and MC service client 4 stops to meet the criteria specified by the MC service client 1.\n\nThe figure depicts a modification of ad hoc group communication by the MC service server, showing how the MC service server modifies the group communication participants by adding or removing them. This modification is crucial for ensuring the efficient and reliable operation of the network.\nFigure 7.4.3.2-1: Modification of ad hoc group communication participants by the MC service server\n1.\tThe ad hoc group communication is established and on-going with the participants MC service client 1, MC service client 2, MC service client 3 and MC service client 4. The participants list is determined by the MC service server based on the criteria specified by the MC service client 1 while initiating the communication\n2.\tThe MC service server detects that the MC service client 5 satisfies the criteria specified by the MC service client.\n3.\tThe MC service server sends the ad hoc group communication request to the MC service client 5.\n4.\tThe MC service client 5 notifies the user about the incoming ad hoc group communication.\n5.\tThe MC service client 5 accepts the ad hoc group communication request and sends the ad hoc group communication response to the MC service server.\n6.\tThe on-going ad hoc group communication is updated by adding MC service client 5 which satisfies the criteria specified by the MC service client 1.\n7.\tThe MC service server detects that the MC service client 4 is no more satisfying the criteria to be the participant of the ad hoc group communication.\n8.\tThe MC service server sends the ad hoc group communication leave request to the MC service client 4 and removes it from the on-going ad hoc group communication.\n9.\tThe MC service client 4 notifies the user of the ad hoc group call leave request.\n10.\tThe MC service client 4 sends the ad hoc group communication leave response to the MC service server.\n11.\tThe on-going ad hoc group communication is updated by removing MC service client 4 which no more satisfies the criteria specified by the MC service client 1.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.4.4\tSolution evaluation",
+                            "text_content": "The procedures proposed as part of this solution handle the modification of participants list of the on-going ad hoc group communication. Participants can either be added to or removed from the on-going ad hoc group communication. This solution provides a mechanism for the initiator of the ad hoc group communication to modify the participants list if the list of participants is provided by the initiator and for the MC service server if the list of participants for the on-going ad hoc group communication is determined by the MC service server.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "8\tOverall evaluation",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tKey issue and solution evaluation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.1.1\tIntroduction",
+                            "text_content": "All the key issues and solutions specified in this technical report are listed in table 8.1.2-1. It includes the mapping of the key issues (clause 4) to the solutions (clause 7) and corresponding solution evaluations.\nIn addition, table 8.1.2-1 lists the impacts to other working groups that will need consideration during the normative phase.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.1.2\tResults",
+                            "text_content": "Table 8.1.2-1: Key issues, solutions and solution evaluations\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.1.2-1: Key issues, solutions and solution evaluations",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.1.3\tOverall evaluation of key issue #1",
+                            "text_content": "Key issue #1 is about the Ad hoc group communication, which enables authorized MCX users to combine a random set of MCX Users into a group communication. Following open issues are considered during the study :\n1. \tProcedures for establishing and release of the ad hoc group communication.\n2. \tProcedures for establishing the ad hoc group communication with end-to-end encryption support.\n3. \tIdentify whether new information flows are required or existing information flows can be enhanced to support the ad hoc group communication set up.\n4. \tHow to support different mechanisms for determining the participants list for the ad hoc group communication. It could be supplied by the initiator of the ad hoc group call or determined by the MCX system based on some pre-defined criteria.\n5. \tHow to support a mechanism for the initiator of an MCX Service ad hoc group communication to request that the list of participants are updated by the MCX Service system using a specific pre-defined criteria.\n6. \tIdentify whether any changes are required to the existing MCX functional architecture for supporting the ad hoc group communication.\nBoth solution#1 and solution#2 addresses the open issues described above. Based on solution#1 and solution#2, a harmonized procedure is required to address the key issue#1. End-to-end encryption support is mandatory for the AHGC and usage of pre-configured group to achieve end-to-end encryption as specified in solution #2 will be adapted. New information flows except the AHGC share security material command described as part of solution #1 will be used. No architectural updates as specified in open issue 7 are required to support AHGC.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.1.4\tOverall evaluation of key issue #2",
+                            "text_content": "Key issue #2 is about the network topology hiding while establishing the ad hoc group communication. Following open issues are considered :\n-\tHow the group ID used for the ad hoc group communication can be created by MC service client and managed when establishing the ad hoc group communication.\n-\tWhether and how to support the ad hoc group communication without exposing the network topology.\n-\tWhether and how to support the ad hoc group communication with dynamically allocated network resources (such as the MC service server that will host the communication).\nSolution #1 with the option that the network creates the ad hoc group ID for the AHGC addresses the open issues listed above. This solution provides a procedure for the MC service server to create the ad hoc group ID and share it to the MC service clients that needs to be used for the ad hoc group communication. MC service client is not allowed to create AHGC group ID in solution #1.This way the MC service client is totally transparent of the network topology of the MC system domain and no need to create the ad hoc group ID by itself. As the network is the one selecting which MC service server to host the AHGC, network resources (the MC service server that hosts this group communication) can be dynamically allocated based on real-time information of network resources such as availability and traffic load balance that can be further specified in the normative work. The mechanism provided in Solution #1 can serve as basis for the normative work when topology hiding is required.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.1.5\tOverall evaluation of key issue #3",
+                            "text_content": "Key issue #3 is about the configuration parameters that are required to be applied while establishing the ad hoc group communication. Following open issues are considered :\n-\tIdentify the required system or service level configuration parameters and document them.\n-\tIdentify the user level configuration parameters and document them.\n-\tIdentify the default parameters to be configured which will be applied when these parameters are not supplied as part of the ad hoc group communication request by the initiator.\n-\tHow the MCX server shall be able to determine whether the user is authorized to initiate ad hoc group communication.\nSolution #3 identifies the configuration parameters that are required to address the open issues listed above and it can serve as basis for the normative work. There were no default parameters identified which needs to be configured. These configuration parameters are applied by MC service server handling AHGC as described in the below table:\n\nEditor's note:\tAny additional parameters related to MCVideo and MCData services applicable for AHGC is FFS.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Solution #3 identifies the configuration parameters that are required to address the open issues listed above and it can serve as basis for the normative work. There were no default parameters identified which needs to be configured. These configuration parameters are applied by MC service server handling AHGC as described in the below table:",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.1.6\tOverall evaluation of key issue #4",
+                            "text_content": "Key issue #4 is related to modification of participants list of on going ad hoc group communication. Following open issues are considered :\n-\tModifying the participants list by the initiator of the ad hoc group communication when the participants list is provided by the initiator while establishing the ad hoc group communication.\n-\tModifying the participants list by the MC service server when the participants list is determined by the MC service server.\nSolution #4 identifies the information flows and procedures required to address the open issues listed above and it can service as basis for the normative work.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "9\tConclusions",
+            "description": "This technical report fulfils the objectives of the study on supporting ad hoc group communication for MC services. The report includes the following:\n1.\tDefinition of terms and abbreviations used in the study (clause 3);\n2.\tKey issues identified by the study (clause 4);\n3.\tIndividual solutions addressing the key issues (clause 7); and\n4.\tOverall evaluations of all the solutions (clause 11).\nNo architectural requirements and enhancements were identified as part of the study. Also no dependencies on other working groups within 3GPP were identified.\nThe study concludes with following considerations for the normative work:\n1.\tDefinition of terms and abbreviations captured in clause 3 will be reused;\n2.\tFollowing individual solutions, corresponding to the key issues, will be considered as candidate solutions:\na.\tfor Key issue #1 (Ad hoc group communication):\ni.\tInformation flows specified in Solution #1 (Ad hoc group communication set up for MCX service)\nii.\tInformation flow AHGC share security material command is not required\niii.\tPre-configured group as specified in Solution #2 to be used for achieving the end-to-end security for both the cases where the participants list is supplied by the initiator of the AHGC and participants list is determined by the MC Service server.\niv.\tPre-configured group to be used for the AHGC is determined by the MC Service server and not by the initiating client.\nb.\tfor Key issue #2 (Network topology hiding):\ni.\tMechanism provided in Solution #1 (Ad hoc group communication set up for MCX service) where the MC service group ID is created by the MC Service server and shared to the participating clients to be adapted.\nc.\tfor Key issue #3 (Configuration parameters):\ni.\tSolution #3 (Configuration parameters)\nd.\tfor Key issue #4 (Modifying participants list):\ni.\tSolution #4 (Modifying participants list)\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 28,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

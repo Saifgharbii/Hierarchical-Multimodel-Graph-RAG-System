@@ -1,0 +1,507 @@
+{
+    "document_name": "28623-i51.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "The present document is part of a TS-family covering the 3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Telecommunication management; as identified below:\n28.621\tGeneric Network Resource Model (NRM) Integration Reference Point (IRP); Requirements.\n28.622\tGeneric Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS).\n28.623\tGeneric Network Resource Model (NRM) Integration Reference Point (IRP); Solution Set (SS) \t\t\t\tdefinitions.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "This TS-family specifies a generic Network Resource Model, NRM (also referred to as a Management Information Model - MIM) with definitions of Information Object Classes (IOCs) and Managed Object Classes (MOCs).\nThe present document specifies the Solution Set definition for the Generic NRM IRP.\nThe Solution Set definition is related to 3GPP TS 28.622 V16.4.X [4].\nNote that the present document is applicable to deployment scenarios using the Service Based Management Architecture (SBMA) as defined in TS 28.533 [32].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies.  In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TS 32.101: \"Telecommunication management; Principles and high level requirements\".\n[2]\t3GPP TS 32.102: \"Telecommunication management; Architecture\".\n[3]\t3GPP TS 32.600: \"Telecommunication management; Configuration Management (CM); Concept and high-level requirements\".\n[4]\t3GPP TS 28.622: “Generic Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)”.\n[5]\t3GPP TS 32.300: \"Telecommunication management; Configuration Management (CM); Name convention for Managed Objects\".\n[6]\tVoid\n[7]\t3GPP TS 32.616: \"Telecommunication management; Configuration Management (CM); Bulk CM Integration Reference Point (IRP); Solution Set (SS) definitions\".\n[8]\tW3C REC-xml11-20060816: \"Extensible Markup Language (XML) 1.1 (Second Edition)\".\n[9]\tVoid.\n[10]\tW3C XML Schema Definition Language (XSD) 1.1 Part 1: Structures.\n[11]\tW3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes.\n[12]\tW3C REC-xml-names-20060816: \"Namespaces in XML 1.1 (Second Edition)\".\n[13]\tVoid\n[14]\t3GPP TS 32.160: \"Management and orchestration; Management Service Template\".\n[15]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[16]\tIETF RFC 8528: \"YANG Schema Mount\".\n[17]\tManagement and Orchestration APIs Stage 3 Repository\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [15], 3GPP TS 32.101 [1], 3GPP TS 32.102 [2], 3GPP TS 32.600 [3], 3GPP TS 28.622 [4] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [15] and 3GPP TS 32.101 [1], 3GPP TS 32.102 [2] and 3GPP TS 32.600 [3] and 3GPP TS 28.622 [4].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [15], 3GPP TS 32.600 [3] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [15] and 3GPP TS 32.600 [3].\nJSON\tJavaScript Object Notation\nSS\tSolution Set\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tSolution Set (SS) definitions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tCORBA Definitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "CORBA definitions are specified in Annex A (normative): CORBA Solution Set.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tXML Definitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "XML definitions are specified in Annex B (normative): XML Definitions.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tOpenAPI Definitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The present clause contains the OpenAPI definitions of the Generic NRM in YAML format.\nThe Information Service (IS) of the Generic NRM is defined in 3GPP TS 28.622 [4].\nMapping rules to produce the OpenAPI definition based on the IS are defined in 3GPP TS 32.160 [14].\nOpenAPI/YAML definitions are specified in 3GPP Forge [17].\nDirectory: OpenAPI\nFiles:\nTS28623_ComDefs.yaml\nTS28623_GenericNrm.yaml\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tYANG Definitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The present clause contains the YANG definitions for the Generic NRM.\nThe Information Service (IS) of the Generic NRM is defined in 3GPP TS 28.622 [4].\nMapping rules to produce the YANG definition based on the IS are defined in 3GPP TS 32.160 [14].\nYANG definitions are specified in 3GPP Forge [17].\nDirectory: yang-models\nFiles:\n_3gpp-common-ep-rp.yang\n_3gpp-common-filemanagement.yang\n_3gpp-common-files.yang\n_3gpp-common-fm.yang\n_3gpp-common-managed-element.yang\n_3gpp-common-managed-function.yang\n_3gpp-common-managementdatacollection.yang\n_3gpp-common-management-node.yang\n_3gpp-common-measurements.yang\n_3gpp-common-mnsagent.yang\n_3gpp-common-mnsregistry.yang\n_3gpp-common-qmcjob.yang\n_3gpp-common-subnetwork.yang\n_3gpp-common-subscription-control.yang\n_3gpp-common-top.yang\n_3gpp-common-trace.yang\n_3gpp-common-yang-extensions.yang\n_3gpp-common-yang-types.yang\n\nMount information\nIf the class ManagedElement and the underlying hierarchy is contained under a SubNetwork all YANG modules containing IOCs that can be contained under the ManagedElement directly or under other IOCs contained by the ManagedElement and the YANG module for ManagedElement itself shall be mounted at the mountpoint \"children-of-SubNetwork\" in the YANG module _3gpp-common-subnetwork.\nSee IETF RFC 8528 [16] that describes the mechanism that adds the schema trees defined by a set of YANG modules onto a mount point defined in the schema tree in another YANG module.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.0\tGeneral",
+            "description": "This annex contains the CORBA Solution Set for the IRP whose semantics is specified in Generic NRM IRP: Information Service (3GPP TS 28.622 [4]).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.1\tArchitectural features",
+            "description": "The overall architectural feature of Generic Network Resources IRP is specified in 3GPP TS 28.622 [4]. \nThis clause specifies features that are specific to the CORBA SS.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.1.1\tSyntax for Distinguished Names",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The syntax of a Distinguished Name is defined in 3GPP TS 32.300 [5].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.1.2\tRules for NRM extensions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.1.2.0\tIntroduction",
+                            "text_content": "This clause discusses how the models and IDL definitions provided in the present document can be extended for a particular implementation and still remain compliant with 3GPP SA5's specifications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "A.1.2.1\tAllowed extensions",
+                            "text_content": "Vendor-specific MOCs may be supported. The vendor-specific MOCs may support new types of attributes. \nThe 3GPP SA5-specified notifications may be issued referring to the vendor-specific MOCs and vendor-specific attributes. New MOCs shall be distinguishable from 3GPP SA5 MOCs by name. 3GPP SA5-specified and vendor-specific attributes may be used in vendor-specific MOCs. Vendor-specific attribute names shall be distinguishable from existing attribute names.\nNRM MOCs may be subclassed. Subclassed MOCs shall maintain the specified behaviour of the 3GPP SA5's superior classes.  They may add vendor-specific behaviour with vendor-specific attributes. When subclassing, naming attributes cannot be changed. The subclassed MOC shall support all attributes of its superior class. Vendor-specific attributes cannot be added to 3GPP SA5 NRM MOCs without subclassing.\nWhen subclassing, the 3GPP SA5-specified containment rules and their specified cardinality shall still be followed. \nAs an example, ManagementNode (or its subclasses) shall be contained under SubNetwork (or its subclasses).\nManaged Object Instances may be instantiated as CORBA objects. This requires that the MOCs be represented in IDL. 3GPP SA5's NRM MOCs are not currently specified in IDL, but may be specified in IDL for instantiation or subclassing purposes. However, management information models should not require that IRPManagers access the instantiated managed objects other than through supported methods in the present document.\nExtension rules related to notifications (Notification categories, Event Types, Extended Event Types etc.) are for further study.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "A.1.2.2\tExtensions not allowed",
+                            "text_content": "The IDL specifications in the present document cannot be edited or altered. Any additional IDL specifications shall be specified in separate IDL files.\nIDL interfaces (note: not MOCs) specified in the present document may not be subclassed or extended. New interfaces may be defined with vendor-specific methods.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.2\tMapping",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.2.1\tGeneral mapping",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Attributes modelling associations as defined in the NRM (here also called \"reference attributes\") are in this SS mapped to attributes. The names of the reference attributes in the NRM are mapped to the corresponding attribute names in the MOC. When the cardinality for an association is 0..1 or 1..1 the datatype for the reference attribute is defined as an MOReference. The value of an MO reference contains the distinguished name of the associated MO. When the cardinality for an association allows more than one referred MO, the reference attribute will be of type MOReferenceSet, which contains a sequence of MO references.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.2\tInformation Object Class (IOC) mapping",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This Solution Set supports reference attributes for relations other than containment relations between objects. Reference attributes are therefore introduced in each MOC where needed.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.2.2.1\tIOC SubNetwork",
+                            "text_content": "Mapping from NRM IOC SubNetwork attributes to SS equivalent MOC SubNetwork attributes\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC SubNetwork attributes to SS equivalent MOC SubNetwork attributes",
+                                    "table number": 2,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.2\tIOC ManagedElement",
+                            "text_content": "Mapping from NRM IOC ManagedElement attributes and association roles to SS equivalent MOC ManagedElement attributes\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC ManagedElement attributes and association roles to SS equivalent MOC ManagedElement attributes",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.3\tIOC MeContext",
+                            "text_content": "Mapping from NRM IOC MeContext attributes to SS equivalent MOC MeContext attributes\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC MeContext attributes to SS equivalent MOC MeContext attributes",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.4\tIOC ManagementNode",
+                            "text_content": "Mapping from NRM IOC ManagementNode attributes and association roles to SS equivalent MOC ManagementNode attributes\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC ManagementNode attributes and association roles to SS equivalent MOC ManagementNode attributes",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.5\tIOC VsDataContainer",
+                            "text_content": "Mapping from NRM IOC VsDataContainer attributes and association roles to SS equivalent MOC VsDataContainer attributes\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC VsDataContainer attributes and association roles to SS equivalent MOC VsDataContainer attributes",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.6\tIOC ManagedFunction",
+                            "text_content": "Mapping from NRM IOC ManagedFunction attributes and association roles to SS equivalent MOC ManagedFunction attributes\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC ManagedFunction attributes and association roles to SS equivalent MOC ManagedFunction attributes",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.7\tIOC IRPAgent",
+                            "text_content": "Mapping from NRM IOC IRPAgent attributes to SS equivalent MOC IRPAgent attributes\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC IRPAgent attributes to SS equivalent MOC IRPAgent attributes",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.8\tIOC Top",
+                            "text_content": "Mapping from NRM IOC Top attributes to SS equivalent attributes in all MOCs\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC Top attributes to SS equivalent attributes in all MOCs",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.9\tIOC Link",
+                            "text_content": "Mapping from NRM IOC Link attributes to SS equivalent MOC IRPAgent attributes\nNOTE 1: Void.\nNOTE 2: Void.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC Link attributes to SS equivalent MOC IRPAgent attributes",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.10\tIOC EP_RP",
+                            "text_content": "Mapping from NRM IOC EP_RP attributes to SS equivalent MOC EP_RP attributes\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC EP_RP attributes to SS equivalent MOC EP_RP attributes",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.11\tIOC ThresholdMonitoringCapability",
+                            "text_content": "Mapping from NRM IOC ThresholdMonitoringCapability attributes to SS equivalent MOC ThresholdMonitoringCapability attributes\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC ThresholdMonitoringCapability attributes to SS equivalent MOC ThresholdMonitoringCapability attributes",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.12\tIOC ThresholdMonitor",
+                            "text_content": "Mapping from NRM IOC ThresholdMonitor attributes to SS equivalent MOC ThresholdMonitor attributes\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC ThresholdMonitor attributes to SS equivalent MOC ThresholdMonitor attributes",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.13\tIOC TraceJob",
+                            "text_content": "Mapping from NRM IOC TraceJob attributes to SS equivalent MOC TraceJob attributes\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Mapping from NRM IOC TraceJob attributes to SS equivalent MOC TraceJob attributes",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.3\tSolution Set (SS) definitions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.3.1\tIDL definition structure",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Clause A.3.2 defines the types which are used by the Generic NRM IRP.\nClause A.3.3 defines the MO classes for the Generic NRM IRP.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.2\tIDL specification \"GenericNetworkResourcesIRPSystem.idl\"",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "//File: GenericNetworkResourcesIRPSystem.idl\n#ifndef _GENERIC_NETWORK_RESOURCES_IRP_SYSTEM_IDL_\n#define _GENERIC_NETWORK_RESOURCES_IRP_SYSTEM_IDL_\n\n// This statement must appear after all include statements\n#pragma prefix \"3gppsa5.org\"\n\nmodule GenericNetworkResourcesIRPSystem\n{\n/**\n* The format of Distinguished Name (DN) is specified in \"Name Convention\n* for Managed Objects (3GPP TS 32.300 [5])\".\n*/\ntypedef string DN;\n\n/**\n*  This module adds datatype definitions for types\n*  used in the NRM which are not basic datatypes defined\n*  already in CORBA.\n*/\nmodule AttributeTypes\n{\n/**\n* An MO reference refers to an MO instance.\n* \"otherMO\" contains the distinguished name of the referred MO.\n* A conceptual \"null\" reference (meaning no MO is referenced)\n* is represented as an empty string (\"\").\n*\n*/\nstruct MOReference\n{\nDN otherMO;\n};\n\n/**\n* MOReferenceSet represents a set of MO references.\n* This type is used to hold 0..n MO references.\n* A referred MO is not allowed to be repeated (therefore\n* it is denoted as a \"Set\")\n*/\ntypedef sequence<MOReference> MOReferenceSet;\n\n/**\n*  A set of strings.\n*/\ntypedef sequence<string> StringSet;\n\n/**\n*  A set of long.\n*/\ntypedef sequence<long> LongSet;\n/*\n* The LinkListSet represents the Link_X_Y objects (or subclasses of\n* Link_X_Y objects) that have a relationship with this object instance.\n* Each Link_X_Y object models interface(s) between objects of class X and\n* Y. The object containing this attribute must either be a class of type X,\n* Y, XFunction, YFunction or a subclass of one of those classes. The\n* LinkListSet may be empty, or there may be no instances for a particular\n* Link_X_Y class name.\n*/\ntypedef MOReferenceSet LinkListSet;\n\n/**\n* VNFParameters includes several attributes of a VNF instance.\n* The detailed definition of the attributes, see clause 4.4.1 of [4].\n*/\nstruct VNFParameters\n{\nstring vnfInstanceId;\nstring vnfdId;\nstring flavourId;\nboolean autoScalable;\n};\n\n/**\n* VNFParametersListType represents a list of VNFParameters.\n* The detailed definition of vnfParametersListType, see clause 4.4.1 of [4].\n*/\ntypedef sequence<VNFParameters> VNFParametersListType;\nstruct PEEParameters\n{\nstring siteIdentification;\nfloat siteLatitude;\nfloat siteLongitude;\nstring siteDescription;\nstring equipmentType;\nstring environmentType;\nstring powerInterface;\n};\n\n/**\n* PEEParametersListType represents a list of PEEParameters.\n* The detailed definition of PEEParametersListType, see clause 4.4.1 of [4].\n*/\ntypedef sequence<PEEParameters> PEEParametersListType;\n\ntypedef any ThresholdValueType;\nenum Direction {INCREASING, DECREASING};\nunion HysteresisType switch(boolean)\n{\ncase TRUE: long long_value;\ncase FALSE: float float_value;\n};\nstruct ThresholdPackElement\n{\nThresholdValueType thresholdValue;\nshort thresholdLevel;\nHysteresisType hysteresis;\n};\ntypedef sequence<ThresholdPackElement> ThresholdPackType;\nstruct ThresholdInfo\n{\nstring measurementType;\nDirection direction_;\nThresholdPackType thresholdPack;\n};\ntypedef sequence<ThresholdInfo> ThresholdInfoListType;\n\n};\n\n\n/**\n*  This module adds datatype definitions for PM Control\n*/\nmodule PMControlTypes\n{\nStruct Measurements\n{\nmeasurementTypes StringSet,\ngPs LongSet\n};\ntypedef sequence <Measurements> Measurements;\n\nenum PMAdministrativeStateType\n{\nLOCKED,\nSHUTTINGDOWN,\nUNLOCKED\n};\n\nenum PMOperationalStateType\n{\nENABLED,\nDISABLED\n};\n\ntypedef MOReferenceSet ManagedObjectDNsType;\n\ntypedef MOReferenceSet ManagedObjectDNsBasicType;\n\ntypedef integer DefaultFileBasedGPType;\ntypedef integer DefaultFileReportPeriodType;\ntypedef string DefaultFileLocationType;\ntypedef integer DefaultStreamBasedGPType;\ntypedef string DefaultStreamTargetType;\n\ntypedef integer FileBasedGPType;\ntypedef integer FileReportingPeriodType;\ntypedef string FileLocationType;\ntypedef integer StreamBasedGPType;\ntypedef string StreamTargetType;\n\n};\n\n};\n\n#endif // _GENERIC_NETWORK_RESOURCES_IRP_SYSTEM_IDL_\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.3\tIDL specification \"GenericNetworkResourcesNRMDefs.idl\"",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "//File: GenericNetworkResourcesNRMDefs.idl\n#ifndef _GENERIC_NETWORK_RESOURCES_NRM_DEFS_IDL_\n#define _GENERIC_NETWORK_RESOURCES_NRM_DEFS_IDL_\n// This statement must appear after all include statements\n#pragma prefix \"3gppsa5.org\"\n/**\n* This module defines constants for each MO class name and\n* the attribute names for each defined MO class.\n*/\nmodule GenericNetworkResourcesNRMDefs\n{\n/**\n*  Definitions for MO class Top\n*/\ninterface Top\n{\n// Attribute Names\n//\nconst string CLASS = \"Top\";\n};\n/**\n*  Definitions for MO class SubNetwork\n*/\ninterface SubNetwork : Top\n{\nconst string CLASS = \"SubNetwork\";\n// Attribute Names\n//\nconst string id = \"id\";\nconst string dnPrefix = \"dnPrefix\";\nconst string userLabel = \"userLabel\";\nconst string userDefinedNetworkType = \"userDefinedNetworkType\";\nconst string setOfMcc = \"setOfMcc\";\n};\n\n/**\n*  Definitions for MO class ManagedElement\n*/\ninterface ManagedElement : Top\n{\nconst string CLASS = \"ManagedElement\";\n// Attribute Names\n//\nconst string id = \"id\";\nconst string dnPrefix = \"dnPrefix\";\nconst string managedElementType = \"managedElementType\";\nconst string userLabel = \"userLabel\";\nconst string vendorName = \"vendorName\";\nconst string userDefinedState =\"userDefinedState\";\nconst string locationName =\"locationName\";\nconst string managedBy = \"managedBy\";\nconst string swVersion = \"swVersion\";\n};\n\n/**\n*  Definitions for MO class MeContext\n*/\ninterface MeContext : Top\n{\nconst string CLASS = \"MeContext\";\n// Attribute Names\n//\nconst string id = \"id\";\nconst string dnPrefix = \"dnPrefix\";\n};\n/**\n*  Definitions for MO class ManagementNode\n*/\ninterface ManagementNode : Top\n{\nconst string CLASS = \"ManagementNode\";\n\n// Attribute Names\n//\nconst string id = \"id\";\nconst string userLabel = \"userLabel\";\nconst string vendorName = \"vendorName\";\nconst string userDefinedState = \"userDefinedState\";\nconst string locationName = \"locationName\";\nconst string managedElements = \"managedElements\";\nconst string swVersion = \"swVersion\";\n};\n\n/**\n*  Definitions for abstract MO class ManagedFunction\n*\n*/\ninterface ManagedFunction : Top\n{\nconst string CLASS = \"ManagedFunction\";\n// Attribute Names\n//\nconst string id = \"id\";\nconst string peeParametersList = \"peeParametersList\";\nconst string userLabel = \"userLabel\";\nconst string vnfParametersList = \"vnfParametersList\";\n};\n\n/**\n*  Definitions for MO class IRPAgent\n*/\ninterface IRPAgent : Top\n{\nconst string CLASS = \"IRPAgent\";\n// Attribute Names\n//\nconst string id = \"id\";\nconst string systemDN = \"systemDN\";\n};\n/**\n*  Definitions for abstract MO class Link\n*  This inherits from ManagedFunction\n*  The attributes aEnd and zEnd are populated with the DNs\n       *  of the entities associated via the link class.\n       *  The aEnd takes the DN of the 1st entity in alphabetical order,\n*  the zEnd takes the 2nd entity in alphabetical order of the class\n*  names.\n*/\ninterface Link : ManagedFunction\n{\nconst string CLASS = \"Link\";\n// Attribute Names\n//\nconst string aEnd = \"aEnd\";\nconst string zEnd = \"zEnd\";\nconst string linkType = \"linkType\";\nconst string protocolName = \"protocolName\";\nconst string protocolVersion = \"protocolVersion\";\n};\n/**\n*  Definitions for MO class VsDataContainer\n*/\ninterface VsDataContainer : Top\n{\nconst string CLASS = \"VsDataContainer\";\n// Attribute Names\n//\nconst string id = \"id\";\nconst string vsDataType = \"vsDataType\";\nconst string vsData = \"vsData\";\nconst string vsDataFormatVersion = \"vsDataFormatVersion\";\n};\n/**\n*  Definitions for abstract MO class EP_RP\n*/\ninterface EP_RP : Top\n{\nconst string CLASS = \"EP_RP\";\n// Attribute Names\n//\nconst string farEndEntity = \"farEndEntity\";\nconst string id = \"id\";\nconst string userLabel = \"userLabel\";\n};\n\n/**\n*  Definitions for MO class ThresholdMonitoringCapability\n*/\ninterface ThresholdMonitoringCapability : Top\n{\nconst string CLASS = \"ThresholdMonitoringCapability\";\n// Attribute Names\n//\nconst string supportedMonitoringGPs = \"supportedMonitoringGPs\";\n};\n\n/**\n*  Definitions for MO class ThresholdMonitor\n*/\ninterface ThresholdMonitor : Top\n{\nconst string CLASS = \"ThresholdMonitor\";\n// Attribute Names\n//\nconst string thresholdInfoList = \"thresholdInfoList\";\nconst string monitoringGP = \"monitoringGP\";\nconst string monitoringNotifTarget = \"monitoringNotifTarget\";\nconst string monitoredIOame = \"monitoredIOame\";\nconst string monitoredObjectDNs = \"monitoredObjectDNs\";\n};\n\n/**\n*  This module adds datatypes definitions for the Link Class\n*  These attributes are not the basic datatypes already defined\n*/\nmodule LinkAttributeTypes\n{\nenum LinkType\n{\nSIGNALLING,\nBEARER,\nOAM_AND_P,\nOTHER\n};\ntypedef sequence <LinkType> LinkTypeType;\n};\n};\n#endif // _GENERIC_NETWORK_RESOURCES_NRM_DEFS_IDL_\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "B.0\tGeneral",
+            "description": "This annex contains the XML Definitions for the Generic NRM IRP as it applies to Itf-N, in accordance with Generic NRM IRP IS definitions TS 28.622 [4].\nThe XML file formats are based on XML W3C REC-xml11-20060816 [8], W3C XML Schema Definition Language (XSD) 1.1 Part 1: Structures [10] W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes [11] and W3C REC-xml-names-20060816 [12] standards.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.1\tArchitectural features",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "B.1.0\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The overall architectural feature of Generic Network Resources IRP is specified in 3GPP TS 28.622 [4].\nThis clause specifies features that are specific to the Schema definitions.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.1.1\tSyntax for Distinguished Names",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The syntax of a Distinguished Name is defined in 3GPP TS 32.300 [5].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "B.2\tMapping",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "B.2.1\tGeneral mapping",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "An IOC maps to an XML element of the same name as the IOC's name in the IS. An IOC attribute maps to a sub-element of the corresponding IOC's XML element, and the name of this sub-element is the same as the attribute's name in the IS.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.2\tInformation Object Class (IOC) mapping",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The mapping is not present in the current version of this specification.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "B.3\tSolution Set (SS) definitions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "B.3.1\tXML definition structure",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The overall description of the file format of configuration data XML files is provided by 3GPP TS 28.616 [7].\nAnnex B.3.3 of the present document defines the NRM-specific XML schema genericNrm.xsd for the Generic Network Resources IRP NRM defined in 3GPP TS 28.622 [4].\nXML schema genericNrm.xsd explicitly declares NRM-specific XML element types for the related NRM.\nThe definition of those NRM-specific XML element types complies with the generic mapping rules defined in 3GPP TS 28.616 [7], with the following exception: as defined in 3GPP TS 28.616 [7], the vsData XML element type has an empty XML content.\nAdditionally, XML schema genericNrm.xsd also provides the following global XML declarations and definitions:\n-\tXML complex type NrmClass: derivation base type (see [8], [10] and [11]) for all NRM class associated XML element types (see 3GPP TS 28.616 [7]);\n-\tXML element type vsData: derivation base type (see [8], [10] and [11]) for all vendor-specific XML element types (see 3GPP TS 28.616 [7]);\n-\tXML element type SubNetworkOptionallyContainedNrmClass: substitution group head (see [8], [10] and [11]) for all XML element types associated to further NRM classes optionally contained under SubNetwork NRM class;\n-\tXML element type ManagedElementOptionallyContainedNrmClass: substitution group head (see [8], [10] and [11]) for all XML element types associated to further NRM classes optionally contained under ManagedElement NRM class.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.3.2\tGraphical Representation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The graphical representation is not present in the current version of this specification.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.3.3\tXML schema \"genericNrm.xsd\"",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "<?xml version=\"1.1\" encoding=\"UTF-8\"?>\n\n<!--\n3GPP TS 28.623 Generic Network Resources IRP\nBulk CM Configuration data file NRM-specific XML schema\ngenericNrm.xsd\n-->\n\n<schema\ntargetNamespace=\"http://www.3gpp.org/ftp/specs/archive/28_series/28.623#genericNrm\"\nelementFormDefault=\"qualified\"\nattributeFormDefault=\"unqualified\"\nxmlns=\"http://www.w3.org/2001/XMLSchema\"\nxmlns:xn=\"http://www.3gpp.org/ftp/specs/archive/28_series/28.623#genericNrm\"\nxmlns:sp=\"http://www.3gpp.org/ftp/specs/archive/28_series/28.629#sonPolicyNrm\"\n>\n<import namespace=\"http://www.3gpp.org/ftp/specs/archive/28_series/28.629#sonPolicyNrm\"/>\n<!-- Base XML type for all NRM class associated XML elements -->\n\n<complexType name=\"NrmClass\">\n<attribute name=\"id\" type=\"string\" use=\"required\"/>\n<attribute name=\"modifier\" use=\"optional\">\n<simpleType>\n<restriction base=\"string\">\n<enumeration value=\"create\"/>\n<enumeration value=\"delete\"/>\n<enumeration value=\"update\"/>\n</restriction>\n</simpleType>\n</attribute>\n</complexType>\n\n<!-- Generic Network Resources IRP NRM attribute related XML types -->\n\n<simpleType name=\"dn\">\n<restriction base=\"string\">\n<maxLength value=\"400\"/>\n</restriction>\n</simpleType>\n\n<complexType name=\"dnList\">\n<sequence minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element name=\"dn\" type=\"xn:dn\"/>\n</sequence>\n</complexType>\n\n<simpleType name=\"linkType\">\n<list>\n<simpleType>\n<restriction base=\"string\">\n<enumeration value=\"Signalling\"/>\n<enumeration value=\"Bearer\"/>\n<enumeration value=\"OAM_AND_P\"/>\n<enumeration value=\"Other\"/>\n</restriction>\n</simpleType>\n</list>\n</simpleType>\n\n<complexType name=\"linkListType\">\n<sequence minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element name=\"dn\" type=\"xn:dn\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"managedElementTypeListType\">\n<sequence minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element name=\"managedElementType\" type=\"string\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"vnfParametersListType\">\n<sequence minOccurs=\"1\" maxOccurs=\"unbounded\">\n<element name=\"vnfInstanceId\" type=\"string\"/>\n<element name=\"vnfdId\" type=\"string\" minOccurs=\"0\"/>\n<element name=\"flavourId\" type=\"string\" minOccurs=\"0\"/>\n<element name=\"autoScalable\" type=\"boolean\"/>\n</sequence>\n</complexType>\n\n<simpleType name=\"latitude\">\n<restriction base=\"decimal\">\n<fractionDigits value=\"4\"/>\n<minInclusive value=\"-90.0000\"/>\n<maxInclusive value=\"90.0000\"/>\n</restriction>\n</simpleType>\n\n<simpleType name=\"longitude\">\n<restriction base=\"decimal\">\n<fractionDigits value=\"4\"/>\n<minInclusive value=\"-180.0000\"/>\n<maxInclusive value=\"180.0000\"/>\n</restriction>\n</simpleType>\n\n\n<complexType name=\"peeParametersListType\">\n<sequence minOccurs=\"1\" maxOccurs=\"unbounded\">\n<element name=\"siteIdentification\" type=\"string\"/>\n<element name=\"siteLatitude\" type=\"xn:latitude\" minOccurs=\"0\"/>\n<element name=\"siteLongitude\" type=\"xn:longitude\" minOccurs=\"0\"/>\n<element name=\"siteDescription\" type=\"string\"/>\n<element name=\"equipmentType\" type=\"string\"/>\n<element name=\"environmentType\" type=\"string\"/>\n<element name=\"powerInterface\" type=\"string\"/>\n</sequence>\n</complexType>\n\n<simpleType name=\"pMAdministrativeStateType\">\n<restriction base=\"string\">\n<enumeration value=\"LOCKED\"/>\n<enumeration value=\"SHUTTINGDOWN\"/>\n<enumeration value=\"UNLOCKED\"/>\n</restriction>\n</simpleType>\n\n<simpleType name=\"pMOperationalStateType\">\n<restriction base=\"string\">\n<enumeration value=\"ENABLED\"/>\n<enumeration value=\"DISABLED\"/>\n</restriction>\n</simpleType>\n\n<simpleType name=\"nFServiceType\">\n<restriction base=\"string\">\n<enumeration value=\"Namf_Communication\"/>\n<enumeration value=\"Namf_EventExposure\"/>\n<enumeration value=\"Namf_MT\"/>\n<enumeration value=\"Namf_Location\"/>\n<enumeration value=\"Nsmf_PDUSession\"/>\n<enumeration value=\"Nsmf_EventExposure\"/>\n<enumeration value=\"others\"/>\n</restriction>\n</simpleType>\n\n<simpleType name=\"usageStateType\">\n<restriction base=\"string\">\n<enumeration value=\"IDEL\"/>\n<enumeration value=\"ACTIVE\"/>\n<enumeration value=\"BUSY\"/>\n</restriction>\n</simpleType>\n\n<simpleType name=\"registrationStateType\">\n<restriction base=\"string\">\n<enumeration value=\"LOCKED\"/>\n<enumeration value=\"SHUTTING_DOWN\"/>\n<enumeration value=\"UNLOCKED\"/>\n</restriction>\n</simpleType>\n\n<simpleType name=\"NFType\">\n<restriction base=\"string\">\n<enumeration value=\"NRF\"/>\n<enumeration value=\"UDM\"/>\n<enumeration value=\"AMF\"/>\n<enumeration value=\"SMF\"/>\n<enumeration value=\"AUSF\"/>\n<enumeration value=\"NEF\"/>\n<enumeration value=\"PCF\"/>\n<enumeration value=\"SMSF\"/>\n<enumeration value=\"NSSF\"/>\n<enumeration value=\"UDR\"/>\n<enumeration value=\"GMLC\"/>\n<enumeration value=\"5G EIR\"/>\n<enumeration value=\"SEPP\"/>\n<enumeration value=\"UPF\"/>\n<enumeration value=\"N3IWF\"/>\n<enumeration value=\"AF\"/>\n<enumeration value=\"UDSF\"/>\n<enumeration value=\"DN\"/>\n</restriction>\n</simpleType>\n\n<simpleType name=\"operationSemanticsType\">\n<restriction base=\"string\">\n<enumeration value=\"REQUEST_RESPONSE\"/>\n<enumeration value=\"SUBSCRIBE_NOTIFY\"/>\n</restriction>\n</simpleType>\n\n<complexType name=\"SAP\">\n<sequence>\n<element name=\"host\" type=\"xn:hostType\"/>\n<element name=\"port\" type=\"integer\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"hostType\">\n<sequence>\n<element name=\"ipv4Address\" type=\"string\"/>\n<element name=\"ipv6Address\" type=\"string\"/>\n<element name=\"fqdn\" type=\"string\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"operationsList\">\n<sequence>\n<element name=\"operation\" type=\"xn:operationType\" minOccurs=\"1\" maxOccurs=\"unbounded\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"operationType\">\n<sequence>\n<element name=\"name\" type=\"string\"/>\n<element name=\"allowedNFTypes\" type=\"xn:NFType\"/>\n<element name=\"operationSemantics\" type=\"xn:operationSemanticsType\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"MeasurementTypeList\">\n<sequence minOccurs=\"1\" maxOccurs=\"unbounded\">\n<element name=\"measurementType\" type=\"string\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"GPList\">\n<sequence minOccurs=\"1\" maxOccurs=\"unbounded\">\n<element name=\"gP\" type=\"integer\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"Measurements\">\n<sequence>\n<element name=\"measurementTypes\" type=\"xn:MeasurementTypeList\"/>\n<element name=\"GPs\" type=\"xn:GPList\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"MeasurementsList\">\n<sequence>\n<element name=\"measurements\" type=\"xn:Measurements\" minOccurs=\"1\" maxOccurs=\"unbounded\"/>\n</sequence>\n</complexType>\n\n\n<complexType name=\"GPListType\">\n<sequence minOccurs=\"1\" maxOccurs=\"unbounded\">\n<element name=\"GP\" type=\"integer\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"KPINameList\">\n<sequence minOccurs=\"1\" maxOccurs=\"unbounded\">\n<element name=\"kPIName\" type=\"string\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"KPIs\">\n<sequence>\n<element name=\"kPITypes\" type=\"xn:KPINameList\"/>\n<element name=\"GPs\" type=\"xn:GPList\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"KPIsList\">\n<sequence>\n<element name=\"kPIs\" type=\"xn:KPIs\" minOccurs=\"1\" maxOccurs=\"unbounded\"/>\n</sequence>\n</complexType>\n\n\n<simpleType name=\"directionType\">\n<list>\n<simpleType>\n<restriction base=\"string\">\n<enumeration value=\"increasing\"/>\n<enumeration value=\"decreasing\"/>\n</restriction>\n</simpleType>\n</list>\n</simpleType>\n\n<complexType name=\"thrsholdPackType\">\n<sequence minOccurs=\"1\" maxOccurs=\"unbounded\">\n<element name=\"thresholdPackElement\" type=\"xn:thresholdPackElementType\"/>\n</sequence>\n</complexType>\n\n<complexType name=\"thresholdPackElementType\">\n<all>\n<element name=\"thresholdValue\" type=\"string\"/>\n<element name=\"thresholdLevel\" type=\"integer\"/>\n<element name=\"hysteresis\" type=\"decimal\" minOccurs=\"0\"/>\n</all>\n</complexType>\n\n<complexType name=\"thresholdInfoType\">\n<all>\n<element name=\"measurementType\" type=\"string\"/>\n<element name=\"direction\" type=\" xn:directionType\"/>\n<element name=\"thresholdPack\" type=\" xn:thrsholdPackType\"/>\n</all>\n</complexType>\n\n<complexType name=\"thresholdInfoListType\">\n<sequence minOccurs=\"1\" maxOccurs=\"unbounded\">\n<element name=\"ThresholdInfoElement\" type=\"xn:thresholdInfoType\"/>\n</sequence>\n</complexType>\n\n<simpleType name=\"ScopeType\">\n<restriction base=\"string\">\n<enumeration value=\"BASE_ONLY\"/>\n<enumeration value=\"BASE_ALL\"/>\n<enumeration value=\"BASE_NTH_LEVEL\"/>\n<enumeration value=\"BASE_SUBTREE\"/>\n</restriction>\n</simpleType>\n\n<complexType name=\"Scope\">\n<sequence>\n<element name=\"scopeType\" type=\"xn:ScopeType\"/>\n<element name=\"scopeLevel\" type=\"integer\" minOccurs=\"0\"/>\n</sequence>\n</complexType>\n\n\n<!-- Generic Network Resources IRP NRM class associated XML elements -->\n\n<element name=\"SubNetwork\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"dnPrefix\" minOccurs=\"0\"/>\n<element name=\"userLabel\"/>\n<element name=\"userDefinedNetworkType\"/>\n<element name=\"setOfMcc\" minOccurs=\"0\"/>\n<element name=\"priority\" type=\"integer\" minOccurs=\"0\"/>\n<element name=\"measurementsList\" type=\"xn:MeasurementsList\" minOccurs=\"0\"/>\n<element name=\"kPIsList\" type=\"xn:KPIsList\" minOccurs=\"0\"/>\n</all>\n</complexType>\n</element>\n<choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element ref=\"xn:SubNetwork\"/>\n<element ref=\"xn:ManagedElement\"/>\n<element ref=\"xn:MeContext\"/>\n<element ref=\"xn:ManagementNode\"/>\n<element ref=\"xn:IRPAgent\"/>\n<element ref=\"xn:SubNetworkOptionallyContainedNrmClass\"/>\n<element ref=\"xn:VsDataContainer\"/>\n<element ref=\"xn:ThresholdMonitoringCapability\"/>\n<element ref=\"xn:ThresholdMonitor\"/>\n<element ref=\"xn:MeasurementControl\"/>\n<element ref=\"xn:NtfSubscriptionControl\"/>\n</choice>\n<choice minOccurs=\"0\" maxOccurs=\"1\">\n<element ref=\"sp:ESPolicies\"/>\n</choice>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"ManagedElement\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"dnPrefix\"/>\n<element name=\"managedElementTypeList\" type=\"xn:managedElementTypeListType\" minOccurs=\"0\"/>\n<element name=\"userLabel\"/>\n<element name=\"vendorName\"/>\n<element name=\"userDefinedState\"/>\n<element name=\"locationName\"/>\n<element name=\"swVersion\"/>\n<element name=\"managedBy\" type=\"xn:dnList\" minOccurs=\"0\"/>\n<element name=\"priority\" type=\"integer\" minOccurs=\"0\"/>\n<element name=\"measurementsList\" type=\"xn:MeasurementsList\" minOccurs=\"0\"/>\n</all>\n</complexType>\n</element>\n<choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element ref=\"xn:IRPAgent\"/>\n<element ref=\"xn:ManagedElementOptionallyContainedNrmClass\"/>\n<element ref=\"xn:VsDataContainer\"/>\n<element ref=\"xn:ThresholdMonitoringCapability\"/>\n<element ref=\"xn:ThresholdMonitor\"/>\n<element ref=\"xn:MeasurementControl\"/>\n<element ref=\"xn:NtfSubscriptionControl\"/>\n</choice>\n\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"ManagedFunction\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"userLabel\" type=\"string\"/>\n<element name=\"vnfParametersList\" type=\"xn:vnfParametersListType\"/>\n<element name=\"peeParametersList\" type=\"xn:peeParametersListType\"/>\n<element name=\"priority\" type=\"integer\" minOccurs=\"0\"/>\n<element name=\"measurementsList\" type=\"xn:MeasurementsList\" minOccurs=\"0\"/>\n</all>\n</complexType>\n</element>\n<choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element ref=\"xn:VsDataContainer\"/>\n<element ref=\"xn:EP_RP\"/>\n<element ref=\"xn:ThresholdMonitoringCapability\"/>\n<element ref=\"xn:ThresholdMonitor\"/>\n<element ref=\"xn:MeasurementControl\"/>\n</choice>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"ManagedNFService\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"userLabel\" type=\"string\"/>\n<element name=\"nFServiceType\" type=\"xn:nFServiceType\"/>\n<element name=\"AdministrativeState\" type=\"xn:pMAdministrativeStateType\"/>\n<element name=\"OperationalState\" type=\"xn:pMOperationalStateType\"/>\n<element name=\"usageState\" type=\"xn:usageStateType\"/>\n<element name=\"registrationState\" type=\"xn:registrationStateType\"/>\n<element name=\"sAP\" type=\"xn:SAP\" minOccurs=\"0\"/>\n<element name=\"operations\" type=\"xn:operationsList\" minOccurs=\"0\"/>\n</all>\n</complexType>\n</element>\n<choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element ref=\"xn:VsDataContainer\"/>\n<element ref=\"xn:ThresholdMonitoringCapability\"/>\n<element ref=\"xn:ThresholdMonitor\"/>\n</choice>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"MeContext\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"dnPrefix\" minOccurs=\"0\"/>\n</all>\n</complexType>\n</element>\n<choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element ref=\"xn:ManagedElement\"/>\n</choice>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"ManagementNode\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"userLabel\"/>\n<element name=\"vendorName\"/>\n<element name=\"locationName\"/>\n<element name=\"managedElements\" type=\"xn:dnList\" minOccurs=\"0\"/>\n<element name=\"swVersion\"/>\n<element name=\"userDefinedState\"/>\n</all>\n</complexType>\n</element>\n<choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element ref=\"xn:IRPAgent\"/>\n<element ref=\"xn:VsDataContainer\"/>\n</choice>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"MeasurementControl\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"pMAdministrativeState\" type=\"xn:pMAdministrativeStateType\"/>\n<element name=\"pMOperationalState\" type=\"xn:pMOperationalStateType\"/>\n<element name=\"defaultFileBasedGP\" type=\"integer\"/>\n<element name=\"defaultFileReportingPeriod\" type=\"integer\"/>\n<element name=\"defaultFileLocation\" type=\"string\"/>\n<element name=\"defaultStreamBasedGP\" type=\"integer\"/>\n<element name=\"defaultStreamTarget\" type=\"string\"/>\n</all>\n</complexType>\n</element>\n<choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element ref=\"xn:MeasurementReader\"/>\n</choice>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"MeasurementReader\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"measurementTypes\"/>\n<element name=\"fileBasedGP\" type=\"integer\" minOccurs=\"0\"/>\n<element name=\"fileReportingPeriod\" type=\"integer\" minOccurs=\"0\"/>\n<element name=\"fileLocation\" type=\"string\" minOccurs=\"0\"/>\n<element name=\"streamBasedGP\" type=\"integer\" minOccurs=\"0\"/>\n<element name=\"streamTarget\" type=\"string\" minOccurs=\"0\"/>\n<element name=\"managedObjectDNsBasic\" type=\"xn:dnList\" minOccurs=\"0\"/>\n<element name=\"managedObjectDNs\" type=\"xn:dnList\" minOccurs=\"0\"/>\n</all>\n</complexType>\n</element>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"IRPAgent\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element ref=\"xn:systemDN\" minOccurs=\"0\"/>\n</all>\n</complexType>\n</element>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"EP_RP\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"farEndEntity\" type=\"xn:dn\" minOccurs=\"0\"/>\n<element name=\"userLabel\" type=\"string\" minOccurs=\"0\"/>\n<element name=\"measurementsList\" type=\"xn:MeasurementsList\" minOccurs=\"0\"/>\n</all>\n</complexType>\n</element>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"VsDataContainer\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"vsDataType\"/>\n<element name=\"vsDataFormatVersion\"/>\n<element ref=\"xn:vsData\"/>\n</all>\n</complexType>\n</element>\n<choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element ref=\"xn:VsDataContainer\"/>\n</choice>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"ThresholdMonitoringCapability\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"supportedMonitoringGPs\" type=\"xn:GPListType\"/>\n</all>\n</complexType>\n</element>\n<choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element ref=\"xn:ThresholdMonitoringCapabilityOptionallyContainedNrmClass\"/>\n</choice>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"HeartbeatControl\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"heartbeatNtfPeriod\" type=\"integer\"/>\n<element name=\"triggerHeartbeatNtf\" type=\"boolean\"/>\n</all>\n</complexType>\n</element>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"ThresholdMonitor\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"thresholdInfoList\" type=\"xn:thresholdInfoListType\"/>\n<element name=\"monitoringGP\" type=\"integer\"/>\n<element name=\"monitoringNotifTarget\" type=\"string\"/>\n<element name=\"monitoredIOame\" type=\"string\"/>\n<element name=\"monitoredObjectDNs\" type=\"xn:dnList\"/>\n</all>\n</complexType>\n</element>\n<choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element ref=\"xn:ThresholdMonitorOptionallyContainedNrmClass\"/>\n</choice>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<element name=\"NtfSubscriptionControl\">\n<complexType>\n<complexContent>\n<extension base=\"xn:NrmClass\">\n<sequence>\n<element name=\"attributes\" minOccurs=\"0\">\n<complexType>\n<all>\n<element name=\"notificationRecipientAddress\" type=\"string\"/>\n<element name=\"notificationTypes\" type=\"string\" minOccurs=\"0\" />\n<element name=\"scope\" type=\"xn:Scope\"/>\n<element name=\"notificationFilter\" type=\"string\" minOccurs=\"0\" />\n</all>\n</complexType>\n</element>\n<choice minOccurs=\"0\" maxOccurs=\"1\">\n<element ref=\"xn:HeartbeatControl\"/>\n</choice>\n</sequence>\n</extension>\n</complexContent>\n</complexType>\n</element>\n\n<!--\nIRPAgent IOC attributes\n-->\n\n<element name=\"systemDN\" type=\"xn:dn\"/>\n\n<!--\nVsDataContainer NRM class vsData attribute associated empty XML element\n-->\n\n<complexType name=\"vsData\"/>\n<element name=\"vsData\" type=\"xn:vsData\"/>\n\n<!--\nAbstract head XML element for all XML elements associated to further\nNRM classes optionally contained under SubNetwork NRM class\n-->\n\n<element\nname=\"SubNetworkOptionallyContainedNrmClass\"\ntype=\"xn:NrmClass\"\nabstract=\"true\"\n/>\n\n<!--\nAbstract head XML element for all XML elements associated to further\nNRM classes optionally contained under ManagedElement NRM class\n-->\n\n<element\nname=\"ManagedElementOptionallyContainedNrmClass\"\ntype=\"xn:NrmClass\"\nabstract=\"true\"\n/>\n\n<!--\nAbstract head XML element for all XML elements associated to further\nNRM classes optionally contained under ThresholdMonitoringCapability NRM class\n-->\n\n<element\nname=\"ThresholdMonitoringCapabilityOptionallyContainedNrmClass\"\ntype=\"xn:NrmClass\"\nabstract=\"true\"\n/>\n\n<!--\nAbstract head XML element for all XML elements associated to further\nNRM classes optionally contained under ThresholdMonitor NRM class\n-->\n\n<element\nname=\"ThresholdMonitorOptionallyContainedNrmClass\"\ntype=\"xn:NrmClass\"\nabstract=\"true\"\n/>\n\n\n</schema>\n\n\n\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 15,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 16,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

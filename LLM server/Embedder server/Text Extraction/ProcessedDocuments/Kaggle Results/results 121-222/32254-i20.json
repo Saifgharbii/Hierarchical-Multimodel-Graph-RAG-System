@@ -1,0 +1,718 @@
+{
+    "document_name": "32254-i20.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\nY\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document is part of a series of documents that specify charging functionality and charging management in 3GPP networks. The 3GPP core network charging architecture and principles are specified in TS 32.240 [1], which provides an umbrella for other charging management TSs that specify:\n-\tthe content of the CDRs per domain / subsystem / service (offline charging);\n-\tthe content of real-time charging messages per domain / subsystem / service (online charging);\n-\tthe functionality of online and offline charging for those domains / subsystems / services;\n-\tthe interfaces that are used in the charging framework to transfer the charging information (i.e. CDRs or charging events).\nThe complete document structure for these TSs is defined in TS 32.240 [1].\nThe present document specifies the offline, online and converged charging description for Northbound Application Program Interfaces (API), based on the functional stage 2 description in TS 23.682 [243] for transaction over T8 reference point between SCEF and SCS/AS and in TS 23.501 [200] for Network Exposure Function (NEF). This charging description includes the offline, online and converged charging architecture and scenarios specific to Northbound Application Program Interfaces (API), as well as the mapping of the common 3GPP charging architecture specified in TS 32.240 [1] onto the Northbound Application Program Interfaces (API). It further specifies the structure and content of the CDRs for offline charging. The present document is related to other 3GPP charging TSs as follows:\n-\tThe common 3GPP charging architecture is specified in TS 32.240 [1].\n-\tThe parameters, abstract syntax and encoding rules for the CDRs are specified in TS 32.298 [51].\n-\tA transaction based mechanism for the transfer of CDRs within the network is specified in TS 32.295 [54].\n-\tThe file based mechanism used to transfer the CDRs from the network to the operator's billing domain (e.g. the billing system or a mediation device) is specified in TS 32.297 [52].\n-\tThe 3GPP Diameter application that is used for Northbound Application Program Interfaces (API) offline and online charging is specified in TS 32.299 [50].\n-\tThe services, operations and procedures of charging, using Service Based Interface are specified in TS 32.290 [57].\n-\tThe charging service of 5G system is specified in TS 32.291 [58].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TS 32.240: \"Telecommunication management; Charging management; Charging architecture and principles\".\n[2] – [49]\tVoid.\n[50]\t3GPP TS 32.299: \"Telecommunication management; Charging management; Diameter charging application\".\n[51]\t3GPP TS 32.298: \"Telecommunication management; Charging management; Charging Data Record (CDR) parameter description\".\n[52]\t3GPP TS 32.297: \"Telecommunication management; Charging management; Charging Data Record (CDR) file format and transfer\".\n[53]\t3GPP TS 32.296: \"Telecommunication management; Charging management; Online Charging System (OCS): Applications and interfaces\".\n[54]\t3GPP TS 32.295: \"Telecommunication management; Charging management; Charging Data Record (CDR) transfer\".\n[55] – [56]\tVoid.\n[57]\t3GPP TS 32.290: \"Telecommunication management; Charging management; 5G system; Services, operations and procedures of charging using Service Based Interface (SBI)\".\n[58]\t3GPP TS 32.291: \"Telecommunication management; Charging management; 5G system; Charging service, stage 3\".\n[59] – [99]\tVoid.\n[100]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[101] – [199]\tVoid\n[200]\t3GPP TS 23.501:\"System Architecture for the 5G System\".\n[201]\t3GPP TS 23.502:\"Procedures for the 5G System\".\n[202] – [229]\tVoid\n[230]\t3GPP TS 29.122: \"T8 reference point for northbound Application Programming Interfaces (APIs)\".\n[231] – [2235]\tVoid\n[236]\t3GPP TS 29.503: \"5G System; Unified Data Management Services; Stage 3\".\n[237] – [242]\tVoid\n[243]\t3GPP TS 23.682: \"Architecture enhancements to facilitate communications with packet data networks and applications\".\n[244] – [299]\tVoid\n[300] – [399]\tVoid.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [100], TS 32.240 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in either 3GPP TR 21.905 [100] or TS 32.240 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\nBea\tReference point for the CDR file transfer from the Exposure function API CGF to the BD.\nGa\tReference point for CDR transfer between a CDF and the CGF.\nNchf\tService based interface exhibited by CHF.\nN44\tReference point between the NEF and the CHF\nRf\tOffline charging reference point between a SCEF and the CDF.\nRo\tOnline charging reference point between a SCEF and the CDF.\nT8\tReference point between the SCEF and SCS/AS.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [100] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [100].\nAI/ML\tArtificial Intelligence/Machine Learning\nAS\tApplication Server\nBD\tBilling Domain\nCDF\tCharging Data Function\nCGF\tCharging Gateway Function\nCTF\tCharging Trigger Function\nECUR\tEvent Charging with Unit Reservation\nIE\tInformation Element\nIEC\tImmediate Event Charging\nNEF\tNetwork Exposure Function\nPEC\tPost Event Charging\nSCEF\tService Capability Exposure Function\nSCS\tServices Capability Server\nSGSN\tServing GPRS Support Node\nRCAF\tRAN Congestion Awareness Function\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tArchitecture considerations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tHigh-level Service Exposure Function architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The overall architecture and detailed description for Service Capability Exposure which enables the 3GPP network to securely expose its services and capabilities provided by 3GPP network interfaces to external 3rd party service provider applications are defined in 3GPP TS 23.682 [243], and figure 4.1.1 is highlighting T8 involved for interworking between SCEF and SCS/AS.\nThe figure depicts the Northbound API of the 3GPP Architecture Service Capability Exposure, which is a crucial component of the 3GPP RAN architecture. It illustrates the various APIs that are exposed to the outside world, including the Service Capability Exposure, which is responsible for managing the service-related aspects of the network. The figure also shows the different APIs that are used to manage the service-related aspects of the network, such as the Service Capability Exposure, which is responsible for managing the service-related aspects of the network.\nFigure 4.1.1: Northbound API of 3GPP Architecture Service Capability Exposure\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tNorthbound API offline charging architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "As described in TS 32.240 [1], the CTF (an integrated component in each charging relevant NE) generates charging events and forwards them to the CDF. The CDF, in turn, generates CDRs which are then transferred to the CGF. \nFinally, the CGF creates CDR files and forwards them to the BD.\nFor offline charging, SCEF functioning as the CTF, may generate accounting metrics sets for Northbound Application Program Interfaces (APIs) CDRs:\n-\tthe SCEF, to record Application Program Interfaces transaction.\nIf the SCEF generating the charging information has an integrated CDF, then the SCEF can produce CDRs. The CGF may also be integrated in the SCEF, or it may exist as a physically separate entity. \nIf the CGF is external to the SCEF /CDF, then the SCEF/CDF forwards the CDRs to the CGF across the Ga interface. If the CDF is external to the SCEF, the charging events are transferred from the SCEF to the CDF via the Rf interface specified in TS 32.299 [50].\nWhen an external CGF is used, this CGF may also be used by other. It should be noted that the CGF may also be an integrated component of the BD – in this case, the Bea interface does not exist and is replaced by a proprietary solution internal to the BD.\nFigure 4.2.1 depicts the architectural options described above.\nThe figure depicts a simplified Northbound API offline charging architecture, illustrating the various components and their interconnections. It includes a central server, a gateway, and a set of mobile devices, all connected through a network of APIs. The architecture is designed to facilitate seamless charging for mobile devices, ensuring efficient and reliable charging for users.\nFigure 4.2.1: Northbound API offline charging architecture\nIt is mandatory to support at least one of the Rf, Ga or Bea interfaces from the SCEF as described in the present document.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tNorthbound API online charging architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Northbound API online charging is based on SCEF utilizing Ro interface and application towards the OCS as specified in TS 32.299 [50]. The Ro reference point covers all online charging functionality required for SCEF.\n.The figure depicts the Northbound API online charging architecture, illustrating the various components and their interconnections. It includes the Northbound API, the charging station, and the payment gateway, all interconnected through a network of APIs and payment gateways. The architecture is designed to facilitate seamless charging transactions, ensuring a smooth user experience.\nFigure 4.3.1: Northbound API online charging architecture\nDetails on the interfaces and functions can be found in TS 32.240 [1] for the general architecture components, \nTS 32.296 [53] for the OCS, and TS 32.299 [50] for the Ro application.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tNorthbound API converged charging architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The architectural options for Northbound API converged charging are depicted in figure 4.4.1 in service-based representation:\nThe figure depicts a Northbound API converged charging architecture, illustrating the various components and their interconnections. The diagram includes a central server, multiple charging stations, and a charging infrastructure, all interconnected through APIs. The architecture is designed to facilitate seamless charging for electric vehicles, with a focus on energy efficiency and user-friendly interfaces.\nFigure 4.4.1: Northbound API converged charging architecture\nArchitectural options of figure 4.4.1 apply to any Northbound API converged charging architecture of this clause.\nDetails on the interfaces and functions can be found in TS 32.240 [1] for the general architecture components, Ga is described in clause 5.2.4 and Bea in clause 5.2.5 of this document, and Nchf is described in TS 32.290 [57].\nFigure 4.4.2 depicts the Northbound API converged charging architecture for non-roaming in reference point representation:\n\nThe figure depicts a Northbound API converged charging architecture non-roaming reference point representation, illustrating the various components and their interconnections.\nFigure 4.4.2: Northbound API converged charging architecture non-roaming reference point representation\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tNorthbound API charging principles and scenarios",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tNorthbound API charging principles",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.0\tGeneral",
+                            "text_content": "The following are high level charging requirements for northbound API for Exposure Function which are specified in TS 23.682 [243] and TS 23.501 [200]:\nFor northbound API invocation/notification, the SCEF or NEF shall collect the following charging information:\n-\tinvocations/notifications count of the northbound APIs.\n-\tidentification of the SCS/AS or AF and the associated northbound API invocation/notification.\n-\ttimestamp of the northbound API invocation/notification.\n-\tnorthbound API related information, e.g. location.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.1\tNorthbound API procedures",
+                            "text_content": "All procedures that operate across the T8 reference point, as specified in 3GPP TS 23.682 [243] and TS 29.122 [230], are covered, which are the following:\n-\tMonitoring\n-\tResource management of Background Data Transfer\n-\tChanging the chargeable party at session set up or during the session\n-\tNon-IP Data Delivery\n-\tDevice Triggering\n-\tGroup Message Delivery\n-\tReporting of Network Status\n-\tCommunication Pattern Parameters Provisioning\n-\tPFD Management\n-\tEnhanced Coverage Restriction Control\n-\tNetwork Parameter Configuration\n-\tSetting up an AS session with required QoS\n-\tMSISDN-less Mobile Originated SMS\n-\tRequest for time synchronization and time sensitive communication service\nThe following clauses 5.2 and 5.3 describe the trigger conditions and simplified message flows for Event Based Charging (IEC/ECUR), with interfaces specified in 3GPP TS 32.299 [50].\nThe Northbound APIs supported by the NEF via the set of exposed services defined in 3GPP TS 23.502 [201] are covered for converged charging, with the trigger conditions and message flows defined in clause 5.4.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tAI/ML support",
+                            "text_content": "As per TS 23.501 [200], clause 5.45, at the time or during the AI/ML operation. E.g., Federated Learning, the AF may request the serving NEF to provide QoS for a list of Ues and may subscribe to QoS Monitoring which may include also Consolidated Data Rate monitoring as described in clause 5.45 and in clause 4.15.6.13 of TS 23.502 [201] for those AF requests for QoS that result in a successful resource allocation. Furthermore, the AF which controls the Multi-member AF Session with required QoS may update the list of UEs and/or update the QoS and/or update the QoS monitoring and/or update the Consolidated Data Rate monitoring, as per TS 23.502 [201], clause 4.15.6.13. These procedures might assist the AF e.g. in order to decide which Ues are appropriate for AI/ML operation a.g. Federated Learning operation.\nNEF Northbound APIs converged charging encompasses the NEF Northbound APIs specified to support AI/ML-based services:\n- \tMember UE selection assistance functionality for application operation;\n- \t Planned Data Transfer with QoS (PDTQ) requirements;\n-  \tMulti-member AF session with required QoS.\nFor the Multi-member AF session with required QoS, the list of UEs and Consolidated Data Rate are added in order to fulfil AI/ML service requests.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tNorthbound API offline charging scenarios",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tBasic principles",
+                            "text_content": "If charging is supported by an SCEF, it shall be able to collect charging information per T8 transaction.\nThe SCS/AS is identified by the SCS Identifier, which T8 transaction between SCEF and SCS/AS can be determined by a T8 Long Term Transaction Reference ID (TLTRI). The Identifiers are stored on both the SCEF and the SCS/AS for the duration of the transaction.\nThe following chargeable events are defined for SCEF charging for all Northbound APIs:\n-\tNorthbound API invocation/ notification per T8 transaction.\n-\tExpiry of an operator configured time limit per T8 transaction.\n-\tExpiry of an operator configured Northbound API invocation limit per T8 transaction.\nManagement intervention may also force trigger a chargeable event.\nThe subscriber is the API invoker (e.g. SCS, AS) of the Northbound APIs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tRf message flows",
+                            "text_content": "When a charging event is reported to the CDF, it includes the details such as SCEF address, charging information with corresponding charging events to the CDF.\nThe trigger conditions specified in Table 5.2.2.1.1 are applicable for charging information collection.\nTable 5.2.2.1.1: Triggers for Charging Data Request from SCEF\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.2.1.1: Triggers for Charging Data Request from SCEF",
+                                    "table number": 1,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.3\tCDR generation",
+                            "text_content": "For the exposure functions SCEF, an exposure function API CDR is generated for subsequent transfer to the Charging Gateway Function (CGF).\nThe following clauses describe the trigger conditions for these exposure function API CDRs creation, update and closure.\nA EA-SCE-CDR is used to collect charging information related to API invocation/notification offline charging from the SCEF.\nA single EA-SCE-CDR shall be generated for each event when the API invocation or notification is encountered.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.4\tGa record transfer flows",
+                            "text_content": "Details of the Ga protocol application are specified in TS 32.295 [54].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.5\tBea CDR file transfer",
+                            "text_content": "Details of the Bea protocol application are specified in TS 32.297 [52].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tNorthbound API online charging scenarios",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tBasic principles",
+                            "text_content": "Northbound API online charging is performed by the SCEF using the common Ro based Credit-Control application specified in TS 32.299 [50]. In order to provide the data required for the management activities outlined in TS 32.240 [1], the SCEF shall be able to perform online charging for the following:\n-\tCharging data related to northbound API invocation;\n-\tCharging data related to northbound API notification.\nEvent based online charging IEC and ECUR are applicable scenarios for  the SCEF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tRo message flows",
+                            "text_content": "This clause contains message flows for the different operation models IEC and ECUR, when the one-time API invocation is per T8 interaction is activated. e.g. Enhanced Coverage Restriction Control API, MSISDN-less Mobile Originated SMS API.\nThe figure depicts a simplified representation of online charging in the IEC 61801-3 standard, which is used for the management of electrical and electronic equipment. The figure illustrates the process of charging an electrical device through an online interface, with the device being charged through a charging port. The interface is depicted as a web-based application, allowing users to manage their devices and monitor their charging status. The figure also includes a visual representation of the charging port, which is connected to the device and the charging interface.\nFigure 5.3.2.1.1: Online charging in API Invocation for IEC\n1)\tSCEF receives an API invocation Request.\n2)\tThe SCEF triggers a Debit Units Request message to the OCS.\n3)\tThe OCS performs the appropriate credit processing based on the received request.\n4)\tThe OCS responds with a Debit Units Response message to the SCEF.\n5)\tIf authorized, the SCEF continues the API invocation processing and send out the API Invocation Response.\nThe figure depicts a simplified representation of online charging in an API Notification for IEC, illustrating the process of charging an electric vehicle (EV) through an online payment system. The figure shows the various components involved in the charging process, such as the EV, the charging station, and the payment system. The figure also highlights the importance of security measures, such as encryption and authentication, to ensure the safe and secure transfer of payment data.\nFigure 5.3.2.1.2: Online charging in API Notification for IEC\n1)\tSCEF receives a notification from 3GPP network element.\n2)\tThe SCEF triggers a Debit Units Request message to the OCS.\n3)\tThe OCS performs the appropriate credit processing based on the received request.\n4)\tThe OCS responds with a Debit Units Response message to the SCEF.\n5)\tSCEF sends the notification to SCS/AS.\n6)\tSCEF receives acknowledgement for the notification.\nFigure 5.3.2. 1.3: Online charging in API Invocation for ECUR\nFigure 5.3.2.1.3: Online charging in API Invocation for ECUR\n1)\tSCEF receives an API invocation Request.2)\tThe SCEF triggers a Reserve Units Request [Initial] message to the OCS.\n3)\tThe OCS performs the appropriate credit processing based on the received request.\n4)\tThe OCS responds with a Reserve Units Response message to the SCEF.\n5)\tIf authorized, the SCEF continues the API invocation processing and send out the API Invocation Response.\n6)\tThe SCEF triggers a Debit Units Request [Terminate] message to the OCS reporting the successful event transaction.\n7)\tThe OCS performs the appropriate credit processing based on the received request.\n8)\tThe OCS responds with a Debit Units Response message to the SCEF.\nFigure 5.3.2. 1.4: Online charging in API Notification for ECUR\nFigure 5.3.2.1.4: Online charging in API Notification for ECUR\n1)\tSCEF receives a notification from 3GPP network entities.\n2)\tThe SCEF triggers a Reserve Units Request [Initial] message to the OCS.\n3)\tThe OCS performs the appropriate credit processing based on the received request.\n4)\tThe OCS responds with a Reserve Units Response message to the SCEF.\n5)\tSCEF sends the notification to SCS/AS.\n6)\tSCEF receives acknowledgement for the notification.\n7)\tThe SCEF triggers a Debit Units Request [Terminate] message to the OCS reporting the successful event transaction.\n8)\tThe OCS performs the appropriate credit processing based on the received request.\n9)\tThe OCS responds with a Debit Units Response message to the SCEF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tNorthbound API converged online and offline charging scenarios",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tBasic principles",
+                            "text_content": "Converged charging may be performed by the NEF interacting with CHF using Nchf specified in TS 32.290 [57] and TS 32.291 [58]. In order to provide the data required for the management activities outlined in TS 32.240 [1] (Credit-Control, accounting, billing, statistics etc.), the NEF shall be able to perform converged charging for the northbound API access.\nThe NEF shall be able to perform convergent charging by interacting with CHF, for charging data related to Northbound API access. The Charging Data Request and Charging Data Response are exchanged between the NEF and the CHF, based on PEC, either IEC or ECUR scenarios specified in TS 32.290 [57]. The Charging Data Request is issued by the NEF towards the CHF when certain conditions (chargeable events) are met.\nConverged charging uses centralized or decentralized unit determination and centralized rating scenarios for event based convergent charging specified in TS 32.290 [57].\nThe contents and purpose of each charging event that triggers interaction with CHF, as well as the chargeable events that trigger them, are described in the following clauses.\nA detailed formal description of the converged charging parameters defined in the present document is to be found in TS 32.291 [58].\nA detailed formal description of the CDR parameters defined in the present document is to be found in TS 32.298 [51].\nThe selection of the CHF can be configured in the NEF but may also rely on NRF.\nWhen a charging event is issued towards the CHF, it includes details such as Subscriber identifier (e.g. identifier of the AF).\nEach trigger condition (i.e. chargeable event) defined for the NEF converged charging functionality, is specified with the associated behaviour when they are met.\nTable 5.4.1.2.1.1 summarizes the set of default trigger conditions and their category which shall be supported by the NEF when charging is active for the corresponding NEF functionality. For \"immediate report\" category, the table also provides the corresponding Charging Data Request message sent from NEF towards the CHF.\nTable 5.4.1.2.1.1: Default Trigger conditions in NEF\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.4.1.2.1.1: Default Trigger conditions in NEF",
+                                    "table number": 2,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.4.2\tMessage flows",
+                            "text_content": "The different scenarios below focus on the different messages from/to the NEF and corresponding interaction with the CHF, based on scenarios specified in TS 23.222 [202].\nFigure 5.4.2.2.1 describes the scenario where there is an API invocation request at the NEF for IEC mode\nThe figure depicts a detailed representation of an API Invocation Request to NEF (Network Element Format) using IEC (International Electrotechnical Commission) standards. The figure illustrates the process of creating an API request, including the request parameters, the NEF format, and the response format. The figure also includes a visual representation of the NEF structure, which is crucial for understanding the API request and its format.\nFigure 5.4.2.2.1: API Invocation Request to NEF using IEC\n1.\tNEF receives an API invocation Request from an AF.\n1ch-a. The NEF sends Charging Data Request [Event] to CHF for the received API Invocation.\n1ch-b. The CHF creates a CDR for this API Invocation.\n1ch-c. The CHF acknowledges and grants authorization by sending Charging Data Response [Event] to the NEF.\n2.\tNEF performs the actions needed to fulfil the API invoked.\n3.\tIf authorized, the NEF continues the API invocation processing and sends the API Invocation Response.\n\nFigure 5.4.2.3.1 describes the scenario where there is an API invocation request at the NEF for ECUR mode.\nThe figure depicts a detailed diagram of an API Invocation Request to NEF using ECUR, illustrating the process of requesting an API endpoint from NEF. The figure includes various components such as the NEF server, API endpoint, and the request method (GET or POST). The diagram also shows the flow of data between the NEF server and the client, with the client making an API request to the NEF server. The figure provides a clear and concise representation of the API Invocation Request process, making it easy to understand and follow.\nFigure 5.4.2.3.1: API Invocation Request to NEF using ECUR\n1.\tNEF receives an API invocation Request from an AF.\n1ch-a.\tThe NEF sends Charging Data Request [Initial] to CHF for the received API Invocation.\n1ch-b. The CHF opens CDR for this API Invocation.\n1ch-c. The CHF acknowledges by sending Charging Data Response [Initial] to the NEF.\n2.\tNEF performs the actions needed to fulfil the API invoked.\n3.\tIf authorized, the NEF continues the API invocation processing and sends the API Invocation Response.\n3ch-a. The NEF sends Charging Data Request [Termination] to the CHF for terminating the charging associated with the API Invocation.\n3ch-b. The CHF closes the CDR for this API Invocation.\n3ch-c. The CHF acknowledges by sending Charging Data Response [Termination] to the NEF.\nFigure 5.4.2.4.1 describes the scenario where an API Notification is delivered from the NEF for IEC mode\nThe figure depicts a communication protocol for an NEF (Network Element Function) notification, which is a crucial component in the communication system. The figure shows the API (Application Programming Interface) notification from the NEF to the IEC (International Electrotechnical Commission), which is a standard for electrical and electronic equipment. The figure illustrates the communication process, including the use of the API, the message structure, and the response from the IEC. The figure is important for understanding the communication protocols used in the NEF system and for ensuring the proper functioning of the communication system.\nFigure 5.4.2.4.1 API Notification from NEF using IEC\n1.\tThe NEF receives a notification from an NF.\n1ch-a. The NEF sends Charging Data Request [Event] to CHF for the Notification.\n1ch-b. The CHF creates a CDR for this Notification.\n1ch-c. The CHF acknowledges and grant authorization by sending Charging Data Response [Event] to the NEF.\n2.\tThe NEF sends the notification to AF.\n3.\tThe NEF receives acknowledgement for the notification.\nFigure 5.4.2.5.1 describes the scenario where an API event Notification is delivered from the NEF for ECUR mode.\nFigure 5 illustrates the API notification from NEF using ECUR. The figure depicts a network interface controller (NIC) with a network event filter (NEF) and an event notification system (ECS). The NEF is responsible for receiving API requests and sending notifications to the ECS, which then processes the request and sends a response back to the NEF. The ECS then sends a response back to the NEF, which in turn sends a response to the NIC. This process ensures that the API request is processed and responded to in a timely manner.\nFigure 5.4.2.4.1: API Notification from NEF using ECUR\n1.\tThe NEF receives a notification from an NF.\n1ch-a.\tThe NEF sends Charging Data Request [Initial] to CHF for the Notification.\n1ch-b. The CHF opens CDR for this API Notification.\n1ch-c. The CHF acknowledges by sending Charging Data Response [Initial] to the NEF.\n2.\tThe NEF sends the notification to AF.\n3.\tThe NEF receives acknowledgement for the notification.\n3ch-a. The NEF sends Charging Data Request [Termination] to the CHF for terminating the charging associated with the API event Notification.\n3ch-b. The CHF closes the CDR for this API Notification.\n3ch-c. The CHF acknowledges by sending Charging Data Response [Termination] to the NEF.\nFigure 5.4.2.6.1 describes the scenario where there is an API invocation request at the NEF for PEC mode\nThe figure depicts a detailed representation of an API Invocation Request to NEF using PEC, illustrating the process of requesting an NEF (Network Element Function) from the NEF server. The figure includes various components such as the NEF server, the API endpoint, and the request parameters. The diagram provides a clear visual representation of the steps involved in the API invocation process, making it easier to understand and follow.\nFigure 5.4.2.6.1: API Invocation Request to NEF using PEC\n1.\tNEF receives an API invocation Request from an AF.\n2.\tNEF performs the actions needed to fulfil the API invoked.\n3.\tIf authorized, the NEF continues the API invocation processing and sends the API Invocation Response.\n3ch-a. The NEF sends Charging Data Request [Event] to CHF for the received API Invocation.\n3ch-b. The CHF creates a CDR for this API Invocation.\n3ch-c. The CHF acknowledges by sending Charging Data Response [Event] to the NEF.\nFigure 5.4.2.7.1 describes the scenario where an API Notification is delivered from the NEF for PEC mode\nThe figure depicts an API notification from NEF using PEC, illustrating the communication process between the NEF and the API. The figure shows the communication path, including the NEF, API, and the PEC, with the API sending the notification. The figure also includes the response from the API, indicating that the notification was received successfully.\nFigure 5.4.2.7.1 API Notification from NEF using PEC\n1.\tThe NEF receives a notification from an NF.\n2.\tThe NEF sends the notification to AF.\n2ch-a. The NEF sends Charging Data Request [Event] to CHF for the Notification.\n2ch-b. The CHF creates a CDR for this Notification.\n2ch-c. The CHF acknowledges by sending Charging Data Response [Event] to the NEF.\n3.\tThe NEF receives acknowledgement for the notification.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.3\tCDR generation",
+                            "text_content": "The CHF CDRs for NEF charging are generated by the CHF to collect charging information that they subsequently transfer to the Charging Gateway Function (CGF).\nThe following clauses describe in details the conditions for generating, opening and closing the CHF CDR, which shall be supported by the CHF.\nA Northbound API charging CHF CDR is used to collect charging information related to northbound API invocation and notifications chargeable events for PEC, IEC and ECUR.\nA CHF CDR is generated by the CHF for each received Charging Data Request[Event].\nA CHF CDR shall be opened when the CHF receives Charging Data Request[Initial].\nThe CHF CDR shall be closed when the CHF receives Charging Data Request[Termination].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.4\tGa record transfer flows",
+                            "text_content": "Details of the Ga protocol application are specified in TS 32.295 [6].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.5\tBea CDR file transfer",
+                            "text_content": "Details of the Bea protocol application are specified in TS 32.297 [5].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6.\tDefinition of charging information",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tData description for Northbound API offline charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tRf message contents",
+                            "text_content": "The Exposure Function API offline charging uses the Charging Data Transfer messages Charging Data Request and Charging Data Response defined in TS 32.299 [50].\nThe Charging Data Request can be of type event and includes all charging information. The Charging Data Response is an acknowledgement of the Charging Data Request.\nTable 6.1.1.1.1 describes the use of these messages for offline charging.\nTable 6.1.1.1.1: Offline charging messages reference table\n\nThe following clauses describe the different fields used in the Charging Data messages and the category in the tables is used according to the charging data configuration defined in clause 5.4 of TS 32.240 [1].\nTable 6.1.1.2.1 illustrates the basic structure of a Charging Data Request message from the SCEF as used for Exposure Function API offline charging.\nTable 6.1.1.2.1: Charging Data Request message contents\n\nNOTE:\tDetailed descriptions of the information elements are provided in TS 32.299 [50].\nTable 6.1.1.3.1 illustrates the basic structure of a Charging Data Response message as used for Exposure Function API offline charging.\nTable 6.1.1.3.1: Charging Data Response message contents\n\nNOTE:\tDetailed descriptions of the information elements are provided in TS 32.299 [50].\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.1.1.1: Offline charging messages reference table",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.1: Charging Data Request message contents",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.3.1: Charging Data Response message contents",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.2\tGa message contents",
+                            "text_content": "Refer to clause 5.2.4 for further information.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tCDR description on the Bea interface",
+                            "text_content": "The following standard CDRs content and format are considered:\n-\tEA-SCE-CDR generated for exposure function API from the SCEF.\nFor each of the CDR types, a parameter table, which gives a short description of the parameters, is provided. The category in the tables is used according to the charging data configuration defined in clause 5.4 of TS 32.240 [1]. Full definitions of the CDR parameters, sorted by the name in alphabetical order, are provided in TS 32.298 [51].\nExposure function API record shall be produced for each API invocation to the SCEF. The fields in the record are specified in table 6.1.3.2.1.\nTable 6.1.3.2.1: Exposure function API from SCEF charging data (EA-SCE-CDR)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.3.2.1: Exposure function API from SCEF charging data (EA-SCE-CDR)",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tData description for Northbound API online charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tRo message contents",
+                            "text_content": "The SCEF generates Debit / Reserve Units information that can be transferred from the CTF to the OCF. For this purpose, SCEF online charging utilizes the Debit Units and Reserve Units procedure that is specified in the 3GPP Debit / Reserve Units operation in TS 32.299 [50].\nTable 6.2.1.1.1 describes the use of these messages for SCEF online charging.\nTable 6.2.1.1.1: SCEF online charging messages contents\n\nThis clause describes the different fields used in the Debit / Reserve Units Request and Debit / Reserve Units Reponses messages and the category in the tables are used according to the charging data configuration defined in clause 5.4 of TS 32.240 [1].\nDetailed descriptions of the fields are provided in TS 32.299 [50].\nTable 6.2.1.2.1.1 illustrates the basic structure of a Debit / Reserve Units Request message from SCEF as used for exposure function API online charging.\nTable 6.2.1.2.1.1: Debit / Reserve Units Request message contents for exposure function API\n\nTable 6.2.1.2.2.1 illustrates the basic structure of a Debit / Reserve Units Response message as used for SCEF charging.\nThis message is always used by the OCS as specified below, independent of the receiving SCEF and the operation type that is being replied to.\nTable 6.2.1.2.2.1: Debit / Reserve Units Response message contents for exposure function API\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.1.1.1: SCEF online charging messages contents",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.1.2.1.1: Debit / Reserve Units Request message contents for exposure function API",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.1.2.2.1: Debit / Reserve Units Response message contents for exposure function API",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2a\tData description for NEF converged charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2a.1\tMessage contents",
+                            "text_content": "The Charging Data Request and Charging Data Response are specified in TS 32.290 [57] and include charging information. The Charging Data Request can be of type [Event, Initial, Termination].\nTable 6.2a.1.1.1 describes the use of these messages for converged charging.\nTable 6.2a.1.1.1: Converged charging messages reference table\n\nThe following clauses describe the different fields used in the Charging Data messages and the category in the tables is used according to the charging data configuration defined in clause 5.4 of TS 32.240 [2].\nTable 6.2a.1.2.1.1 illustrates the basic structure of a Charging Data Request message as used for NEF converged charging.\nTable 6.2a.1.2.1.1: Charging Data Request message contents\n\nTable 6.2a.1.2.2.1 illustrates the basic structure of a Charging Data Response message as used for NEF converged charging.\nTable 6.2a.1.2.2.1: Charging Data Response message content\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2a.1.1.1: Converged charging messages reference table",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2a.1.2.1.1: Charging Data Request message contents",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2a.1.2.2.1: Charging Data Response message content",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2a.2\tGa message contents",
+                            "text_content": "Refer to clause 5.4.4.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2a.3\tCDR description on the Bea interface",
+                            "text_content": "This clause describes the CDR content and format generated for NEF converged charging.\nThe following tables provide a brief description of each CDR parameter. The category in the tables is used according to the charging data configuration defined in clause 5.4 of TS 32.240 [2]. Full definitions of the CDR parameters, sorted by the name in alphabetical order, are provided in TS 32.298 [3].\nIf enabled, CHF CDRs for NEF charging shall be produced for NEF chargeable events.\nThe fields of NEF charging CHF CDR are specified in table 6.2a.3.2.1.\nTable 6.2a.3.2.1: NEF charging CHF record data\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2a.3.2.1: NEF charging CHF record data",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tNorthbound API charging specific parameters",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tDefinition of Northbound API charging information",
+                            "text_content": "The components in the Service Information that are used for Exposure Function API charging can be found in table 6.3.1.1.1.\nTable 6.3.1.1.1: Service Information used for Exposure Function API charging\n\nExposure Function API specific charging information is provided within the Exposure Function API Information. The fields of the Exposure Function API Information are indicated with the SCEF from which the information is sent.\nThe detailed structure of the Exposure Function API Information can be found in table 6.3.1.2.1.\nTable 6.3.1.2.1: Structure of the Exposure Function API Information\n\nThe Supported features information that is used for Exposure Function API charging is based on the information defined for the supported features mechanism specified in clause 6.5.10 of TS 32.299 [50].\nThe following table defines the features applicable for the feature lists with a Feature-List-ID of 1.\nTable 6.3.1.3.1: Features of Feature-List-ID 1 used in Exposure Function API charging\n\nNetwork Exposure Function API specific charging information is provided within the NEF API Charging Information. The detailed structure of the NEF API Charging Information can be found in table 6.3.1.4.1.\nTable 6.3.1.4.1: Structure of the NEF API Charging Information\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.1.1.1: Service Information used for Exposure Function API charging",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.1.2.1: Structure of the Exposure Function API Information",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.1.3.1: Features of Feature-List-ID 1 used in Exposure Function API charging",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.1.4.1: Structure of the NEF API Charging Information",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.2\tDetailed message format for offline charging",
+                            "text_content": "The following clause specifies per Operation Type the charging data that are sent by SCEF for Exposure Function API offline charging.\nThe Operation Types are listed in the following order: S (Start)/I (Interim)/S (Stop)/E (Event). Therefore, when all Operation Types are possible it is marked as SISE. If only some Operation Types are allowed for a node, only the appropriate letters are used (i.e. SIS or E) as indicated in the table heading. The omission of an Operation Type for a particular field is marked with \"-\" (i.e. SI-E). Also, when an entire field is not allowed in a node the entire cell is marked as \"-\".\nTable 6.3.2.1 illustrates the basic structure of the supported fields in the Charging Data Request message for Exposure Function API offline charging.\nTable 6.3.2.1: Supported fields in Charging Data Request message\n\nTable 6.3.2.2 illustrates the basic structure of the supported fields in the Charging Data Response message for Exposure function API offline charging.\nTable 6.3.2.2: Supported fields in Charging Data Response message\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.2.1: Supported fields in Charging Data Request message",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.2: Supported fields in Charging Data Response message",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.3\tDetailed message format for online charging",
+                            "text_content": "The Operation types are listed in the following order: I [initial] /U [update]/ T [terminate]/E [event]. Therefore, when all Operation types are possible it is marked as IUTE. If only some Operation types are allowed for a node, only the appropriate letters are used (i.e. IT or E) as indicated in the table heading. The omission of an Operation type for a particular field is marked with \"-\" (i.e. I-E). Also, when an entire field is not allowed in a node the entire cell is marked as \"-\".\nTable 6.3.3.1 illustrates the basic structure of the supported fields in the Debit / Reserve Units Request for exposure function API online charging.\nTable 6.3.3.1: Supported fields in Debit / Reserve Units Request message\n\nTable 6.3.3.2 illustrates the basic structure of the supported fields in the Debit / Reserve Units Response for exposure function API online charging.\nTable 6.3.3.2: Supported fields in Debit / Reserve Units Response Message\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.3.1: Supported fields in Debit / Reserve Units Request message",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.3.2: Supported fields in Debit / Reserve Units Response Message",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.4\tDetailed message format for converged charging",
+                            "text_content": "The operation types are listed in the following order: I  (Initial) / U (Update)/T  (Termination)/E  (Event). Therefore, when all Operation types are possible it is marked as IUTE. If only some operation types are allowed for a node, only the appropriate letters are used ( e.g., IUT or E) as indicated in the table heading. The omission of an operation type for a particular field is marked with \"-\" ( e.g., I-E). Also, when an entire field is not allowed in a node the entire cell is marked as \"-\".\nTable 6.3.4.1 illustrates the basic structure of the supported fields in the Charging Data Request for exposure function API online charging.\nTable 6.3.4.1: Supported fields in Charging Data Request message\n\nTable 6.3.4.2 illustrates the basic structure of the supported fields in the Charging Data Response for exposure function API converged charging.\nTable 6.3.4.2: Supported fields in Charging Data Response Message\n\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.4.1: Supported fields in Charging Data Request message",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.2: Supported fields in Charging Data Response Message",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tBindings for Northbound API offline charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This clause aims to describe the mapping between the Service Information fields, AVPs, Ies and CDR parameters for exposure function API online and offline charging.\nTable 6.4.1 describes the mapping of the Diameter Accounting AVP, Ies and CDR to the CDR parameters of EA-SCE-CDR.\nTable 6.4.1: Bindings of CDR Parameters, Information Elements and AVPs\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.4.1: Bindings of CDR Parameters, Information Elements and AVPs",
+                            "table number": 24,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.5\tBindings for NEF Northbound API converged charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This mapping between the Information Elements, resource attributes and CHF CDR parameters for NEF Northbound API converged charging is described in clause 7 of TS 32.291 [58].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "A subscriber (The API Invoker) may have Charging Characteristics assigned to his subscription. Default charging characteristics may be pre-provisioned on the SCEF. The charging information content is configured for each API, including charging method (online and offline charging), Event based charging, whether report the message content or not.\nThe Charging Characteristics parameter format is specified TS 32.298 [51]. Each bit of the string of 16 bits corresponds to a specific charging behaviour which is defined on a per operator basis, configured within the SCEF and pointed when bit is set to \"1\" value.\nOne way to define a charging behaviour could be to associate it to a specific usage, which may consist of a set of trigger profiles associated to CDR types e.g.:\n-\tEA-SCE-CDR: activate/deactivate CDRs, time limit, data volume limit, maximum number of API invocation.\nIn addition to these trigger sets, a CDF/CGF address may also be included.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.1\tGeneral",
+            "description": "This Annex describes the CEF (with UDM) support the 5G VN group management charging which specified in clause 6.2 TS 32.240 [1].\nThe CEF based 5G VN group management charging is an alternative to the NEF based, and may be used instead of the NEF based for the 5G VN group management charging.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.2\tCharging Architecture for 5G VN group management charging",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "B.2.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The 5G VN group management converged charging architecture including CEF based charging specified in the following clause B.2.1.1.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "B.2.1.1\tLogical Charging architecture - CEF based charging",
+                            "text_content": "The logical ubiquitous charging architecture and the reference points for 5G VN group management with the CEF architecture is shown in figure B.2.1-1.\nThe figure depicts a logical ubiquitous charging architecture for 5G VN group management, with the CEF (Cellular Equipment Function) architecture. It illustrates the various components and their interconnections, including the base station (BTS), user equipment (UE), and charging infrastructure (CSI). The CEF architecture is designed to support efficient and reliable charging for 5G VN groups, ensuring seamless communication and data transfer.\nFigure B.2.1.1-1: Logical ubiquitous charging architecture for 5G VN group management with the CEF architecture\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "B.2.2\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.3\tCharging principles and scenarios",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "B.2.3.1\tBasic principles",
+                            "text_content": "5G VN group management charging is performed by the NEF or CEF interacting with CHF using Nchf specified in TS 32.290 [57] and TS 32.291 [58]. In order to provide the data required for the charging management activities, the converged charging can be performed for each of the following:\n-\tThe CEF are able to get the 5G VN group information (e.g. GroupIdentifiers) from UDM via Nudm_SubscriberDataManagement service, specified in the TS 23.502 [214] and TS 29.503[236]. The Charging Data Request and Charging Data Response are exchanged between the CEF and the CHF, based on PEC scenarios as specified in TS 32.290 [57]. The Charging Data Request is issued by the CEF towards the CHF when certain conditions (chargeable events) are met.\nThe CEF only uses the GET operation of Nudm_SubscriberDataManagement service to obtain the 5G VN group information.\n-\tThe NEF are able to report the 5G VN group information (e.g. add/delete 5G VN Group members) to CHF based on the API invocation (i.e. 5GLANParameterProvision API) chargeable events.\nIn order to avoid the duplicate charging, the NEF based and CEF based 5G VN group management charging will not be invoked at the same time, which depend on the implementation based on the operator policy.\nThe 5G VN group management charging information is collected per VN group. The message contents and purpose of each charging event that triggers interaction with CHF, as well as the chargeable events that trigger them, are described in following clauses.\nA detailed formal description of the converged charging parameters to CHF defined in the present document can be found in TS 32.291 [58].\nA detailed formal description of the CDR parameters defined in the present document can be found in TS 32.298 [51].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "B.2.3.2\tApplicable triggers in 5G VN group management charging",
+                            "text_content": "A set of trigger conditions are defined for the CEF to invoke a Charging Data Request [Event] towards the CHF.\nTable B.2.3.2.1-1 summarizes the set of default trigger conditions and their category which shall be supported by the CEF.\nTable B.2.3.2.1-1: Default Trigger conditions in CEF\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table B.2.3.2.1-1: Default Trigger conditions in CEF",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "B.2.3.3\tMessage flows",
+                            "text_content": "The following message flow specifies the interaction between the CEF and the CHF for 5G VN group management charging. This interaction is based on Charging Data Request /Response specified in TS 32.290 [57].\nThe figure depicts a message flow for a 5G VN group charging scenario, specifically focusing on the PEC (Power-Efficient Communication) interception for the CEF (Cellular Equivalent Function) interception. The flow includes the PEC interception, which is a crucial step in ensuring the efficient charging of VN groups in 5G networks. The figure illustrates the interception process, highlighting the use of PEC interception to reduce power consumption and improve network performance.\nFigure B.2.3.3.1-1: Message flow for CEF interation for 5G VN group charging---PEC\n1. The CEF decides to get the 5G VN group management information based on the charging requirement.\n2. The CEF sends the 5G VN group management information Request to the UDM via Nudm_SubscriberDataManagement service.\n3. The UDM sends the 5G VN group management information successful Response to the CEF, including current VN group information, e.g. the Internal Group ID, External Group ID, and UE Id List.\n3ch-a. The CEF sends Charging Data Request [Event] to CHF for 5G VN group management information.\n3ch-b. The CHF creates a CDR.\n3ch-c. The CHF acknowledges by sending Charging Data Response [Event] to the CEF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "B.2.3.4\tCDR generation",
+                            "text_content": "The CHF CDRs for 5G VN group management charging are generated by the CHF to collect charging information that they subsequently transfer to the Charging Gateway Function (CGF).\nA 5G VN group management CHF CDR is used to capture charging information related to 5G VN group management chargeable events and is generated by the CHF for each received Charging Data Request [Event].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "B.2.4\tCharging Information",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "B.2.4.1\tData description for 5G VN group management charging",
+                            "text_content": "The Charging Data Request and Charging Data Response are specified in subclause 5.1.2.2.1 of TS 32.290 [57].\nTable B.2.4.1-1 describes the use of these messages for 5G VN group management charging.\nTable B.2.4.1-1: 5G LAN VN group management messages reference table\n\nTable B.2.4.1-2 illustrates the basic structure of a Charging Data Request message from the CEF as used for 5G VN group management charging.\nTable B.2.4.1-2: Charging Data Request message contents\n\nTable B.2.4.1-3 illustrates the basic structure of a Charging Data Response message from the CHF to CEF as used for 5G VN group management charging.\nTable B.2.4.1-3: Charging Data Response message contents\n\nDetails of the Ga message contents are specified in TS 32.295 [54].\nThe following table B.2.4.1-4 provide a brief description of each CDR parameter. The category in the tables is used according to the charging data configuration defined in clause 5.4. Full definitions of the CDR parameters, sorted by the name in alphabetical order, are provided in TS 32.298 [51].\nTable B.2.4.1-4 5G VN group management charging CHF record data\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table B.2.4.1-1: 5G LAN VN group management messages reference table",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table B.2.4.1-2: Charging Data Request message contents",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table B.2.4.1-3: Charging Data Response message contents",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table B.2.4.1-4 5G VN group management charging CHF record data",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "B.2.4.2\tDefinition of 5G VN group management charging information",
+                            "text_content": "The 5G VN Group Management Charging information is mapped to in the \"NEF API Charging Information\" in the table B.2.4.2-1.\nTable B.2.4.2-1: Structure of NEF API Charging Information for 5G VNGM Charging Information\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table B.2.4.2-1: Structure of NEF API Charging Information for 5G VNGM Charging Information",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "B.2.4.3\tDetailed message format for converged charging",
+                            "text_content": "The following clause specifies per Operation Type the charging data that are sent by CEF for 5G VN group management converged charging.\nThe Operation Types are listed in the following order: I (Initial)/T (Termination)/E (Event). Therefore, when all Operation Types are possible it is marked as ITE. If only some Operation Types are allowed for a node, only the appropriate letters are used (i.e. IT or E) as indicated in the table heading. The omission of an Operation Type for a particular field is marked with \"-\" (i.e. I-E). Also, when an entire field is not allowed in a node the entire cell is marked as \"-\".\nTable B.2.4.3-1 defines the basic structure of the supported fields in the Charging Data Request message for CEF converged charging.\nTable B.2.4.3-1: Supported fields in Charging Data Request message\n\nTable B.2.4.3-2 defines the basic structure of the supported fields in the Charging Data Response message for CEF converged charging.\nTable B.2.4.3-2: Supported fields in Charging Data Response message\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table B.2.4.3-1: Supported fields in Charging Data Request message",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table B.2.4.3-2: Supported fields in Charging Data Response message",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "B.2.5\tBindings for 5G VN group management converged charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This mapping between the Information Elements, resource attributes and CHF CDR parameters for 5G VN group management and communication converged charging is described in clause 7 of TS 32.291 [51].\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 33,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

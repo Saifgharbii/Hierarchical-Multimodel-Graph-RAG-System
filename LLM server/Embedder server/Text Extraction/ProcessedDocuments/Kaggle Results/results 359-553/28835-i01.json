@@ -1,0 +1,455 @@
+{
+    "document_name": "28835-i01.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document studies on potential requirements, impact on interaction between MOP and POP/NEP, and management architecture and more potential performance measurements of 5G MOCN network sharing.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 28.541: \"5G Network Resource Model (NRM); Stage 2 and stage 3\".\n[3]\t3GPP TS 28.552: \"5G performance measurements\".\n[4]\t 3GPP TS 32.130: \"Network sharing; Concepts and requirements\".\n[5]\t 3GPP TS 28.533: \" Architecture framework\".\n[6]\t3GPP TS 28.622: \" Generic Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS) \".\n[7]\t3GPP TS 28.658: \"Telecommunications management; Evolved Universal Terrestrial Radio Access Network (E-UTRAN) Network Resource Model (NRM) Integration Reference Point (IRP): Information Service (IS)\".\n[8]\t3GPP TS 28.532: \" Management and orchestration; Generic management services\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tConcepts and overview",
+            "description": "5G network sharing, especially the 5G MOCN scenario, is essential to save construction costs for network operators. So far, requirements of configuration, management authority and performance measurement for network sharing have been covered in TS 32.130 [4]. The NRM and part of performance measurement for 5G MOCN network sharing have been defined in TS 28.541 and TS 28.552 [3]. With the deployment and operation of 5G MOCN network sharing, more and more new detailed management requirements need be investigated for 5G MOCN network sharing. For example, preventing data modification by MOP-NM and ensuring data fairness per POP, MOP-NM needs to get different data from MOP-SR-DM, and put different data to different POP-NM. The performance measurement in TS 28.552 [3] cannot fully evaluate the network performance of 5GMOCN network sharing.\nTo enhance the sharing mechanism, the present document studies on management aspects of 5G MOCN network sharing, including potential requirements, impact on interaction between MOP and POP/NEP, and management architecture, and more potential performance measurements in management system.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tKey issues and potential solutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tIssue #1: Management requirement for different POP's network operation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tDescription",
+                            "text_content": "For 5G MOCN Networking Sharing, different POP needs different data for personalized operation and maintenance services (e.g. mobility management measurements focused by POP A, packet delay measurements focused by POP B). POP-NM needs to get different data from MOP-NM for POPs' network operation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tPotential solution",
+                            "text_content": "1. \tIn NG-RAN, according to different POPs' operation requirements, the 3GPP management system of the MOP shall have capability to report different operator-specific configuration (e.g. NROperatorCellCU) and performance measurement jobs (e.g. job containing mobility management measurements focused by POP A, job containing packet delay measurements focused by POP B) for each POP.\n2. \tIn NG-RAN, ensuring alarm continuity, the 3GPP management system of the MOP shall have capability to provide full operator-specific alarm data for each POP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tIssue #2: Performance measurements without PLMN ID at NRCellCU",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tDescription",
+                            "text_content": "In TS 28.541 [2], the NRCellCU IOC with pLMNInfoList attribute can naturally distinguish PLMN granularity. However, some performance measurements that do not contain PLMN information are collected at NRCellCU in TS 28.552 [3]. These measurements, which are based on the message without PLMN Id information, are inappropriate to be collected from NRCellCU. For example, the NRCellCU which distinguishes PLMN granularity cannot collect RRC.ConnEstabAtt and RRC.ReEstabAtt (See TS 28.552 [3]) measurements.\nFor 5G MOCN network sharing, some potential solutions need to be studied to support above performance measurements without PLMN ID.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tPotential solutions",
+                            "text_content": "1. The following enhanced NR NRM solution is proposed:\nIntroduce new OperatorCU <<IOC>> name-contained by GNBCUCPFunction<<IOC >> to represent operator specific gNB level information (including operator specific gNB Id, gNBIdlength, pLMNId), and new NROperatorCellCU<<IOC>> name-contained by OperatorCU<<IOC>> to represent operator specific cell level information (including operator specific CelllocalId, PLMNInfoList). Which means individual OperatorCU instance and NROperatorCellCU needs to be created and configured for each POP.\nThe figure depicts a 2-1 network architecture, where the 2-1 network is enhanced to support NG-RAN sharing, which is a key feature of the 5G network. This enhancement enables the sharing of control and data planes between the 5G network and the 5G network core, enabling more efficient use of network resources and improved performance. The figure also shows the use of multiple network resources, such as the 5G network core and the 5G network core, to support the sharing of control and data planes between the 5G network and the 5G network core. This enhances the overall network performance and enables more efficient use of network resources.\nFigure 5.2-1: NR NRM enhancement to support NG-RAN sharing MOCN network sharing\nThe OperatorCU <<IOC>> contains attributes to support operator specific gNB-CU level information (including gNB Id, gNBIdLength, PLMNId) to support 5G Multi-Operator Core Network (5G MOCN) network sharing. Individual instance of OperatorCU <<IOC>> should be created and configured for each POP. When configured the attributes override those in parent GNBCUCPFunction instance.\nThe OperatorCU<<IOC>> is only used to support MOCN. If the MOCN is not supported, this IOC is not used.\nThe OperatorCU<<IOC>> includes attributes inherited from TOP IOC and the following attributes:\n\nNROperatorCellCU<<IOC>>\nThe NROperatorCellCU <<IOC>> contains attributes to support operator specific cell level information (including cellLocalId, pLMNInfoList) to support 5G Multi-Operator Core Network (5G MOCN) network sharing. Individual instance of NROperatorCellCU <<IOC>> should be created and configured for each POP. When configured the attributes override those in associated NRCellCU instance.\nThe NROperatorCellCU <<IOC>> is only used to support MOCN. If the MOCN is not supported, this IOC is not used.\nThe NROperatorCellCU <<IOC>> includes attributes inherited from TOP IOC and the following attributes:\n\nSome updates are needed for NRCellCU IOC, NRCellRelation IOC and ExternalNRCellCU IOC in the existing NR NRM.\n-\tThe Support Qualifier for attribute \"cellLocalId \" and \"pLMNInfoList\" in existing NRCellCU IOC needs to be changed to \"CM\", the condition is \" If MOCN Network Sharing is configured the value is not used \".\n-\tThe define of existing NRCellRelation IOC needs to be added: In the MOCN networking sharing scenario, the NRCellCU instance of the target cell and source cell need to be changed an NROperatorCU instance.\n-\tThe define of existing ExternalNRCellCU IOC needs to be added: In the MOCN networking sharing scenario, ExternalNRCellCU IOC represents the properties of an NROperatorCellCU controlled by another Management Service Provider.\n-\tOperator specific measurements can be collected and reported within OperatorCU<<IOC>> and NROperatorCellCU<<IOC>>, Operator agnostic measurements can be collected and reported within GNBCUCPFunction<<IOC>> and NRCellCU<<IOC>>.\n-\tThe following NR NRM fragments need to be added.\nThe figure depicts a 2-2 NRM (Network Resource Management) configuration for Eps (Energy Profiling) to support OperatorCU (Operator Control Unit) for NG-RAN (Next-Generation Radio Access Network) network sharing in a 5G network. The NRM is designed to ensure efficient resource allocation and management of network resources, enabling the efficient operation of the network.\nFigure 5.2-2 NRM for Eps to support <<IOC>>OperatorCU for NG-RAN MOCN network sharing\nFor the scenario of individual interfaces for NG-RAN MOCN network sharing, EP_XnC, EP_E1, EP_F1C, EF_NgC and EP-X2C name contained by OperatorCU can be used to represent individual interfaces for each POP.\nIn this solution, NRCellDU is added as the measurement object class to the attempt and failure measurements of RRC connection related measurements. Detailedly, the following modification is applied to the measurements \"5.1.1.15.1 Attempted RRC connection establishments\", \"5.1.1.15.3 Failed RRC connection establishments\", \"5.1.1.17.1 Number of RRC connection re-establishment attempts\", \"5.1.1.17.4\tNumber of RRC connection re-establishment attempts followed by RRC Setup\", \"5.1.1.18.1 Number of RRC connection resuming attempts\", \"5.1.1.18.4\tRRC connection resuming followed by network release\", \"5.1.1.18.5 RRC connection resuming followed by network suspension\", \"5.1.1.18.6\tNumber of RRC connection resuming attempts followed by RRC Setup\".\n******** the proposed modification: *********\nf)\tNRCellCU (for all scenarios except MOCN network sharing with multiple Cell Identity broadcast scenario),\nNRCellDU (for MOCN network sharing with multiple Cell Identity broadcast scenario).\n******** the proposed modification end *********\nBased on the above mentioned modifications, for MOCN network sharing with multiple Cell Identity broadcast scenario, the corresponding KPI formulas can be:\n1)\tRRC connection setup success rate\nRRC connection setup success rate = ∑NRCellCU.RRC.ConnEstabSucc/NRCellDU.RRC.ConnEstabAtt.\nThat is RRC connection setup success rate on NRCellDU level the measurement shall be the averaged over all NRCellCUs Associated NRCellDU where NRCellCU.cellLocalId equeals NROperatorCellDU.cellLocalId and NROperatorCellDU.nRCellDURef equeals NRCellDU\n2)\tRRC connection re-establishment success rate\nRRC connection re-establishment success rate = (∑NRCellCU.RRC.ReEstabSuccWithUeContext+∑NRCellCU.RRC.ReEstabSuccWithoutUeContext + NRCellDU. RRC.ReEstabFallbackToSetupAtt) / NRCellDU.RRC.ReEstabAtt.\nThat is RRC connection re-establishment success rate on NRCellDU level the measurement shall be the averaged over all NRCellCUs Associated NRCellDU where NRCellCU.cellLocalId equeals NROperatorCellDU.cellLocalId and NROperatorCellDU.nRCellDURef equeals NRCellDU\n3)\tRRC connection resuming success rate\nRRC connection resuming success rate = (∑NRCellCU.RRC.ResumeSucc + ∑NRCellCU.RRC.ResumeSuccByFallback+ NRCellDU.RRC.ResumeFollowedbyNetworkRelease +NRCellDU.RRC.ResumeFollowedbySuspension +NRCellDU.ResumeFallbackToSetupAtt) / NRCellDU.RRC.ResumeAtt.\nThat is RRC connection resuming success rate on NRCellDU level the measurement shall be the averaged over all NRCellCUs Associated NRCellDU where NRCellCU.cellLocalId equeals NROperatorCellDU.cellLocalId and NROperatorCellDU.nRCellDURef equeals NRCellDU.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The OperatorCU<<IOC>> includes attributes inherited from TOP IOC and the following attributes:",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The NROperatorCellCU <<IOC>> includes attributes inherited from TOP IOC and the following attributes:",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tIssue #3: Management requirement between MOP-NM and MOP-SR-DM",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tDescription",
+                            "text_content": "For 5G MOCN Networking Sharing, different POP needs different data for personalized operation and maintenance services (e.g. mobility management measurements focused by POP A, packet delay measurements focused by POP B). MOP-NM needs to sent different data to POP-NM for POPs' network operation.\nPreventing data modification by MOP-NM and ensuring data fairness per POP, different configuration and performance measurements for each POP on MOP-SR-DM need to be forwarded to MOP-NM. Then the MOP-NM sent these data to POP-NM directly. Ensuring alarm ID continuity, different alarm data for each POP on MOP-NM need to be forwarded to each POP. The existing specifications do not provide some descriptions of these data flows and interface details for NG-RAN MOCN network sharing scenario.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tPotential solution",
+                            "text_content": "1.\tThe use cases of configuration, performance measurements for NG-RAN MOCN network sharing scenario can be added in TS 32.130 [4]. For example, the data flow of configuration and performance measurements is depicted in figure 5.3-1.\nThe figure depicts a network sharing scenario where the NG-RAN MOCN network shares its configuration and performance measurements with the 5G network. The diagram illustrates the data flow, including the configuration data, performance measurements, and the sharing mechanism. The figure highlights the importance of network sharing in enhancing network performance and reducing the need for additional network infrastructure.\nFigure 5.3-1: Data flow of configuration and performance measurements for NG-RAN MOCN network sharing scenario\n1.\tThe use case of alarm data for NG-RAN MOCN network sharing scenario can be added in TS 32.130 [4]. For example, the data flow of alarm data is depicted in figure 5.3-2.\nThe figure depicts the data flow of alarm data for a 5G network sharing scenario, illustrating the flow of information between the network's different components. The diagram shows the data flow from the base station (gNB) to the user equipment (UE) and the network control center (NCC), with the data being transmitted over the optical backbone. The figure also highlights the use of redundancy paths to ensure reliability and failover.\nFigure 5.3-2: Data flow of alarm data for NG-RAN MOCN network sharing scenario\n1.\tIndividual PerfMetricJob instance can be created and configured for each POP.\n2.\tThe following attribute pLMNId can be added to PerfMetricJob IOC defined in TS 28.622 [6] and used to identify the POP.\nThe optional attribute pLMNId can be used to establish operator-instance of PerfMetricJob IOC. The attribute performanceMetrics and optional attribute pLMNId together define the performance metrics to be produced according to individual POP's requirements for MOCN scenario.\n\nThe attribute constraint of pLMNId shall be added as follows:\n\nThe definition of pLMNId can see in the following table.\n\n1.\tThe getMOIAttribute operation defined in TS 28.532 [8] shall have capability to filter operator-specific managed objects.\nThe optional parameter \"filter\" shall support operator-instance filtering. The pLMNId can be one filter criteria, which is applied to the objects in the sub-tree of baseObjectInstance.\n2.\tThe getAlarmList operation defined in TS 28.532 [8] shall have capability to filter operator-specific alarms.\nThe optional parameter \"filter\" shall support operator-instance filtering. The pLMNId can be one filter criteria, which is applied to the objects selected by the \"baseObjectInstance\" parameter. MnS producer shall apply pLMNId on AlarmInformation instances in AlarmList when constructing its output parameter AlarmInformationList.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The optional attribute pLMNId can be used to establish operator-instance of PerfMetricJob IOC. The attribute performanceMetrics and optional attribute pLMNId together define the performance metrics to be produced according to individual POP's requirements for MOCN scenario.",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The attribute constraint of pLMNId shall be added as follows:",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The definition of pLMNId can see in the following table.",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tIssue #4: Service-based management architecture for MOCN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tDescription",
+                            "text_content": "The management architecture of network sharing in TS 32.130 [4] is not service-based management architecture, which cannot meet the management requirements of 5G MOCN network sharing. The Service Based Management Architecture (SBMA) need to be provided for MOCN networking sharing.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tPotential solution",
+                            "text_content": "An example of the service-based management architecture for MOCN is depicted in figure 5.4-1. It is compliant with 3GPP management reference models (TS 28.533 [5] and TS 32.130 [4]).\nThe figure depicts an example of a service-based management architecture for MOCN (Multi-Operator Cloud Network). It illustrates the various components and their interactions, such as the cloud service provider (CSP), cloud network operator (CNO), and cloud network management (CNM) services. The architecture is designed to facilitate efficient and effective management of MOCN networks, ensuring optimal performance and reliability.\nFigure 5.4-1: An example of service-based management architecture for MOCN\nThe service-based management architecture for MOCN shows that management functions may interact by consuming management services produced by other management functions:\n-\tPOP 3GPP Mgmt. System can consume MnS(s) provided by MOP OSS.\n-\tMOP OSS provides a set of MnS(s) for POP 3GPP Mgmt. System and consumes MnS(s) provided by MOP 3GPP Mgmt. System.\n-\tMOP 3GPP Mgmt. System provides a set of MnS(s) for MOP OSS.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.5\tIssue #5: Use of MSAC for MOCN sharing scenarios",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.5.1\tDescription",
+                            "text_content": "For MOCN Networking Sharing and POP's network operation requirements, each POP needs to get and view some individual requirement data from MOP-SR-DM directly. In TS 32.130 [4], the data of MOP-SR-DM is transmitted to POP-NM through MOP-NM, which cannot meet the real-time acquisition and viewing data requirements of each POP. This data of MOP-SR-DM contain configuration data, performance data and alarms here. According to the POP's real-time data requirements, MOP-SR-DM needs to allow each POP to be able to access and provide relevant system user permissions for each POP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.2\tPotential solution",
+                            "text_content": "The MOP-SR-DM shall allow authorized POP users to access, read and download data of configuration, performance measurements and alarms.\nEditor's note: The remote access requirement of MOP-SR-DM could reuse the solution from the role-based access control capability of work item MSAC (which will be updated with a specification clause in the future).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.6\tIssue #6: PLMN-related attribute requirement for operator specific IOC",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.6.1\tDescription",
+                            "text_content": "For MOCN networking sharing and POP's network operation requirements, each POP needs to get some individual operator-specific data from MOP-SR-DM or MOP-NM. Some IOCs defined in TS 28.541 [2] should create and configure an instance for each POP, but the PLMN-related attribute of these IOCs are not defined. Some of the operations defined in TS 28.532 [8] shall have capability to filter operator-specific object instances via the PLMN-related attribute. According to the POP's data requirements and supporting the operation PLMN-filtering capability, some operator specific IOCs need to add PLMN-related attribute for creating different POPs' object instances. In addition, the operator specific IOCs mainly include two categories: specific IOCs for NRM NG-RAN MOCN network sharing(e.g. OperatorDU) and operator-related IOCs whose instances or attributes can be configured for each POP(e.g. configurable5QISet).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.2\tPotential solution",
+                            "text_content": "1. The OperatorDU IOC defined in TS 28.541 [2] shall add PLMN-related attributes.\nThe pLMNId attribute shall be added as follows:\n\n2.\tThe GNBDUFunction IOC defined in TS 28.541 [2] shall add PLMN-related attributes.\nThe pLMNId attribute shall be added as follows:\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The pLMNId attribute shall be added as follows:",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The pLMNId attribute shall be added as follows:",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.7\tIssue #7: 5QI-related attribute requirement for operator specific IOC",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.7.1\tDescription",
+                            "text_content": "For MOCN RAN network sharing and POP's network operation requirements, each POP needs to get some individual operator-specific data from MOP-SR-DM or MOP-NM.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.2\tPotential solutions",
+                            "text_content": "To configure operator specific 5QI an optional attribute can be added to the Configurable5QISet to identify the operator to which the 5QI set applies.\n1.\tThe Configurable5QISet IOC defined in TS 28.541 [2] could be updated to include PLMN-related attributes identifying each POP.\n2.\tThe potential NRM changes to support above could include:\nNew attribute added to Configurable5QISet:\n\nwith constraint:\n\n1.\tSuch updated Configurable5QISet could be used to create a 5QI set for each POP's pre-configured 5QIs in MOCN networking sharing scenario.\nTo configure operator specific 5QI sets, new attributes could be added to the OperatorDU to refer to operator specific 5QI sets.\nThis would not impact the Configurable5QISet definition and keeps the 5QI set configuration the same for RAN MOCN network sharing, and non-sharing scenarios.\n1.\tThe OperatorDU IOC defined in TS 28.541 [2] could be updated to include a reference to a specific 5QI set.\n2.\tThe potential NRM changes to support above could include:\nNew attributes added to OperatorDU:\n\nwith constraints:\n\n1.\tOne instance of Configurable5QISet IOC defined in TS 28.541 [2] is created for each POP to support different POP's pre-configured 5QIs in MOCN RAN network sharing scenario.\n2.\tThe Configurable5QISet instance should be contained under the same GNBDUFunction MOI as the operator specific OperatorDU is contained.\n3.\tEach operator's OperatorDU instance references their specific 5QI set via the new reference attribute (configurable5QISetRef).\nTo configure operator specific 5QI sets, new attributes could be added to the Configurable5QISet to refer to operator specific DUs.\nThis would impact the Configurable5QISet definition and make the 5QI set configuration different for RAN MOCN network sharing, and non-sharing scenarios.\n1.\tThe Configurable5QISet IOC defined in TS 28.541 [2] could be updated to include a reference to a specific OperatorDU instance.\n2.\tThe potential NRM changes to support above could include:\nNew attributes added to Configurable5QISet:\n\nwith constraints:\n\n1.\tOne instance of Configurable5QISet IOC defined in TS 28.541 [2] is created for each POP to support different POP's pre-configured 5QIs in MOCN RAN network sharing scenario.\n2.\tEach Configurable5QISet instance should be contained under the same GNBDUFunction MOI as the operator specific OperatorDU is contained.\n3.\tEach operator's Configurable5QISet instance references their specific OperatorDU instance via the new reference attribute (operatorDURef).\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "New attribute added to Configurable5QISet:",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "with constraint:",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "New attributes added to OperatorDU:",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "with constraints:",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "New attributes added to Configurable5QISet:",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "with constraints:",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.8\tIssue #8: PLMN granularity requirement of performance measurements for MOCN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.8.1\tDescription",
+                            "text_content": "For management requirements of MOCN networking sharing, MOP-NM needs to get some PLMN granularity performance measurements to support the POP's network operation. For an operator in a shared network, cell-level metrics cannot meet the requirements of a single operator for network evaluation and optimization. The 3GPP management system of the MOP has the capability to collect and report some measurements in PLMN granularity for each POP. However, in TS 28.552 [3], some measurements(e.g. PDU session management measurements, DRB related measurements) have not yet been differentiated the PLMN granularity. So some non-PLMN performance measurements need add PLMN granularity in MOCN networking sharing scenario.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.2\tPotential solution",
+                            "text_content": "1. At NRCellCU, some performance measurements defined in TS 28.552 [3] need to add PLMN granularity.\nThe PLMN granularity need to be added in the following performance measurements:\n\n2. At NRCellDU, some performance measurements defined in TS 28.552 [3] need to add PLMN granularity.\nThe PLMN granularity need to be added in the following performance measurements:\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The PLMN granularity need to be added in the following performance measurements:",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The PLMN granularity need to be added in the following performance measurements:",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tConclusion and Recommendation",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tIssue #1: Management requirement for different POP's network operation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The study has identified management requirements and solutions for different POP's network operation in NG-RAN.\nIn NG-RAN, to manage different POP's data for personalized operation and maintenance services, the study has identified that the management system of MOP has the capability to report different operator-specific configuration and performance measurements and to provide operator-specific alarm data for each POP.\nFor MOCN network sharing, it is recommended to start further normative work in TS 32.130 [4] for NG-RAN.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tIssue #2: Performance measurements without PLMN ID at NRCellCU",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The study has identified the issue and solutions for NRCellCU to collect performance measurements without PLMN ID. There are two solutions to address key issue#2 in the present document. These solutions propose the principle that the new or existing IOCs are able to support the collection of these common and operator specific measurements.\n-\tSolution 1 proposes that new IOCs (i.e. OperatorCU, NROperatorCellCU) could be added to the NR NRM to support NG-RAN sharing MOCN network sharing. The OperatorCU and NROperatorCellCU to represent the operator specific part can collect PLMN related measurements. The NRCellCU to represent the common part of the CU can collect these common measurements (i.e. RRC.ConnEstabAtt and RRC.ReEstabAtt ).\n-\tSolution 2 proposes that NRCellDU is added as the measurement object class to the attempt and failure measurements of RRC connection related measurements.\nThe comparison of solutions is shown in the following table.\nTable 6.2-1: Comparison of solutions of Issue#2\n\nFor key issue #2 and two solutions, they need further study and no normative work.\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.2-1: Comparison of solutions of Issue#2",
+                            "table number": 18,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.3\tIssue #3: Management requirement between MOP-NM and MOP-SR-DM",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The study has identified management requirements and solutions for personalized operation and maintenance services between MOP-NM and MOP-SR-DM. MOP-NM needs to sent different data to POP-NM for POPs' network operation.\nIt is recommended to start further normative work focusing on the following main aspects in TS 32.130 [4] for stage 1.\n- \tAdding use cases for operator-specific configuration, performance measurements and alarm data for NG-RAN MOCN network sharing scenario in TS 32.130.\nIt is recommended to clarify how existing IOCs could be used in the context of network sharing scenarios in TS32.130[4].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.4\tIssue #4: Service-based management architecture for MOCN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The study has identified Service-based management architecture for MOCN.\nTo meet the management requirements of 5G MOCN network sharing, the study has depicted the overall picture of an example of service-based management architecture for MOCN compliant with 3GPP management reference models and specified management function interactions based on the architecture.\nFor MOCN network sharing, it is recommended to add the potential solution \"An example of the service-based management architecture for MOCN\" as informative annex to TS 32.130 [4].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.5\tIssue #5: Use of MSAC for MOCN sharing scenarios",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The study has identified use of MSAC for MOCN sharing scenarios.\nTo get and view some individual requirement data from MOP-SR-DM directly, the study has identified that the management system of MOP-SR-DM has the capability to allow authorized POP users to access, read and download data of configuration, performance measurements and alarms. The access requirement of MOP-SR-DM could use the role-based access control solution of MSAC (which will be updated with a specification clause in the future). The existing general solutions in MSAC will be used.\nFor MOCN network sharing, recommendations will be added describing how to use existing access control solution of MSAC in TS 32.130 [4]. No new normative work is required for MSAC.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.6\tIssue #6: PLMN-related attribute requirement for operator specific IOC",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The study has identified PLMN-related attribute requirement for operator specific IOC.\nFor MOCN networking sharing and POP's network operation requirements, each POP needs to get some individual operator-specific data from MOP-SR-DM or MOP-NM. The study has specified pLMNId of OperatorDU IOC and GNBDUFunction IOC.\nFor MOCN networking sharing, it is recommended to start further normative work in TS 28.541 [2].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.7\tIssue #7: 5QI-related attribute requirement for operator specific IOC",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The study has identified 5QI-related attribute requirements and solutions for configuring operator specific 5QI. There are three solutions to address key issue#7 in the present document. These solutions propose the principle that operator related IOCs whose instances or attributes can be configured for each POP.\nThe comparison of solutions is shown in the followings.\nTable 6.7-1: Comparison of solutions of Issue#7\n\nFor key issue #7, it is concluded that solution 2 is used as the baseline for further normative work in TS 28.541 [2].\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.7-1: Comparison of solutions of Issue#7",
+                            "table number": 19,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.8\tIssue #8: PLMN granularity requirement of performance measurements for MOCN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The study has identified PLMN granularity requirements and solutions of performance measurements for MOCN.\nFor management requirements of MOCN networking sharing, the study has identified the management system of MOP has the capability to collect and report some measurements in PLMN granularity for each POP.\nFor MOCN networking sharing, it is recommended to add PLMN granularity in some performance measurements at NRCellCU and NRCellDU defined in TS 28.552 [3].\n\n\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 20,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

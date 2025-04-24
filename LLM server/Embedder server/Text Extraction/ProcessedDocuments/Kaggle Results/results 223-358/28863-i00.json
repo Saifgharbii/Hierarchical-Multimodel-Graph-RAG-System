@@ -1,0 +1,256 @@
+{
+    "document_name": "28863-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document investigates the definition and scenarios for KQI. The KQIs and the evaluation of the KQIs for each of the identified scenarios will be investigated. It also provides the analysis for the relation of KQI with the SLS requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TR 32.862: \"Study on Key Quality Indicators (KQIs) for service experience\"\n[3] \tETSI GS F5G 005: \"F5G High-Quality Service Experience Factors Release #1\"\n[4]\tITU-T Y.1540: Internet protocol data communication service - IP packet transfer and availability performance parameters\n[5]\tITU-T P.1201: Parametric non-intrusive assessment of audiovisual media streaming quality\n[6]\tITU-T P.1202: Parametric non-intrusive bitstream assessment of video media streaming quality\n[7]\tITU-T P.1203: Parametric bitstream-based quality assessment of progressive download and adaptive audiovisual streaming services over reliable transport\n[8]\tITU-T P.1204: Video quality assessment of streaming services over reliable transport for resolutions up to 4K\n[9]\tITU-T GSTR-5GQoE: Study of existing QoE requirements for 5G services\n[10]\tITU-T P.10/G.100 (11/2017): Vocabulary for performance and quality of service.\n[11]\tITU-T G.1035: Influencing factors on quality of experience for virtual reality services\n[12]\tDraft ITU-T P.1320 (ex P.QXM): QoE assessment of eXtended Reality (XR) meetings\n[13]\tDraft ITU-T G.1036 (ex G.QoE-AR): Quality of experience (QoE) influencing factors for augmented reality (AR) services\n[14] \tDraft ITU-T G.QoE-VR (G.QoE-VR) \"Influencing Factors on Quality of Experience (QoE) for Virtual Reality Services\"\n[15]\t\tITU-T SG 9 TD 896-GEN: \"Output - Draft New Recommendation J. Cloud-VR \"E2E Network Requirements of Cloud-VR Services\"\n[16]\t3GPP TS 26.247: \"Transparent end-to-end Packet-switched Streaming Service (PSS); Progressive Download and Dynamic Adaptive Streaming over HTTP (3GP-DASH)\".\n[17]\t3GPP TS 28.554: \"Management and orchestration; 5G end to end Key Performance Indicators (KPI)\"\n[18]\t3GPP TS26.501: \"5G Media Streaming (5GMS); General description and architecture\"\n[19]\t3GPP TS26.511: \"5G Media Streaming (5GMS); Profiles, codecs and formats\"\n[20]\t3GPP TS26.512: \"5G Media Streaming (5GMS); Protocols\"\n[21]\t3GPP TS28.535 Management and orchestration; Management services for communication service assurance; Requirements\n[22]\tGSMA NG.116 Generic Network Slice Template, Version 7.0, 17 June 2022\n[23]\t3GPP TS28.541 Management and orchestration; 5G Network Resource Model (NRM); Stage 2 and stage 3\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nKey Quality Indicator: For purposes of TR 28.863, the term is defined to be an indicator which reflects the end-to-end service experience as perceived by the end user. It may be derived from a combination network layer measurements, service layer measurements and includes qualitative as well as quantitative components.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\nVoid\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nKQI\tKey Quality Indicators\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tIssues and potential solutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tIssue # 1: Definition of KQI",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.1.1\tDescription",
+                            "text_content": "In this clause, the background survey of the definition of KQI is provided. The TS/TR related to KQI will be listed here as the basis of the study.\nIn TR 21.905 [1], no definition or abbreviation of KQI is provided.\nTR 32.862 [2] gives a description of KQI and some related survey on that:\n- The introduction of Key Quality Indicators (KQIs), which reflect the end-to-end service performance and quality, could be used to better represent real customer experience. NGMN NGCOR has defined principles for KQIs which could be used to evaluate the customer experience for fixed and mobile networks. It is proposed that SA5 takes the responsibility to study how to standardize the related service KQIs providing a standardised common base for end-to-end measurements and to fulfil the NGCOR requirements.\n- The intention of KQI for the service experience is to try to reflect the customer experience with indicators reflecting them for example how many stalls occur while watching a movie, time delay before seeing the first screen of a movie. With this information, KQI could closely reflect the customer experience. The KPIs defined in the current specifications, e.g. TS 32.450, are not differentiated by services, they only measure the bearer.\nETSI GS F5G 005 [3] gives a description of KQI:\nThe Key Quality Indicators (KQI) are composed by the QoS metrics, which have the largest impact on QoE, namely\nuser centric and service specific quality patterns that directly influence the user perception for each service category.\nQoS is a measure of the performance of networked services at the network or application level. QoS also refers to a set\nof techniques that enable the network administrator to manage the network performance differentiating between\ndifferent users. QoS metrics may include network layer measurements such as packet loss, delay or jitter or application\nlevel measurements such as video frame loss, frame freezing, image distortion.\nThere are some studies related to KQIs, or relevant to, 5G service experience, with below a list of related ITU-T Recommendations and other output documents such as Technical Reports by ITU-T SG12, as well as work items under study.\nThere are also the different prediction models for speech and video quality available from SG12’s work (e.g. P.1201, P.1202, P.1203, P.1204 for video), which can directly provide KQI related information.\nList of related in-force ITU-T Recommendations and Technical Reports are given according to video streaming and cloud VR:\nVideo streaming related documents:\n–\tITU-T Y.1540 [4]: Internet protocol data communication service - IP packet transfer and availability performance parameters\n–\tITU-T P.1201 [5]: Parametric non-intrusive assessment of audiovisual media streaming quality\n–\tITU-T P.1202 [6]: Parametric non-intrusive bitstream assessment of video media streaming quality\n–\tITU-T P.1203 [7]: Parametric bitstream-based quality assessment of progressive download and adaptive audiovisual streaming services over reliable transport\n–\tITU-T P.1204 [8]: Video quality assessment of streaming services over reliable transport for resolutions up to 4K\n–\tITU-T GSTR-5GQoE [9]: Study of existing QoE requirements for 5G services\n–\tITU-T P.10/G.100 (11/2017) [10]: Vocabulary for performance and quality of service.\nCloud VR related documents:\n–\tITU-T G.1035 [11]: Influencing factors on quality of experience for virtual reality services\nConsented draft ITU-T Recommendations:\n–\tDraft ITU-T P.1320 (ex P.QXM) [12]: QoE assessment of eXtended Reality (XR) meetings\n–\tDraft ITU-T G.1036 (ex G.QoE-AR) [13]: Quality of experience (QoE) influencing factors for augmented reality (AR) services\n–\tDraft ITU-T G.QoE-VR (G.QoE-VR) [14] \"Influencing Factors on Quality of Experience (QoE) for Virtual Reality Services\" (for consent)\nCloud VR related documents:\n–\tITU-T SG 9 TD 896-GEN [15]: \"Output - Draft New Recommendation J. Cloud-VR \"E2E Network Requirements of Cloud-VR Services\"\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.2\tPotential solutions",
+                            "text_content": "In 5G there are some new services defined in 3GPP. The new services of video uploading (uplink media streaming), URLLC and cloud VR have requirements e.g. related to latency, reliability and UL throughput for 5G networks or the combination of them. The metrics of network performance are defined as Key Performance Indicators (KPIs) for the 5G network, defined in TS28.554 [17]. However, it is not enough to only define separate network performance indicators. The ultimate goal of network management of services is to provide a good service experience to the user. Network resources are limited. Only focusing on the network management may not ensure optimal service experience. User experience-driven management may be enabled with key quality indicators (KQIs) which are used to better represent a user’s experience.\nKQIs are important for service management. In user experience-driven management, KQIs may be used to propose service management objectives and express experience optimization requirements. Experience optimization requirements may be mapped to the network, and are ultimately achieved through network resource assurance and network performance optimization.\nKQI (Key Quality Indicator): An indicator which reflects the end-to-end service experience as perceived by the end user. It may be derived from a combination network layer measurements, service layer measurements and includes qualitative as well as quantitative components.\nTS 28.554 [17] specifies end-to-end Key Performance Indicators (KPIs) for the 5G network and network slicing.\nKQI (Key Quality Indicator) is defined to be a measure of the experience perceived by the user.\nIn ITU-T P.10/G.100 [10] the definition of QoE is given:\nQuality of experience (QoE)\nThe degree of delight or annoyance of the user of an application or service.\nQoE is defined as the degree of delight or annoyance of the user of an application or service. It includes the complete end-to-end system effects (client, terminal, network, services infrastructure, etc.) and may be influenced by user expectations and context.\nFrom the above definition of QoE we see that QoE is an overall value to reflect the degree of the user experience.\nThere are also measurements in SA4 that may be used to estimate QoE. These measurements are collected by the client and may be reported to the OAM or QoE server in the QoE metrics reporting. How to make use of these QoE metrics is not specified. One difference is that the QoE measurements are collected from the client side for all of the aspects of the media e.g. the buffer, play list, MPD information besides network aspects. KQIs may be calculated from KPIs, or calculated based on some of the collected QoE metrics. QoE metrics may be one component of KQI.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.3\tConclusion - Impact on normative work",
+                            "text_content": "In Issue#1 the definition of KQI is provided. It is proposed to introduce the term of KQI and the definition of KQI to the service management related specification in release 19.\nIn Issue#1 the difference of KPI, KQI and QoE is provided. It is for better understanding the difference of the terms in the study item phase and can be considered as basis for the further study of the network and service indicators.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.2\tIssue # 2: Scenarios for 5G KQI",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tDescription",
+                            "text_content": "In 5G there are various new services. Different services bring different service experience. The service experience of video uploading requires good quality of video and high efficiency of uploading; while for AR/VR requires good interaction additionally. For different service different KQIs are required to express the different service experience.  It is important to select the most typical services and investigate the KQIs for such services.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tPotential solutions",
+                            "text_content": "This clause provides the proposed scenarios for 5G KQI.\nVideo uploading is widely used in e.g. transportation, smart city; URLLC is important for industry automation and telemedicine; Cloud VR is also expected to be widely used in daily life. In the present document the 5G KQIs will be described for the following scenarios:\n-\tVideo uploading\n-\tURLLC\n-\tCloud VR\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.3\tConclusion - Impact on normative work",
+                            "text_content": "In Issue#2 the scenarios for 5G KQI is proposed. The scenarios of video uploading, URLLC and Cloud VR are 3GPP defined scenarios. These scenarios are proposed to be the typical 5G services for a future service related study. No normative work is needed for this issue.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tIssue # 3: KQIs for Video Uploading",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.1\tDescription",
+                            "text_content": "The scenario of video uploading means the uplink media streaming.  In TS 26.501 [18] the service of 5G media streaming, including uplink media streaming and downlink media streaming is defined; In TS 26.511 [19] the profiles, codecs and formats for media streaming are defined; and in TS 26.512 [20] the protocols for media streaming are defined..\nVideo uploading is widely used in transportation, smart city, telemedicine and industry automation. In these scenarios, a large number of videos are captured and uploaded to the server and are required to be low latency and High-definition. There are various requirements for the service experience of video uploading. For example, real-time video transmission is required in industrial control scenarios such as ports and mines, which requires short video transmission delay; in addition, for transmission of high-definition video, the high video transmission rate is required.\nKQIs for video uploading is important for the management: In user experience-driven management, KQIs are used to declare management objectives of video uploading and indicate whether user experience need to be optimized.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.2\tPotential solutions",
+                            "text_content": "In this potential solution, KQIs for Video Uploading is provided.\nEnd-to-end uplink delay is an important indicator for end users to perceive smooth and real-time media streaming for video uploading service. In most industrial scenarios real-time video transmission is required either to monitor the industrial system or to do some real-time operation based on the video; in addition, for transmission of high-definition video, the high video transmission rate is required which consequently requires short end-to-end delay.\nUplink mean throughput and uplink peak throughput are also important indicators which are required for the user since in 5G scenarios massive videos are transmitted thus requires large uplink throughput.\nUplink average packet loss rate and uplink burst packet loss rate are important indicators which will influence the end user’s feeling of the video. Packet loss greatly degrades the quality of multimedia content because in the event of a packet loss containing an I-frame, all subsequent frames depending on that frame will be lost, which may cause frame blocking, and video output stall. During packet loss measurement, packet loss is classified into average packet loss ratio measurement and burst packet loss ratio measurement. Burst packet loss has greater impact and needs to be considered separately.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.3\tConclusion - Impact on normative work",
+                            "text_content": "In Issue#3, the service of video uploading only corresponding to the uplink media streaming. The downlink media streaming part is for further study.\nIn this chapter, the description of KQIs and several KQIs of video uploading is proposed. But the detailed definition and the measurements of these KQIs are not defined. The measurements may be realized in the UE app which are already discussing in other groups. More cooperation with other 3GPP work groups is needed to realize the measurement on service layer and to send the information to management system;\nIt is proposed that how these KQIs are measured and how the KQIs are used to support the operator’s end-to-end service to outside the 3GPP system needs further study.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.4\tIssue # 4: KQIs for URLLC",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.4.1\tDescription",
+                            "text_content": "URLLC is one of the typical 5G services. URLLC is used in 5G SA (Stand-alone) networking to meet ultra-low latency requirements. Real-time interactive services are mainly small-packet transmission services, which do not require network bandwidth but require ultra-low latency. For industrial-grade URLLC services, too big delay may cause service failures instead of performance problems. Therefore, it is important to analyze the delay and the delay fulfillment boundary.\nFurthermore, the packet loss is also an important factor to be considered. As URLLC refers to “ultra-reliability” and packet loss is one of the most important factors to reflect reliability. If the packet loss rate is too high, the control instruction fails. Therefore, the packet loss rate and the threshold of the packet loss rate need to be considered when defining the quality indicator for the service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.4.2\tPotential solutions",
+                            "text_content": "In this potential solution, KQIs for URLLC is provided.\nEnd-to-end delay is an important indicator for end users to perceive the quality of the service. In URLLC real-time transmission services, ultra-low latency are required. For industrial-grade URLLC services, if the delay does not meet the requirements, it may lead to service failures.\nUplink/downlink average packet loss rate and uplink/downlink burst packet loss rate are important indicators which will influence the quality of the service. As URLLC are required to be ultra-reliability and minimum packet loss plays the most important role. If the packet loss rate is too high, the service may directly fails.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.4.3\tConclusion - Impact on normative work",
+                            "text_content": "In Issue#4, the description of KQIs and several KQIs of URLLC is proposed. But the detailed definition and the measurements of these KQIs are not defined. Further study is needed in the service management related topics. No normative work is proposed at the current stage.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.5\tIssue # 5: KQIs for Cloud VR",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.5.1\tDescription",
+                            "text_content": "Cloud VR (Cloud Virtual Reality) is a new cloud computing and cloud rendering technology for VR services, as describe in ITU SG9-TD896 GEN. It applies to scenarios such as VR games, VR 360-degree video, VR live broadcast, giant-screen cinema, and VR education. With fast and stable transport networks, VR content is stored and rendered in the cloud, and video and audio outputs are coded, compressed, and transmitted to user terminals. The large-scale deployment of Cloud VR services requires the joint effort from the enterprises to address E2E quality management and monitoring. Therefore, the development of measurable and manageable key quality indicators will be a key basis for operator to ensure the satisfaction of consumers. There are already some standards for studying the KQIs for Cloud VR. In this clause, the background and the use case of the KQI of the cloud VR are provided.\nIt describes the service indicators based on the experience evaluation factors of VR in ITU SG9-TD896 GEN, the experience evaluation factors of VR include sense of reality, interaction, and pleasure. The sense of reality depends on resolution, colour depth, frame rate, and encoding compression technologies. Cloud VR implements computing and rendering on the cloud, any latency from remote processing compromises the sense of immersion and imagination. The sense of pleasure depends on the smoothness of VR services.\nThe Cloud VR includes the service indicators:\nTable 4.5.1.2.1-1: Service indicators\n\nIn ITU SG12 G.QoE-VR, it describes that the VR QoE is assessed by the level of immersion provided by the VR system combined with the quality of the interaction between the user and the VR environment, and the level of immersion can be determined by the quality of the immersive media and the presentation quality delivered by the device. It also summarizes some key influences factors that impact quality of the immersive media, presentation quality, and interaction quality.\nIt includes the key influences factors:\nTable 4.5.1.2.2-1: Service indicators\n\nStalling is an important indicator for end users to perceive the smoothness of streaming media when using Cloud VR services (e.g. VR games). In the process of VR video, there will be a certain amount of buffer. Because the download rate of the network is not enough to meet the output requirements of video coding quality, there will be no data in the buffer for playback, which will cause stalling and affect the end users’ experience. Therefore, This KQI is of great importance to estimate the service quality.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.5.1.2.1-1: Service indicators",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 4.5.1.2.2-1: Service indicators",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.5.2\tPotential solutions",
+                            "text_content": "In this potential solution, KQIs for Cloud VR is provided.\nStalling frequency (StallingFre)\nStalling frequency indicates the number of times frame stalling occurs in a unit of time during video playback. The calculation the video stalling frequency is as follows: The number of stalling is described in TS26.247 [16], the video stalling frequency is the number of video stalling times during video playback devided by the video playback duration. The unit is times/minute. The KQI type is Float.\nStalling duration (StallingDur)\nStalling duration indicates the duration of the stalling. The stalling start time and stalling end time is described in TS26.247 [16]. 3GPP management system collects the stalling start time and the stalling end time. The formula for calculating the stalling duration is the stalling end time minus the stalling start time. The KQI unit is ms and the KQI type is Float.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.5.3\tConclusion - Impact on normative work",
+                            "text_content": "In Issue#5, the background, the use case and the solution for KQIs for the service of Cloud VR are provided. \tThe topic of service management are still under discussion, no normative work is proposed for this issue.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.6\tIssue # 6: Relation of KQI with the SLS requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.6.1\tDescription",
+                            "text_content": "SLS is already agreed in SA5 as the service level specification. In TS28.535 [21] gives the abbreviation and definition of SLS:\nAbbreviation:\nSLS\tService Level Specification\nDefinition of the term:\nService level specification, specification of the minimum acceptable standard of service.\nIn GSMA NG.116 [22] and TS28.541 [23] gives the relation between GST and ServiceProfile. GST attributes are used by 3GPP as inputs to network slice Network Resource Model (NRM) ServiceProfle and then further translated into relevant attributes of constituted network slice subnets SliceProfile (i.e. 5GC SliceProfile and NG-RAN SliceProfile) and TN requirements, and finally, being translated into different 5G domain configuration parameters (i.e. 5GC domain and NG-RAN domain). The related service performance requirements (ServiceProfile) given in 3GPP are SLS requirements.\n\nSLS requirements are used between the CSC and the CSP: The CSC provides the SLS requirements for an assured communication service to the CSP, the CSP provides the corresponding communication service. The CSP also provides feedback to the CSC.\nThe goal of a CSP is to meet service experience requirements. KQI reflects the end-to-end service experience as perceived by the end user. KQIs are used to evaluate service quality, identify poor service scenarios. The management system will take a series of management process to improve and optimize service quality under a service experience degradation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.2\tConclusion - Impact on normative work",
+                            "text_content": "In Issue#6 the relation of KQI with the SLS requirements are studied. Which KQIs should be specified and how to apply them in to the SLS requirements need further study.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

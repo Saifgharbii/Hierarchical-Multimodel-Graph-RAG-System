@@ -1,0 +1,1254 @@
+{
+    "document_name": "28538-i50.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the management aspects of edge computing including concepts, use cases, requirements and procedural flows that covers lifecycle management, provisioning, performance assurance and fault supervision for edge computing.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.558: \"Architecture for enabling Edge Applications\".\n[3]\t3GPP TS 28.541: \"Management and orchestration; 5G Network Resource Model (NRM); Stage 2 and stage 3\".\n[4]\t3GPP TS 28.622: \"Telecommunication management; Generic Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\".\n[5]\t3GPP TS 28.532: \"Management and orchestration; Generic management services\".\n[6]\tETSI GS NFV-IFA 013 V3.4.1 \"Network Functions Virtualisation (NFV) Release 3; Management and Orchestration; Os-Ma-nfvo reference point -Interface and Information Model Specification\".\n[7]\tETSI GS NFV-IFA 011 (V3.3.1): \"Network Functions Virtualisation (NFV) Release 3; Management and Orchestration; VNF Descriptor and Packaging Specification\".\n[8]\t3GPP TS 28.550: \"Management and orchestration; Performance assurance\".\n[9]\t3GPP TS 28.531: \"Management and orchestration; Provisioning\".\n[10]\t3GPP TS 28.552: \"Management and orchestration; 5G performance measurements\".\n[11]\t3GPP TS 23.501: \"System architecture for the 5G System (5GS); Stage 2\".\n[12]\t3GPP TS 28.658: \"Telecommunications management; Evolved Universal Terrestrial Radio Access Network (E-UTRAN) Network Resource Model (NRM) Integration Reference Point (IRP): Information Service (IS)\".\n[13]\t3GPP TS 38.300: \"NR; Overall description; Stage-2\".\n[14]\tGSMA OPG: \"Operator Platform Telco Edge Requirements; Version 2.0\".\n[15]\tETSI GS MEC 010-2 (v 2.2.1) (2022-02): \" Multi-access Edge Computing (MEC); MEC Management; Part 2: Application lifecycle, rules and requirements management\".\n[16]\t3GPP TS 23.548: \"5G System Enhancements for Edge Computing\".\n[17]\tETSI GS NFV-SOL 005 V4.4.1: \"Network Functions Virtualisation (NFV) Release 4; Protocols and Data Models; RESTful protocols specification for the Os-Ma-nfvo Reference Point\"\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nEdge Computing: A concept, as described in 3GPP TS 23.501 [4], that enables operator and 3rd party services to be hosted close to the UE's access point of attachment, to achieve an efficient service delivery through the reduced end-to-end latency and load on the transport network.\nEdge Computing Service Provider: A mobile network operator offering Edge Computing service.\nEdge Data Network: A local Data Network that supports the architecture for enabling edge applications.\nECSP Management System: is a part of 3GPP management system that utilizes 3GPP defined management services to enable consumers (e.g., ASP. ECSP) to orchestrate and manage the EDN.\nPLMN Management System: is a part of 3GPP Management System that utilizes 3GPP defined management services to enable consumers (e.g., PLMN operator) to orchestrate and manage the mobile networks.\nAvailability Zone: Refer to GSMA Operator Platform Telco Edge Requirements [14].\nLeading Operator: The Leading Operator is the operator which consumes EDN shared by the PO.\nParticipating Operator: The Participating Operator is the operator who provides its EDN to be shared with Leading Operator.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nASP\tApplication Service Provider\nDN\tData Network\nDNAI\tData Network Access Identifier\nDNN\tData Network Name\nEAS\tEdge Application Server\nECS\tEdge Configuration Server\nECSP\tEdge Computing Service Provider\nEDN\tEdge Data Network\nFQDN\tFully Qualified Domain Name\nGSM\tGlobal System for Mobile Communications\nGSMA\tGSM AssociationLO\tLeading Operator\nPO\tParticipating Operator\nMEO \tMEC Orchestrator\nMEAO\tMEC Application Orchestrator\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tConcepts and overview",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tConcept of edge computing management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The edge computing services are provided by edge computing service providers (ECSP), application service providers (ASP), and PLMN operators (see annex B in TS 23.558 [1]), where ASP is responsible for the creation of edge application servers (EAS) and application clients (AC), ECSP is responsible for the deployment of edge data networks (EDN) that contain EAS and EES, and PLMN operator is responsible for the deployment of 5G network functions, such as 5GC and 5G NR.\nFigure 4.1-1 describes the edge computing management framework that contains PLMN management system and ECSP management system. ECSP management system, as the producer, provides management services enabling ASP and ECSP consumers to orchestrate and manage EDN NFs (e.g., EAS, EES, and ECS). PLMN management system, as the producer, provides management services enabling ECSP management system to interconnect EDN NFs with 5GC NFs (e.g., PCF, UPF, NEF). Both ECSP management system and PLMN management system communicate with ETSI NFV MANO to perform lifecycle management functions.\nThe figure depicts a simplified architecture of an edge computing management framework, illustrating the various components and their interactions. It includes a central server, edge nodes, and a cloud server, all interconnected through a network. The figure illustrates the use of edge computing to offload tasks from the cloud, reducing latency and improving performance.\nFigure 4.1-1: Edge computing management framework\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tEdge Computing Management (ECM) capabilities",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tLifecycle management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tDescription",
+                            "text_content": "The lifecycle management of the edge components is to be enabled by the 3GPP Management System. The lifecycle management includes instantiation, termination, modification and query of the edge components.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tEAS deployment",
+                            "text_content": "The goal of this use case is to enable ASP to deploy the EAS in the EDN, by requesting the provisioning MnS producer with the deployment requirements (e.g. the topological or geographical service areas, software image information, QoS, affinity/anti-affinity with other EAS, etc.) to deploy the EAS. The provisioning MnS producer returns a response indicating the operation is in progress to prevent the consumer from waiting, as the deployment in the edge cloud may take a while. Since, there can be multiple Edge Data Network (EDN) present/serving a particular edge location. This makes it critical for application service provider to have their EAS deployed at appropriate EDN(s) to provide high performance services for the UE. Therefore, provisioning MnS producer analyses the deployment requirements to determine where (i.e. on which EDN) and how many EAS instance(s) should be instantiated, and requests the ETSI NFV NFVO or ETSI MEC MEO or ETSI MEC MEAO to instantiate the EAS instance(s). The provisioning MnS producer sends a notification to ASP indicating the result of instantiation (e.g. success, failure) when a response is received from NFVO or MEO or MEAO indicating the result of instantiation operation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tEAS termination",
+                            "text_content": "The goal of this use case is to enable ASP to terminate the EAS in the EDN, by requesting the provisioning MnS producer to terminate the EAS VNF instance. The provisioning MnS producer requests the ETSI NFV NFVO or ETSI MEC MEO or MEAO to terminate the EAS instances. The provisioning MnS producer sends a notification to ASP indicating the termination is in progress when a response is received from NFVO or MEO or MEAO indicating the start of termination operation. The provisioning MnS producer sends another notification to ASP indicating the result of termination (e.g. success, failure) when a response is received from NFVO indicating the result of termination operation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.4\tQuery EAS information",
+                            "text_content": "The goal of this use case is to enable ASP to query the EAS information in the EDN, by requesting the provisioning MnS producer to query the EAS instance. Upon receiving the query request, the provisioning MnS producer sends the EAS instance information to ASP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.5\tEAS modification",
+                            "text_content": "The goal of this use case is to enable ASP to modify the EAS in the EDN, by requesting the provisioning MnS producer to modify the EAS instance. If the modification requires the change (e.g. scale) for the virtualized resource of the EAS VNF instance, the provisioning MnS producer requests the ETSI NFV NFVO or ETSI MEC MEO or ETSI MEC MEAO for the appropriate operation of the EAS instances. The provisioning MnS producer sends a notification to ASP indicating the attribute(s) change of the EAS instance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.6\tEES Deployment",
+                            "text_content": "The provisioning MnS producer is requested to instantiate the EES, as 3GPP network functions, aiming to server the particular location. The instantiated EES may serve one or multiple EAS.\nA consumer request for EES(s) instantiation providing EES deployment requirements. The provisioning MnS producer determines the EDN where the EES(s) will be instantiated, instantiate the EES VNF and establish the connection with 5GC network functions. The provisioning MnS producer will accept the request and notify the consumer about the instantiation in-progress. Thereafter, the notification will be sent to indicate the successful EES instantiation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.7\tEES Termination",
+                            "text_content": "The goal is to enable the termination of one or more EES(s) on the EDN. A consumer consumes the provisioning MnS to terminate the EES with the EES identifier. The provisioning MnS producer terminates the EES VNF based on the EES identifier, and disconnects the EES from the 5GC network functions. The provisioning MnS producer will accept the request and notify the consumer about the termination in-progress. Thereafter, the notification will be sent to indicate that the EES has been terminated successfully.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.8\tQuery EES information",
+                            "text_content": "The goal of this use case is to enable a consumer to query the EES information in the EDN, by requesting the provisioning MnS producer to query the EES instance. Upon receiving the query request, the provisioning MnS producer sends the EES instance information to the consumer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.9\tEES Modification",
+                            "text_content": "The goal of this use case is to enable a consumer to modify the EES in the EDN, by requesting the provisioning MnS producer to modify the EES instance. If the modification requires the change (e.g. scale) for the virtualized resource of the EES VNF instance, the provisioning MnS producer requests the NFVO in ETSI NFV MANO for the appropriate operation of the EES VNF instances. The provisioning MnS producer sends a notification to the consumer indicating the attribute(s) change of the EES instance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.10\tECS Deployment",
+                            "text_content": "The goal is to enable the instantiation of one or more ECS. To support deployed EDN, operator will deploy ECS serving one or multiple EES. A consumer request for ECS(s) instantiation providing ECS deployment requirements. The provisioning MnS producer instantiate the ECS VNF and establish the required connection with 5GC network functions. The notifications will be sent to indicate that the ECS has been instantiated successfully.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.11\tECS Termination",
+                            "text_content": "The goal is to enable the termination of one or more ECS. A consumer consumes the provisioning service to terminate the ECS with the ECS identifier. The provisioning MnS producer terminates the ECS VNF based on the ECS identifier, and disconnects the ECS from the 5GC network functions. The notification will be sent to indicate that the ECS has been terminated successfully.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.12\tQuery ECS information",
+                            "text_content": "The goal of this use case is to enable a consumer to query the ECS instance information, by requesting the provisioning MnS producer to query the ECS instance. Upon receiving the query request, the provisioning MnS producer sends the ECS instance information to the consumer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.13\tECS Modification",
+                            "text_content": "The goal of this use case is to enable a consumer to modify the ECS instance, by requesting the provisioning MnS producer to modify the ECS instance. If the modification requires the change (e.g. scale) for the virtualized resource of the ECS VNF instance, the provisioning MnS producer requests the NFVO in ETSI NFV MANO for the appropriate operation of the ECS VNF instances. The provisioning MnS producer sends a notification to the consumer indicating the attribute(s) change of the ECS instance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.13a\tInstantiation triggered by EAS discovery failure",
+                            "text_content": "EES may need to trigger dynamic EAS instantiation when EES fails to discover and select the EAS that matches the UE location and the requesting application characteristics EAS (see table 8.5.3.2-2 in TS 23.558 [2]) due to no available EAS during the EAS discovery (see clause 8.5 in TS 23.558 [2]).\nA consumer would consume performance assurance MnS to request the ECSP management system to collect EAS discovery failure measurement that will be used to determine whether an EAS needs to be initiated, based on performance information, such as UE locations, application characteristics, and number of UEs that have failed in the EAS discovery.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.14\tRequirements",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.15\tEAS Relocation",
+                            "text_content": "The ESCP Management System may decide that a different EDN can better host the EAS. The EAS relocation trigger from ESCP Management System are related with lifecycle management of its edge compute resources. The ASP provides its policy indication regarding change of the edge compute resource hosting the Edge Application. There ESCP Management System considers these policy while relocating EAS within the ED or from one EDN to another.\nThe ASP indicates the following policies:\n-\tIts Edge Application cannot be moved from one edge compute resource to another;\n-\tIts Edge Application can be moved from one edge compute resource to another, without any notification;\n-\tIts Edge Application can be moved from one edge compute resource to another with prior notification.\nWhen the policy is that a change of edge compute resource can be done with prior notification, the ESCP Management System decides that a change of edge compute resource is needed and selects the new edge compute resource. In this case, the ASP chooses the exact timing of the move.  If the ASP indicates that the EAS is not able to handle relocation, the ESCP Management System shall not initiate relocation procedure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tPerformance assurance",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tDescription",
+                            "text_content": "The clause contains use cases associated with performance assurance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tEAS performance assurance",
+                            "text_content": "The goal of this use case is to provide a mechanism for EAS to publish KPIs or measurements, as per requirements shown in Table 5.2.2-1 (see clause 5.2.10.2 in TS 23.558 [2]).\nTable 5.2.2-1: Edge Application Server Service KPIs\n\nA consumer, such as ASP, would consume performance assurance MnS to request the ECSP management system to collect EAS KPIs and measurements. The performance assurance MnS producer at ECSP management system will report the measurements to the consumer.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.2-1: Edge Application Server Service KPIs",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.3\t5GC NF measurements to evaluate EAS performance",
+                            "text_content": "The goal is to enable ECSP management system to collect the measurements of 5GC NFs (e.g. UPF, PCF, …) that are needed to evaluate the EAS performance. For example, the ECSP management system can correlate the 5GC NF and EAS measurements to determine the root cause of poor EAS performance. ECSP management system, as the consumer would consume performance assurance MnS to request the PLMN management system to collect 5GC NF measurements that are related to EAS performance. The performance assurance MnS producer at PLMN management system will report the measurements to the consumer.\nSince an PLMN operator may not want to expose certain measurements (e.g. measurements for 5GC NF(s) not relevant to EAS) to 3rd party operators, like ECSP, the PLMN management system should be able to select specific measurements to be reported to the consumer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.4\tECS performance assurance",
+                            "text_content": "The goal of this use case is to provide a mechanism for ECS performance assurance. ECS performance can be based on various functionalities defined for ECS in (see clause 6.3.4 of [2]). The measurement/KPI should be defined for each functionality, that can be collected as and when required.\nA consumer, such as ECSP Management system, would consume performance assurance MnS to request the PLMN management system to collect ECS KPIs and measurements. The performance assurance MnS producer at PLMN management system will report the measurements to the consumer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.5\tEES performance assurance",
+                            "text_content": "The goal of this use case is to provide a mechanism for EES performance assurance. EES performance can be based on various functionalities defined for EES in (see clause 6.3.4 of [2]). The measurement/KPI should be defined for each functionality, that can be collected as and when required.\nA consumer, such as ECSP Management system, would consume performance assurance MnS to request the PLMN management system to collect EES KPIs and measurements. The performance assurance MnS producer at PLMN management system will report the measurements to the consumer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.6\tRequirements",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tFault supervision",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tDescription",
+                            "text_content": "The clause contains use cases associated with fault supervision.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tEDN NF performance impacted by 5GC NF alarms",
+                            "text_content": "The goal is to enable ECSP management system to receive 5GC NFs (e.g. UPF, PCF, NEF, SCEF, …) alarms that may impact the EDN NFs (e.g. EAS, EES) performance from PLMN management system. ECSP management system can correlate the 5GC NF alarms to determine the root causes for poor EDN NF performance. ECSP management system subscribes to receive 5GC NF alarms from PLMN management system. PLMN management system sends the NF alarm notification to ECSP management system when it detects 5GC NF alarms.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.3\t5GC NF issues resulted from EDN NF alarms",
+                            "text_content": "The goal is to enable PLMN management system to receive EDN NFs (e.g. EAS, EES, ECS) alarms that may generate issues in 5GC NFs (e.g. UPF, PCF, NEF, SCEF, …) that are supporting EDN from ECSP management system. PLMN management system can correlate the EDN NF alarms to determine the root causes for 5GC NF issues. PLMN management system subscribes to receive EDN NF alarms from ECSP management system. ECSP management system sends the NF alarm notification to PLMN management system when it detects EDN NF alarms.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.4\tRequirements",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\t5GC NF Provisioning",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tDescription",
+                            "text_content": "The clause contains use cases associated with provisioning.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tEDN NF 5GC connection provisioning",
+                            "text_content": "The goal is to enable ECSP management system to request PLMN management system to query the connection information of EDN NFs (i.e., EAS, EES, ECS) to 5GC NFs, as specified in clauses 6.3.2, 6.3.4, 6.4.6 in TS 23.558 [2], where EES, ECS, and EAS are interacting with 3GPP Core Network for accessing the capabilities of network functions either directly (e.g. via PCF) or indirectly (e.g. via SCEF/NEF/SCEF+NEF).\nFigure 5.4.2-1 shows an example of edge computing networks. EDN #1 is trusted by PLMN operators; therefore, EAS #1 and EES #1 are acting as the trusted AF, and are authorized to interfaces to PCF directly in via the N5 reference point (see clause 4.2.3 in TS 23.501 [11]), or via Edge-7 and Edge-2 interfaces (see clause 6.2 in TS 23.558). EDN #2 is not trusted by PLMN operators; therefore, EAS #2 and EES #2 are acting as the untrusted AF, and are not authorized to interfaces to PCF directly (See clause 5.6.7.1 TS 23.501 [11]), and need to interface to NEF / SCEF via the N33 reference point (see Figure 4.2.3-5 in TS 23.501), or via Edge-7 and Edge-2 interfaces. ECS should be able to connect to NEF / SCEF via the edge-8 interface (see clause 6.3.4 in TS 23.558 [2]).\nFigure 5.4.2-1 illustrates the architecture of edge computing networks, highlighting the role of edge devices in processing and storing data at the network edge. Key components include edge servers, edge storage, and edge analytics, which are designed to process and analyze data in real-time, reducing latency and improving overall network performance.\nFigure 5.4.2-1: Edge computing networks\nECSP management system requests PLMN management system to identify the PCF, NEF, or SCEF to which the EDN NFs need to interface. The request should include the EDN identifier and the service area requirements (i.e., EDN service area, EES service area, and EAS service area (see clause 7.3.3 in TS 23.558 [2])). PLMN management system finds and returns the connection information (i.e., the IP addresses and DN of PCF, NEF, SCEF) to ECSP management system, based on the requirements. ECSP management system then connects EAS, ECS, and EES to 5GC NFs via the connection information given by PLMN management system, according to Figure 5.4.2-1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.3\tConfiguration needed for EAS registration",
+                            "text_content": "The goal is to enable a consumer to configure EASID and EES address for the EAS that are required as the pre-conditions of EAS registration procedure (see clause 8.4.3.2.1 in TS 23.558 [2]). A consumer (e.g. ASP, ECSP) requests ECSP management system to configure the EASID and EES address attributes in EASFunction IOC. ECSP management system configures the EASID and EES address attributes in EASFunction MOI, and returns the attribute change notification to the consumer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.4\tEAS to connect with UPF",
+                            "text_content": "The goal is to enable ECSP management system to connect a newly deployed EAS to a UPF. Figure 5.4.4-1 shows that EASs are deployed in the local part of the Data Network (DN) that are connected to UPF to carry the user traffic via the N6 interface (see clause 6.3.3 in TS 23.501 [11]). ECSP management system requests PLMN management system to connect a newly deployed EAS to a UPF with EAS IP address, EAS service area requirements (see clause 7.3.3.6 in TS 23.558 [2])), and list of DNAI and N6 traffic routing requirements ((see Table 8.2.4.1 in TS 23.558 [2])). PLMN management system finds a UPF among the UPF(s) being deployed that meets the service area requirements (e.g. UPF #2 is found to connect to EAS #2). In the case that no UPF can be found (e.g. EAS #3), PLMN management system will deploy a new UPF (e.g. UPF #3) and then configure the SMF to add the UPF to the list of available UPF(s) (see clause 6.3.3.2 in TS 23.501 [11]). PLMN management system connects the UPF to the EAS, and return the UPF information (e.g. IP addresses and DN of the UPF) to the ECSP management system.\nThe figure depicts a network setup with EASs (Emergency Alarm System) and UPFs (Unified Perimeter Firewall) connected to each other. The EASs are responsible for monitoring and responding to alarms, while the UPFs provide a secure perimeter for the network. The diagram illustrates the interconnection of these devices, highlighting the importance of proper communication and coordination between them.\nFigure 5.4.4-1: EASs to connect with UPFs\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.5\tRequirements",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.5\tEdge Federation Management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.5.1\tDescription",
+                            "text_content": "This clause contains use cases associated with federation management.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.2\tFederated EAS deployment and termination",
+                            "text_content": "Federation enables operator to control the launch and termination of applications on a PO. This will be used by a LO to instantiate an application on EDN of PO as requested by ASP over NBI. A LO makes the application instantiation result available on the NBI interface. PO also provide the application instance status to LO which LO may expose to application providers on NBI.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.3\tRequirements",
+                            "text_content": "Table 5.5.3-1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.5.3-1",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.6\tEdge Federation Management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.6.1\tDescription",
+                            "text_content": "This clause contains use cases associated with federation management.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.2\tFederation Management",
+                            "text_content": "The federation management functionality within the operator enables it to interact with other operator instances, often in different geographies, thereby providing access for the ASP to a larger footprint of EDN, a more extensive set of subscribers and multiple Operator capabilities. An operator initiates the establishment of federation relationship with another operator sharing available location(s) at which the edge services are provided, resource available at each location, federation expiry etc. The operator which initiates federation relationship is called Leading Operator (LO). The operator which receives federation relationship request is called Partner Operator (PO).\nThe federation relationship enables the following functionalities.\n-\tFederated EAS resource reservation management: This is intended for an LO to reserve resources for an application provider, with the PO, when the application provider initiate the reservation using NBI.\n-\tFederated EAS deployment and termination: This will be used by an LO to instantiate an EAS deployment on EDN of LO as requested by application provider over NBI.\n-\tEDN sharing: This is intended for operator to share EDN among each other.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.3\tRequirements",
+                            "text_content": "Table 5.6.3-1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.6.3-1",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.6.4\tFederated ECS management",
+                            "text_content": "In federation, the EAS requested by UE may only be available with the federated operator. The EAS discovery will fail at leading operator resulting in the initiation of discovering target EES and ECS belonging to partner operator. See clause 8.18.2.3.2 [2]. This will require configuring leading operator ECS with federated ECS information belonging to partner operator. The information may include ECS address (clause 8.2.12[2]), related EES and EAS etc.\nThe partner operator provides information related with its ECS as part of federation establishment. Based on the provided information required configurations can be done in leading operator ECS.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.7\tQuery EDN available Edge resources",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.7.1\tDescription",
+                            "text_content": "This clause contains use cases associated with querying EDN available Edge resources.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.2\tQuerying available resources from EDN",
+                            "text_content": "The goal of this use case is to enable ASP to query the available resources in an EDN. An EDN contains the infrastructure resources (e.g., compute, networking, storage) which can be used for EAS deployments. Some of the resources in an EDN may be already allocated, while others may be available to be used by ASP. The available resources in an EDN can be queried by ASP to know what resources are available in what locations. ASP can then take a decision on where its EAS to be deployed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.3\tRequirements",
+                            "text_content": "Table 5.7.3-1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.7.3-1",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.8\tEAS resource reservation Management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.8.1\tDescription",
+                            "text_content": "This clause contains use cases associated with EAS resource reservation management.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.2\tEAS resource reservation creation and termination",
+                            "text_content": "The goal of this use case is to enable ASP to express the resource (e.g., compute, networking, storage) requirements that ASP wants to be guaranteed, by requesting resource reservation request to ECSP management system. ASP may want to reserve resources ahead of the EAS deployment and unrelated to any specific application, only related to the ASP themselves. After resource reservation, an ASP is allowed to consume the reserved resources when onboarding a new application, creating the association between the reserved resources and the application (resources allocation). ASP is also allowed to delete the reservation when it is not required.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.3\tRequirements",
+                            "text_content": "Table 5.8.3-1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.8.3-1",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tEdge NRM",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tInformation Model definitions for Edge NRM",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tImported information entities and local labels",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tClass diagram",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tRelationships",
+                            "text_content": "The figure depicts the relationship between edge network resources (NRMs) and their respective network resources (NRs) in a 5G network. It illustrates the various types of edge NRM resources, such as radio access network (RAN) resources, core network resources, and network resources, and their respective NRM resources. The figure also shows the relationship between these resources, highlighting the importance of efficient resource allocation and management in a 5G network.\nFigure 6.2.1-1: Edge NRM relationship diagram\nThe figure depicts a transport view of the Enhanced Emission Spectral Reconstruction (EES NRM) network, illustrating the various components and their interconnections. The network is composed of a backbone network, which includes core switches, optical line terminals (OLTs), and distributed nodes. Redundancy paths are shown in dashed lines to ensure failover reliability. The layered design aligns with SDN principles, allowing for efficient network management and control.\nFigure 6.2.1-3: Transport view of EES NRM\nThe figure depicts a transport view of an ECS NRM (Network-Centric Infrastructure) system, illustrating the various components and their interconnections. The diagram includes a network map, a transport network, and a network resource map, providing a comprehensive overview of the system's architecture.\nFigure 6.2.1-4: Transport view of ECS NRM\nThe figure depicts a transport view of an Enhanced Airspace System (EAS) Network Resource Management (NRM) system, showing the various components and their interconnections. The system includes air traffic control (ATC) equipment, ground control equipment (GCE), and air traffic management (ATM) equipment. The figure illustrates the flow of data between these components, highlighting the importance of proper network management to ensure efficient and safe airspace operations.\nFigure 6.2.1-5: Transport view of EAS NRM\nThe figure depicts a hierarchical structure of edge federation and NRM (Network Resource Management) in a 6.2.2-based network. It illustrates the inheritance of network resources, including network resources, network resources, and network resources. The figure is a visual representation of the network's architecture, highlighting the importance of network resources in the overall network design.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "Figure 6.2.1-6: Edge Federation NRM6.2.2\tInheritance",
+                            "text_content": "The figure depicts the edge inheritance relationship in a network, illustrating how the edge nodes inherit features from the parent node, such as the number of edges, the number of incoming and outgoing edges, and the number of incoming and outgoing edges from the parent node. This relationship is crucial for maintaining the network's functionality and performance.\nFigure 6.2.2-1: Edge Inheritance Relationship\nThe EASProfile  Inheritance diagram in Figure 6.2.2-2 illustrates the inheritance of EAS (Enhanced Active Surveillance) profiles from the EAS (Enhanced Active Surveillance) profile. This diagram demonstrates the relationship between the EAS profiles and their respective EAS (Enhanced Active Surveillance) profiles, highlighting the key features and functionalities of each profile. The diagram also shows the hierarchical structure of the EAS profiles, with the EAS profile at the top and the EAS profile at the bottom. This diagram is crucial for understanding the inheritance and evolution of EAS profiles within the EAS (Enhanced Active Surveillance) system.\nFigure 6.2.2-2: EASProfile Inheritance\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tClass definition",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tEASFunction",
+                            "text_content": "This IOC represent the properties of a EAS in a 3GPP network. For more information about EAS, see 3GPP TS 23.558 [2] and 3GPP TS 23.548 [15].\nThe EASFunction IOC includes attributes inherited from ManagedFunction IOC (defined in TS 28.622 [4]) and the following attributes:\n\nNone.\nThe common notifications defined in clause 5.5 of TS 28.541 [3] are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The EASFunction IOC includes attributes inherited from ManagedFunction IOC (defined in TS 28.622 [4]) and the following attributes:",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.2\tEASRequirements",
+                            "text_content": "This represent the requirements needed to deploy EAS(s).\nThe EASRequirements IOC includes attributes inherited from Top IOC (defined in TS 28.622[4]) and the following attributes:\n\nThe common notifications defined in clause 5.5 of TS 28.541 [3] are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The EASRequirements IOC includes attributes inherited from Top IOC (defined in TS 28.622[4]) and the following attributes:",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.3\tServingLocation <<dataType>>",
+                            "text_content": "This datatype represents the location which is to be served by the node.\n\n\nNOTE: \tOnly one of the attributes is needed.\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.4\tGeoLoc <<dataType>>",
+                            "text_content": "This datatype represent the geographical location.\n\n\nNOTE: \tOnly one of the attributes is needed.\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.5\tECSFunction",
+                            "text_content": "This IOC represents the ECS functionality for supporting Edge Computing. For more information about the ECS, see 3GPP TS 23.558 [2].\nThe ECSFunction IOC includes attributes inherited from ManagedFunction IOC (defined in TS 28.622 [4]) and the following attributes:\n\nNone.\nThe common notifications defined in clause 5.5 of TS 28.541 [3] are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The ECSFunction IOC includes attributes inherited from ManagedFunction IOC (defined in TS 28.622 [4]) and the following attributes:",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.6\tEDNConnectionInfo <<datatype>>",
+                            "text_content": "This datatype represent the EDN connection information.\n\nNone.\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.7\tTopologicalServiceArea <<dataType>>",
+                            "text_content": "This datatype represents the topological service area.\n\n\nNOTE: \tOnly one of the attributes is needed.\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.8\tGeographicalCoordinates <<dataType>>",
+                            "text_content": "This datatype represents the geographical coordinates.\n\nNone.\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.9\tSoftwareImageInfo <<dataType>>",
+                            "text_content": "This datatype represents the software image information.\n\nNone.\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.10\tEdgeDataNetwork",
+                            "text_content": "This IOC represents the edge data network for supporting Edge Computing. This IOC could represent EDN as described in 3GPP TS 23.558 [2] or local part of Data Network as described in 3GPP TS 23.548 [15].\nThe EdgeDataNetwork IOC includes attributes inherited from Top IOC (defined in TS 28.622[4]) and the following attributes:\n\nNone.\nThe common notifications defined in subclause 5.5 of TS 28.541 [3] are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The EdgeDataNetwork IOC includes attributes inherited from Top IOC (defined in TS 28.622[4]) and the following attributes:",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.11\tAffinityAntiAffinity <<datatype>>",
+                            "text_content": "This datatype represent the affinity and anti-affinity requirements of the EAS with other EAS on the same EDN.\n\nNone.\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.12\tVirtualResource <<datatype>>",
+                            "text_content": "This datatype represent the virtual resource requirements of an EAS.\n\nNone.\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.13\tEESFunction",
+                            "text_content": "This IOC represent the properties of a EES in a 3GPP network. For more information about EES, see 3GPP TS 23.558.\nThe EESFunction IOC includes attributes inherited from ManagedFunction IOC (defined in TS 28.622 [4]) and the following attributes:\n\nNone.\nThe common notifications defined in clause 5.5 of TS 28.541 [3] are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The EESFunction IOC includes attributes inherited from ManagedFunction IOC (defined in TS 28.622 [4]) and the following attributes:",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.14\tRegistrationInfo <<dataType>>",
+                            "text_content": "This datatype represents the EAS registration infomration.\n\nNone\nThe subclause 5.5, in 3GPP TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.15\tEASProfile",
+                            "text_content": "This IOC represent an EASProfile, see TS 23.558[2]. This IOC will be instantiated with the instantiation of every EASFunction IOC.\n\nNone.\nThe common notifications defined in subclause 5.5 of TS 28.541 [3] are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.16\tDuration <<dataType>>",
+                            "text_content": "This data type defines a time duration.\n\nNone.\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.17\tEASResourceReservationJob",
+                            "text_content": "This IOC represents a resource reservation job for describing resource reservation requirements to determine whether the resource requirements for EAS deployement can be reserved. After the MnS Consumer derives the resource related requirements for EAS deployemnt, and before request the MnS producer to deploy an EAS, MnS consumer may express a resource reservation job requirement for the specified resource requirements to MnS producer.\nTo express a resource reservation job requirement for specific resources (e.g., compute, networking and storage), MnS consumer needs to request MnS producer to create a ResourceReservationJob instance on the MnS producer side with the resource requirements specified, and to execute the resource reservation process.\nFor deletion of resource reservation job, the MnS consumer needs to request the MnS producer to delete the ResourceReservationJob instance on the MnS producer side.\nAttribute \"reservationLocation\" is used to represent MnS consumer's requirements for location where the resource needs to be reserved.\nAttribute \"resourceRequirement\" is used to represent MnS consumer's requirements for resource needs to be reserved ((e.g., compute, networking, storage, acceleration).\nAttribute \"requestedReservationExpiration\" is used to represent MnS consumer's requirements for validity period of the resource reservation.\nTo obtain the resource reservation status, MnS consumer need to request MnS producer to query the value of the attribute \"resourceReservationStatus\".\nThe EASResourceReservationJob IOC includes attributes inherited from Top IOC (defined in TS 28.622[4]) and the following attributes:\n\nNone.\nThe common notifications defined in clause 5.5 of TS 28.541 [3] are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The EASResourceReservationJob IOC includes attributes inherited from Top IOC (defined in TS 28.622[4]) and the following attributes:",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.18\tResourceReservationRequirement <<datatype>>",
+                            "text_content": "This datatype represent the resource requirements for reservation.\n\nNone.\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.19\tResourceReservationStatus <<datatype>>",
+                            "text_content": "This datatype represent the resource requirements for reservation.\n\nNone.\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.20\tRelocationTriggerInfo <<dataType>>",
+                            "text_content": "This defines the relocation trigger for the EAS. It is a complex type which include the following attributes.\n\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.21\tEdgeFederation",
+                            "text_content": "This IOC represent the the set of federation relationship maintained by the PO and/or LO. This IOC when instantiated represents a set of available federations.\nThe EdgeFederation IOC includes attributes inherited from ManagedFunction IOC (defined in TS 28.622 [4]) and the following attributes:\n\nNone.\nThe common notifications defined in clause 5.5 of TS 28.541 [3] are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The EdgeFederation IOC includes attributes inherited from ManagedFunction IOC (defined in TS 28.622 [4]) and the following attributes:",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.22\tOperatorEdgeFederation",
+                            "text_content": "This IOC contains attributes to support the edge federation. An instance of OperatorEdgeFederation IOC should be created and configured for each federation to be maintained provided by PO and LO. When configured the attributes override those in parent EdgeFederation instance. This IOC when instantiated represents a particular available federation.\nThe OperatorEdgeFederation IOC includes attributes inherited from ManagedFunction IOC (defined in TS 28.622 [4]) and the following attributes:\n\nNone.\nThe common notifications defined in clause 5.5 of TS 28.541 [3] are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The OperatorEdgeFederation IOC includes attributes inherited from ManagedFunction IOC (defined in TS 28.622 [4]) and the following attributes:",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.23\tOperatorEdgeDataNetwork",
+                            "text_content": "The OperatorEdgeDataNetwork IOC is, optionally defined to contain attributes to support an edge data network available. An instance of OperatorEdgeDataNetwork IOC should be created and configured for each EDN shared with another operator. When configured the attributes override those in the associated EdgeDataNetwork instance. This IOC when instantiated represents a particular EDN shared with the L-OP\nThe OperatorEdgeDataNetwork IOC includes attributes inherited from ManagedFunction IOC (defined in TS 28.622 [4]) and the following attributes:\n\nNone.\nThe common notifications defined in clause 5.5 of TS 28.541 [3] are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The OperatorEdgeDataNetwork IOC includes attributes inherited from ManagedFunction IOC (defined in TS 28.622 [4]) and the following attributes:",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.24\tAvailableEDNList <<dataType>>",
+                            "text_content": "This data type defines information related with available EDN with PO.\n\nNone.\nThe clause 5.5, in TS 28.541[3], of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tAttribute definition",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tAttribute Properties",
+                            "text_content": "\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tProcedural Flows",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tLifecycle management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.1.1\tDescription",
+                            "text_content": "The clause contains procedures associated with lifecycle management.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.2\tEAS lifecycle management",
+                            "text_content": "Figure 7.1.2.1.1-1 depicts a procedure that describes how an ASP can consume provisioning MnS to instantiate the EAS by interworking with ETSI NFV MANO. It is assumed that both ASP and ECSP consumers have subscribed to the producer of provisioning MnS to receive notifications.\nThe figure depicts a 1.2.1.1 - 1 EAS deployment, illustrating the various components and their connections. The deployment includes a base station (BTS), a user equipment (UE), and a signal processing unit (SPU). The figure also shows the distribution of antennas and the connection of the signal to the BTS.\nFigure 7.1.2.1.1-1: EAS deployment\n1. ASP consumes the provisioning MnS with createMOI operation (see clause 11.1.1.1. in TS 28.532 [w]) for EASRequirements IOC to request ECSP provisioning MnS producer to start the EAS VNF instantiation, where the EASRequirements IOC as defined in clause 6.3.2.2 contains the deployment requirements, including (but not limited to) the following attributes:\n- \tthe service areas (i.e., geographical, or topological) where the UEs can access the edge computing service (see clause 7.3.3 in TS 28.558 [2]).\n- \tSoftware image information and virtual resource information (e.g. software image location, minimum RAM, disk requirements) (see clause 7.1.6.5 and 7.1.9 in ETSI NFV IFA-011 [7]).\n- \tQoS requirements (e.g. bandwidth, end-to-end latency).\n- \tservice continuity requirements (e.g. whether service continuity is required).\n- \tAffinity/Anti-affinity: The affinity and ant-affinity requirements for the EAS with other existing EAS on the target EDN.\n2.\tECSP provisioning MnS producer creates the MOI for EASRequirements IOC.\n3. ECSP provisioning MnS producer sends a response to the ASP with status = “OperationSucceeded”, indicating the EASRequirements MOI has been successfully created.\n4. ECSP provisioning MnS producer analyses the deployment requirements to determine which EDN and how many EAS instance(s) should be instantiated to satisfy the deployment requirements, and downloads the EAS VNF software image from the software image location. The EDN can be selected either by considering the individual requirement or by grouping the multiple requirements as single selection criteria.\n5. \tECSP provisioning MnS producer creates the LCMProcess MOI with lcmProc.status = “RUNNING” and eASRequirementsRef = DN of EASRequirements MOI to indicate the start of LCM process.\n6. \tECSP provisioning MnS producer sends notifyMOICreation of LCMProcess MOI to notify ASP the status of LCM operation.\n7. ECSP provisioning MnS producer invokes the InstantiateNsRequest or UpdateNsRequest operation (see clause 7.3.3 and 7.3.5 in ETSI GS NFV-IFA 013 [6]) to request NFVO via the Os-Ma-nfvo interface to instantiate a NS instance including the EAS VNF instance.\nEditor's note: which entity is responsible for creating VNFD based on the deployment requirement (e.g., softwareImageInfo and virtualResource) is FFS.\n8. NFVO sends a notification to ECSP provisioning MnS producer indicating the result of instantiation procedure (see clause 7.3.3.4 and 7.3.5.4 of ETSI GS NFV-IFA 013 [6]).\n9. If the VNF instantiation has been successful, then:\n9.1. ECSP provisioning MnS producer creates the MOI for EASFunction IOC.\n9.2. ECSP provisioning MnS producer sends notifyMOICreation to notify ASP about the creation of EASFunction MOI.\n10.1. If VNF instantiation were succeeded, then:\n10.1.1. If all VNF instance(s) have been successfully instantiated, then:\n10.1.1.1. ECSP provisioning MnS producer sends notifyMOIAttributeValueChanges with lcmProc.status = “FINISHED” and eASRequirementsRef = DN of EASRequirements MOI to notify ASP the EAS deployment was successful.\n10.1.2. If not all EAS VNF(s) were instantiated successfully, then:\n10.1.2.1. ECSP provisioning MnS producer sends notifyMOIAttributeValueChanges with lcmProc.status = “PARTIALLY_FAILED” and eASRequirementsRef = DN of EASRequirements MOI  to notify ASP the EAS deployment was partially failed.\n10.2. If no VNF instantiation succeeded, then:\n10.2.1. ECSP provisioning MnS producer sends notifyMOIAttributeValueChanges with lcmProc.status = “FAILED” and eASRequirementsRef = DN of EASRequirements MOI to notify ASP about the un-successful instantiation of the EAS.\nAs an alternative procedure, when ASP requesting ECSP provisioning MnS producer to deploy an EAS, the ECSP provisioning MnS producer could interacts with ETSI MEC MEO/MEAO (see application instantiation operation in clause 6.3.1.3 in ETSI GS MEC 010-2 [15]) for EAS instantiation.\nFigure 7.1.2.2.1-1 depicts a procedure that describes how an ASP can consume provisioning MnS to terminate the EAS VNF by interworking with ETSI NFV MANO. It is assumed that both ASP and ECSP consumers have subscribed to the producer of provisioning MnS to receive notifications.\nThe figure depicts a simplified schematic of an EAS termination system, showing the various components and their connections. The system includes a central controller, a series of EAS repeaters, and a network of EAS antennas. The figure illustrates the importance of proper EAS termination in ensuring the reliability and security of the communication network.\nFigure 7.1.2.2.1-1: EAS termination\n1. ASP consumes the provisioning MnS with deleteMOI (see clause 11.1.1.4. in TS 28.532 [5]) operation for EASFunction MOI to request ECSP provisioning MnS producer to start the EAS VNF termination.\n2. ECSP provisioning MnS producer sends a response to the ASP indicating that the termination operation is in progress.\n3. ECSP provisioning MnS producer invokes the TerminateNsRequest or UpdateNsRequest operation (see clauses 7.3.7 and 7.3.5 in ETSI GS NFV-IFA 013 [6]) to request NFVO via the Os-Ma-nfvo interface to terminate EAS VNF instance.\n4. NFVO sends the NS Lifecycle Change notification to ECSP provisioning MnS producer indicating the result of termination procedure (see clause 7.3.12 of ETSI GS NFV-IFA 013 [6]).\n5. If the VNF termination has been successful then:\n5.1. ECSP provisioning MnS producer deletes the MOI for EASFunction IOC ,if all the related EASFunction MOIs have been deleted, the EASRequirement IOC shall also be deleted.\n5.2. ECSP provisioning MnS producer notifies ASP about the successful termination of the EAS.\nOtherwise :\n5.3. ECSP provisioning MnS producer notifies ASP about the un-successful termination of the EAS.\nAs an alternative procedure, when ASP requesting ECSP provisioning MnS producer to terminate an EAS instance, the ECSP provisioning MnS producer could interacts with ETSI MEC MEO/MEAO (see application termination operation in clause 6.3.1.7 in ETSI GS MEC 010-2 [14]) for EAS termination.\nFigure 7.1.2.3.1-1 depicts a procedure that describes how an ASP can consume provisioning MnS to modify the EAS by interworking with ETSI NFV MANO if required. It is assumed that both ASP and ECSP consumers have subscribed to the producer of provisioning MnS to receive notifications.\nThe figure depicts the EAS modification procedure, which is a crucial step in the telecommunication industry. It illustrates the step-by-step process of modifying an EAS (Electronic Attack System) to enhance its effectiveness and security. The figure includes various components such as the EAS, the modification process, and the final result. This technical figure provides a clear and concise visual representation of the EAS modification procedure, making it easy for readers to understand the process and its implications.\nFigure 7.1.2.3.1-1: EAS modification procedure\n1. ASP consumes the provisioning MnS with modifyMOIAttributes operation (see clause 11.1.1.3. in TS 28.532 [5]) for EASFunction MOI to request ECSP management system provisioning MnS producer to modify the EAS VNF instance.\n2. ECSP management system provisioning MnS producer sends a response to the consumer indicating that the modification operation is in progress.\n3. If EAS instance to be modification contains virtualized part, checks whether corresponding VNF instance needs to be modified to satisfy the modification related requirements.\n4. If corresponding VNF instance needs to be modified, ECSP provisioning MnS producer invokes theUpdateNsRequest operation (see clause 7.3.5 in ETSI GS NFV-IFA 013 [6]) to request NFVO via the Os-Ma-nfvo interface to modify the virtualized resource of the EAS VNF instance.\n5. NFVO sends the NS Lifecycle Change notification to ECSP provisioning MnS producer indicating the result of modification procedure (see clause 7.3.12 of ETSI GS NFV-IFA 013 [6]).\n6. ECSP provisioning MnS producer modifies the MOI for EASFunction IOC.\n7. ECSP management system provisioning MnS producer response the consumer about the modification of the EAS.\nAs an alternative procedure, when ASP requesting ECSP provisioning MnS producer to modify an EAS, the ECSP provisioning MnS producer could interacts with ETSI MEC MEO/MEAO (see clause 6.3.1.4 in ETSI GS MEC 010-2 [14]) for EAS modification.\nFigure 7.1.2.4.1-1 depicts a procedure that describes how an ASP can consume provisioning MnS query the EAS by interworking with ETSI NFV MANO if required. It is assumed that both ASP and ECSP consumers have subscribed to the producer of provisioning MnS to receive notifications.\nThe figure depicts the EAS query procedure, which is a crucial component of the EAS (Emergency Alert System) system. It illustrates the steps involved in requesting an EAS alert, including the identification of the affected area, the selection of the alert type, and the submission of the query to the EAS server. The figure provides a clear and concise visual representation of the EAS query process, making it easier for users to understand and follow the procedure.\nFigure 7.1.2.4.1-1: EAS query procedure\n1. ECSP provisioning MnS Producer receives a query request (this will use getMOIAttributes operation defined in 3GPP TS 28.532[5]) with objectInstance of the existing EASFunction MOI, scope, and list of attributes of EASFunction IOC. The list of attributes identifies the attributes to be returned by this operation.\n2. Based on the request, ECSP provisioning MnS producer queries the concrete EASFunction MOI\n3. MnS Producer sends a response to the MnS consumer with objectClass, objectInstance, status (e.g. succeed or failed), and list of [Attribute, Value] related to EAS instance as defined in clause 6.4 (e.g. eASAddress).\nAs an alternative procedure, when ASP requesting ECSP provisioning MnS producer to query an EAS, the ECSP provisioning MnS producer could interacts with ETSI MEC MEO/MEAO (see clause 6.3.1.5 in ETSI GS MEC 010-2 [14]) for EAS query.\nFigure 7.1.2.5-1 depicts a procedure to support the use case described in clause 5.2.6 EAS discovery failure that utilized measurement data to trigger EAS instantiation.\n\nThe figure depicts a 1.2.5 - 1 EAS instantiation triggered by measurement data, illustrating the process of triggering an EAS alarm when a specific measurement is detected. The figure shows the various components involved in the EAS system, including the EAS trigger, the measurement data, and the triggering mechanism. The visual representation of the EAS system in the figure provides a clear understanding of how it works and how it can be triggered.\nFigure 7.1.2.5-1: EAS instantiation triggered by measurement data\n1. The consumer utilizes the procedure described in clause 7.2.2 to request MnF for performance assurance for EES to request MnF for performance assurance for EES to collect EAS discovery failure measurements from the EES (see clause 5.15.1.3 in TS 28.552 [10], containing subcounters of UE location and EAS type.\n2. The consumer determines whether an EAS VNF needs to be instantiated, based on the information in the measurement data, including UE locations (i.e., cell ID), EAS types, and the number of UEs in a cell.\n3. If a new EAS VNF should be instantiated, then\n3.a The consumer utilizes the procedure described in clause 7.1.2.1 to instantiate the new VNF instance.\n4. The consumer utilizes the procedure described in clause 7.4.2 to configure the EAS with the information needed for EAS to register to EES.\n5. ECSP MnF of provisioning, acting as the consumer, utilizes the procedures described in clause 7.4.3 and 7.4.4 to request PLMN MnF of provisioning, acting as the producer, to connect the EAS to 5GC NFs.\nFigure 7.1.2.5-1 depicts a procedure for EAS Relocation.\nThe figure depicts the EAS relocation process, showing the steps involved in relocating the Emergency Alert System (EAS) system. The figure includes a diagram of the EAS system, with arrows indicating the movement of the system from one location to another. The figure also includes labels and annotations to explain the different components and their functions.\nFigure 7.1.2.6-1: EAS Relocation\n1.\tEAS is deployed as per the procedures defined in clause 7.1.2.1. The reallocation policies are created as part of the deployment procedures.\n2.\tThe producer decides to relocate the EAS.\n3.\tProducer sends the notification to the authorized subscriber (e.g ASP, EES) indicating the updating of the attribute triggerType.\n4.\tIf the ASP decides not to allow for relocation based on its internal policies. The ASP will send modifyMOIAttributeChange to update the value of the attribute relocationRejectByASP to TRUE.\n5.\tThe producer sends the response.\n6.\tThe producer selects the appropriate EDN to relocate the EAS.\n7.\tThe producer will then follow EAS termination (from source EDN) and EAS deployment (on Target EDN) as defined in clauses 7.1.2.1 and 7.1.2.2 respectively.\n8.\tThe values of the attribute triggerType are set to defaults as defined in clause 6.3.20.\nFigure 7.1.2.7-1 depicts a procedure for EAS resource reservation.\nThe figure depicts a resource reservation system for Enhanced Air Traffic Services (EAS) in a 1.2.7-1 system. It illustrates the reservation of airspace resources for aircraft, including slots for takeoff, landing, and taxiing. The system is designed to ensure efficient use of airspace resources and minimize conflicts between aircraft.\nFigure 7.1.2.7-1: EAS resource reservation\n1.\tECSP management system receives a EAS resource reservation job creation request (createMOI operation for EASResourceReservationJob), the EASResourceReservationJob contains the following attributes:\n- \tLocation at which the resources are to be reserved;\n- \tResource for reservation, including virtual compute, virtual storage and virtual network resources;\n- \texpiration time;\n- \tresource reservation status.\n2.\tECSP management system sends the EASResourceReservationJob creation response to ASP for the received Job DN.\n3.\tECSP management system creates the EASResourceReservationJob instance and configures the attribute from the request and ECSP management system starts the executing the resource reservation process. This includes reserving the resources in an appropriate EDN.\n4.\tECSP management system requests resource reservation by interworking with ETSI NFV MANO (based on the information contained in the EASResourceReservationJob creation request e.g. reservationLocation, resourceReservationRequirement to initiate Instantiate NS operation in an appropriate EDN. See clause 7.3.3 in ETSI GS NFV-IFA 013 [6]).\n5.\tIf networking requirement is included in the EAS Resource reservation Job creation request, reservation of network connection between UPF and the reserved resources is required (following the similar procedure as described in clause 7.4.4).\nEditor’s note: whether the procedure described in clause 7.4.4 requires modification or enhancement to support the above step is FFS.\n6.\tResponse with the progress of EASResourceReservationJob instance creation.\n7.\tECSP management system sends the final notification with the status of EASResourceReservationJob instance.\n8-10.\tOnce after step 2, ASP can send query request to ECSP management system any time, to know and receive the status of EASResourceReservationJob instance.\n11-13.\tASP can request to delete the EASResourceReservationJob any time and the ECSP management system deletes the EASResourceReservationJob and sends response to ASP (interworking with ETSI NFV MANO is required).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.3\tECS lifecycle management",
+                            "text_content": "Figure 7.1.3.1-1 shows that the PLMN operator or ECSP as the consumer requests the ECS instantiation via the provisioning MnS.\nThe figure depicts a step-by-step procedure for deploying an Enhanced Customer Service (ECS) system, with a focus on the deployment process. The figure includes various components such as the ECS server, network infrastructure, and user interface, illustrating the technical aspects of the system's deployment.\nFigure 7.1.3.1-1: ECS deployment procedure\n1. Provisioning MnS Producer receives a request (this will use createMOI operation defined in 3GPP TS 28.532 [5]) with ECS related requirements. The following are the list of requirements, which can be provided with the request as part of attributeListIn parameter of createMOI operation.\na. ecsAddress: the URLs and/or IP Address(es) of ECS.\nb. providerIdentifier: Identifying the ECSP that provides the ECS.\n2. Provisioning MnS Producer returns a response indicating that the instantiation operation is in progress.\n3. The NF instance creation procedure as described in clause 7.10 of [5] is reused to instantiate the ECS VNF instance with the requirements captured in the ECSFunction IOC.\n4. In case of ECS VNF instantiation failure, a Notification to indicate the creation of ECSFunction instance has failed.\n5. In case of ECS VNF instantiation success, the producer creates the MOI (Managed Object Instance) for ECSFunction IOC. The MOI shall contain attributes as defined in ECSFunction IOC. The Provisioning MnS Producer sends a Notification to indicate the ECSFunction instance has been created.\nFigure 7.1.3.2-1 shows that the PLMN operator or ECSP as the consumer requests the ECS termination via the provisioning MnS.\nThe figure depicts the ECS termination procedure, which is a crucial step in the network's operation. It shows the steps involved in terminating an Ethernet Connection Service (ECS) connection, including the use of a termination device and the process of re-establishing the connection. This figure is essential for ensuring the smooth functioning of the network and preventing network disruptions.\nFigure 7.1.3.2-1: ECS termination procedure\n1. PLMN operator or ECSP consumes the provisioning MnS with deleteMOI operation (see clause 11.1.1.4. in TS 28.532 [5]) for ECSFunction MOI to request ECSP management system provisioning MnS producer to terminate the ECS VNF instance.\n2. ECSP management system provisioning MnS producer sends a response to the consumer indicating that the termination operation is in progress.\n3. ECSP management system provisioning MnS producer invokes the TerminateNsRequest or UpdateNsRequest operation (see clause 7.3.7 and 7.3.5 in ETSI GS NFV-IFA 013 [6]) to request NFVO via the Os-Ma-nfvo interface to terminate ECS VNF instance.\n4. NFVO sends the NS Lifecycle Change notification to ECSP provisioning MnS producer indicating the result of termination procedure (see clause 7.3.12 of ETSI GS NFV-IFA 013 [6]).\n5. If the VNF termination has been successful then:\n5.1. ECSP management system provisioning MnS producer deletes the MOI for ECSFunction IOC.\n5.2. ECSP management system provisioning MnS producer notifies the consumer about the successful termination of the ECS.\nOtherwise :\n5.3. ECSP management system provisioning MnS producer notifies the consumer about the un-successful termination of the ECS.\nFigure 7.1.3.3-1 shows that the PLMN operator or ECSP as the consumer requests the ECS modification via the provisioning MnS.\nThe figure depicts the ECS (Enhanced Circuit Switching) modification procedure, which is a method used to improve the performance of a circuit switching network. The figure shows the steps involved in modifying the circuit switching network, including the use of ECS, which is a technique that improves the network's performance by reducing the number of switches. The figure also shows the different components of the circuit switching network, such as the switches, routers, and other devices that make up the network. Overall, the figure provides a clear and concise visual representation of the ECS modification procedure, making it easy to understand the process and its implications for the network's performance.\nFigure 7.1.3.3-1: ECS modification procedure\n1. PLMN operator or ECSP consumes the provisioning MnS with modifyMOIAttributes operation (see clause 11.1.1.3. in TS 28.532 [5]) for ECSFunction MOI to request ECSP management system provisioning MnS producer to modify the ECS VNF instance.\n2. ECSP management system provisioning MnS producer sends a response to the consumer indicating that the modification operation is in progress.\n3. If ECS instance to be modification contains virtualized part, checks whether corresponding VNF instance needs to be modified to satisfy the modification related requirements.\n4. If corresponding VNF instance needs to be modified, ECSP management system provisioning MnS producer invokes the updateNsRequest operation (see clause 7.3.5 in ETSI GS NFV-IFA 013 [6]) to request NFVO via the Os-Ma-nfvo interface to modify the virtualized resource of ECS VNF instance.\n5. NFVO sends the NS Lifecycle Change notification to ECSP provisioning MnS producer indicating the result of modification procedure (see clause 7.3.12 of ETSI GS NFV-IFA 013 [6]).\n6. ECSP management system provisioning MnS producer modifies the MOI for ECSFunction IOC.\n7. ECSP management system provisioning MnS producer response to consumer about the modification of the ECS instance.\nFigure 7.1.3.4-1 shows that the PLMN operator or ECSP as the consumer requests the ECS query via the provisioning MnS.\nThe figure depicts the ECS query procedure, which is a crucial component of the ECS (Enterprise Content Services) system. It outlines the steps and logic involved in executing an ECS query, providing a clear understanding of the system's functionality.\nFigure 7.1.3.4-1: ECS query procedure\n1. ECSP provisioning MnS Producer receives a query request (this will use getMOIAttributes operation defined in 3GPP TS 28.532[5]) with objectInstance of the existing ECSFunction MOI, scope, and list of attributes of ECSFunction IOC. The list of attributes identifies the attributes to be returned by this operation.\n2. Based on the request, ECSP provisioning MnS producer queries the concrete ECSFunction MOI\n3. MnS Producer sends a response to the MnS consumer with objectClass, objectInstance, status (e.g. succeed or failed), and list of [Attribute, Value] related to ECS instance which is defined in clause 6.4(e.g. providerIdentifier).\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.4\tEES lifecycle management",
+                            "text_content": "Figure 7.1.4.1-1 shows that the PLMN operator or ECSP as the consumer requests the EES instantiation via the provisioning MnS.\nThe figure depicts the EES (Energy-Efficient Software) deployment procedure, which is a crucial step in the process of deploying energy-efficient software in a network. The figure shows the steps involved in deploying EES, including the selection of the appropriate EES version, the installation of the EES software, and the configuration of the EES settings. The figure also includes a diagram of the EES deployment process, which helps to visualize the steps and ensure that the deployment is carried out correctly.\nFigure 7.1.4.1-1: EES deployment procedure\n1.  Provisioning MnS Producer receives a request (this will use createMOI operation defined in 3GPP TS 28.532 [5]) with EES related requirements. The following are the list of requirements, which can be provided with the request as part of attributeListIn parameter of createMOI operation.\na.  EDN identifier: Identifying the EDN to contain the EES in.\nb.  EAS identifier: Identifying the list of EAS registered with the EES. This is optional depending on the availability of the EAS.\n2.  Provisioning MnS Producer returns a response indicating that the instantiation operation is in progress\n3.  The NF instance creation procedure as described in clause 7.10 of [5] is reused to instantiate the EES VNF instance with the requirements provided in the instantiation request.\n4.  In case of EES VNF instantiation failure, a Notification to indicate the creation of EESFunction instance has failed.\n5.  In case of EES VNF instantiation success, the producer creates the MOI (Managed Object Instance) for EESFunction IOC. The MOI shall contain attributes as defined in EESFunction IOC. The Provisioning MnS Producer sends a Notification to indicate the EESFunction instance has been created.\nFigure 7.1.4.2-1 shows that the PLMN operator or ECSP as the consumer requests the EES termination via the provisioning MnS.\nThe figure depicts the EES termination procedure, which is a crucial step in the optical network's maintenance and troubleshooting process. The figure shows the steps involved in terminating an EES (End-of-Line) device, which is a critical component in the optical network. The figure includes a diagram of the EES termination process, with arrows indicating the flow of data and the steps involved. The figure also includes labels for each step, making it easy to understand the sequence of actions. The figure is a visual representation of the EES termination procedure, providing a clear and concise way to understand the process.\nFigure 7.1.4.2-1: EES termination procedure\n1. PLMN operator or ECSP consumes the provisioning MnS with deleteMOI operation (see clause 11.1.1.4. in TS 28.532 [5]) for EESFunction MOI to request ECSP management system provisioning MnS producer to terminate the EES VNF instance.\n2. ECSP management system provisioning MnS producer sends a response to the consumer indicating that the termination operation is in progress.\n3. ECSP management system provisioning MnS producer invokes the TerminateNsRequest or UpdateNsRequest operation (see clauses 7.3.7 and 7.3.5 in ETSI GS NFV-IFA 013 [6]) to request NFVO via the Os-Ma-nfvo interface to terminate EES VNF instance.\n4. NFVO sends the NS Lifecycle Change notification to ECSP provisioning MnS producer indicating the result of termination procedure (see clause 7.3.12 of ETSI GS NFV-IFA 013 [6]).\n5. If the VNF termination has been successful then:\n5.1. ECSP management system provisioning MnS producer deletes the MOI for EESFunction IOC.\n5.2. ECSP management system provisioning MnS producer notifies the consumer about the successful termination of the EES.\nOtherwise :\n5.3. ECSP management system provisioning MnS producer notifies the consumer about the un-successful termination of the EES.\nFigure 7.1.4.3-1 shows that the PLMN operator or ECSP as the consumer requests the EES modification via the provisioning MnS.\nThe figure depicts the EES (Enhanced Emission Spectral Adjustment) modification procedure, which is a crucial step in the process of optimizing the performance of a communication system. The figure illustrates the steps involved in modifying the emission spectrum of a signal, which can be used to improve the signal quality and reduce interference. The figure includes a schematic representation of the EES process, with key components such as the transmitter, receiver, and the signal processing system. The figure also includes a legend to help understand the different colors and symbols used in the process. Overall, the figure provides a clear and concise visual representation of the EES modification procedure, making it easy to understand and follow.\nFigure 7.1.4.3-1: EES modification procedure\n1. PLMN operator or ECSP consumes the provisioning MnS with modifyMOIAttributes operation (see clause 11.1.1.3. in TS 28.532 [5]) for EESFunction MOI to request ECSP management system provisioning MnS producer to modify the EES VNF instance.\n2. ECSP management system provisioning MnS producer sends a response to the consumer indicating that the modification operation is in progress.\n3. If EES instance to be modification contains virtualized part, checks whether corresponding VNF instance needs to be modified to satisfy the modification related requirements.\n4. If corresponding VNF instance needs to be modified, ECSP management system provisioning MnS producer invokes the updateNsRequest operation (see clause 7.3.5 in ETSI GS NFV-IFA 013 [6]) to request NFVO via the Os-Ma-nfvo interface to modify the virtualized resource of EES VNF instance.\n5. NFVO sends the NS Lifecycle Change notification to ECSP provisioning MnS producer indicating the result of modification procedure (see clause 7.3.12 of ETSI GS NFV-IFA 013 [6]).\n6. ECSP management system provisioning MnS producer modifies the MOI for EESFunction IOC.\n7. ECSP management system provisioning MnS producer response to consumer about the modification of the EES instance.\nFigure 7.1.4.4-1 shows that the PLMN operator or ECSP as the consumer requests the EES query via the provisioning MnS.\nThe figure depicts the EES query procedure, which is a crucial component of the EES (Energy Efficiency Service) system. It illustrates the steps involved in requesting energy efficiency services from the EES system. The figure includes a flowchart that outlines the process, with arrows indicating the sequence of actions. The figure is labeled with the figure number and the corresponding figure name, which helps in identifying the specific figure within the EES system.\nFigure 7.1.4.4-1: EES query procedure\n1. ECSP provisioning MnS Producer receives a query request (this will use getMOIAttributes operation defined in 3GPP TS 28.532[5]) with objectInstance of the existing EESFunction MOI, scope, and list of attributes of EESFunction IOC. The list of attributes identifies the attributes to be returned by this operation.\n2. Based on the request, ECSP provisioning MnS producer queries the concrete EESFunction MOI\n3. MnS Producer sends a response to the MnS consumer with objectClass, objectInstance, status (e.g. succeed or failed), and list of [Attribute, Value] related to EES instance which is defined in clause 6.4(e.g. eESservingLocation).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.2\tPerformance assurance",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.2.1\tDescription",
+                            "text_content": "The clause contains procedures associated with performance assurance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.2\tEAS performance assurance",
+                            "text_content": "Figure 7.2.2.1-1 depicts a procedure that describes how an ASP can consume performance assurance MnS to collect the EAS measurements via performance job control.\nThe figure depicts a measurement collection system for performance job control, with a focus on the collection of performance data. The system includes a performance job controller (PJC) and a measurement collection device (MCD), which are connected via a network. The MCD collects performance data from the PJC, which is used to monitor and control the performance of the system. The system is designed to ensure that the performance of the system is maintained at a desired level, and that any deviations from this level are detected and corrected.\nFigure 7.2.2.1-1: Measurement collection via performance job control\n1. ASP, as the consumer of performance assurance MnS, consumes the measurement job control MnS with createMeasurementJob operation (see TS 28.550 [8]) to request ECSP management system, as the producer of performance assurance MnS, to collect EAS measurements. The createMeasurementJob operation also includes a reportingMethod attribute to indicating the report method (i.e., performance data file or by performance data streaming).\n2. ECSP management system returns the output parameter with jobId to indicate the PM job been created.\n3. If this PM job is based on performance file reporting service, then\n3.1. ASP invokes the subscribe operation (see clause 12.6.1.1.1 in TS 28.532 [5]) to subscribe to receive notifications from the ECSP management system.\n3.2. ECSP management system sends a notifyFileReady notification (see clause 11.6.1.1 in TS 28.532 [5]) to ASP to indicate the performance data file is ready.\n3.3. ASP fetches the EAS measurement data from the MnS producer.\nOtherwise (performance data streaming service)\n3.4. ECSP management system invokes the establishStreamingConnection operation (see clause 11.5.1.1 in TS 28.532 [5]) to establish a streaming connection with ASP for sending the streaming data.\n3.5 ECSP management system collects the EAS measurement data and invokes the reportStreamData operation (see clause 11.5.1.3 in TS 28.532 [5]) to send the streaming data to ASP.\nFigure 7.2.2.2-1 depicts a procedure that describes how an ASP can consume performance assurance MnS to collect the EAS measurements via configurable measurement control.\nThe figure depicts a collection of measurements via configurable measurement control, with a focus on the measurement data collection process. The figure includes various measurement points, such as the measurement control unit (MCU), measurement data collection, and measurement data storage. The MCU is responsible for collecting and processing the measurements, while the measurement data is stored in a database for later analysis. The figure also includes a schematic representation of the measurement control system, highlighting the various components and their connections. Overall, the figure provides a comprehensive overview of the measurement control system's design and functionality.\nFigure 7.2.2.2-1: Measurements collection via configurable measurement control\n1. ASP, as the consumer of provisioning MnS, consumes the provisioning MnS with createMOI operation for PerfMetricJob IOC to request ECSP management system, as the producer of provisioning MnS, to collect EAS measurements. The PerfMetricJob MOI includes a ReportingCtrl attribute (See clause 4.3.33 in TS 28.622 [4]) to indicating the report method (i.e., performance data file or by performance data streaming).\n2. ECSP management system returns the output parameter with jobId to indicate the PM job been created.\n3. If this PM job is based on performance file reporting service, then:\n3.1. ASP invokes the subscribe operation (see clause 12.6.1.1.1 in TS 28.532 [5]) to subscribe to receive notifications from the ECSP management system.\n3.2. ECSP management system sends a notifyFileReady notification to ASP to indicate the performance data file is ready.\n3.3. ASP fetches the EAS measurement data from the MnS producer.\nOtherwise (performance data streaming service)\n3.4. ECSP management system invokes the establishStreamingConnection operation to establish a streaming connection with ASP for sending the streaming data.\n3.5. ECSP management system collects the EAS measurement data and invokes the reportStreamData operation to send the streaming data to ASP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.3\t5GC NF measurements to evaluate EAS performance",
+                            "text_content": "Figure 7.2.3.1-1 depicts a procedure that describes how an ECSP management system can consume performance assurance MnS to collect the 5GC NF measurements from PLMN management system via performance job control.\nThe figure depicts a collection of measurements via a performance job control system, illustrating the process of collecting data for monitoring and analyzing telecommunication network performance.\nFigure 7.2.3.1-1: Measurements collection via performance job control\n1. ECSP management system, as the consumer of performance assurance MnS, consumes the measurement job control MnS with createMeasurementJob operation (see TS 28.550 [8]) to request PLMN management system, as the producer of performance assurance MnS, to collect 5GC NF measurements that may impact EAS performance. The createMeasurementJob operation also includes a reportingMethod attribute to indicating the report method (i.e., performance data file or by performance data streaming).\n2. PLMN management system returns the output parameter with jobId to indicate the PM job been created.\n3. If this PM job is based on performance file reporting service, then\n3.1. ECSP management system invokes the subscribe operation (see clause 12.6.1.1.1 in TS 28.532 [5]) to subscribe to receive notifications from the PLMN management system.\n3.2. PLMN management system sends a notifyFileReady notification to ECSP management system to indicate the performance data file is ready.\n3.3. ECSP management system fetches the 5GC NF measurement data from the MnS producer.\nOtherwise (performance data streaming service)\n3.4. ECSP management system invokes the establishStreamingConnection operation to establish a streaming connection with ECSP management system for sending the streaming data.\n3.5 PLMN management system collects the measurement data and invokes the reportStreamData operation to send the 5GC NF streaming data to ECSP management system.\nFigure 7.2.3.2-1 depicts a procedure that describes how an ECSP management system can consume performance assurance MnS to collect the 5GC NF measurements from PLMN management system via configurable measurement control.\nThe figure depicts a measurement collection system that allows for the configuration of measurement control parameters. It includes a configurable measurement control system, which enables the collection of data in a controlled manner. This system is designed to be user-friendly and efficient, ensuring accurate and reliable measurements.\nFigure 7.2.3.2-1: Measurement collection via configurable measurement control\n1. ECSP management system, as the consumer of provisioning MnS, consumes the provisioning MnS with createMOI operation for PerfMetricJob IOC to request PLMN management system, as the producer of provisioning MnS, to collect 5GC NF measurements that may impact EAS performance. The PerfMetricJob MOI includes a ReportingCtrl attribute (See clause 4.3.33 in TS 28.622 [4]) to indicating the report method (i.e., performance data file or by performance data streaming).\n2. PLMN management system returns the output parameter with jobId to indicate the PM job been created.\n3. If this PM job is based on performance file reporting service, then\n3.1. ECSP management system invokes the subscribe operation (see clause 12.6.1.1.1 in TS 28.532 [5]) to subscribe to receive notifications from the PLMN management system.\n3.2. PLMN management system sends a notifyFileReady notification to ECSP management system to indicate the performance data file is ready.\n3.3. ECSP management system fetches the 5GC NF measurement data from the MnS producer.\nOtherwise (performance data streaming service)\n3.4. ECSP management system invokes the establishStreamingConnection operation to establish a streaming connection with ECSP management system for sending the streaming data.\n3.5. PLMN management system collects the measurement data and invokes the reportStreamData operation to send the 5GC NF streaming data to ECSP management system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.4\tECS performance assurance",
+                            "text_content": "The mechanism used for collecting EAS measurements, as defined in clause 7.2.2.1, via performance job control are used for collecting ECS measurements too. ECSP consumer can request ECSP management system for collecting ECS measurements using measurement job control MnS with createMeasurementJob operation (see TS 28.550 [8]). The measurements are delivered to the consumer either using File data reporting service or Streaming data reporting service as defined in [5].\nThe mechanism used for collecting EAS measurements, as defined in clause 7.2.2.2, via configurable measurement control are used for collecting ECS measurements too. ECSP consumer can request ECSP management system for collecting ECS measurements using createMOI operation for PerfMetricJob IOC [4]. The measurements are delivered to the consumer either using File data reporting service or Streaming data reporting service as defined in [5].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.5\tEES performance assurance",
+                            "text_content": "The mechanism used for collecting EAS measurements, as defined in clause 7.2.2.1, via performance job control are used for collecting EES measurements too. Any management consumer can request for collecting EES measurements using measurement job control MnS with createMeasurementJob operation (see TS 28.550 [8]). The measurements are delivered to the consumer either using File data reporting service or Streaming data reporting service as defined in [5].\nThe mechanism used for collecting EAS measurements, as defined in clause 7.2.2.2, via configurable measurement control are used for collecting EES measurements too. Any management consumer can request for collecting EES measurements using createMOI operation for PerfMetricJob IOC [4]. The measurements are delivered to the consumer either using File data reporting service or Streaming data reporting service as defined in [5].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.3\tFault supervision",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.3.1\tDescription",
+                            "text_content": "The clause contains procedures associated with Fault supervision.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.3.2\tEDN NF performance impacted by 5GC NF alarm",
+                            "text_content": "Figure 7.3.2-1 depicts a procedure to describe how an ECSP management system can consume fault supervision MnS to receive 5GC NF alarms.\nThe figure depicts the impact of 5G Core Network (5GC) NF alarms on EDN NF performance. It shows the relationship between the number of NF alarms and the EDN NF performance, highlighting the importance of monitoring and managing these alarms to ensure network stability and reliability.\nFigure 7.3.2-1: EDN NF performance impacted by 5GC NF alarm\n1. ECSP, as the consumer of fault supervision MnS, consumes the generic fault supervision MnS with subscribe operation (see TS 28.532 [5]) to subscribe to receive 5GC NFs (i.e., UPF, PCF, NEF, SCEF) alarms.\n2. PLMN management system detects the 5GC NF alarms.\n3. PLMN management system detects sends notifyNewAlarm notification to indicate the 5GC NF alarms being detected.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.3.3\t5GC NF issues resulted from EDN NF alarms",
+                            "text_content": "Figure 7.3.3-1 depicts a procedure to describe how a PLMN management system can consume fault supervision MnS to receive EDN NF alarms.\nThe figure depicts a 5G network with various network functions (NF) issues, including Enhanced Data Rate (EDN) NF alarms, which indicate potential network performance issues. The figure illustrates the various NF issues, such as network congestion, packet loss, and latency, and their impact on network performance.\nFigure 7.3.3-1: 5GC NF issues resulted from EDN NF alarms\n1. ECSP, as the consumer of fault supervision MnS, consumes the generic fault supervision MnS with subscribe operation (see TS 28.532 [5]) to subscribe to receive EDN NFs (i.e., EAS, EES, ECS) alarms.\n2. PLMN management system detects the EDN NF alarms.\n3. PLMN management system detects sends notifyNewAlarm notification to indicate the EDN NF alarms being detected.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.4\tProvisioning",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.4.1\tDescription",
+                            "text_content": "The clause contains procedures associated with provisioning.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.4.2\tConfiguration needed for EAS registration",
+                            "text_content": "Figure 7.4.2-1 depicts a procedure to describe how a consumer can consume provisioning MnS to request ECSP management system to configure the EASID and EES address that are required for EAS registration procedure (see clause 8.4.3.2.1 in TS 23.558 [2]). It is assumed that the EASFunction MOI has been created.\nThe figure depicts a configuration needed for EAS registration, which is a crucial step in ensuring the security and functionality of an EAS system. The figure shows a series of steps and components, including the EAS registration form, the EAS registration database, and the EAS registration server. This configuration is essential for the proper functioning of the EAS system, as it ensures that the system can accurately detect and respond to potential threats.\nFigure 7.4.2-1: Configuration needed for EAS registration\n1. A consumer (i.e., ASP or ECSP) consumes the provisioning MnS with modifyMOIAttributes operation (see TS 28.532 [5]) to configure the EASID (clause 7.2.4 in TS 23.558 [2]) and EES address (e.g. URI).\n2. ECSP management system returns notifyMOIAttributes to notify the consumer that attributes have been changed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.4.3\tEDN NF 5GC connection provisioning",
+                            "text_content": "Figure 7.4.3-1 depicts a procedure to describe how ECSP management system can consume provisioning MnS to request PLMN management system to query the connection information of EDN NFs (i.e., EAS, EES, ECS) to 5GC NFs, as specified in clauses 6.3.2, 6.3.4, 6.4.6 in TS 23.558 [2]. To support the connection of EDN NFs to 5GC NFs, EcmConnectionInfo IOC should contain the following attributes:\n-\tEDN identifier: used to determine whether the EDN is trusted by PLMN operators.\n-\tEAS, EES, and ECS IP address: indicate the EAS, EES, and ECS IP address.\n-\tService area requirements: including EDN service area, EES service area, and EAS service area (see clause 7.3.3 in TS 23.558 [2]) representing the service areas for ECS, EES, and EAS, respectively.\n-\tECM connection type: indicate the control plane connection.\n-\t5GC NF Connection information list: each entry in the list should contain the following attributes:\n-\tAccessing NF type: the NF (i.e., PCF, NEF, or SCEF) where the EDN NFs should interface to access the 5GC NFs.\n-\tIP address: the IP address of the accessing NF.\n-\t5GC NF DN: the DN of the accessing NF that needs to be configured in EASFunction IOC, EESFunction IOC, and ECSFunction IOC to indicate where the EDN NFs are connected.\nThe figure depicts a network function virtualization (NFV) architecture, specifically the connection between an Ethernet Data Network (EDN) and a Gigabit Ethernet Network Function Virtualization (NFV) network. The figure illustrates the connection between the EDN and the NFV network, with the EDN NF being connected to the 5G Core Network Function Virtualization (5GC NF) network. This connection is crucial for enabling the efficient and scalable deployment of 5G networks.\nFigure 7.4.3-1: EDN NF to access 5GC NF\n1. ECSP management system consumes the provisioning MnS with createMOI operation (see clause 11.1.1.1. in TS 28.532 [5]) for EcmConnectionInfo IOC to request PLMN management system to provide the connection information. EcmConnectionInfo IOC includes EDN identifier, and service area requirements (i.e., EDN service area, EES service area, and EAS service area).\n2. PLMN management system determines whether the EAS and EES are trusted by PLMN operators, based on the EDN identifier ednIdentifier.\nIf the EDN NFs are trusted by PLMN operators, then performs the following steps.\n3. PLMN management system found the PCF(s) based on EES service area eESServiceArea, and EAS service area requiredEASservingLocation, and NEF(s) based on EDN service area eDNServiceArea, and then creates the EcmConnectionInfo MOI with connection information for PCF and NEF, including the IP address and DN.\n4. PLMN management system returns the connection information in the attributeListOut of the output parameter in createMOI operation to ECSP management system.\n5. Connects EDN NFs to 5GC NFs via PCF and NEF.\n5.1 ECSP management system executes the following actions to connect EAS / EES to PCF and ECS to NEF:\n-\tcreate EP_N5 MOI with EAS IP address in localAddress, and PCF IP address in remoteAddress to connect EAS to PCF.\n-\tcreate EP_N5 MOI with EES IP address in localAddress, and PCF IP address in remoteAddress to connect EES to PCF.\n-\tcreate EP_N33 MOI with ECS IP address in localAddress, and NEF IP address in remoteAddress to connect ECS to NEF.\n5.2 PLMN management system executes the following actions to add the EAS and EES connections to PCF and the ECS connection to NEF:\n-\tcreate EP_N5 MOI with PCF IP address in localAddress, and EAS IP address easAddress in remoteAddress.\n-\tcreate EP_N5 MOI with PCF IP address in localAddress, and EES IP address eecsAddress in remoteAddress.\n-\tcreate EP_N33 MOI with NEF IP address in localAddress, and ECS IP address ecsAddress in remoteAddress.\nNote: \tThere is no sequence dependency between steps 5.1 and 5.2.\n5.3 ECSP management system performs the following configuration operations:\n-\tconfigure the farEndEntity in EP_N5 MOI with the PCF DN.\n-\tconfigure the farEndEntity in EP_N5 MOI with the PCF DN.\n-\tconfigure the farEndEntity in EP_N33 MOI with the NEF DN.\nIf the EDN NFs are untrusted by PLMN operators, then performs the following steps:\n6. PLMN management system found the NEF(s) based on EES service area, EAS service area, EDN service area, and then creates the EcmConnectionInfo MOI with connection information for NEF, including the IP address and DN.\n7. PLMN management system returns the connection information in the attributeListOut of the output parameter in createMOI operation to ECSP management system.\n8. Connects EDN NFs to 5GC NFs via NEF.\n8.1 ECSP management system executes the following actions to connect EAS, EES, and ECS to NEF:\n-\tcreate EP_N33 MOI with EAS IP address in localAddress, and NEF IP address in remoteAddress to connect EAS to PCF.\n-\tcreate EP_N33 MOI with EES IP address in localAddress, and NEF IP address in remoteAddress to connect EES to PCF.\n-\tcreate EP_N33 MOI with ECS IP address in localAddress, and NEF IP address in remoteAddress to connect ECS to NEF.\n8.2 PLMN management system executes the following actions to add the EAS, EES, and ECS connections to NEF:\n-\tcreate EP_N33 MOI with NEF IP address in localAddress, and EAS IP address easAddress in remoteAddress.\n-\tcreate EP_N33 MOI with NEF IP address in localAddress, and EES IP address eesAddress in remoteAddress.\n-\tcreate EP_N33 MOI with NEF IP address in localAddress, and ECS IP address ecsAddress in remoteAddress.\n8.3 ECSP management system performs the following configuration operations:\n-\tconfigure the farEndEntity in EP_N33 MOI with the NEF DN.\n-\tconfigure the farEndEntity in EP_N33 MOI with the NEF DN.\n-\tconfigure the farEndEntity in EP_N33 with the NEF DN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.4.4\tEAS to connect to UPF",
+                            "text_content": "Figure 7.4.4-1 depicts a procedure to describe how ECSP management system can consume provisioning MnS to request PLMN management system to connect EAS to UPF for transporting the user traffic via the N6 interface (see clause (see clause 4.2.3 in TS 23.501 [11]). To support the connection of EAS NF to UPF NF, EcmConnectionInfo IOC should include the following attributes:\n-\tEAS IP address: indicate the UPF IP address.\n-\tEAS and EDN service area requirements: EAS service area (see clause 7.3.3 in TS 23.558 [2]).\n-\tECM connection type: indicate the user plane connection\n-\tN6 traffic routing list: each entry in the list should contain the following attributes (see clause 8.2.4 in TS 23.558 [2]):\n-\tDNAI: DNAI(s) associated with the EAS.\n-\tN6 traffic routing requirements: N6 traffic routing information corresponding to each EAS DNAI.\n-\tUPF Connection information: contains the following attributes:\n-\tUPF IP address: the IP address of the accessing NF.\n-\tUPF DN: the UPF DN to be configured in EASFunction IOC to indicate where the UPF is connected.\n\nThe figure depicts a schematic of an EAS (Emergency Alert System) connection to a UPF (User Peripheral Facility). The EAS is connected to the UPF through a series of cables, including a coaxial cable, a fiber-optic cable, and a power cable. The figure illustrates the various components and connections involved in the EAS-UPF connection, including the EAS transmitter, the UPF receiver, and the power supply. The figure also shows the distribution of the cables and the connectors used to connect the EAS and UPF.\nFigure 7.4.4-1: EAS to connect to UPF\n1. ECSP management system consumes the provisioning MnS with createMOI operation (see clause 11.1.1.1. in TS 28.532 [5]) for EcmConnectionInfo IOC to request PLMN management system to connect the EAS to an UPF. EcmConnectionInfo includes EAS IP address, EAS service area , EDN service area, N6 traffic routing requiremments and ecmConnectionType with value USERPLANE.\n2. PLMN management system finds a UPF based on the EAS and EDN service areas.and N6 traffic routing requirements.\nIf an UPF can be found, then performs the following steps:\n3. PLMN management system creates the EcmConnectionInfo MOI with uPFConnectionInfo, including UPF IP address and UPF DN.\n4. PLMN management system create EP_N6 MOI with UPF IP address in localAddress, and EAS IP address in remoteAddress to connect UPF to EAS.\n5. PLMN management system returns the UPF connection information in the attributeListOut of the output parameter in createMOI operation to ECSP management system.\n6. ECSP management system create EP_N6 MOI with EAS IP address in localAddress, and UPF IP address in remoteAddress.\n\nIf an UPF cannot be found, then performs the following steps:\n7. PLMN management system returns the output parameters for createMOI operation to indicate the UPF instantiation is in progress.\n8. PLMN management system invokes the InstantiateNsRequest operation (see clause 7.3.3 in ETSI GS NFV-IFA 013 [6]) to request NFVO via the Os-Ma-nfvo interface to instantiate a NS instance including the UPF VNF instance.\n9. NFVO sends a notification to PLMN management system indicating the result of instantiation procedure (see clause 7.3.3.4 of ETSI GS NFV-IFA 013 [6]).\n10. If the UPF has been instantiated, then performs the following steps:\n10.1. PLMN management system creates the EcmConnectionInfo MOI with UPF connection information, including UPF IP address and UPF DN.\n10.2. PLMN management system create EP_N6 MOI with UPF IP address in localAddress, and EAS IP address in remoteAddress to connect UPF to EAS.\n10.3 PLMN management system sends notifyMOICreation with UPF connection information in attributeList.\n10.4. ECSP management system create EP_N6 MOI with EAS IP address in localAddress, and UPF IP address in remoteAddress.\n\n11. If the UPF has not been instantiated, then performs the following step:\n11.1 PLMN management system sends notifyMOICreation to ECSP management system to indicate no UPF can be found.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.5\tFederation management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.5.1\tDescription",
+                            "text_content": "The clause contains procedures associated with federation management.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.5.2\tEdge Federation Establishment",
+                            "text_content": "Figure 7.5.2.1-1 depicts a procedure that describes how a federation relationship is established between LO and and PO.\nThe figure depicts a 5G network setup, illustrating the process of federation establishment. It shows the various components involved, such as the base station (gNB), user equipment (UE), and scatterers. The diagram highlights the importance of beamforming techniques to mitigate interference and ensure reliable communication.\nFigure 7.5.2.1-1: Federation Establishment\n1.\tIn order to establish the edge federation with the PO (Producer), LO (Consumer) send createMOI request to instantiate EdgeFederation IOC.\nEditor’s Note: Whether consumer may send a ModifyMOI operation is FFS.\n2.\tProducer sends the response.\n3.\tProducer instantiates the OperatorEdgeFederation IOC providing details on the offered EDN.\n4.\tProducer sends a notification for the creation of the OperatorEdgeFederation IOC using notifyMOICreation as defined in 3GPP TS 28.532.\n5.\tConsumer reads the OperatorEdgeFederation MOI using GetMOIAttributes operation to know the offered EDN and other related information.\n6.\tProducer sends the response0\n7.\tBased on the offered EDN list consumer decides on to which EDN it wants to accept.\n8.\tConsumer updates the value of acceptedEDN attribute, indicating the accepted EDN, using  ModifyMOIAttributes operation.\n9.\tProducer sends the response. At this point the federation establishment is completed.\n10.\tBased on the accepted EDN information, producer instantiates OperatorEdgeDataNetwork IOC to represent the accepted EDN which is shared with the LO.\n11.\tThe LO, behaving as Provisioning MnS Producer, instantiates the FederationIOC, OperatorFederation IOC and OperatorEdgeDataNetwork IOC.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.5.3\tFederated EAS Deployment",
+                            "text_content": "Figure 7.5.2.1-1 depicts a procedure that describes how a EAS is deployed on the partner operator.\nThe figure depicts a federated EAS deployment, illustrating the various components and their interconnections. The deployment includes a central controller, multiple EAS devices, and a network of communication links. The figure highlights the importance of network security and the need for a robust EAS system to protect against potential threats.\nFigure 7.5.2.1-1: Federated EAS Deployment\n1)\tFederation establishment procedures are done between LO and PO\n2)\tASP sends createMOI operation for EASRequirements IOC to LO as defined in 3GPP TS28.538\n3)\tThe LO sends a response\n4)\tAfter receiving the EAS deployment request form the ASP, the LO will check if it can deploy the EAS at one of its own EDN. If not, LO will select a PO and the EDN based on the received federation and EDN and reservation information.\n5)\tThe LO will send an existing createMOI operation for EASRequirements IOC.\n6)\tThe PO will send a response\n7)\tEAS deployment procedure as defined in 3GPP TS 28.538 will be followed.\n8)\tThe notifications for a successful or un-successful EAS deployment will be send to ASP.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "8\tManagement Service for Edge Computing",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tProvisioning",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.1.1\tLifecycle management",
+                            "text_content": "The management services for Edge Computing lifecycle management are listed in table 8.1.1-1.\nTable 8.1.1-1: Management services for Edge Computing lifecycle management\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.1.1-1: Management services for Edge Computing lifecycle management",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "8.2\tPerformance assurance",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.2.1\tEAS performance assurance",
+                            "text_content": "Table 8.2.1.1-1: EAS performance assurance type A\n\nPerformance measurements related EAS are captured in Table 8.2.1.2.-1:\nTable 8.2.1.2-1. EAS related performance measurements\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.2.1.1-1: EAS performance assurance type A",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.1.2-1. EAS related performance measurements",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.2.2\tECS performance assurance",
+                            "text_content": "Table 8.2.2.1-1: ECS performance assurance type A\n\nPerformance measurements related ECS are captured in Table 8.2.1.2.-1:\nTable 8.2.2.2-1. ECS related performance measurements\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.2.2.1-1: ECS performance assurance type A",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.2.2-1. ECS related performance measurements",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.2.3\tEES performance assurance",
+                            "text_content": "Table 8.2.3.1-1: EES performance assurance type A\n\nPerformance measurements related EES are captured in Table 8.2.3.2.-1:\nTable 8.2.3.2-1. EES related performance measurements\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.2.3.1-1: EES performance assurance type A",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.3.2-1. EES related performance measurements",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "A.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This annex contains the OpenAPI definition of the Edge NRM in YAML format.\nThe Information Service (IS) of the Edge NRM is defined in clause 6.\nMapping rules to produce the OpenAPI definition based on the IS are defined in TS 32.160 [10].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2\tSolution Set (SS) definitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.2.1\tOpenAPI document \"TS28538_EdgeNrm.yaml\"",
+                            "text_content": "openapi: 3.0.1\ninfo:\ntitle: 3GPP Edge NRM\nversion: 18.5.0\ndescription: >-\nOAS 3.0.1 specification of the Edge NRM\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\nexternalDocs:\ndescription: 3GPP TS 28.538; Edge NRM\nurl: http://www.3gpp.org/ftp/Specs/archive/28_series/28.538/\npaths: {}\ncomponents:\nschemas:\n\n#-------- Definition of types-----------------------------------------------------\nServingLocation:\ntype: object\nproperties:\ngeographicalLocation:\n$ref: '#/components/schemas/GeoLoc'\ntopologicalLocation:\n$ref: '#/components/schemas/TopologicalServiceArea'\nTopologicalServiceArea:\ntype: object\nproperties:\ncellIdList:\ntype: array\nitems:\ntype: integer\ntrackingAreaIdList:\n$ref: 'TS28541_NrNrm.yaml#/components/schemas/TaiList'\nservingPLMN:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/PlmnId'\nGeoLoc:\ntype: object\nproperties:\ngeographicalCoordinates:\n$ref: '#/components/schemas/GeographicalCoordinates'\ncivicLocation:\ntype: string\nGeographicalCoordinates:\ntype: object\nproperties:\nlattitude:\ntype: integer\nlongitude:\ntype: integer\nEDNConnectionInfo:\ntype: object\nproperties:\ndNN:\ntype: string\neDNServiceArea:\n$ref: '#/components/schemas/ServingLocation'\nAffinityAntiAffinity:\ntype: object\nproperties:\naffinityEAS:\ntype: array\nitems:\ntype: string\nantiAffinityEAS:\ntype: array\nitems:\ntype: string\nVirtualResource:\ntype: object\nproperties:\nvirtualMemory:\ntype: integer\nvirtualDisk:\ntype: integer\nvirutalCPU:\ntype: string\nvnfdId:\ntype: string\nSoftwareImageInfo:\ntype: object\nproperties:\nminimumDisk:\ntype: integer\nminimumRAM:\ntype: integer\ndiscFormat:\ntype: string\noperatingSystem:\ntype: string\nswImageRef:\ntype: string\nDuration:\ntype: object\nproperties:\nstartTime:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DateTime'\nendTime:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DateTime'\nEASServicePermission:\ntype: string\ndescription: any of enumrated value\nenum:\n- TRIAL\n- SILVER\n- GOLD\nEASFeature:\ntype: string\ndescription: any of enumrated value\nenum:\n- SINGLE\n- MULTIPLE\nEASStatus:\ntype: string\ndescription: any of enumrated value\nenum:\n- ENABLED\n- DISABLED\nResourceReservationRequirement:\ntype: object\nproperties:\ncomputeRequirement:\ntype: string\nstorageRequirement:\ntype: string\nnetworkingRequirement:\ntype: integer\n\nResourceReservationStatus:\ntype: object\nproperties:\nresourceId:\ntype: string\nreservationStatus:\ntype: string\ndescription: any of enumrated value\nenum:\n- RESERVED\n- USEd\nRelocationTriggerInfo:\ntype: object\nproperties:\ntriggerType:\ntype: string\ndescription: any of enumrated value\nenum:\n- IMMEDIATE\n- FUTURE\nfuturisticTriggerTime:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DateTime'\nrelocationPolicy:\ntype: string\ndescription: any of enumrated value\nenum:\n- YES\n- NO\n- YESwNOTIFY\nAvailableEDNList:\ntype: object\nproperties:\nresourceQuota:\n$ref: '#/components/schemas/VirtualResource'\n\n#-------- Definition of concrete IOCs --------------------------------------------\nMnS:\noneOf:\n- type: object\nproperties:\nSubNetwork:\n$ref: '#/components/schemas/SubNetwork-Multiple'\n\nSubNetwork-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nattributes:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/SubNetwork-Attr'\n- type: object\nproperties:\nSubnetwork:\n$ref: '#/components/schemas/SubNetwork-Multiple'\nECSFunction:\n$ref: '#/components/schemas/ECSFunction-Multiple'\nEdgeDataNetwork:\n$ref: '#/components/schemas/EdgeDataNetwork-Multiple'\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/SubNetwork-ncO'\n\nEdgeDataNetwork-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nednIdentifier:\ntype: string\neDNConnectionInfo:\n$ref: '#/components/schemas/EDNConnectionInfo'\n- type: object\nproperties:\nEASFunction:\n$ref: '#/components/schemas/EASFunction-Multiple'\nEESFunction:\n$ref: '#/components/schemas/EESFunction-Multiple'\navailableEdgeVirtualResources:\ntype: string\n\nEASFunction-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nattributes:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/ManagedFunction-Attr'\n- type: object\nproperties:\neASIdentifier:\ntype: string\neESAddress:\ntype: array\nitems:\ntype: string\neASRequirementsRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/Dn'\neASAddress:\ntype: array\nitems:\ntype: string\nrelocationTriggerInfo:\n$ref: '#/components/schemas/RelocationTriggerInfo'\nrelocationRejectByASP:\ntype: boolean\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/ManagedFunction-ncO'\nEASProfile-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\naCID:\ntype: string\neASProvider:\ntype: string\neASdescription:\ntype: string\neASSchedule:\n$ref: '#/components/schemas/Duration'\neASGeographicalServiceArea:\n$ref: '#/components/schemas/GeoLoc'\neASTopologicalServiceArea:\n$ref: '#/components/schemas/TopologicalServiceArea'\neASServicePermissionLevel:\n$ref: '#/components/schemas/EASServicePermission'\neASFeature:\n$ref: '#/components/schemas/EASFeature'\neASServiceContinuitySupport:\ntype: boolean\neASDNAI:\ntype: string\neASAvailabilityReportingPeriod:\ntype: integer\neASStatus:\n$ref: '#/components/schemas/EASStatus'\nEESFunction-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nattributes:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/ManagedFunction-Attr'\n- type: object\nproperties:\neESIdentifier:\ntype: string\neESServingLocation:\ntype: array\nitems:\n$ref: '#/components/schemas/ServingLocation'\neESAddress:\ntype: array\nitems:\ntype: string\nsoftwareImageInfo:\n$ref: '#/components/schemas/SoftwareImageInfo'\nserviceContinuitySupport:\ntype: boolean\neASFunctonRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DnList'\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/ManagedFunction-ncO'\n\nECSFunction-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nattributes:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/ManagedFunction-Attr'\n- type: object\nproperties:\neCSAddress:\ntype: string\nproviderIdentifier:\ntype: string\nedgeDataNetworkRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DnList'\neESFuncitonRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DnList'\nsoftwareImageInfo:\n$ref: '#/components/schemas/SoftwareImageInfo'\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/ManagedFunction-ncO'\n\nEASRequirements-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nrequiredEASservingLocation:\n$ref: '#/components/schemas/ServingLocation'\naffinityAntiAffinity:\n$ref: '#/components/schemas/AffinityAntiAffinity'\nserviceContinuity:\ntype: boolean\nvirtualResource:\n$ref: '#/components/schemas/VirtualResource'\nsoftwareImageInfo:\n$ref: '#/components/schemas/SoftwareImageInfo'\neASSchedule:\n$ref: '#/components/schemas/Duration'\neASFeature:\n$ref: '#/components/schemas/EASFeature'\nrelocationPolicy:\n$ref: '#/components/schemas/EASFeature'\nfederationID:\ntype: string\nreservationID:\ntype: string\n\nResourceReservationJob:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nreservationLocation:\n$ref: '#/components/schemas/ServingLocation'\nresourceReservationRequirement:\ntype: array\nitems:\n$ref: '#/components/schemas/ResourceReservationRequirement'\nrequestedReservationExpiration:\ntype: string\nresourceReservationStatus:\ntype: array\nitems:\n$ref: '#/components/schemas/ResourceReservationStatus'\nEdgeFederation-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nparticipatingOPiD:\ntype: string\noriginatingOPiD:\ntype: string\nOperatorEdgeFederation-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nfederationID:\ntype: string\nFederationExpiry:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DateTime'\noriginatedOPiD:\ntype: string\navaibleEDNList:\n$ref: '#/components/schemas/AvailableEDNList'\nacceptedEDN:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DnList'\nOperatorEdgeDataNetwork-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\navailableVirtualResource:\n$ref: '#/components/schemas/VirtualResource'\navailableEASResource:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DnList'\nedgeDataNetworkRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DnList'\n\n\n#-------- Definition of JSON arrays for name-contained IOCs ----------------------\n\nSubNetwork-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/SubNetwork-Single'\nEASFunction-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/EASFunction-Single'\nECSFunction-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/ECSFunction-Single'\nEESFunction-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/EESFunction-Single'\nEdgeDataNetwork-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/EdgeDataNetwork-Single'\nEASProfile-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/EASProfile-Single'\nEdgeFederation-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/EASProfile-Single'\nOperatorEdgeFederation-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/OperatorEdgeFederation-Single'\nOperatorEdgeDataNetwork-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/OperatorEdgeDataNetwork-Single'\n\n\n#--------------------------------- Definition ------------------------------------\n\nresources-edgeNrm:\noneOf:\n- $ref: '#/components/schemas/MnS'\n- $ref: '#/components/schemas/SubNetwork-Single'\n- $ref: '#/components/schemas/EASFunction-Single'\n- $ref: '#/components/schemas/ECSFunction-Single'\n- $ref: '#/components/schemas/EESFunction-Single'\n- $ref: '#/components/schemas/EdgeDataNetwork-Single'\n- $ref: '#/components/schemas/EASRequirements-Single'\n- $ref: '#/components/schemas/EASProfile-Single'\n- $ref: '#/components/schemas/EdgeFederation-Single'\n- $ref: '#/components/schemas/OperatorEdgeFederation-Single'\n- $ref: '#/components/schemas/OperatorEdgeDataNetwork-Single'\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "B.1\tGeneral",
+            "description": "An Availability Zone [14] is the lowest level of abstraction exposed to a developer who wants to deploy an application on the edge network. It is defined in terms of a geographical area. A Cloudlet [14] is a point of presence for the edge cloud. It is the point where edge applications are deployed. The ECSP do not expose physical location of the cloudlets to the application service providers. The application service provider is not allowed to request deployment of its application on a specific edge cloud. There can be multiple Cloudlet in an Availability Zone. The application service provider can query for the QoS (latency, jitter etc.) available in a particular Availability Zone. The OP requires application service provider to specify target Availability Zone, when requesting for an Application deployment. The virtual resources can be reserved in a particular Availability Zone on request from the application service provider.\nAs ASP queries the available Availability Zones. The ECSP respond with all the available zone and their characteristics including the QoS supported in each of them. The ASP choose one of the Availability Zone to deploy an application on. ASP request ECSP to deploy an application in the selected Availability Zone. ECSP deploy the given application as part of the AZ.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.2\tExample of Availability Zone implementation",
+            "description": "The following figure shows the relation between AZ and EDN.\nThe figure depicts an example of an Availability Zone (AZ) in a multi-AZ network, illustrating the distribution of data centers across different geographical locations. The AZs are interconnected through a network of high-speed fiber-optic cables, ensuring high-speed data transfer between the data centers. The figure also highlights the use of redundant paths to ensure data reliability and failover capabilities.\nFigure B.2-1 Example of Availability Zone\n\nThe Operator Platform (OP) is defined by GSMA OPG [2], it facilitates access to the Edge Cloud capability of an Operator or federation of operators and their partners.\nThe architecture scope under definition is shown below,\nThe figure depicts the various roles and interfaces of the Optical Network Radio (OP Roles) and Interfaces in a 5G network, illustrating the various network functions and their interconnections.\nFigure C-1: OP Roles and Interfaces Reference Architecture\nThe NBI is the interface between the application provider and the Capabilities Exposure Role in the Operator Platform, it allows an OP to advertise the above cloud capabilities that it can provide to application providers. In addition, the NBI allows an application provider to reserve a set of resources or request an Edge Cloud service with the resources and features that they require and for the OP to accept or reject the request.\nThe following table provides the mapping of concepts (not exhaustive) defined in TS 28.538[6] with the concepts defined in GSMA OPG [14].\nTable C-1: Mapping of concepts of TS 28.538 [6] with GSMA [14]\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table C-1: Mapping of concepts of TS 28.538 [6] with GSMA [14]",
+                    "table number": 50,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 51,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

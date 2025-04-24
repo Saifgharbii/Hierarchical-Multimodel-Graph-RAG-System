@@ -1,0 +1,484 @@
+{
+    "document_name": "29553-i30.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the stage 3 protocol and data model for the Npanf Service Based Interface. It provides stage 3 protocol definitions and message flows, and specifies the API for each service offered by the 5G PAnF.\nThe 5G System stage 2 architecture and procedures are specified in TS 23.501 [2] and TS 23.502 [3].\nThe Technical Realization of the Service Based Architecture and the Principles and Guidelines for Services Definition are specified in TS 29.500 [4] and TS 29.501 [5].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[3]\t3GPP TS 23.502: \"Procedures for the 5G System; Stage 2\".\n[4]\t3GPP TS 29.500: \"5G System; Technical Realization of Service Based Architecture; Stage 3\".\n[5]\t3GPP TS 29.501: \"5G System; Principles and Guidelines for Services Definition; Stage 3\".\n[6]\tOpenAPI: \"OpenAPI Specification Version 3.0.0\", .\n[7]\t3GPP TR 21.900: \"Technical Specification Group working methods\".\n[8]\t3GPP TS 33.501: \"Security architecture and procedures for 5G system\".\n[9]\tIETF RFC 6749: \"The OAuth 2.0 Authorization Framework\".\n[10]\t3GPP TS 29.510: \"5G System; Network Function Repository Services; Stage 3\".\n[11]\tIETF RFC 9113: \"HTTP/2\".\n[12]\tIETF RFC 8259: \"The JavaScript Object Notation (JSON) Data Interchange Format\".\n[13]\tIETF RFC 9457: \"Problem Details for HTTP APIs\".\n[14]\t3GPP TS 33.503: \"Security Aspects of Proximity based Services (ProSe) in the 5G System (5GS)\".\n[15]\t3GPP TS 29.571: \"5G System; Common Data Types for Service Based Interfaces; Stage 3\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nPAnF\tProse Anchor Function\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tOverview",
+            "description": "The Prose Anchor Function (PAnF) is the network entity in the 5G Core Network (5GC) supporting security procedure over Control Plane for the 5G ProSe UE-to-Network relay and 5G ProSe UE-to-UE Relay as specified in 3GPP TS 33.503 [14]. Within the 5GC, the PAnF offers services to the AUSF and SMF via the Npanf service based interface.\nFigure 4-1 provides the reference model (in service based interface representation and in reference point representation), with focus on the PAnF:\n\nFigure 4-1 presents a reference model for Power Amplifier Network (PAnF), illustrating the interconnection of power amplifiers (PAs) and their associated control and monitoring systems. The model showcases the arrangement of PAs in a linear fashion, with each PA connected to a control module and a monitoring system. The control modules are responsible for managing the power output of each PA, while the monitoring systems provide real-time feedback on the performance of the PAs. The figure emphasizes the importance of efficient power management and real-time monitoring in PAnF systems for enhancing overall system performance.\nFigure 4-1: Reference model – PAnF\nThe PAnF supports the following functionalities:\n-\tStorage and retrieval of ProSe context information of the 5G ProSe Remote UE and ProSe context information of the 5G ProSe End UE;\n-\tChecking whether the 5G ProSe Remote UE is authorized to use the UE-to-Network Relay service and whether the End UE is authorized to use the UE-to-UE Relay service.\n-\tResolving the ProSe Remote User ID to SUPI.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tServices offered by the 5G PAnF",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 5.1-1 shows the PAnF Services and PAnF Service Operations:\nTable 5.1-1: List of 5G PAnF Services\n\nTable 5.1-2 summarizes the corresponding APIs defined for this specification.\nTable 5.1-2: API Descriptions\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 5.1-1: List of 5G PAnF Services",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 5.1-2: API Descriptions",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tNpanf_ProseKey Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tService Description",
+                            "text_content": "The Npanf_ProseKey service enables an NF to request the PAnF to store the ProSe context information for a 5G ProSe Remote UE or to store the ProSe context information for a 5G ProSe End UE or to request CP-PRUK from the PAnF. The following are the key functionalities of this NF service.\n-\tStore the Prose context information;\n-\tRetrieve the Prose Key.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tService Operations",
+                            "text_content": "The service operations defined for the Npanf_ProseKey service are as follows:\n-\tRegister: It allows a consumer NF to store the Prose Context information;\n-\tRetrieve: It provides to the NF service consumer of the CP-PRUK matching input criteria.\nThe Register service operation is invoked by a NF Service Consumer to request the PAnF to store the ProSe context information for a 5G ProSe Remote UE or to store the ProSe context information for a 5G ProSe End UE.\nThe Register service operation is used during the following procedure:\n-\tPC5 security establishment for 5G ProSe UE-to-Network relay communication over Control Plane (see 3GPP TS 33.503 [14], clause 6.3.3.3.2)\nThe NF Service Consumer (i.e. AUSF) shall request the PAnF to store the ProSe context information for a 5G ProSe Remote UE or to store the ProSe context information for a 5G ProSe End UE as shown in Figure 5.2.2.2.1-1\nFigure 5.2.2.2.1-1 illustrates the process of registering prose keys in a telecommunication system. The figure depicts a flowchart with various steps, including key generation, registration, and validation. It emphasizes the importance of secure key management in maintaining data integrity and confidentiality. The flowchart shows how keys are exchanged between different entities, such as the key management entity (KME) and the user equipment (UE), highlighting the need for efficient and secure key distribution mechanisms.\nFigure 5.2.2.2.1-1: Prose Keys registration\n1.\tThe NF service consumer (e.g. AUSF) sends a POST request to the resource representing the Prose Context Info for a 5G ProSe Remote UE or the Prose Context Info for a 5G ProSe End UE.\n2a.\tOn success, the PAnF responds with \"204 No Content\".\n2b.\tIf the user does not exist, HTTP status code \"404 Not Found\" shall be returned including additional error information in the response body (in the \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the POST response body.\nFigure 5.2.2.3.1-1 shows a scenario where the NF service consumer (e.g. AUSF) sends a request to the PAnF to retrieve the CP-PRUK. The request contains the CP-PRUK ID and Relay Service Code.\nFigure 5.2.2.3.1-1 presents a complex network infrastructure, illustrating the retrieval of prose keys through various nodes and protocols. The figure showcases a hierarchical structure, starting from the user equipment (UE) and extending through the access and transport networks, culminating at the service provider network (SPN). The figure emphasizes the role of the home subscriber server (HSS) and the home location register (HLR) in managing user profiles and authentication. The use of IP Multimedia Subsystem (IMS) and Diameter protocol for signaling is evident, highlighting the shift towards an all-IP network. The figure also highlights the importance of security mechanisms, such as encryption and authentication, in maintaining data integrity and confidentiality.\nFigure 5.2.2.3.1-1: Prose Keys retrieval\n1.\tThe NF service consumer (e.g. AUSF) sends a POST request to the resource representing the Prose Key.\n2a.\tOn success, the PAnF responds with \"200 OK\" with the message body containing the ProseKeyResponse.\n2b.\tIf the user does not exist, or the ProSe Key does not exist in the in the PAnF, HTTP status code \"404 Not Found\" shall be returned and additional error information should be included in the response body (in the \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the POST response body.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tNpanf_ResolveRemoteUserId Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tService Description",
+                            "text_content": "This service enables an NF service consumer (i.e. SMF) to request the PAnF to resolve the Remote User ID. The following are the key functionalities of this NF service.\n-\tResolve the Remote User ID\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tService Operations",
+                            "text_content": "The ResolveRemoteUserId service operation is invoked by a NF Service Consumer, i.e. SMF, towards the PAnF to Resolve the Remote User ID.\nThe ResolveRemoteUserId service operation is used during the following procedure:\n-\tPC5 security establishment for 5G ProSe UE-to-Network relay communication over Control Plane (see 3GPP TS 33.503 [14], clause 6.3.3.3.2)\nThe NF Service Consumer (i.e. SMF) shall resolve the Remote User ID by invoking the \"get\" custom method on the resource URI of \"Resolve Remote User ID\" resource, see clause 6.y.3.2.4. See also Figure 5.3.2.2.1-1.\nFigure 5.3.2.2-1 illustrates the process of resolving a remote user ID in a network. The figure depicts the interaction between the client, the DNS server, and the authoritative DNS server. The client sends a query to the DNS server, which then forwards the request to the authoritative DNS server. The authoritative DNS server responds with the IP address of the remote user ID, which is then relayed back to the client. This process ensures that the client can establish a connection with the intended remote user ID, facilitating communication and data transfer.\nFigure 5.3.2.2-1: Resolve the Remote User ID\n1.\tThe NF service consumer sends a POST request to the resource representing the get custom operation. The request body shall contain the Remote User ID (CP-PRUK ID).\n2a.\tOn success, \"200 OK\" shall be returned. The response body shall contain the SUPI.\n2b.\tIf the user does not exist, HTTP status code \"404 Not Found\" shall be returned including additional error information in the response body (in the \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the POST response body.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tAPI Definitions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tNpanf_ProseKey Service API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tIntroduction",
+                            "text_content": "The Npanf_ProseKey service shall use the Npanf_ProseKey API.\nThe API URI of the Npanf_ProseKey API shall be:\n{apiRoot}/<apiName>/<apiVersion>\nThe request URIs used in HTTP requests from the NF service consumer towards the NF service producer shall have the Resource URI structure defined in clause 4.4.1 of 3GPP TS 29.501 [5], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [5].\n-\tThe <apiName> shall be \"npanf-prosekey\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 6.1.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tUsage of HTTP",
+                            "text_content": "HTTP/2, IETF RFC 9113 [11], shall be used as specified in clause 5 of 3GPP TS 29.500 [4].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [4].\nThe OpenAPI [6] specification of HTTP messages and content bodies for the Npanf_ProseKey API is contained in Annex A.\nSee clause 5.2.2 of 3GPP TS 29.500 [4] for the usage of HTTP standard headers.\nJSON, IETF RFC 8259 [12], shall be used as content type of the HTTP bodies specified in the present specification as specified in clause 5.4 of 3GPP TS 29.500 [4]. The use of the JSON format shall be signalled by the content type \"application/json\".\n\"Problem Details\" JSON object shall be used to indicate additional details of the error in a HTTP response body and shall be signalled by the content type \"application/problem+json\", as defined in IETF RFC 9457 [13].\nThe mandatory HTTP custom header fields specified in clause 5.2.3.2 of 3GPP TS 29.500 [4] shall be supported, and the optional HTTP custom header fields specified in clause 5.2.3.3 of 3GPP TS 29.500 [4] may be supported.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tResources",
+                            "text_content": "This clause describes the structure for the Resource URIs and the resources and methods used for the service.\nFigure 6.1.3.1-1 depicts the resource URIs structure for the Npanf_ProseKey API.\nFigure 6.1.3.1-1 illustrates the resource URI structure of the Npanf_ProseKey API, which is a crucial component for managing network resources in a cloud-based environment. The figure shows a hierarchical organization of URIs, starting from the root resource and extending to specific sub-resources. This structure enables efficient querying and manipulation of network resources through a well-defined API. The figure highlights the use of namespaces and resource identifiers to ensure proper resource management and avoid conflicts. Additionally, it emphasizes the use of standardized HTTP methods and formats for communication between the client and the server, ensuring interoperability and ease of integration with existing systems.\nFigure 6.1.3.1-1: Resource URI structure of the Npanf_ProseKey API\nTable 6.1.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 6.1.3.1-1: Resources and methods overview\n\nThis resource is used to represent Prose Keys Registration and Retrieval.\nResource URI: {apiRoot}/npanf-prosekey/<apiVersion>/prose-keys\nThis resource shall support the resource URI variables defined in table 6.1.3.2.2-1.\nTable 6.1.3.2.2-1: Resource URI variables for this resource\n\nNo HTTP method has been defined for the Prose Keys resource.\n6.1.3.2.4.1\tOverview\nTable 6.1.3.2.4.1-1: Custom operations\n\n6.1.3.2.4.2\tOperation: register\n6.1.3.2.4.2.1\tDescription\nThe registration custom operation is used by the NF service consumer (AUSF) to store the Prose context info. For details see 3GPP TS 33.503 [14].\n6.1.3.2.4.2.2\tOperation Definition\nThis operation shall support the request data structures specified in table 6.1.3.2.4.2.2-1 and the response data structure and response codes specified in table 6.1.3.2.4.2.2-2.\nTable 6.1.3.2.4.2.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 6.1.3.2.4.2.2-2: Data structures supported by the POST Response Body on this resource\n\n6.1.3.2.4.3\tOperation: retrieve\n6.1.3.2.4.3.1\tDescription\nThe retrieval custom operation is used by the NF service consumer (AUSF) to retrieve the Prose Key. For details see 3GPP TS 33.503 [14].\n6.1.3.2.4.3.2\tOperation Definition\nThis operation shall support the request data structures specified in table 6.1.3.2.4.3.2-1 and the response data structure and response codes specified in table 6.1.3.2.4.3.2-2.\nTable 6.1.3.2.4.3.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 6.1.3.2.4.3.2-2: Data structures supported by the POST Response Body on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.3.1-1: Resources and methods overview",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.2-1: Resource URI variables for this resource",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.4.1-1: Custom operations",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.4.2.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.4.2.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.4.3.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.4.3.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.4\tCustom Operations without associated resources",
+                            "text_content": "There is no custom operation without associated resources supported in Npanf_ProseKey Service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.5\tNotifications",
+                            "text_content": "There is no notification defined for Npanf_ProseKey service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.6\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API.\nTable 6.1.6.1-1 specifies the data types defined for the Npanf_ProseKey service based interface protocol.\nTable 6.1.6.1-1: Npanf_ProseKey specific Data Types\n\nTable 6.1.6.1-2 specifies data types re-used by the Npanf_ProseKey service based interface protocol from other specifications, including a reference to their respective specifications and when needed, a short description of their use within the Npanf_ProseKey service based interface.\nTable 6.1.6.1-2: Npanf_ProseKey re-used Data Types\n\nThis clause defines the structures to be used in resource representations.\nTable 6.1.6.2.2-1: Definition of type ProseContextInfo\n\nTable 6.1.6.2.3-1: Definition of type ProseKeyRequest\n\nTable 6.1.6.2.4-1: Definition of type ProseKeyResponse\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nThe simple data types defined in table 6.1.6.3.2-1 shall be supported.\nTable 6.1.6.3.2-1: Simple data types\n\nThere is no data type describing alternative data types or combinations of data types in Npanf_ProseKey Service.\nThere is no binary data type in Npanf_ProseKey Service.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.6.1-1: Npanf_ProseKey specific Data Types",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.1-2: Npanf_ProseKey re-used Data Types",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.2-1: Definition of type ProseContextInfo",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.3-1: Definition of type ProseKeyRequest",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.4-1: Definition of type ProseKeyResponse",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.3.2-1: Simple data types",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.7\tError Handling",
+                            "text_content": "For the Npanf_ProseKey API, HTTP error responses shall be supported as specified in clause 4.8 of 3GPP TS 29.501 [5]. Protocol errors and application errors specified in table 5.2.7.2-1 of 3GPP TS 29.500 [4] shall be supported for an HTTP method if the corresponding HTTP status codes are specified as mandatory for that HTTP method in table 5.2.7.1-1 of 3GPP TS 29.500 [4].\nIn addition, the requirements in the following clauses are applicable for the Npanf_ProseKey API.\nNo specific procedures for the Npanf_ProseKey service are specified.\nThe application errors defined for the Npanf_ProseKey service are listed in Table 6.1.7.3-1.\nTable 6.1.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.7.3-1: Application errors",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.8\tFeature negotiation",
+                            "text_content": "The optional features in table 6.1.8-1 are defined for the Npanf_ProseKey API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [4].\nTable 6.1.8-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.8-1: Supported Features",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.9\tSecurity",
+                            "text_content": "As indicated in 3GPP TS 33.501 [8] and 3GPP TS 29.500 [4], the access to the Npanf_ProseKey API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [9]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [10]) plays the role of the authorization server.\nIf OAuth2 is used, an NF Service Consumer, prior to consuming services offered by the Npanf_ProseKey API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [10], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF that the NF Service Consumer used for discovering the Npanf_ProseKey service.\nThe Npanf_ProseKey API defines the followingscopes for OAuth2 authorization as specified in 3GPP TS 33.501 [8]:\nTable 6.1.9-1: OAuth2 scopes defined in Npanf_ProseKey API\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.9-1: OAuth2 scopes defined in Npanf_ProseKey API",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tNpanf_ResolveRemoteUserId Service API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tIntroduction",
+                            "text_content": "The Npanf_ResolveRemoteUserId shall use the Npanf_ResolveRemoteUserId API.\nThe API URI of the Npanf_ResolveRemoteUserId API shall be:\n{apiRoot}/<apiName>/<apiVersion>\nThe request URIs used in HTTP requests from the NF service consumer towards the NF service producer shall have the Resource URI structure defined in clause 4.4.1 of 3GPP TS 29.501 [6], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [6].\n-\tThe <apiName> shall be \"npanf-userid\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 6.2.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tUsage of HTTP",
+                            "text_content": "HTTP/2, IETF RFC 9113 [8], shall be used as specified in clause 5 of 3GPP TS 29.500 [5].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [5].\nThe OpenAPI [7] specification of HTTP messages and content bodies for the Npanf_ResolveRemoteUserId API is contained in Annex A.\nSee clause 5.2.2 of 3GPP TS 29.500 [5] for the usage of HTTP standard headers.\nJSON, IETF RFC 8259 [9], shall be used as content type of the HTTP bodies specified in the present specification as specified in clause 5.4 of 3GPP TS 29.500 [5]. The use of the JSON format shall be signalled by the content type \"application/json\".\n\"Problem Details\" JSON object shall be used to indicate additional details of the error in a HTTP response body and shall be signalled by the content type \"application/problem+json\", as defined in IETF RFC 9457 [13].\nThe mandatory HTTP custom header fields specified in clause 5.2.3.2 of 3GPP TS 29.500 [4] shall be supported, and the optional HTTP custom header fields specified in clause 5.2.3.3 of 3GPP TS 29.500 [4] may be supported.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tResources",
+                            "text_content": "This clause describes the structure for the Resource URIs and the resources and methods used for the service.\nFigure 6.2.3.1-1 describes the resource URI structure of the Npanf_ResolveRemoteUserId API.\n\nFigure 6.2.3.1-1 illustrates the resource URI structure of the Npanf_ResolveRemoteUserId API, which is a crucial component in the communication process. The figure shows the hierarchical organization of the API, with various elements such as the base URI, the path, and the query parameters. This structure is essential for efficient communication between different components in a network, ensuring that requests are routed and processed correctly. The figure also highlights the use of URIs, which are unique identifiers for resources, enabling seamless communication and management of network resources.\nFigure 6.2.3.1-1: Resource URI structure of the Npanf_ResolveRemoteUserId API\nTable 6.2.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 6.2.3.1-1: Resources and methods overview\n\nThis resource represents resolving Remote User ID by the PAnF.\nResource URI: {apiRoot}/<apiName>/<apiVersion>/prose-resolution\nThis resource shall support the resource URI variables defined in table 6.2.3.2.2-1.\nTable 6.2.3.2.2-1: Resource URI variables for this resource\n\nThere is no standard method supported by the resource.\nTable 6.2.3.2.4.1-1: Custom operations\n\nThis custom operation requests to resolve the Remote User ID by the PAnF.\nThis operation shall support the request data structures specified in table 6.2.3.2.4.2.2-1 and the response data structure and response codes specified in table 6.2.3.2.4.2.2-2.\nTable 6.2.3.2.4.2.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 6.2.3.2.4.2.2-2: Data structures supported by the POST Response Body on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.3.1-1: Resources and methods overview",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.2-1: Resource URI variables for this resource",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.4.1-1: Custom operations",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.4.2.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.4.2.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.4\tCustom Operations without associated resources",
+                            "text_content": "There is no custom operation without associated resources supported in Npanf_ResolveRemoteUserId Service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.5\tNotifications",
+                            "text_content": "There is no notification defined for Npanf_ResolveRemoteUserId service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.6\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API.\nTable 6.2.6.1-1 specifies the data types defined for the Npanf_ResolveRemoteUserId service based interface protocol.\nTable 6.2.6.1-1: Npanf_ResolveRemoteUserId specific Data Types\n\nTable 6.2.6.1-2 specifies data types re-used by the Npanf_ResolveRemoteUserId service based interface protocol from other specifications, including a reference to their respective specifications and when needed, a short description of their use within the Npanf_ResolveRemoteUserId service based interface.\nTable 6.2.6.1-2: Npanf_ResolveRemoteUserId re-used Data Types\n\nThis clause defines the structures to be used in resource representations.\nTable 6.2.6.2.2-1: Definition of type ResolveReqData\n\nTable 6.2.6.2.3-1: Definition of type ResolveRspData\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nThe simple data types defined in table 6.2.6.3.2-1 shall be supported.\nTable 6.2.6.3.2-1: Simple data types\n\nThere is no data type describing alternative data types or combinations of data types in Npanf_ResolveRemoteUserId Service.\nThere is no binary data type in Npanf_ResolveRemoteUserId Service.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.6.1-1: Npanf_ResolveRemoteUserId specific Data Types",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.1-2: Npanf_ResolveRemoteUserId re-used Data Types",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.2-1: Definition of type ResolveReqData",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.3-1: Definition of type ResolveRspData",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.3.2-1: Simple data types",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.7\tError Handling",
+                            "text_content": "For the Npanf_ResolveRemoteUserId API, HTTP error responses shall be supported as specified in clause 4.8 of 3GPP TS 29.501 [6]. Protocol errors and application errors specified in table 5.2.7.2-1 of 3GPP TS 29.500 [5] shall be supported for an HTTP method if the corresponding HTTP status codes are specified as mandatory for that HTTP method in table 5.2.7.1-1 of 3GPP TS 29.500 [5].\nIn addition, the requirements in the following clauses are applicable for the Npanf_ResolveRemoteUserId API.\nProtocol errors handling shall be supported as specified in clause 5.2.7 of 3GPP TS 29.500 [5].\nThe application errors defined for the Npanf_ResolveRemoteUserId service are listed in Table 6.2.7.3-1.\nTable 6.2.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.7.3-1: Application errors",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.8\tFeature negotiation",
+                            "text_content": "The optional features in table 6.2.8-1 are defined for the Npanf_ResolveRemoteUserId API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [5].\nTable 6.2.8-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.8-1: Supported Features",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.9\tSecurity",
+                            "text_content": "As indicated in 3GPP TS 33.501 [11] and 3GPP TS 29.500 [5], the access to the Npanf_ResolveRemoteUserId API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [12]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [13]) plays the role of the authorization server.\nIf OAuth2 is used, an NF Service Consumer, prior to consuming services offered by the Npanf_ResolveRemoteUserId API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [13], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF that the NF Service Consumer used for discovering the Npanf_ResolveRemoteUserId service.\nThe Npanf_ResolveRemoteUserId API defines a single scope \"npanf-userid\" for OAuth2 authorization (as specified in 3GPP TS 33.501 [11]) for the entire service, and it does not define any additional scopes at resource or operation level.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "This Annex specifies the formal definition of the API(s) defined in the present specification. It consists of OpenAPI specifications in YAML format.\nThis Annex takes precedence when being discrepant to other parts of the specification with respect to the encoding of information elements and methods within the API(s).\nNOTE 1:\tThe semantics and procedures, as well as conditions, e.g. for the applicability and allowed combinations of attributes or values, not expressed in the OpenAPI definitions but defined in other parts of the specification also apply.\nInformative copies of the OpenAPI specification files contained in this 3GPP Technical Specification are available on a Git-based repository that uses the GitLab software version control system (see clause 5.3.1 of 3GPP TS 29.501 [5] and clause 5B of 3GPP TR 21.900 [7]).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tNpanf_ProseKey API",
+            "description": "openapi: 3.0.0\n\ninfo:\ntitle: Npanf_ProseKey\nversion: 1.1.0-alpha.2\ndescription: |\nPAnF ProseKey Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: 3GPP TS 29.553 V18.1.0; 5G System; 5G ProSe Anchor Services; Stage 3.\nurl: https://www.3gpp.org/ftp/Specs/archive/29_series/29.553/\n\nservers:\n- url: '{apiRoot}/npanf-prosekey/<apiVersion>'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- npanf-prosekey\n\npaths:\n/prose-keys/register:\npost:\nsummary: Register the Prose Key\noperationId: ProseKeyRegistration\ntags:\n- prosekey registration\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- npanf_prosekey\n- oAuth2ClientCredentials:\n- npanf_prosekey\n- npanf_prosekey:register:invoke\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/ProseContextInfo'\nrequired: true\nresponses:\n'204':\ndescription: Successful Response\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\n/prose-keys/retrieve:\npost:\nsummary: retrieve the prose key\noperationId: ProseKeyRetrieval\ntags:\n- Prose Key Retrieval\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- npanf_prosekey\n- oAuth2ClientCredentials:\n- npanf_prosekey\n- npanf_prosekey:retrieve:invoke\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/ProseKeyRequest'\nrequired: true\nresponses:\n'200':\ndescription: Expected response to a valid request\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/ProseKeyResponse'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{nrfApiRoot}/oauth2/token'\nscopes:\nnpanf-prosekey: Access to the Npanf_ProseKey API\nnpanf-prosekey:register:invoke: Access to invoke register Prose Context\nnpanf-prosekey:retrieve:invoke: Access to invoke retrieve CP-PRUK\n\nschemas:\n#\n#  Structured Data Types\n#\nProseContextInfo:\ndescription: Prose Context Info.\ntype: object\nproperties:\nsupi:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'\n5gPruk:\n$ref: '#/components/schemas/5GPruk'\n5gPrukId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/5GPrukId'\nrelayServiceCode:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/RelayServiceCode'\nrequired:\n- supi\n- 5gPruk\n- 5gPrukId\n- relayServiceCode\n\nProseKeyRequest:\ndescription: Prose Key Request.\ntype: object\nproperties:\n5gPrukId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/5GPrukId'\nrelayServiceCode:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/RelayServiceCode'\nrequired:\n- 5gPrukId\n- relayServiceCode\n\nProseKeyResponse:\ndescription: Prose Key Response.\ntype: object\nproperties:\n5gPruk:\n$ref: '#/components/schemas/5GPruk'\nrequired:\n- 5gPruk\n\n#\n#  Simple Data Types\n#\n5GPruk:\ndescription: ProSe Remote User Key over Control Plane\ntype: string\npattern: '^[A-Fa-f0-9]{64}$'\n\n#\n#  Enumeration Data Types\n#\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.3\tNpanf_ResolveRemoteUserId API",
+            "description": "openapi: 3.0.0\ninfo:\nversion: '1.1.0-alpha.1'\ntitle: 'Npanf_ResolveRemoteUserId'\ndescription: |\nPAnF Resolve Remote User Id Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: 3GPP TS 29.553 V18.3.0; 5G System; 5G ProSe Anchor Services; Stage 3.\nurl: https://www.3gpp.org/ftp/Specs/archive/29_series/29.553/\n\nservers:\n- url: '{apiRoot}/npanf-userid/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- npanf-userid\n\npaths:\n/prose-resolution/get:\npost:\nsummary: Request to resolve the Remote User ID\noperationId: ProseResolve\ntags:\n- Resolve Remote User ID\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/ResolveReqData'\nresponses:\n'200':\ndescription: Success\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/ResolveRspData'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{nrfApiRoot}/oauth2/token'\nscopes:\nnpanf-userid: Access to the Npanf_ResolveRemoteUserId API\n\nschemas:\n#\n#  Structured Data Types\n#\nResolveReqData:\ndescription: Representation of the Resolve Request Data.\ntype: object\nproperties:\ncpPrukId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/5GPrukId'\nrequired:\n- cpPrukId\n\nResolveRspData:\ndescription: Representation of the Resolve Response Data.\ntype: object\nproperties:\nsupi:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'\nrequired:\n- supi\n\n#\n#  Simple Data Types\n#\n\n\n#\n#  Enumeration Data Types\n#\n\n\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 33,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

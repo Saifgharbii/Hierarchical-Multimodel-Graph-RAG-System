@@ -1,0 +1,757 @@
+{
+    "document_name": "21900-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "In order to ensure correctness and consistency of the specifications (i.e., technical specifications and technical reports) under responsibility of the Technical Specification Groups (TSG) of the 3rd Generation Partnership Project (3GPP), clear, manageable and efficient mechanisms are necessary to handle version control, change control, document updating, distribution and management.\nAlso, the fact that the specifications are/will be implemented by industry almost in parallel with the writing of them requires strict and fast procedures for handling of changes to the specifications.\nIt is very important that the changes that are brought into the standard, from the past, at present and in the future, are well documented and controlled, so that technical consistency and backwards tracing are ensured.\nThe 3GPP TSGs, and their sub-groups together with the Support Team are responsible for the technical content and consistency of the specifications whilst the Support Team alone is responsible for the proper management of the entire documentation, including specifications, meeting documents, administrative information and information exchange with other bodies.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "This document outlines the working methods to be used by the 3GPP Technical Specification Groups and their Working Groups and their Sub-Groups, and by the 3GPP Support Team in relation to document management, i.e. handling of specifications, updating procedures, Change Request procedures, version control mechanisms, specifications status information etc. It complements the rules and procedures defined for 3GPP. This document does not stipulate the details of the internal working of the TSG Sub-Groups. From the Technical Specification Group point of view, a task and responsibility is given to a Working Group directly answering to the Technical Specification Group. In practice, the work/task may be carried out in a subgroup of that Working Group.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1A\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.801: \"Specification drafting rules\".\n[2]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[3]\t3GPP TS 21.101: \"Technical Specifications and Technical Reports for a UTRAN-based 3GPP system\".\n[4]\t3GPP TS 41.101: \"Technical Specifications and Technical Reports for a GERAN-based 3GPP system\".\n[5]\tITU-T Recommendation  I.130: \"Method for the characterization of telecommunication services supported by an ISDN and network capabilities of an ISDN\".\n[6]\t3GPP TS 29.501: \"5G System; Principles and Guidelines for Services Definition; Stage 3\".\n[7]\tIETF RFC 3629: \"UTF-8, a transformation format of ISO 10646\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tDefinitions and abbreviations",
+            "description": "For the purposes of the present document, the following terms and those in 3GPP TR 21.905 [2] apply.\nbuilding block: sub-division of a feature, representing a coherent set of technical functionality which would generally be expected to reside in a single system element.\nchange control: procedure whereby proposed modifications to a specification are presented for approval to the TSG as formal Change Requests.\nclosed: release status in which no changes of any kind to the specification are permitted.\nChange Request (CR): formal proposal presented on a standard form to modify a specification which is under change control.\ndraft: specification status prior to change control, in which changes may be made without formal Change Requests.\nearly implementation: implementation of a particular feature on a platform of a release earlier than the release that contains the feature.\nfeature: new or substantially enhanced functionality which represents added value to the existing system.\nfrozen: release status in which only essential corrections are permitted.\nfunctionality: normative text contained in one or more Technical Specifications, corresponding either to a feature or to some portion of a feature.\ngroup: TSG or TSG sub-group.\nmajor version: For version x.y.z of a specification, x is called the major version.\nExample:\tFor version 3.2.0 of a specification, the major version is 3.\nMobile Competence Centre (MCC): The permanent secretariat, or support team, of 3GPP.\npseudo Change Request (pCR): similar to a Change Request but has no CR number and is intended to propose new or revised text for inclusion in 3GPP TSs or TRs not yet under change control (i.e. still in the drafting phase). Known in some groups as \"text proposal\".\nspecification: generic term standing for Technical Specification and Technical Report.\nStudy Item (SI): type of Work Item which will conduct feasibility studies and will result in a Technical Report\nStudy Item description (SID): description of a Study Item in a standard Work Item Description sheet.\nTSG: Technical Specification Group.\nTSG change control: specification status in which the Technical Specification Group is responsible for approval of Change Requests.\nTSG sub-group: Working Group or subgroup of a Working Group or of a Sub-Group.\nWorking Group (WG): official subgroup of a TSG reporting to that TSG.\nWG Change Control: specification status in which the Working Group is responsible for agreeing Change Requests for submission to the TSG for approval.\nversion: unique identifier in the form x.y.z for a specification at a given point in time.\nExample:\tversion 3.12.3.\nwithdrawn: specification status in which the given version of the specification no longer belongs to the appropriate set of valid specifications.\nWork Item (WI): description of an enhancement to a technical area, which may be categorized as Study Item, Feature, Building Block or Work Task.\nWork Item description (WID): description of a Work Item in a standard Work Item Description sheet.\nwork task: sub-division of a building block, representing a self-contained, well-scoped and well-scheduled item of work.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tGeneral responsibilities of the Support Team",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tSpecifications, meetings and liaisons",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Support Team is responsible for the management of the work of the TSGs. This includes editorship and management of specifications once they have been put under TSG change control. It also includes preparation of and support for the meetings (including meeting reports) of the TSGs and their Working Groups, and subgroups in descending priority.\nIt furthermore includes liaison with other bodies and relevant groups and institutions.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tRegistration of code points",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "In the course of 3GPP's work, it will from time to time be necessary to register code points in protocols maintained by bodies other than 3GPP, for example, Multipurpose Internet Mail Extensions (MIME) types registered with the Internet Assigned Numbers Authority (IANA, http://www.iana.org/).\nWherever possible, registration of such code points shall be entrusted to the 3GPP Support Team rather than being performed by an individual delegate.  Since 3GPP is not a legally constituted entity, the Support Team shall register such code points in the name of one of the Organizational Partners on behalf of all the Organizational Partners of 3GPP.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tHandling of Specifications",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.0\tNumbering scheme",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The specifications shall be numbered according to the following scheme:\n3GPP TS aa.bbb\t(for Technical Specifications); or\n3GPP TR aa.bbb\t(for Technical Reports).\nThe fields aa and bbb shall be selected according to the nature of the specification as given in tables 1 and 2. The provisions of table 1 shall be strictly enforced, but those of table 2 should be used for guidance: it is acceptable to deviate from these provisions for backwards compatibility or other reasons.\nTable 1: Specification number ranges aa\n\nTable 2: Specification number ranges bbb\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 1: Specification number ranges aa",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 2: Specification number ranges bbb",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.0A\tVersion nomenclature",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Each specification is associated with a \"version number\" in the form x.y.z which uniquely identifies the document. The significance of the three fields is defined in table 3.\nTable 3: Version number fields\n\nTable 3 shows the estimated degree of stability to be used as a guideline for determining when to raise a specification to version 1.y.z and to 2.y.z. Such figures are obviously subjective, and the decision is ultimately at the discretion of the responsible Group.\nA TS or TR having reached at least 60% stability and presented to the TSG for the first time shall be presented with its major version number set to 1, i.e. as version 1.y.z..\n",
+                    "tables": [
+                        {
+                            "description": "Table 3: Version number fields",
+                            "table number": 5,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.0B\tReleases",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Specifications are grouped into \"Releases\". A mobile system can be constructed based on the set of all specifications which comprise a given Release. A Release differs from the previous Release by having added functionality introduced as a result of ongoing standardization work within the Groups.\nSpecifications pertaining to a given Release shall be distinguished by the first field of the version number (\"x\" in x.y.z) according to table 4. Table 4 also shows for comparison the equivalent significance of the GSM Releases.\nFor further details on Release control, see clause 4.10.\nTable 4: Version numbers vs. Releases\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4: Version numbers vs. Releases",
+                            "table number": 6,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.1\tOverview",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Where appropriate, the three-stage methodology defined in ITU-T Recommendation I.130 should be employed:\nStage 1 is an overall service description from the user's standpoint.\nStage 2 is an overall description of the organization of the network functions to map service requirements into network capabilities.\nStage 3 is the definition of switching and signalling capabilities needed to support services defined in stage 1.\nIn addition, it is often appropriate to perform a feasibility study prior to formal specification work. This is sometimes referred to as \"stage 0\".\nFurthermore, it will often be appropriate to follow stage 3 with the production of test specifications – a stage 4.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.1.1\tGeneral",
+                            "text_content": "A new specification shall be created in a Group. At creation, a rapporteur shall be appointed. The rapporteur shall produce an initial draft, version 0.0.0, and subsequent revised versions (version 0.1.0, possibly 0.1.1, 0.1.2 and so on, then version 0.2.0 etc.). Details of the role of the rapporteur are described in clause 4.1.2.\nThe rules for drafting specifications, and the software tools to be used are listed in 3GPP TR 21.801 [1].\nVersions 0.1.0, 0.2.0, 0.3.0 etc. should be presented to the responsible Group. Versions 0.i.1, 0.i.2 etc. may be internal to the drafting group.\nFurther drafts may be produced, with appropriate increments in the \"technical\" / \"editorial\" fields of the version number. Every new draft with an incremented \"technical\" version field shall be presented to the responsible Group. Although two or more Groups may have an interest in contributing to the development of a specification, ultimate responsibility vests in a single (responsible) Group. The responsible Group shall ensure that all other Groups which might have an interest are given the opportunity to participate in the drafting. The objectives intended to be provided or decided by a working group with secondary responsibility shall be made clear in a corresponding Work Item Description document, identifying additional rapporteurs from such secondary group(s) if necessary.\nThe Support Team is responsible for allocating specification numbers. As soon as title, scope and some other information on the specification is stable, the Support Team shall assign a specification number according to the provisions of clause 4.0 and shall enter the specification into the Status List of Specifications (see clause 7). The TSG Sub-Group responsible for the specification shall inform its parent TSG that such a new specification is under construction.\nWhen a specification is sufficiently stable (see table 3), it shall be converted to version 1.0.0 (with no technical changes with respect to the previous version 0.y.z) by the Support Team, and presented to the TSG for information. Further drafts bearing version numbers 1.y.z may be produced until the specification is sufficiently stable to be approved by the TSG. At this stage, and until formal approval by the TSG, the specification is, unless it belongs directly to a TSG, under the control of the responsible TSG Sub-Group. The modalities governing the introduction of changes shall be decided on a case by case basis by the WG concerned.\nOnce the responsible Group considers that the draft is sufficiently stable (see table 3) that it is desirable to place it under change control, the latest version 1.y.z shall be converted to version 2.0.0 (with no technical changes with respect to the previous version 1.y.z) by the Support Team and presented for approval at the TSG.\nIf the TSG does not approve the draft, further drafts version 2.y.z may be produced by the responsible Group.\nIf the TSG does approve the draft, the approved version (with no technical changes) shall be converted to version x.0.0 where \"x\" corresponds to the Release identity given in table 4.\nNOTE:\tIt is thus quite normal that a 3GPP specification approved for, say, Release 4, jumps directly from version 2.0.0 to version 4.0.0; there is no Release 1999 document, therefore no version 3.y.z.\nThe specification shall now be under TSG change control. Further changes shall be made by means of formal Change Requests, to be approved by the TSG. On approval of a CR, the middle number shall be incremented and the right-most number reset to 0 (e.g., from 7.2.1 to 7.3.0).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.2\tRole of the specification rapporteur",
+                            "text_content": "The role of the rapporteur is to:\n-\tServe as Editor (following the guidance of the WG) until the specification is placed under change control.\n-\tDeliver a clean specification to the MCC for editorial clean-up before submission for TSG approval to come under change control.\nand, in co-operation with MCC, to:\n-\tReview all CRs to the specification prior to agreement in the Working Group. This includes identifying and resolving clashes.\n-\tOversee the technical quality of the specification.\n-\tExplain the specification to any other group (WG, TSG, inside or outside 3GPP), where appropriate.\n-\tServe as focal point for technical questions.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.2\tCharacteristics of a specification",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "-\tThe specification has a prime responsible TSG.\n-\tThe specification may have a prime responsible TSG WG.\n-\tThe specification may have one or more secondary responsible TSGs and/or TSG WGs. WIDs will express the specific objectives justifying changes to the specification or any other action by any Group with secondary responsibility.\n-\tThe specification may have a prime responsible TSG Sub-Group below a Working Group as decided by the prime responsible TSG Working Group.\n-\tThe specification shall have a rapporteur: a delegate from a member company (or, in exceptional cases, a Support Team expert); the delegate should participate regularly in the prime responsible TSG WG (and further TSG SG if applicable).\n-\tThe specification is a Technical Report or a Technical Specification\n-\tA specification has versions which are identified by three numbers (see 4.0A).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tCharacteristics of a major version of a specification",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "A major version 0 or 1 or 2 of a specification has the following characteristics:\n-\tIt is either a draft or withdrawn.\n-\tIt is TSG internal.\nA major version w > 2 of a specification has the following characteristics:\n-\tIt is either under TSG WG Change Control or under TSG Change Control or closed or withdrawn.\n-\tIt is either authorized for publication or TSG internal.\nA major version of a specification under TSG WG Change Control is TSG internal.\nA major version under TSG WG Change Control or TSG Change Control is called major version under Change Control.\nA major version of a specification under TSG Change Control is\n-\teither not yet frozen or frozen.\nNOTE:\tIn the description above, attribute values are bold.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tCharacteristics of a version of a specification",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n\nNOTE:\tIn the table above, statements between square brackets are true but not relevant. The first two lines of each row are implied by clause 4.2.\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 7,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.5\t(void)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.6\tChange Request regime",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.6.1\tChange Requests",
+                            "text_content": "Once a specification has been approved by the TSG and version x.0.0 (where x >= 3, corresponding to the Release - see table 4) has been produced, it shall be considered to be under change control. Any technical change which may be identified for inclusion in the specification from this point on shall be accomplished by means of a Change Request (CR).\nA CR may be raised by any individual member and brought to the attention of the responsible Group.\nA Change Request shall relate to a specific version of a specification. A unique (for that specification) reference number shall be allocated to the CR by the 3GPP portal or the Support Team. CR details shall be entered into a CR database maintained by the Support Team and made available on the 3GPP file server. CR numbers shall not be re-used, even if a CR is ultimately rejected by the TSG (see note). A CR may undergo one or more revisions before a final decision is made on it. The database shall show all revisions of each CR.\nNOTE:\tThe CR status \"rejected\", and indeed this status for any other TDoc type has become unacceptable in some groups, and is replaced by \"not pursued\". Unless evident from the context, in the present document, any reference to the status \"rejected\" applies equally to status \"not pursued\".\nThe TSG WG Secretary shall collate all CRs agreed by the WG and shall send them to the parent TSG for approval. For specifications which are directly under the control of a TSG, the CR shall be brought directly to the attention of the TSG.\nFollowing approval at TSG level, the Support Team person responsible for the specification shall edit the original specification to incorporate the changes of all Change Requests approved by the TSG. The new version of the specification shall then be made available on the 3GPP file server.\nThe TSG should approve, reject or postpone a CR in its entirety (after revision, if necessary). That is, the modifications proposed by the CR should either be accepted without change, or unconditionally rejected. For ease of management, a single Change Request should therefore pertain to a single technical topic only. Each topic can thus be cleanly accepted or rejected by the TSG.\nWhere two or more CRs pertain to the same (version of a) specification, the responsible Group shall check for potential interaction amongst those CRs to ensure that, if all are approved by the TSG, each is implementable without contradicting any other.\nThe TSG Secretary shall record the TSG's decisions (see table 9.2-1) on each CR in the meeting report and those decisions shall be reflected in the CR database and on the 3GPP portal.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.2\tChange Request forms",
+                            "text_content": "To ensure an appropriate and consistent way of presenting and documenting Change Requests, there exist standardized front covers (forms) for CRs as well as rules on how to accurately identify the modified parts of the specification.\nThe purpose of the CR form itself is to provide the relevant management information of the proposed changes, e.g. such as:\n-\tTarget specification with its version number (i.e. the original version to which CR is drafted),\n-\tSource of the CR,\n-\tReason for the proposed change and consequences if not accepted,\n-\tCategory of proposed change (i.e. correction, Change Request corresponding to an earlier release Change Request, addition of feature, functional modification of feature, or editorial modification),\n-\tCross-phase compatibility aspects.\nA CR to a major version of a specification can fall into any of the categories quoted below.\nTable 4A: Categories of Change Requests\n\nNotwithstanding the provisions of table 4A, a TSG may approve a CR of category B or C to a frozen specification if it is the consensus of the meeting that such an exceptional action is justified; see clause 4.7.\nOn successful reservation of a Change Request TDoc, the 3GPP portal will push the completed CR cover page to the user. This cover page has all the relevant metadata already filled in, thus eliminating transcription errors on the part of the author. It is strongly recommended that the author make use of this facility rather than filling in a blank CR cover from the stock template. Tips on how to complete the remaining fields of the CR form can be found at .\nFor reference, the CR database is available from the 3GPP file server (). Alternatively, the CRs for a given specification or from a given meeting can be consulted on the 3GU portal ().\nWhen a CR is presented for approval, the classification into which it falls shall be identified. If this cannot be done then the CR shall be automatically rejected.\nThe CR form bears a field to indicate the Release number to which the CR pertains. This field shall show the Release of the intended resulting specification – that is, the Release of the specification after implementation of the CR. The Release shown on the CR form is not related to the Release of the feature to which the change relates, but to the Release of the specification being changed.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4A: Categories of Change Requests",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.6.3\tContents of Change Requests",
+                            "text_content": "Although the CR form shall indicate the details of change, each CR shall have attached the clauses of the specification that are affected by the CR, using the latest version of the major version. These clauses shall have the proposed modifications clearly marked, by means of the word processor's \"revision mode\".\nIn case there are more than one independent CR to the same part of the specification, neither of them should contain the proposed modifications from the other(s), however any potential interaction between the modifications should of course be resolved before presentation.\nIf the CR proposes changes to stage 3 specification files which are normatively documented in the 3GPP Forge repository according to clause 5C, then the proposed modifications shall be documented in the 3GPP Forge repository. In this case the cover page of the CR form shall contain a reference to a Forge Merge-Request clearly listing the proposed modifications in the \"Other comments:\" field, and excerpts of all affected stage 3 specification files clearly showing the proposed changes shall be appended to the cover page of the CR form.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.4\tHandling of the Change Requests",
+                            "text_content": "Entry to the TSG WG:\nA proposed CR should be brought to the relevant Group primarily responsible for the specification concerned and discussed there, before presentation to the TSG. Comments from secondarily responsible Groups (if any) shall have been sought and comments shall have been taken into account before presentation to the TSG for approval.\nTo ease the work of the Group and of the Support Team , a proposed CR should be presented in a form suitable for TSG WG agreement and TSG approval. If a CR is not immediately accepted the originator shall update the CR taking into account comments and other guidelines from the relevant groups, including change of reference version if needed, and to re-present it to the Group.\nAll CRs shall be presented in electronic form.\nCR identification:\nDuring the course of its development, a CR may be modified, and the CR's progress shall be indicated by allocation of a revision number: rev. 1, 2, and so on. A given revision of a CR is uniquely defined by\n-\tthe specification to which it belongs, and\n-\tthe CR number (an alphanumeric string) and\n-\tthe revision number (default, i.e. the value if no number is given, is '-', i.e. the original, unrevised, CR).\nA CR number shall be allocated by the 3GPP portal or the Support Team. For a given Specification, CR numbers shall be unique and shall never be reused (see clause 4.6.1). Numbers used for rejected CRs shall not be reused. If a CR is rejected, and the responsible Group considers it useful to bring a modification of the CR to a subsequent TSG for approval, the new CR shall be allocated a new CR number. That is, it shall not be presented as a revision of the same CR number previously rejected.\nImpact on other specifications:\nIf the content of the CR is such that, in isolation, it makes the whole set of approved Specifications inconsistent, corresponding CRs shall also be considered and produced. This should be carried out by the originators of the CR (and their colleagues in other Groups) in advance. The Support Team is co-responsible for identifying and communicating cross-TSG and cross-TSG-WG impacts.\nIf a CR (or set of CRs) causes an inconsistency with an existing/approved test or O&M specification, the corresponding CRs should be presented together with the core specification CR in the same TSG cycle. Otherwise they may follow in a later TSG cycle.\nHandling of the CR in the TSG:\nWhen the TSG WG has agreed to a CR and comments from secondarily responsible Groups (if any) have been taken into account, the Support Team shall ensure that it is correctly formatted and assembled, and shall submit the CR to the primarily responsible TSG for formal approval.\nThe Support Team shall collate agreed CRs in CR packs.\nThe Support Team shall make available to the TSG summary lists of all CRs presented for decision. This list shall be updated to show the decision reached for each and every CR.\nDecisions on CRs, and results:\nThe TSG shall consider and conclude on each CR independently; the verdict on each CR shall be one of the values listed in clause 9.2\nTable 5: (void)\n\nControl and notification of CR decisions:\nAt the end of each TSG meeting, the Support Team shall issue lists containing the detailed result of the CRs presented at the meeting, including information about the consequential new version numbers of the concerned specifications. These lists shall form an annex to the meeting report (and hence are part of a permanent document). These lists, being the evidence of which specifications have changed and how, are important management tools for both TSG delegates and the Support Team since it takes some time before the new versions of the specifications can be compiled and released.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.5\tUpdating and release of new versions of the specifications",
+                            "text_content": "If there is at least one Approved CR to a given specification, a new version number of the specification shall be allocated (see clause 4.2.3), and the Support Team shall produce and issue a new version of the specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.6\tOther changes to specifications",
+                            "text_content": "The Support Team may update a specification to correct purely editorial deficiencies brought to its attention. In this case, only the \"editorial\" field (third digit) of the version number shall be incremented. Such changes should be avoided if possible: normally, they should be held over for inclusion next time a technical change is made to the specification.\nAll such changes shall be clearly explained in the \"change history\" annex of the specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.7\t\"Freezing\" of specifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "A TSG may decide that a specification is sufficiently stable that it may be considered \"frozen\". That is, only CRs for essential corrections of errors shall be considered except as discussed below (see clause 4.6.2 and in particular the derogation statement below table 4A).\n(At the same time, a new major version may be developed for inclusion of new features).\nNormally, all specifications of a Release will be frozen when the TSGs decide that the functionality of the Release is stable – i.e that all new features to be included in the Release have been defined and that all new or modified functionality required to implement those features has been incorporated into the specifications. At this point, the Release as a whole shall be declared to be \"frozen\", and its constituent specifications shall likewise be \"frozen\".\nA CR of category B or C (and any associated category A mirrors) to a frozen version of a specification (in a given Release) shall only be an alignment of the specification with the agreed functionality of the Release as provided for in other specifications of that Release, or for internal consistency of an individual specification. Such a CR may add to, remove from, or modify the functionality of a frozen specification to ensure a consistent specification set across a particular Release.\nCorrection CRs (category F and any associated category A mirrors) to a frozen version of a specification (in a given Release) shall fit into one of the following classifications:\n-\tA CR to introduce an essential correction, i.e. where a frequently occurring case is not handled properly because there is some error or significant ambiguity in the specification.\nNOTE:\tThe above category are sometimes referred to as \"FASMO\" CRs: \"Frequent And Serious MisOperation\".\n-\tA CR to remedy the incorrect implementation of a previously approved CR (of any category).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.8\t\"Closing\" of specifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "A TSG may decide that a specification will no longer be maintained. That is, no further Change Requests should be considered. The specification remains available, but no further Change Requests should be produced, even corrective ones to align with the equivalent specification of a subsequent Release.\n(At the same time, higher major versions of the specification may be under development.)\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.9\t\"Withdrawing\" of specifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "A TSG may decide to withdraw a specification which is obsolete if its remaining available would confuse implementors (for example, if it contained provisions which were contradictory to provisions of other, later, specifications).\nBefore withdrawing a specification, the TSG shall ensure that no references are made to it from any other 3GPP specification (and raise appropriate Change Requests to eliminate any such references discovered).\nA TSG shall use the procedure in clause 4.9B to withdraw specifications and functionality.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.9A\t\"Withdrawing\" of functionality",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "A TSG may decide to withdraw functionality.\nBefore withdrawing functionality, the TSG shall:\n-\traise Change Requests to eliminate any references made to this functionality from any 3GPP specifications; and\n-\tmove text within specifications which were created for the functionality, that is applicable to other functionality as well, to other appropriate specifications.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.9B\tProcedure for withdrawing of specifications and functionality",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.9B.1\t(void)",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.9B.2\tDiligent assessment",
+                            "text_content": "The decision whether to withdraw (a) specification(s) or whether to remove functionality from within specifications shall only be taken once thorough consideration has been given to the implications and applicability of the action.\nThe withdrawing of a specification or functionality shall be explictly identified as one of the objectives of a work item.\nThe withdrawing of a specification or functionality may be documented in:\na)\ta work item that defines new functionality that will obsolete the specification or functionality; or\nb)\tdocumented in a work item that is solely for the purpose of withdrawing.\nTechnical Enhancements and Improvement (TEI) and other similar general purpose enhancement work items shall not be used for the withdrawing of a specification or functionality.\nThe assessment of whether to withdraw functionality may extend beyond 3GPP TSGs and their working groups. A notice shall be placed on the 3GPP site to solicit comments from other concerned parties and shall clearly indicate which specifications and functionality are considered for withdrawal, including which versions of the specification would be affected, the date at which a decision will be taken and the responsible TSG to which third parties may send related Liaison Statements or other correspondence.\nA study item may contain, as one of its objectives and/or its conclusions, consideration of whether existing functionality should be withdrawn and the identification of the impact of the withdrawing of functionality or specifications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.9B.3\tChanges to affected specifications",
+                            "text_content": "Removal of functionality shall be done using the normal change request procedure (see sub-clause 4.6).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.9B.4\tConsiderations for ongoing maintenance, enhancement and new Release versions of specifications",
+                            "text_content": "When a specific version or all versions in a specific Release of a specification, are withdrawn further versions of the specification in the same Release shall not be created and the specification shall not be promoted to a subsequent Release.\nEvolution of specifications and functionality in Releases unaffected by the withdrawal are allowed.\nA Category B or Category C CR that adds to or modifies a specification or functionality that has been withdrawn in a subsequent version shall clearly state on the CR cover sheet in the Summary of change that the subsequent version of the specification or functionality has been withdrawn.\nCategory A CRs for Releases in which the specification or functionality has been withdrawn shall not be produced.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.10\tRelease control",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.10.1\tCreation of a new Release version of a specification",
+                            "text_content": "The concept of Releases was introduced in clause 4.0B. A given specification may simultaneously exist in several versions, each corresponding to a different Release.\nIn principle, a Release of the specification can be identified as consisting of all those specifications with a \"major\" version field of a given value.\nA given Release consists of a set of specifications having a common \"major\" version field; therefore, for the set of specifications to be complete, a new specification needs to be produced even if its provisions are identical with those of the previous Release's version. The creation of such a specification shall be delayed until the latest possible moment - that is, until the TSG is on the point of declaring a given Release to be complete, having determined that no technical changes are needed in the specification compared with the previous Release.\nThe creation of the new version under these circumstances shall be via the responsible TSG's taking a decision to upgrade to the next Release of the specification.\nThis implies that all Groups need to conduct a rigorous review of all specifications for which they are responsible to determine which are to be propagated to the next Release and which are not.\nA new version of a specification, corresponding to a new Release, shall be prepared when a technical change needs to be introduced to satisfy a requirement of a feature of that new Release. This shall be accomplished by the raising of a Change Request (see clause 4.6) in the usual way, with the version number of the resulting specification indicating the new Release. The CR shall bear the identity of the new Release (rather than the starting point Release – see clause 4.6.2).\nSpecifications which are not propagated from Release N-1 to Release N in one of the above two methods shall be deemed not to form part of Release N. Under these circumstances, the responsible Group shall undertake a review of all other specifications of Release N to eliminate references to the specification concerned.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.10.2\tMirror Change Requests",
+                            "text_content": "When a Group produces a Change Request changing an early Release of a specification, it shall check whether the same change also needs to be made to later Releases of the specification. Changes which are corrective or clarifying in nature will generally be applicable to such other versions.\nWhere it is determined that several Releases are affected, an (independently numbered) Change Request shall be created for each such affected version of the specification. Such CRs are termed \"mirror Change Requests\". The principal CR and its related mirror CRs should be grouped together for the purpose of presentation to the TSG (unless some other grouping is more logical).\nThe TSG shall approve (or postpone or reject) a CR to a given Release together with the corresponding mirror CRs to later Releases. This will provide consistency between Releases.\nSee also subclause 4.6.2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.10.3\tRelease mechanisms",
+                            "text_content": "It is important that the 3GPP release structure provides a sound basis for implementations and equipment interoperation. Key principles important to ensure this are:\n-\tA Release shall consist of a well-defined, stable and internally consistent set of functions.\n-\tA Release shall be documented in a maintained, consistent stream of specifications.\n-\tEssential corrections to a stable or frozen release shall be included in the applicable Release.\n-\tNew or changed functionality shall be included in a new (rather than retrospectively in an old) Release.\nThese principles will ensure successful interoperability (roaming) amongst different instantiations of 3GPP systems.\nEach release should be consistent and implementable to ensure interworking. This implies that essential corrections become normative parts of the Release as soon as possible. If essential changes to \"old\" functionality are made to a new release, similar corresponding changes shall be made to correct the same error in the specifications pertaining to all previous, non-closed, Releases. This is illustrated in figure A.\nNew functionality shall be included in the latest, non-frozen, Release. New functionality shall not be included in previous, frozen, Releases. To do so would cause incompatibility amongst instantiations of those Releases. This is illustrated in figure A.\n\nFigure A: Introduction and development of new features to the latest Release; and corrections to multiple Releases (example)\nGSM phase 2+ specifications were grouped into annual Releases from 1996 to 1999. The first 3rd generation specifications were grouped into an initial Release 1999.\nSubsequent Releases are not necessarily annual, and shall be referred to as Release 4, Release 5, etc., according to the major field of the version number (see table 4 and clause 4.3).\nDevelopment of the 3GPP system specifications shall be controlled by means of a work plan covering the inclusion of new features (functionality). Target dates for completion of Work Items (see clause 6) shall be estimated by the responsible Groups. Milestones may be defined to monitor the progress of Work Items. Based on the estimated completion of the desired features, a target date for freezing of the specifications pertaining to the next Release can – and shall – be calculated. Feature development should be based around approximately annual Releases.\nThus the work plan shall indicate (a) the estimated freeze date of forthcoming Releases and (b) the functional content of each such Release. The work plan shall show all projected work, regardless of Release; this will ease long term planning and the packaging of features into Releases. Completed Work Items shall be removed from the plan once the Release of which they form a part has been frozen.\n3GPP technical coordination should set target dates for the freezing of each individual stage (cf. clause 4.1) on all currently worked-upon Releases (i.e. non-frozen).. On freezing stage 2 of Release x, TSGs should propose a target freeze date for stages 1, 2 and 3 of Release x+1. It is possible that features of exceptional complexity may span more than one Release (eg new core network architecture, new radio interface).\nThe freezing date for a particular stage of a Release should insofar as is possible be adhered to, even if, due to delays, it is not possible to include all the features originally intended. Features which cannot be completed in time should be held over to the next Release. It will normally be the case that test specifications and O&M specifications will not necessarily be completed until some time after the base specifications; this shall not impede the freezing of the Release as a whole. However, if it becomes evident that, due to delays in a number of important features, a new Release would contain little new functionality, it may be preferable to delay the freezing of the stage of a Release to allow more of the originally intended features to be included.\nThe project plan shall clearly show the progress of each Work Item. When all component Work Items of a feature have been completed, the TSG shall declare the feature to be frozen. The only further development permitted from that point onwards shall be:\n-\tthe essential correction of errors;\n-\tthe completion of the test and O&M specifications; and\n-\tunavoidable adjustments required to cater for interworking with other features in the same Release.\nSee clause 6 for further information on Work Items.\n3GPP may identify certain features as being suitable for \"early implementation\". The selection of \"early implementation\" features shall be performed at the TSG level.\nAdditional documentation is provided for early implementation features (see clause 6.4.4).\nAll documentation for early implementation features is contained in the Release where the feature is introduced. The status or specification of older Releases shall not be changed by the introduction of early implementation features.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "New functionality shall be included in the latest, non-frozen, Release. New functionality shall not be included in previous, frozen, Releases. To do so would cause incompatibility amongst instantiations of those Releases. This is illustrated in figure A.",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tAvailability and distribution of specifications",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Support Team shall make all approved versions of all specifications available as soon as possible after their approval (or after approval of CRs thereto) on a file server. The server shall allow anonymous access by any interested party.\nThe Support Team should also endeavour to make earlier drafts available on the server, even prior to approval, i.e. versions 0.y.z, 1.y.z and 2.y.z.\nSuch \"availability\" does not constitute formal \"publication\". Under the terms of the 3GPP partnership agreement, the Organizational Partners which are Standards Development Organizations will publish TSG-approved specifications in the form of their own standards. The modalities of such publication processes are specific to those individual Organizations and are beyond the scope of the present document.\nThe directory structure shall differentiate amongst approved and draft specifications, amongst versions of specifications approved at specific TSG meetings, amongst versions of specifications pertaining to different Releases, and between specifications relating to 2nd generation (GSM) only and 3rd generation (UMTS) systems.\nA clear and unambiguous directory structure shall be adopted, and a guide to that structure provided on the server. A \"status list\" shall also be provided, showing the latest version of each Release of each specification.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tChoice of availability and distribution of stage 3 specification files",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the availability and distribution of stage 3 specification files (e.g. OpenAPI specification, YANG, ASN.1, XSD, etc.) there are two optional alternatives, described in clauses 5B and 5C, and the principle of how the two alternatives are chosen is decided by the responsible Working Group. Clause 5C applies only for the choice when normative code parts of the stage 3 specification are normatively stored in the 3GPP Forge repository.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5A\tFile naming conventions",
+            "description": "Specifications shall be maintained in the form of computer-based files. The file name shall be of the form\naabbb-xyz.eee\nwhere:\naa and bbb have the same significance as in the specification number (see tables 1 and 2);\nx, y and z have the same significance as in the version number (see table 6);\neee is the de facto standard filename extension corresponding to the software tool used to create the file (normally \"doc\" for Microsoft Word ®).\nFor multi-part specifications, the filename shall be extended to\naabbb-n-xyz.eee\nWhere:\nn is the part number (see tables 6 and 6A).\nTo save storage space and to speed up uploading and downloading, source files shall be saved compressed in industry standard \"Zip\" ® format. The filename of the zipped file shall be the same as that of the contained source file, and it shall bear the file extension \".zip\".\nIf a specification consists of multiple source files - for example, when a very long document is divided into several smaller files for ease of editing and manipulation - , each file should be named with the above convention, but appending a file identifier in the form:\naabbb-xyz(m).eee\nwhere:\nm is the file number using characters from table 6 or 6A.\nWhere a specification has accompanying files - e.g. ASN.1 coding, C programming language code, TTCN test sequences, etc. - it may not be convenient or possible to abide by the last-mentioned rule. Under these circumstances, the associated files shall be contained in a separate zip file, which shall itself abide by the multiple-source-file rule. A \"readme\" text file should be included in that zip file to explain the nature of each other file.\nEXAMPLE 1:\t29341-420.zip is the compressed file of specification 29.341 version 4.2.0.\nEXAMPLE 2:\t31811-m-6g2.doc is the source file of specification 31.811 part 22 version 6.16.2.\nEXAMPLE 3:\t22354-480(1).doc and 22354-480(2).doc are the two files which make up specification 22.354 version 4.8.0 (and which will both be compressed into file 22354-480.zip).\nEXAMPLE 4:\t34101-300(1).doc and 34101-300(2).zip are the source text file and the compressed set of TTCN files respectively which together comprise 34.101 version 3.0.0.\nDraft versions of specifications may be made available in the responsible Groups' directories. Such versions shall be clearly distinguishable from \"official\" versions by substituting \"d\" for the hyphen before the version code. Thus:\naabbbdxyz.eee\n(for example, 28033d410.zip). Such files shall never appear in the official specification directories.\nThe foregoing file format using three characters for the version number is valid as long as none of the three version elements (major, technical, editorial) exceeds the value 35, since the characters 0..9, a..z represent a base-36 value. If any one or more of the three version elements exceeds 35 then the file format shall be modified to use two decimal characters in the range 00 to 99 for each element, i.e. six characters in all.\nEXAMPLE 5:\tVersion 15.35.0 of TS 29.341 would have the file name 29341-fz0.\nVersion 15.36.0 of TS 29.341 would have the file name 29341-153600.\n(The file extension is omitted for clarity.)\nFor specification part and sub-part numbers, one or two characters may be used, 0..9 or 00..99. Ideally the intended number of parts and sub-parts should be known when the first specification numbers are allocated so that the correct number of digits can be used from the outset, ensuring that filenames are correctly sorted when listed.\nEXAMPLE 6:\tPermissible filenames for multi-part specifications (file extensions omitted for clarity):\n29341-1-5\n29342-2-15\n29343-13-21\n29344-08-55\n29345-19-6\nPart and sub-part numbers shall not use characters a..z, but shall always be one- or two-digit decimal values.\nTable 6: Characters used in filenames to represent numeric values – single character\n\nTable 6A: Characters used in filenames to represent numeric values – two character\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table 6: Characters used in filenames to represent numeric values – single character",
+                    "table number": 10,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table 6A: Characters used in filenames to represent numeric values – two character",
+                    "table number": 11,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5B\tAvailability and distribution of OpenAPI specification files",
+            "description": "As described in the clause 5.3.1 of 3GPP TS 29.501 [6], 3GPP Technical Specifications describing an API or common data types shall include an annex documenting the corresponding OpenAPI specification file.\nFor a TS agreed by the WG to be sent to TSG for approval to come under change control, the responsible MCC officer, in preparing that version (normally v2.0.0) shall, in conjunction with its rapporteur, check that the OpenAPI specification file(s) is(are) syntactically correct. This exercise should be accomplished in time to meet the deadline for submission of TDocs to the TSG plenary meeting. If errors are detected at this stage, the rapporteur should ask delegates to raise corrective pCR(s) to be sent directly to the TSG to correct the draft TS. The TSG shall be requested to approve both the draft TS and any such pCRs as a package, and if the package is approved, MCC shall incorporate those pCRs into the TS when preparing the first under-change-control version.\nPrior to a TSG plenary meeting, the responsible MCC officer shall prepare CR Packs for all WG-agreed CRs in the usual manner. For those CRs which change the OpenAPI specification file(s) of the TS, the MCC officer and/or the rapporteur shall perform a trial implementation of those CRs which affect the OpenAPI specification file(s), and again check that the resulting specification file(s) is(are) syntactically correct. If errors are detected at this stage, the rapporteur should request authors of problematic CRs to provide corrective revisions of those CRs to be sent directly to the TSG as company contributions. The TSG shall be asked to approve all WG-agreed CRs for which no problems were detected plus the company revision CRs addressing the problematic ones. Ideally, not only the CR Packs containing the original WG-agreed CRs but also the revised, company-provided, CRs should be provided in time to meet the deadline for submission of TDocs to the TSG plenary meeting.\nBefore making available any new version of a TS containing an OpenAPI specification file, the responsible MCC officer shall extract the (syntax checked and verified) OpenAPI specification file from the annex of the TS and make it available as a stand-alone file in UTF-8 format as specified in IETF RFC 3629 [7]. The file name shall follow the conventions defined in 3GPP TS 29.501 [6] clause 5.3.6 unless the TS containing an OpenAPI specification file indicates a different file name.\nIf a new version of a TS containing an OpenAPI specification file is approved without any change to the contained OpenAPI specification file(s), the responsible MCC officer shall not modify the existing UTF-8 formatted OpenAPI specification file.\nAll the UTF-8 formatted OpenAPI specification files documented by TS shall be stored by the MCC officer in the following locations:\n-\t, and\n-\tin the zip file containing the Word file of the new version of the TS (which is itself stored in the usual places).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5C\tNormative availability and distribution of stage 3 specification files",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "In this option, the normative code parts of the stage 3 specification shall be normatively stored in the 3GPP Forge repository.\nThe TS document specifying the stage 3 definition shall indicate that the 3GPP Forge repository is normative for the corresponding stage 3 specification files and:\n-\tThe TS document shall contain a link to a 3GPP Forge repository tag that implicitly includes the versioning information about the TS, e.g. ;\n-\tThe TS document shall contain the directory path where the files are stored, e.g. \"yang-models\";\n-\tThe TS document shall contain the name of the files specified by this TS;\n-\tThe TS document shall not contain a copy of the stage 3 specification files.\nBefore making available any new version of a TS specifying stage 3 files, the responsible MCC officer shall download the specification files from 3GPP Forge and store them in the zip file containing the new version of the TS document. This zip file shall be published in the usual places.\nAll OpenAPI stage 3 specification files referenced by the TS document shall also be stored by the MCC officer in the following location:\n-\thttps://forge.3gpp.org/rep/all/5G_APIs.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tWork Items",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.0\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.0.1\tIntroduction: why manage a project?",
+                            "text_content": "In any complex engineering venture, it is necessary to plan the project, to monitor its progress, and to be able to determine whether it is being completed on schedule and within budget. In many ways, the concepts and constraints which apply to an engineering project can also be applied to system standardization activity.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.0.2\tHow to manage a project?",
+                            "text_content": "Any project needs to have its goals defined. It is then possible to analyse the steps needed to achieve each goal, starting from the status quo.\nIt will often be desirable to first produce a feasibility report, which is to be undertaken in the context of a Study Item.\nStudy Item:\t\nAn initial study, resulting in a Technical Report, which typically performs a feasibility study for additional functionality.  If the results of the study are positive, one or more subsequent Feature-type Work Items may follow.\nA feasibility study may include commercial as well as technical considerations.  This analysis will naturally lead to defining the new features which it is wished to add to the existing system.\nFeature:\t\nNew, or substantially enhanced functionality which represents added value to the existing system.\nA feature should be more or less self-contained - that is, each feature can be viewed as an optional extra, which can be added or not as a function of market demand. Network operators and equipment manufacturers can decide using commercial considerations whether or not to implement a feature. The description of a feature need not be technically precise, but should represent a concept which can be understood at a service level. It should answer the question: what do I get for my money? A feature should normally embody an improved service to the customer and / or increased revenue generation potential to the supplier.\nThis being the case, most features would be the responsibility of TSG-SA WG1. The ensemble of the features of a particular release of the system represents the difference between that release and the previous release.\nA feature can be considered as a high-level goal for project management purposes. But most features will be quite complex, and will need to be broken down into simpler elements or building blocks for the purpose of specifying precise functionality.\nWork on a study item or feature may be carried out by multiple working groups spanning one or more TSGs. In the case of multi-TSG study items and features, all such TSGs should be shown in the work plan as being responsible for the study item or feature; this should be refined as soon as possible into an identification of the individual working groups responsible.  To allow work to progress, the Work Item Descriptions (see clause 6.1) may be approved by one TSG before formal contribution has been received by other involved TSGs and WGs, which should review the Work Item Description in a timely manner, and provide their own input as soon as possible.\nBuilding block:\nA sub-division of a feature, representing a coherent set of technical functionality which would generally be expected to reside in a single system element.\nA building block shall be defined in technical terms, and its description will require an understanding of the architecture of the overall system. A building block should generally be restricted to a single physical or logical entity or a single protocol such as \"terminal\" or \"call control\". This implies a generic or object-oriented approach. A building block should normally be the responsibility of a single TSG.\nIn the case of very simple features, a single building block may suffice, in which case the feature and its building block are synonymous.\nTo implement a building block it will generally be necessary further to subdivide the functionality into smaller tasks, each representing a closely specified and easily comprehended activity. Such work tasks may not only be divided by technical content, but potentially by phase. So, for example, it is necessary to define service aspects fully (one or more work tasks) before considering functional information flows (one or more work tasks) which in turn will be followed by detailed protocol specification (one or more work tasks).\nWork task:\nA sub-division of a building block, representing a self-contained, well-scoped and well-scheduled item of work.\nIt is at this lowest hierarchical level of breakdown that estimations of work content and thus time scales can be calculated. From the estimated schedules of all work tasks which comprise a building block, and from their inter-dependences, can be derived the overall schedule for the \"parent\" building block. From the schedules of all component building blocks, the time-to-completion of the parent feature can be estimated. A work task will almost certainly be the responsibility of a single Working Group.\nThe output of a work task shall be:\n-\tOne or more new Technical Specifications (or Reports); and / or\n-\tChange Requests to existing TSs / TRs.\nFeatures, building blocks and work tasks are the three specific types of \"Work Item\".\nIn the case of very simple building blocks, a single work task may suffice, in which case the building block and its work task are synonymous.\nWork Item:\nA generic term used to encompass study item, feature, building block and work task.\nAll Work Items, whatever their class (feature, building block or work task) require:\n-\tA precise definition of content (\"scope\");\n-\tAn estimated schedule, with milestones to track progress if possible; (in the case of building blocks and features, the schedule can be derived from those of the component work tasks);\n-\tA named person to act as rapporteur (in effect, the manager of the Work Item);\n-\tAt least four Member Organizations supporting the Work Item and willing to offer active participation in its realization.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.0.3\tTypes of modification to specifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The possible modifications of the specifications are basically of different natures:\n-\tError corrections: modifications which correct overlooked errors or inconsistencies in the specifications.\n-\tEnhancements: modifications that enhance the system, e.g. by new services or features, or by improving performance or decreasing costs.\nModifications of the correction category (i.e. Category F) are ongoing maintenance tasks and are handled with CRs bearing the code of the Work Item that was used to introduce the affected feature, for the original Release in which it was introduced. Corresponding mirror CRs (i.e. Category A) may be produced for subsequent releases as applicable, using the same Work Item code. See also clause 6.2 covering the case where such a CR is not introduced into the TS or TR at the Release with which that Work Item is associated.\nModifications of the enhancement category (i.e. Category B or C) are handled within the concept of Work Items or as \"technical enhancements\". (See clause 6.2.) Note that prior approval of the WID by the TSG is needed before any substantial work is launched. If that work can be completed within one TSG cycle, the new WID may be approved at the same TSG meeting at which the enhancement CRs are presented. See clause 6.1 for the creation of Work Items.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.1\tCreation of a Work Item",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "When new or enhanced functionality of the 3GPP system is considered desirable an Individual Member of 3GPP (or group thereof) may make a proposal by submitting a Work Item Description (WID) sheet to the relevant TSG or TSG WG:\n-\tFor new services, features or functions, the TSG responsible for Services and System Aspects is the relevant TSG. This TSG shall assign prime and, if necessary, secondary responsible TSGs for the corresponding Work Items.\n-\tFor pure performance enhancements, other TSG WGs may be responsible.\nThe relevant TSG WG should study and refine the WID before passing it on to the TSG for adoption.\nNo substantial work shall commence in a TSG WG prior to a decision of the responsible TSG.\nThe actual WIDs to be used and guidance on how to apply them shall be distributed by the Support Team.\nThe TSG shall not approve a Work Item unless the WID has been properly filled in to the extent possible.\nThe Support Team shall maintain a database of Work Items, and make it available on the 3GPP file server and portal.\nA Work Item normally implies the creation of new specification and Change Requests to existing specifications.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tTypes of Work Item",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Modifications of the standard could in principle be of two different types:\n-\tNew services/features/functions that in general affect several specifications and involve several TSGs / WGs;\n-\tTechnical enhancements or improvements that affect one or a small number of specifications and involve a single or a few Groups only.\nModifications of the latter type may be submitted to the Working Group(s) and then to the TSG directly as a Change Request without prior presentation/agreement of a WI Description sheet. Such CRs shall instead refer to the pseudo Work Item 'Technical Enhancements and Improvements'. The CRs relating to this type of modification shall be tagged with the work item code TEI<x> where <x> represents the Release number: e.g. for Release 16, the code would be \"TEI16\".\nTEI Work Item codes shall not be used where an appropriate Work Item code exists.\nTEI Work Item codes should not be used for the definition of new services/features/functions (i.e. Category B CRs).\nTEI Work Item codes should not be used alone for functional modification of existing services/features/functions (i.e. Category C CRs).\nNevertheless, if a feature is functionally modified by a Category C CR using a TEI<x> Work Item code, the code(s) for the Work Item(s) which introduced that feature shall be used, plus the appropriate TEI<x> code for the first Release in which the CR is introduced.\nIf\n-\tit is clear that the modification(s) can be completed within one TSG cycle, and\n-\tthe normal stage 1, 2, 3 sequence of CRs does not require one additional meeting cycle in each affected TSG,\nthen a TEI code may be used. TEI codes shall not be used where the development of modification(s) and interactions with other WGs are likely to prolong the outcome for a period of time greater than this; in such cases, a new specific Work Item shall be created instead.\nFor smaller features that are handled with Category B and/or Category C CRs within one TSG cycle, a provisional Work Item code shall be used before the CR(s) and the companion WID are submitted for approval to the TSG.\nNotwithstanding the provisions of clause 4.10.2, TEI<x> is also to be used in a Category F and any related Category A CR(s) which add to or modify TR/TS content introduced in a Release prior to <x> and where no appropriate Release <x> Work Item exists. In this case the code(s) for the Work Item(s) which introduced the relevant TR/TS content shall be used, plus the appropriate TEI<x> code for the first Release in which the CR is introduced. The same TEI<x> shall be used in all mirror (i.e. Category A) CRs.\nExample:\tTR/TS content is introduced into TS 23.456 under the Release 13 Work Item ABCD by means of a Rel-13 CR. Much later, an error is identified in the TR/TS content introduced by that Rel-13 CR which of course appears in the current Release 13 version of 23.456.\nAccording to the provisions of clause 4.10.0, a category F CR would be introduced into the current Release 13 version tagged with Work Item ABCD, together with category A (mirror) CRs to the Release 14, 15, etc versions of 23.456, each also tagged with code ABCD.\nHowever, it is felt that the seriousness of the error does not warrant taking the correction all the way back to Release 13, and so the category F CR is instead written to the current Release 15 version of 23.456. This is tagged with the Work Item codes ABCD and TEI15. Category A CRs are written to the Release 16, etc versions of 23.456, and these are also tagged with Work Item codes ABCD and TEI15.\nNOTE :\tThe order in which multiple Work Item codes appear on a CR cover sheet is not significant. (Thus in the foregoing example, the CRs could equally well show \"ABCD, TEI15\" or \"TEI15, ABCD\".)\nThe use of a TEI Work Item code alone should be avoided whenever possible, and any use of a TEI Work Item code should be considered very carefully.\nFor the other types of modification, the provisions of clause 6.3 apply.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.3\tStart and continuation of the work and responsibilities",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tGeneral",
+                            "text_content": "An early task when elaborating a Work Item is to identify the tasks related to the WI and to allocate them to the TSGs and TSG Sub-Groups.\nIn most cases the tasks from a WI can be split immediately into the following areas:\n-\tService requirements\n-\tSystem/Architectural requirements and implications\n-\tProtocol specifications\nService requirements:\nThe responsibility of the service requirements can usually be allocated immediately at the creation/adoption of the WI. Occasionally another Group may be given responsibility for the service requirements. In any case, however, it should be a single group and one that reports directly to the TSG.\nSystem/Architectural requirements and implications:\nIn addition, the responsibility for system/architectural requirements should be allocated immediately, even though the implications and requirements normally will be seen only after the study on service/system requirements have been initiated. The responsibility for the system/architectural requirements shall be given to a single body to guarantee the consistency of the adopted solution.\nThe choice of group should not pre-determine the technical choices and in many cases, the responsibility for system and architectural requirement study needs a widening of the competency and a readiness to look at a variety of technical aspects. This can be obtained either by drawing the attraction of the suitable experts (e.g., by setting special meetings or clear meeting dates) or by the organization of joint meetings.\nTSG SA shall maintain the overall consistency of the system architecture despite the numerous modifications due to various Work Items. TSG SA, shall ensure the co-ordination of the development of general architecture concepts and their applications to individual Work Items, and should thus also draw attention and expertise from other Groups.\nProtocol specifications:\nThe responsibility for the elaboration of the protocol specifications cannot, in most cases, be allocated at the early stages since it depends on the technical implementation choices and hence on the results of the study of the service/system requirements as well as on the architectural conclusions.\nThe identification of new protocols to be specified and/or existing protocols to be enhanced shall be derived from the system/architectural requirements. In general, modifications of existing protocols shall be done by the TSG WG in charge of the protocol in question, whilst the responsibility for development of new protocols shall be allocated by the TSG based on proposals from the TSG WG on system/architecture. Then, whether the actual work is done in the TSG WG itself or in an ad hoc subgroup thereof is at the discretion of that TSG WG.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tRole of the work item rapporteur",
+                            "text_content": "Every Work Item shall have a rapporteur. The rapporteur should be selected from regular attendees of the primary responsible Group and shall be selected from supporting companies. The role of the rapporteur is to:\n-\tMonitor the progress of the work in all WGs for the WI.\n-\tReport to the responsible WG and produce a report to the WG plenary on progress.\n-\tProvide feedback to allow the work plan to be updated.\n-\tKeep the WI sheet up-to-date.\n-\tIdentify the completion of the WI.\nNOTE:\tUpdates of WI sheets require approval by the responsible WG/TSG.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tRealization of Work Items",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tPlanning and categorization of the deliverables (and control thereof)",
+                            "text_content": "Planning:\nAn initial time plan should be set up at an early point. As a basis, the time plan should include at least the following points:\n1.\tPresentation for principle agreement of the service requirements;\n2.\tPresentation for principle agreement of the architectural/system implications and requirements;\n3.\tPresentation for information of the drafts of all needed deliverables,\n4.\tPresentation for approval of all needed deliverables.\nThe time plan shall include realistically achievable dates for each step.\nThe WI Status List shall also contain information about existing and planned permanent and semi-permanent documents related to the WI, e.g. future specifications as well as interim/temporary requirements \"specifications\", including the responsible Group, the rapporteur, the state of the documents, expected completion dates, etc.\nCategorization:\nBefore the substantial work on a Work Item starts, the WI shall be examined in the light of its technical and commercial dependency with respect to the existing specifications as well as with respect to other Work Items. Aspects that shall be considered and settled at an early stage are:\n-\tRequired versus acceptable time scales;\n-\tWhether the WI has an impact on User Equipment or not;\n-\tWhether the WI has an architectural impact or not;\n-\tTo which degree the WI needs to specify (and hence how much can be left \"open\", to speed up the work);\n-\tWhether the WI can be technically and/or commercially combined/grouped with other ;\nUnless the above aspects are sorted out at the beginning of (or prior to) the work, the risk of getting inefficient and non-optimal specifications increases and the control of the work becomes difficult and unmanageable.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.2\tChoice of deliverables",
+                            "text_content": "The SI will be realized as a new Technical Report (\"feasibility study report\").\nThe WI will be realized as new specifications and/or amendments to existing specifications; the exact structure lies with the individual TSG Sub-Groups and the TSG. Typically, a new feature may result in at least three completely new specifications (stages 1, 2 and 3) but may also cause amendments to the major protocol specifications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.3\tContents of deliverables",
+                            "text_content": "This task, allocated and controlled according to the provisions above, consists in describing in details the aim of the Work Item, as seen by those for which a service is provided, e.g. end users, operators, service providers, etc.\nIn many cases it is desirable that, prior to the actual service requirements specification being produced, an initial combined service and system/architectural requirements and considerations document is produced, involving both service oriented and implementation expertise. In particular when an ad hoc task force is charged with performing a study on a certain WI (aspect) such a starting point document should be produced and then used as a basis for the TSG SGs when carrying out the detailed work on service requirements/descriptions and technical realization specifications. Such setting-the-basis documents should generally be kept for some time after the actual work on the detailed specifications has progressed to a mature level (mainly for the purpose of easing the understanding and to shorten the interaction and negotiation period between service requirements and system/architectural and technical restrictions).\nSuch 'setting-the-basis' document can also be used to describe the project management of a Work Item (to collect all prepared but not yet approved CRs related to the WI in question).\nIt may be appropriate to perform the above work in the context of a Study Item, prior to embarking on concrete specification work.\nThese cover both the overall architectural and interface specific detailed specifications. The architectural implications and requirements need to be identified at a very early stage, for the purpose of knowing which parts of the standard (and hence of the system) are affected by a WI, and for the purpose of supporting the identification of cross-WI similarities (and hence more overall efficient solutions).\nThe overall co-ordination of the architectural/system requirements is with a single group as stated above, whilst the ensuing detailed protocol definitions and specifications may be distributed over several groups (according to their scope).\nChanges to the core specifications may have impact on the test specifications. The corresponding changes to test specifications should be approved before publication the new core specifications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.4\tEarly implementation",
+                            "text_content": "The responsible TSG may decide that a particular Work Item is a candidate for \"early implementation\". If a feature is a candidate for early implementation this shall be indicated in the 3GPP work plan.\nWhere a feature is a candidate for early implementation the deliverables shall include an early implementation Technical Report. The Technical Report shall give guidance on how to perform early implementation of a Work Item. This report shall not define any new technical requirements. It is there to help implementers identify which parts of the specifications are relevant to the Work Item and how they should be handled when early implementation is performed.\nThe early implementation Technical Report shall be identified in the list of impacted documents in the WID. The early implementation Technical Report is part of the same release as the feature to which is relates.\nWhere a single early implementation feature consists of several Work Items then the number of different TRs should be minimised. The aim shall be for a single report to be written for the appropriate highest level Work Item (typically the feature level). However, flexibility should be left to take account of different ways Work Items may be structured\nWork on the early implementation Technical Report shall begin with the identification of the requirements for early implementation.\nThe contents of the early implementation Technical Report shall be developed in parallel to the overall progress on standardisation of the Work Item. The responsible Working Groups shall keep the report up to date – particularly the clauses \"specification impacts\" and \"Early Implementation Status\" which must be completed before finalisation of the WI and maintained if they are subsequently impacted by any essential corrections.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.5\tLate completion",
+                            "text_content": "If a Feature cannot be completed by the freeze date for a Release, two options are available:\n1)\tIf the functionality covered by the late-running work item is considered by the TSG not to be vital to the overall Feature, it may be abandoned, or form part of a later Release.  It may be necessary to raise CRs to remove modifications from specifications which have already been implemented, so as not to leave unworking stubs of functionality and to ensure that stages 1, 2 and 3 are harmonized.\n2)\tIf the foreseen likely overrun is thought to be only a matter of a few months – generally no more than two TSG plenary meeting cycles – the responsible WG may raise an \"exception sheet\" to request a delay in completion until the next or next-but-one TSG meeting.  In this case, the responsible WG undertakes to give high priority to completing the work within that time frame, while recognizing that progress can only be made on the basis of contributions to the work.\nIn the first case, where the delayed work is moved to a later Release, the responsible WG shall make appropriate changes to the 3GPP work plan.\nIn the second case, the exception sheet should contain enough information to enable the TSG to make a reasoned assessment of the case, and to accept or reject the proposal.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.5\tStatus tracking of Work Items",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The status of each Work Item shall be tracked and recorded throughout its life in the 3GPP work plan. The status may take the following values:\nTable 6.5a: Status values of Work Item\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.5a: Status values of Work Item",
+                            "table number": 12,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.6\tWork Item model",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The model described below can be thought of as a reference model for structuring the work. It is not the intention to rigorously enforce the usage of the model on all ongoing work, but merely to use it as the common reference model across the TSGs and to structure future work.\nThe description below uses TSG SA as an illustration; it can easily be extended to apply to any TSG (or combination of TSGs).\nTSG SA is, through SA1, responsible for defining the features and services required in the 3GPP specifications. SA1 is responsible of producing the stage 1 descriptions (requirements) for the relevant features and passing them to SA2. SA1 may also forward their considerations on possible architecture and implementation to SA2, but is not responsible for this part of the work.\nSA2 should then define the architecture for the features and the system, and then divide the features into building blocks based on the architectural decisions made in SA2. SA2 shall then forward the building blocks to the relevant TSGs for the detailed work. These proposals shall be reviewed and discussed in an interactive way together with TSGs/WGs, until a common understanding of the required work is reached. During the detailed the work of the TSGs and their Working Groups, SA2 shall be kept informed about the progress.\nThe TSGs and their WGs treat the building block as one or several dedicated work tasks. Typical output of a work task is new specification(s), updated specification(s), technical report(s) or the conclusion that the necessary support is already provided in the existing specifications.\nSA2's role is in co-operation with the TSGs and their WGs to identify if synergy can be obtained by using some of the building blocks for more than one feature. Part of SA2's task is to verify that all required work for a full system specification of the features relevant will take place within 3GPP without overlap between groups. In order for SA2 to be successful, this has to be done in co-operation with other TSGs/WGs.\nThe following guidelines are proposed for project scheduling. SA1 sets a target, SA2 performs a first technical review and comments on the target. SA2 indicates target for time schedule together with allocation of the defined building blocks. The TSGs and their WGs comment back on these targets. SA2 tries if necessary to align the new target amongst the involved parties. SA1 and SA are kept informed of the overall schedule.\nIt is the task of TSG SA, SA1 and SA2 to ensure early involvement of SA3 to ensure that the potential security requirements, service requirements and the architectural requirements are aligned and communicated to the TSGs and their WGs.\nIn order for , GERAN and RAN and their subgroups to plan and perform their horizontal tasks on conformance testing and mobile station capabilities, SA2 should invite those TSGs to evaluate the potential impact of a new feature. If work on horizontal tasks is required, this should be included in the overall work plan.\nThe figure depicts a simplified representation of a 5G network, illustrating the signal propagation in a 5G network. It shows how signals reflect off buildings (NLOS) and combine at the receiver. Key components include the base station (gNB), user equipment (UE), and scatterers. The diagram highlights beamforming techniques to mitigate interference.\nFigure 1\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tManagement documents and tools",
+            "description": "This clause summarizes and lists the various permanent or semi-permanent documents (and means of documenting).\nAll these documents/tools are within the responsibilities of the Support Team and or TSG SA.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tStatus List of Specifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This list (data base) contains information about all 3GPP specifications, in terms of specification number, title, latest version, rapporteur and other details. The current list shall be annexed to every TSG SA meeting report.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tWork Item Status List",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This data base contains information about all 3GPP Work Items, in terms of identified future specifications, identified specifications to be amended, supplementary/temporary documentation, expected/planned completion dates and intermediary milestones, and other management information related to specifications, responsible Groups, rapporteurs, completion dates etc.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tChange Request data base",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Change Request data base records all CRs to specifications.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.4\tMembership data bases",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The members data base contains information of all delegates in the 3GPP TSGs.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.5\tElectronic tools used/preferred",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the various types of documents and parts of documents of 3GPP, a minimum variety of word processors etc. should be used. Those identified in 3GPP TR 21.801 [1] are permitted.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.6\tWEB and FTP services",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The 3GPP website (https://www.3gpp.org) and portal () provide up-to-date information on specification work, such as: meeting calendars, meeting minutes, meeting documents and latest specifications. FTP links to file server areas of each TSG and WG can be found via the 3GPP web pages.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.7\tE-mail reflectors",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TSGs, WGs and SWGs have their own e-mail lists. There are also several additional lists per topic. Further information can be found on 3GPP web pages.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tE-mail decisions",
+            "description": "WGs may apply e-mail decision procedures for decisions they are entitled to take, as defined by superior bodies (e.g. on specifications, CRs, Liaison statements, etc.). Each WG may set its rules for making e-mail decisions, however, it is required that:\n-\tthe rules are clearly defined and documented;\n-\ta delegate having participated in plenary meetings is able to identify that he has possibly missed an e-mail relevant to e-mail decision.\nClauses 8.1-8.6 describe an e-mail decision procedure example.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tE-mail drafting phase",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "An e-mail drafting session can be launched, either on a dedicated exploder list as a cybermeeting or as an informal discussion between interested delegates. Objectives can extend from debating an existing contribution, a Liaison Statement or a Change Request to progressing the service requirements of a specific Work Item and involving one or more Working Groups.\nIn case of \"cybermeeting\", the Chair of the discussions shall issue an un-ambiguous guideline including:\n1)\tthe objectives and agenda of the meeting;\n2)\tinput document(s) to be clearly specified;\n3)\tstart date and end date of the debates;\n4)\tafterwards, summary of results of the \"cybermeeting\".\nThe end-goal being to reach an \"agreement\" on the deliverable, either at the next meeting or via an e-mail approval procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.2\tE-mail decision declaration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Authority for an e-mail decision to take place should usually be agreed at plenary meeting. If this is not possible, there shall be a clear notification (i.e. status report) indicating that there will be an e-mail decision. This notification shall be sent on the main mailing lists indicating the mailing list where the discussion will take place (TSG, WG or SWG list). Target and timeframe shall be clearly indicated. A permanent Chair (i.e. WG Chair or Vice Chair) shall be nominated, who will be responsible for managing the e-mail decision procedure, including initiation, monitoring and announcing when it is complete.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.3\tStatus reporting",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "During the e-mail decision period, there shall be a clear message stating what the status of each open item is. It is recommended to have a weekly summary of the status of all items, from the previous plenary listing:\n-\tthe name of the open item;\n-\tthe name of the responsible delegate;\n-\ttime left for comments before the deadline & expiration date;\n-\tcurrent work versions of documents: Tdoc number, CR number, Revision number;\n-\tstatus (Debate ongoing, Agreed, Postponed, Rejected, ...).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.4\tDecision announcement",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "When a decision is made (Agreed, rejected, postponed, ...) a clear notification on what has been agreed shall be sent on the main mailing lists of the relevant groups.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.5\tTiming",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "E-mail decision procedure should start at the latest 3 weeks before relevant plenary:\n-\tthe e-mail decision period is two weeks (one status report required);\n-\tthe procedure shall be completed one week before the relevant TSG, WG or SWG plenary, due to practical arrangements.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.6\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "-\tin exceptional cases when the procedure cannot be followed a clear notice from Chair is required;\n-\te-mails on mailing lists shall contain a subject with meaningful keywords, e.g. SA1 Tdoc xxx on Charging and/or 22xxx-CR012r4;\n-\tif there are no comments during the allowed period, agreement is granted automatically;\n-\tstatus reports to higher level body meetings, should be e-mailed to the mailing list one week before the meeting. This allows delegates a final possibility to review the progress in the last period.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "9\tMeeting contribution document types and status values",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "9.1\tTerminology",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Written contributions to 3GPP meetings are called \"TDocs\".\nNOTE:\tThe term \"TDoc\" is an abbreviation of \"Temporary Document\" and is a legacy of when such documents were prepared in paper form. Temporary Documents were not intended to be retained after the end of the meeting at which they were discussed, contrasted with Permanent Documents which were retained after the end of the meeting for longer term (permanent?) reference. 3GPP retains all TDocs in electronic form and thus there is no need for a separate \"PDoc\" class, although some working groups do retain some documents informally referred to as \"permanent reference documents\".\nEach TDoc shall be one of the following types:\nTable 9.1-1: Permissible TDoc types\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 9.1-1: Permissible TDoc types",
+                            "table number": 13,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "9.2\tTDoc status values",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Each TDoc having a formal allocated TDoc number has an associated status chosen from table 9.2-1 below.\nTable 9.2-1: TDoc status values\n\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 9.2-1: TDoc status values",
+                            "table number": 14,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 15,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 16,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

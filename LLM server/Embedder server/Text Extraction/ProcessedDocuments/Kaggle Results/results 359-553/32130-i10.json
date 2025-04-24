@@ -1,0 +1,302 @@
+{
+    "document_name": "32130-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "Network sharing is emerging as a mechanism for operators to substantially and sustainably improve network costs and to efficiently utilize network capacity. The traditional model of single ownership of all network layers and elements is being challenged and more and more operators are adopting network sharing as a means of cutting the heavy costs involved in initial roll-out, capital expenditure (CAPEX) and  (OPEX).\nIn general, an increasing number of operators are sharing their mobile networks. Main arguments presented are:\n-\tIncreased rollout speed.\n-\tQuickly expanding coverage to meet customer demand for wider coverage.\n-\tSharing low traffic areas.\n-\tSharing high license burdens.\n-\tLower CAPEX and OPEX.\nNetwork sharing has some major implications on the operations of the network. Alignment on operational priorities, common network planning/evolution strategy, sharing end user data/subscriber data, sharing performance data, alarms etc. in the shared network need to be considered carefully. Privacy, security and competitive information are also important for the operations of a shared network.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document describes concepts and high-level requirements for the Operations, Administration, Maintenance and Provisioning (OAM&P) of network sharing.\nNetwork sharing scenarios considered in the present document are Multiple Operator Core Network (MOCN) and Gateway Core Network (GWCN) for GERAN, UTRAN and E-UTRAN, as defined in TS 23.251 [7] , and Multiple Operator Core Network (MOCN) for NG-RAN as defined in TS 23.501[7].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 32.101: \"Telecommunication management; Principles and high level requirements\".\n[3]\t3GPP TS 32.102: \"Telecommunication management; Architecture\".\n[4]\t3GPP TS 36.300: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Overall description; Stage 2\".\n[5]\t3GPP TS 23.251: \"Network sharing; Architecture and functional description\".\n[6]\t3GPP TS 36.314: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Layer 2 – Measurements\"\n[7]\t3GPP TS 23.501: \"System architecture for the 5G System (5GS); Stage2\".\n[8]\t3GPP TS 28.541: \"Management and orchestration; 5G Network Resource Model (NRM); Stage 2 and stage 3\".\n[9]\t3GPP TS 28.552: \"Management and orchestration; 5G performance measurements\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TS 32.101 [2], TS 32.102 [3] and TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TS 32.101 [2], TS 32.102 [3] and TR 21.905 [1], in that order.\n\nOrganizational roles:\nMaster Operator (MOP): In Radio Access Network (RAN) and/or Core Network (CN) sharing scenarios, deployment and daily operation of shared network elements are entrusted to a single Actor, called the Master Operator. The Master Operator provides network and OAM&P services to other Operators, called Participating Operators (POPs). The Master Operator is the only one to have a direct OAM&P connection from its Domain Manager (DM) to the shared network elements.\nParticipating Operator (POP): Participating Operators are service providers who share, alongside other Participating Operators, the network (RAN and/or CN) facilities provided by the Master Operator. According to TS 36.300 [4] up to 6 operators can share a RAN.\nNote: \tIn a RAN/CN sharing scenario where Company A and Company B are POPs, MOP represents a role which can be played by either:\n-\tCompany A or Company B: in that case, Company A or Company B plays both roles, i.e. is the MOP and one of the POPs simultaneously, or\n-\tA joint-venture between Company A and Company B, or\n-\tA third-party entity: in this context, third party is referring to a wholesale mobile connectivity provider.\nIn the two latter cases, companies A and B rely on another company to play the role of MOP. This company cannot play the role of POP.\n\nManagement systems:\nMaster Operator Network Manager (MOP-NM): Network Manager enabling the Master Operator to manage the shared RAN and/or shared CN.\nMaster Operator Shared CN dm (MOP–SC-DM): Domain Manager enabling the Master Operator to manage the Shared CN.\nMaster Operator Shared RAN dm (MOP–SR-DM): Domain Manager enabling the MOP to manage the Shared RAN.\nParticipating Operator CN DM (POP-CORE-DM): Domain Manager enabling a Participating Operator to manage its own (not shared) Core Network.\nParticipating Operator Network Manager (POP-NM): Network Manager enabling a Participating Operator to manage its own (not shared) network and its portion of the shared network.\nParticipating Operator RAN DM (POP-RAN-DM): Domain Manager enabling a Participating Operator to manage its own (not shared) RAN.\n\nManaged resources in a shared Radio Access Network (RAN) environment:\nShared RAN (S-RAN): A set of Radio Access Network elements shared among Participating Operators.\n\nManaged resources in a shared Core Network (CN) environment:\nShared CN (S-CORE): A set of Core Network elements shared among Participating Operators. It may or may not include all core network elements. For example, the Participating Operators may share only the MMEs while having independent S/P GWs.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. \nAn abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nARP\tAllocation and Retention Priority\nDL\tDownlink\nDM\tDomain Manager\nGBR\tGuaranteed Bit Rate\nGWCN\tGateway Core Network\nMDT\tMinimization of Drive Tests\nMOCN\tMultiple Operator Core Network\nMOP\tMaster Operator\nMOP-NM\tMaster Operator Network Manager\nMOP–SC-DM\tMaster Operator Shared CN DM\nMOP–SR-DM\tMaster Operator Shared RAN DM\nNGCOR\tNext Generation Converged Operations Requirements\nOAM&P\tOperations, Administration, Maintenance and Provisioning\nPOP\tParticipating Operator\nPOP-CORE-DM\tParticipating Operator CN DM\nPOP-NM\tParticipating Operator Network Manager\nPOP-RAN-DM\tParticipating Operator RAN DM\nQCI\tQuality of Service Class Indicator\nQoS\tQuality of Service\nSON\tSelf-Organizing Networks\nS-CORE\tShared CN\nS-RAN\tShared RAN\nUL\tUplink\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tConcepts and background",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tRAN sharing scenarios",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Various network sharing scenarios exist, amongst which one category is RAN sharing which can be divided into the following (non exhaustive) list of sub-categories:\n-\tPassive RAN sharing, also known as infrastructure sharing (including site sharing).\n-\tActive RAN sharing, where active network elements of the RAN are shared:\n- RAN-only sharing (MOCN; see TS 23.251 [5] and TS 23.501 [7]), i.e. BTSs / BSCs (respectively NodeBs / RNCs and eNodeBs) in a 2G Radio Access Network (respectively a 3G Radio Access Network and an E-UTRA network) , and gNBs in a 5G NR network;\n- Gateway Core Network (GWCN; see TS 23.251 [5]), in which not only the Radio Access Network elements are shared but also part or all of the Core Network elements (there is no passive core network sharing).\nThe following figures depict the MOCN scenarios:\n\nThe E-UTRAN MOCN network sharing scenario depicted in Figure 4.1-1 illustrates the various network sharing scenarios, including the use of a shared core network, a shared core network with a separate access network, and a shared core network with a separate access network. The figure highlights the importance of network sharing in ensuring network reliability and efficiency.\nFigure 4.1-1: E-UTRAN MOCN network sharing scenario\n\nThe figure depicts a network sharing scenario in a 5G-RAN (Radio Access Network) MOCN (Multi-Cell Network) network, where the same cell identity is broadcast to all users. The network is designed to support multiple users in a single cell, ensuring efficient resource allocation and reducing the need for additional infrastructure. The figure shows the distribution of users across different cells, with each cell having its own set of users. The network is designed to be flexible and scalable, allowing for the addition or removal of users without affecting the overall network performance.\nFigure 4.1-2: NG-RAN MOCN Network Sharing with same cell identity broadcast scenario\n\nThe figure depicts a network sharing scenario in a 5G network, where the network functions are shared among multiple cell identities. The network sharing is achieved through the use of multiple cell identities, which are broadcasted to the network. This allows for efficient resource allocation and improved network performance.\nFigure 4.1-3 NG-RAN MOCN Network Sharing with multiple cell identity broadcast scenario\nIn GWCN, besides sharing Radio Access Network nodes, the POPs also share Core Network nodes (see TS 23.251 [5] – clause 4.1).\nThe figure depicts a gateway core network (GWCN) in a 5G network, illustrating the various components and their interconnections. The network consists of a base station (gNB), user equipment (UE), and distributed nodes, with redundancy paths to ensure failover reliability. The layered design aligns with SDN principles, emphasizing the importance of network virtualization and automation.\nFigure 4.1-4: GateWay Core Network (GWCN)\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tManagement architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The management architecture for MOCN is depicted in figure 4.2-1. It is compliant with 3GPP management reference model (TS 32.101 [2]).\nThe figure depicts a management architecture for MOCN, which stands for Multi-Operator Cloud Network. It illustrates the various components and their interconnections, including the cloud service provider (CSP), cloud network operator (CNO), and cloud network management (CNM). The figure highlights the importance of network management in ensuring the smooth operation of MOCN, with a focus on network slicing, network virtualization, and network orchestration.\nFigure 4.2-1: Management architecture for MOCN\nIn the MOCN scenario, all cells of the S-RAN are shared between POPs.\nThe management architecture for GWCN is depicted in figure 4.2-2. It is compliant with 3GPP management reference model (TS 32.101 [2]).\nThe figure depicts a management architecture for GWCN (Global Wireless Network Control), which is a crucial component of 5G networks. It illustrates the various components and their interconnections, including base stations (gNB), user equipment (UE), and scatterers. The figure highlights the importance of beamforming techniques to mitigate interference and the use of redundancy paths to ensure failover reliability. The layered design of the architecture aligns with SDN principles, emphasizing the importance of network control and management.\nFigure 4.2-2: Management architecture for GWCN\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tBusiness level requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tRequirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tRequirements for the OAM&P of shared RAN",
+                            "text_content": "REQ-NS_GEN-CON-1\t\tThe 3GPP management system of the MOP shall support a capability allowing its authorized consumer  to manage S-RAN of any of the following radio access technologies:\ni/ GERAN;\nii/ UTRAN;\niii/ E-UTRAN;\niV/ NG-RAN.\nREQ-NS_GEN-CON-2\t\tThe 3GPP management system of the MOP shall support a capability allowing its authorized consumer to manage S-RAN according to any of the following scenarios:\ni/ Multi-Operator Core Network\nii/ Gateway Core Network.\nREQ-NS_GEN-CON-3\t\tThe  3GPP management system of the MOP shall support a capability allowing its authorized consumer to know which POPs the shared resources belong to.\nREQ-NS_GEN-CON-4\t\tThe  3GPP management system of the MOP shall support a capability allowing its authorized consumer to configure which POPs share each cell.\nREQ-NS_GEN-CON-5\t\tAny POP shall be able to activate a signaling-based trace / MDT session on its subscribers, whether they are attached to the POP own RAN or to the S-RAN, provided:\na/ this is compliant with the RAN sharing contract; and\nb/ user consent for participation in MDT is respected.\nREQ-NS_GEN-CON-6\t\tThe MOP shall be able, on behalf of any POP, to activate an area-based trace / MDT session, on the portion of the S-RAN that the POP shares and on the POP subscribers only, from the 3GPP management system of MOP, provided\na/ only the POP related subscriber data are collected;\nb/ this is compliant with the RAN sharing contract; and\nc/ user consent for participation in MDT is respected.\nREQ-NS_GEN-CON-7\t\tThe MOP shall be able, on behalf of multiple POPs, to activate an area-based trace / MDT session, on the portion of the S-RAN that each POP shares and on each POP subscribers only, from the 3GPP management system of MOP, provided:\na/ each POP has access only to its subscriber data (i.e. not to other POPs' subscriber data);\nb/ this is compliant with the RAN sharing contract; and\nc/ user consent for participation in MDT is respected.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tRequirements for the OA&M of shared core network elements",
+                            "text_content": "REQ-NS_GEN-CON-8\t\t\tIn the GWCN scenario, the MOP shall be able to manage S-CORE.\nREQ-NS_GEN-CON-9\t\t\tThe MOP shall be able to know which POPs the shared core network elements belong to.\nREQ-NS_GEN-CON-10\t\tThe MOP shall be able to configure which POPs share each core network element.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tRequirements for the management of measurements for cross-operator accounting based on data volume and QoS",
+                            "text_content": "REQ-NS_PM-CON-1\tThe MOP shall be able to charge the POPs for the data volume used by POP’s users per selected QoS profile criteria via measurements defined for shared networks.\n-\tThe QoS profile criteria may include QCI Indicator, GBR Indicator, ARP Indicator.\n-\tIt shall be possible to differentiate between DL and UL.\nREQ-NS_PM-CON-2\tThe MOP shall be able to set the reliability for the selected measurements defined for cross operator accounting purpose in shared networks.\nREQ-NS_PM-CON-3\tA maximum number of 200 counter instances (for measurements defined for cross operator accounting purpose in shared networks) can be recorded per granularity period.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.4\tRequirements for management support for NG-RAN MOCN network sharing scenario with same Cell Identity broadcast",
+                            "text_content": "Req-MOCN_SameCellId_Cfg-CON-1 The 3GPP management system of the MOP shall have the capability to configure NgC and NgU individually for each POP.\nReq- MOCN_SameCellId_Cfg-CON-2 The 3GPP management system of the MOP shall have the capability to configure PLMNId individually for each POP.\nReq- MOCN_SameCellId_Per-CON-3 The 3GPP management system of the MOP shall have the capability to collect and report some measurements (e.g. active UEs measurements, packet delay measurements) in PLMN granularity for each POP.\nReq-MOCN-SameCellId-Cfg-CON-4 The 3GPP management system of the MOP shall have the capability to support operator-specific configurations.\nReq-MOCN-SameCellId-Cfg-CON-5 The 3GPP management system of the MOP shall have the capability to support operator-specific performance measurement jobs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.5\tRequirements for management support for NG-RAN MOCN network sharing scenario with multiple Cell Identity broadcast",
+                            "text_content": "Req-MOCN-MultiCellId-Cfg-CON-1 The 3GPP management system of the MOP shall have the capability to configure NgC and NgU individually for each POP.\nReq-MOCN-MultiCellId-Cfg-CON-2 The 3GPP management system of the MOP shall have the capability to configure PLMN-IdentityInfo (including PLMNId, NR Cell Identity, TAC) individually for each POP.\nReq-MOCN-MultiCellId-Perf-CON-3 The 3GPP management system shall have the capability to collect and report some measurements (e.g. active UEs measurements, packet delay measurements) in PLMN granularity for each POP.\nReq-MOCN-MultiCellId-Cfg-CON-4 The 3GPP management system of the MOP shall have the capability to configure the common F1 interface for all POPs.\nReq-MOCN-MultiCellId-Cfg-CON-5 The 3GPP management system of the MOP shall have the capability to configure the individual F1 interface for each POP.\nReq-MOCN-MultiCellId-Cfg-CON-6 The 3GPP management system of the MOP shall have the capability to configure the individual NR cell relation individually for each POP.\nReq-MOCN-MultiCellId-Cfg-CON-7 The 3GPP management system of the MOP shall have the capability to support operator-specific configurations.\nReq-MOCN-MultiCellId-Cfg-CON-8 The 3GPP management system of the MOP shall have the capability to support operator-specific performance measurement jobs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.6\tRequirements for the OAM&P of shared NG-RAN",
+                            "text_content": "REQ-NS_NG-CON-1\t\tThe 3GPP management system of the MOP shall support a capability to manage both the non-shared network elements and shared network elements in a NG-RAN network at the same time.\nREQ-NS_NG-CON-2\t\tThe 3GPP management system of the MOP shall support a capability to configure the NG-RAN network element to start the sharing of one currently non-shared NG-RAN network element or stop the sharing of one currently shared NG-RAN network element.\nREQ-NS_NG-CON-3\t\tThe 3GPP management system of the MOP shall support a capability to configure the POP-specific attributes of the shared NG-RAN individually based on the POPs’ requirements.\nREQ-NS_NG-CON-4\t\tThe 3GPP management system of the MOP shall have the capability to configure the radio resources partitioning policies for the POPs based on the agreement between POPs.\nReq-MOCN-MultiCellId-Cfg-CON-5 The 3GPP management system of the MOP shall have the capability to configure the administrative state of the operator specific NR Cell DU.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tActor roles",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For GERAN, UTRAN, and E-UTRAN:\nMOP-SR-DM:\t\tAn entity performing an IRPAgent role in MOCN and in GWCN.\nMOP-SC-DM:\t\tAn entity performing an IRPAgent role in GWCN.\nMOP-NM:\t\t\tAn entity performing the IRPManager role in MOCN and in GWCN.\nFor NG-RAN:\nMOP-SR-DM:\t\tAn entity performing the Management Service Producer role for the management of shared NG-RAN   MOCN.\nMOP-NM:\t\t\tAn entity performing the Management Service Consumer role for the management of shared NG-RAN in MOCN.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tTelecommunications resources",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For MOCN and GWCN, the managed GERAN, UTRAN, E-UTRAN, NG-RAN network elements are viewed as relevant telecommunications resources in the present document.\nFor GWCN, MSC, SGSN and MME are viewed as relevant telecommunications resources in the present document.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tHigh-level use cases",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tFully pooled radio resources between two POPs",
+                            "text_content": "In this use case, cells are shared between POP A and POP B. As agreed by MOP and POPs in their RAN sharing agreement:\n- Radio resources of the S-RAN are fully pooled between POP A and POP B; UEs from POP A and POP B are served in the S-RAN in a first come first served mode;\n- MOP is responsible for configuring the S-RAN accordingly.\nThe figure depicts a network configuration where fully pooled radio resources are available between two POPs, illustrating the utilization of radio resources in a multi-hop network.\nFigure 5.4.1-1: Fully pooled radio resources between two POPs\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tAlarm raised on a shared cell (MOCN scenario)",
+                            "text_content": "In this use case, an alarm is raised on cell #1 of a shared (e)NodeB. According to the RAN sharing agreement, the two POPs A and B are informed by the MOP of the occurrence of this new alarm, as well as of the alarm clearance by the MOP.\nThe figure depicts a shared cell scenario where an alarm is raised on a MOCN. The MOCN is a type of cell that is shared among multiple users, and the alarm is raised when a user's signal strength drops below a certain threshold. The figure shows the various components involved in handling the alarm, such as the MOCN, the alarm source, and the network control center (NCC). The NCC is responsible for managing the alarm and ensuring that the MOCN is functioning properly. The figure also includes a diagram of the MOCN and its components, as well as a flowchart that outlines the steps taken to handle the alarm.\nFigure 5.4.2-1. Handling of an alarm raised on a shared cell (MOCN)\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.3\tSingle DM for managing S-RAN and POP own RAN",
+                            "text_content": "In this use case, Operator A is a POP and manages its own (non-shared) NEs from its POP-RAN-DM while Operator B is both MOP and POP and manages S-RAN and its own (non-shared) NEs from a single DM.\nOperator B has several possibilities:\nExample #1: configure, NE per NE, which POPs share the cells that it manages; or\nExample #2: define two separate groups of BTSs / (e)NodeBs:\n- \tone for the S-RAN NEs – it shall then configure which POPs share the cells of this group of BTSs / (e)NodeBs; and\n- \tone for its own (non-shared) RAN NEs.\nThe figure depicts a single DM (Device Management) system for managing both Software-Defined Radio (S-RAN) and Own RAN. It illustrates the system's architecture, including the role of the DM, the role of the S-RAN and Own RAN controllers, and the communication between them. The figure also shows the DM's role in managing the network's resources, such as network slicing, network slicing, and network slicing.\nFigure 5.4.3-1: Single DM for managing both S-RAN and own RAN\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.4\tManagement of measurements for cross-operator accounting based on data volume and QoS",
+                            "text_content": "The operator has made an agreement to act as a Master Operator, MOP, for another operator (Participating Operator, POP) for RAN sharing. The agreement is regulated in an SLA, which states the following: The QoS profile criteria ARP-1 – 10 and GBR-5 for QCI-4 and QCI-8 is supported. The DL QCI-4, GBR-5, and ARP-1 – 10 is charged by x Euro per Mbit, while UL QCI-4, GBR-5, and ARP-1 – 10 is charged by y Euro per Mbit. QCI-8 is charged z Euro per Mbit regardless of QoS. For cross operator accounting purpose, the network needs to provide data volume measurements with high reliability for the used QoS profile criteria to the MOP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.5\tManagement support for the mixed deployment scenario of shared NG-RAN network elements and non-shared NG-RAN network elements",
+                            "text_content": "In this use case, Operator A owns and manages a NG-RAN network. Operator A and Operator B get a NG-RAN sharing agreement that Operator A will share some of the NG-RAN network elements in its NG-RAN network with Operator B. Operator A may need to configure the NG-RAN network to start the sharing of one currently non-shared NG-RAN network element or stop the sharing of one currently shared NG-RAN network element according to the requests from Operator B in the future.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.6\tRadio resources partitioning between two POPs for the shared NG-RAN",
+                            "text_content": "In this use case, radio access network (i.e. one of multiple shared NG-RAN network elements) are shared between two POPs (POP A identified by PLMN A, POP B identified by PLMN B).\nAs agreed by POP A and POP B in their RAN sharing agreement:\n- Radio resources (e.g. PRB, RRC connection, DRB) of the shared radio access network are partitioned for POP A and POP B, which means the radio resource partitioning policies (e.g. RRMPolicyRatio) of the radio access network is agreed for POP A and POP B. The detailed RRMPolicy definition for NG-RAN see the clause 4.3.36 of TS 28.541 [8]. Following is one example of RRMPolicy for corresponding POP A and POP B. In this example,\n-\tPOP A has 20% dedicated radio resources, 30% prioritized resources and 50% shared resources. In this case, there are 20% radio resources are dedicated for the POP A, 30% radio resources are guaranteed for POPA when it needs to use them, and 50% resources are shared with POP B.\n-\tPOP B has 30% prioritized resources and 20% shared resources. In this case, there are 30% radio resources are guaranteed for POP B when it needs to use them, and 20% resources are shared with POP A.\nThe figure depicts a radio access network (RAN) resource partitioning scheme for POP A and POP B, illustrating the structure of a Radio Resource Management Policy (RRMPolicy). The diagram illustrates the partitioning of radio resources, including the number of radio access points (RAPs) and the number of radio resources (RRs) allocated to each POP. The RRMPolicy is designed to ensure efficient resource allocation and management in the RAN, with the goal of maximizing network performance and user experience.\nFigure 5.4.6-1 Example of structure RRMPolicy for radio access network resource partitioning for POP A and POP B\nNote: If the network slicing feature is supported, the RRMPolicy is defined for each RRMPolicyMemberList which contains both PLMNId and S-NSSAI. In this case, the RRMPolicy is defined in RRMPolicyMember (combination of PLMNId and S-NSSAI) granularity.\n\nMOP-NM (play the role of MnS consumer) obtains the radio resource partitioning policies the shared radio access network based on above agreement, and sends the radio resource partitioning policies to MOP-SR-DM (play the role of MnS prodcuer) to configure the shared NG-RAN NEs. MOP-SR-DM derives the radio resource partitioning policies for corresponding cells of each shared NG-RAN NE and configures the corresponding shared NG-RAN NE with corresponding radio resource partitioning policies for corresponding cells (see RRMPolicy defined in TS 28.541[8] which is contained by RRMPolicyManagedEntity).\nMOP-SR-DM monitors the radio usage resources measurement (e.g. UL/DL PRB used for data traffic, RRC connections) for POP A and POP B, and send such radio usage resources measurements to MnS consumer.  Based on the radio resources usage measurements and other information (e.g. service traffic requirements changes) for POP A and POP B, the radio resources partitioning policies may be updated based on the agreement between POP A and POP B. The MOP-NM requests the MOP-SR-DM to reconfigure the updated radio resources partitioning policies of the shared radio access network for corresponding POP A and POP B.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tSpecification level requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tRequirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "REQ-NS_GEN-FUN-1\t\tThe IRPAgent shall support a capability allowing the IRPManager to configure which POPs share each cell.\nREQ-NS_GEN-FUN-2\t\tThe IRPAgent shall support a capability allowing the IRPManager to know which POPs share each cell.\nREQ-NS_GEN-FUN-3\t\tIn GWCN, the IRPAgent shall support a capability allowing the IRPManager to configure which POPs share each core network element.\nREQ-NS_GEN-FUN-4\t\tIn GWCN, the IRPAgent shall support a capability allowing the IRPManager to know which POPs share each core network element.\nREQ-NS_PM-FUN-1\t\tThe IRPAgent shall have the capability to support subscription of UL and DL data volume measurements per QoS profile criteria for cross operator accounting purpose from the IRPManager.\nThe QoS profile criteria may include one or more of the following criteria: one QCI indicator, one GBR Indicator, one ARP Indicator, where:\n-\ta QCI Indicator identifies one specific QCI value. If the indicator is not set then all QCI values should be taken into account.\n-\t a GBR Indicator identifies one GBR range value defined by the management system. If the indicator is not set then all GBR ranges should be taken into account.\n-\t an ARP Indicator identifies one ARP priority value. If the indicator is not set then all ARP priority values should be taken into account.\nREQ-NS_PM-FUN-2\t\tThe IRPAgent shall support the IRPManager setting the reliability for the counter instances in a measurement job. The detailed definition of reliability is vendor specific.\nREQ-NS_PM-FUN-3\t\tThe IRPAgent shall support up to a maximum number of 200 recorded counter instances per granularity period of data volume measurements for cross operator accounting purpose.\nREQ-NS_PM-FUN-4\t\tThe IRPAgent shall support the IRPManager to access a file containing data volume measurements for cross operator accounting purposes every granularity period.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tActor roles",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "See clause 5.2.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.3\tTelecommunications resources",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "See clause 5.3.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.4\tUse cases",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tManagement of measurements for cross-operator accounting based on data volume and QoS",
+                            "text_content": "The network manager requests a measurement job for data volume measurements for shared network for charging purposes with high reliability, for a subset of data volume counters per shared PLMN, per UL/DL traffic direction and per QoS profile criteria. The QoS profile criteria may include one or more of the following criteria: one QCI Indicator, one GBR Indicator, one ARP Indicator, where:\n-\ta QCI Indicator identifies one specific QCI value. QCI values range from 0 to 255. If the indicator is not set then all QCI values should be taken into account.\n-\ta GBR Indicator identifies one GBR range value defined by the management system. GBR range values can range from 1 to N, where N is bigger than 1 (e.g. N=5). If the indicator is not set then all GBR ranges should be taken into account.\n-\tan ARP Indicator identifies one ARP priority value. ARP priority values range from 1 to 15. If the indicator is not set then all ARP priority values should be taken into account.\nAn overall maximum number of 200 counter instances (measurement instances) can be recorded per granularity period.\nThe measurement type is specified by sub-clause 4.1.9 in TS 36.314 [6].\nAll the counters instances in the measurement job should be subject to high reliability as it is for cross operator accounting purpose. The detailed definition of reliability is vendor specific.\nThe network provides the counters each granularity period.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tManagement workflows for requirements for the management of the shared NG-RAN NE(s) in MOCN network sharing scenario",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tManagement of the shared NG-RAN NE(s) in MOCN network sharing scenario with the same cell Identity broadcast",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NG-RAN MOCN Network Sharing with same cell identity broadcast scenario is illustrated in Figure 4.1-2 and corresponding requirements is defined in clause 5.1.4. This clause describes the workflows for the management of the shared NG-RAN NE(s) in MOCN network sharing scenario with the same cell identity broadcast.\nIn this workflow, the radio access network (i.e. one or multiple shared NG-RAN NE(s)) is shared between two POPs (POP A identified by PLMN#1and POP B identified by PLMN#2). Both MnS consumer and MnS producer for the management of shared NG-RAN NE(s) belong to MOP.For the Req-MOCN_SameCellId_Cfg-CON-1:\nMnS consumer determines the individual EP_NgC MOI and EP_NgU MOI (see the attributes of NgC and NgU in TS 28.541[X]) for each POP (POP A and POP B), and requests MnS producer to create and configure EP_NgC MOI and EP_NgU MOI for each POP.\nMnS producer creates and configures the EP_NgC MOI and EP_NgU MOI for each POP based on the requests from MnS consumer. The EP_NgC MOI and EP_NgU MOI are name containe by same GNBCUCPFunction MOI and GNBCUUPFunction MOI which is shared for different POPs.\nFor the Req- MOCN_SameCellId_Cfg-CON-2:\nMnS consumer determines the attribute \"PLMNInfoList\" in NRCellDU MOI and NRCellCU MOI (see the attribute definition in TS 28.541[X]), which includes the PLMN#1 and PLMN#2, and requests MnS producer to configure NRCellDU MOI and NRCellCU MOI with attribute \"PLMNInfoList\".\nMnS producer configures the NG-RAN NE(s) (i.e. subtree of ManagedElement MOI) based on the requests from MnS consumer, including configuring the NRCellDU MOI and NRCellCU MOIwith attribute \"PLMNInfoList\" to include PLMN#1 and PLMN#2.\nFor the Req- MOCN_SameCellId_Per-CON-3:\nMnS producer collects the individual measurements for POP A and POP B in PLMN granularity by utilizing PLMN granularity subcounter. For the concrete PLMN granularity measurements, see TS 28.552[9].\nMnS producer sends the individual measurements for POP A and POP B in PLMN granularity to MnS consumer.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tManagement of the shared NG-RAN NE(s) in MOCN network sharing scenario with the multiple cell Identity broadcast",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NG-RAN MOCN Network Sharing with multiple cell identity broadcast scenario is illustrated in Figure 4.1-3 and corresponding requirements is defined in clause 5.1.5. This clause describes the workflows for the management of the shared NG-RAN NE(s) in MOCN network sharing scenario with the muliple cell identity broadcast.\nIn this workflow, the radio access network (i.e. one or multiple shared NG-RAN NE(s)) is shared between two POPs (POP A identified by PLMN#1and POP B identified by PLMN#2). Both MnS consumer and MnS producer for the management of shared NG-RAN NE(s) belong to MOP.\nFor the Req-MOCN-MultiCellId-Cfg-CON-1:\nMnS consumer determines the individual EP_NgC MOI and EP_NgU MOI (see the attributes of NgC and NgU in TS 28.541[8]) for each POP (POP A and POP B), and requests MnS producer to create and configure EP_NgC MOI and EP_NgU MOI for each POP.\nMnS producer creates and configures the EP_NgC MOI and EP_NgU MOI for each POP based on the requests from MnS consumer. The EP_NgC MOI and EP_NgU MOI are name containe by corresponding POP's GNBCUCPFunction MOI and GNBCUUPFunction MOI.\nFor the Req-MOCN-MultiCellId-Cfg-CON-2\nMnS consumer determines the individual OperatorDU MOI and NROperatorCellDU MOI (see the attributes of OperatorDU and NROperatorCellDU in TS 28.541[8]) for each POP (POP A and POP B), and requests MnS producer to create and configure OperatorDU MOI and NROperatorCellDU MOI for each POP.\nMnS producer configures the NG-RAN NE(s) (i.e. subtree of ManagedElement) based on the requests from MnS consumer, including creates and configures OperatorDU and NROperatorCellDU MOI for each POP.\nMnS consumer determines the individual NRCellCU MOI (see the attributes of NRCellCU in TS 28.541[8]) for each POP (POP A and POP B), and requests MnS producer to create and configure NRCellCU MOI for each POP.\nMnS producer configures the NG-RAN NE(s) (i.e. subtree of ManagedElement) based on the requests from MnS consumer, including creates and configures NRCellCU MOI for each POP.\nFor the Req-MOCN-MultiCellId-Cfg-CON-3\nMnS producer collects the individual measurements for POP A and POP B in PLMN granularity by utilizing PLMN granularity subcounter or associated with OperatorDU and NROperatorCellDU. For the concrete PLMN granularity measurements, see TS 28.552[9].\nMnS producer sends the individual measurements for POP A and POP B in PLMN granularity to MnS consumer.\nFor the Req-MOCN-MultiCellId-Cfg-CON-4 and Req-MOCN-MultiCellId-Cfg-CON-5\nMnS consumer determines the individual EP_F1C MOI and EP_F1U MOI (see corresponding attributes in TS 28.541[8]) for each POP (POP A and POP B), and requests MnS producer to create and configure these MOIs for each POP. In case of common F1 intertface configuration, the values of the EP_F1C MOI and EP_F1U MOI attributes (including localAddress and remoteAddress) contained by different POP's OperatorDU MOI of the same GNBDUFunction MOI should be same.\nMnS producer creates and configures the individual EP_F1C MOI and EP_F1U MOI for each POP based on the requests from MnS consumer. The EP_F1C MOI and EP_F1U MOI are name contained by corresponding POP's OperatorDU and associated to it's own GNBCUCPFunction MOI and GNBCUUPFunction MOI.\nFor the Req-MOCN-MultiCellId-Cfg-CON-6\nMnS consumer determines the NRCellRelation MOI(s) (see corresponding attributes in TS 28.541[8]) for each POP (POP A and POP B), and requests MnS producer to create and configure NRCellRelation MOI(s) for each POP.\nMnS producer configures the NG-RAN NE(s) (i.e. subtree of ManagedElement) based on the requests from MnS consumer, including creates and configures the individual NRCellRelation MOI for each POP.\n\nPrior to any network sharing deployment, the MOP and the POPs have to agree on legal, financial, technical and operational aspects. Among operational aspects, the network sharing agreement captures the following (non-exhaustive list):\n-\tOrganizations involved (i.e. Operators) and their roles in the network sharing deployment.\n-\tExhaustive list of shared and unshared resources in the shared network.\n-\tRights attached to each role (e.g. rights to configure network resources, rights to receive alarms, etc.).\n- \tDuties attached to each role (e.g. obligation for the MOP to provide POPs with monthly KPIs, etc.).\n-\tDelegations (if any) given by any organization to another organization.\n-\tService Level Agreements (SLAs).\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 1,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 2,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

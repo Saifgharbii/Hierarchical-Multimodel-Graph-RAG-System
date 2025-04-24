@@ -1,0 +1,569 @@
+{
+    "document_name": "28903-i01.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document studies the solutions to support alignment with ETSI MEC from the management perspective for edge computing.\nIt also identifies potential issues and solutions to support GSMA OPG [2] requirement in coordination with ETSI MEC [3].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\tGSMA Operator Platform Telco Edge Requirements - .\n[3]\tETSI GS MEC 010-2 (V2.2.1) (2022-02): \"Multi-access Edge Computing (MEC); MEC Management; Part 2: Application lifecycle, rules and requirements management\".\n[4]\tETSI GS MEC 003: \"Multi-access Edge Computing (MEC); Framework and Reference Architecture\".\n[5]\t3GPP TS 23.558: \"Architecture for enabling Edge Applications\".\n[6]\t3GPP TS 28.538: \"Management and orchestration; Edge Computing Management (ECM)\".\n[7]\tETSI GS NFV-IFA 013 (V4.3.1): \"Network Functions Virtualisation (NFV) Release 4; Management and Orchestration; Os-Ma-nfvo reference point -Interface and Information Model Specification\".\n[8]\tGSMA Operator Platform – East-Westbound Interface APIs - .\n[9]\t3GPP TS 28.533: \"Management and orchestration; Architecture framework\".\n[10]\t3GPP TS 28.532: \"Management and orchestration; Generic Management Service\".\n[11]\t3GPP TR 28.817: \"Management and orchestration; Study on access control for management service\".\n[12]\t3GPP TR 28.824: \"Management and orchestration; Study on network slice management capability exposure\".\n[13]\t3GPP TR 23.700-98 (V1.0.0): \"Study on Enhanced architecture for enabling Edge Applications\".\n[14]\tETSI GS NFV-IFA 011 (V4.3.1): \"Network Functions Virtualisation (NFV) Release 3; Management and Orchestration; VNF Descriptor and Packaging Specification\".\n[15]\tETSI GS NFV-IFA 014 (V4.3.1): \"Network Functions Virtualisation (NFV) Release 4; Management and Orchestration; Network Service Templates Specification\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tRelated Work in Other SDOs",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tETSI MEC",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Multi-access Edge Computing (MEC) framework as specified in ETSI GS MEC 003 [4] enables the implementation of MEC applications as software-only entities that run on top of a Virtualisation infrastructure, which is located in or close to the network edge.\nThe figure depicts a multi-access edge computing (MEC) framework, illustrating the various components and their interactions. The figure shows a network of edge devices, such as routers and switches, connected to a central cloud server. The MEC framework is designed to enable efficient and scalable processing of data at the edge, reducing latency and improving network performance. The figure also highlights the importance of network slicing and network slicing policies in managing and distributing data across different edge devices.\nFigure 4.1-1: Multi-access Edge Computing framework\nFigure 4.1-1 shows the MEC framework as defined in [4], it mainly contains several components,\nThe MEC host is an entity that contains a MEC platform and a Virtualisation infrastructure which provides compute, storage, and network resources, for the purpose of running MEC applications.\nThe MEC platform is the collection of essential functionality required to run MEC applications on a particular Virtualisation infrastructure and enable them to provide and consume MEC services. The MEC platform can also provide services.\nMEC applications are instantiated on the Virtualisation infrastructure of the MEC host based on configuration or requests validated by the MEC management.\nThe MEC system level management includes the MEC orchestrator as its core component, which has an overview of the complete MEC system. When relying on the NFV Orchestrator (NFVO) for resource orchestration and for orchestration of the set of MEC application VNFs, the MEC Orchestrator (MEO) is replaced by a MEC Application Orchestrator (MEAO), the architecture is described in clause 6.2.2 of [4].\nThe MEC host level management comprises the MEC platform manager and the Virtualisation infrastructure manager, and handles the management of the MEC specific functionality of a particular MEC host and the applications running on it.\nIn Annex C of TS 23.558 [5], both EDGEAPP and ETSI MEC can provide support for hosting different edge applications, it further indicates that \"Both EAS and MEC application are application servers and can provide similar application specific functionalities. EAS utilizes the services of EES as specified in the present document whereas MEC application utilizes the services provided by MEC platform as specified in ETSI GS MEC 003 [4]. The EAS and MEC application can be collocated in an implementation.\".\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tGSMA OPG",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Operator Platform (OP) is defined by GSMA OPG [2], it facilitates access to the Edge Cloud capability of an Operator or federation of operators and their partners.\nThe architecture scope under definition is shown below,\nThe figure depicts the reference architecture for the role and interface of the Optical Network Radio (ONR) in a 5G network. It illustrates the various roles and interfaces involved, such as the Optical Network Radio (ONR), Optical Line Terminals (OLTs), and Distributed Nodes. The figure also highlights the use of redundancy paths to ensure failover reliability.\nFigure 4.2-1: OP Roles and Interfaces Reference Architecture\nThis study is focused on the NBI and E/WBI requirements as defined in [2]. The NBI is the interface between the application provider and the Capabilities Exposure Role in the Operator Platform, it allows an OP to advertise the above cloud capabilities that it can provide to application providers. In addition, the NBI allows an application provider to reserve a set of resources or request an Edge Cloud service with the resources and features that they require and for the OP to accept or reject the request. The E/WBI interface provides the capabilities with regards to federation management between Ops. This includes managing the federation relationship between Ops, and other capabilities applicable between federated Ops, such as EAS deployment, resource sharing and resource reservation.\nIn this study, it is assumed that the application provider as described in [2] maps to ASP in TS 28.538 [6], and the Operator Platform as described in [2] maps to ECSP management system in TS 28.538 [6].\nThe table 4.2-1 provides the mapping of concepts (not exhaustive) defined in TS 28.538 [6] with the concepts defined in GSMA OPG [2].\nTable 4.2-1\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.2-1",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tIssue investigations and potential solutions for alignment with ETSI MEC",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tKey Issue# 1: Management of collocated platforms for EES and MEC platform",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tDescription",
+                            "text_content": "As described in [5], one of the deployment option is that the EES and MEC platform can be collocated in an implementation.\nThe EES instantiation procedure is described in clause 7.1.4 of TS 28.538 [6], which the PLMN operator or ECSP requests the EES instantiation via provisioning MnS to ECSP management system, the simplified procedure is show in Figure 5.1.1-1.\nThe figure depicts the EES (Energy-Efficient Software-Defined Networking) deployment procedure, illustrating the steps involved in deploying the EES solution. The figure includes a flowchart, which outlines the sequence of actions to be taken during the deployment process. The steps include selecting the appropriate EES solution, configuring the network, deploying the EES solution, and monitoring and managing the network. The figure provides a clear and concise visual representation of the EES deployment procedure, making it easy for stakeholders to understand the process and ensure a successful deployment.\nFigure 5.1.1-1: EES deployment procedure\nThe MEC platform as described in ETSI GS MEC 003 [4] can be deployed as a VNF by using ETSI NFV MANO, the simplified procedure is show in Figure 5.1.1-2.\nThe figure depicts the deployment procedure for a Multi-Access Edge Computing (MEC) platform, illustrating the steps involved in setting up and managing the system. The figure includes a diagram of the MEC platform, with components such as the edge server, network interface controller (NIC), and network virtualization (NV) layer. The figure also includes a flowchart to guide the process, with arrows indicating the sequence of actions. The MEC platform is designed to provide high-speed, low-latency access to data for applications in the network, and the figure provides a visual representation of the steps involved in setting up and managing the system.\nFigure 5.1.1-2: MEC platform deployment procedure\nIn the collocated scenario, the EES and MEC platform can be deployed in the same Physical/NFV Infrastructure by the same operator. The MEC platform can be deployed first, then the operator can deploy the EES at the same Physical/NFV Infrastructure where the MEC platform is deployed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tPotential Requirements",
+                            "text_content": "REQ-EES-deplyment-1: ECSP management system shall have the capability to instantiate the EES to a specific Physical/NFV Infrastructure that collocated with MEC platform.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tPotential solutions",
+                            "text_content": "In this option, a PLMN operator deploys both EES and MEC platform in the same EDN.\nA NSD (network service descriptor) which contains both EES and MEC platform information (e.g. VnfdId) is used by the PLMN operator. Within the NSD, the VnfProfiles (see clause 6.3.3 of ETSI GS NFV-IFA 014 [15]) of EES and MEC platform contain the same affinityOrAntiAffinityGroupId, which could be defined as the following:\naffinityOrAntiAffinity: AFFINITY\nscope: NFVI_NODE\nThe MEC platform can be deployed first, then for EES instantiation, ECSP management system uses the NSD as described above for requesting instantiation of EES VNF to be collocated with the MEC platform by interworking with ETSI NFV MANO.\nThis solution does not have any impact on the current EES deployment procedure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tKey Issue# 2: Application lifecycle management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tDescription",
+                            "text_content": "TS 28.538 [6] specifies the EAS lifecycle management procedure by interworking with ETSI NFV MANO by invoking InstantiateNsRequest or UpdateNsRequest operation as specified in ETSI NFV IFA 013 [7]. An NFV Network Service (NS) as defined by ETSI NFV is a composition of Network Functions (NF) (VNF or PNF).\nWith ETSI MEC [3], MEO (when ETSI NFV is not involved) or MEAO (when ETSI NFV is involved) provides the application instance lifecycle management interface, which is similar to VNF LCM interface. The consumer of MEO or MEAO does not need to take creation of NS into consideration when requesting creation of an application instance.\nThe main issue related to application LCM is the following:\n1) \tWhen and how ECSP management system create an NS when receiving the creating EAS request from ASP.\n2)\t Whether the application instance lifecycle management interface produced by MEO or MEAO could be used for EAS lifecycle management.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tPotential solutions",
+                            "text_content": "This solution addresses the first issue for the application lifecycle management.\nIn this solution, ECSP management system automatically creates an NSD for EAS creation. The procedure can refer to Figure 7.1.2.1-1 in TS 28.538 [6]. For the same ASP, ECSP management system could use a single NS for all its EAS VNFs instantiation. For example, after step 7 in Figure 7.1.2.1-1 in TS 28.538 [6], when the same ASP requests to deploy another EAS, ECSP management system could decide to use the same NS as created in step 4, and invokes UpdateNsRequest operation with NFVO for instantiating a new EAS VNF instance.\nThis solution does not impact the current EAS deployment procedure, creation of NSD is only the internal procedure in ECSP management system.\nThis solution addresses the second issue for the application lifecycle management.\nThe application lifecycle management interface produced by MEO/MEAO is described in clause 6.3.1 in ETSI GS MEC 010-2 [3], which contains the following operations:\n-\tCreate application instance identifier.\n-\tApplication instantiation.\n-\tApplication instance terminate.\n-\tDelete application instance identifier.\n-\tQuery application instance information.\n-\tChange application instance state.\n-\tQuery application lifecycle operation Status.\n-\tSubscribe to notifications relating to application lifecycle management.\nThe EAS lifecycle management requirements are described in clause 5.1.14 in TS 28.538 [6], the below table describes the mapping between EAS lifecycle management requirement and appropriate application lifecycle management operation produced by MEO/MEAO.\nTable 5.2.2.2.1-1: Mapping between EAS lifecycle management requirement and application lifecycle management operation produced by MEO/MEAO\n\nThis solution proposes the EAS lifecycle management requirements to be achieved by application lifecycle management operation produced by MEO/MEAO based on Table 5.2.2.2.1-1.\nThis solution is based on the mapping of EAS lifecycle management requirements with application lifecycle management operations produced by MEO/MEAO as described in Table 5.2.2.2.1-1. This solution requires ECSP management system acts as the consumer of application lifecycle management operation produced by MEO/MEAO, no required changes for the architecture of ECSP management system.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.2.2.1-1: Mapping between EAS lifecycle management requirement and application lifecycle management operation produced by MEO/MEAO",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tIssue investigations and potential solutions for alignment with GSMA OPG",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tKey Issue# 1: Issue for resource reservation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tDescription",
+                            "text_content": "As described in clause 2.2.2.3 of GSMA OPG [2], resource reservation is one of its NBI requirements, it indicates that,\n1)\tThe OP (Operator Platform) shall enable Application Providers to express the resource (e.g., compute, networking, storage, acceleration) requirements that the Application Provider wants to be guaranteed.\n2)\tThe NBI shall allow an Application provider to request a set of resources to be booked.\n3)\tThe NBI allows an Application Provider to reserve resources ahead of the application onboarding and unrelated to any specific application, only related to the Application Provider themselves. The NBI allows an Application Provider to consume the reserved resources when onboarding a new application, creating the association between the resources and the application (resources allocation). The NBI allows an Application Provider to delete their reservation.\nTS 28.538 [6] defines the lifecycle management procedure for EAS with ETSI NFV MANO, while the resource reservation related to the ASP requirements is not specified in [6].\nIt is important to investigate the method for ASP to request the resource reservation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tPotential Requirements",
+                            "text_content": "REQ-resource-reservation-1: ECSP management system shall have a capability allowing ASP to request resource reservation related to virtualisation resources (e.g., compute, networking, storage, acceleration).\nREQ-resource-reservation-2: ECSP management system shall have a capability to reserve a set of resources for ASP unrelated to any specific application.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tPotential solutions",
+                            "text_content": "In this solution, a new IOC called ResourceReservationJob is suggested to be sent to ECSP management system for resource reservation. Figure 6.1.3.1-1 depicts the main steps for ASP asking for resource reservation.\nThe figure depicts a network topology with various components such as base stations (BTS), user equipment (UE), and scatterers. The diagram illustrates the signal propagation in a 5G network, highlighting the importance of beamforming techniques to mitigate interference. The fiber-optic backbone architecture is shown, with core switches, optical line terminals (OLTs), and distributed nodes. Redundancy paths are depicted in dashed lines, ensuring failover reliability. The layered design aligns with SDN principles.\nFigure 6.1.3.1-1\n1. ECSP management system receives a resource reservation job creation request (createMOI operation for creation ResourceReservationJob), the ResourceReservationJob contains the following attributes, but not limited to,\n- \tLocation at which the resource are to be reserved;\n- \tcompute resource for reservation, including GPU resource;\n- \tstorage resource for reservation;\n- \tnetworking resource for reservation;\n- \tHardware accelerators resource for reservation;\n- \texpiration time.\n2. ECSP management system sends the ResourceReservationJob creation response to ASP for the received Job DN.\n3. ECSP management system creates the ResourceReservationJob instance and configures the attribute from the request and ECSP management system starts the executing the resource reservation process.\n4. ECSP management system request resource reservation (See clause 7.3.3 in ETSI GS NFV-IFA 013 [7] by interworking with ETSI NFV MANO.\n5. Response with the progress of the requested resource reservation.\n6. ECSP management system sends notification of the progress of the requested resource reservation job.\n7. ECSP management system sends the final notification with the reservation status.\nThis solution introduces a new ResourceReservationJob IOC which can be used by ASP to request resource reservation. ECSP management system needs to support ResourceReservationJob IOC and create a ResourceReservationJob instance based on the request from ASP. The information includes in ResourceReservationJob IOC could be location information, expiration time, reservation statues and virtualized resource information required for reservation, including compute, storage, networking, GPU and Hardware accelerators resource.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tKey Issue#2: Issue for federation management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tDescription",
+                            "text_content": "GSMA requirements related to federation management are divided into E/WBI requirements and Federation Manager Role requirements, which are introduced in clause 5.1.2 and clause 5.2.3 of [2] respectively.\n-\tBased on the description in clause 5.1.2 of [2]:\n-\tThe Federation Management functionality within the Operator Platform (OP) enables it to interact with other OP instances, often in different geographies, thereby providing access for the Application Providers to a larger footprint of Edge Clouds, a more extensive set of subscribers and multiple Operator capabilities.\n-\tThis Key issue is about enabling two OPs establishing federation relationship between each other and sharing available location(s) at which the edge services are provided, resource available at each location, federation expiry etc.\n-\tThe OP which initiates federation relationship is called leading/originated OP. The OP which receives federation relationship request is called partner OP.\nThe following functionalities are enabled with established federation relationship:\n-\tFederated EAS resource reservation management: This is intended for an OP to reserve resources for an application provider, with the other OP, when the application provider initiate the reservation using NBI.\n-\tFederated EAS deployment and termination: This will be used by an OP to instantiate an application to edge clouds of other OP as requested by application provider over NBI.\n-\tEDN sharing: This is intended for OPs to share EDN among each other.\nBased on the description in clause 5.2.3 of [2]:\nGSMA E/WBI API definition [8] provides information on various API and associated parameters and data models to achieve GSMA federation requirements.\nTable 6.2.1-1 concludes the Federation Manager Role requirements and related E/WBI APIs, and shows the comparison with 3GPP management capabilities. The requirement of Settlement is set for charging system and is therefore not shown in table below.\nTable 6.2.1-1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.1-1",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.2\tPotential Requirements",
+                            "text_content": "REQ-FUN-Federation-1: ECSP management system shall have a capability to establishing federation relationship with the (external) MnS consumer (e.g. partner operator platforms).\nREQ-FUN-Federation-2: ECSP management system shall enable federation relationship to include appropriate information including (not limited to) location(s) at which the edge services are provided, resource available at each location, federation expiry.\nREQ-FUN-Federation-3: ECSP management system shall have a capability to remove existing federation relationship with the (external) MnS consumer(e.g. partner operator platforms).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tPotential Solutions",
+                            "text_content": "The solution proposes the following set of IOCs to manage the Edge Federation between multiple ECSP Management systems.\nThe Participating Operator Platform (P-OP) is the operator who provides its EDN to be shared with Leading Operator Platform (L-OP). Both P-OP and L-OP are considered as two different ECSP Management System.\nThe EdgeFederation IOC is defined as the IOC representing the set of federation maintained by either the P-OP or L-OP. This IOC when instantiated represents a set of available federations. This IOC may contain the attributes related with L-OP and P-OP identifier.\nThe OperatorEdgeFederation IOC contains attributes to support the edge federation. An instance of OperatorEdgeFederation IOC should be created and configured for each federation to be maintained/provided by the P-OP or L-OP. When configured the attributes override those in parent EdgeFederation instance. This IOC when instantiated represents a particular available federation. This IOC may contain attributes related with L-OP and P-OP identifier, federation identifier, federation expiry, offered edge resources, accepted edge resources and allocated resource quota of L-OP.\nThe OperatorEdgeDataNetwork IOC is, optionally defined to contain attributes to support an available edge data network. An instance of OperatorEdgeDataNetwork IOC should be created and configured for each EDN shared with another operator. When configured the attributes override those in the associated EdgeDataNetwork instance. The attribute of this IOC are same as defined for EdgeDataNetwork IOC in TS 28.538. This IOC when instantiated represents a particular EDN shared with the L-OP.\nIn order to establish the federation, the L-OP request P-OP to create an instance of EdgeFederation IOC. L-OP can then query for the offered edge resources and update the accepted edge resources accordingly. Based on the accepted edge resource, producer instantiate OperatorEdgeDataNetwork IOC to represent the accepted edge resource which is shared with the L-OP. The federation relationship established can be updated by the L-OP at any point of time in future.\nIn order to remove existing federation relationship, the L-OP request P-OP to delete an existing instance of EdgeFederation IOC, this will also result in deletion of related OperatorEdgeDataNetwork MOI.\nNote: The agreed federation information (e.g. offered EDN and selected EDN) should be available to L-OP also so that L-OP can decide if it want to deploy an EAS on P-OPs network if and when required.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tKey Issue#3: EDN Sharing",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tDescription",
+                            "text_content": "Once the federation relationship is established, the P-OPs can share the EDN available in its network with L-OP. An OP can select some of the EDN from the offered list and register that with the other OP. This will imply that the OP may use the edge resources available in the registered EDN only.\nThis is crucial to investigate in the method and solutions used for EDN sharing management. It is to be discussed whether it require enhancement to edge NRM and the procedures defined in TS 28.538.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tPotential Requirements",
+                            "text_content": "REQ-FUN-NBI-1: ECSP management system shall enable sharing of available EDN with other ECSP management system.\nREQ-FUN-NBI-1: ECSP management system shall disable sharing of available EDN with other ECSP management system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.3\tPotential Solutions",
+                            "text_content": "As part of federation establishment, the P-OP shares its EDN(s) with L-OP in order to share its edge resources with L-OP. For details please check solution in clause 6.2.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tKey Issue#4: Federated EAS resource reservation management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tDescription",
+                            "text_content": "This is intended for an OP to reserve resources for an application provider, with other OP, when the application provider initiate the reservation using NBI. The application provider can request reservation of resources with partner OP on per location basis. The partner OP can reserve resources for a given application provider from the allocated quota for the leading OP. The partner OP may have allocated resources for the leading OP during the EDN registration process. Once the resource reservation request is approved by the partner OP, the reserved resource information is provided to the leading OP for application provider to use. Application provider can use the reserved resource while instantiating the application in the partner OP zones.\nThis is crucial to investigate in the method and solutions used for resource reservation management. It is to be discussed whether it require enhancement to edge NRM and the procedures defined in TS 28.538.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.2\tPotential Requirements",
+                            "text_content": "REQ-FUN-NBI-1: ECSP management system shall have a capability enabling ASP to request reservation of resources with other ECSP management system on per EDN basis.\nREQ-FUN-NBI-1: ECSP management system shall have a capability enabling ASP to request deletion and updating of the reservation made with other ECSP management system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.3\tPotential Solutions",
+                            "text_content": "The solution proposes to use the resource reservation procedures as described in clause 6.1.2. After receiving the creation of ResourceReservationJob request form the ASP, the L-OP (acts as ECSP management system) will check if there is shared EDN available to use at the particular location as described in the request based on the established federation relationships with other OPs (the solution for federation management can refer to clause 6.2.3). The L-OP will forward the create ResourceReservationJob request to the P-OP. Once the P-OP receives the request it will follow the resource reservation procedures as described in clause 6.1.2.\nWhen ASP needs to modify or delete the reserved resources at other OP, the ASP can use modifyMOIAttributes or deleteMOI operation (see clause 11.1.1.3 and clause 11.1.1.4 in TS 28.532 [10]) for ResourceReservationJob MOI, then the L-OP will forward the request to the P-OP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.5\tKey Issue#5: Federated EAS deployment and termination",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.5.1\tDescription",
+                            "text_content": "E/WBI controls the launch and termination of applications on a partner OP. This will be used by a leading OP to instantiate an application to edge clouds (EDN) of partner OP as requested by application provider over NBI. A leading OP makes the application instantiation result available on the NBI interface. Partner OP also providea the application instance status over E/WBI to leading OP which leading OP may expose to application providers on NBI.\nThis is crucial to investigate in the method and solutions used for application management on other OPs. It is to be discussed whether it require enhancement to edge NRM and the procedures defined in TS 28.538 [6].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.5.2\tPotential Requirements",
+                            "text_content": "REQ-FUN-EWBI-EAS-1: ECSP management system shall have a capability to deploy the EAS on the edge network owned by other ECSP.\nREQ-FUN-EWBI-EAS-2: ECSP management system shall have a capability to terminate the EAS on the edge network owned by other ECSP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.5.3\tPotential Solutions",
+                            "text_content": "The solution for REQ-FUN-NBI-1 proposes to use the existing procedures for EAS deployment with the enhanced EASRequirements IOC. After receiving the EAS deployment request form the ASP, the L-OP will check if it can deploy the EAS at one of its own EDN. If not, L-OP will select a P-OP based on the federation relationships which it maintains with multiple P-Ops. The L-OP will send a request to deploy an EAS containing attributes indicating the federation. Once the P-OP receives the request it will follow the EAS deployment procedure as defined in TS 28.538 [6].\nThe solution for REQ-FUN-NBI-2 proposes to use the existing procedures for EAS termination. After receiving the EAS termination request form the ASP, the L-OP will check the EAS if it belongs to its own EDN. If not, L-OP will send a request to terminate the EAS to the P-OP based on the federation relationships with the P-OP. Once the P-OP receives the request it will follow the EAS termination procedure as defined in TS 28.538 [6].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.6\tKey Issue# 6: Virtual Infrastructure Resource Requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.6.1\tDescription",
+                            "text_content": "As described in clause 5.1.1.2.2 of GSMA OPG [2], the OP supports the Infrastructure resource requirements from the Application providers. This includes CPU, memory, storage, hypervisor and networking definition used by the application. In relation to this, an ASP can provide required infrastructure resources for an EAS while requesting to deploy the same.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.6.2\tPotential Requirements",
+                            "text_content": "REQ-FUN-NBI-1: ECSP management system shall have a capability allowing EAS to declare its requirements on the virtual infrastructure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.6.3\tPotential Solution",
+                            "text_content": "The solution requires a capability where ASP can declare its requirements on the virtual infrastructure. EAS is considered as a VNF and deployed by interworking with ETSI NFV MANO as described in TS 28.538 [6]. The VNFD as specified by ETSI NFV MANO in ETSI GS NFV-IFA 011 [14] contains the virtual resource requirements information including CPU, memory, storage, hypervisor and networking resources, it also supports different virtual infrastructure requirements to realize a VNF, such as virtual machine and containers. So the information contained in the VNFD can fulfil the requirement from EAS. In this solution, it requires to add VNFD information in EASRequirements IOC.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.7\tKey Issue# 7: Querying Available Edge Services",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.7.1\tDescription",
+                            "text_content": "-\tAs described in Clause 5.1.1.3 of GSMA OPG [2], OP shall provide the following capabilities to the Application Provider: An OP shall offer a range of quality policies so that an Application Provider can choose the performance that their application requires. These policies are defined based on objectively measured end-to-end parameters that include performance aspects of both the network and the Cloudlet, such as latency and packet loss (measured as average statistics).\n-\tThe NBI shall enable a request-response mechanism through which the Application Provider can state a geographical point where a typical user could be and get informed of the mean latency performance expected.\n-\tThe OP shall describe the capabilities of the Edge Cloud including the geographical zones where it is provided and the type and \"granularity\" of edge cloud and network service (typically generic Compute, memory, storage, and specialised compute, such as GPU and future resource types).\nThe above requirements is calling for a mechanism using which the available edge service and their characteristics (e.g. available SLS, infrastructure resources) are described. This information could be anchored at a particular location i.e. edge service and their characteristics available at a particular location.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.7.2\tPotential Requirements",
+                            "text_content": "REQ-FUN-PLOC-1: ECSP management system shall have a capability allowing ASP to query the available edge services locations and their capabilities including available SLA and infrastructure resources.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.7.3\tPotential Solution",
+                            "text_content": "The solution requires introduction of the following information in the EdgeDataNetwork IOC.\n-\tGeographical location\n-\tAvailable compute resources\n-\tAvailable SLS\nThe Edge PoP can be queried by ASP to know what edge resources are available in what locations. ASP can then take a decision on where its EAS to be deployed.\nWith regard to available compute resources, the ECSP management system can interact with ETSI NFV MANO by calling Query NFVI capacity operation as defined in ETSI GS NFV-IFA 013 [7].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.8\tKey Issue# 8: SLA Requirements Key Issue",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.8.1\tDescription",
+                            "text_content": "As described in clause 5.1.1.2.2 of GSMA OPG [2], the OP shall support the SLA requirements from the Application providers. A SLA description allows an Application Provider to describe the physical constraints in an edge network that should be met for the application to run successfully and provide a correct Quality of Experience (QoE) for the end-user at the UE. The SLA requirements include the following properties:\n-\tBandwidth, bidirectional data rate between UE and backend application.\n-\tLatency, the round trip delay between UE and backend application.\nIn relation to this, the ASP can declare such requirements for an EAS. The EAS need to be deployed at an EDN which can satisfy these requirements.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.8.2\tPotential Requirements",
+                            "text_content": "REQ-FUN-NBI-1: ECSP management system shall have a capability allowing EAS to declare its SLA requirements, in terms of bandwidth and latency, for the data connection with the UE.\nREQ-FUN-NBI-1: ECSP management system shall be able to select an EDN based on the SLA requirements of an EAS.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.8.3\tPotential Solution",
+                            "text_content": "The solution requires adding SLA requirements in EASRequirements IOC. This will enable ASP to provide expected SLA from the edge infrastructure. The following need to be added in the EASREquirements IOC:\n-\tBandwidth\n-\tLatency\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.9\tKey Issue# 9: EAS relocation policies Key Issue",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.9.1\tDescription",
+                            "text_content": "As described in clause 5.2.2.3 of GSMA OPG [2], because of the OP's measurements or knowledge, or hints from the application about performance degradations, the OP may decide that a different edge compute resource can better host the Edge Application. The EAS relocation trigger from OP are related with lifecycle management of its edge compute resources (for example, the overload of an edge compute resource, a failure or planned maintenance, a new or expanded edge compute resource, an issue with the network for its edge compute resource). The OP should be cognisant of the policy indication from the Application Provider about its sensitivity to a change of the edge compute resource hosting the Edge Application.\nAs described in clause 5.1.1.2.2 of GSMA OPG [2], the NBI allows an Application Provider to specify their support for a stateful or stateless Edge Application, i.e. whether the Edge Application can be moved from one edge compute resource to another and this with or without prior notification.\nThe Application Provider indicates the following policies:\n-\tIts Edge Application cannot be moved from one edge compute resource to another;\n-\tIts Edge Application can be moved from one edge compute resource to another, without any notification;\n-\tIts Edge Application can be moved from one edge compute resource to another with prior notification.\nWhen the policy is that a change of edge compute resource can be done with prior notification, the OP decides that a change of edge compute resource is needed and selects the new edge compute resource. In this case, the application chooses the exact timing of the move and is responsible for transferring the application state from one edge compute resource to another. Further, it is stated that when required, notifying the Application Provider on a recommended change of edge compute resource, the Application Provider is responsible for determining the exact timing of the change. The application may indicate that it cannot currently handle mobility. Then, the OP can cancel the mobility procedure.\nTS 28.538 [6] does not support this yet. This requires an EAS to be moved from one (source) EDN to another (target) EDN. This will involve terminating EAS from the source EDN and then instantiating EAS on the target EDN. This involves the following issues to be addressed:\n-\tHow the ASP will provide the policies.\n-\tHow the existing application context is retained from source to target EAS.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.9.2\tPotential Requirements",
+                            "text_content": "REQ-FUN-MOB-1: ECSP management system shall have a capability allowing EAS to declare its mobility policies indicating whether EAS can be moved from one EDN to another\nREQ-FUN-MOB-2: ECSP management system shall have a capability allowing EAS to declare its mobility policies indicating whether EAS can be moved from one EDN to another, without any notification.\nREQ-FUN-MOB-3: ECSP management system shall have a capability allowing EAS to declare its mobility policies indicating whether EAS can be moved from one EDN to another, with prior notification.\nREQ-FUN-MOB-4: ECSP management system shall have a capability allowing ASP to reject the EAS relocation on receiving the relocation notification.\nREQ-FUN-MOB-5: ECSP management system shall have a capability allowing scheduling of an EAS relocation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.9.3\tPotential Solution",
+                            "text_content": "The ASP can provide its preferences or policies for EAS relocation as part of EASRequirement IOC. The policy can dictate whether the EAS can be relocated or not. If it can be relocated does it require prior notification to be sent to the authorized entities? The solution also requires relocation trigger information, decided by ECMS (ECSP Management System), to be included in EASFunction IOC. This information dictates whether EAS should be relocated immediately or at some future point of time. ECMS decides to relocate an EAS for any appropriate purpose e.g. the overload of an edge compute resource, a failure or planned maintenance, a new or expanded edge compute resource, an issue with the network for its edge compute resource.\nOnce decided to relocate the EAS, ECMS considers the relocation policy and trigger information. If the EAS is to be relocated immediately and the relocation policy allows it, ECMS selects the appropriate EDN and instantiate the relocation procedure. That will include instantiating the EAS on the selected EDN as specified in TS 28.538 [6] and then terminate the existing EAS instance. If the relocation policy states that a prior notification is to be provided ECMS notifies all authorized receivers using notifyMOIAttributeValueChange notification, against updates on relocation trigger information in EASFunction IOC, as specified in TS 28.532. The notification will be sent before instantiating the relocation procedure. The consumer can reject the relocation by updating the value of attribute RelocationRejectByConsumer to TRUE.\nIt is proposed to add the following in EASRequirements IOC\n-\tAttribute RelocationPolicy with allowed values as follows\n-\tYes: This dictates that an EAS can be relocated as and when required\n-\tNo: This dictates an EAS cannot be relocated at all\n-\tYesWNotify: This indicates that an EAS can be relocated with a prior notification\nThe solution also requires the following information to be included in the EASFunction IOC\n1)\tRelocationTriggerInfo\na)\tImmediateTrigger: It is a Boolean attribute with default value as FALSE. A value TRUE would indicate to ECMS that an EAS should be relocated immediately.\nb)\tFuturisticTriggerInfo: It is a complex attribute with\n1)\tA Boolean attribute with default value as FALSE. A value TRUE would indicate to ECMS that an EAS should be relocated.\n2)\tA time stamp indicating a futuristic time at which the EAS should be relocated.\nNote: Whether ASP should be able to update RelocationTriggerInfo is not addressed in the present document.\n2)\tRelocationRejectByConsumer: A Boolean attribute which can be updated by the consumer, on receiving the notifyMOIAttributeValueChange notification, to indicate its disagreement with the relocation. The value TRUE indicate that the consumer do not agree with the relocation. The default value is FALSE.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.10\tKey Issue# 10: Application Resource Catalogue",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.10.1\tDescription",
+                            "text_content": "1)\tAs described in Clause 3.5.1.3 of GSMA OPG [2], OP shall provide ASP with application resource catalogue with all the available application and their characteristics. The following requirements relates to application resource catalogue in GSMA. The NBI shall allow applications providers to access the resource catalogue. The Resource catalogue shall consider local resources (CPU, memory, storage).\n2)\tThe OP offers Application Providers a registry to store their application images and update or delete them. The registry may be centralised or distributed, depending upon the Application Provider's needs to reduce boot time and recovery\nTS 28.538 [6] does not address the requirements related with application resource catalogue. An ASP can first upload all the application related artifacts (e.g. image) to a catalogue and then query the catalogue to know what all applications are already available and if there is one which can satisfy ASPs requirements.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.10.2\tPotential Requirements",
+                            "text_content": "REQ-FUN-PLOC-1: ECSP management system should enable ASP to access the application (EAS) resource catalogue containing the available applications and their characteristics.\nREQ-FUN-PLOC-2: ECSP management system should enable ASP to access the application (EAS) resource catalogue for uploading, updating, deleting and querying the application related artefacts (e.g. image).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.10.3\tPotential Solution",
+                            "text_content": "The solution requires a capability where ASP can upload and manage all the artifacts (e.g. image) related with the application with the ECSP/3GPP management system. The uploaded applications can be queried to know the details of available application inventory. All these functionalities can be fulfilled by VNF package management interface see clause 7.7 (such as Upload VNF Package operation, Query VNF package Info operation, Update VNF Package Info operation and  Delete VNF Package operation) in ETSI GS NFV-IFA 013 [7] defined by ETSI ISG NFV. Hence, it is recommended to refer to the relevant specifications from ETSI ISG NFV to describe a solution of the use case.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tConclusion and recommendation",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tConclusion and recommendation for alignment with ETSI  MEC",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.1.1\tIssue#1: Management of collocated platforms for EES and MEC platform",
+                            "text_content": "It is recommended ECSP management system could use the affinityOrAntiAffinity policy defined in ETSI NFV MANO when collocated platform for EES and MEC platform is required.\nThe detailed solution see clause 5.1.3.1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.2\tIssue#2: Application lifecycle management",
+                            "text_content": "It is recommended ECSP management system could acts as the consumer of application lifecycle management operation produced by MEO/MEAO for EAS lifecycle management.\nThe detailed solution see clause 5.2.2.2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.2\tConclusion and recommendation for alignment with GSMA OPG",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.2.1\tIssue#1: Issue for resource reservation",
+                            "text_content": "It is recommended to introduce a new ResourceReservationJob IOC for resource reservation. The information includes in ResourceReservationJob IOC could be location information, expiration time, reservation statues and virtualized resource information required\nThe detailed solution see clause 6.1.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.2\tIssue#2: EAS federation management",
+                            "text_content": "It is recommended to enhance edge NRM to support management of federation information. For the detailed solution see clause 6.2.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.3\tIssue#3: EDN Sharing",
+                            "text_content": "This key issue is addressed as part of federation establishment Key issue. For the detailed solution see clause 6.3.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.4\tIssue#4: Federated EAS resource reservation management",
+                            "text_content": "It is recommended to use the resource reservation solution as described in clause 6.1.2 together with the federation management solution as described in clause 6.2.3 to support federated EAS resource reservation management.\nThe detailed solution see clause 6.4.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.5\tIssue#5: Federated EAS deployment and termination",
+                            "text_content": "It is recommended to use the existing procedures for EAS deployment and EAS termination with the enhanced EASRequirements IOC to support federated EAS deployment and termination management.\nThe detailed solution see clause 6.5.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.6\tIssue#6: Virtual Infrastructure Resource Requirements",
+                            "text_content": "It is recommended to introduce the VNFD information in EASRequirements IOC for supporting Virtual Infrastructure Resource Requirements when deploying a EAS.\nThe detailed solution see clause 6.6.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.7\tIssue#7: Querying Available Edge Services",
+                            "text_content": "It is recommended to enhance EdgeDataNetwork IOC and ECSP management system acts as the consumer to call Query NFVI capacity operation as defined in ETSI GS NFV-IFA 013 [7] to support allowing ASP Querying Available Edge Services for a specific location.\nThe detailed solution see clause 6.7.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.8\tIssue#8: SLA Requirements key issue",
+                            "text_content": "It is recommended to introduce the Bandwidth and Latency in the EASRequirements IOC for supporting SLA requirements when deploying a EAS. New performance measurements and KPIs related to Bandwidth and Latency between UE and EAS may need to be added.\nThe detailed solution see clause 6.8.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.9\tIssue#9: EAS relocation policies",
+                            "text_content": "It is recommended to enhance EASRequirements IOC and EASFunction IOC to support the EAS relocation policies and EAS relocation trigger information respectively.\nThe detailed solution see clause 6.9.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.10\tIssue#10: Application Resource Catalogue",
+                            "text_content": "It is recommended to refer to VNF package management interface defined by ETSI ISG NFV IFA 013[7] to support application resource catalogue management.\nThe detailed solution see clause 6.10.3.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,432 @@
+{
+    "document_name": "22268-i30.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "This Technical Specification defines the stage one description of the Public Warning System (PWS) Requirements. Stage one is the set of requirements seen primarily from the users’ and service providers’ points of view.\nThe scope of this TS covers the core requirements for the PWS that are sufficient to provide a complete service. This TS also covers subsystem additional requirements for the Earthquake and Tsunami Warning System (ETWS), the Commercial Mobile Alert System (CMAS), EU-ALERT, and Korean Public Alert System (KPAS).\nThis TS includes information applicable to network operators, service providers, terminal and network manufacturers, in case of deployment of PWS, ETWS, and or CMAS, EU-ALERT, and KPAS. PWS, ETWS, CMAS, EU-ALERT, and KPAS deployment depends on operator decision or national regulations.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\nReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\nFor a specific reference, subsequent revisions do not apply.\nFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\tFCC 08-99: \"Federal Communications Commission First Report and Order In the Matter of The Commercial  Alert System\"; April 9, 2008.\n[2]\tFCC 08-164: \"Federal Communications Commission Second Report and Order and Further Notice of Proposed Rulemaking In the Matter of The Commercial Mobile Alert System\"; July 8, 2008.\n[3]\tFCC 08-184: \"Federal Communications Commission Third Report and Order and Further Notice of Proposed Rulemaking In the Matter of The Commercial Mobile Alert System\"; August 7, 2008.\n[4]\tJ-STD-100: \"Joint ATIS/TIA-CMAS Mobile Device Behavior Specification\"; January 30, 2009.\n[5]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[6]\tETSI TS 102 900: \"European Public Warning System (EU-ALE) using the Cell Broadcast Service\".\n[7]\tTTA TTAK.KO-06.0263:\"Requirements and Message Format for Korean Public Alert System over Mobile Network\".\n[8]\tFCC 16-127, Federal Communications Commission Report and Order and Further Notice of Proposed Rulemaking In the Matter of Wireless Emergency Alerts Amendments to Part 11 of the Commission’s Rules Regarding the Emergency Alert System; September 29, 2016.\n[9]\t3GPP TS 23.038; \"Alphabets and language-specific information\"\n[10]\tFCC 18-4, Federal Communications Commission Second Report and Order and Second Order on Reconsideration In the Matter of Wireless Emergency Alerts and Amendments to Part 11 of the Commission’s Rules Regarding the Emergency Alert System; January 30, 2018\n[11]\t3GPP TS 22.071: “Location Services (LCS); Service description; Stage 1”\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TR 21.905 [5] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [5].\nCommercial Mobile Alert System (aka, Wireless Emergency Alert): Public Warning System that delivers Warning Notifications provided by Warning Notification Providers to CMAS capable PWS-UEs. CMAS defines the following classes of Warning Notifications: Presidential, Imminent Threat, Public Safety, Child Abduction Emergency, and State/Local WEA Test.\nEarthquake and Tsunami Warning System: Public Warning System that delivers Warning Notifications specific to Earthquake and Tsunami provided by Warning Notification Providers to the UEs which have the capability of receiving Primary and Secondary Warning Notifications within Notification Areas through the 3GPP network\nNotification Area: area where Warning Notifications are broadcast. This is an area that closely approximates the geographical information provided by the Warning Notification Provider\nPWS-UE: User Equipment (UE) which has the capability of receiving Warning Notifications within Notification Areas through the 3GPP network and conforms to the behaviour specific to the PWS service such as dedicated alerting indication and display of the Warning Notification upon reception\nePWS-UE: User Equipment (UE) that supports the ePWS functionality\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [5] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [5]\nCBC\tCell Broadcast Centre\nCBE\tCell Broadcast Entity\nCBS\tCell Broadcast Service\nCMAS\tCommercial Mobile Alert System\nEOC\tEmergency Operations Center\nETWS\tEarthquake and Tsunami Warning System\nKPAS\tKorean Public Alert System\nPWS\tPublic Warning System\nWEA\tWireless Emergency Alert\nePWS\tenhancements of Public Warning System\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral PWS Requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tBackground",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Recently there has been an interest to ensure that the public has the capability to receive timely and accurate alerts, warnings and critical information regarding disasters and other emergencies irrespective of what communications technologies they use. As has been learned from disasters such as earthquakes, tsunamis, hurricanes and wild fires; such a capability is essential to enable the public to take appropriate action to protect their families and themselves from serious injury, or loss of life or property.\nThis interest to enhance the reliability, resiliency, and security of Warning Notifications to the public by providing a mechanism to distribute Warning Notifications over 3GPP systems is the impetus for this Public Warning System Technical Specification.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tHigh level general requirements for Warning Notification delivery",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following list gives the high level general requirements for Warning Notification delivery:\n-\tPWS shall be able to broadcast Warning Notifications to multiple users simultaneously with no acknowledgement required.\n-\tPWS shall be able to support concurrent broadcast of multiple Warning Notifications.\n-\tWarning Notifications shall be broadcast to a Notification Area which is based on the geographical information as specified by the Warning Notification Provider.\n-\tPWS capable UEs (PWS-UE) in idle mode shall be capable of receiving broadcasted Warning Notifications.\nNote:\tA bandwidth reduced low complexity UE or a UE supporting eDRX may not support all requirements for PWS, including ETWS, CMAS, EU-Alert and KPAS\n-\tPWS shall only be required to broadcast Warning Notifications in languages as prescribed by regulatory requirements.\n-\tWarning Notifications are processed by PWS on a first in, first out basis, subject to regulatory requirements.\n-\tReception and presentation of Warning Notifications to the user shall not pre-empt an active voice or data session.\n-\tWarning Notifications shall be limited to those emergencies where life or property is at imminent risk, and some responsive action should be taken.\nNOTE: \tThis requirement does not prohibit the use of the operator’s network (i.e. broadcast technology) implemented for Warning Notifications to be used for commercial services.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tWarning Notification Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "PWS shall not modify or translate the Warning Notification content specified by the Warning Notification Provider.\nIt is expected that Warning Notifications would likely include the following five elements:\n-\tEvent Description\n-\tArea Affected\n-\tRecommended Action\n-\tExpiration Time (with time zone)\n-\tSending Agency\nAdditional elements may be present, based on regulatory requirements.\nThere is a concern that URLs or telephone numbers in a Warning Notification could exacerbate wireless network congestion at a time when network traffic is already dramatically increasing as individuals contact police, fire, and rescue personnel, as well as their loved ones. Therefore, Warning Notifications should not contain anything that would drive immediate and debilitating traffic loads into the PLMN (i.e., URLs or dialable numbers) unless required by regional regulation.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tGranularity of the distribution",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Requirements for the granularity of the distribution of Warning Notifications include:\n-\tBased on the geographical information indicated by the Warning Notification Provider, it shall be possible for the PLMN operators to define the Notification Area based on their network configuration of the area coverage such as distribution of cells, Node Bs, RNCs, etc.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.5\tSupport of Warning Notification Providers",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "PLMN operators shall, at a minimum, be able to support the following functionalities through interaction with Warning Notification Providers:\n-\tActivation of Warning Notification delivery\nIt shall be possible for multiple Warning Notifications to be activated concurrently from one or more Warning Notification Providers.\n-\tCancellation of Warning Notification delivery\nA cancellation is a command from the Warning Notification Provider to stop dissemination of a specific Warning Notification.\n- \tUpdating of Warning Notification delivery\nWarning Notification Providers update a previous Warning Notification to provide new instructions/information to the PLMN operator. When the Warning Notification Provider updates a previous Warning Notification they provide an identifier that allows the PLMN operator to associate the updated Warning Notification with the previous Warning Notification.\nAdditional functionality may be required based on regulatory or operator policy requirements.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.6\tPWS-UE Requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.6.1\tGeneral Requirements",
+                            "text_content": "PWS-UEs shall only be required to receive and present Warning Notifications in languages as presented by the Warning Notification Provider. Regional/regulatory requirements may require the Warning Notifications to be broadcast in multiple languages.\nThere shall be no requirement for language translation in the operator’s network or the UE.\nIt shall be possible for the Warning Notification to be displayed on the PWS-UE upon reception and without any user interaction.\nIt shall be possible for users to configure the behavior of a PWS-UE with regard to Warning Notification alerting and should allow at least volume adjustment.\nThe PWS-UE shall support a dedicated alerting indication (audio attention signal and a dedicated vibration cadence) and be distinct from any other device alerts and restricted to use for Warning Notification purposes. The User Interface shall support the ability for the user to suppress the dedicated audio attention signal and/or the dedicated vibration cadence when a Warning Notification is received.\nThe alerting indication for a specific Warning Notification shall continue until suppressed by users manual operation (e.g. by pushing keys). The frequency and duration of the continued alerting indication is mobile device implementation specific. This shall not suppress the alerting indication for subsequent Warning Notifications.\nThe PWS-UE shall automatically suppress duplicate notifications. A duplicate is a repetition of a previous notification as determined by unique parameters.\nThe PWS-UE shall not support any capabilities to forward received Warning Notifications, to reply to received Warning Notifications, or to copy and paste the content of Warning Notifications.\nPWS-UEs should have the ability to present previously displayed Warning Notifications if requested by the user.\n-\tPWS-UE shall be able to support concurrent reception of multiple Warning Notifications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.2\tSupport of non-Warning Notification capable UEs",
+                            "text_content": "Support of non-Warning Notification capable UEs is subject to regulatory requirements and/or operators policy.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.3\t Life of PWS-UE",
+                            "text_content": "life of the PWS-UE shall not be significantly reduced by PWS.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.4\tEnabling and disabling of Warning Notifications",
+                            "text_content": "The PWS-UE shall be configured to receive all Warning Notifications.\nIt shall be possible for users to disable (e.g., opt-out) presentation of some or all of the Warning Notifications, subject to regulatory requirements and/or operator policy. The user shall be able to select PWS-UE enabling/disabling options via the User Interface to disable, or later enable, the PWS-UE behavior in response to some or all Warning Notifications. Depending on the regional/regulatory requirements, the user shall be able to receive Warning Notifications in one or more selected languages.\nWhere regional or national regulations allow, the HPLMN operator shall be able to instruct the PWS-UE to ignore all Warning Notifications in the HPLMN and in PLMNs equivalent to it, by means of a setting on the USIM.\nWhere regional or national regulations pertaining to a VPLMN allow, the HPLMN operator shall be able to instruct the PWS-UE to ignore all Warning Notifications that are received whilst in this VPLMN, by means of a setting on the USIM, when the integrity of Warning Notifications in this VPLMN is known by the HPLMN operator to be compromised. This setting need not distinguish VPLMNs.\nSubject to regional or national regulations, a PWS-UE in limited service state shall be able to receive and display Warning Notifications.\nNOTE 1:\tNon-existing or empty USIM data files results in all Warning Notifications being presented to the PWS application.\nNOTE 2:\t (void).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.7\tRoaming Requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "It shall be possible for PWS-UEs that are enabled for Warning Notifications in the HPLMN to receive Warning Notifications from the VPLMN supporting PWS when roaming.\nA PWS-UE that does not support the PWS requirements of the VPLMN’s PWS service may not receive Warning Notifications from that VPLMN.\nNote: \tSee section 4.9 for roaming impacts to PWS due to regional regulatory requirements.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.8\tSecurity Requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Security requirements are as follows:\n-\tPWS shall only broadcast Warning Notifications that come from an authenticated authorized source.\nThe following requirements only apply when not roaming internationally:\n-\tWhen required by regional or national regulations, the integrity of the Warning Notification shall be protected. If no such regulatory requirement exists, there shall be no integrity protection of Warning Notifications, and all Warning Notifications shall be presented to the PWS application on the PWS-UE.\n-\tWhen required by regional or national regulations, the PWS shall protect against false Warning Notification messages. If no such regulatory requirement exists, there shall be no protection against false Warning Notifications, and all Warning Notifications shall be presented to the PWS application on the PWS-UE.\nNote 1:\tThese requirements are subject to regulatory policies.\nNOTE 2:\tThe authentication and authorisation of the source are outside the scope of 3GPP Specifications.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.9\tRegulatory Requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The PWS offered by a PLMN may be subject to PWS regional regulatory requirements and thus, the PWS offered may differ from PLMN to PLMN as well as from region to region within a PLMN.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tEarthquake and Tsunami Warning System",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tBackground",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Warning Notifications are expected to be delivered to the users while satisfying the following requirements:\n-\tQuick Warning Notification delivery after the occurrence of Earthquake or Tsunami.\nEarthquake and Tsunami propagate very fast. The duration time between the actual occurrence of the disaster and its arrival is very short. The order of the duration time is around seconds or minutes at most. Therefore the Warning Notifications shall be delivered quickly to the users in the emergency impacted area so that they could take any actions to escape from danger.\n-\tAccurate Warning Notification delivery.\nWarning Notification delivery urges the users to take the actions such as evacuation. Therefore, the Warning Notification shall be delivered to the users accurately in the Notification Area and the content of Warning Notification should be understandable for many types of users (i.e. impaired persons, foreigners).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tDuration of delivery time",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Duration of the delivery time for PLMN operators is the time from the receipt of the Warning Notification by the PLMN operator, i.e. the edge of the 3GPP network, to the time that the Warning Notification is successfully delivered to the UEs.\nProvisioning of delivery of Primary and Secondary Notification may be required:\n-\tPrimary Notification shall be delivered within 4 seconds to the UE in the Notification Area even under congestion situation.\n-\tSecondary Notification is delivered to the users in the Notification Area even under congestion situation.\nNote 1: \tUEs that are out of coverage or switched off are not considered in the requirements.\nNote 2: \tSecondary Notification may not always be generated as it depends on the Warning Notification Provider’s policy.\nNote 3: \tPrimary Notification may not always be generated (i.e. the warning may start with a Secondary Notification).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tInformation element and volume",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following are the requirements from the perspective of information element and amount of data.\nBoth Primary and Secondary Notification shall:\n-\tsupport at least 2 types of emergency events, which are Earthquake and Tsunami;\n-\tbe able to indicate the preferred UE behaviours when receiving Warning Notification, (e.g. whether to display text in the foreground, whether to ring a buzzer, whether to vibrate);\n-\tbe distinguishable from notifications generated for the purpose of testing, training and other notification services;\n-\tbe sent in an optimized type and amount of data, for example, a text with a certain length, by considering the delivery platforms for ETWS.\nPrimary Notification shall:\n-\tconvey data which is small enough to be sent quickly on the network.\n-\tconvey small amount of data to indicate the imminent occurrence of Earthquake and Tsunami, etc.\nSecondary Notification may:\n-\tconvey a large amount of data in order to deliver text, audio to instruct what to do / where to get help, graphical data such as a map indicating the route from present position to evacuation site, time table of food distribution.\nNote: \tThe amount of data to be sent within a Primary Notification would be a few bytes to achieve quick information delivery.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tPriority",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Requirements from the perspective of priority are as follows:\n-\tPrimary Notification has higher priority than Secondary Notification.\n-\tNotifications shall be able to be sequenced by the PLMN according to priority of notification in case that Primary Notification and Secondary Notification should exist at the same time in PLMN.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tRoaming users",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Upon receiving Primary Notification which includes small amount of data to indicate the imminent occurrence of an Earthquake and/or Tsunami, the UE shall display the Warning Notification in a way that is easy to understand by the user, such as an icon or picture.\nNote:\tIt is expected that that the Warning Notification Provider will send the Warning Notification in the languages in common use in the specific area or in such a way that the Warning Notification can reasonably be understood.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tCMAS Specific Requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tIntroduction to CMAS",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Warning Alert and Response Network (WARN) Act was passed by the United States Congress in September 2006 and was signed into law on October 13, 2006, known then as CMAS. CMAS was later renamed as Wireless Emergency Alert (WEA).\nThe Federal Communication Commission (FCC) released several Report and Order rulings for the Commercial Mobile Alert System. [1], [2], [3], [8] and [10].\nAs a result of these legislative and regulatory actions the  for Telecommunications Industry Solutions (ATIS) and the Telecommunications Industry Association (TIA) agreed to develop ATIS and TIA standards to support the deployment of CMAS. This standard is listed in Clause 2.\nThe scope of these specifications includes the support of Commercial Mobile Alert System (CMAS) alert message via the GSM/UMTS Cell Broadcast functionality and warning message delivery via E-UTRAN. These specifications covers the mapping of CMAS messages onto the 3GPP-defined Cell Broadcast functionality and warning message delivery functionality, as well as the CMAS application layer functionality from the reception of the CMAS alert message from the Warning Notification Provider to the point of reception by the CMAS capable mobile device.\nThe CMAS functionality does not require modifications to the 3GPP-defined cell broadcast functionality.\nThe following functional reference model is based on the diagram from Section III.B.10 of the FCC First Report and Order for the Commercial Mobile Alert System, FCC 08-99 [1]:\n\nFigure 6.1-1: CMAS Reference Architecture\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tAdditional PWS Requirements Specific to CMAS",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "In addition to the General Requirements specified in Clause 4, the following requirements are specified for the deployment of CMAS. These CMAS specific requirements are based on the FCC Report and Orders listed in clause 6.1 and further specified in [4].\nWarning Notifications shall support up to 360 characters of GSM 7 bit Default Alphabet [9] for E-UTRAN.\nThe following classes of Warning Notifications shall be supported: Presidential, Imminent Threat, Public Safety, Child Abduction Emergency (e.g. AMBER) , and State/Local WEA Test.\nWhen a Presidential Warning Notification is received, it shall always be presented to the user whenever Cell Broadcast Service via GSM/UMTS or warning notification delivery via E-UTRAN is enabled on the UE.\nIf the Presidential Warning Notification is received in English, then it shall be displayed by the UE. If the Presidential Warning Notification is received in a language other than English, then it shall only be displayed by the UE if the User has selected that language.\nA CMAS-capable User Interface (UI) shall support the ability for the user to opt-out of only the Imminent Threat, Public Safety and Child Abduction Emergency Warning Notifications. A CMAS-capable User Interface (UI) shall support the ability for the user to opt-in to the State/Local WEA Test notification.\nIf the User has opted out of a Warning Notification class, then the Warning Notification for that class shall not be displayed by the UE.\nIf the User has not opted out of a Warning Notification class, then any Warning Notifications for that class received in English shall be displayed by the UE. This also applies to Warning Notifications received in any additional languages that may be selected by the User.\nWarning Notifications may contain URLs and/or phone numbers.\nA CMAS-capable User Interface (UI) shall support the ability (e.g., a “click” touch input) for the user to navigate to the URL or initiate a voice call to the phone number which may be included in the Warning Notification [8].\nThe PLMN broadcasting CMAS Warning Notifications shall also broadcast corresponding CMAS Warning Notification Area(s) when the CMAS Warning Notification is required to adhere to the maximum 0,1 of a mile CMAS Warning Notification Area(s) overshooting as specified in [10]. This requirement applies only to LTE and NR accesses.\nA CMAS-capable UE shall utilize UE-Based Location Calculation (see 3GPP TS 22.071 [11]) to determine whether it is located within the corresponding CMAS Warning Notification Area(s) in order to minimize overloading network LCS resources.\nSubject to opt-out and opt-in settings described above, a CMAS-capable UE shall present the CMAS Warning Notification sent if there is a corresponding CMAS Warning Notification Area(s) and if the CMAS-capable UE is able to determine that its location is within the corresponding CMAS Warning Notification Area(s). Otherwise, if a CMAS-capable UE is unable to or fails to determine its location, the CMAS-capable UE shall present the Warning Notification to the user.\nA CMAS-capable UE shall store presented Warning Notifications for at least 24 hours unless explicitly deleted by the user.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tEU-ALE Specific Requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tIntroduction to EU-ALE",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The generic name for the European Public Warning System is EU-ALE. The letters EU will be replaced by characters identifying a particular country (e.g. NL-ALE signifying the , UK-ALE signifying the ). Such a strategy will allow each country to configure their own Public Warning System to meet their specific national requirements whilst adhering to a common core specification.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tAdditional PWS Requirements Specific to EU-ALE",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "In addition to the General Requirements specified in Clause 4, the following requirements are specified for the deployment of EU-ALE. These EU-ALE specific requirements are further specified in ETSI TS 102 900 [6].\nEU-ALE shall support three types of Warning Notifications: Alert messages to warn citizens of an imminent emergency situation, Advisory messages of lesser urgency, and Amber alerts.\nThe Alert messages shall be supported with three levels of severity. EU-Alert level 1 shall have no opt-out; levels 2 and 3 shall allow opt-out by the user. All levels of EU-ALE messages shall be associated with a dedicated alerting indication.\nNOTE: \tEU-Alert level 1 is compatible with the Presidential Alert in CMAS. EU-Alert level 2 is compatible with CMAS Extreme Alerts and EU-Alert level 3 is compatible with CMAS Severe Alert.\nThe Advisory messages have only one level. Advisory messages shall not be associated with any dedicated alerting indication.\nDepending on national requirements, Amber alerts may need to be broadcast as part of the EU-ALE service. Amber alerts shall not be associated with any dedicated alerting indication.\nEU-ALE shall support Warning Notifications in various languages. To support international roaming, it is expected that countries adopting EU-ALE use the same Message Identifier for Warning Notifications in the local language. If Warning Notifications are broadcast in other languages besides the local language, then the Message Identifier for such Warning Notifications are expected to be the same across the countries adopting EU-ALE.\nEU-ALE shall be supported on GERAN, UTRAN, E-UTRAN and NG-RAN.\nEU-ALERT shall support that the PLMN broadcasting EU-ALERT Warning Notifications also broadcasts corresponding Warning Notification Area(s). This requirement applies only to E-UTRAN and NG-RAN.\nA EU-ALERT-capable UE shall utilize UE-Based Location Calculation (see 3GPP TS 22.071 [11]) to determine whether it is located within the corresponding Warning Notification Area(s) in order to minimize overloading network LCS resources.\nSubject to opt-out and opt-in settings described above, a EU-ALERT-capable UE shall present the EU-ALERT Warning Notification sent if there is a corresponding Warning Notification Area(s) and if the EU-ALERT-capable UE is able to determine that its location is within the corresponding Warning Notification Area(s). Otherwise, if a EU-ALERT-capable UE is unable to or fails to determine its location, the EU-ALERT-capable UE shall present the EU-ALERT Warning Notification to the user.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tKorean Public Alert System specific Requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tIntroduction to Korean Public Alert System",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Telecommunications Technology Association (TTA) has specified a Korean Public Alert System (KPAS) which is based on PWS in [7]. That specification includes the support of Korean Public Alert System (KPAS) messages via the LTE Warning Message Delivery functionality. The Korean Public Alert System (KPAS) specification [7] also specifies application layer functionality to handle the transmission of CBS data from CBE to CBC and support for transmission of the same public alert message to UEs belonging to different mobile network operators in . The specification requires that the system supporting Korean Public Alert System (KPAS) shall transmit the public alert message with high priority in order to provide up-to-date rmation on emergency situations. (e.g. In Tsunami situation, it is recommended to deliver message between CBC and UE in several seconds.).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.2\tAdditional PWS Requirements Specific to Korean Public Alert System (KPAS)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "In addition to the General Requirements specified in Clause 4, the following requirements are specified for the Korean Public Alert System (KPAS) [7]:\n-\tTwo classes of Warning Notification shall be supported; class 0 & class 1.\n-\tThe classes are differentiated per opt-out function. Class 0 shall have no opt-out and class 1 shall allow opt-out by the user.\nDifferent types of Warning Notification shall be supported: Extreme Emergency, Emergency, Public Safety, and Amber. The Extreme Emergency type Warning Notifications are defined as class 0 and the other types are defined as class 1.\nThe characteristics of the Warning Notification shall follow the requirements specified in clause 4.\nThe current implementation requirement is for the message of up to 90 characters text. In addition, Warning Notifications using the UCS2 coding scheme [9] shall support up to 157 characters and Warning Notifications using the GSM 7 bit Default Alphabet coding scheme [9] shall support up to 360 characters from LTE onwards.\nKPAS shall support Warning Notifications in various languages. If a Warning Notification is received in a language other than Korean, then it shall only be displayed by the UE if the user has selected that language.\nA PWS-UE shall display Warning Notifications whose first texts are dedicated words when a PWS-UE receives Warning Notifications in other languages than Korean.\nNOTE 1:\tDedicated words are specified in the regulations of Korean Ministry of Interior and Safety.\nA PWS-UE in KPAS shall support two dedicated alerting indication (audio attention signals).\nNOTE 2:\tTwo dedicated audio attention signals are specified in the regulations of Korean Ministry of Interior and Safety.\nWarning Notifications may contain URLs and/or phone numbers. A UE shall allow the user to navigate to the URL or initiate a voice call to the phone number which may be included in the Warning Notification.\nKPAS shall support that the PLMN broadcasting KPAS Warning Notifications also broadcasts corresponding Warning Notification Area(s).\nA KPAS-capable UE shall utilize UE-Based Location Calculation (see 3GPP TS 22.071 [11]) to determine whether it is located within the corresponding Warning Notification Area(s) in order to minimize overloading network LCS resources.\nSubject to opt-out and opt-in settings described above, a KPAS-capable UE shall present the KPAS Warning Notification sent if there is a corresponding Warning Notification Area(s) and if the KPAS-capable UE is able to determine that its location is within the corresponding Warning Notification Area(s). Otherwise, if a KPAS-capable UE is unable to or fails to determine its location, the KPAS-capable UE shall present the KPAS Warning Notification to the user.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "9\tEnhancements of Public Warning System (ePWS)",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "9.1\tService description",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Requirements specified in the clause 9 do not apply for US WEA and Japan ETWS.\nEnhancements of Public Warning System (ePWS) define behaviours for UEs with no user interface or with a user interface that is incapable of displaying text-based Warning Notifications when receiving a Warning Notification.\nIn addition, enhancements of Public Warning System (ePWS) is intended to improve the comprehension of a Warning Notification to the following categories of users:\n-\tUsers with disabilities who have UEs supporting assistive technologies beyond text assistive technologies; and\n-\tUsers who are not fluent in the language of the Warning Notifications.\nRequirements defined for PWS-UEs in clause 4 are applicable for ePWS-UEs unless dedicated ePWS-UE requirements described in clause 9 supersede them. Specifically, roaming requirements specified in clause 4.7 and security requirements specified in clause 4.8 are applicable for ePWS-UEs.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "9.2\tGeneral Requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.2.1\tePWS Requirements",
+                            "text_content": "ePWS-UEs shall only be required to receive and present Warning Notifications in languages as presented by the Warning Notification Provider. Regional/regulatory requirements may require the Warning Notifications to be broadcast in multiple languages.\nThere shall be no requirement for language translation in the operator’s network or the UE.\nIt shall be possible for the Warning Notification to be presented on the ePWS-UE upon reception and without any user interaction.\nIt shall be possible for users to configure the behavior of an ePWS-UE with regard to Warning Notification alerting and should allow at least volume adjustment if an ePWS-UE supports the alerting sound.\nePWS-UEs should have the ability to present previously displayed Warning Notifications if requested by the user.\n-\tePWS-UE shall be able to support concurrent reception of multiple Warning Notifications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.2.2\tBattery Life of ePWS-UE",
+                            "text_content": "Battery life of the ePWS-UE shall not be significantly reduced by ePWS.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.2.3\tEnabling and disabling of Warning Notifications",
+                            "text_content": "The ePWS-UE shall be configured to receive all Warning Notifications.\nIt shall be possible for users to disable (e.g., opt-out) presentation of some or all of the Warning Notifications, subject to regulatory requirements and/or operator policy. The user shall be able to select ePWS-UE enabling/disabling options via the user interface to disable, or later enable, the ePWS-UE behavior in response to some or all Warning Notifications. Depending on the regional/regulatory requirements, the user shall be able to receive Warning Notifications in one or more selected languages.\nWhere regional or national regulations allow, the HPLMN operator shall be able to instruct the ePWS-UE to ignore all Warning Notifications in the HPLMN and in PLMNs equivalent to it, by means of a setting on the USIM.\nWhere regional or national regulations pertaining to a VPLMN allow, the HPLMN operator shall be able to instruct the ePWS-UE to ignore all Warning Notifications that are received whilst in this VPLMN, by means of a setting on the USIM, when the integrity of Warning Notifications in this VPLMN is known by the HPLMN operator to be compromised. This setting need not distinguish VPLMNs.\nSubject to regional or national regulations, a ePWS-UE in limited service state shall be able to receive and present Warning Notifications.\nNOTE :\tNon-existing or empty USIM data files results in all Warning Notifications being presented to the ePWS application.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.3\tRequirements for 3GPP system supporting ePWS-UEs",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The 3GPP system shall allow the content of a Warning Notification to include information that can be mapped to an event or a disaster and is identifiable by the ePWS-UEs.\nNOTE:\tThe information included in the content of a Warning Notification may be an identifier of an event or a disaster.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "9.4\tRequirements for ePWS-UE incapable of displaying text based Warning Notification",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.4.1\tRequirements for ePWS-UE with no user interface",
+                            "text_content": "ePWS-UEs with no user interface shall be able to receive a Warning Notification broadcast from the 3GPP network.\nSubject to the intended function of the ePWS-UE (e.g. IoT) which has no user interface and regional regulatory requirements, the ePWS-UE may either:\n1. Ignore Warning Notification; or\n2. Take actions consistent with the ePWS-UE function (e.g. IoT) in response to specific Warning Notifications based on the content of the Warning Notification, e.g. shut down machinery or trigger a building alarm system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.4.2\tRequirements for ePWS-UE with a user interface incapable of displaying text based Warning Notification",
+                            "text_content": "The ePWS-UE with a user interface that is not capable of displaying a text-based content shall be able to support the reception of a Warning Notification broadcast from the 3GPP network and shall be able to support the extraction of the information on the type of a notified event or disaster from the received Warning Notification.\nNOTE:\tThe information extractable from the received Warning Notification may be an identifier of an event or a disaster.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.5\tRequirements for the improvement of understanding the Warning Notification",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The ePWS-UE with a user interface providing accessibility extensions to mobile users with disabilities shall be able to support the reception of a Warning Notification broadcast from the 3GPP network.\nThe ePWS-UE with a user interface providing accessibility extensions to mobile users with disabilities shall be able to support the extraction of any information on the type of a PWS notified event or disaster from the received Warning Notification\nThe ePWS-UE with a user interface providing accessibility extensions to mobile users with disabilities shall support the presentation of the information that improves the comprehension of Warning Notification by the accessibility extensions.\nNOTE:\tSubject to regional regulatory requirements the ePWS-UE may use alternative alerting modes for user alerting consistent with ePWS-UE accessibility extensions and based on the content of the Warning Notification.\nA PWS-UE may support the extraction and presentation of information representing a disaster or an event identifiable by Warning Notifications.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "10\tRelay of Warning Notification",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "10.1\tService description",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Requirements specified in the clause 10 do not apply for US WEA and Japan ETWS.\n3GPP system specified the relay functionality that is useful to extend the coverage supported by 3GPP system. With the relay functionality, PWS-UEs and ePWS-UEs that play the role of a relay UE or a remote UE conform to behaviours specified in the clause 10 when receiving a Warning Notification via the relay functionality.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "10.2\tRequirements for the relay functionality",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "A remote ePWS-UE and a remote PWS-UE shall be able to support the reception of a Warning Notification that is transmitted from an UE that supports the relay functionality.\nA remote ePWS-UE and a remote PWS-UE shall be able to automatically suppress duplicated notifications. A duplicate is a repetition of a same notification as determined by unique parameters.\nA remote ePWS-UE and a remote PWS-UE receiving a Warning Notification transmitted via an UE that supports the relay functionality shall behave in the same fashion as if it received the message directly from a 3GPP network.\nAn UE that supports the relay functionality shall unconditionally forward the Warning Notification broadcast received from the network.Annex A (informative):\nChange history\n\n\n",
+                    "tables": [
+                        {
+                            "description": "An UE that supports the relay functionality shall unconditionally forward the Warning Notification broadcast received from the network.Annex A (informative):\nChange history",
+                            "table number": 1,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 2,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

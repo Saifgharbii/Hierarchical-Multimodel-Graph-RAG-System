@@ -1,0 +1,1693 @@
+{
+    "document_name": "38786-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document is a technical report for NR sidelink evolution services in Rel-18. The purpose is to specify radio solutions that are necessary for NR to support sidelink services working on unlicensed spectrums.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TR 30.007: \"Guideline on WI/SI for new Operating Bands\".\n[3]\t3GPP TS 38.101-1: \"NR; User Equipment (UE) radio transmission and reception; Part 1: Range 1 Standalone\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nCon-current operation: The simultaneous transmission and reception of sidelink and Uu interfaces, irrespective of TDM mode and FDM mode, while operation is agnostic of the service used on each interface.\nInter-band con-current operation: Operation of NR Uu carrier and NR Sidelink carrier in different operating bands.\nNR SL CA operation: Aggregation of two or more NR Sidelink component carriers in order to support wider transmission bandwidths.\nIntra-band SL CA UE: UE that supports NR SL CA operation in a single band\nNR SL inter-band con-current operating Band：Band combinations of NR Uu carrier and NR Sidelink carrier in different operating bands.\nNR SL-U UE: UE that supports NR Sidelink operation in unlicensed bands (e.g. n46, n96, n102).\nPC5: The interface for sidelink transmission.\nPC3/PC5 UE: UE that supports Power class 3 or Power class 5\nUE transmission bandwidth configuration: Set of resource blocks located within the UE channel bandwidth which may be used for transmitting or receiving by the UE.\nWideband operation: For a UE that supports shared spectrum channel access, wideband operation refers to operation within a channel larger than 20 MHz in which intra-cell guard bands may be configured to distinguish individual RB-sets\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\nΔFGlobal\tGranularity of the global frequency raster\nΔFRaster\tBand dependent channel raster granularity\nΔfOOB\tΔ Frequency of Out Of Band emission\nΔPPowerClass\tAdjustment to maximum output power for a given power class\nRB\tThe starting frequency offset between the allocated RB and the measured non-allocated RB\nΔRIB,c\tAllowed reference sensitivity relaxation due to support for inter-band CA operation, for serving cell c\nΔShift\tChannel raster offset\nTC\tAllowed operating band edge transmission power relaxation\nTC,c\tAllowed operating band edge transmission power relaxation for serving cell c\n∆LCRB\tDifference RB size between NR Uu RMC and NR SL RMC\nBWChannel\tChannel bandwidth\nBWinterferer\tBandwidth of the interferer\nBWchannel CA \tThe aggregated channel bandwidth of the wanted signal\nFC\tRF reference frequency on the channel raster\nFDL_low\tThe lowest frequency of the downlink operating band\nFDL_high\tThe highest frequency of the downlink operating band\nFUL_low\tThe lowest frequency of the uplink operating band\nFUL_high\tThe highest frequency of the uplink operating band\nFInterferer (offset)\tFrequency offset of the interferer (between the center frequency of the interferer and the carrier frequency of the carrier measured)\nFInterferer\tFrequency of the interferer\nFIoffset\tFrequency offset of the interferer (between the center frequency of the interferer and the closest edge of the carrier measured)\nFoffset\tFrequency offset from FC_high to the higher edge or FC_low to the lower edge.\nFOOB\tThe boundary between the NR out of band emission and spurious emission domains\nFuw (offset)\tThe frequency separation of the center frequency of the carrier closest to the interferer and the center frequency of the interferer\nGpost connector\tThe supported post antenna connector gain\nLCRB\tTransmission bandwidth which represents the length of a contiguous resource block allocation expressed in units of resources blocks\nMax()\tThe largest of given numbers\nMin()\tThe smallest of given numbers\nPhysical resource block number\nNRACLR\tNR ACLR\nNR_SLREFSENS\tThe REFSENS value defined for NR SL\nNR_UuREFSENS \tThe REFSENS value defined for NR Uu\nNRB\tTransmission bandwidth configuration, expressed in units of resource blocks\nNRB_agg\tThe number of the aggregated RBs within the fully allocated aggregated channel bandwidth  for carrier 1 to j, where μ is defined in TS 38.211\nNRB,c\tThe transmission bandwidth configuration of component carrier c, expressed in units of resource blocks  for carrier j, where μ is defined in TS 38.211\nNREF\tNR Absolute Radio Frequency Channel Number (NR-ARFCN)\nNREF-Offs\tOffset used for calculating NREF\nNFV2X\tNoise figure for V2X\nPCMAX\tThe configured maximum UE output power\nPCMAX, c\tThe configured maximum UE output power for serving cell c\nPCMAX, f, c\tThe configured maximum UE output power for carrier f of serving cell c in each slot\nPEMAX\tMaximum allowed UE output power signalled by higher layers\nPEMAX, c\tMaximum allowed UE output power signalled by higher layers for serving cell c\nPInterferer\tModulated mean power of the interferer\nPlargest BW\tPower of the largest transmission bandwidth configuration of the component carriers in the bandwidth combination\nPPowerClass\tPPowerClass is the nominal UE power (i.e., no tolerance)\nP-MPRc\tPower Management Maximum Power Reduction for serving cell c\nPRB\tThe transmitted power per allocated RB, measured in dBm\nPUMAX\tThe measured configured maximum UE output power\nPuw\tPower of an unwanted DL signal\nPw\tPower of a wanted DL signal\nPREFSENS_V2X\tThe REFSENS power for V2X\nPREFSENS_SL \tThe REFSENS power for Sidelink\nRBstart\tIndicates the lowest RB index of transmitted resource blocks\nRBend\tIndicates the highest RB index of transmitted resource blocks\nRX_BW\tThe bandwidth for receiving\nREFSENSV2X\tREFSENS value defined for V2X\nSNRV2X\tSignal-to-Noise Ratio for V2X\nT(PCMAX, f, c)\tTolerance for applicable values of PCMAX, f, c for configured maximum UE output power for carrier f of serving cell c\nSSREF\tSS block reference frequency position\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nACLR\tAdjacent Channel Leakage Ratio\nACS\tAdjacent Channel Selectivity\nAGC\tAutomatic Gain Control\nA-MPR\tAdditional Maximum Power Reduction\nBLER\tBLock Error Rate\nBS\tBase Station\nCBW\tChannel Bandwidth\nCC\tComponent Carriers\nCDF\tCumulative Distribution Function\nCP-OFDM\tCyclic Prefix-OFDM\nC-IMD        \t[Counter Intermodulation Distortion]\nDFT-s-OFDM\tDiscrete Fourier Transform-spread-OFDM\nDMRS\tDemodulation Reference SignalEIRP\tEquivalent Isotropically Radiated Power\nEVM\tError Vector Magnitude\nFDD\tFrequency Division Duplex\nFDM\tFrequency Division Multiplexing\nFR1\tFrequency Range 1\nFR2\tFrequency Range 2\nHD\tHalf Duplex\nIM\tImplementation Margin\nITS\tIntelligent Transportation SystemLTE\tLong Term Evolution\nLBT\tListen before Talk\nMPR\tMaximum Power Reduction\nNF\tNoise Figure\nNR\tNew Radio\nNR-ARFCN\tNR Absolute Radio Frequency Channel Number\nOLPC\tOpen Loop Power Control\nPC\tPower Control\nPRB\tPhysical Resource Block\nProSe\tProximity-based Services\nPSBCH\tPhysical Sidelink Broadcast CHannel\nPSCCH\tPhysical Sidelink Control CHannel\nPSFCH        Physical Sidelink Feedback CHannel\nPSSCH\tPhysical Sidelink Shared CHannelREFSENS\tReference Sensitivity\nRF\tRadio Frequency\nSCS\tSub-Carrier Spacing\nSINR\tSignal to Interference plus Noise Ratio\nSL\tSidelink\nSL-U\tSidelink at unlicensed band\nSNR\tSignal-to-Noise Ratio\nS-SSB         Sidelink Synchronization Signal Block\nSEM\tSpectrum emission mask\nTDD\tTime Division Duplex\nTDM\tTime Division Multiplexing\nUE\tUser Equipment\nUL\tUplink\nV2V\tVehicle to Vehicle\nV2X\tVehicle to Everything\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tBackground",
+            "description": "In Rel-16, sidelink communication was developed in RAN mainly to support advanced V2X applications. In Rel-17, SA2 studied and standardized Proximity based service including public safety and commercial related service. As part of Rel-17, power saving solutions (e.g., partial sensing, DRX) and inter-UE coordination have been developed in RAN1 and RAN2 to improve power consumption for battery limited terminals and reliability of sidelink transmissions.\nAlthough NR sidelink was initially developed for V2X applications, there is growing interest in the industry to expand the applicability of NR sidelink to commercial use cases. For commercial sidelink applications, two key requirements have been identified:\n-\tIncreased sidelink data rate\n-\tSupport of new carrier frequencies for sidelink\nIncreased sidelink data rate is motivated by applications such as sensor information (video) sharing between vehicles with high degree of driving automation. Commercial use cases could require data rates in excess of what is possible in Rel-17. Increased data rate can be achieved with the support of sidelink carrier aggregation and sidelink over unlicensed spectrum. Furthermore, by enhancing the FR2 sidelink operation, increased data rate can be more efficiently supported on FR2. While the support of new carrier frequencies and larger bandwidths would also allow to improve its data rate, the main benefit would come from making sidelink more applicable for a wider range of applications. More specifically, with the support of unlicensed spectrum and the enhancement in FR2, sidelink will be in a better position to be implemented in commercial devices since utilization of the ITS band is limited to ITS safety related applications.\nAnother aspect to consider is the V2X deployment scenario where both LTE V2X and NR V2X devices are to coexist in the same frequency channel. For the two different types of devices to coexist while using a common carrier frequency, it is important that there is mechanism to efficiently utilize resource allocation by the two technologies without negatively impacting the operation of each technology. This requirement was also mentioned as part of the input from 5G Automotive Association to the Rel-18 RAN Workshop.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tOperating bands and channel arrangement for SL evolution",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tOperating bands",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tOperating bands for single carrier operation in unlicensed band",
+                            "text_content": "NR Sidelink is designed to operate in the unlicensed operating bands in FR1 defined in Table 5.1.1-1.\nTable 5.1.1-1. NR SL-U operating bands in FR1\n\nDuring the NR SL-U development RAN4 identified at least following regional and country specific restrictions for direct connection between the devices within the targeted un-licensed bands (n46, n96 and n102).\n1.\tClient devices are prohibited from connecting directly to another client device in the frequency range 5850 – 5895 MHz and 5925 – 7125 MHz in USA, and in the frequency range 5925 – 7125 MHz in Canada per regulatory rules. Direct connection between client devices in the shared spectrum band is subject to region-specific regulatory rules.\n2.\tFor band n96 in USA, SL-U operation is excluded for vehicular UEs.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.1-1. NR SL-U operating bands in FR1",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.2\tOperating band combinations for inter-band con-current operation",
+                            "text_content": "It has been agreed to use  n78@licensed band + n46@unlicensed band as the example band combination for Uu@Licensed and SL@Un-licensed.\nThe below inter-band con-current operation has been agreed not to be supported in Rel-18.\n-\tUu@Un-licensed and SL@Un-licensed\n-\tUu@Un-licensed and SL@licensed\n-\tIntra-band SL@Un-licensed\nNR SL operation is designed to operate concurrently with NR uplink/downlink on the operating band combinations listed in Table 5.1.2-1.\nTable 5.1.2-1 Band combinations of inter-band con-current operating bands\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.2-1 Band combinations of inter-band con-current operating bands",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.3\tOperating band combinations for NR SL CA operation",
+                            "text_content": "NR SL CA operation is designed to operate in the operating bands in FR1 defined in Table 5.1.3-1.\nTable 5.1.3-1: Intra-band contiguous CA operating bands for SL CA in FR1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.3-1: Intra-band contiguous CA operating bands for SL CA in FR1",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tChannel bandwidth",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tChannel bandwidth for single carrier operation in unlicensed band",
+                            "text_content": "Channel bandwidths defined for NR SL-U operating bands are in Table 5.2.1-1.\nTable 5.2.1-1 NR SL-U channel bandwidth\n\nSupport for 10MHz channel bandwidth is not defined for NR SL-U single carrier operation in bands n46, n96 and n102.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.1-1 NR SL-U channel bandwidth",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.2\tChannel bandwidth for inter-band con-current operation",
+                            "text_content": "It has been agreed to apply each channel bandwidth that is supported in a band for Uu and a band for SL-U.\nFor NR SL inter-band con-current operation in FR1, the NR channel bandwidths and SL channel bandwidths for each operating band are specified in Table 5.2.2-1.\nTable 5.2.2-1: Inter-band con-current operation configurations\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.2-1: Inter-band con-current operation configurations",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.3\tChannel bandwidth for NR SL CA operation",
+                            "text_content": "For NR SL CA operation, the SL CA channel bandwidths for each operating band is specified in Table 5.2.3-1.\nTable 5.2.3-1: Intra-band contiguous CA operating bands for SL CA in FR1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.3-1: Intra-band contiguous CA operating bands for SL CA in FR1",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tChannel arrangement",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tChannel spacing",
+                            "text_content": "The general requirements in clause 5.4.1 of TS 38.101-1 are applied for NR SL-U.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tChannel raster",
+                            "text_content": "The general requirements in clause 5.4.2 of TS 38.101-1 are applied for SL-U.\nNR-ARFCN and channel raster requirements in 5.4.2.1 of TS 38.101-1 are applied for NR SL-U with following exception:\n-\t7.5kHz frequency raster shift, which can be used in NR V2X in band n47 is not defined for NR SL-U operation in bands n46, n96, n102.\n-\tChannel raster entries for each operating band requirements in clause 5.4.2.3 of TS 38.101 are applied for NR SL-U with following exception: Channel raster points for 10MHz CBW in band n46 as defined in Table 5.4.2.3-2 are not applicable for NR SL-U.\nThe mapping between the RF reference frequency on the channel raster and the corresponding resource element is given in Table 5.3.2-1 and can be used to identify the RF channel position. The mapping depends on the total number of RBs that are allocated in the channel and applies to both Tx and Rx for SL. The mapping must apply to at least one numerology supported by the UE.\nTable 5.3.2-1: Channel raster to resource element mapping\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.2-1: Channel raster to resource element mapping",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.3.3\tSynchronization raster",
+                            "text_content": "There is no synchronization raster definition for NR sidelink unlicensed bands n46, n96, n102.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tTransmitter characteristics for NR SL evolution",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tTx requirements for NR SL single carrier operation in unlicensed band",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tMaximum output power for NR SL-U",
+                            "text_content": "The SL-U UE Power Classes define the maximum output power for any transmission bandwidth within the channel bandwidth in unlicensed bands. The period of measurement shall be at least one sub frame (1ms).\nTable 6.1.1-1: SL-U UE Power Class\n\nThe SL-U UE shall meet the following additional requirements for maximum mean transmission power density specified in Table 6.2F.1-2 in TS38.101-1 when NS is signalled and when transmission overlaps with any portion of the specified frequency range.  In case transmission overlaps multiple frequency ranges, the lowest power density requirement applies.\nTable 6.1.1-2: Additional requirements for transmit power density\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.1-1: SL-U UE Power Class",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1-2: Additional requirements for transmit power density",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.2\tUE maximum output power reduction for NR SL-U",
+                            "text_content": "The following assumption can serve as a starting point for MPR simulation assumptions that are considered to derive MPR requirements for SL-U operation.\n-\tBasic RF parameters for MPR of single carrier SL-U UE\n-\tWaveforms: CP-OFDM for SL-U\n-\tSupported CBW: 20/40/60/80/100MHz.\n-\tModulation: QPSK/16-QAM/64-QAM/256-QAM\n-\tSCS: 15/30kHz\n-\tC-IMD: 45dBc or 60dBc\n-\tEVM and impairments\n\n\n-\tIBE and impairment exceptions are same as NR-U\n-\tReuse IBE mask from TS38.101-1 Table 6.4F.2.3-1\n-\tImage/carrier exceptions position and specific test according to interlaces.\n-\tACLR: 27dBc for both PC3/PC5 UE with NR MBW\n-\tSEM according to 38.101-1 clause 6.5F.2.2 as well as Table 6.1.2-4\n-\tPA calibration & PA configuration:\n-\tPower class 5 (single PA): 1dB MPR and DFT-s-OFDM QPSK 100RB3 20MHz waveform with 27dB ACLR\n-\tMPR table format can be reused the MPR format of NR-U according to each transmitted channel e.g.PSSCH/PSCCH transmission, PSFCH transmission and PSBCH transmission if any issue is not seen..\n-\tThe MPR will be applied to all SCS in all active 20 MHz sub-bands contiguously allocated in the channel.\n-\tFollow the RB interlaced allocation based on Table 6.2F.2-1 and Table 6.2F.2-2 in TS38.101-1. Also refer the interlaced allocations with uplink resource allocation type 2 as specified in TS 38.214. FFS on the inter-laced RB allocation for PSFCH, and on the repeated RB allocation for S-SSB by RAN1\nFor SL-U in single CC operation, the simultaneous transmission of PSCCH and PSSCH in the same sub-frame is supported and the following constraints in Table 6.1.2-1 can be assumed.\nTable 6.1.2-1: SL-U operation’s MPR simulation assumptions\n\nFor simultaneous transmission of PSFCH transmission for SL-U operation, RAN4 assumed as follow\nTable 6.1.2-2: SL-U UE’s MPR simulation assumptions for PSFCH transmission\n\nFor S-SSB transmission for SL-U operation, RAN4 assumed as follow\nTable 6.1.2-3: SL-U UE’s MPR simulation assumptions for S-SSB transmission\n\nFor MPR and A-MPR for SL-U wideband operation, RAN4 assumed in-carrier SEM as follows.\nIn the case of non-transmitted 20 MHz channel(s) on the edges of an assigned channel bandwidth the spectrum emission mask for operation with shared spectrum channel access, specified in Table 6.5F.2.2.0-1, is applied by using the total bandwidth of the remaining transmitted channels. The spectrum emission mask for non-transmitted channels is floored at -28dBr inside the assigned channel bandwidth and continues at same level until the channel bandwidth mask is intercepted, i.e. until ΔfOOB, as defined in 38.101-1 Clause 6.5F.2.2.0, equals BWChannel / 2. When ΔfOOB > BWChannel / 2 requirements in clause 6.5F.2.2.0 apply.\nThe In-Carrier SEM in gap between transmitted channels is defined in Table 6.1.2-4 and some examples are shown in Figure 6.1.2-1.\nThe relative power of any UE emission shall not exceed the most stringent levels given by the spectrum emission mask for operation with shared spectrum channel access with full channel bandwidth and the spectrum emission mask for non-transmitted channels with the channel bandwidth of the transmitted channels in the case of non-transmitted channels at the edge of an assigned channel bandwidth or spectrum emission mask defined for gaps between the transmitted channels.\nAn exception to the spectrum emission mask for non-transmitted channels allows a single 2 MHz bandwidth to extend to -28 dBc relative to total transmit power, or -20 dBm, whichever is the greatest.\n\nTable 6.1.2-4: In-Carrier SEM in gap between transmitted channels for SL-U wideband operation\n\n\nThe figure depicts a 1.2 GHz wideband operation in a 5G network, illustrating the use of sub-6 GHz spectrum for high-speed data transmission. The figure shows the transmission path of signals through a gap between the transmitted channels, highlighting the importance of signal quality and interference management in 5G networks.\nFigure 6.1.2-1: In-Carrier SEM in gap between transmitted channels for SL-U wideband operation\n\n6.1.2.1.1.1\tLG Electronics’ simulation results (R4-2315542)\nThe following simulation scenarios are considered as Table 6.1.2.1.1.1-1.\n\nTable 6.1.2.1.1.1-1: SL-U PSSCH/PSCCH MPR/A-MPR simulation scenarios\n\nHere, for RB set, ‘105RB0’ means that RB starts at RB index ‘0’ and transmitted RB size is 105 RB. And, Bitmap ‘1’ means the corresponding RB set is transmitted, and ‘0’ means the corresponding RB set is not transmitted for wide band operation.\nTable 6.1.2.1.1.1-2 shows the all possible bitmap of sub-band configuration for wide band operation. The wide band operation can be aggregated with multiple of 20MHz based sub-band. For the SL-U PSSCH/PSCCH MPR simulation, only contiguous RB set bitmaps are considered.\nTable 6.1.2.1.1.1-2: All possible RB set Bitmap of sub-band configuration\n\nTable 6.1.2.1.1.1-3 and Figure 6.1.2.1.1.1-1 show the MPR simulation results for the scenarios.\n\nTable 6.1.2.1.1.1-3: PSSCH/PSCCH MPR simulation results for SL-U power class 5\nFigure 6.1.2.1.1.1-1: PSSCH/PSCCH MPR simulation results for SL-U power class 5\n\nConsidering the inner RB set bitmaps and the outer RB set bitmaps on top of the Full/Partial RB allocation, the PSSCH/PSCCH MPR for SL-U power class 5 can be proposed as Table 6.1.2.1.1.1-4 based on the simulation results.\nTable 6.1.2.1.1.1-4 Maximum power reduction (MPR) for SL-U UE power class 5\n\nTable 6.1.2.1.1.1-5: Outer/Inner sub-band configuration for SL-U wideband operation\n\n6.1.2.1.1.2\tOPPO’s simulation results (R4-2316119)\nWith the agreement above, the simulation cases are updated with 60kHz deleted. For each case, the QPSK, 16QAM, 64QAM and 256QAM will be simulated.\nTable 6.1.2.1.1.2-1 simulation cases\n\nCorresponding MPR results are shown as below for case 1 to 14:\nTable 6.1.2.1.1.2-2 MPR for single CC\n\nThe wide-band operation simulation result is further provided below:\nTable 6.1.2.1.1.2-3 MPR for Wideband operation\n\n\nFigure 6.1.2.1.1.2-1, Contiguous and Interlaced Single CC MPR\n\n\nFigure 6.1.2.1.1.2-2, Contiguous and Interlaced Wideband MPR\nThe case 15, 16, 17, 19, 20, 22, 24, 25, 26, 28, 29 can apply 8dB limit while the rest of the cases should apply 9dB limit.\nSo the exception bitmap can be listed as below:\nTable 6.1.2.1.1.2-4 exception cases mapping to bitmap\n\nThe Exception MPR mapping for wideband operation is proposed as below:\nTable 6.1.2.1.1.2-5: Exception bitmap mapping\n\n6.1.2.1.1.3\tHuawei’s simulation results (R4-2315226)\nReferring to the simulation cases listed in Table 6.1.2.1.1.3-1, the MPR value are shown in Table 6.1.2.1.1.3-2 and Table 6.1.2.1.1.3-3 for below.\nTable 6.1.2.1.1.3-1 Simulation cases for SL-U\n\nTable 6.1.2.1.1.3-2  Maximum power reduction (MPR) for SL-U with Full Allocation\n\nTable 6.1.2.1.1.3-3  Maximum power reduction (MPR) for SL-U with Interlaced Allocation\n\nTable 6.1.2.1.1.3-4  Maximum power reduction (MPR) for SL-U with Wide band operation\n\nTable 6.1.2.1.1.3-5: Proposed MPR for SL-U with single CC\n\n6.1.2.1.1.4\tQualcomm’s simulation results (R4-2316791)\nTable 6.1.2.1.1.4-1: Power class 5 PSSCH/PSCCH MPR simulation results\n\nThe power class 5 PSSCH/PSCCH simulation results in the table should be considered in the discussion of MPR requirements.\n6.1.2.1.1.5\tXiaomi’s simulation results (R4-2315440)\nTable 6.1.2.1.1.5-1 and Figure 6.1.2.1.1.5-1 show the MPR values for different modulations for PSCCH and PSSCH in single CC operation with full allocation:\nTable 6.1.2.1.1.5-1 MPR for PSCCH and PSSCH in single CC operation\n\nFigure 6.1.2.1.1.5-1 MPR for PSCCH and PSSCH in single CC operation with full allocation\nBased on above simulation results for full allocation in single CC, we proposed:\nThe MPR of full allocation for PC5 SL-U shall be as below table 6.1.2.1.1.5-2.\nTable 6.1.2.1.1.5-2 Proposed MPR for PSCCH and PSSCH in single CC operation.\n\n6.1.2.1.2.1\tLG Electronics’ simulation results (R4-2315542)\nTx Power for multiple S-SSBs\nThe equal power per each S-SSB is assumed for MPR and A-MPR simulation.\nFor S-SSB MPR/A-MPR, the following simulation scenarios of Table 6.1.2.1.2.1-1 are considered.\nTable 6.1.2.1.2.1-1: SL-U S-SSB MPR/A-MPR simulation scenarios\n\nHere, for S-SSB {11RBs}xN repeated RB location index, ‘0’ means that {11RB} start RB index = 0. And, Bitmap ‘1’ means the corresponding RB set is transmitted, and ‘0’ means the corresponding RB set is not transmitted for wide band operation.\nTable 6.1.2.1.2.1-2 and Figure 6.1.2.1.2.1-1 show the MPR simulation results for the scenarios.\n\nTable 6.1.2.1.2.1-2: S-SSB MPR simulation results for SL-U power class 5\n\n\na. 20MHz, 40MHz, and 60MHz\n\n\nb. 80MHz\nThe figure depicts a 100MHz bandwidth spectrum, illustrating the frequency range of the communication system. This is crucial for the efficient transmission of data over the network, as it allows for the transmission of high-speed signals.\nc. 100MHz\nFigure 6.1.2.1.2.1-2: S-SSB MPR simulation results for SL-U power class 5\n\nTable 6.1.2.1.2.1-3 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration and the number of S-SSB repetition per RB set.\nTable 6.1.2.1.2.1-3 : S-SSB MPR simulation results for SL-U power class 5\n\nThe S-SSB MPR for SL-U power class 5 can be proposed as Table 6.1.2.1.2.1-4 or Table 6.1.2.1.2.1-5 based on the simulation results when considering implementation margin.\nTable 6.1.2.1.2.1-4 : S-SSB MPR for SL-U UE power class 5\n\nTable 6.1.2.1.2.1-5 :  S-SSB MPR for SL-U UE power class 5\n\n6.1.2.1.2.2\tHuawei simulation results (R4-2319500)\nThe evaluation scenarios and MPR results for PSFCH are illustrated in Table 6.1.2.1.2.2-1\nTable 6.1.2.1.2.2-1 Evaluation scenarios and MPR for SSB on shared spectrum\n\nThe figure depicts a simplified representation of the Power Spectral Density (PSD) and Signal-to-Interference-plus-Noise Ratio (SINR) for Case 1, which is a simplified model of a 5G network. The PSD is a measure of the power of the signal at different frequencies, while the SINR is a measure of the signal-to-interference-plus-noise ratio, which is a key metric for evaluating the quality of a communication channel. The figure shows the relationship between the PSD and SINR for different frequencies, which is important for understanding the performance of the 5G network.The figure depicts a simplified representation of the Power Spectral Density (PSD) and Signal-to-Interference-plus-Noise Ratio (SINR) for Case 1, which is a simplified model of a 5G network. The PSD is a measure of the power of the signal at different frequencies, while the SINR is a measure of the signal-to-interference-plus-noise ratio, which is a key metric for evaluating the quality of a communication channel. The figure shows the relationship between the PSD and SINR for different frequencies, which is important for understanding the performance of the 5G network.\nFigure 6.1.2.1.2.2-1 PSD and SEM for Case 1\nThe figure depicts a simplified representation of the Power Spectral Density (PSD) and Signal-to-Interference-plus-Noise Ratio (SINR) for Case 4, which is a simplified model of a 5G network. The PSD is a measure of the power of the signal at different frequencies, while the SINR is a measure of the signal-to-interference-plus-noise ratio, which is a key metric for evaluating the quality of a communication channel. The figure shows the relationship between the PSD and SINR for different frequencies, which is important for understanding the performance of the 5G network.The figure depicts a simplified representation of the Power Spectral Density (PSD) and Signal-to-Interference-plus-Noise Ratio (SINR) for Case 4, which is a simplified model of a 5G network. The PSD is a measure of the power of the signal at different frequencies, while the SINR is a measure of the signal-to-interference-plus-noise ratio, which is a key metric for evaluating the quality of a communication channel. The figure shows the relationship between the PSD and SINR for different frequencies, which is important for understanding the performance of the 5G network.\nFigure 6.1.2.1.2.2-2 PSD and SEM for Case 4\n\nAccording to the simulation evaluation, we propose the MPR for S-SSB on shared spectrum to be 11dB taken margin into consideration.\n\n6.1.2.1.3.1\tLG Electronics’ simulation results (R4-2315542 and R4-2321771)\nFor PSFCH MPR/A-MPR, the following simulation scenarios of Table 6.1.2.1.3.1-1 are considered based on Alt 1-1b.\nTable 6.1.2.1.3.1-1: SL-U PSFCH MPR/A-MPR simulation scenarios\n\nHere, for PSFCH RB location index, ‘0’ means that RB index = 0. And, Bitmap ‘1’ means the corresponding RB set is transmitted, and ‘0’ means the corresponding RB set is not transmitted for wide band operation.\nTable 6.1.2.1.3.1-2shows the MPR simulation results for the scenarios.\n\n\nTable 6.1.2.1.3.1-2: PSFCH MPR simulation results for SL-U power class 5\n\n\nTable 6.1.2.1.3.1-3 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration.\nTable 6.1.2.1.3.1-3 : PSFCH MPR simulation results for SL-U power class 5\n\nConsidering the inner RB set bitmaps and the outer RB set bitmaps, the PSFCH MPR for SL-U power class 5 can be proposed as Table 6.1.2.1.3.1-4 or Table 6.1.2.1.3.1-5 based on the simulation results when considering implementation margin.\nTable 6.1.2.1.3.1-5 PSFCH MPR for SL-U UE power class 5\n\nTable 6.1.2.1.3.1-6 PSFCH MPR for SL-U UE power class 5\n\n6.1.2.1.3.2\tHuawei simulation results (R4-2319500)\nThe evaluation scenarios and MPR results for PSFCH are illustrated in Table 6.1.2.1.3.2-1\nTable 6.1.2.1.3.2-1 Evaluation scenarios and MPR for PSFCH on shared spectrum\n\nThe figure depicts a simplified representation of the Power Spectral Density (PSD) and Signal-to-Interference-plus-Noise Ratio (SINR) for Case 1, which is a simplified model of a 5G network. The PSD is a measure of the power of the signal at different frequencies, while the SINR is a measure of the signal-to-interference-plus-noise ratio, which is a key metric for evaluating the quality of a communication system. The figure shows the relationship between the PSD and SINR for different frequencies, which is important for understanding the performance of the 5G network.The figure depicts a simplified representation of the Power Spectral Density (PSD) and Signal-to-Interference-plus-Noise Ratio (SINR) for Case 1, which is a simplified model of a 5G network. The PSD is a measure of the power of the signal at different frequencies, while the SINR is a measure of the signal-to-interference-plus-noise ratio, which is a key metric for evaluating the quality of a communication system. The figure shows the relationship between the PSD and SINR for different frequencies, which is important for understanding the performance of the 5G network.\nFigure 6.1.2.1.3.2-1 PSD and SEM for Case 1\nThe figure depicts a simplified representation of the Power Spectral Density (PSD) and Signal-to-Interference-plus-Noise Ratio (SINR) for Case 3, which is a simplified model of a 5G network. The PSD is a measure of the power of the signal at different frequencies, while the SINR is a measure of the signal-to-interference-plus-noise ratio, which is a key metric for evaluating the quality of a communication channel. The figure shows the relationship between the PSD and SINR for different frequencies, which is important for understanding the performance of the 5G network.The figure depicts a simplified representation of the Power Spectral Density (PSD) and Signal-to-Interference-plus-Noise Ratio (SINR) for Case 3, which is a simplified model of a 5G network. The PSD is a measure of the power of the signal at different frequencies, while the SINR is a measure of the signal-to-interference-plus-noise ratio, which is a key metric for evaluating the quality of a communication channel. The figure shows the relationship between the PSD and SINR for different frequencies, which is important for understanding the performance of the 5G network.\nFigure 6.1.2.1.3.2-2 PSD and SEM for Case 3\n\n6.1.2.1.2.2a\tHuawei’s simulation results (R4-2319501)\nThe updated scenarios with P_common< P_dedicated is as follows.\nTable 6.1.2.1.2.2a-1 Evaluation scenarios and MPR for PSFCH on shared spectrum\n\nThe figure depicts a 100-MHz signal with a 100-dB gain, indicating a high-quality signal. The signal is transmitted over a 100-km fiber-optic backbone, with a 100-dB loss at the receiver. The figure also includes a 100-dB gain at the transmitter, which is a key component of the system. The figure is labeled \"Figure 6.1.2.1.2.2a -1  PSD and SEM for Case 1,\" which suggests that it is part of a series of figures illustrating the performance of the system under different conditions.The figure depicts a 100-MHz signal with a 100-dB gain, indicating a high-quality signal. The signal is transmitted over a 100-km fiber-optic backbone, with a 100-dB loss at the receiver. The figure also includes a 100-dB gain at the transmitter, which is a key component of the system. The figure is labeled \"Figure 6.1.2.1.2.2a -1  PSD and SEM for Case 1,\" which suggests that it is part of a series of figures illustrating the performance of the system under different conditions.\nFigure 6.1.2.1.2.2a-1 PSD and SEM for Case 1\nThe figure depicts a 3D representation of a power spectral density (PSD) for Case 3 and Case 4, illustrating the distribution of power in the signal and noise components. The PSD is a key metric used to assess the quality of a communication system, with higher values indicating higher levels of noise and interference. The figure also includes a legend to help interpret the different colors and shapes used to represent the PSD values.The figure depicts a 3D representation of a power spectral density (PSD) for Case 3 and Case 4, illustrating the distribution of power in the signal and noise components. The PSD is a key metric used to assess the quality of a communication system, with higher values indicating higher levels of noise and interference. The figure also includes a legend to help interpret the different colors and shapes used to represent the PSD values.\nFigure 6.1.2.1.2.2a-2 PSD for Case 3 and case 4\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2-1: SL-U operation’s MPR simulation assumptions",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2-2: SL-U UE’s MPR simulation assumptions for PSFCH transmission",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2-3: SL-U UE’s MPR simulation assumptions for S-SSB transmission",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2-4: In-Carrier SEM in gap between transmitted channels for SL-U wideband operation",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.1-1: SL-U PSSCH/PSCCH MPR/A-MPR simulation scenarios",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.1-2: All possible RB set Bitmap of sub-band configuration",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.1-3: PSSCH/PSCCH MPR simulation results for SL-U power class 5",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.1-4 Maximum power reduction (MPR) for SL-U UE power class 5",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.1-5: Outer/Inner sub-band configuration for SL-U wideband operation",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.2-1 simulation cases",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.2-2 MPR for single CC",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.2-3 MPR for Wideband operation",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.2-4 exception cases mapping to bitmap",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.2-5: Exception bitmap mapping",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.3-1 Simulation cases for SL-U",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.3-2  Maximum power reduction (MPR) for SL-U with Full Allocation",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.3-3  Maximum power reduction (MPR) for SL-U with Interlaced Allocation",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.3-4  Maximum power reduction (MPR) for SL-U with Wide band operation",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.3-5: Proposed MPR for SL-U with single CC",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.4-1: Power class 5 PSSCH/PSCCH MPR simulation results",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.5-1 MPR for PSCCH and PSSCH in single CC operation",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.1.5-2 Proposed MPR for PSCCH and PSSCH in single CC operation.",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.2.1-1: SL-U S-SSB MPR/A-MPR simulation scenarios",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.2.1-2: S-SSB MPR simulation results for SL-U power class 5",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.2.1-3 : S-SSB MPR simulation results for SL-U power class 5",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.2.1-4 : S-SSB MPR for SL-U UE power class 5",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.2.1-5 :  S-SSB MPR for SL-U UE power class 5",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.2.2-1 Evaluation scenarios and MPR for SSB on shared spectrum",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.3.1-1: SL-U PSFCH MPR/A-MPR simulation scenarios",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.3.1-2: PSFCH MPR simulation results for SL-U power class 5",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.3.1-3 : PSFCH MPR simulation results for SL-U power class 5",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.3.1-5 PSFCH MPR for SL-U UE power class 5",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.3.1-6 PSFCH MPR for SL-U UE power class 5",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.3.2-1 Evaluation scenarios and MPR for PSFCH on shared spectrum",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.2.1.2.2a-1 Evaluation scenarios and MPR for PSFCH on shared spectrum",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.3\tUE additional maximum output power reduction for NR SL-U",
+                            "text_content": "Based on the NR-U agreement for the additional spectrum emission mask in clause 6.5F.2.3 in TS38.101-1, RAN4 do not consider the additional spectrum emission mask.\nFor the additional spurious emission requirements for SL-U, RAN4 will consider the NR-U additional spurious emission requirements in clause 6.5F.3.3 in TS38.101-1.\nTo derive A-MPR requirements for SL-U operation in single CC, RAN4 will assume the basic simulation parameters and assumptions in section 6.1.2 and the additional spurious emission requirements in clause 6.5F.3.3 in TS38.101-1 will be considered.\n6.1.3.1.1.1\tQualcomm’s simulation results (R4-2316791)\nTable 6.1.3.1.1.1-1: Simulation results for NS_28 Allocation Full and partial allocations.\n\nThe power class 5 PSSCH A-MPR in the tables should be considered in the discussion of MPR requirements.\n6.1.3.3.1.1\tQualcomm’s simulation results (R4-2316791)\nTable 6.1.3.3.1.1-1: Simulation results for NS_30 Allocation Note 2 Full and partial allocations.\n\nTable 6.1.3.3.1.1-2: Simulation results for NS_30 Allocation Note 3 Full and partial allocations.\n\nThe power class 5 PSSCH A-MPR in the tables should be considered in the discussion of MPR requirements.\n\n6.1.3.4.1.1\tLG Electronics’ simulation results (R4-2315542)\nTable 6.1.3.4.1.1-6 and Figure 6.1.3.4.1.1-1 show the A-MPR simulation results for the scenarios.\n\nTable 6.1.3.4.1.1-1: NS_31-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nThe figure depicts a simulation result for a 5G power class 5 network, specifically showing the performance of the NS_31-PSSCH/PSCCH A-MPR (Active-Passive-Passive) system. The results show the impact of various parameters on the system's performance, such as the number of active and passive elements, the power class, and the number of transmit and receive antennas. The figure provides valuable insights into the design and performance of the NS_31-PSSCH/PSCCH A-MPR system in a 5G power class 5 network.\nFigure 6.1.3.4.1.1-1: NS_31-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nTable 6.1.3.4.1.1-2 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration and Full/Partial RB allocation.\nTable 6.1.3.4.1.1-2 : NS_31-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nThe inner RB set configuration needs to considered when defining the SL-U A-MPR requirements.\nBased on the results, Table 6.1.3.4.1.1-3 can be considered for NS_31 A-MPR for SL-U UE power class 5.\nTable 6.1.3.4.1.1-3. NS_31 additional maximum power reduction (A-MPR) for SL-U UE power class 5\n\n6.1.3.4.1.2\tOPPO’s simulation results (R4-2316119)\nFor PSD = 10dBm/MHz：\nTable 6.1.3.4.1.2-1 A-MPR for single CC PSD=10 dBm/MHz\n\nThe wide-band operation simulation result is further provided below:\nTable 6.1.3.4.1.2-2 A-MPR for Wideband operation PSD=10 dBm/MHz\n\nFor PSD = 7dBm/MHz：\nTable 6.1.3.4.1.2-3 A-MPR for single CC PSD=7 dBm/MHz\n\nThe wide-band operation simulation result is further provided below:\nTable 6.1.3.4.1.2-4 A-MPR for Wideband operation PSD=7 dBm/MHz\n\nFor PSD = 4dBm/MHz：\nTable 6.1.3.4.1.2-5 A-MPR for single CC PSD=4 dBm/MHz\n\nThe wide-band operation simulation result is further provided below:\nTable 6.1.3.4.1.2-6 A-MPR for NS_02S Wideband operation PSD=4 dBm/MHz\n\nFrom the table 6.1.3.4.1.2-1 to table 6.1.3.4.1.2-6 above, it can be found that even though the PSD requirement is different from 10 to 7 to 4 dBm/MHz, the A-MPR simulation result for both single CC and wide-band operation are the same. The reason here is that the PSD requirement is not the dominate factor and it is the SEM and EVM for some of the 256QAM. The figure 6.1.3.4.1.2-1 and figure 6.1.3.4.1.2-2 below show the A-MPR.\n\nFigure 6.1.3.4.1.2-1 Single CC A-MPR\n\n\nFigure 6.1.3.4.1.2-2 Wideband A-MPR\nNote : NS_02S is equal to NS_31.\n6.1.3.4.1.3\tQualcomm’s simulation results (R4-2316791)\nWe performed simulations for the full and partial allocations and computed the A-MPR for NS_31. The results are shown in the tables below.\nTable 6.1.3.4.1.3: Simulation results for NS_31 Full and partial allocations.\n\nThe power class 5 PSSCH A-MPR in the table should be considered in the discussion of MPR requirements.\n\n6.1.3.4.2.1\tLG Electronics’ simulation results (R4-2315542)\nFor NS_31, Table 6.1.3.4.2.1-1 and Figure 6.1.3.4.2.1-1 show the A-MPR simulation results for the scenarios.\n\nTable 6.1.3.4.2.1-1: NS_31-S-SSB A-MPR simulation results for SL-U power class 5\n\n\na. 20MHz, 40MHz, and 60MHz\n\nb. 80MHz\nThe figure depicts a 100MHz bandwidth spectrum, illustrating the frequency range of the communication system. This is crucial for the efficient transmission of data over the network, as it allows for the transmission of high-speed signals.\nc. 100MHz\nFigure 6.1.3.4.2.1-13: NS_31-S-SSB A-MPR simulation results for SL-U power class 5\n\nTable 6.1.3.4.2.1-2 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration.\nTable 6.1.3.4.2.1-2 : NS_31 S-SSB A-MPR simulation results for SL-U power class 5\n\nConsidering the inner RB set bitmaps and the outer RB set bitmaps, the S-SSB A-MPR for SL-U power class 5 can be proposed as Table 6.1.3.4.2.1-3 or Table 6.1.3.4.2.1-4 based on the simulation results when considering implementation margin.\nTable 6.1.3.4.2.1-3: NS_31 S-SSB A-MPR for SL-U UE power class 5\n\nTable 6.1.3.4.2.1-4: NS_31 S-SSB A-MPR for SL-U UE power class 5\n\n6.1.3.4.3.1\tLG Electronics’ simulation results (R4-2315542 and R4-2321771)\nFor NS_31, Table 6.1.3.4.3.1-1shows the A-MPR simulation results for the scenarios.\n\nTable 6.1.3.4.3.1-1: NS_31-PSFCH A-MPR simulation results for SL-U power class 5\n\n\nTable 6.1.3.4.3.1-2 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration.\nTable 6.1.3.4.3.1-2 : NS_31 PSFCH A-MPR simulation results for SL-U power class 5\n\nConsidering the inner RB set bitmaps and the outer RB set bitmaps, the PSFCH A-MPR for SL-U power class 5 can be proposed as Table 6.1.3.4.3.1-3 or Table 6.1.3.4.3.1-4 based on the simulation results when considering implementation margin.\nTable 6.1.3.4.3.1-3 NS_31 PSFCH A-MPR for SL-U UE power class 5\n\nTable 6.1.3.4.3.1-4 NS_31 PSFCH A-MPR for SL-U UE power class 5\n\n6.1.3.5.1.1\tLG Electronics’ simulation results (R4-2315542)\nFor NS_53, Table 6.1.3.5.1.1-9 and Figure 6.1.3.5.1.1-1 show the A-MPR simulation results for the scenarios.\n\nTable 6.1.3.5.1.1-1: NS_53-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nThe figure depicts a simulation result for a 53-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-PS/5-\nFigure 6.1.3.5.1.1-1: NS_53-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nTable 6.1.3.5.1.1-2 shows the maximum value of simulation results considering Full/Partial RB allocation.\nTable 6.1.3.5.1.1-2 : NS_53-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nTable 6.1.3.5.1.1-3 can be considered for NS_53 A-MPR for SL-U UE power class 5.\nTable 6.1.3.5.1.1-3. NS_53 additional maximum power reduction (A-MPR) for SL-U UE power class 5\n\n6.1.3.5.1.2\tOPPO’s simulation results (R4-2316119)\nCase 1,2,8,9 are for 20MHz; 3,4,10,11 are for 40MHz; 5,12 are for 60MHz; 6,13 are for 80MHz and 7,14 are for 100MHz.\nTable 6.1.3.5.1.2-1 A-MPR for single CC\n\nThe wide-band operation simulation result is further provided below:\nTable 6.1.3.5.1.2-2 A-MPR for Wideband\n\n\nFigure 6.1.3.5.1.2-1 Single CC A-MPR\n\n\nFigure 6.1.3.5.1.2-2 Wide-band A-MPR\nTable 6.1.3.5.1.3-1: Simulation results for NS_53 Full and partial allocations.\n\nThe power class 5 PSSCH A-MPR in the table should be considered in the discussion of MPR requirements.\n\n6.1.3.5.2.1\tLG Electronics’ simulation results (R4-2315542)\nFor NS_53, Table 6.1.3.5.2.1-1 and Figure 6.1.3.5.2.1-1 show the A-MPR simulation results for the scenarios.\n\n\nTable 6.1.3.5.2.1-1: NS_53-S-SSB A-MPR simulation results for SL-U power class 5\n\n\na. 20MHz, 40MHz, and 60MHz\n\nb. 80MHz\nThe figure depicts a 100MHz bandwidth spectrum, illustrating the frequency range of radio waves used in telecommunication networks.\nc.100MHz\nFigure 6.1.3.5.2.1-1: NS_53 S-SSB A-MPR simulation results for SL-U power class 5\n\nTable 6.1.3.5.2.1-2 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration.\nTable 6.1.3.5.2.1-2 : NS_53 S-SSB A-MPR simulation results for SL-U power class 5\n\nConsidering the inner RB set bitmaps and the outer RB set bitmaps, the S-SSB A-MPR for SL-U power class 5 can be proposed as Table 6.1.3.5.2.1-3 or Table 6.1.3.5.2.1-4 based on the simulation results when considering implementation margin.\nTable 6.1.3.5.2.1-3: NS_53 S-SSB A-MPR for SL-U UE power class 5\n\nTable 6.1.3.5.2.1-4: NS_53 S-SSB A-MPR for SL-U UE power class 5\n\n6.1.3.5.3.1\tLG Electronics’ simulation results (R4-2315542 and R4-2321771)\nFor NS_53, Table 6.1.3.5.3.1-1shows the A-MPR simulation results for the scenarios.\n\n\nTable 6.1.3.5.3.1-1: NS_53-PSFCH A-MPR simulation results for SL-U power class 5\n\n\nTable 6.1.3.5.3.1-2 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration.\nTable 6.1.3.5.3.1-2 : NS_53 PSFCH A-MPR simulation results for SL-U power class 5\n\nConsidering the inner RB set bitmaps and the outer RB set bitmaps, the PSFCH A-MPR for SL-U power class 5 can be proposed as Table 6.1.3.5.3.1-3 or Table 6.1.3.5.3.1-4 based on the simulation results when considering implementation margin.\nTable 6.1.3.5.3.1-3 NS_53 PSFCH A-MPR for SL-U UE power class 5\n\nTable 6.1.3.5.3.1-4 NS_53 PSFCH A-MPR for SL-U UE power class 5\n\n6.1.3.7.1.1\tLG Electronics’ simulation results (R4-2315542)\nFor NS_58, Table 6.1.3.7.1.1-1 and Figure 6.1.3.7.1.1-1 show the A-MPR simulation results for the scenarios.\n\nTable 6.1.3.7.1.1-1: NS_58-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nThe figure depicts a simulation result for a 5G power class 5 (SL-U) scenario, showing the performance of the NS_58-PSSCH/PSCCH  A- MPR (Active/Passive/Standby/Passive) system. The results demonstrate the system's ability to maintain a stable power class 5 signal, with a maximum power of 100 dBm. The figure also includes a comparison with the MPR (Maximum Power Point) system, highlighting the benefits of the NS_58-PSSCH/PSCCH  A- MPR system in terms of power efficiency and performance.\nFigure 6.1.3.7.1.1-2: NS_58-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nTable 6.1.3.7.1.1-2 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration and Full/Partial RB allocation.\nTable 6.1.3.7.1.1-2 : NS_58-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nThe inner RB set configuration needs to considered when defining the SL-U A-MPR requirements.\nBased on the results, Table 6.1.3.7.1.1-3 can be considered for NS_58 A-MPR for SL-U UE power class 5.\nTable 6.1.3.7.1.1-3. NS_58 additional maximum power reduction (A-MPR) for SL-U UE power class 5\n\n6.1.3.7.1.2\tOPPO’s simulation results (R4-2316119)\nThe A-MPR requirement is captured in sub-clause 6.2F.3.10 and the requirement is differentiated by different channel bandwidth as captured below:\nTable 6.1.3.7.1.2-1 A-MPR for single CC\n\nThe wide-band operation simulation result is further provided below:\nTable 6.1.3.7.1.2-2 A-MPR for wideband\n\n\nFigure 6.1.3.7.1.2-1 Single CC A-MPR\n\n\nFigure 6.1.3.7.1.2-2 Wideband CC A-MPR\n6.1.3.7.1.3\tQualcomm’s simulation results (R4-2316791)\nTable 6.1.3.7.1.3-1: Simulation results for NS_58 Full and partial allocations.\n\nThe power class 5 PSSCH A-MPR in the table should be considered in the discussion of MPR requirements.\n\n6.1.3.7.2.1\tLG Electronics’ simulation results (R4-2315542)\nFor NS_58, Table 6.1.3.7.2.1-1 and Figure 6.1.3.7.2.1-1 show the A-MPR simulation results for the scenarios.\n\n\nTable 6.1.3.7.2.1-1: NS_58-S-SSB A-MPR simulation results for SL-U power class 5\n\n\na. 20MHz, 40MHz, and 60MHz\n\nb. 80MHz\nThe figure depicts a 100MHz bandwidth spectrum, illustrating the frequency range of the communication system. This is crucial for the efficient transmission of data over the network, as it allows for the transmission of high-speed signals.\nc. 100MHz\nFigure 6.1.3.7.2.1-1: NS_58-S-SSB A-MPR simulation results for SL-U power class 5\n\nTable 6.1.3.7.2.1-2 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration.\nTable 6.1.3.7.2.1-2 : NS_58 S-SSB A-MPR simulation results for SL-U power class 5\n\nConsidering the inner RB set bitmaps and the outer RB set bitmaps, the S-SSB A-MPR for SL-U power class 5 can be proposed as Table 6.1.3.7.2.1-3 or Table 6.1.3.7.2.1-4 based on the simulation results when considering implementation margin.\nTable 6.1.3.7.2.1-3: NS_58 S-SSB A-MPR for SL-U UE power class 5\n\nTable 6.1.3.7.2.1-4: NS_58 S-SSB A-MPR for SL-U UE power class 5\n\nFor NS_58, Table 6.1.3.7.3.1-1 shows the A-MPR simulation results for the scenarios.\n\n\nTable 6.1.3.7.3.1-1: NS_58-PSFCH A-MPR simulation results for SL-U power class 5\n\n\nTable 6.1.3.7.3.1-2 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration.\nTable 6.1.3.7.3.1-2 : NS_58 PSFCH A-MPR simulation results for SL-U power class 5\n\nConsidering the inner RB set bitmaps and the outer RB set bitmaps, the PSFCH A-MPR for SL-U power class 5 can be proposed as Table 6.1.3.7.3.1-3 or Table 6.1.3.7.3.1-4 based on the simulation results when considering implementation margin.\nTable 6.1.3.7.3.1-3 NS_58 PSFCH A-MPR for SL-U UE power class 5\n\nTable 6.1.3.7.3.1-4 NS_58 PSFCH A-MPR for SL-U UE power class 5\n\n6.1.3.9.1.1\tLG Electronics’ simulation results (R4-2315542)\nFor NS_60, Table 6.1.3.9.1.1-1 and Figure 6.1.3.9.1.1-1 show the A-MPR simulation results for the scenarios.\n\n\nTable 6.1.3.9.1.1-1: NS_60-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nThe figure depicts a simulation result for a 5G power class 5 network, showing the performance of the NS_60-PSSCH/PSCCH 1-MPR (1-Phase Synchronous Spread Spectrum/Phase-Shift Spread Spectrum) technique. The results indicate that the technique is effective in achieving a 5G-like performance in a power class 5 network.\nFigure 6.1.3.9.1.1-1: NS_60-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nTable 6.1.3.9.1.1-2 shows the maximum value of simulation results considering Full/Partial RB allocation.\nTable 6.1.3.9.1.1-2 : NS_60-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nBased on the results, Table 6.1.3.9.1.1-3 can be considered for NS_60 A-MPR for SL-U UE power class 5.\n\nTable 6.1.3.9.1.1-3. NS_60 additional maximum power reduction (A-MPR) for SL-U UE power class 5\n\n6.1.3.9.1.2\tOPPO’s simulation results (R4-2316119)\nThe A-MPR requirement is captured in sub-clause 6.2F.3.10 and the requirement is differentiated by different channel bandwidth as captured below:\nTable 6.1.3.9.1.1-1 A-MPR for single CC\n\nThe wide-band operation simulation result is further provided below:\nTable 6.1.3.9.1.1-2 A-MPR for wideband\n\n\nFigure 6.1.3.9.1.1-1 Single CC A-MPR\n\n\nFigure 6.1.3.9.1.1-2 Wideband A-MPR\nNote : NS_05S is equal to NS_60.\n6.1.3.9.1.3\tQualcomm’s simulation results (R4-2316791)\nTable 6.1.3.9.1.3-1: Simulation results for NS_60 Full and partial allocations.\n\nThe power class 5 PSSCH A-MPR in the table should be considered in the discussion of MPR requirements.\n\n6.1.3.9.2.1\tLG Electronics’ simulation results (R4-2315542)\nFor NS_60, Table 6.1.3.9.2.1-1 and Figure 6.1.3.9.2.1-1 show the A-MPR simulation results for the scenarios.\n\n\nTable 6.1.3.9.2.1-1: NS_60-S-SSB A-MPR simulation results for SL-U power class 5\n\n\na. 20MHz, 40MHz, and 60MHz\n\nb. 80MHz\nThe figure depicts a 100MHz bandwidth spectrum, illustrating the frequency range of the communication system. This is crucial for the efficient transmission of data over the network, as it allows for the transmission of high-speed signals.\nc. 100MHz\nFigure 6.1.3.9.2.1-1: NS_60 S-SSB A-MPR simulation results for SL-U power class 5\n\nTable 6.1.3.9.2.1-2 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration.\nTable 6.1.3.9.2.1-2 : NS_60 S-SSB A-MPR simulation results for SL-U power class 5\n\nConsidering the inner RB set bitmaps and the outer RB set bitmaps, the S-SSB A-MPR for SL-U power class 5 can be proposed as Table 6.1.3.9.2.1-3 or Table 6.1.3.9.2.1-4 based on the simulation results when considering implementation margin.\nTable 2-66: NS_60 S-SSB A-MPR for SL-U UE power class 5\n\nTable 2-67: NS_60 S-SSB A-MPR for SL-U UE power class 5\n6.1.3.9.3.1\tLG Electronics’ simulation results (R4-2315542 and R4-2321771)\nFor NS_60, Table 6.1.3.9.3.1-1 shows the A-MPR simulation results for the scenarios.\n\nTable 6.1.3.9.3.1-1: NS_60-PSFCH A-MPR simulation results for SL-U power class 5\n\n\nTable 6.1.3.9.3.1-2 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration.\nTable 6.1.3.9.3.1-2 : NS_60 PSFCH A-MPR simulation results for SL-U power class 5\n\nConsidering the inner RB set bitmaps and the outer RB set bitmaps, the PSFCH A-MPR for SL-U power class 5 can be proposed as Table 6.1.3.9.3.1-3 or Table 6.1.3.9.3.1-4 based on the simulation results when considering implementation margin.\nTable 6.1.3.9.3.1-3 NS_60 PSFCH A-MPR for SL-U UE power class 5\n\nTable 6.1.3.9.3.1-4 NS_60 PSFCH A-MPR for SL-U UE power class 5\n\n6.1.3.10.1.1\tLG Electronics’ simulation results (R4-2315542)\nFor NS_61, Table 6.1.3.10.1.1-1 and Figure 6.1.3.10.1.1-1 show the A-MPR simulation results for the scenarios.\n\nTable 6.1.3.10.1.1-1: NS_61-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nThe figure depicts a simulation result for a 5G power class 5 network scenario, specifically focusing on the performance of the 61-PSCH/PSCCH protocol. The results show the impact of various parameters on the network's performance, such as the number of users, the power class, and the number of users per cell. The figure provides insights into the network's capacity and the need for optimization to improve performance.\nFigure 6.1.3.10.1.1-1: NS_61-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nTable 6.1.3.10.1.1-2 shows the maximum value of simulation results considering Full/Partial RB allocation.\nTable 6.1.3.10.1.1-2 : NS_61-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5\n\nFor NS_61, the maximum output power is limited with 14dBm. Therefore, basically, A-MPR should be met with the following equation considering power class 5, 20dBm.\nNS_61 A-MPR = max{Table 6.1.3.10.1.1-2 + implementation margin, 6 dB}.\n\nBased on the results, Table 6.1.3.10.1.1-3 can be considered for NS_61 A-MPR for SL-U UE power class 5.\nTable 6.1.3.10.1.1-3. NS_61 additional maximum power reduction (A-MPR) for SL-U UE power class 5\n\n6.1.3.10.1.2\tOPPO’s simulation results (R4-2316119)\nThe A-MPR requirement is captured in sub-clause 6.2F.3.10 and the requirement is differentiated by different channel bandwidth as captured below:\nTable 6.1.3.10.1.1-1 A-MPR for single CC\n\nThe wide-band operation simulation result is further provided below:\nTable 6.1.3.10.1.1-2 A-MPR for wideband\n\n\nFigure 6.1.3.10.1.1-1 Single CC A-MPR\n\n\nFigure 6.1.3.10.1.1-2  Wideband A-MPR\n6.1.3.10.2.1\tLG Electronics’ simulation results (R4-2315542)\nFor NS_61, Table 6.1.3.10.2.1-1 and Figure 6.1.3.10.2.1-1 show the A-MPR simulation results for the scenarios.\n\nTable 6.1.3.10.2.1-1: NS_61-S-SSB A-MPR simulation results for SL-U power class 5\n\n\na. 20MHz, 40MHz, and 60MHz\n\nb. 80MHz\nThe figure depicts a 100MHz bandwidth spectrum, illustrating the frequency range of the communication system. This is crucial for the efficient transmission of data over the network, as it allows for the transmission of high-speed signals.\nc. 100MHz\nFigure 6.1.3.10.2.1-1: NS_61 S-SSB A-MPR simulation results for SL-U power class 5\n\nTable 6.1.3.10.2.1-2 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration.\nTable 6.1.3.10.2.1-2 : NS_61 S-SSB A-MPR simulation results for SL-U power class 5\n\nConsidering the inner RB set bitmaps and the outer RB set bitmaps, the S-SSB A-MPR for SL-U power class 5 can be proposed as Table 6.1.3.10.2.1-3 or Table 6.1.3.10.2.1-4 based on the simulation results when considering implementation margin.\nTable 6.1.3.10.2.1-3: NS_61 S-SSB A-MPR for SL-U UE power class 5\n\nTable 6.1.3.10.2.1-4: NS_61 S-SSB A-MPR for SL-U UE power class 5\n\n6.1.3.10.3.1\tLG Electronics’ simulation results (R4-2315542 and R4-2321771)\nFor NS_61, Table 6.1.3.10.3.1-1 shows the A-MPR simulation results for the scenarios.\n\n\nTable 6.1.3.10.3.1-1: NS_61-PSFCH A-MPR simulation results for SL-U power class 5\n\n\nTable 6.1.3.10.3.1-2 shows the maximum value of simulation results considering combinations of Outer/Inner sub-band configuration.\nTable 6.1.3.10.3.1-2 : NS_61 PSFCH A-MPR simulation results for SL-U power class 5\n\nConsidering the inner RB set bitmaps and the outer RB set bitmaps, the PSFCH A-MPR for SL-U power class 5 can be proposed as Table 6.1.3.10.3.1-3 or Table 6.1.3.10.3.1-4 based on the simulation results when considering implementation margin.\nTable 6.1.3.10.3.1-3 NS_61 PSFCH A-MPR for SL-U UE power class 5\n\nTable 6.1.3.10.3.1-4 NS_61 PSFCH A-MPR for SL-U UE power class 5\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.3.1.1.1-1: Simulation results for NS_28 Allocation Full and partial allocations.",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.1.1-1: Simulation results for NS_30 Allocation Note 2 Full and partial allocations.",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.1.1-2: Simulation results for NS_30 Allocation Note 3 Full and partial allocations.",
+                                    "table number": 50,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.1.1-1: NS_31-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 51,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.1.1-2 : NS_31-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 52,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.1.1-3. NS_31 additional maximum power reduction (A-MPR) for SL-U UE power class 5",
+                                    "table number": 53,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.1.2-1 A-MPR for single CC PSD=10 dBm/MHz",
+                                    "table number": 54,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.1.2-2 A-MPR for Wideband operation PSD=10 dBm/MHz",
+                                    "table number": 55,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.1.2-3 A-MPR for single CC PSD=7 dBm/MHz",
+                                    "table number": 56,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.1.2-4 A-MPR for Wideband operation PSD=7 dBm/MHz",
+                                    "table number": 57,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.1.2-5 A-MPR for single CC PSD=4 dBm/MHz",
+                                    "table number": 58,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.1.2-6 A-MPR for NS_02S Wideband operation PSD=4 dBm/MHz",
+                                    "table number": 59,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.1.3: Simulation results for NS_31 Full and partial allocations.",
+                                    "table number": 60,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.2.1-1: NS_31-S-SSB A-MPR simulation results for SL-U power class 5",
+                                    "table number": 61,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.2.1-2 : NS_31 S-SSB A-MPR simulation results for SL-U power class 5",
+                                    "table number": 62,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.2.1-3: NS_31 S-SSB A-MPR for SL-U UE power class 5",
+                                    "table number": 63,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.2.1-4: NS_31 S-SSB A-MPR for SL-U UE power class 5",
+                                    "table number": 64,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.3.1-1: NS_31-PSFCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 65,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.3.1-2 : NS_31 PSFCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 66,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.3.1-3 NS_31 PSFCH A-MPR for SL-U UE power class 5",
+                                    "table number": 67,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.4.3.1-4 NS_31 PSFCH A-MPR for SL-U UE power class 5",
+                                    "table number": 68,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.1.1-1: NS_53-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 69,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.1.1-2 : NS_53-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 70,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.1.1-3. NS_53 additional maximum power reduction (A-MPR) for SL-U UE power class 5",
+                                    "table number": 71,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.1.2-1 A-MPR for single CC",
+                                    "table number": 72,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.1.2-2 A-MPR for Wideband",
+                                    "table number": 73,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.1.3-1: Simulation results for NS_53 Full and partial allocations.",
+                                    "table number": 74,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.2.1-1: NS_53-S-SSB A-MPR simulation results for SL-U power class 5",
+                                    "table number": 75,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.2.1-2 : NS_53 S-SSB A-MPR simulation results for SL-U power class 5",
+                                    "table number": 76,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.2.1-3: NS_53 S-SSB A-MPR for SL-U UE power class 5",
+                                    "table number": 77,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.2.1-4: NS_53 S-SSB A-MPR for SL-U UE power class 5",
+                                    "table number": 78,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.3.1-1: NS_53-PSFCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 79,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.3.1-2 : NS_53 PSFCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 80,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.3.1-3 NS_53 PSFCH A-MPR for SL-U UE power class 5",
+                                    "table number": 81,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.5.3.1-4 NS_53 PSFCH A-MPR for SL-U UE power class 5",
+                                    "table number": 82,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.1.1-1: NS_58-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 83,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.1.1-2 : NS_58-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 84,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.1.1-3. NS_58 additional maximum power reduction (A-MPR) for SL-U UE power class 5",
+                                    "table number": 85,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.1.2-1 A-MPR for single CC",
+                                    "table number": 86,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.1.2-2 A-MPR for wideband",
+                                    "table number": 87,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.1.3-1: Simulation results for NS_58 Full and partial allocations.",
+                                    "table number": 88,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.2.1-1: NS_58-S-SSB A-MPR simulation results for SL-U power class 5",
+                                    "table number": 89,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.2.1-2 : NS_58 S-SSB A-MPR simulation results for SL-U power class 5",
+                                    "table number": 90,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.2.1-3: NS_58 S-SSB A-MPR for SL-U UE power class 5",
+                                    "table number": 91,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.2.1-4: NS_58 S-SSB A-MPR for SL-U UE power class 5",
+                                    "table number": 92,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.3.1-1: NS_58-PSFCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 93,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.3.1-2 : NS_58 PSFCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 94,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.3.1-3 NS_58 PSFCH A-MPR for SL-U UE power class 5",
+                                    "table number": 95,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.7.3.1-4 NS_58 PSFCH A-MPR for SL-U UE power class 5",
+                                    "table number": 96,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.9.1.1-1: NS_60-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 97,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.9.1.1-2 : NS_60-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 98,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.9.1.1-3. NS_60 additional maximum power reduction (A-MPR) for SL-U UE power class 5",
+                                    "table number": 99,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.9.1.1-1 A-MPR for single CC",
+                                    "table number": 100,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.9.1.1-2 A-MPR for wideband",
+                                    "table number": 101,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.9.1.3-1: Simulation results for NS_60 Full and partial allocations.",
+                                    "table number": 102,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.9.2.1-1: NS_60-S-SSB A-MPR simulation results for SL-U power class 5",
+                                    "table number": 103,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.9.2.1-2 : NS_60 S-SSB A-MPR simulation results for SL-U power class 5",
+                                    "table number": 104,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 2-66: NS_60 S-SSB A-MPR for SL-U UE power class 5",
+                                    "table number": 105,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 2-67: NS_60 S-SSB A-MPR for SL-U UE power class 5",
+                                    "table number": 106,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.9.3.1-1: NS_60-PSFCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 107,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.9.3.1-2 : NS_60 PSFCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 108,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.9.3.1-3 NS_60 PSFCH A-MPR for SL-U UE power class 5",
+                                    "table number": 109,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.9.3.1-4 NS_60 PSFCH A-MPR for SL-U UE power class 5",
+                                    "table number": 110,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.1.1-1: NS_61-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 111,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.1.1-2 : NS_61-PSSCH/PSCCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 112,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.1.1-3. NS_61 additional maximum power reduction (A-MPR) for SL-U UE power class 5",
+                                    "table number": 113,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.1.1-1 A-MPR for single CC",
+                                    "table number": 114,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.1.1-2 A-MPR for wideband",
+                                    "table number": 115,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.2.1-1: NS_61-S-SSB A-MPR simulation results for SL-U power class 5",
+                                    "table number": 116,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.2.1-2 : NS_61 S-SSB A-MPR simulation results for SL-U power class 5",
+                                    "table number": 117,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.2.1-3: NS_61 S-SSB A-MPR for SL-U UE power class 5",
+                                    "table number": 118,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.2.1-4: NS_61 S-SSB A-MPR for SL-U UE power class 5",
+                                    "table number": 119,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.3.1-1: NS_61-PSFCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 120,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.3.1-2 : NS_61 PSFCH A-MPR simulation results for SL-U power class 5",
+                                    "table number": 121,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.3.1-3 NS_61 PSFCH A-MPR for SL-U UE power class 5",
+                                    "table number": 122,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.10.3.1-4 NS_61 PSFCH A-MPR for SL-U UE power class 5",
+                                    "table number": 123,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.4\tConfigured transmitted power for NR SL-U",
+                            "text_content": "The configured transmitted power for NR-U is defined in clause 6.2F.4 of TS 38.101-1 and the normal NR requirement in clause 6.2.4 of TS 38.101-1 apply. For NR V2X, PCMAX is defined for PSSCH\\PSCCH, S-SSB and PSFCH in clause 6.2E.4 specifically.\nIt has been agreed to reuse the NR V2X Configured transmitted power requirements in 38.101-1 clause 6.2E.4 for NR SL-U.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.5\tMinimum output power for NR SL-U",
+                            "text_content": "The Minimum output power of NR-U is defined in clause 6.3F.1 of TS 38.101-1 and  the normal NR requirement apply, which is the same for NR V2X.\nIt has been agreed to reuse the NR single CC minimum requirements in 38.101-1 clause 6.3.1 for NR SL-U.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.6\tTransmit OFF power for NR SL-U",
+                            "text_content": "The Transmit OFF power of NR-U is defined in clause 6.3F.2 of TS 38.101-1 and  the normal NR requirement apply, which is the same for NR V2X.\nIt has been agreed to reuse the NR single CC minimum requirements in 38.101-1 clause 6.3.2 for NR SL-U.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.7\tON/OFF time mask for NR SL-U",
+                            "text_content": "Definition of ON/OFF time mask can be divided into two parts. First part defines the transition from OFF to ON and the second part transition from ON to OFF. For the ON to OFF part, it was agreed that 10us transient period is located inside the guard period. For the OFF to ON part at the beginning of the transmission, whether to put the whole 15 us transient period inside the CP-E or to reuse the NR-U mask that only put 10us inside the CP-E was discussed and following this discussion, and information from RAN1 that 16us or 25us LBT time preceding the CP-E already includes 5us ramp-up time, it was agreed to reuse the NR-U approach where first 5us of the OFF tot ON transient period is located before the CP-E.\nON/OFF masks for NR SL-U PSSCH and PSCCH and S-SSB that are in line with the above agreements are shown in figures below.\nThe figure depicts a general ON/OFF time mask for SL-U PSSCH and PSCCH, which is used to control the power supply switching time for the PSSCH and PSCCH lines. The mask is represented by a series of ON/OFF lines, with the ON line indicating the time when the power supply is on and the OFF line indicating the time when the power supply is off. This mask is essential for ensuring that the power supply is turned off when not in use, and that it is turned on when needed, to maintain the proper functioning of the power supply system.\nFigure 6.1.7-1 General ON/OFF time mask for SL-U PSSCH and PSCCH\n\nThe figure depicts a 16-bit ON/OFF time mask for the SL-U S-SSB, which is used to control the power levels of the signal in the 5G network. The mask is used to ensure that the signal is transmitted at the correct power level, preventing interference and ensuring a reliable communication link.\nFigure 6.1.7-2 ON/OFF time mask for SL-U S-SSB\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.8\tPower control for NR SL-U",
+                            "text_content": "The power control of NR-U is defined in clause 6.3F.4 of TS 38.101-1 and  the power control of NR V2X is defined in clause 6.3E.4. Since only absolute power control requirement is defined for NR V2X, it has been agreed that only absolute power control requirement is defined for NR SL-U.\nDuring the NR-U discussion it was agreed that absolute requirement applies at the start of a contiguous transmission or non-contiguous transmission with a transmission gap larger than 40 ms. Gap duration of 40ms is larger than 20ms, which is defined in generic requirements in Clause 6.3.4.2. of TS 38.101-1. This extension of gap duration is in line with eLAA requirement in 36.101 and is defined to maintain power control accuracy over longer periods of no transmission due to the uncertainty introduced by LBT. Therefore NR SL-U can reuse NR-U absolute power control requirement as defined in Clause 6.3F.4.2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.9\tTransmit signal quality for NR SL-U",
+                            "text_content": "The Frequency error for  NR-U is defined in clause 6.4F.1 of TS 38.101-1 and the normal NR requirement in clause 6.4.1 of TS 38.101-1 apply. For NR V2X, frequency error is defined in clause 6.4E,1 as ±0.1 PPM accuracy observed over a period of 1 ms against GNSS.”\nIt has been agreed to reuse the NR V2X Frequency error requirements in 38.101-1 clause 6.4E.1 for NR SL-U.\nThe EVM of NR-U is defined in clause 6.4F.2 of TS 38.101-1 and the normal NR requirement in clause 6.4.2.1 of TS 38.101-1 apply. For NR V2X, EVM is defined in clause 6.4E.2.2  with other than the Pi/2-BPSK modulation, which is not supported for NR V2X.\nIt has been agreed to reuse the NR V2X EVM requirements in 38.101-1 clause 6.4E.2.2 for NR SL-U.\n-\tFor NR V2X the EVM requirements in clause 6.4.2.1 are valid for PSCCH, PSSCH and PSBCH physical channels with other than pi/2-BPSK modulation, which is not supported for NR V2X, and excluding the guard symbol at the end of transmitted slots\n\nThe Carrier Leakage of NR-U is defined in clause 6.4.2.2 of TS 38.101-1 and  the normal NR requirement apply, which is the same for NR V2X.\nIt has been agreed to reuse the NR single CC carrier leakage requirements in 38.101-1 clause 6.4.2.2 for NR SL-U.\nThe Equalizer spectrum flatness of NR-U is referred to clause 6.4.2.4 of TS 38.101-1 and the normal NR requirement apply, which is the same for NR V2X.\nIt has been agreed to reuse the NR single CC Equalizer spectrum flatness requirements in 38.101-1 clause 6.4.2.4 for NR SL-U.\nThe In-band Emission of NR-U is defined in clause 6.4F.2.3 of TS 38.101-1. For NR V2X, In-band Emission is defined in clause 6.4E,2.4  where normal NR requirement of clause 6.4.2.3 apply.\nIt has been agreed to reuse the NR-U In-band emission requirements in 38.101-1 Table 6.4F.2.3-1 for NR SL-U. Minimum requirements for in-band emissions for NR SL-U PSCCH, PSSCH and PSBCH transmissions over the measurement interval that takes into account guard period at the end of the transmit slot.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.10\tSpectrum emission mask for NR SL-U",
+                            "text_content": "The Occupied Bandwidth of NR-U is defined in clause 6.5.1 of TS 38.101-1 and the normal NR requirement apply, which is the same for NR V2X.\nIt has been agreed to reuse the NR single CC Occupied Bandwidth requirements in 38.101-1 clause 6.5.1 for NR SL-U.\nThe SEM of NR-U is defined in clause 6.5F.2.2 of TS 38.101-1. For NR V2X, In-band Emission is defined in clause 6.5E,2.2  where normal NR requirement of clause 6.5.2.2 apply.\nIt has been agreed to reuse the NR-U SEM requirements in 38.101-1 Table 6.4F.2.3-1 for NR SL-U.\nAdditional spectrum emission mask requirements are not defined for NR-U.\nIt is agreed not to define A-SEM requirements for NR SL-U when operating in bands n46, n96 and n102.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.11\tACLR requirements for NR SL-U",
+                            "text_content": "The ACLR of NR-U is defined in clause 6.5F.2.4 of TS 38.101-1. For NR V2X, ACLR is defined in clause 6.5E.2.4  where normal NR requirement of clause 6.5.2.4 apply. The ACLR requirement was optimized for operation in un-licensed band during the development of the NR-U requirements.\nIt has been agreed to reuse the NR-U ACLR requirements in 38.101-1 clause 6.5F.2.4 for NR SL-U.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.12\tSpurious emissions for NR SL-U",
+                            "text_content": "The general spurious emission of NR-U is defined in clause 6.5.3.1 of TS 38.101-1 and the normal NR requirement apply, which is the same for NR V2X.\nIt has been agreed to reuse the NR single CC general spurious emission requirements in 38.101-1 clause 6.5.3.1 for NR SL-U.\nThe additional spurious emission of NR-U is defined in clause 6.5F.3.3 of TS 38.101-1 with different NS values for different bands.\nIt has been agreed to reuse the NR-U single CC minimum requirements in TS 38.101-1 clause 6.5F.3.3 for NR SL-U.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.13\tSpurious emission band UE co-existence for NR SL-U",
+                            "text_content": "UE coexistence requirements are not defined for NR-U.\nIt has been agreed not to define UE coexistence spurious emission requirements for NR SL-U when operating in bands n46, n96 and n102 in case of non-concurrent operation.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.14\tTransmit intermodulation for NR SL-U",
+                            "text_content": "The Transmit intermodulation of NR-U is defined in clause 6.5.4 of TS 38.101-1 and the normal NR requirement apply, which is the same for NR V2X.\nIt has been agreed to reuse the NR single CC Transmit intermodulation requirements in 38.101-1 clause 6.5.4 for NR SL-U.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tTx requirements for inter-band con-current operation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "It has been agreed to consider the functionality and requirements of single carrier SL-U operation as a basis of SL-U  and the functionality and requirements of single carrier Uu operation as a basis of Uu in con-current operation.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tMaximum output power for inter-band con-current operation",
+                            "text_content": "It has been agreed to target the following power classes.\n-\tPower class 3 Uu@Licensed + Power class 5 SL@Un-licensed\n-\tPower class 3 Uu@Licensed + Power class 3 SL@Un-licensed can be considered as 2nd priority if Power class 3 SL is agreed in a single carrier at unlicensed band\nFor Power class 2 for Uu@Licensed for inter-band concurrent operation, it is not considered in Rel-18.\nRAN4 agreed to define maximum output power for each operating band and there is no total power class for SL-U con-current band combination.\nTable 6.2.1: NR UE Power Class for inter band SL-U con-current combination\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.1: NR UE Power Class for inter band SL-U con-current combination",
+                                    "table number": 124,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.2\tUE maximum output power reduction for inter-band con-current operation",
+                            "text_content": "It has been agreed to refer to the existing requirement for NR Uu and refer to the SL-U requirement if specified.\nFor the inter-band con-current operation, the allowed maximum power reduction (MPR) for the maximum output power shall be applied per each component carrier. The MPR requirements in TS 38.101-1 clause 6.2.2 apply for NR Uu operation in licensed band, and the MPR requirements in clause X apply for NR sidelink operation in unlicensed band.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tUE additional maximum output power reduction for inter-band con-current operation",
+                            "text_content": "It has been agreed to refer to the existing requirement for NR Uu and refer to the SL-U requirement if specified.\nFor the inter-band con-current operation, the allowed additional maximum power reduction (A-MPR) for the maximum output power shall be applied per each component carrier. The A-MPR requirements in clause 6.2.3 apply for NR Uu operation in licensed band, and the A-MPR requirements in clause X apply for NR sidelink operation in unlicensed band.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.4\tConfigured transmitted power for inter-band con-current operation",
+                            "text_content": "It has been agreed to\nconsider the existing requirement for NR V2X con-current operation (6.2E.4.2 in TS38.101-1)  as starting point\nreuse the existing delta Tib of CA_n46-n78 for inter-band concurrent operation in Rel-18\nWhen a UE is configured for simultaneous NR sidelink and NR uplink transmissions for inter-band con-current operation, the UE is allowed to set its configured maximum output power PCMAX,c,NR and PCMAX,c,SL for the configured NR uplink carrier and the configured NR SL carrier, respectively, and its total configured maximum output power PCMAX,c.\nThe configured maximum output power PCMAX c,NR(p) in slot p for the configured NR uplink carrier shall be set within the bounds:\nPCMAX_L,c,NR (p) ≤  PCMAX,c,NR (p) ≤  PCMAX_H,c,NR (p)\nwhere PCMAX_L,c,NR and PCMAX_H,c,NR are the limit as specified in TS 38.101-1 clause 6.2E.4.1.\nThe configured maximum output power PCMAX c,SL (q) in slot q for the configured NR SL carrier shall be set within the bounds:\nPCMAX,c,SL (q) ≤  PCMAX_H,c,SL (q)\nwhere PCMAX_H,c,SL is the limit as specified in TS 38.101-1 clause 6.2E.4.\nThe total UE configured maximum output power PCMAX (p,q) in a slot p of NR uplink carrier and a slot q of NR sidelink that overlap in time shall be set within the following bounds for synchronous and asynchronous operation unless stated otherwise:\nPCMAX_L (p,q) ≤  PCMAX (p,q)  ≤  PCMAX_H (p,q)\nwith\nPCMAX_L (p,q) =  PCMAX_L,c,NR (p)\nPCMAX_H (p,q) = 10 log10 [pCMAX_H,c,NR (p) + pCMAX_H,c,SL (q)]\nwhere pCMAX_H,c,SL and pCMAX_H,c,NR are the limits PCMAX_H,c,SL (q) and PCMAX_H,c,NR (p) expressed in linear scale.\nThe measured total maximum output power PUMAX over both the NR uplink and NR SL carriers is\nPUMAX = 10 log10 [pUMAX,c,NR + pUMAX,c,SL],\nwhere pUMAX,c,NR  denotes the measured output power of serving cell c for the configured NR uplink carrier, and pUMAX,c,SL  denotes the measured output power for the configured NR SL carrier expressed in linear scale.\nWhen a UE is configured for synchronous NR sidelink and uplink transmissions,\nPCMAX_L(p, q)   –  TLOW (PCMAX_L(p, q))  ≤  PUMAX  ≤  PCMAX_H(p, q)  + THIGH (PCMAX_H(p, q))\nwhere PCMAX_L (p,q) and PCMAX_H (p,q) are the limits for the pair (p,q) and with the tolerances TLOW(PCMAX) and THIGH(PCMAX) for applicable values of PCMAX specified in Table 6.2E.4.1-1.. PCMAX_L may be modified for any overlapping portion of slots (p, q) and (p +1, q+1).\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.5\tMinimum output power for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\nFor the inter-band con-current operation, the requirements specified in TS 38.101-1 clause 6.3.1 shall apply for NR Uu operation in licensed band and the requirements specified in clause X shall apply for NR sidelink operation in unlicensed band.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.6\tTransmit OFF power for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\nFor the inter-band con-current operation, the requirements specified in TS 38.101-1 clause 6.3.2 shall apply for NR Uu operation in licensed band and the requirements specified in clause X shall apply for NR sidelink operation in unlicensed band\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.7\tON/OFF time mask for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.8\tPower control for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\nFor the inter-band con-current operation, the requirements specified in TS 38.101-1 clause 6.3.4 shall apply for NR Uu operation in licensed band and the requirements specified in clause X shall apply for NR sidelink operation in unlicensed band\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.9\tTransmit signal quality for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.10\tSpectrum emission mask for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\nFor the inter-band con-current operation, the general/additional SEM requirements specified in TS 38.101-1 clause 6.5.2 shall apply for NR Uu operation in licensed band and the general/additional SEM requirements specified in clause X shall apply for NR sidelink operation in unlicensed band.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.11\tACLR requirements for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\nFor the inter-band con-current operation, the ACLR requirement specified in clause TS 38.101-1 6.5.2.4 shall apply for NR Uu operation in licensed band and the ACLR requirement specified in clause X shall apply for NR sidelink operation in unlicensed band.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.12\tSpurious emissions for inter-band con-current operation",
+                            "text_content": "The general spurious emission is not needed for inter-band con-current operation as the NR SL only defines spurious emission for non-current case.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.13\tSpurious emission band UE co-existence for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse the inter band CA_n46-n78 co-existence requirement for con-current operation with Uu@78 + SL@n46.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.14\tTransmit intermodulation for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\nFor the inter-band con-current operation, the requirements specified in TS 38.101-1 clause 6.5.4 shall apply for NR Uu operation in licensed band and the requirements specified in clause X shall apply for NR sidelink operation in unlicensed band.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tTx requirements for NR SL CA operation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tMaximum output power for NR SL CA operation",
+                            "text_content": "For the intra-band SL CA operation, the following NR SL CA UE Power Classes define the maximum output power for any transmission bandwidth within the channel bandwidth. The period of measurement shall be at least one sub frame (1ms).\nTable 6.3.1-1: NR SL CA UE Power Class\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.1-1: NR SL CA UE Power Class",
+                                    "table number": 125,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.2\tUE maximum output power reduction for NR SL CA operation",
+                            "text_content": "For basic parameters, reuse the simulation assumptions in TR38.785 (Rel-17 enhanced NR sidelink). Other constraints for PSCCH/PSSCH/PSFCH/S-SSB can be assumed based on current RAN1’s agreement.\nTable 6.3.2 Simulation assumption for NR SL CA operation\n\nFor SL intra-band contiguous CA of PSCCH and PSSCH simultaneous transmission with contiguous RB allocation, specify MPR in Table 6.3.2.1.1-1.\nTable 6.3.2.1.1-1: MPR for power class 3 SL CA [with contiguous RB allocation]\n\nThe contiguous allocation rule for SL intra-band contiguous CA refers to that for NR intra-band contiguous CA in 6.2A.2.1 in TS38.101-1.\n[For SL intra-band contiguous CA of PSCCH and PSSCH simultaneous transmission with non-contiguous RB allocation, specify MPR in Table 6.3.2.1.1-2.\nTable 6.3.2.1.1-2: MPR for power class 3 SL CA with non-contiguous RB allocation\n[TBA]\nThe non-contiguous allocation rule for SL intra-band contiguous CA refers to that for NR intra-band contiguous CA in 6.2A.2.1 in TS38.101-1.]\n6.3.2.1.1.1\tHuawei’s simulation results (R4-2315227)\nReferring to the updated MPR simulation assumption, we use the following simulation scenarios in Table 4.\nTable 6.3.2.1.1.1-1 SLCA PSSCH/PSCCH MPR simulation scenarios\n\nThe simulation results for the scenarios listed in are illustrated below, and the evaluation figures are shown in the Annex with Figure 1 – Figure 4.\nTable 6.3.2.1.1.1-2 SLCA PSSCH/PSCCH MPR simulation scenarios\n\n6.3.2.1.1.2\tLGE’s simulation results (R4-2315532)\nFor Contiguous RB allocation of SL contiguous CA\nThe following simulation scenarios are considered as Table 6.3.2.1.1.2-1 for Contiguous RB allocations.\nTable 6.3.2.1.1.2-1: SLCA PSSCH/PSCCH MPR simulation scenarios (Contiguous RB allocation)\n\nTable 6.3.2.1.1.2-1-2 and Figure 6.3.2.1.1.2-1 show PSSCH/PSCCH MPR simulation results.\n\nTable 6.3.2.1.1.2-2: PSSCH/PSCCH MPR simulation results for SL Contiguous CA with Contiguous RB allocations\n\n\n\nTable 6.3.2.1.1.2-3 shows the maximum value of simulation results for SL Contiguous CA with Contiguous RB allocations considering Inner RB allocation and Outer RB allocation as NR uplink Contiguous CA.\nTable 6.3.2.1.1.2-3: PSSCH/PSCCH MPR simulation results for SL Contiguous CA with Contiguous RB allocations\n\nThe MPR can be proposed as Table 6.3.2.1.1.2-4 based on the simulation results when considering implementation margin.\nTable 6.3.2.1.1.2-4: PSSCH/PSCCH MPR simulation results for SL Contiguous CA with Contiguous RB allocations\n\nFor Non-contiguous RB allocation of SL contiguous CA\nThe following test scenarios are considered as Table 6.3.2.1.1.2-5 for Non-contiguous RB allocations.\nTable 6.3.2.1.1.2-5: SL contiguous CA MPR test scenarios (Non-contiguous RB allocation)\n\nTable 6.3.2.1.1.2-6 and Figure 6.3.2.1.1.2-2 show PSSCH/PSCCH MPR simulation results.\n\nTable 6.3.2.1.1.2-6: PSSCH/PSCCH MPR simulation results for SL Contiguous CA with Non-contiguous RB allocations\n\n\nTable 6.3.2.1.1.2-7 shows the maximum value of simulation results for SL Contiguous CA with Non-contiguous RB allocations considering Inner RB allocation and Outer RB allocation as NR uplink Contiguous CA.\nTable 6.3.2.1.1.2-7 : PSSCH/PSCCH MPR simulation results for SL Contiguous CA with Non-contiguous RB allocations\n\nThe MPR can be proposed as Table 6.3.2.1.1.2-8 based on the simulation results when considering implementation margin.\nTable 6.3.2.1.1.2-8 PSSCH/PSCCH MPR simulation results for SL Contiguous CA with Non-contiguous RB allocations\n\nFor SL intra-band CA of PSFCH with single RB transmission on each carrier, the required MPR are specified as follow.\nWhere,\nR is the ratio of the gap bandwidth between the two PSFCH transmitted on the two intra-band carrier by the total bandwidth of the two carrier.\n6.3.2.1.2.1\tHuawei’s simulation results (R4-2319504)\nThe evaluation scenarios and MPR results for SL CA PSFCH are illustrated in the following table.\nTable 6.3.2.1.2.1-1: PSFCH MPR simulation results for SL Contiguous CA\n\nTable 6.3.2.1.2.1-1: Evaluation scenarios and MPR for SL CA PSFCH\n\n6.3.2.1.2.2\tLGE’s simulation results (R4-2315532)\nThe following simulation scenarios are considered as Table 6.3.2.1.2.2-1 for SL contiguous CA.\nTable 6.3.2.1.2.2-1: SL contiguous CA MPR test scenarios\n\nHere, the aggregated CA bandwidth is CA bandwidth class B which is composed of 2 CCs (CC1 + CC2). The ratio of NGap/(NRB1+NRB2+ NGBchannel_CC1+ NGBchannel_CC2) is considered.\nR = NGap/(NRB1+NRB2+ NGBchannel_CC1+ NGBchannel_CC2)\nNGap is the gap RB amount from CC1 RBstart  to CC2 RBend for SL contiguous CA when a single PSFCH or contiguous and non-contiguous allocation simultaneous PSFCHs is transmitted in each CC.\nNGBchannel_CC1 and NGBchannel_CC2 is the number of RB which corresponds to the minimum guardbands for CC1 and CC2, respectively, which have been calculated using the following equation:\nNGBchannel =  GBchannel / (SCS x 12)\nGBchannel = (BWChannel - NRB x SCS x 12) / 2 - SCS/2,\nwhere NRB are from Table 5.3.2-1 in TS38.101-1, and BWChannel is the channel bandwidth for each CC.\nFigure 6.3.2.1.2.2-1 shows NGap, NRB1, NRB2, NGBchannel_CC1, and NGBchannel_CC2.\n\nThe figure depicts a set of parameters related to the ratio of R, which is a key parameter in the analysis of a telecommunication system. The parameters are shown in a table format, with the first column representing the values of R, and the second column representing the corresponding values of other parameters. The figure is used to illustrate the relationship between R and other system parameters, such as the number of users, the number of antennas, and the number of users per antenna. The figure is useful for understanding the impact of R on the system performance and for making informed decisions about system design.\nFigure 6.3.2.1.2.2-1: Parameters related to Ratio of R\n\nTable 6.3.2.1.2.2-2 and Figure 6.3.2.1.2.2-2 show the PSFCH MPR simulation results.\n\n\nTable 6.3.2.1.2.2-2: PSFCH MPR simulation results for SL Contiguous CA\n\n\nTable 6.3.2.1.2.2-3 shows the maximum value of simulation results for SL Contiguous CA considering the ratio of R.\nR = NGap/(NRB1+NRB2+ NGBchannel_CC1+ NGBchannel_CC2)\nTable 6.3.2.1.2.2-3 : PSFCH MPR simulation results for SL Contiguous CA\n\nThe MPR can be proposed as Table 6.3.2.1.2.2-4 based on the simulation results when considering implementation margin.\nTable 6.3.2.1.2.2-4 PSFCH MPR simulation results for SL Contiguous CA\n\nWhen single S-SSB is transmitted on intra-band contiguous carriers, required MPR for single cell V2X in Table 6.2E.2.2-2 is reused. For two S-SSB transmissions on intra-band contiguous carriers, the required MPR are specified as follow.\nTable 6.3.2.1.3-1: MPR for two S-SSB transmissions on intra-band contiguous carriers for power class 3\n\n6.3.2.1.3.1\tLGE’s simulation results (R4-2315532)\nThe following simulation scenarios are considered as Table 6.3.2.1.3.1-1 for SL contiguous CA.\nTable 6.3.2.1.3.1-1: SL contiguous CA MPR test scenarios\n\nTable 6.3.2.1.3.1-2 and Figure 6.3.2.1.3.1-1 show the S-SSB MPR simulation results.\n\nTable 6.3.2.1.3.1-2: S-SSB MPR simulation results for SL Contiguous CA\n\nTable 6.3.2.1.3.1-3 shows the maximum value of simulation results for SL Contiguous CA considering Inner, Outer1, and Outer 2 RB allocation ranges.\nTable 6.3.2.1.3.1-3: S-SSB MPR simulation results for SL Contiguous CA\n\nThe MPR can be proposed as Table 6.3.2.1.3.1-4 based on the simulation results when considering implementation margin.\nTable 6.3.2.1.3.1-4 S-SSB MPR simulation results for SL Contiguous CA\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.2 Simulation assumption for NR SL CA operation",
+                                    "table number": 126,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.1-1: MPR for power class 3 SL CA [with contiguous RB allocation]",
+                                    "table number": 127,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.1.1-1 SLCA PSSCH/PSCCH MPR simulation scenarios",
+                                    "table number": 128,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.1.1-2 SLCA PSSCH/PSCCH MPR simulation scenarios",
+                                    "table number": 129,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.1.2-1: SLCA PSSCH/PSCCH MPR simulation scenarios (Contiguous RB allocation)",
+                                    "table number": 130,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.1.2-2: PSSCH/PSCCH MPR simulation results for SL Contiguous CA with Contiguous RB allocations",
+                                    "table number": 131,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.1.2-3: PSSCH/PSCCH MPR simulation results for SL Contiguous CA with Contiguous RB allocations",
+                                    "table number": 132,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.1.2-4: PSSCH/PSCCH MPR simulation results for SL Contiguous CA with Contiguous RB allocations",
+                                    "table number": 133,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.1.2-5: SL contiguous CA MPR test scenarios (Non-contiguous RB allocation)",
+                                    "table number": 134,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.1.2-6: PSSCH/PSCCH MPR simulation results for SL Contiguous CA with Non-contiguous RB allocations",
+                                    "table number": 135,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.1.2-7 : PSSCH/PSCCH MPR simulation results for SL Contiguous CA with Non-contiguous RB allocations",
+                                    "table number": 136,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.1.2-8 PSSCH/PSCCH MPR simulation results for SL Contiguous CA with Non-contiguous RB allocations",
+                                    "table number": 137,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "For SL intra-band CA of PSFCH with single RB transmission on each carrier, the required MPR are specified as follow.",
+                                    "table number": 138,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.2.1-1: PSFCH MPR simulation results for SL Contiguous CA",
+                                    "table number": 139,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.2.1-1: Evaluation scenarios and MPR for SL CA PSFCH",
+                                    "table number": 140,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.2.2-1: SL contiguous CA MPR test scenarios",
+                                    "table number": 141,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.2.2-2: PSFCH MPR simulation results for SL Contiguous CA",
+                                    "table number": 142,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.2.2-3 : PSFCH MPR simulation results for SL Contiguous CA",
+                                    "table number": 143,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.2.2-4 PSFCH MPR simulation results for SL Contiguous CA",
+                                    "table number": 144,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.3-1: MPR for two S-SSB transmissions on intra-band contiguous carriers for power class 3",
+                                    "table number": 145,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.3.1-1: SL contiguous CA MPR test scenarios",
+                                    "table number": 146,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.3.1-2: S-SSB MPR simulation results for SL Contiguous CA",
+                                    "table number": 147,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.3.1-3: S-SSB MPR simulation results for SL Contiguous CA",
+                                    "table number": 148,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.2.1.3.1-4 S-SSB MPR simulation results for SL Contiguous CA",
+                                    "table number": 149,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.3\tUE additional maximum output power reduction for NR SL CA operation",
+                            "text_content": "For the additional emission limits in Europe in ITS spectrum, RAN4 already defined the regulatory requirements in TS38.101-1. The ETSI regulation shall be considered to derive the A-MPR requirements for NR SL CA UE. For the US related regulatory requirements will be studied after final FCC announcement for the additional emission limits in US.\nTo derive A-MPR requirements for SL CA operation in ITS spectrum, RAN4 will assume the basic simulation parameters and assumptions in section 6.3.2 and the additional spectrum emission mask in Table 6.5E.2.3.1-1 and additional spurious emission requirements in Table 6.5E.3.4.2-1 and Table 6.5E.3.4.2-2  in TS38.101-1 will be considered when NS_33 is configured from the pre-configured radio parameters in the geometrical region or indicated in the cell.\nTable 6.3.3.1.2-0: SLCA_NS_52’ for SL intra-band C-CA A-MPR\n\nFor SL intra-band contiguous CA of PSCCH and PSSCH simultaneous transmission with contiguous RB allocation, the allowed A-MPR for the maximum output power are specified in Table 6.3.3.1.2-1.\nTable 6.3.3.1.2-1: A-MPR for power class 3 SL CA with contiguous RB allocation\n\nThe contiguous allocation rule of inner and outer for SL intra-band contiguous CA refers to that for NR intra-band contiguous CA in 6.2A.2.1 in TS38.101-1.\nFor SL intra-band contiguous CA of PSCCH and PSSCH simultaneous transmission with non-contiguous RB allocation, the allowed A-MPR for the maximum output power are specified in Table 6.3.3.1.2-2.\nTable 6.3.3.1.2-2: A-MPR for power class 3 SL CA with non-contiguous RB allocation\n\nThe non-contiguous allocation rule of inner, outer1, and outer2 for SL intra-band contiguous CA refers to that for NR intra-band contiguous CA in 6.2A.2.1 in TS38.101-1.\nFor SL intra-band contiguous CA of PSFCH transmission, the allowed A-MPR for the maximum output power are specified in Table 6.3.3.1.2-3.\nTable 6.3.3.1.2-3: A-MPR for PSFCH transmission for power class 3 SL CA\n\nIn Table 6.3.3.1.2-3, R is defined in 6.3.2.1.2.\nFor SL intra-band contiguous CA of S-SSB transmission, the allowed A-MPR for the maximum output power are specified in Table 6.3.3.1.2-4.\nTable 6.3.3.1.2-4: A-MPR for S-SSB transmission for power class 3 SL CA\n\nThe non-contiguous allocation rule of inner, outer1, and outer2 for SL intra-band contiguous CA refers to that for NR intra-band contiguous CA in 6.2A.2.1 in TS38.101-1.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.3.1.2-0: SLCA_NS_52’ for SL intra-band C-CA A-MPR",
+                                    "table number": 150,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.3.1.2-1: A-MPR for power class 3 SL CA with contiguous RB allocation",
+                                    "table number": 151,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.3.1.2-2: A-MPR for power class 3 SL CA with non-contiguous RB allocation",
+                                    "table number": 152,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.3.1.2-3: A-MPR for PSFCH transmission for power class 3 SL CA",
+                                    "table number": 153,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.3.1.2-4: A-MPR for S-SSB transmission for power class 3 SL CA",
+                                    "table number": 154,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.4\tConfigured transmitted power for NR SL CA operation",
+                            "text_content": "For intra-band contiguous SL CA operation, MPRc = MPR and A-MPRc = A-MPR with MPR and A-MPR specified in subclause 6.3.2 and subclause 6.3.4 respectively. There is one power management term for the UE, denoted P-MPR, and P-MPR c = P-MPR. PCMAX,c  is calculated under the assumption that the transmit power is increased by the same amount in dB on all component carriers.\nThe total configured maximum output power PCMAX shall be set within the following bounds:\nPCMAX_L ≤  PCMAX,  ≤  PCMAX_H\nFor SL transmission of intra-band contiguous CA when same slot pattern is used in all aggregated component carriers.\nPCMAX_L = MIN{10 log10 ∑ pEMAX,C - TC, PPowerClass, SL_CA – MAX(MAX(MPR,  A-MPR) + ΔTIB,c+TC, P-MPR ), PRegulatory, PEMAX, CA}\nPCMAX_H = MIN{10 log10 ∑ pEMAX,C , PPowerClass, SL_CA, PRegulatory, PEMAX, CA }\nwhere\n-\tFor the total transmitted power PCMAX,PSSCH/PSCCH, PEMAX,CA is the value given by [the sum of IE sl-maxTransPower from each CC or new IE for maximum transmitted power of SL CA], defined by TS 38.331;\n-\tPPowerClass, SL_CA is the maximum UE power specified in Table 6.3.1-1 without taking into account the tolerance;\n-\tMPR and A-MPR are specified in subclause 6.3.2 and subclause 6.3.3 respectively;\n-\tTIB,c  and P-MPR are specified in clause 6.2.4 in TS38.101-1;\n-\tTC is the highest value TC,c among all component carriers c in the subframe over both timeslots. TC,c = 1.5 dB when NOTE 3 in Table 6.2.1-1 in TS38.101-1 applies, otherwise TC,c = 0 dB;\n-\tPRegulatory= 10 - Gpost connector dBm when V2X UE is within the protected zone in ETSI TS 102 792 of CEN DSRC tolling system and operating in Band n47; PRegulatory= 33 - Gpost connector dBm otherwise.\nThe maximum output power PCMAX,PSSCH and PCMAX,PSCCH are derived from PCMAX,c based on 0dB PSD offset between PSSCH and PSCCH.\nFor intra-band SL CA operation, when at least one different numerology/slot pattern is used in aggregated cells, the same requirement as specified in clause 6.2E.4.3 in TS38.101-1 shall be applied.\nThe measured configured maximum output power PUMAX,c for sidelink CA operation, when at least one slot has a different transmission numerology or slot pattern, the same requirement as specified in clause 6.2E.4.3 in TS38.101-1 shall be applied.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.5\tMinimum output power for NR SL CA operation",
+                            "text_content": "For SL intra-band contiguous CA, the minimum output power requirement as specified in table 6.3.5-1 shall be applied per component carrier.\nTable 6.3.5-1: Minimum output power\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.5-1: Minimum output power",
+                                    "table number": 155,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.6\tTransmit OFF power for NR SL CA operation",
+                            "text_content": "For SL intra-band contiguous CA, the transmit OFF power requirement as specified in Table 6.3.6-1 shall be applied per component carrier.\nTable 6.3.6-1: Transmit OFF power\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.6-1: Transmit OFF power",
+                                    "table number": 156,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.7\tON/OFF time mask for NR SL CA operation",
+                            "text_content": "For SL intra-band contiguous CA, the SL ON/OFF time masks specified in clause 6.3E.3.2, 6.3E.3.3 and 6.3E.3.4 in TS38.101-1 are applicable for each component carrier during the ON power period and the transient periods. The OFF period shall only be applicable for each component carrier when all the component carriers are OFF.\nAdditionally, RAN4 can define the switching ON/OFF time mask between NR SL CA and NR SL single carrier operation as like fallback mode. In the case, the ON/OFF time mask in figure 6.3E.3.4-2 in TS38.101-1 for different carriers can be reused.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.8\tPower control for NR SL CA operation",
+                            "text_content": "For SL intra-band contiguous CA, the power control requirement as specified in clause 6.3E.4.2 in TS38.101-1 shall be applied per component carrier.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.9\tTransmit signal quality for NR SL CA operation",
+                            "text_content": "For SL intra-band contiguous CA, ±0.1 PPM observed over a period of 1 ms will be applied per CC compared to the absolute frequency in case of using GNSS synchronization source. The same requirements will be applied to all SL synchronous reference sources (the gNB or V2X synchronization reference UE).\nFor SL intra-band contiguous CA, the EVM requirement as specified in clause 6.4E.2.2 in TS38.101-1 shall be applied per component carrier.\nFor SL intra-band contiguous CA, the carrier leakage requirement as specified in clause 6.4E.2.3 in TS38.101-1 shall be applied per component carrier when only one SL transimssion carrier is activated in a time.\nFor SL intra-band contiguous CA, the In-band emission requirement as specified in clause 6.4E.2.4 in TS38.101-1 shall be applied to the SL aggregated transmission bandwidth. This is same as NR intra-band CA UE.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.10\tSpectrum emission mask for NR SL CA operation",
+                            "text_content": "For SL intra-band contiguous CA, the occupied bandwidth is a measure of the bandwidth containing 99 % of the total integrated power of the aggregated CBW. The occupied bandwidth shall be less than the aggregated channel bandwidth.\nFor SL intra-band contiguous CA, the SEM requirement for NR intra-band contiguous CA as specified in clause 6.5A.2.2.1 in TS38.101-1 shall be applied to the aggregated channel bandwidth with SL CA bandwidth class B.\nFor SL intra-band contiguous CA, RAN4 does not need to consider the A-SEM in Europe since the A-SEM in Table 6.5E.2.3.1-1 in TS38.101-1 is only applied for the 10MHz CBW in Europe.\nFor the US region, RAN4 can reuse NS_52, the details can be further discussed with the final A-SEM or A-SE requirements from FCC.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.11\tACLR requirements for NR SL CA operation",
+                            "text_content": "For SL intra-band contiguous CA, the general NR CA ACLR requirements for CA Bandwidth Class B specified in subclause 6.5A.2.4.1.1 in TS38.101-1shall be applied to the aggregated channel bandwidth with SL CA bandwidth class B.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.12\tSpurious emissions for NR SL CA operation",
+                            "text_content": "For SL intra-band contiguous CA, the general NR CA general SE for CA Bandwidth specified in subclause 6.5A.3.1 in TS38.101-1 shall be applied to the aggregated channel bandwidth with SL CA bandwidth class B.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.13\tSpurious emission band UE co-existence for NR SL CA operation",
+                            "text_content": "For SL intra-band contiguous CA, the protection operating band lists for n47 transmission was defined in Table 6.5.3.2-1 in TS38.101-1which shall be applied to NR SL intra-band contiguous CA UE.\nTable 6.3.13-1: Requirements for spurious emissions for UE co-existence\n\nAlso, RAN4 already defined the additional SE requirements as specified in clause 6.5E.3.4 in TS38.101-1 by the European Regulation which shall be considered to derive the A-MPR requirements with NS_33 as follows.\nTable 6.3.13-2: Additional requirements for \"NS_33\"\n\nFurthermore, when \"NS_33\" is configured from pre-configured radio parameters or the cell, and the indication from upper layers has indicated that the UE is within the protection zone of CEN DSRC devices or HDR DSRC devices, the power of any NR V2X UE emission shall fulfil either one of the two sets of conditions.\nTable 6.3.13-3: Requirements for spurious emissions to protect CEN DSRC for V2X UE\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.13-1: Requirements for spurious emissions for UE co-existence",
+                                    "table number": 157,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.13-2: Additional requirements for \"NS_33\"",
+                                    "table number": 158,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.13-3: Requirements for spurious emissions to protect CEN DSRC for V2X UE",
+                                    "table number": 159,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.14\tTransmit intermodulation for NR SL CA operation",
+                            "text_content": "For SL intra-band contiguous CA, the general NR CA Transmit Intermodulation requirements for CA Bandwidth Class B specified in clause 6.5A.4.2.1 in TS38.101-1 shall be applied to the aggregated channel bandwidth with SL CA bandwidth class B.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tReceiver characteristics for NR SL evolution",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tRx requirements for NR SL single carrier operation in unlicensed bands",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.1.1\tReference sensitivity power level for NR SL-U",
+                            "text_content": "Background information for NR V2X reference sensitivity requirement has been captured in the TR 38.886 as captured below and can be reused for NR SL-U\nThe reference sensitivity power level REFSENS is the minimum mean power applied to the UE antenna connector at which the throughput shall meet or exceed 95% of the maximum throughput of the reference measurement channels.\nThe V2X UE REFSENS is defined by the following equation:\nREFSENSV2X=kTB + SNRV2X +10log10(LCRB*SCS*12/RX_BW) +( NFV2X+ IM) – Diversity gain\nWhere\n-\tkTB: Thermal noise level is [-174dBm(kT) + 10*log10(RX BW)]dBm.\n-\tNF: Noise figure. 13 dB is used for LAA and can be reused for NR V2X requirements. Assumed NF is 9dB < 3GHz, NF is 10dB>= 3GHz (e.g B42, n77, n78, n79…) at licensed bands at FR1.\n-\tIM: 2.5 dB is assumed. When the number of RB size equal to or less than 24RBs, 0.5dB additional relaxation is allowed.\n-\tTarget SNR: -0.5 dB\n-\tDiversity gain: 3dB\n\nFor NR-U, the following equations in table below are used to calculate the REFSENS requirement and it can be further re-used in NR SL-U in bands n46, n96 and n102, while taking account that for NR-U target SNR of -1dB was used and therefore the REFSENS values in table below are 0.5dB higher than with NR SL-U target SNR of 0.5dB.\n\nTable 7.1.1-1 REFSENS for NR-U\n\nFor the NR-U REFESENS requirement, the RB configuration for larger than 20MHz is considered as wideband operation and hence all intra-cell guard bands between sub-bands should be filled. In this case, the full RB allocation of NR is used to define the reference sensitivity requirement. However, for V2X, specific RB allocation using the sub-channels based on the RAN2 specification TS 38.331 is used as captured below:\n\nFollowing the TS 38.331 definitions Table 7.1.1-2 shows the RB configuration for NR SL-U reference sensitivity requirement.\n\nTable 7.1.1-2 NR SL-U RB configurations for REFSENS\n\nWith the agreed SNR and RB configuration as above, the REFNSENS requirement for NR SL-U is  shown in Table 7.1.1-3.\n\nTable 7.1.1-3 REFSENS for SL-U\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.1.1-1 REFSENS for NR-U",
+                                    "table number": 160,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.1.1-2 NR SL-U RB configurations for REFSENS",
+                                    "table number": 161,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.1.1-3 REFSENS for SL-U",
+                                    "table number": 162,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.1.2\tMaximum input level for NR SL-U",
+                            "text_content": "The Maximum input level for NR-U is defined in clause 7.4 of TS 38.101-1. For NR V2X, Maximum input level is defined in clause 7.4E.1. The NRV2X Sidelink requirement only covers up to 40MHz and the minimum requirement is the same as NR-U.\nIt has been agreed to reuse the NRU Maximum input level requirements in TS 38.101-1 clause 7.4 for NR SL-U.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.3\tAdjacent Channel Selectivity for NR SL-U",
+                            "text_content": "For the ACS requirement, the ACS for NR-U was defined for bands above 3.3GHz considering the unlicensed bands of n46, n96, n102 are all high bands. However, the requirement format is different from NR single CC which can be found below, i.e. the ACS is adjusted according to the CBW while the NR single CC is fixed as 33dB for bands above 3.3GHz. The ACS requirement has been extensively discussed in NR-U WI with various views considering the difference of ACLR, ACIR impacts, and comparison with WIFI system, and coexistence with LAA, and the final value is a compromised outcome.\n\n\nACS Requirement for NR-U\nFurthermore, for NR normal requirement, there are two test cases for ACS as case 1 and case 2. During the NR-U discussion, the case 2 was considered not necessary for operation in unlicensed bands. It has been agreed to reuse NR-U ACS requirement for NR SL-U using the NR SL-U RMC, as discussed in general part.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.4\tBlocking characteristics for NR SL-U",
+                            "text_content": "The in band blocking requirement for NR V2X is captured in clause 7.6E.2.1 and for NR-U it is captured in clause 7.F.2.1. The transmission power is the same for 20 and 40MHz and the difference is the bandwidth of interferer. The 10MHz as smallest CBW for NR V2X is used as BWinterferer and corresponding offset frequency is decided. In NR SL-U, 10MHz is not supported and 20MHz is supported as the smallest CBW for single CC.\n\n\nIn this case, the NR-U IBB can be reused for NR SL-U.\nThe NR sidelink OBB requirement is reused from LTE sidelink and hence different power level for the transmission power based on different bandwidth. For NR-U OBB requirement, it is based on the NR normal requirement since there is no Wi-Fi corresponding requirement. Further modification has applied for range 3 considering the shallower frequency response of the band filter at high frequencies. In this case, the NR-U requirement can be reused for NR SL-U.\n\n\nNarrow band blocking was introduced in NR single CC to mimic the potential interference coming from narrow band systems, but such system is not existing in the targeting unlicensed spectrum and therefore the Narrow Band Blocking requirements are not defined for NR-U.\nIt has been agreed not to define Narrow Band Blocking requirements for NR SL-U.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.5\tSpurious response for NR SL-U",
+                            "text_content": "The NR sidelink spurious response requirement is reused from LTE sidelink and hence different power level for the transmission power based on different bandwidth is used.For NR SL-U operation in unlicensed bands, the  NR-U requirement can be reused.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.6\tIntermodulation characteristics for NR SL-U",
+                            "text_content": "The NR sidelink Intermodulation requirement is reused from LTE sidelink and hence different power level for the transmission power based on different bandwidth is used.For NR SL-U operation in unlicensed bands,  the  NR-U requirement can be reused.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.2\tRx requirements for inter-band con-current operation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.2.1\tReference sensitivity power level for inter-band con-current operation",
+                            "text_content": "It has been agreed to\nreuse the existing CA_n46-n78 MSD requirements of the power class 5 in the aggressor band n46 for MSD of the inter-band concurrent operation.\nreuse the existing delta Rib of CA_n46-n78 for inter-band concurrent operation in Rel-18\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.2\tMaximum input level for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.3\tAdjacent Channel Selectivity for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.4\tBlocking characteristics for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.5\tSpurious response for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.6\tIntermodulation characteristics for inter-band con-current operation",
+                            "text_content": "It has been agreed to reuse NR uu and SL-U requirements for each band if an issue is not identified.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.3\tRx requirements for NR SL CA operation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.3.1\tReference sensitivity power level for NR SL CA operation",
+                            "text_content": "For intra-band contiguous CA operation, the reference sensitivity requirement specified in Table 7.3E.2-1 in TS38.101-1shall apply for each component carrier with all carriers active. The requirement is applied for each carrier reception when 2 carrier transmissions are activated at the same time.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.3.2\tMaximum input level for NR SL CA operation",
+                            "text_content": "For the RX RF requirements of NR SL CA UE, the following maximum input level requirements shall be applied to the SL CA bandwidth class B.\n\nTable 7.3.2-1 Maximum input levels for NR SL CA UE\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3.2-1 Maximum input levels for NR SL CA UE",
+                                    "table number": 163,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.3.3\tAdjacent Channel Selectivity for NR SL CA operation",
+                            "text_content": "In NR V2X UE, RAN4 follows the NR ACS requirements < 2700MHz for single carrier in n47 since to align with LTE V2X UE requirements. So RAN4 can reuse the principle as follows.\nFor intra-band contiguous SL CA operation, the UE shall fulfil the minimum requirement specified in Table 7.3.3-1 to Table 7.3.3-3 where the throughput shall be ≥ 95% of the maximum throughput of the reference measurement channels as specified in Annex A.7.2 in TS38.101-1.\nTable 7.3.3-1 ACS for NR SL CA UE\n\nTable 7.3.3-2 Test parameters for intra-band contiguous SL CA UE, case 1\n\nTable 7.3.3-3 Test parameters for intra-band contiguous SL CA UE, case 2\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3.3-1 ACS for NR SL CA UE",
+                                    "table number": 164,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3.3-2 Test parameters for intra-band contiguous SL CA UE, case 1",
+                                    "table number": 165,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3.3-3 Test parameters for intra-band contiguous SL CA UE, case 2",
+                                    "table number": 166,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.3.4\tBlocking characteristics for NR SL CA operation",
+                            "text_content": "For intra-band contiguous SL CA operation, the UE shall fulfil the minimum requirement specified in Table 7.3.4.1-1 to Table 7.3.4.1-2 where the throughput shall be ≥ 95% of the maximum throughput of the reference measurement channels as specified in Annex A.7.2 in TS38.101-1.\nTable 7.3.4.1-1 In-band blocking parameters for intra-band contiguous SL CA UE\n\nTable 7.3.4.1-2 In-band blocking for intra-band contiguous SL CA UE\n\nFor intra-band contiguous SL CA operation, the UE throughput shall be ≥ 95% of the maximum throughput of the reference measurement channels as specified in Annex A.7.2 with parameters specified in Tables 7.3.4.2-1 and 7.3.4.2-2.\nFor Table 7.3.4.2-2 in frequency range 1, 2 and 3, up to exceptions are allowed for spurious response frequencies in each assigned frequency channel when measured using a 1MHz step size. For these exceptions the requirements of subclause 7.3.5 spurious response are applicable.\nTable 7.3.4.2-1: Out-of-band blocking parameters for intra-band contiguous SL CA UE\n\nTable 7.3.4.2-2: Out of band blocking for intra-band contiguous SL CA UE\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3.4.1-1 In-band blocking parameters for intra-band contiguous SL CA UE",
+                                    "table number": 167,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3.4.1-2 In-band blocking for intra-band contiguous SL CA UE",
+                                    "table number": 168,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3.4.2-1: Out-of-band blocking parameters for intra-band contiguous SL CA UE",
+                                    "table number": 169,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3.4.2-2: Out of band blocking for intra-band contiguous SL CA UE",
+                                    "table number": 170,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.3.5\tSpurious response for NR SL CA operation",
+                            "text_content": "For intra-band contiguous SL CA operation, the UE throughput shall be ≥ 95% of the maximum throughput of the reference measurement channels as specified in Annex A.7.2 with parameters specified in Table 7.3.5-1and Table 7.3.5-2.\nTable 7.3.5-1: Spurious response parameters for intra-band contiguous SL CA UE\n\nTables 7.3.5-2: Spurious response for intra-band contiguous SL CA UE\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3.5-1: Spurious response parameters for intra-band contiguous SL CA UE",
+                                    "table number": 171,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Tables 7.3.5-2: Spurious response for intra-band contiguous SL CA UE",
+                                    "table number": 172,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.3.6\tIntermodulation characteristics for NR SL CA operation",
+                            "text_content": "For intra-band contiguous SL CA operation, the UE throughput shall be ≥ 95% of the maximum throughput of the reference measurement channels as specified in Annex A.7.2 with parameters specified in Table 7.3.6-1for the specified wanted signal mean power in the presence of two interfering signals.\nTable 7.3.6-1: Wide band intermodulation for intra-band contiguous SL CA UE\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3.6-1: Wide band intermodulation for intra-band contiguous SL CA UE",
+                                    "table number": 173,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "8\tCo-channel coexistence between LTE Sidelink and NR Sidelink",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tConfigured transmitted power for V2X UE supporting co-channel coexistence with LTE SL",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the measured configured maximum output power PUMAX,c for NR V2X sidelink transmissions non-concurrent with NR uplink transmissions, the same requirement as in clause 6.2.4 shall be applied. When NR V2X UE is configured to co-channel coexistence operation with LTE V2X and NR SCS is configured to 30kHz, the evaluation period for PUMAX,c for NR V2X sidelink is the first slot of NR SL slots overlapping with an LTE SL subframe.\nWhen NR V2X UE is configured to co-channel coexistence operation with LTE V2X and NR SCS is configured to 30kHz, the PCMAX,f,c tolerances in Table 6.2.4-1 are relaxed by 1dB i.e. T(PCMAX,f,c) = T(PCMAX,f,c) +1 (dB).\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.2\tRelative slot power tolerance for V2X UE supporting co-channel coexistence with LTE SL",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Relative slot power tolerance is defined for NR V2X supporting co-channel coexistence to ensure the RX performance of the LTE V2X UE operating within the same channel. This requirement applies only to transmissions with 30kHz SCS.\nThe relative slot power tolerance for V2X UE supporting co-channel coexistence with LTE SL is the ability of the NR V2X UE operating with 30kHz SCS to control the output power of transmitted slots during PSCCH/PSSCH transmission consisting of two slots overlapping with an LTE SL subframe (500us). The reference slot is the 1st slot overlapping with LTE SL subframe and target slot is the subsequent NR SL slot overlapping with the LTE SL subframe. The measurement period is one NR SL slot with guard symbol omitted.\nThe power of the target slot must not exceed the power of the reference slot by more than relative slot power tolerance of +1 dB.\n\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 174,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 175,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

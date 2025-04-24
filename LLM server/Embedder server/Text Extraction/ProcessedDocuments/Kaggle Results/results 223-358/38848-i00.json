@@ -1,0 +1,335 @@
+{
+    "document_name": "38848-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "In recent years, IoT has attracted much attention in the wireless communication world. More 'things' are expected to be interconnected for improving productivity efficiency and increasing comforts of life. Further reduction of size, complexity, and power consumption of IoT devices can enable the deployment of tens or even hundreds of billions of IoT devices for various applications and provide added value across the entire value chain. It is impossible to power all the IoT devices by battery that needs to be replaced or recharged manually, which leads to high maintenance cost, serious environmental issues, and even safety hazards for some use cases, for example, wireless sensors in electrical power, and petroleum industries.\nMost of the existing wireless communication devices are powered by batteries that need to be replaced or recharged manually. The automation and digitization of various industries opens numerous new markets requiring new IoT technologies of supporting batteryless devices with no energy storage capability or devices with energy storage that do not need to be replaced or recharged manually.\nAn example type of application is asset identification, which presently has to resort mainly to barcodes and RFID in most industries. The main advantage of these two technologies is the ultra-low complexity and small form factor of the tags. However, the limited reading range of a few meters usually requires handheld scanning which leads to labor intensive and time-consuming operations, or RFID portals/gates which leads to costly deployments. Moreover, the lack of interference management scheme results in severe interference between RFID readers and capacity problems, especially in case of dense deployment. It is hard to support a large-scale network with seamless coverage for RFID.\nIn contrast, this study investigates the feasibility of a new IoT technology to open new markets within 3GPP systems, whose number of connections and/or device density can be orders of magnitude higher than existing 3GPP IoT technologies, and which can provide complexity and power consumption orders-of-magnitude lower than existing 3GPP LPWA technologies such as NB-IoT and LTE-MTC.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document reports on the feasibility of meeting the design targets for relevant use cases of a new 3GPP IoT technology, on the basis of suitable deployment scenarios in a 3GPP system, which relies on ultra-low complexity devices with ultra-low power consumption for very-low end IoT applications. It intends to provide a clear differentiation, i.e. addressing use cases and scenarios that cannot otherwise be fulfilled based on existing 3GPP LPWA IoT technology.\nIn terms of energy storage, the study considers the following device characteristics:\n-\tPure batteryless devices with no energy storage capability at all, and completely dependent on the availability of an external source of energy.\n-\tDevices with limited energy storage capability that do not need to be replaced or recharged manually.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TR 22.840: \"Study on Ambient power-enabled Internet of Things\".\n[3]\t\"A Battery-Free Tag for Wireless Monitoring of Heart Sounds\", 2009 Sixth International Workshop on Wearable and Implantable Body Sensor Networks, June 2009\n[4]\t\"A Survey of Low-Power Transceivers and Their Applications\", IEEE Circuits and Systems Magazine (Vol. 15), third quarter 2015.\n[5]\t.\n[6]\tLiu, V., Talla, V., & Gollakota, S. (2014). Enabling instantaneous feedback with full-duplex backscatter. Proceedings of the 20th Annual International Conference on Mobile Computing and Networking MobiCom ’14.\n[7]\tRP-231627, “Input to Study on Ambient IoT in RAN\t“, Ericsson, RAN#101, September 2023.\n[8]\tD. A. Loku Galappaththige, et. al., \"Link Budget Analysis for Backscatter-Based Passive IoT\", IEEE Access, vol. 10, pp. 128890-128922, 2022.\n[9]\t\"A 2.4 GHz Interferer-Resilient Wake-Up Receiver Using A Dual-IF Multi-Stage N-Path Architecture\", IEEE Journal of Solid-State Circuits (Vol. 51), Sept. 2016\n[10]\t\"An 802.11ba-based wake-up radio receiver with Wi-Fi transceiver integration\", IEEE J. Solid-State Circuits (Vol. 55), May 2020.\n[11]\tJ. Bae and H. Yoo, \"A low energy injection-locked FSK transceiver with frequency-to-amplitude conversion for body sensor applications,\" 2010 Symposium on VLSI Circuits, 2010, pp. 133-134, doi: 10.1109/VLSIC.2010.5560325.\n[12]\tK. Tang et al., \"A 75.3 pJ/b Ultra-Low Power MEMS-Based FSK Transmitter in ISM-915 MHz Band for Pico-IoT Applications,\" 2021 IEEE International Symposium on Circuits and Systems (ISCAS), 2021, pp. 1-4, doi: 10.1109/ISCAS51556.2021.9401715\n[13]\tM. S. Jahan, J. Langford and J. Holleman, \"A low-power FSK/OOK transmitter for 915 MHz ISM band,\" 2015 IEEE Radio Frequency Integrated Circuits Symposium (RFIC), 2015, pp. 163-166, doi: 10.1109/RFIC.2015.7337730.\n[14]\tRP-222644, \"Revised SID: Study on low-power Wake-up Signal and Receiver for NR\", vivo, September 2022.\n[15]\t3GPP TR 38.869, “Study on low-power Wake-up Signal and Receiver for NR”.\n[16]\tF. Amato et. al., “Tunneling RFID Tags for Long-Range and Low-Power Microwave Applications”, IEEE Journal of Radio Frequency Identification, vol. 2, no. 2, pp. 93-103, June 2018.\n[17]\tRP-231559 \"Views on Ambient IoT (Rel-18 SI)\", Qualcomm, RAN#101, September 2023.\n[18]\tRP-231598 \"Discussion on Ambient IoT\", Semtech (Sierra Wireless) , RAN#101, September 2023.\n[19]\tRP-231617 \"Ambient IoT deployment feasibilities\", Nokia, Nokia Shanghai Bell, RAN#101, September 2023.\n[20]\tRP-231627 \"Input to Study on Ambient IoT in RAN\", Ericsson, RAN#101, September 2023.\n[21]\tRP-231810 \"Remaining issues on Ambient IoT SI\", vivo, RAN#101, September 2023.\n[22]\tRP-231848 \"Further consideration on ambient IoT for RAN\", OPPO, RAN#101, September 2023.\n[23]\tRP-231915 \"Further discussion on Ambient IoT in RAN\", Spreadtrum Communications, RAN#101, September 2023.\n[24]\tRP-232284 \"Feasibility analysis on coverage of A-IoT ZTE\", Sanechips, RAN#101, September 2023.\n[25]\tRP-232408 \"Discussion on Feasibility assessment and required functionalities for Ambient IoT\", Huawei, HiSilicon, RAN#101, September 2023.\n[26]\tC. Xu et. al, \"Practical Backscatter Communication Systems for Battery-Free Internet of Things: A Tutorial and Survey of Recent Research,\" IEEE Signal Processing Magazine, vol. 35, no. 5, pp. 16-27, Sept. 2018.\n[27]\tChenyang Li , Lingfei Mo, and Dongkai Zhang, \"Review on UHF RFID Localization Methods\", IEEE Journal of Radio Frequency Identification, VOL. 3, NO. 4, DECEMBER 2019.\n[28]\tDeep Convolutional Neural Network for Passive RFID Tag Localization Via Joint RSSI and PDOA Fingerprint Features, IEEE Access (Vol. 9), Jan. 2021.\n[29]\tA Multi-tag Cooperative Localization Algorithm Based on Weighted Multidimensional Scaling for Passive UHF RFID, IEEE Internet of Things Journal (Vol. 6), Mar. 2019.\n[30]\tLam K H, Cheung C C, Lee W C, \"RSSI-based LoRa localization systems for large-scale indoor and outdoor environments\", IEEE Transactions on Vehicular Technology, VOL. 68, No. 12, December 2019.\n[31]\tSallouha H, Chiumento A, Pollin S, \"Localization in long-range ultra-narrow band IoT networks using RSSI\", 2017 IEEE International Conference on Communications (ICC), IEEE, May 2017\n[32]\tXingqin Lin, Johan Bergman, Fredrik Gunnarsson, etc., \"Positioning for the Internet of Things: A 3GPP Perspective\", IEEE Communications Magazine, VOL. 55, NO. 12, DECEMBER 2017.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nASK\tAmplitude-shift keying\nDO\tDevice-originated\nDT\tDevice-terminated\nDO-A\tDevice-originated – autonomous\nDO-DTT\tDevice-originated – device-terminated triggered\nEPC\tElectronic product code\nFSK\tFrequency-shift keying\nIoT\tInternet of Things\nLPWA\tLow-power, wide-area\nLTE-MTC\tLong Term Evolution – Machine Type Communication\nNB-IoT\tNarrowband IoT\nOOK\tOn-off keying\nRFID\tRadio-frequency identification\nrUC\trepresentative Use Case\nUHF\tUltra-high frequency\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tDeployment scenarios, use cases, services",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tUse cases/services",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.1.1\tRepresentative use cases",
+                            "text_content": "Two sets or levels of grouping were defined. The first, Grouping A, is on the basis of the deployment environment(s) described for a use case in TR 22.840 [2], and the second, Grouping B, is on the basis of functionality/application described in TR 22.840 [2].\nGrouping A:\n-\tIndoor\n-\tOutdoor\n-\tIndoor/outdoor\nGrouping B:\n-\tInventory\n-\tSensors\n-\tPositioning\n-\tCommand\nThese two groupings are then used to form representative use cases (rUCs) as follows, which are used in Clause 4.2 – Deployment scenarios and connectivity topologies.\n-\trUC1: Indoor inventory\n-\trUC2: Indoor sensors\n-\trUC3: Indoor positioning\n-\trUC4: Indoor command\n-\trUC5: Outdoor inventory\n-\trUC6: Outdoor sensors\n-\trUC7: Outdoor positioning\n-\trUC8: Outdoor command\nThis resulted in the following mapping from SA1 use cases and traffic scenarios onto RAN rUCs:\nTable 4.1.1-1: Mapping between RAN representative use cases and SA1 use cases\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.1.1-1: Mapping between RAN representative use cases and SA1 use cases",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "4.2\tDeployment scenarios and connectivity topologies",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.0\tIntroduction",
+                            "text_content": "Deployment scenarios for Ambient IoT have been studied on the basis of a list of characteristics, and the representative use case(s) applicable to a scenario. The possible descriptions of the characteristics are as follows:\nTable 4.2.0-1: Characteristics of deployment scenarios\n\nThe study has considered Ambient IoT deployments in-band to NR, in guard-band of NR, and in standalone band from NR.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.2.0-1: Characteristics of deployment scenarios",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.1\tConnectivity topologies",
+                            "text_content": "The following connectivity topologies for Ambient IoT networks and devices are defined for the purposes of the study. In all these topologies, the Ambient IoT device may be provided with a carrier wave from other node(s) either inside or outside the topology. The links in each topology may be bidirectional or unidirectional.\nBS, UE, assisting node, or intermediate node could be multiple BSs or UEs, respectively. The mixture of indoor and outdoor placement of such nodes is regarded as a network implementation choice. Account would need to be taken of potential impact on device or node complexity. In the connectivity topologies, this does not imply the existence of multi-hop assisting or intermediate nodes.\n\nThe figure depicts a layered network topology with 1000 base stations (BTSs) and 10000 optical line terminals (OLTs). The network is designed to support 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\nFigure 4.2.1.1-1: Topology 1\nIn Topology 1, the Ambient IoT device directly and bidirectionally communicates with a basestation. The communication between the basestation and the ambient IoT device includes Ambient IoT data and/or signalling. This topology includes the possibility that the BS transmitting to the Ambient IoT device is a different from the BS receiving from the Ambient IoT device.\nThe figure depicts a layered network topology with 21 nodes, each represented by a dot. The nodes are interconnected through optical fibers, with redundancy paths shown in dashed lines. The network is designed to support SDN principles, with a focus on redundancy and failover capabilities.\nFigure 4.2.1.2-1: Topology 2\nIn Topology 2, the Ambient IoT device communicates bidirectionally with an intermediate node between the device and basestation. In this topology, the intermediate node can be a relay, IAB node, UE, repeater, etc. which is capable of Ambient IoT. The intermediate node transfers Ambient IoT data and/or signalling between BS and the Ambient IoT device.\nThe figure depicts a 5G network with a multi-path signal propagation, highlighting the role of base stations (gNB), user equipment (UE), and scatterers. Key components include the base station (gNB), user equipment (UE), and scatterers. The diagram illustrates beamforming techniques to mitigate interference.\nFigure 4.2.1.3-1: Topology 3 with downlink assistance\nThe figure depicts a 5G network with a multi-path signal propagation, highlighting the role of base stations (gNB), user equipment (UE), and scatterers. Key components include the base station (gNB), user equipment (UE), and scatterers. The diagram illustrates beamforming techniques to mitigate interference.\nFigure 4.2.1.3-2: Topology 3 with uplink assistance\nIn Topology 3, the Ambient IoT device transmits data/signalling to a basestation, and receives data/signalling from the assisting node; or the Ambient IoT device receives data/signalling from a basestation and transmits data/signalling to the assisting node. In this topology, the assisting node can be a relay, IAB, UE, repeater, etc. which is capable of ambient IoT.\nThe figure depicts a layered network topology with 4-layer 1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4-1-4\nFigure 4.2.1.4-1: Topology 4\nIn Topology 4, the Ambient IoT device communicates bidirectionally with a UE. The communication between UE and the ambient IoT device includes Ambient IoT data and/or signalling.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tDeployment scenarios",
+                            "text_content": "With Ambient IoT device indoors and basestation indoors, this deployment scenario is characterized according to Table 4.2.2.1-1.\nTable 4.2.2.1-1: Characteristics of deployment scenario 1\nNOTE 1:\tDescriptions may not be applicable for some Devices (A, B).\nWith Ambient IoT device indoors and basestation outdoors, this deployment scenario is characterized according to Table 4.2.2.2-1.\nTable 4.2.2.2-1: Characteristics of deployment scenario 2\nNOTE 1:\tDescriptions may not be applicable for some Devices (A, B).\n\nWith Ambient IoT device indoors and UE-based reader, this deployment scenario is characterized according to Table 4.2.2.3-1.\nTable 4.2.2.3-1: Characteristics of deployment scenario 3\nNOTE 1:\tDescriptions may not be applicable for some Devices (A, B).\nWith Ambient IoT device outdoors and basestation outdoors, this deployment scenario is characterized according to Table 4.2.2.4-1.\nTable 4.2.2.4-1: Characteristics of deployment scenario 4\nNOTE 1:\tDescriptions may not be applicable for some Devices (A, B).\n\nWith Ambient IoT device outdoors and UE-based reader, this deployment scenario is characterized according to Table 4.2.2.5-1.\nTable 4.2.2.5-1: Characteristics of deployment scenario 5\nNOTE 1:\tDescriptions may not be applicable for some Devices (A, B).\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.2.2.1-1: Characteristics of deployment scenario 1",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 4.2.2.2-1: Characteristics of deployment scenario 2",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 4.2.2.3-1: Characteristics of deployment scenario 3",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 4.2.2.4-1: Characteristics of deployment scenario 4",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 4.2.2.5-1: Characteristics of deployment scenario 5",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tDevice categorization",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Ambient IoT devices are characterized in the study according to their energy storage capacity, and capability of generating RF signals for their transmissions.\nThe study considers that a device has either:\n-\tNo energy storage at all; or\n-\tLimited energy storage\nRelying on these storage capacities, the study considers the following set of Ambient IoT devices:\n-\tDevice A: No energy storage, no independent signal generation/amplification, i.e. backscattering transmission.\n-\tDevice B: Has energy storage, no independent signal generation, i.e. backscattering transmission. Use of stored energy can include amplification for reflected signals.\n-\tDevice C: Has energy storage, has independent signal generation, i.e., active RF components for transmission.\nA limited energy storage can be different among implementations within Device B or implementations within Device C, and different between Device B and Device C. Such storage is expected to be order(s) of magnitude smaller than an NB-IoT device would typically include.\nDevice A, B, and C are able to demodulate control, data, etc from the relevant entity in RAN according to connectivity topology.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tRAN design targets",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tDevice power consumption",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For Device A, the power consumption target during transmitting/receiving is ≤ 1 μW or ≤ 10 μW,\nFor Device B, the target during transmitting/receiving is such that:\n-\tDevice A power consumption ≪ Device B power consumption < Device C power consumption; or\n-\tDevice A power consumption ≤ Device B power consumption < Device C power consumption.\nThe device power consumption during transmitting/receiving for Device C is ≤ 1 mW to ≤ 10 mW.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tDevice complexity",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For Device A, the complexity target is to be comparable to UHF RFID ISO18000-6C (EPC C1G2).\nFor Device B, the target is such that:\n-\tDevice A complexity < Device B complexity < Device C complexity.\nFor Device C, the complexity target is to be orders-of-magnitude lower than NB-IoT.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tCoverage",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The coverage target for both DL and UL is represented by the maximum distance:\n-\tBetween Ambient IoT device and basestation in Topology (1) and (3)\n-\tBetween Ambient IoT device and intermediate or assisting node in Topology (2) and (3), respectively\n-\tBetween Ambient IoT device and UE in Topology (4).\nDetails relevant to the maximum distance such as sensitivity, BLER, transmit power, etc. are for WG expertise to study further.\nThe design target of coverage is:\nBy indoor / outdoor, grouping different Devices into a range that WGs can sub-select within\n-\tthe maximum distance of 10 – 50 m for indoor\n-\tthe maximum distance of 50 – 500 m for outdoor\nNOTE:\tDifferent target values within these ranges may apply to different devices A/B/C and deployment scenarios 1-5.\nNOTE:\tIf BS is present, then continuous coverage (from the device perspective) based on a typical ISD between base stations is assumed. This does not imply an assumption of any particular topology.\nNOTE:\tFor Device A & B, the emitter-to-tag distance should be reported as part of the assessment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tUser experienced data rate",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The user experienced data rate target is, for the uplink and downlink, maximum not less than 5 kbps, and minimum not less than 0.1 kbps.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tMaximum message size",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The design target of maximum message size is approximately 1000 bits to be received by the Ambient IoT device, and approximately 1000 bits to be transmitted from the Ambient IoT device, based on the maximum application layer packet size.\nRAN1/RAN2 can refine as needed for TB size design.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.6\tLatency",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The one-way end-to-end maximum latency targets, as defined in TR 22.840, are:\n-\tLonger latency target: 10 seconds\n-\tShorter latency target: 1 second\nA use case is assigned to a latency target according to TR 22.840. RAN WGs can refine a definition of latency suitable for their work within the above.\nNOTE:\tThe time for charging the Ambient IoT device storage (if present) is not included in the latency defined above. Time for energy harvesting, charging, etc. is regarded as an implementation issue only.\nNOTE:\tThe one-way end-to-end maximum latency is assumed to also include query/triggering time.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.7\tPositioning accuracy",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The design target of absolute positioning accuracy when performed by the cellular network (including assisting nodes when present) is:\n-\t1~3 meters @ 90% indoor location.\n-\tSeveral tens of meters @ 90% outdoor location.\nThe design target of relative ranging accuracy for topology 4 is:\n-\t1~3 meters @ 90% indoor and outdoor location\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.8\tConnection/device density",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "According to the consolidated potential KPIs in TR 22.840, the maximum connection density target is:\n-\t150 devices per 100 m2 for indoor scenarios.\n-\t20 devices per 100 m2 for outdoor scenarios.\nRAN WGs will define the 2D or 3D distribution(s) of devices.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.9\tMoving speed of device",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The design target of moving speed of Ambient IoT device is 10 km/h, at least for indoor scenarios.\nNOTE:\tAbsolute speed is used in Topology (1), (2) and (3). Relative speed is used in Topology (4).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tComparison and assessment",
+            "description": "6.1\tPreliminary feasibility assessment\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.2\tRequired RAN functionalities",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The assumptions on required functionality have been studied on the basis of supporting certain RAN design targets as well as other requirements. At least the following potential functionalities are identified in different sets, respectively, according to the purpose of each functionality assumed to be mainly used for. An entry in the tables below neither implies nor precludes RAN specification impact.\nTable 6.2-1: Required RAN functionality set #1: for supporting RAN design target\n\nTable 6.2-2: Required RAN functionality set #2: for supporting other requirements\n*NOTE:\tThis does not necessarily mean security has RAN impact, further study is needed.\nThe required functionalities may not all be addressed in the same Release.\nIn the above, both existing and new techniques may be considered.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.2-1: Required RAN functionality set #1: for supporting RAN design target",
+                            "table number": 10,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 6.2-2: Required RAN functionality set #2: for supporting other requirements",
+                            "table number": 11,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tConclusions and recommendations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tSummary",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The study has described eight rUCs in RAN, being indoor/outdoor for each of inventory, sensors, positioning, and command. These rUCs encompass the UCs or traffic scenarios from TR 22.840 as shown in Table 4.1-1.\nFour general connectivity topologies were studied in Clause 4.2.1: BS ↔ Ambient IoT device, BS ↔ intermediate node ↔ Ambient IoT device, BS ↔ assisting node ↔ Ambient IoT device ↔ BS, and UE ↔ Ambient IoT device.\nThree devices were studied: Device A, B, and C, differentiated according to inclusion of backscattering transmission or independent signal generation, and inclusion or not of energy storage.\nTogether with other characteristics, the topologies and devices were used to study deployment scenarios for Ambient IoT, shown in Clause 4.2.2, differentiated according to whether the device and basestation/UE-based reader are respectively indoors or outdoors.\nA set of RAN design targets were developed, complementary to, and/or derived from, the requirements reported in TR 22.840, in Clause 5. Further details of these targets are assumed to be provided by WG-level expertise.\nA non-exclusive list of functionalities needed in Ambient IoT from the RAN perspective was formulated on the basis of supporting the RAN design targets, and for supporting other requirements. The study has not investigated in detail the implication of CN-related functionalities.\nFinally, a preliminary feasibility assessment was conducted on the basis of the set of design targets in Clause 5. This was by a mixture of reference to external sources, characteristics of, or hardware used by, other technologies, and companies’ own analyses.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tRecommendations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "It is concluded in preliminary feasibility analysis at TSG-RAN level that Ambient IoT is feasible and beneficial, and further WG-level study is recommended prior to normative work.\nFor the initial WG-level study of Ambient IoT\n-\tRAN is recommended to down-select further starting from:\n-\tDeployment scenario 1 with Topology 1\n-\tDeployment scenario 2 with Topology 1\n-\tDeployment scenario 2 with Topology 2\n-\tDeployment scenario 4 with Topology 1\n-\tDeployment scenario 4 with Topology 3\n-\tFR1 licensed spectrum is recommended\n-\tNote: selection or prioritization between FDD and FDD/TDD is to be decided\n-\tRAN is recommended to down-select to one or more of:\n-\tSpectrum in-band to NR, in guard-band to LTE/NR, and in standalone band(s)\nIt is recommended to direct the RAN WGs to use the design targets reported in Clause 5. The RAN WGs are expected to refine the design targets according to their technical expertise, as needed.\nCompanies have reported the following energy sources for energy harvesting in literature: RF, solar/light, piezoelectric (kinetic/vibration), electromagnetic, electrostatic, heat/thermal, thermoelectric, magnetic, wind/water, acoustic, etc.\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 12,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

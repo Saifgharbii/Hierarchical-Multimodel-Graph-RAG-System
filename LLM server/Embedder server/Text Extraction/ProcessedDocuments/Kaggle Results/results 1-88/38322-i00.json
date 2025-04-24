@@ -1,0 +1,414 @@
+{
+    "document_name": "38322-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the NR Radio Link Control (RLC) protocol for the UE – NR radio interface.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 38.300: \"NR Overall Description; Stage 2\".\n[3]\t3GPP TS 38.321: \"NR MAC protocol specification\".\n[4]\t3GPP TS 38.323: \"NR PDCP specification\".\n[5]\t3GPP TS 38.331: \"NR RRC Protocol specification\".\n[6]\t3GPP TS 23.287: \"Architecture enhancements for 5G System (5GS) to support Vehicle-to-Everything (V2X) services\".\n[7]\t3GPP TS 38.340: \"NR; Backhaul Adaptation Protocol (BAP) specification\".\n[8]\t3GPP TS 23.304: \"Proximity based Services (ProSe) in the 5G System (5GS)\".\n[9]\t3GPP TS 38.351: \"NR; Sidelink Relay Adaptation Protocol (SRAP) Specification\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nData field element: An RLC SDU or an RLC SDU segment that is mapped to the Data field.\nDelay-critical RLC SDU: RLC SDU corresponding to a PDCP PDU indicated as delay-critical by PDCP (see TS 38.323 [4]).\nNR sidelink communication: AS functionality enabling at least V2X Communication as defined in TS 23.287 [6] and ProSe communication (including ProSe non-Relay, UE-to-Network Relay and UE-to-UE Relay communication (including ProSe UE-to-UE Relay communication with integrated discovery)) as defined in TS 23.304 [8], between two or more nearby UEs, using NR technology but not traversing any network node.\nNR sidelink discovery: AS functionality enabling ProSe non-Relay Discovery, ProSe UE-to-Network Relay discovery and ProSe UE-to-UE Relay discovery for Proximity based Services as defined in TS 23.304 [8] between two or more nearby UEs, using NR technology but not traversing any network node.\nRLC data volume: The amount of data available for transmission in an RLC entity.\nRLC SDU segment: A segment of an RLC SDU.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nAM\tAcknowledged Mode\nAMD\tAM Data\nARQ\tAutomatic Repeat request\ngNB\tNR Node B\nMBS\tMulticast/Broadcast Services\nMCCH\tMBS Control Channel\nMTCH\tMBS Traffic Channel\nPDU\tProtocol Data Unit\nRLC\tRadio Link Control\nSBCCH\tSidelink Broadcast Control Channel\nSCCH\tSidelink Control Channel\nSDU\tService Data Unit\nSN\tSequence Number\nSTCH\tSidelink Traffic Channel\nTB\tTransport Block\nTM\tTransparent Mode\nTMD\tTM Data\nUE\tUser Equipment\nUM\tUnacknowledged Mode\nUMD\tUM Data\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The objective is to describe the RLC architecture and the RLC entities from a functional point of view.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tRLC architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tRLC entities",
+                            "text_content": "The description in this clause is a model and does not specify or restrict implementations.\nRRC is generally in control of the RLC configuration.\nFunctions of the RLC sub layer are performed by RLC entities. For an RLC entity configured at the gNB, there is a peer RLC entity configured at the UE and vice versa. In NR sidelink communication, in NR sidelink discovery, for an RLC entity configured at the transmitting UE, there is a peer RLC entity configured at each receiving UE.\nAn RLC entity receives/delivers RLC SDUs from/to upper layer and sends/receives RLC PDUs to/from its peer RLC entity via lower layers.\nAn RLC PDU can either be an RLC data PDU or an RLC control PDU. If an RLC entity receives RLC SDUs from upper layer, it receives them through a single RLC channel between RLC and upper layer, and after forming RLC data PDUs from the received RLC SDUs, the RLC entity submits the RLC data PDUs to lower layer through a single logical channel. If an RLC entity receives RLC data PDUs from lower layer, it receives them through a single logical channel, and after forming RLC SDUs from the received RLC data PDUs, the RLC entity delivers the RLC SDUs to upper layer through a single RLC channel between RLC and upper layer. If an RLC entity submits/receives RLC control PDUs to/from lower layer, it submits/receives them through the same logical channel it submits/receives the RLC data PDUs through.\nNOTE 1:\tIn case the upper layer is BAP as defined in TS 38.340 [7], an RLC channel refers to a Backhaul RLC channel.\nNOTE 2:\tIn case the upper layer is SRAP as defined in TS 38.351 [9], an RLC channel refers to either a PC5 Relay RLC channel or a Uu Relay RLC channel.\nAn RLC entity can be configured to perform data transfer in one of the following three modes: Transparent Mode (TM), Unacknowledged Mode (UM) or Acknowledged Mode (AM). Consequently, an RLC entity is categorized as a TM RLC entity, an UM RLC entity or an AM RLC entity depending on the mode of data transfer that the RLC entity is configured to provide.\nA TM RLC entity is configured either as a transmitting TM RLC entity or a receiving TM RLC entity. The transmitting TM RLC entity receives RLC SDUs from upper layer and sends RLC PDUs to its peer receiving TM RLC entity via lower layers. The receiving TM RLC entity delivers RLC SDUs to upper layer and receives RLC PDUs from its peer transmitting TM RLC entity via lower layers.\nAn UM RLC entity is configured either as a transmitting UM RLC entity or a receiving UM RLC entity. The transmitting UM RLC entity receives RLC SDUs from upper layer and sends RLC PDUs to its peer receiving UM RLC entity via lower layers. The receiving UM RLC entity delivers RLC SDUs to upper layer and receives RLC PDUs from its peer transmitting UM RLC entity via lower layers.\nAn AM RLC entity consists of a transmitting side and a receiving side. The transmitting side of an AM RLC entity receives RLC SDUs from upper layer and sends RLC PDUs to its peer AM RLC entity via lower layers. The receiving side of an AM RLC entity delivers RLC SDUs to upper layer and receives RLC PDUs from its peer AM RLC entity via lower layers.\nFigure 4.2.1-1 illustrates the overview model of the RLC sub layer.\nFigure 4.2.1-1 provides an overview model of the RLC (Random Access Channel Link Layer Control) sub layer, which is a crucial component in the communication process. The figure illustrates the various stages and functions of the RLC sub layer, including the encoding and decoding processes, as well as the transmission and reception of data packets. The model is designed to show how the RLC sub layer interacts with the physical layer and the MAC (Medium Access Control) sub layer to ensure efficient and reliable communication. The figure highlights the importance of the RLC sub layer in managing the quality of service and ensuring that data is transmitted accurately and without errors.\nFigure 4.2.1-1: Overview model of the RLC sub layer\nRLC SDUs of variable sizes which are byte aligned (i.e. multiple of 8 bits) are supported for all RLC entity types (i.e. TM, UM and AM RLC entity).\nEach RLC SDU is used to construct an RLC PDU without waiting for notification from the lower layer (i.e., by MAC) of a transmission opportunity. In the case of UM and AM RLC entities, an RLC SDU may be segmented and transported using two or more RLC PDUs based on the notification(s) from the lower layer.\nRLC PDUs are submitted to lower layer only when a transmission opportunity has been notified by lower layer (i.e. by MAC).\nNOTE 3:\tThe UE should aim to prevent excessive non-consecutive RLC PDUs in a MAC PDU when the UE is requested to generate more than one MAC PDU.\nDescription of different RLC entity types are provided below.\nA TM RLC entity can be configured to submit/receive RLC PDUs through the following logical channels:\n-\tBCCH, DL/UL CCCH, PCCH, and SBCCH.\nFigure 4.2.1.1-1 presents a model of two transparent mode peer entities, illustrating their interaction and data exchange. The figure showcases the entities' physical and logical connections, emphasizing the seamless communication facilitated by their transparent mode. Key components include the entities' interfaces, signaling protocols, and data routing mechanisms, providing a comprehensive view of their communication architecture.\nFigure 4.2.1.1.1-1: Model of two transparent mode peer entities\nA TM RLC entity submits/receives the following RLC data PDU:\n-\tTMD PDU.\nWhen a transmitting TM RLC entity forms TMD PDUs from RLC SDUs, it shall:\n-\tnot segment the RLC SDUs;\n-\tnot include any RLC headers in the TMD PDUs.\nWhen a receiving TM RLC entity receives TMD PDUs, it shall:\n-\tdeliver the TMD PDUs (which are just RLC SDUs) to upper layer.\nAn UM RLC entity can be configured to submit/receive RLC PDUs through the following logical channels:\n-\tDL/UL DTCH, SCCH, STCH, MCCH, and MTCH.\nFigure 4.2.1.2.1-1 presents a model of two unacknowledged mode peer entities, illustrating their communication process. The figure showcases the interaction between the two entities, with various components representing different aspects of their communication, such as the data packets, the network interface controllers (NICs), and the network protocols. The visual representation provides a clear understanding of the communication flow and the underlying technologies involved in their interaction.\nFigure 4.2.1.2.1-1: Model of two unacknowledged mode peer entities\nAn UM RLC entity submits/receives the following RLC data PDU:\n-\tUMD PDU.\nAn UMD PDU contains either one complete RLC SDU or one RLC SDU segment.\nNOTE:\tFor groupcast and broadcast of NR sidelink communication or for NR sidelink discovery only uni-directional UM mode is supported.\nThe transmitting UM RLC entity generates UMD PDU(s) for each RLC SDU. It shall include relevant RLC headers in the UMD PDU. When notified of a transmission opportunity by the lower layer, the transmitting UM RLC entity shall segment the RLC SDUs, if needed, so that the corresponding UMD PDUs, with RLC headers updated as needed, fit within the total size of RLC PDU(s) indicated by lower layer.\nWhen a receiving UM RLC entity receives UMD PDUs, it shall:\n-\tdetect the loss of RLC SDU segments at lower layers;\n-\treassemble RLC SDUs from the received UMD PDUs and deliver the RLC SDUs to upper layer as soon as they are available;\n-\tdiscard received UMD PDUs that cannot be re-assembled into an RLC SDU due to loss at lower layers of an UMD PDU which belonged to the particular RLC SDU.\nAn AM RLC entity can be configured to submit/receive RLC PDUs through the following logical channels:\n-\tDL/UL DCCH, DL/UL DTCH, SCCH, and STCH.\nFigure 4.2.1.3.1-1 presents a detailed model of an acknowledged mode entity in a telecommunication system. The figure illustrates the various components and their interactions, including the transmitter, multiple relay nodes, and the receiver. The model showcases the signal transmission and reception process, emphasizing the importance of signal quality and reliability. Key elements such as the signal strength, noise, and interference are depicted, providing a comprehensive understanding of the acknowledged mode entity's operation within the telecommunication network.\nFigure 4.2.1.3.1-1: Model of an acknowledged mode entity\nAn AM RLC entity delivers/receives the following RLC data PDUs:\n-\tAMD PDU.\nAn AMD PDU contains either one complete RLC SDU or one RLC SDU segment.\nAn AM RLC entity delivers/receives the following RLC control PDU:\n-\tSTATUS PDU.\nThe transmitting side of an AM RLC entity generates AMD PDU(s) for each RLC SDU. When notified of a transmission opportunity by the lower layer, the transmitting AM RLC entity shall segment the RLC SDUs, if needed, so that the corresponding AMD PDUs, with RLC headers updated as needed, fit within the total size of RLC PDU(s) indicated by lower layer.\nThe transmitting side of an AM RLC entity supports retransmission of RLC SDUs or RLC SDU segments (ARQ):\n-\tif the RLC SDU or RLC SDU segment to be retransmitted (including the RLC header) does not fit within the total size of RLC PDU(s) indicated by lower layer at the particular transmission opportunity notified by lower layer, the AM RLC entity can segment the RLC SDU or re-segment the RLC SDU segments into RLC SDU segments;\n-\tthe number of re-segmentation is not limited.\nWhen the transmitting side of an AM RLC entity forms AMD PDUs from RLC SDUs or RLC SDU segments, it shall:\n-\tinclude relevant RLC headers in the AMD PDU.\nWhen the receiving side of an AM RLC entity receives AMD PDUs, it shall:\n-\tdetect whether or not the AMD PDUs have been received in duplication, and discard duplicated AMD PDUs;\n-\tdetect the loss of AMD PDUs at lower layers and request retransmissions to its peer AM RLC entity;\n-\treassemble RLC SDUs from the received AMD PDUs and deliver the RLC SDUs to upper layer as soon as they are available.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tServices",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.1\tServices provided to upper layers",
+                            "text_content": "The following services are provided by RLC to upper layer:\n-\tTM data transfer;\n-\tUM data transfer;\n-\tAM data transfer, including indication of successful delivery of upper layers PDUs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.2\tServices expected from lower layers",
+                            "text_content": "The following services are expected by RLC from lower layer (i.e. MAC):\n-\tdata transfer;\n-\tnotification of a transmission opportunity, together with the total size of the RLC PDU(s) to be transmitted in the transmission opportunity.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.4\tFunctions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following functions are supported by the RLC sub layer:\n-\ttransfer of upper layer PDUs;\n-\terror correction through ARQ (only for AM data transfer);\n-\tsegmentation and reassembly of RLC SDUs (only for UM and AM data transfer);\n-\tre-segmentation of RLC SDU segments (only for AM data transfer);\n-\tduplicate detection (only for AM data transfer);\n-\tRLC SDU discard (only for UM and AM data transfer);\n-\tRLC re-establishment;\n-\tProtocol error detection (only for AM data transfer).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tProcedures",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tRLC entity handling",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tRLC entity establishment",
+                            "text_content": "When upper layers request an RLC entity establishment, the UE shall:\n-\testablish a RLC entity;\n-\tset the state variables of the RLC entity to initial values;\n-\tfollow the procedures in clause 5.2.\nFor NR sidelink groupcast and broadcast or SL-SRB4, when receiving the first UMD PDU from a Source Layer 2 ID and Destination Layer 2 ID pair for an LCID, and there is not yet a corresponding receiving RLC entity for a radio bearer, the UE shall:\n-\testablish a receiving RLC entity;\n-\tset the state variables of the RLC entity to initial values;\n-\tfollow the procedures in clause 5.2.\nNOTE:\tThe receiving RLC entity of SL-SRB0 and SL-SRB1 is established same as NR sidelink groupcast and broadcast.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tRLC entity re-establishment",
+                            "text_content": "When upper layers request an RLC entity re-establishment, the UE shall:\n-\tdiscard all RLC SDUs, RLC SDU segments, and RLC PDUs, if any;\n-\tstop and reset all timers;\n-\treset all state variables to their initial values.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tRLC entity release",
+                            "text_content": "When upper layers request an RLC entity release, the UE shall:\n-\tdiscard all RLC SDUs, RLC SDU segments, and RLC PDUs, if any;\n-\trelease the RLC entity.\nNOTE:\tFor groupcast and broadcast of NR sidelink communication or for SL-SRB4, the receiving UM RLC entity release is up to UE implementation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tData transfer procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tTM data transfer",
+                            "text_content": "When submitting a new TMD PDU to lower layer, the transmitting TM RLC entity shall:\n-\tsubmit an RLC SDU without any modification to lower layer.\nWhen receiving a new TMD PDU from lower layer, the receiving TM RLC entity shall:\n-\tdeliver the TMD PDU without any modification to upper layer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tUM data transfer",
+                            "text_content": "When submitting a UMD PDU to lower layer, the transmitting UM RLC entity shall:\n-\tif the UMD PDU contains a segment of an RLC SDU, set the SN of the UMD PDU to TX_Next;\n-\tif the UMD PDU contains a segment that maps to the last byte of an RLC SDU, then increment TX_Next by one.\nThe receiving UM RLC entity shall maintain a reassembly window according to state variable RX_Next_Highest as follows:\n-\ta SN falls within the reassembly window if (RX_Next_Highest – UM_Window_Size) <= SN <RX_Next_Highest;\n-\ta SN falls outside of the reassembly window otherwise.\nWhen receiving an UMD PDU from lower layer, the receiving UM RLC entity shall:\n-\teither deliver the UMD PDU to upper layer after removing the RLC header, discard the received UMD PDU, or place it in the reception buffer (see clause 5.2.2.2.2);\n-\tif the received UMD PDU was placed in the reception buffer:\n-\tupdate state variables, reassemble and deliver RLC SDUs to upper layer and start/stop t-Reassembly as needed (see clause 5.2.2.2.3).\nWhen t-Reassembly expires, the receiving UM RLC entity shall:\n-\tupdate state variables, discard RLC SDU segments and start t-Reassembly as needed (see clause 5.2.2.2.4).\nWhen an UMD PDU is received from lower layer, the receiving UM RLC entity shall:\n-\tif the UMD PDU header does not contain an SN:\n-\tremove the RLC header and deliver the RLC SDU to upper layer.\n-\telse if (RX_Next_Highest – UM_Window_Size) <= SN < RX_Next_Reassembly:\n-\tdiscard the received UMD PDU.\n-\telse:\n-\tplace the received UMD PDU in the reception buffer.\nWhen an UMD PDU with SN = x is placed in the reception buffer, the receiving UM RLC entity shall:\n-\tif all byte segments with SN = x are received:\n-\treassemble the RLC SDU from all byte segments with SN = x, remove RLC headers and deliver the reassembled RLC SDU to upper layer;\n-\tif x = RX_Next_Reassembly:\n-\tupdate RX_Next_Reassembly to the SN of the first SN > current RX_Next_Reassembly that has not been reassembled and delivered to upper layer.\n-\telse if x falls outside of the reassembly window:\n-\tupdate RX_Next_Highest to x + 1;\n-\tdiscard any UMD PDUs with SN that falls outside of the reassembly window;\n-\tif RX_Next_Reassembly falls outside of the reassembly window:\n-\tset RX_Next_Reassembly to the SN of the first SN >= (RX_Next_Highest – UM_Window_Size) that has not been reassembled and delivered to upper layer.\n-\tif t-Reassembly is running:\n-\tif RX_Timer_Trigger <= RX_Next_Reassembly; or\n-\tif RX_Timer_Trigger falls outside of the reassembly window and RX_Timer_Trigger is not equal to RX_Next_Highest; or\n-\tif RX_Next_Highest = RX_Next_Reassembly + 1 and there is no missing byte segment of the RLC SDU associated with SN = RX_Next_Reassembly before the last byte of all received segments of this RLC SDU:\n-\tstop and reset t-Reassembly.\n-\tif t-Reassembly is not running (includes the case when t-Reassembly is stopped due to actions above):\n-\tif RX_Next_Highest > RX_Next_Reassembly + 1; or\n-\tif RX_Next_Highest = RX_Next_Reassembly + 1 and there is at least one missing byte segment of the RLC SDU associated with SN = RX_Next_Reassembly before the last byte of all received segments of this RLC SDU:\n-\tstart t-Reassembly;\n-\tset RX_Timer_Trigger to RX_Next_Highest.\nWhen t-Reassembly expires, the receiving UM RLC entity shall:\n-\tupdate RX_Next_Reassembly to the SN of the first SN >= RX_Timer_Trigger that has not been reassembled;\n-\tdiscard all segments with SN < updated RX_Next_Reassembly;\n-\tif RX_Next_Highest > RX_Next_Reassembly + 1; or\n-\tif RX_Next_Highest = RX_Next_Reassembly + 1 and there is at least one missing byte segment of the RLC SDU associated with SN = RX_Next_Reassembly before the last byte of all received segments of this RLC SDU:\n-\tstart t-Reassembly;\n-\tset RX_Timer_Trigger to RX_Next_Highest.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tAM data transfer",
+                            "text_content": "The transmitting side of an AM RLC entity shall prioritize transmission of RLC control PDUs over AMD PDUs. The transmitting side of an AM RLC entity shall prioritize transmission of AMD PDUs containing previously transmitted RLC SDUs or RLC SDU segments over transmission of AMD PDUs containing not previously transmitted RLC SDUs or RLC SDU segments.\nThe transmitting side of an AM RLC entity shall maintain a transmitting window according to the state variable TX_Next_Ack as follows:\n-\ta SN falls within the transmitting window if TX_Next_Ack <= SN < TX_Next_Ack + AM_Window_Size;\n-\ta SN falls outside of the transmitting window otherwise.\nThe transmitting side of an AM RLC entity shall not submit to lower layer any AMD PDU whose SN falls outside of the transmitting window.\nFor each RLC SDU received from the upper layer, the AM RLC entity shall:\n-\tassociate a SN with the RLC SDU equal to TX_Next and construct an AMD PDU by setting the SN of the AMD PDU to TX_Next;\n-\tincrement TX_Next by one.\nWhen submitting an AMD PDU that contains a segment of an RLC SDU, to lower layer, the transmitting side of an AM RLC entity shall:\n-\tset the SN of the AMD PDU to the SN of the corresponding RLC SDU.\nThe transmitting side of an AM RLC entity can receive a positive acknowledgement (confirmation of successful reception by its peer AM RLC entity) for an RLC SDU by the following:\n-\tSTATUS PDU from its peer AM RLC entity.\nWhen receiving a positive acknowledgement for an RLC SDU with SN = x, the transmitting side of an AM RLC entity shall:\n-\tsend an indication to the upper layers of successful delivery of the RLC SDU;\n-\tset TX_Next_Ack equal to the SN of the RLC SDU with the smallest SN, whose SN falls within the range TX_Next_Ack <= SN <= TX_Next and for which a positive acknowledgment has not been received yet.\nThe receiving side of an AM RLC entity shall maintain a receiving window according to the state variable RX_Next as follows:\n-\ta SN falls within the receiving window if RX_Next <= SN < RX_Next + AM_Window_Size;\n-\ta SN falls outside of the receiving window otherwise.\nWhen receiving an AMD PDU from lower layer, the receiving side of an AM RLC entity shall:\n-\teither discard the received AMD PDU or place it in the reception buffer (see clause 5.2.3.2.2);\n-\tif the received AMD PDU was placed in the reception buffer:\n-\tupdate state variables, reassemble and deliver RLC SDUs to upper layer and start/stop t-Reassembly as needed (see clause 5.2.3.2.3).\nWhen t-Reassembly expires, the receiving side of an AM RLC entity shall:\n-\tupdate state variables and start t-Reassembly as needed (see clause 5.2.3.2.4).\nWhen an AMD PDU is received from lower layer, where the AMD PDU contains byte segment numbers y to z of an RLC SDU with SN = x, the receiving side of an AM RLC entity shall:\n-\tif x falls outside of the receiving window; or\n-\tif byte segment numbers y to z of the RLC SDU with SN = x have been received before:\n-\tdiscard the received AMD PDU.\n-\telse:\n-\tplace the received AMD PDU in the reception buffer;\n-\tif some byte segments of the RLC SDU contained in the AMD PDU have been received before:\n-\tdiscard the duplicate byte segments.\nWhen an AMD PDU with SN = x is placed in the reception buffer, the receiving side of an AM RLC entity shall:\n-\tif x >= RX_Next_Highest:\n-\tupdate RX_Next_Highest to x+ 1.\n-\tif all bytes of the RLC SDU with SN = x are received:\n-\treassemble the RLC SDU from AMD PDU(s) with SN = x, remove RLC headers when doing so and deliver the reassembled RLC SDU to upper layer;\n-\tif x = RX_Highest_Status:\n-\tupdate RX_Highest_Status to the SN of the first RLC SDU with SN > current RX_Highest_Status for which not all bytes have been received.\n-\tif x = RX_Next:\n-\tupdate RX_Next to the SN of the first RLC SDU with SN > current RX_Next for which not all bytes have been received.\n-\tif t-Reassembly is running:\n-\tif RX_Next_Status_Trigger = RX_Next; or\n-\tif RX_Next_Status_Trigger = RX_Next + 1 and there is no missing byte segment of the SDU associated with SN = RX_Next before the last byte of all received segments of this SDU; or\n-\tif RX_Next_Status_Trigger falls outside of the receiving window and RX_Next_Status_Trigger is not equal to RX_Next + AM_Window_Size:\n-\tstop and reset t-Reassembly.\n-\tif t-Reassembly is not running (includes the case t-Reassembly is stopped due to actions above):\n-\tif RX_Next_Highest> RX_Next +1; or\n-\tif RX_Next_Highest = RX_Next + 1 and there is at least one missing byte segment of the SDU associated with SN = RX_Next before the last byte of all received segments of this SDU:\n-\tstart t-Reassembly;\n-\tset RX_Next_Status_Trigger to RX_Next_Highest.\nWhen t-Reassembly expires, the receiving side of an AM RLC entity shall:\n-\tupdate RX_Highest_Status to the SN of the first RLC SDU with SN >= RX_Next_Status_Trigger for which not all bytes have been received;\n-\tif RX_Next_Highest> RX_Highest_Status +1: or\n-\tif RX_Next_Highest = RX_Highest_Status + 1 and there is at least one missing byte segment of the SDU associated with SN = RX_Highest_Status before the last byte of all received segments of this SDU:\n-\tstart t-Reassembly;\n-\tset RX_Next_Status_Trigger to RX_Next_Highest.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tARQ procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tGeneral",
+                            "text_content": "ARQ procedures are only performed by an AM RLC entity.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tRetransmission",
+                            "text_content": "The transmitting side of an AM RLC entity can receive a negative acknowledgement (notification of reception failure by its peer AM RLC entity) for an RLC SDU or an RLC SDU segment by the following:\n-\tSTATUS PDU from its peer AM RLC entity.\nWhen receiving a negative acknowledgement for an RLC SDU or an RLC SDU segment by a STATUS PDU from its peer AM RLC entity, the transmitting side of the AM RLC entity shall:\n-\tif the SN of the corresponding RLC SDU falls within the range TX_Next_Ack <= SN < = the highest SN of the AMD PDU among the AMD PDUs submitted to lower layer:\n-\tconsider the RLC SDU or the RLC SDU segment for which a negative acknowledgement was received for retransmission.\nWhen an RLC SDU or an RLC SDU segment is considered for retransmission, the transmitting side of the AM RLC entity shall:\n-\tif the RLC SDU or RLC SDU segment is considered for retransmission for the first time:\n-\tset the RETX_COUNT associated with the RLC SDU to zero.\n-\telse, if it (the RLC SDU or the RLC SDU segment that is considered for retransmission) is not pending for retransmission already and the RETX_COUNT associated with the RLC SDU has not been incremented due to another negative acknowledgment in the same STATUS PDU:\n-\tincrement the RETX_COUNT.\n-\tif RETX_COUNT = maxRetxThreshold:\n-\tindicate to upper layers that max retransmission has been reached.\nWhen retransmitting an RLC SDU or an RLC SDU segment, the transmitting side of an AM RLC entity shall:\n-\tif needed, segment the RLC SDU or the RLC SDU segment;\n-\tform a new AMD PDU which will fit within the total size of AMD PDU(s) indicated by lower layer at the particular transmission opportunity;\n-\tsubmit the new AMD PDU to lower layer.\nWhen forming a new AMD PDU, the transmitting side of an AM RLC entity shall:\n-\tonly map the original RLC SDU or RLC SDU segment to the Data field of the new AMD PDU;\n-\tmodify the header of the new AMD PDU in accordance with the description in clause 6.2.2.4;\n-\tset the P field according to clause 5.3.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.3\tPolling",
+                            "text_content": "An AM RLC entity can poll its peer AM RLC entity in order to trigger STATUS reporting at the peer AM RLC entity.\nUpon notification of a transmission opportunity by lower layer, for each AMD PDU submitted for transmission such that the AMD PDU contains either a not previously transmitted RLC SDU or an RLC SDU segment containing not previously transmitted byte segment, the transmitting side of an AM RLC entity shall:\n-\tincrement PDU_WITHOUT_POLL by one;\n-\tincrement BYTE_WITHOUT_POLL by every new byte of Data field element that it maps to the Data field of the AMD PDU;\n-\tif PDU_WITHOUT_POLL >= pollPDU; or\n-\tif BYTE_WITHOUT_POLL >= pollByte:\n-\tinclude a poll in the AMD PDU as described below.\nUpon notification of a transmission opportunity by lower layer, for each AMD PDU submitted for transmission, the transmitting side of an AM RLC entity shall:\n-\tif both the transmission buffer and the retransmission buffer becomes empty (excluding transmitted RLC SDUs or RLC SDU segments awaiting acknowledgements) after the transmission of the AMD PDU; or\n-\tif no new RLC SDU can be transmitted after the transmission of the AMD PDU (e.g. due to window stalling);\n-\tinclude a poll in the AMD PDU as described below.\nNOTE:\tEmpty RLC buffer (excluding transmitted RLC SDUs or RLC SDU segments awaiting acknowledgements) should not lead to unnecessary polling when data awaits in the upper layer. Details are left up to UE implementation.\nTo include a poll in an AMD PDU, the transmitting side of an AM RLC entity shall:\n-\tset the P field of the AMD PDU to \"1\";\n-\tset PDU_WITHOUT_POLL to 0;\n-\tset BYTE_WITHOUT_POLL to 0.\nUpon submission of an AMD PDU including a poll to lower layer, the transmitting side of an AM RLC entity shall:\n-\tset POLL_SN to the highest SN of the AMD PDU among the AMD PDUs submitted to lower layer;\n-\tif t-PollRetransmit is not running:\n-\tstart t-PollRetransmit.\n-\telse:\n-\trestart t-PollRetransmit.\nUpon reception of a STATUS report from the receiving RLC AM entity the transmitting side of an AM RLC entity shall:\n-\tif the STATUS report comprises a positive or negative acknowledgement for the RLC SDU with sequence number equal to POLL_SN:\n-\tif t-PollRetransmit is running:\n-\tstop and reset t-PollRetransmit.\nUpon expiry of t-PollRetransmit, the transmitting side of an AM RLC entity shall:\n-\tif both the transmission buffer and the retransmission buffer are empty (excluding transmitted RLC SDU or RLC SDU segment awaiting acknowledgements); or\n-\tif no new RLC SDU or RLC SDU segment can be transmitted (e.g. due to window stalling):\n-\tconsider the RLC SDU with the highest SN among the RLC SDUs submitted to lower layer for retransmission; or\n-\tconsider any RLC SDU which has not been positively acknowledged for retransmission.\n-\tinclude a poll in an AMD PDU as described in clause 5.3.3.2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.4\tStatus reporting",
+                            "text_content": "An AM RLC entity sends STATUS PDUs to its peer AM RLC entity in order to provide positive and/or negative acknowledgements of RLC SDUs (or portions of them).\nTriggers to initiate STATUS reporting include:\n-\tPolling from its peer AM RLC entity:\n-\tWhen an AMD PDU with SN = x and the P field set to \"1\" is received from lower layer, the receiving side of an AM RLC entity shall:\n-\tif the AMD PDU is to be discarded as specified in clause 5.2.3.2.2; or\n-\tif x < RX_Highest_Status or x >= RX_Next + AM_Window_Size:\n-\ttrigger a STATUS report.\n-\telse:\n-\tdelay triggering the STATUS report until x < RX_Highest_Status or x >= RX_Next + AM_Window_Size.\nNOTE 1:\tThis ensures that the RLC Status report is transmitted after HARQ reordering.\n-\tDetection of reception failure of an AMD PDU\n-\tThe receiving side of an AM RLC entity shall trigger a STATUS report when t-Reassembly expires.\nNOTE 2:\tThe expiry of t-Reassembly triggers both RX_Highest_Status to be updated and a STATUS report to be triggered, but the STATUS report shall be triggered after RX_Highest_Status is updated.\nWhen STATUS reporting has been triggered, the receiving side of an AM RLC entity shall:\n-\tif t-StatusProhibit is not running:\n-\tat the first transmission opportunity indicated by lower layer, construct a STATUS PDU and submit it to lower layer.\n-\telse:\n-\tat the first transmission opportunity indicated by lower layer after t-StatusProhibit expires, construct a single STATUS PDU even if status reporting was triggered several times while t-StatusProhibit was running and submit it to lower layer.\nWhen a STATUS PDU has been submitted to lower layer, the receiving side of an AM RLC entity shall:\n-\tstart t-StatusProhibit.\nWhen constructing a STATUS PDU, the AM RLC entity shall:\n-\tfor the RLC SDUs with SN such that RX_Next <= SN < RX_Highest_Status that has not been completely received yet, in increasing SN order of RLC SDUs and increasing byte segment order within RLC SDUs, starting with SN = RX_Next up to the point where the resulting STATUS PDU still fits to the total size of RLC PDU(s) indicated by lower layer:\n-\tfor an RLC SDU for which no byte segments have been received yet:\n-\tinclude in the STATUS PDU a NACK_SN which is set to the SN of the RLC SDU.\n-\tfor a continuous sequence of byte segments of a partly received RLC SDU that have not been received yet:\n-\tinclude in the STATUS PDU a set of NACK_SN, SOstart and SOend.\n-\tfor a continuous sequence of RLC SDUs that have not been received yet:\n-\tinclude in the STATUS PDU a set of NACK_SN and NACK range;\n-\tinclude in the STATUS PDU, if required, a pair of SOstart and SOend.\n-\tset the ACK_SN to the SN of the next not received RLC SDU which is not indicated as missing in the resulting STATUS PDU.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tSDU discard procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "When indicated from upper layer (e.g. PDCP) to discard a particular RLC SDU, the transmitting side of an AM RLC entity or the transmitting UM RLC entity shall discard the indicated RLC SDU, if neither the RLC SDU nor a segment thereof has been submitted to the lower layers. The transmitting side of an AM RLC entity shall not introduce an RLC SN gap when discarding an RLC SDU.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tData volume calculation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purpose of MAC buffer status reporting, the UE shall consider the following as RLC data volume:\n-\tRLC SDUs and RLC SDU segments that have not yet been included in an RLC data PDU;\n-\tRLC data PDUs that are pending for initial transmission;\n-\tRLC data PDUs that are pending for retransmission (RLC AM).\nFor the purpose of MAC delay status reporting, the UE shall consider the following as delay-critical RLC data volume:\n-\tdelay-critical RLC SDUs and delay-critical RLC SDU segments that have not yet been included in an RLC data PDU;\n-\tRLC data PDUs pending for initial transmission, and containing a delay-critical RLC SDU or a delay-critical RLC SDU segment;\n-\tRLC data PDUs that are pending for retransmission (RLC AM).\nIn addition, if a STATUS PDU has been triggered and t-StatusProhibit is not running or has expired, the UE shall estimate the size of the STATUS PDU that will be transmitted in the next transmission opportunity, and consider this as part of RLC data volume for MAC buffer status reporting and as part of delay-critical RLC data volume for MAC delay status reporting.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.6\tHandling of unknown, unforeseen and erroneous protocol data",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.6.1\tReception of PDU with reserved or invalid values",
+                            "text_content": "When an RLC entity receives an RLC PDU that contains reserved or invalid values, the RLC entity shall:\n-\tdiscard the received RLC PDU.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tProtocol data units, formats and parameters",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tProtocol data units",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tGeneral",
+                            "text_content": "RLC PDUs can be categorized into RLC data PDUs and RLC control PDUs. RLC data PDUs in clause 6.1.2 are used by TM, UM and AM RLC entities to transfer upper layer PDUs (i.e. RLC SDUs). RLC control PDUs in clause 6.1.3 are used by AM RLC entity to perform ARQ procedures.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tRLC data PDU",
+                            "text_content": "a) TMD PDU\nTMD PDU is used to transfer upper layer PDUs by a TM RLC entity.\nb) UMD PDU\nUMD PDU is used to transfer upper layer PDUs by an UM RLC entity.\nc) AMD PDU\nAMD PDU is used to transfer upper layer PDUs by an AM RLC entity.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tRLC control PDU",
+                            "text_content": "a) STATUS PDU\nSTATUS PDU is used by the receiving side of an AM RLC entity to inform the peer AM RLC entity about RLC data PDUs that are received successfully, and RLC data PDUs that are detected to be lost by the receiving side of an AM RLC entity.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tFormats and parameters",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tGeneral",
+                            "text_content": "The formats of RLC PDUs are described in clause 6.2.2 and their parameters are described in clause 6.2.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tFormats",
+                            "text_content": "RLC PDU is a bit string. In the figures in clause 6.2.2.2 to 6.2.2.5, bit strings are represented by tables in which the first and most significant bit is the left most bit of the first line of the table, the last and least significant bit is the rightmost bit of the last line of the table, and more generally the bit string is to be read from left to right and then in the reading order of the lines.\nRLC SDUs are bit strings that are byte aligned (i.e. multiple of 8 bits) in length. An RLC SDU is included into an RLC PDU from first bit onward.\nTMD PDU consists only of a Data field and does not consist of any RLC headers.\nFigure 6.2.2.2 -1: TMD PDU, illustrates the Transport Management (TMD) Protocol Data Unit (PDU) process in a network. The figure shows the interaction between the TMD PDU and various network elements such as the Service Function Chaining (SFC) and the Network Service Function (NSF). The TMD PDU is responsible for managing the transport of data between network elements, ensuring efficient and secure communication. The figure highlights the importance of TMD PDU in maintaining the overall performance and reliability of the network.\nFigure 6.2.2.2-1: TMD PDU\nUMD PDU consists of a Data field and an UMD PDU header. The UMD PDU header is byte aligned.\nWhen an UMD PDU contains a complete RLC SDU, the UMD PDU header only contains the SI and R fields.\nAn UM RLC entity is configured by RRC to use either a 6 bit SN or a 12 bit SN. For groupcast and broadcast of NR sidelink communication or for SL-SRB4, only 6 bit SN length is configured. An UMD PDU header contains the SN field only when the corresponding RLC SDU is segmented. An UMD PDU carrying the first segment of an RLC SDU does not carry the SO field in its header. The length of the SO field is 16 bits.\nFigure 6.2.3-1 illustrates a User-Medium-Dense-PD-User (U-MD-PD-U) containing a complete RLC SDU, which is a key component in a telecommunication system. The figure showcases the interaction between the user equipment (UE), the medium access and physical layers, and the packet data unit (RLC SDU) within a 2G/3G/4G/5G network. The RLC SDU is responsible for the reliable transmission of data packets, while the U-MD-PD-U ensures efficient resource allocation and management. The figure highlights the importance of these components in maintaining the overall performance and reliability of the telecommunication system.\nFigure 6.2.2.3-1: UMD PDU containing a complete RLC SDU\nFigure 6 illustrates a Universal Mobile Telecommunications System (UMTS) network with a Universal Mobile Distinctive Code (UMDC) and a 6-bit Service Network (SN) code. The figure depicts the Uplink Mode Distinctive Code (UMDC) and the Uplink Mode Distinctive Code (UMDC) with a 6-bit Service Network (SN) code. The figure also shows the Uplink Mode Distinctive Code (UMDC) with a 6-bit Service Network (SN) code. The figure provides a clear representation of the UMTS network structure and its components.\nFigure 6.2.2.3-2: UMD PDU with 6 bit SN (No SO)\nFigure 6 illustrates a Universal Mobile Telecommunications System (UMTS) network with a Universal Mobile Digital (UMD) Power Disperse (PD) Unit, featuring 12-bit Signal to Noise Ratio (SNR) identification. The figure showcases the network's architecture, including the Universal Mobile Subscriber Identity (UMSI) and the Universal Mobile Telecommunications System (UMTS) network. The diagram highlights the role of the UMD PD Unit in managing power distribution and signal quality within the network. The 12-bit SNR identification is crucial for efficient network management and troubleshooting.\nFigure 6.2.2.3-3: UMD PDU with 12 bit SN (No SO)\nFigure 6 illustrates the U MD PD U with 6-bit SN and S O, showcasing the communication process between various components. The figure depicts the transmission of data packets through a network, with the U MD PD U representing the user equipment, the 6-bit SN indicating the network identifier, and the S O symbolizing the service order. The diagram highlights the efficient routing of data packets through the network, emphasizing the importance of accurate identification and order in ensuring seamless communication.\nFigure 6.2.2.3-4: UMD PDU with 6 bit SN and with SO\nFigure 6 illustrates the U MD PD U with 12-bit SN and S O, showcasing a communication system with multiple layers of processing and signal encoding. The figure depicts the use of 12-bit serial numbers for identification and synchronization, as well as the implementation of Synchronous Optical Network (SON) for efficient network management and monitoring. The diagram highlights the integration of various components, including the U (user equipment), MD (media access control), PD (physical layer), and the SON framework, which collectively contribute to the overall performance and reliability of the communication system.\nFigure 6.2.2.3-5: UMD PDU with 12 bit SN and with SO\nAMD PDU consists of a Data field and an AMD PDU header. The AMD PDU header is byte aligned.\nAn AM RLC entity is configured by RRC to use either a 12 bit SN or a 18 bit SN. The length of the AMD PDU header is two and three bytes respectively.\nAn AMD PDU header contains a D/C, a P, a SI, and a SN. An AMD PDU header contains the SO field only when the Data field consists of an RLC SDU segment which is not the first segment, in which case a 16 bit SO is present.\nFigure 6.2.2.4-1 illustrates a Multiple-Drop Passive Optical Network (MD-PON) Unit with 12-bit Service Network Identifier (SN) (without Service Ordering). The figure showcases the network architecture, which includes Optical Line Terminal (OLT) and Optical Network Unit (ONU) nodes, as well as the Passive Optical Network (PON) technology used for signal transmission. The diagram highlights the point-to-multipoint architecture, enabling efficient data distribution over long distances. The absence of Service Ordering (SO) implies that the network is not prioritizing specific services, allowing for a more balanced distribution of resources.\nFigure 6.2.2.4-1: AMD PDU with 12 bit SN (No SO)\nFigure 6 illustrates a Multiple-Input Multiple-Output (MIMO) Proximity Detection Unit (PD) with 18-bit Service Set Identifier (SN) (without Signal-to-Noise Ratio [SNR] information). The figure showcases the key components involved in the detection process, including the PD, antennas, and the associated signal strength indicators. The layout emphasizes the importance of precise positioning and signal strength in determining the proximity of devices within a given area. The absence of SNR information in the SN highlights the focus on accurate signal strength measurements in this particular context.\nFigure 6.2.2.4-2: AMD PDU with 18 bit SN (No SO)\nFigure 6 illustrates a Multiple-Input Multiple-Output (MIMO) Proximity Detection Unit (PD) with a 12-bit Service Set Identifier (SSID) and a Signal-to-Noise Ratio (SNR) of 4-3 dB. The figure showcases the antenna elements and their arrangement, as well as the signal processing components involved in detecting and identifying nearby devices. The diagram highlights the importance of precise signal processing in managing interference and optimizing network performance in dense, high-density environments.\nFigure 6.2.2.4-3: AMD PDU with 12 bit SN with SO\nFigure 6.2.2 .4-4 illustrates an Advanced Metering Infrastructure (AMI) Protocol Data Unit (PDU) with a 18-bit Service Set Identifier (SSID) and a Simple Object Access Protocol (SOAP) interface. The figure showcases the communication between the Central Processing Unit (CPU) and the Secure Sockets Layer (SSL) for secure data transmission. The diagram highlights the role of the PDU in managing and controlling various smart grid devices, ensuring efficient energy distribution and monitoring.\nFigure 6.2.2.4-4: AMD PDU with 18 bit SN with SO\nSTATUS PDU consists of a STATUS PDU payload and an RLC control PDU header.\nRLC control PDU header consists of a D/C and a CPT field.\nThe STATUS PDU payload starts from the first bit following the RLC control PDU header, and it consists of one ACK_SN and one E1, zero or more sets of a NACK_SN, an E1, an E2 and an E3, and possibly a pair of a SOstart and a SOend or a NACK range field for each NACK_SN.\nFigure 6 illustrates the status PDU with a 12-bit Service Network Identifier (SN) in a 2.2.5-1 telecommunication network. The figure showcases the hierarchical structure of the network, with the PDU at the top, followed by the Service Network (SN) and the Service Network Identifier (SNI). The 12-bit SN is a unique identifier assigned to each PDU in the network, allowing for efficient routing and management of data traffic. The figure also highlights the role of the PDU in managing the network resources and ensuring the smooth operation of the telecommunication system.\nFigure 6.2.2.5-1: STATUS PDU with 12 bit SN\nFigure 6 illustrates the 2.2 PDU with a 18-bit Service Network Identifier (SN) in a telecommunication system. The diagram showcases the PDU's role in managing and controlling the network's status and performance. Key components include the PDU, which is responsible for processing and forwarding data, and the 18-bit SN, which serves as a unique identifier for each PDU in the network. The figure highlights the importance of efficient management and control in maintaining the network's stability and performance.\nFigure 6.2.2.5-2: STATUS PDU with 18 bit SN\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tParameters",
+                            "text_content": "In the definition of each field in clauses 6.2.3.2 to 6.2.3.5, the bits in the parameters are represented in which the first and most significant bit is the left most bit and the last and least significant bit is the rightmost bit. Unless mentioned otherwise, integers are encoded in standard binary encoding for unsigned integers.\nData field elements are mapped to the Data field in the order which they arrive to the RLC entity at the transmitter.\nFor TMD PDU, UMD PDU and AMD PDU:\n-\tThe granularity of the Data field size is one byte;\n-\tThe maximum Data field size is the maximum size of a PDCP PDU.\nNOTE:\tIn case the upper layer is BAP as specified in TS 38.340 [7] or SRAP as specified in TS 38.351 [9], the maximum Data field size can be larger than the maximum size of a PDCP PDU.\nFor TMD PDU:\n-\tOnly one RLC SDU can be mapped to the Data field of one TMD PDU.\nFor UMD PDU, and AMD PDU:\n-\tEither of the following can be mapped to the Data field of one UMD PDU, or AMD PDU:\n-\tOne RLC SDU;\n-\tOne RLC SDU segment.\nLength: 12 bits or 18 bits (configurable) for AMD PDU. 6 bits or 12 bits (configurable) for UMD PDU.\nThe SN field indicates the sequence number of the corresponding RLC SDU. For RLC AM, the sequence number is incremented by one for every RLC SDU. For RLC UM, the sequence number is incremented by one for every segmented RLC SDU.\nLength: 2 bits.\nThe SI field indicates whether an RLC PDU contains a complete RLC SDU or the first, middle, last segment of an RLC SDU.\nTable 6.2.3.4-1: SI field interpretation\n\nLength: 16 bits\nThe SO field indicates the position of the RLC SDU segment in bytes within the original RLC SDU. Specifically, the SO field indicates the position within the original RLC SDU to which the first byte of the RLC SDU segment in the Data field corresponds. The first byte of the original RLC SDU is referred by the SO field value \"0000000000000000\", i.e., numbering starts at zero.\nLength: 1 bit.\nThe D/C field indicates whether the RLC PDU is an RLC data PDU or RLC control PDU. The interpretation of the D/C field is provided in Table 6.2.3.6-1.\nTable 6.2.3.6-1: D/C field interpretation\n\nLength: 1 bit.\nThe P field indicates whether or not the transmitting side of an AM RLC entity requests a STATUS report from its peer AM RLC entity. The interpretation of the P field is provided in Table 6.2.3.7-1.\nTable 6.2.3.7-1: P field interpretation\n\nLength: 1 bit.\nThe R field is a reserved field for this release of the protocol. The transmitting entity shall set the R field to \"0\". The receiving entity shall ignore this field.\nLength: 3 bits.\nThe CPT field indicates the type of the RLC control PDU. The interpretation of the CPT field is provided in Table 6.2.3.9-1.\nTable 6.2.3.9-1: CPT field interpretation\n\nLength: 12 bits or 18 bits (configurable).\nThe ACK_SN field indicates the SN of the next not received RLC SDU which is not reported as missing in the STATUS PDU. When the transmitting side of an AM RLC entity receives a STATUS PDU, it interprets that all RLC SDUs up to but not including the RLC SDU with SN = ACK_SN have been received by its peer AM RLC entity, excluding those RLC SDUs indicated in the STATUS PDU with NACK_SN, portions of RLC SDUs indicated in the STATUS PDU with NACK_SN, SOstart and SOend, RLC SDUs indicated in the STATUS PDU with NACK_SN and NACK_range, and portions of RLC SDUs indicated in the STATUS PDU with NACK_SN, NACK range, SOstart and SOend.\nLength: 1 bit.\nThe E1 field indicates whether or not a set of NACK_SN, E1, E2 and E3 follows. The interpretation of the E1 field is provided in Table 6.2.3.11-1.\nTable 6.2.3.11-1: E1 field interpretation\n\nLength: 12 bits or 18 bits (configurable).\nThe NACK_SN field indicates the SN of the RLC SDU (or RLC SDU segment) that has been detected as lost at the receiving side of the AM RLC entity.\nLength: 1 bit.\nThe E2 field indicates whether or not a set of SOstart and SOend follows. The interpretation of the E2 field is provided in Table 6.2.3.13-1.\nTable 6.2.3.13-1: E2 field interpretation\n\nLength: 16 bits.\nThe SOstart field (together with the SOend field) indicates the portion of the RLC SDU with SN = NACK_SN (the NACK_SN for which the SOstart is related to) that has been detected as lost at the receiving side of the AM RLC entity. Specifically, the SOstart field indicates the position of the first byte of the portion of the RLC SDU in bytes within the original RLC SDU. The first byte of the original RLC SDU is referred by the SOstart field value \"0000000000000000\", i.e., numbering starts at zero.\nLength: 16 bits.\nWhen E3 is 0, the SOend field (together with the SOstart field) indicates the portion of the RLC SDU with SN = NACK_SN (the NACK_SN for which the SOend is related to) that has been detected as lost at the receiving side of the AM RLC entity. Specifically, the SOend field indicates the position of the last byte of the portion of the RLC SDU in bytes within the original RLC SDU. The first byte of the original RLC SDU is referred by the SOend field value \"0000000000000000\", i.e., numbering starts at zero. The special SOend value \"1111111111111111\" is used to indicate that the missing portion of the RLC SDU includes all bytes to the last byte of the RLC SDU.\nWhen E3 is 1, the SOend field indicates the portion of the RLC SDU with SN = NACK_SN + NACK range - 1 that has been detected as lost at the receiving side of the AM RLC entity. Specifically, the SOend field indicates the position of the last byte of the portion of the RLC SDU in bytes within the original RLC SDU. The first byte of the original RLC SDU is referred by the SOend field value \"0000000000000000\", i.e., numbering starts at zero. The special SOend value \"1111111111111111\" is used to indicate that the missing portion of the RLC SDU includes all bytes to the last byte of the RLC SDU.\nLength: 1 bit.\nThe E3 field indicates whether or not information about a continous sequence of RLC SDUs that have not been received follows.\nTable 6.2.3.16-1: E3 field interpretation\n\nLength: 8 bits\nThis NACK range field is the number of consecutively lost RLC SDUs starting from and including NACK_SN.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.3.4-1: SI field interpretation",
+                                    "table number": 1,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.6-1: D/C field interpretation",
+                                    "table number": 2,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.7-1: P field interpretation",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.9-1: CPT field interpretation",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.11-1: E1 field interpretation",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.13-1: E2 field interpretation",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.16-1: E3 field interpretation",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tVariables, constants and timers",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tState variables",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This clause describes the state variables used in AM and UM entities in order to specify the RLC protocol. The state variables defined in this clause are normative.\nAll state variables and all counters are non-negative integers.\nAll state variables related to AM data transfer can take values from 0 to 4095 for 12 bit SN or from 0 to 262143 for 18 bit SN. All arithmetic operations contained in the present document on state variables related to AM data transfer are affected by the AM modulus (i.e. final value = [value from arithmetic operation] modulo 4096 for 12 bit SN and 262144 for 18 bit SN).\nAll state variables related to UM data transfer can take values from 0 to 63 for 6 bit SN or from 0 to 4095 for 12 bit SN. All arithmetic operations contained in the present document on state variables related to UM data transfer are affected by the UM modulus (i.e. final value = [value from arithmetic operation] modulo 64 for 6 bit SN and 4096 for 12 bit SN).\nWhen performing arithmetic comparisons of state variables or SN values, a modulus base shall be used.\nTX_Next_Ack and RX_Next shall be assumed as the modulus base at the transmitting side and receiving side of an AM RLC entity, respectively. This modulus base is subtracted from all the values involved, and then an absolute comparison is performed (e.g. RX_Next <= SN < RX_Next + AM_Window_Size is evaluated as [RX_Next – RX_Next] modulo 2[sn-FieldLength] <= [SN – RX_Next] modulo 2[sn-FieldLength] < [RX_Next + AM_Window_Size – RX_Next] modulo 2[sn-FieldLength]), where sn-FieldLength is 12 or 18 for 12 bit SN and 18 bit SN, respectively.\nRX_Next_Highest– UM_Window_Size shall be assumed as the modulus base at the receiving UM RLC entity. This modulus base is subtracted from all the values involved, and then an absolute comparison is performed (e.g. (RX_Next_Highest– UM_Window_Size) <= SN < RX_Next_Highest is evaluated as [(RX_Next_Highest– UM_Window_Size) – (RX_Next_Highest– UM_Window_Size)] modulo 2[sn-FieldLength] <= [SN – (RX_Next_Highest– UM_Window_Size)] modulo 2[sn-FieldLength] < [RX_Next_Highest– (RX_Next_Highest– UM_Window_Size)] modulo 2[sn-FieldLength]), where sn-FieldLength is 6 or 12 for 6 bit SN and 12 bit SN, respectively.\nThe transmitting side of each AM RLC entity shall maintain the following state variables:\na) TX_Next_Ack – Acknowledgement state variable\nThis state variable holds the value of the SN of the next RLC SDU for which a positive acknowledgment is to be received in-sequence, and it serves as the lower edge of the transmitting window. It is initially set to 0, and is updated whenever the AM RLC entity receives a positive acknowledgment for an RLC SDU with SN = TX_Next_Ack.\nb) TX_Next – Send state variable\nThis state variable holds the value of the SN to be assigned for the next newly generated AMD PDU. It is initially set to 0, and is updated whenever the AM RLC entity constructs an AMD PDU with SN = TX_Next and contains an RLC SDU or the last segment of a RLC SDU.\nc) POLL_SN – Poll send state variable\nThis state variable holds the value of the highest SN of the AMD PDU among the AMD PDUs submitted to lower layer when POLL_SN is set according to clause 5.3.3.2. It is initially set to 0.\nThe transmitting side of each AM RLC entity shall maintain the following counters:\na) PDU_WITHOUT_POLL – Counter\nThis counter is initially set to 0. It counts the number of AMD PDUs sent since the most recent poll bit was transmitted.\nb) BYTE_WITHOUT_POLL – Counter\nThis counter is initially set to 0. It counts the number of data bytes sent since the most recent poll bit was transmitted.\nc) RETX_COUNT – Counter\nThis counter counts the number of retransmissions of an RLC SDU or RLC SDU segment (see clause 5.3.2). There is one RETX_COUNT counter maintained per RLC SDU.\nThe receiving side of each AM RLC entity shall maintain the following state variables:\na) RX_Next – Receive state variable\nThis state variable holds the value of the SN following the last in-sequence completely received RLC SDU, and it serves as the lower edge of the receiving window. It is initially set to 0, and is updated whenever the AM RLC entity receives an RLC SDU with SN = RX_Next.\nb) RX_Next_Status_Trigger – t-Reassembly state variable\nThis state variable holds the value of the SN following the SN of the RLC SDU which triggered t-Reassembly.\nc) RX_Highest_Status – Maximum STATUS transmit state variable\nThis state variable holds the highest possible value of the SN which can be indicated by \"ACK_SN\" when a STATUS PDU needs to be constructed. It is initially set to 0.\nd) RX_Next_Highest – Highest received state variable\nThis state variable holds the value of the SN following the SN of the RLC SDU with the highest SN among received RLC SDUs. It is initially set to 0.\nEach transmitting UM RLC entity shall maintain the following state variables:\na) TX_Next – UM send state variable\nThis state variable holds the value of the SN to be assigned for the next newly generated UMD PDU with segment. It is initially set to 0, and is updated after the UM RLC entity submits a UMD PDU including the last segment of an RLC SDU to lower layers.\nEach receiving UM RLC entity shall maintain the following state variables:\na) RX_Next_Reassembly – UM receive state variable\nThis state variable holds the value of the earliest SN that is still considered for reassembly. It is initially set to 0. For groupcast and broadcast of NR sidelink communication or for SL-SRB4 of NR sidelink discovery, it is initially set to the SN of the first received UMD PDU containing an SN. For the receiving UM RLC entity configured for MCCH or MTCH, it is up to UE implementation to set the initial value of RX_Next_Reassembly to a value before RX_Next_Highest.\nb) RX_Timer_Trigger – UM t-Reassembly state variable\nThis state variable holds the value of the SN following the SN which triggered t-Reassembly.\nc) RX_Next_Highest– UM receive state variable\nThis state variable holds the value of the SN following the SN of the UMD PDU with the highest SN among received UMD PDUs. It serves as the higher edge of the reassembly window. It is initially set to 0. For groupcast and broadcast of NR sidelink communication or for SL-SRB4 of NR sidelink discovery, it is initially set to the SN of the first received UMD PDU containing an SN. For the receiving UM RLC entity configured for MCCH or MTCH, it is initially set to the SN of the first received UMD PDU containing an SN.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tConstants",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "a) AM_Window_Size\nThis constant is used by both the transmitting side and the receiving side of each AM RLC entity. AM_Window_Size = 2048 when a 12 bit SN is used, AM_Window_Size = 131072 when an 18 bit SN is used.\nb) UM_Window_Size\nThis constant is used by the receiving UM RLC entity to define SNs of those UMD SDUs that can be received without causing an advancement of the receiving window. UM_Window_Size = 32 when a 6 bit SN is configured, UM_Window_Size = 2048 when a 12 bit SN is configured.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tTimers",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following timers are configured by TS 38.331 [5]:\na) t-PollRetransmit\nThis timer is used by the transmitting side of an AM RLC entity in order to retransmit a poll (see clause 5.3.3).\nb) t-Reassembly\nThis timer is used by the receiving side of an AM RLC entity and receiving UM RLC entity in order to detect loss of RLC PDUs at lower layer (see clauses 5.2.2.2 and 5.2.3.2). If t-Reassembly is running, t-Reassembly shall not be started additionally, i.e. only one t-Reassembly per RLC entity is running at a given time.\nc) t-StatusProhibit\nThis timer is used by the receiving side of an AM RLC entity in order to prohibit transmission of a STATUS PDU (see clause 5.3.4).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.4\tConfigurable parameters",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following parameters are configured by TS 38.331 [5]:\na) maxRetxThreshold\nThis parameter is used by the transmitting side of each AM RLC entity to limit the number of retransmissions corresponding to an RLC SDU, including its segments (see clause 5.3.2).\nb) pollPDU\nThis parameter is used by the transmitting side of each AM RLC entity to trigger a poll for every pollPDU PDUs (see clause 5.3.3).\nc) pollByte\nThis parameter is used by the transmitting side of each AM RLC entity to trigger a poll for every pollByte bytes (see clause 5.3.3).\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 8,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

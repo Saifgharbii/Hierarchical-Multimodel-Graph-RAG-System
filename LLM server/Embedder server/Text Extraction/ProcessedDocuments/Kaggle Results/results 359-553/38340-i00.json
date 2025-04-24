@@ -1,0 +1,392 @@
+{
+    "document_name": "38340-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, certain modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nNOTE 1:\tThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nNOTE 2:\tThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nNOTE 3:\tThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nNOTE 4:\tThe constructions \"can\" and \"cannot\" shall not to be used as substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nNOTE 5:\tThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document provides description of the Backhaul Adaptation Protocol (BAP).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 38.300: \"NG Radio Access Network; Overall description\".\n[3]\t3GPP TS 38.331: \"NR Radio Resource Control (RRC); Protocol Specification\".\n[4]\t3GPP TS 38.322: \"NR Radio Link Control (RLC) protocol specification\".\n[5]\t3GPP TS 38.473: \"NG-RAN F1 application protocol (F1AP) protocol specification\".\n[6]\t3GPP TS 38.401: \"NG-RAN; Architecture description\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nBH RLC channel: an RLC channel between two nodes, which is used to transport backhaul packets, as defined in TS 38.300 [2].\nBoundary IAB-node: an IAB-node with one RRC interface terminating at a different IAB-donor-CU than the F1 interface, as defined in TS 38.401 [6]. This term is not used for a mobile IAB-node.\nEgress BH RLC channel: a BH RLC channel on which a packet is transmitted by a node.\nEgress link: a radio link on which a packet is transmitted by a node.\nF1-terminating donor: refers to the IAB-donor that terminates F1 for the IAB-node, as defined in TS 38.401 [6].\nIAB-donor: as defined in TS 38.300 [2].\nIAB-donor-DU: as defined in TS 38.401 [6].\nIAB-node: as defined in TS 38.300 [2].\nIngress BH RLC channel: a BH RLC channel on which a packet is received by a node.\nIngress link: a radio link on which a packet is received by a node.\nMobile IAB-node: as defined in TS 38.300 [2].\nNon-F1-terminating donor: refers to the IAB-donor that has an RRC connection with the boundary node but does not terminate F1 with this boundary IAB-node, as defined in TS 38.401 [6].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nBH\tBackhaul\nDSCP\tDifferentiated Services Code Point\nIAB\tIntegrated Access and Backhaul\nMT\tMobile Termination\nTEID\tTunnel Endpoint Identifier\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The present document describes the functionalities of BAP.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tArchitecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tBAP structure",
+                            "text_content": "Figure 4.2.1-1 represents one possible structure for the BAP sublayer; it should not restrict implementation. The figure is based on the radio interface protocol architecture defined in TS 38.300 [2].\nThe figure depicts a BAP layer, which is a crucial component of a 5G network. It illustrates the structure view of the BAP layer, highlighting its components such as the BAP, BAP-A, and BAP-B. The figure also shows the connections between these components, demonstrating the interconnection and communication between them. This figure is essential for understanding the network's architecture and its components, which are crucial for the efficient and reliable operation of 5G networks.\nFigure 4.2.1-1: BAP layer, structure view\nThe BAP sublayer is configured by upper layers TS 38.331 [3] and TS 38.473 [5].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tBAP entities",
+                            "text_content": "On the IAB-node, the BAP sublayer contains one BAP entity at the MT function and a separate collocated BAP entity at the DU function. A mobile IAB-node may have two logical DU functions, as defined in TS 38.401 [6], which are supported by one common BAP entity at the MT function. The RAN node operating as a mobile IAB-node has no BAP entity at the DU function. On the IAB-donor-DU, the BAP sublayer contains only one BAP entity. Each BAP entity has a transmitting part and a receiving part.\nNOTE: The modelling of BAP entities does not restrict internal implementation of IAB-nodes, i.e. the exact modelling of BAP sublayer may vary for different IAB-node implementations.\nThe transmitting part of the BAP entity has a corresponding receiving part of a BAP entity at the IAB-node or IAB-donor-DU across the BH link.\nFigure 4.2.2-1 shows one example of the functional view of the BAP sublayer. This functional view should not restrict implementation. The figure is based on the radio interface protocol architecture defined in TS 38.300 [2].\nIn the example of Figure 4.2.2-1, the receiving part on the BAP entity delivers BAP PDUs to the transmitting part on the collocated BAP entity. Alternatively, the receiving part may deliver BAP SDUs to the collocated transmitting part. When passing BAP SDUs, the receiving part removes the BAP header and the transmitting part adds the BAP header with the same BAP header content as carried on the BAP PDU header prior to removal. Passing BAP SDUs in this manner is therefore functionally equivalent to passing BAP PDUs, in implementation. The following specification therefore refers to the passing of BAP Data Packets.\nBesides, BAP entity generates, delivers/receives BAP Control PDU(s) as described in clause 6.1.2. BAP Control PDU can only be exchanged between peer BAP entities across the BH link.\nIn addition to the functions shown in Figure 4.2.2-1, the transmitting part of the BAP entity may perform BAP header rewriting operation, in accordance with clause 5.2.1.\nThe figure depicts a functional view of the BAP sublayer, illustrating its components and their interconnections. The BAP sublayer is a crucial component in 5G networks, responsible for managing the flow of data between the base station (gNB) and the user equipment (UE). The figure shows the various components, such as the BAP, BAP-A, and BAP-B, as well as the connections between them. The figure also includes a visual representation of the network topology, highlighting the importance of the BAP sublayer in ensuring efficient data transmission.\nFigure 4.2.2-1. Example of functional view of BAP sublayer\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tServices",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.1\tServices provided to upper layers",
+                            "text_content": "The following services are provided by the BAP sublayer to upper layers:\n-\tdata transfer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.2\tServices expected from lower layers",
+                            "text_content": "A BAP sublayer expects the following services from lower layers per RLC entity (for a detailed description see TS 38.322 [4]):\n-\tacknowledged data transfer service;\n-\tunacknowledged data transfer service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.4\tFunctions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The BAP sublayer supports the following functions:\n-\tData transfer;\n-\tDetermination of BAP destination and path for packets from upper layers;\n-\tDetermination of egress BH RLC channels for packets routed to next hop;\n-\tRouting of packets to next hop;\n-\tBAP header rewriting;\n-\tDifferentiating traffic to be delivered to upper layers from traffic to be delivered to egress link;\n-\tFlow control feedback and polling signalling;\n-\tHandling of BH RLF related indications;\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.5\tConfigurations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The configuration of the BAP entity includes:\n-\tThe IAB-node's BAP address(es) via RRC.\n-\tThe IAB-donor-DU's BAP address via F1AP.\n-\tMapping from next hop BAP address to downstream egress link via F1AP.\n-\tMapping from next hop BAP address to upstream egress link via RRC.\n-\tMapping from upper layer traffic to BAP routing ID in BAP header via F1AP and RRC.\n-\tThe BAP routing entries via F1AP.\n-\tMapping to egress BH RLC channels via F1AP and RRC.\n-\tFlow control feedback type(s) to be provided, if any, via RRC.\n-\tInter-donor-DU re-routing enabling/disabling via F1AP.\nBH RLC channels are configured via RRC on the IAB-MT, and via F1AP on the IAB-DU/IAB-donor-DU.\nFor F1AP configurations, the following mapping, which are derived from the original F1AP signaling, are used in procedure:\n-\tUplink Traffic to Routing ID Mapping Configuration.\n-\tDownlink Traffic to Routing ID Mapping Configuration.\n-\tBH Routing Configuration.\n-\tBH RLC Channel Mapping Configuration.\n-\tUplink Traffic to BH RLC Channel Mapping Configuration.\n-\tDownlink Traffic to BH RLC Channel Mapping Configuration.\n-\tHeader Rewriting Configuration.\nNOTE:\tFor a mobile IAB-node with two logical DUs, separate F1AP configurations are provided for each logical DU by the DU's respective IAB-donor-CU via the corresponding F1AP and are used for the logical DU correspondingly.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tProcedures",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tBAP entity handling",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tBAP entity establishment",
+                            "text_content": "When upper layers request establishment of a BAP entity, the node shall:\n-\testablish a BAP entity;\n-\tfollow the procedures in clause 5.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tBAP entity release",
+                            "text_content": "When upper layers request release of a BAP entity, the node shall:\n-\trelease the BAP entity and the related BAP configurations.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tData transfer",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tTransmitting operation",
+                            "text_content": "The transmitting part of the BAP entity on the IAB-MT can receive BAP SDUs from upper layers and BAP Data Packets from the receiving part of the BAP entity on the IAB-DU of the same IAB-node, and construct BAP Data PDUs as needed (see clause 4.2.2). The transmitting part of the BAP entity on the IAB-DU can receive BAP Data Packets from the receiving part of the BAP entity on the IAB-MT of the same IAB-node, and construct BAP Data PDUs as needed (see clause 4.2.2). The transmitting part of the BAP entity on the IAB-donor-DU can receive BAP SDUs from upper layers, and construct BAP Data PDUs as needed (see clause 4.2.2).\nUpon receiving a BAP SDU from upper layers, the transmitting part of the BAP entity shall:\n-\tselect a BAP address and a BAP path identity for this BAP SDU in accordance with clause 5.2.1.2;\n-\tconstruct a BAP Data PDU by adding a BAP header to the BAP SDU, where the DESTINATION field is set to the selected BAP address and the PATH field is set to the selected BAP path identity, in accordance with clause 6.2.2;\nWhen the BAP entity has a BAP Data PDU to transmit, the transmitting part of the BAP entity shall:\n-\tfor the boundary IAB-node, if the BAP Data PDU is received from the collocated BAP entity, perform the BAP header rewriting operation (if configured) in accordance with clause 5.2.1.5;\n-\tperform routing to determine the egress link in accordance with clause 5.2.1.3;\n-\tdetermine the egress BH RLC channel in accordance with clause 5.2.1.4;\n-\tsubmit this BAP Data PDU to the selected egress BH RLC channel of the selected egress link.\nNOTE:\tData buffering on the transmitting part of the BAP entity, e.g., until RLC-AM entity has received an acknowledgement, is up to implementation. In case of BH RLF, the transmitting part of the BAP entity may reroute the BAP Data PDUs, which has not been acknowledged by lower layer before the BH RLF, to an alternative path in accordance with clause 5.2.1.3.\nAt an IAB-node, for a BAP SDU received from upper layers and to be transmitted in upstream direction, the BAP entity performs mapping to a BAP address and BAP path identity based on:\n-\tUplink Traffic to Routing ID Mapping Configuration, which is derived from F1AP on the IAB-node in TS 38.473 [5],\n-\tdefaultUL-BAP-RoutingID, which is configured by RRC on the IAB-node in TS 38.331[3].\nEach entry of the Uplink Traffic to Routing ID Mapping Configuration contains:\n-\ta traffic type specifier, which is indicated by UL UP TNL Information IE for F1-U packets and Non-UP Traffic Type IE for non-F1-U packets in TS 38.473 [5],\n-\ta BAP routing ID, which includes a BAP address and a BAP path identity, indicated by BAP Routing ID IE in BH Information IE in TS 38.473 [5], and\n-\ta Topology indicator, indicating whether the BAP routing ID belongs to the non-F1-terminating donor topology, which is optionally indicated by Non-F1-terminating IAB-donor Topology Indicator IE.\nAt the IAB-node, for a BAP SDU received from upper layers and to be transmitted in upstream direction, the BAP entity shall:\n-\tif the Uplink Traffic to Routing ID Mapping Configuration has not been (re)configured by the F1AP associated with the (logical) DU, where this BAP SDU is received, after the last (re)configuration of defaultUL-BAP-RoutingID by RRC:\n-\tselect the BAP address and the BAP path identity as configured by defaultUL-BAP-RoutingID in TS 38.331 [3] for non-F1-U packets;\n-\telse:\n-\tfor the BAP SDU encapsulating an F1-U packet:\n-\tselect an entry from the Uplink Traffic to Routing ID Mapping Configuration with its traffic type specifier corresponds to the destination IP address and TEID of this BAP SDU;\n-\tfor the BAP SDU encapsulating a non-F1-U packet:\n-\tselect an entry from the Uplink Traffic to Routing ID Mapping Configuration with its traffic type specifier corresponds to the traffic type of this BAP SDU;\n-\tselect the BAP address and the BAP path identity from the BAP routing ID in the entry selected above;\n-\tif the selected entry is configured with Non-F1-terminating IAB-donor Topology Indicator IE:\n-\tconsider this BAP Data PDU as data to be routed to non-F1-terminating donor topology.\nNOTE 1:\tUplink Traffic to Routing ID Mapping Configuration may contain multiple entries for F1-C/non-F1 traffic (for mobile IAB-node, this case occurs when considering both configurations received from two F1AP). It is up to IAB node's implementation to decide which entry is selected.\nNOTE 2:\tIn cases where the same IP address is shared by the two logical DUs, it is up to mobile IAB-node’s implementation to decide the logical DU where a BAP SDU encapsulating a non-F1 packet is considered to be received from. The non-F1 traffic does not have to be confined/associated with one specific logical DU.\nFor a BAP SDU received from upper layer at the IAB-donor-DU, the BAP entity performs mapping to a BAP address and a BAP Path identity based on:\n-\tDownlink Traffic to Routing ID Mapping Configuration, which is derived from IP-to-layer-2 traffic mapping Information List IE configured on the IAB-donor-DU in TS 38.473 [5].\nEach entry of the Downlink Traffic to Routing ID Mapping Configuration contains:\n-\ta destination IP address, which is indicated by Destination IAB TNL Address IE in IP header information IE, including an IPv4 address or IPv6 address or an IPv6 address prefix,\n-\tan IPv6 flow label, if configured, which is indicated by IPv6 Flow Label IE in IP header information IE,\n-\ta DSCP, if configured, which is indicated by DSCP IE in DS Information List IE in IP header information IE, and\n-\ta BAP routing ID, which is indicated by BAP Routing ID IE in BH Information IE in TS 38.473 [5].\nAt the IAB-donor-DU, for a BAP SDU received from upper layers and to be transmitted in downstream direction, the BAP entity shall:\n-\tfor the BAP SDU encapsulating an IPv6 packet:\n-\tselect an entry from the Downlink Traffic to Routing ID Mapping Configuration which fulfils the following conditions:\n-\tthe Destination IP address of this BAP SDU matches the destination IP address in this entry; and\n-\tthe IPv6 Flow Label of this BAP SDU matches IPv6 flow label in this entry if configured; and\n-\tthe DSCP of this BAP SDU matches DSCP in this entry if configured;\n-\tfor the BAP SDU encapsulating an IPv4 packet:\n-\tselect an entry from the Downlink Traffic to Routing ID Mapping Configuration which fulfils the following conditions:\n-\tthe Destination IP address of this BAP SDU matches the destination IP address in this entry; and\n-\tthe DSCP of this BAP SDU matches DSCP in this entry if configured;\n-\tselect the BAP address and the BAP path identity from the BAP routing ID in the entry selected above;\nThe BAP entity performs routing based on:\n-\tthe BH Routing Configuration derived from an F1AP message as specified in TS 38.473 [5].\nEach entry of the BH Routing Configuration contains:\n-\ta BAP Routing ID consisting of a BAP address and a BAP path identity, which is indicated by BAP Routing ID IE,\n-\ta Next Hop BAP Address which is indicated by Next-Hop BAP Address IE, and\n-\ta Topology indicator, indicating whether the entry belongs to the non-F1-terminating donor topology, which is optionally indicated by Non-F1-terminating IAB-donor Topology Indicator IE.\nIn the BH Routing Configuration, the entry configured with Non-F1-terminating IAB-donor Topology Indicator IE applies to the BAP Data PDU considered as data to be routed to non-F1-terminating donor topology, and the entry not configured with Non-F1-terminating IAB-donor Topology Indicator IE only applies to the BAP Data PDU not considered as data to be routed to non-F1-terminating donor topology.\nFor a BAP Data PDU to be transmitted, BAP entity shall:\n-\tif the BAP Data PDU corresponds to a BAP SDU received from the upper layer, and\n-\tif the BH Routing Configuration has not been (re)configured by the F1AP associated with the (logical) DU, where this BAP SDU is received, after the last (re)configuration of defaultUL-BH-RLC-Channel by RRC:\n-\tselect the egress link on which the egress BH RLC channel corresponding to defaultUL-BH-RLC-Channel is configured as specified in TS 38.331 [3] for non-F1-U packets;\n-\telse if there is an entry in the BH Routing Configuration whose BAP address matches the DESTINATION field, whose BAP path identity is the same as the PATH field, and whose egress link corresponding to the Next Hop BAP Address is available:\n-\tselect the egress link corresponding to the Next Hop BAP Address of the entry;\nNOTE 1:\tAn egress link is not considered to be available if the link is in BH RLF.\nNOTE 2:\tFor each combination of a BAP address and a BAP path identity, there should be at most one entry with the same Topology indicator in the BH Routing Configuration. There could be multiple entries of the same BAP address with the same Topology indicator in the BH Routing Configuration.\nNOTE 3:\tAn egress link may not be considered available for a BH Routing Configuration entry with a given BAP routing ID, if it is determined as congested, e.g. based on the received flow control feedback, as defined in clause 5.3.1.\nNOTE 4:\tIn cases where the same IP address is shared by the two logical DUs, it is up to mobile IAB-node’s implementation to decide the logical DU where a BAP SDU encapsulating a non-F1 packet is considered to be received from. The non-F1 traffic does not have to be confined/associated with one specific logical DU.\n-\telse if there is at least one entry in the BH Routing Configuration whose BAP address matches the DESTINATION field, and whose egress link corresponding to the Next Hop BAP Address is available:\n-\tselect an entry from the BH Routing Configuration whose BAP address is the same as the DESTINATION field, and whose egress link corresponding to the Next Hop BAP Address is available;\n-\tselect the egress link corresponding to the Next Hop BAP Address of the entry selected above;\n-\telse if, for the transmitting part of IAB-MT, at least one egress link is available, and if Re-routing Enable Indicator IE is set to true by F1AP:\n-\tif this egress link belongs to F1-terminating donor topology of the boundary IAB-node or the transmitting part of IAB-MT is not at the boundary IAB-node, and there is an entry in the BH Routing Configuration not configured with Non-F1-terminating IAB-donor Topology Indicator IE whose Next Hop BAP Address corresponds to this egress link, or\n-\tif this egress link belongs to non-F1-terminating donor topology, and there is an entry in the BH Routing Configuration configured with Non-F1-terminating IAB-donor Topology Indicator IE whose Next Hop BAP Address corresponds to this egress link:\n-\tselect the egress link;\n-\trewrite the BAP header of this BAP Data PDU, where the DESTINATION field is set to the leftmost 10 bits of BAP Routing ID of the entry in the BH Routing Configuration (i.e. BAP address), and the PATH field is set to the rightmost 10 bits of BAP Routing ID of the entry (i.e. BAP path identity).\nFor a BAP Data Packet received from the collocated BAP entity, the transmitting part of the BAP entity performs mapping to an egress BH RLC channel based on:\n-\tBH RLC Channel Mapping Configuration, which is derived from BAP layer BH RLC channel mapping Information List IE, and optionally together with the Configured BAP address IE and the BH RLC Channel to be Setup/Modified List IE, as configured on the IAB-node in TS 38.473 [5],\nEach entry of the BH RLC Channel Mapping Configuration contains:\n-\tan ingress link ID, which is indicated by Prior-Hop BAP Address IE, or by the Configured BAP address IE in UE-associated F1AP message for upstream, belonging to topology indicated by Ingress Non-F1-terminating IAB-donor Topology Indicator IE in F1AP if configured,\n-\tan egress link ID, which is indicated by Next-Hop BAP Address IE, or by the Configured BAP address IE in UE-associated F1AP message for downstream, belonging to topology indicated by Egress Non-F1-terminating IAB-donor Topology Indicator IE in F1AP if configured,\n-\tan ingress BH RLC channel ID, which is indicated by Ingress BH RLC CH ID IE, or by the BH RLC CH ID IE in UE-associated F1AP message for upstream, and,\n-\tan egress BH RLC channel ID, which is indicated by Egress BH RLC CH ID IE, or by the BH RLC CH ID IE in UE-associated F1AP message for downstream.\nFor a BAP Data PDU received from an ingress BH RLC channel of an ingress link and for which the egress link has been selected as specified in clause 5.2.1.3:\n-\tif there is an entry in the BH RLC Channel Mapping Configuration, whose ingress BH RLC channel ID matches the BAP Data PDU's ingress BH RLC channel, whose ingress link ID matches the BAP Data PDU's ingress link, and whose egress link ID corresponds to the selected egress link;\n-\tselect the egress BH RLC channel corresponding to egress BH RLC channel ID of this entry;\n-\telse:\n-\tselect any egress BH RLC channel on the selected egress link;\nFor a BAP SDU received from upper layers at the IAB-node, the BAP entity performs mapping to an egress BH RLC channel based on:\n-\tUplink Traffic to BH RLC Channel Mapping Configuration, which is derived from F1AP message, configured on the IAB-node in TS 38.473 [5],\n-\tdefaultUL-BH-RLC-Channel, which is configured by RRC on the IAB-node in TS 38.331[3].\nEach entry of the Uplink Traffic to BH RLC Channel Mapping Configuration contains:\n-\ta traffic type specifier, which is indicated by UL UP TNL Information IE for F1-U packets or Non-UP Traffic Type IE for non-F1-U packets in TS 38.473 [5],\n-\tan egress link ID, which is indicated by Next-Hop BAP address IE in BH Information IE in TS 38.473 [5], belonging to topology indicated by Egress Non-F1-terminating IAB-donor Topology Indicator IE in F1AP if configured, and\n-\tan egress BH RLC channel ID, which is indicated by BH RLC CH ID IE in BH Information IE in TS 38.473 [5].\nFor a BAP SDU received from upper layers at the IAB-node and to be transmitted in upstream direction, whose egress link has been selected as specified in clause 5.2.1.3, the BAP entity shall:\n-\tif the Uplink Traffic to BH RLC Channel Mapping Configuration has not been (re)configured by the F1AP associated with the (logical) DU, where this BAP SDU is received, after the last (re)configuration of defaultUL-BH-RLC-Channel by RRC:\n-\tselect the egress BH RLC channel corresponding to defaultUL-BH-RLC-Channel configured in TS 38.331 [3] for non-F1-U packets;\n-\telse:\n-\tfor the BAP SDU encapsulating an F1-U packet:\n-\tif there is an entry in the Uplink Traffic to BH RLC Channel Mapping Configuration with its traffic type specifier corresponds to the destination IP address and TEID of this BAP SDU and its egress link ID corresponding to the selected egress link;\n-\tselect the egress BH RLC channel corresponding to the egress BH RLC channel ID of this entry;\n-\telse:\n-\tselect any egress BH RLC channel on the selected egress link;\n-\tfor the BAP SDU encapsulating a non-F1-U packet:\n-\tif there is an entry from the Uplink Traffic to BH RLC Channel Mapping Configuration with its traffic type specifier corresponds to the traffic type of this BAP SDU and its egress link ID corresponding to the selected egress link;\n-\tselect the egress BH RLC channel corresponding to the egress BH RLC channel ID of this entry;\n-\telse:\n-\tselect any egress BH RLC channel on the selected egress link;\nNOTE 1:\tUplink Traffic to BH RLC Channel Mapping Configuration may contain multiple entries for F1-C/non-F1 traffic (for mobile IAB-node, this case occurs when considering both configurations received from two F1AP). It is up to IAB node's implementation to decide which entry is selected, but the selected entry has to match the BAP routing ID selected in 5.2.1.2.1, i.e. BAP routing ID and BH RLC channel must be derived from the same BH Information IE.\nNOTE 2:\tIn cases where the same IP address is shared by the two logical DUs, it is up to mobile IAB-node’s implementation to decide the logical DU where a BAP SDU encapsulating a non-F1 packet is considered to be received from. The non-F1 traffic does not have to be confined/associated with one specific logical DU.\nFor a BAP SDU received from upper layers at the IAB-donor-DU, the BAP entity performs mapping to an egress BH RLC channel based on:\n-\tDownlink Traffic to BH RLC Channel Mapping Configuration, which is derived from IP-to-layer-2 traffic mapping Information List IE, and optionally together with the Configured BAP address IE and the BH RLC Channel to be Setup/Modified List IE, as configured on the IAB-donor-DU in TS 38.473 [5].\nEach entry of the Downlink Traffic to BH RLC Channel Mapping Configuration contains:\n-\ta destination IP address, which is indicated by Destination IAB TNL Address IE in IP header information IE including an IPv4 address or IPv6 address or an IPv6 address prefix,\n-\tan IPv6 flow label, if configured, which is indicated by IPv6 Flow Label IE in IP header information IE,\n-\ta DSCP, if configured, which is indicated by DSCP IE in DS Information List IE in IP header information IE,\n-\tan egress link ID, which is indicated by Next-Hop BAP Address IE in BH Information IE, or by the Configured BAP address IE in UE-associated F1AP message, and\n-\tan egress BH RLC channel ID, which is indicated by Egress BH RLC CH ID IE in BH Information IE, or by the BH RLC CH ID IE in UE-associated F1AP message.\nAt the IAB-donor-DU, for a BAP SDU received from upper layers and to be transmitted in downstream direction, whose egress link has been selected as specified in clause 5.2.1.3, the BAP entity shall:\n-\tfor the BAP SDU encapsulating an IPv6 packet:\n-\tif there is an entry in the Downlink Traffic to BH RLC Channel Mapping Configuration with its egress link ID corresponding to the selected egress link, and the entry fulfils the following conditions:\n-\tthe Destination IP address of this BAP SDU matches the destination IP address in this entry; and\n-\tthe IPv6 Flow Label of this BAP SDU matches IPv6 flow label in this entry if configured; and\n-\tthe DSCP of this BAP SDU matches DSCP in this entry if configured:\n-\tselect the egress BH RLC channel corresponding to egress BH RLC channel ID of this entry;\n-\telse:\n-\tselect any egress BH RLC channel on the selected egress link;\n-\tfor the BAP SDU encapsulating an IPv4 packet:\n-\tif there is an entry in the Downlink Traffic to BH RLC Channel Mapping Configuration with its egress link ID corresponding to the selected egress link, and the entry fulfils the following conditions:\n-\tthe Destination IP address of this BAP SDU matches the destination IP address in this entry; and\n-\tthe DSCP of this BAP SDU matches DSCP in this entry if configured:\n-\tselect the egress BH RLC channel corresponding to egress BH RLC channel ID of this entry;\n-\telse:\n-\tselect any egress BH RLC channel on the selected egress link;\n5.2.1.5\tBAP header rewriting operation\nThe BAP entity performs BAP header rewriting based on:\n-\tthe Header Rewriting Configuration derived from an F1AP message as specified in TS 38.473 [5].\nEach entry of the Header Rewriting Configuration contains:\n-\tan Ingress Routing ID consisting of a BAP address and a BAP path identity of the BAP Data PDU, which is indicated by Ingress BAP Routing ID IE, and\n-\tan Egress Routing ID consisting of a BAP address and a BAP path identity of the BAP Data PDU, which is indicated by Egress BAP Routing ID IE, and\n-\ta Topology indicator, indicating whether the Egress Routing ID belongs to the non-F1-terminating donor topology, which is optionally indicated by Non-F1-terminating IAB-donor Topology Indicator IE.\nFor each BAP Data PDU to be considered for BAP header rewriting, the BAP entity shall:\n-\tfor the IAB-MT of boundary IAB-node, if there is an entry in the Header Rewriting Configuration configured with Non-F1-terminating IAB-donor Topology Indicator IE, whose BAP address of Ingress Routing ID matches the DESTINATION field, and whose BAP path identity of Ingress Routing ID matches the PATH field:\n-\trewrite the BAP header of this BAP Data PDU, where the DESTINATION field is set to the leftmost 10 bits of Egress Routing ID of the entry (i.e. BAP address), and the PATH field is set to the rightmost 10 bits of Egress Routing ID of the entry (i.e. BAP path identity);\n-\tconsider this BAP Data PDU as data to be routed to non-F1-terminating donor topology;\n-\tfor the IAB-DU of boundary IAB-node, if the ingress link of this BAP Data PDU belongs to non-F1-terminating donor topology of the boundary IAB-node; and\n-\tif there is an entry in the Header Rewriting Configuration not configured with Non-F1-terminating IAB-donor Topology Indicator IE, whose BAP address of Ingress Routing ID matches the DESTINATION field, and whose BAP path identity of Ingress Routing ID matches the PATH field:\n-\trewrite the BAP header of this BAP Data PDU, where the DESTINATION field is set to the leftmost 10 bits of Egress Routing ID of the entry (i.e. BAP address), and the PATH field is set to the rightmost 10 bits of Egress Routing ID of the entry (i.e. BAP path identity).\nNOTE:\tIn this specification, a BH link belongs to the topology of the IAB-donor that provides the configuration of that BH link, as specified in TS 38.331 [3].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tReceiving operation",
+                            "text_content": "Upon receiving a BAP Data PDU from lower layer (i.e. ingress BH RLC channel), the receiving part of the BAP entity shall:\n-\tif DESTINATION field of this BAP Data PDU matches the BAP address, which is configured for this IAB-node by the IAB-donor providing this ingress BH RLC channel configuration:\n-\tremove the BAP header of this BAP Data PDU and deliver the BAP SDU to upper layers;\n-\telse:\n-\tdeliver the BAP Data Packet to the transmitting part of the collocated BAP entity.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tFlow control",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tFlow control feedback",
+                            "text_content": "For a link, the BAP entity at the IAB-MT shall:\n-\twhen a flow control feedback is triggered due to the buffer load exceeding a certain level, or\n-\twhen a BAP Control PDU for flow control polling is received at the receiving part, the transmitting part of this BAP entity shall:\n-\tconstruct a BAP Control PDU for flow control feedback per BH RLC channel, if configured by RRC, in accordance with clause 6.2.3;\n-\tconstruct a BAP Control PDU for flow control feedback per BAP routing ID, if configured by RRC, in accordance with clause 6.2.3;\n-\tif the egress BH RLC channel for the BAP Control PDU is configured as specified in TS 38.473 [5]:\n-\tsubmit the BAP Control PDU(s) to the configured egress BH RLC channel of the egress link, indicated by Egress BH RLC CH ID IE in BH Information IE associated with Non-UP Traffic Type IE set to BAP control PDU in TS 38.473 [5];\n-\telse:\n-\tsubmit the BAP Control PDU(s) to any egress BH RLC channel of the egress link.\nNOTE 1:\tThe BH RLC channel(s) and BAP routing ID(s) to be included in the flow control feedback is up to IAB node implementation, once triggered.\nNOTE 2:\tFor a mobile IAB-node, in case multiple egress BH RLC channels on one egress link are configured for BAP control PDU, it is up to mobile IAB-node's implementation to decide which one is selected.\nFor a link, upon receiving a BAP Control PDU for flow control feedback per BAP routing ID from lower layer, the BAP entity at the IAB-DU or IAB-donor-DU may:\n-\tif the available buffer size as indicated by the received BAP Control PDU for flow control feedback per BAP routing ID is less than the Buffer Size Threshold IE, configured by F1AP in TS 38.473 [5]:\n-\tconsider the BH link as congested for this BAP routing ID (for routing defined in accordance with clause 5.2.1.3).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tFlow control polling",
+                            "text_content": "When a flow control polling is to be transmitted over an egress link, the transmitting part of the BAP entity at the IAB-DU or IAB-donor-DU:\n-\tconstruct a BAP Control PDU for flow control polling in accordance with clause 6.2.3:\n-\tif the egress BH RLC channel for the BAP Control PDU is configured as specified in TS 38.473 [5]:\n-\tsubmit this BAP Control PDU to the configured egress BH RLC channel of the egress link, indicated by BH RLC CH ID IE which is associated with BAP Control PDU Channel IE that is set to true in TS 38.473[5];\n-\telse:\n-\tsubmit this BAP Control PDU to any egress BH RLC channel of the egress link.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tBH RLF related indications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tTransmitting operation",
+                            "text_content": "When a BH RLF recovery failure is detected at the IAB-MT, for each egress link associated with the IAB-DU, the transmitting part of the collocated BAP entity at the IAB-DU may:\n-\tconstruct a BAP Control PDU for BH RLF indication in accordance with clause 6.2.3.3;\nWhen BH RLF(s) occur at the IAB-MT on all the link(s) providing F1 interface over BAP, for each egress link associated with the IAB-DU, the transmitting part of the collocated BAP entity at the IAB-DU may:\n-\tconstruct a BAP Control PDU for BH RLF detection indication in accordance with clause 6.2.3.4;\nWhen BH RLF recovery is successful at the IAB-MT, for each egress link associated with the IAB-DU on which a BAP Control PDU for BH RLF detection indication was transmitted, the transmitting part of the collocated BAP entity at the IAB-DU shall:\n-\tconstruct a BAP Control PDU for BH RLF recovery indication in accordance with clause 6.2.3.5;\nFor any constructed BAP Control PDU above, the BAP entity shall:\n-\tif the egress BH RLC channel for the BAP control PDU is configured as specified in TS 38.473 [5]:\n-\tsubmit this BAP Control PDU to the configured egress BH RLC channel of the egress link, indicated by BH RLC CH ID IE which is associated with BAP Control PDU Channel that is set to true in TS 38.473 [5];\n-\telse:\n-\tsubmit this BAP Control PDU to any egress BH RLC channel of the egress link.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tReceiving operation",
+                            "text_content": "Upon receiving a BAP Control PDU for BH RLF indication from lower layer (i.e. ingress BH RLC channel), the receiving part of the BAP entity shall:\n-\tindicate to upper layers that the BH RLF indication has been received for the ingress link where this BAP Control PDU is received.\nUpon receiving a BAP Control PDU for BH RLF detection indication from lower layer (i.e. ingress BH RLC channel), the receiving part of the BAP entity shall:\n-\tconsider the BH link, from which this BAP Control PDU is received, as not available (for routing defined in accordance with clause 5.2.1.3).\nUpon receiving a BAP Control PDU for BH RLF recovery indication from lower layer (i.e. ingress BH RLC channel), the receiving part of the BAP entity shall:\n-\tconsider the BH link, from which this BAP Control PDU is received, to be available again (for routing defined in accordance with clause 5.2.1.3).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.5\tHandling of unknown, unforeseen, and erroneous protocol data",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "When a BAP Data PDU contains a BAP address which is not included in the applied entries of BH Routing Configuration during Routing operation in accordance with clause 5.2.1.3 and the BAP Data PDU contains a BAP address which is not the BAP address of this node in accordance with clause 5.2.2 upon receiving; or\nwhen a BAP Control PDU that contains reserved or invalid values is received the BAP entity shall:\n-\tdiscard the received BAP PDU.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tProtocol data units, formats, and parameters",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tProtocol data units",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tData PDU",
+                            "text_content": "The BAP Data PDU is used to convey one of the following in addition to the PDU header:\n-\tupper layer data.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tControl PDU",
+                            "text_content": "The BAP Control PDU is used to convey one of the following in addition to the PDU header:\n-\tflow control feedback per BH RLC channel;\n-\tflow control feedback per BAP routing ID;\n-\tflow control polling;\n-\tBH RLF related indication;\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tFormats",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tGeneral",
+                            "text_content": "A BAP PDU is a bit string that is byte aligned (i.e. multiple of 8 bits) in length. The formats of BAP PDUs are described in clause 6.2.2, 6.2.3 and their parameters are described in clause 6.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tData PDU",
+                            "text_content": "Figure 6.2.2-1 shows the format of the BAP Data PDU.\nThe figure depicts the BAP Data PDU format, which is a standardized data format used in the BAP (B-series Application Protocol) network. The format is used to transmit data between the BAP network and the BAP-based network. The figure shows the structure of the BAP Data PDU, including the header, data sections, and optional data sections. The format is designed to be easy to understand and use, making it suitable for network administrators and engineers to understand and manage the data transmitted over the BAP network.\nFigure 6.2.2-1: BAP Data PDU format\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tControl PDU",
+                            "text_content": "Figure 6.2.3.1-1 and 6.2.3.1-2 show the formats of the BAP Control PDU for flow control feedback.\nThe figure depicts a flow control feedback per BH RLC channel format, which is used in BAP (Bussard Access Protocol) control PDU. The format is designed to provide feedback to the BAP control system, allowing it to monitor and manage the flow control parameters of the RLC (Radio-Lumped-Capacitor) channel. The figure shows the structure of the PDU, including the header, data section, and footer, with the flow control feedback per BH RLC channel being highlighted.\nFigure 6.2.3.1-1: BAP Control PDU format for flow control feedback per BH RLC channel\nThe figure depicts a flow control feedback per BAP routing ID format, which is used in the BAP control PDU for flow control feedback. The format includes a header with the BAP routing ID, a field for the flow control feedback, and a field for the BAP ID. This format ensures that the flow control feedback is sent to the correct BAP for processing.\nFigure 6.2.3.1-2: BAP Control PDU format for flow control feedback per BAP routing ID\nFigure 6.2.3.2-1 shows the formats of the BAP Control PDU for flow control polling.\nThe figure depicts a flow control feedback polling mechanism in a BAP (Buss Barring Alarm Protocol) control PDU format. It illustrates the flow control feedback polling process, which is used to detect and respond to flow control alarms in a network. The figure shows the flow control feedback polling mechanism, including the flow control polling mechanism, flow control polling mechanism, and flow control polling mechanism.\nFigure 6.2.3.2-1: BAP Control PDU format for flow control feedback polling\nFigure 6.2.3.3-1 shows the format of the BAP Control PDU for BH RLF indication.\nThe figure depicts a BAP control PDU format for BH RLF indication, which is a crucial component in the control and management of a base station radio frequency (RLF) link. The diagram illustrates the structure of the PDU, including the header, data section, and footer, with the BAP control information and RLF indication details clearly labeled. This format ensures that the PDU is easily understood and used for efficient communication and management of the RLF link.\nFigure 6.2.3.3-1: BAP Control PDU format for BH RLF indication\nFigure 6.2.3.4-1 shows the format of the BAP Control PDU for BH RLF detection indication.\nThe figure depicts a BAP control PDU format for BH RLF detection indication, which is used to communicate with the BAP control system. The format includes a header with the BAP control PDU identifier, a message identifier, and a message type. The message identifier is used to identify the specific message being sent, while the message type determines the content of the message. The format is designed to be simple and easy to understand, making it suitable for use in a variety of applications.\nFigure 6.2.3.4-1: BAP Control PDU format for BH RLF detection indication\nFigure 6.2.3.5-1 shows the format of the BAP Control PDU for BH RLF recovery indication.\nThe figure depicts a BAP control PDU format for BH RLF recovery indication, which is a crucial component in the network's ability to recover from a failed back-up power supply (BAP) unit. The format includes a header with the BAP control PDU number, a recovery indication message, and a checksum. This information is crucial for network operators to ensure that the BAP is functioning correctly and can be quickly and efficiently replaced.\nFigure 6.2.3.5-1: BAP Control PDU format for BH RLF recovery indication\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tParameters",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tGeneral",
+                            "text_content": "If not otherwise mentioned in the definition of each field, the bits in the parameters shall be interpreted as follows: the left most bit string is the first and most significant and the right most bit is the last and least significant bit.\nUnless otherwise mentioned, integers are encoded in standard binary encoding for unsigned integers. In all cases the bits appear ordered from MSB to LSB when read in the PDU.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tDESTINATION",
+                            "text_content": "Length: 10 bits.\nThis field carries the BAP address of the destination IAB-node or IAB-donor-DU.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.3\tPATH",
+                            "text_content": "Length: 10 bits.\nThis field carries the BAP path identity.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.4\tData",
+                            "text_content": "Length: Variable\nThis field carries the BAP SDU (i.e. IP packet).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.5\tR",
+                            "text_content": "Length: 1 bit\nReserved. In this version of the specification reserved bits shall be set to 0. Reserved bits shall be ignored by the receiver.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.6\tD/C",
+                            "text_content": "Length: 1 bit\nThis field indicates whether the corresponding BAP PDU is a BAP Data PDU or a BAP Control PDU.\nTable 6.3.6-1: D/C field\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.6-1: D/C field",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.7\tPDU type",
+                            "text_content": "Length: 4 bits\nThis field indicates the type of control information included in the corresponding BAP Control PDU.\nTable 6.3.7-1: PDU type\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.7-1: PDU type",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.8\tBH RLC channel ID",
+                            "text_content": "Length: 16 bits.\nThis field indicates the identity of the BH RLC channel whose flow control information is provided in the flow control feedback.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.9\tBAP Routing ID",
+                            "text_content": "Length: 20 bits.\nThis field indicates BAP routing identity, for which the flow control information is provided in the flow control feedback. It contains the BAP address in the leftmost 10 bits and the BAP path identity in the rightmost 10 bits.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.10\tAvailable Buffer Size",
+                            "text_content": "Length: 24 bits.\nThis field indicates the maximum traffic volume the transmitter should send. The unit is kilobyte.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

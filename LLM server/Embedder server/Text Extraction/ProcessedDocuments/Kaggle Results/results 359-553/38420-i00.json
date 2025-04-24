@@ -1,0 +1,481 @@
+{
+    "document_name": "38420-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document is an introduction to the TSG RAN TS 38.42x series of Technical Specifications that define the Xn interface. It is an interface for the interconnection of two NG-RAN nodes within the NG-RAN architecture (TS 38.401 [2]).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 38.401: \"NG-RAN; Architecture description\".\n[3]\t3GPP TS 38.421: \"NG-RAN; Xn layer 1\".\n[4]\t3GPP TS 38.422: \"NG-RAN; Xn signalling transport\".\n[5]\t3GPP TS 38.423: \"NG-RAN; Xn Application Protocol (XnAP)\".\n[6]\t3GPP TS 38.424: \"NG-RAN; Xn data transport\".\n[7]\t3GPP TS 38.425: \"NG-RAN; NR user plane protocol\".\n[8]\t3GPP TS 38.300: \"NR; Overall Description; Stage 2\".\n[9]\t3GPP TS 37.340: \"NR; Multi-connectivity; Overall description; Stage-2\".\n[10]\t3GPP TS 38.415: \"PDU Session User Plane protocol\".\n[11]\t3GPP TS 29.281: \"General Packet Radio System (GPRS) Tunnelling Protocol User Plane (GTPv1-U)\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nAI: as defined in TS 38.300 [8].\nBoundary IAB-node: as defined in TS 38.401 [2].\ncorresponding node: as defined in TS 38.425 [7].\nF1-terminating IAB-donor: as defined in TS 38.401 [2].\nIAB-DU: as defined in TS 38.300 [8].\nIAB-MT: as defined in TS 38.300 [8].\nMobile IAB-node: as defined in TS 38.300 [8].\nNon-F1-terminating IAB-donor: as defined in TS 38.401 [2].\nML: as defined in TS 38.300 [8].\nNG-RAN node: as defined in TS 38.300 [8].\nRRC-terminating IAB-donor: as defined in TS 38.401 [2].\nsecondary node: as defined in TS 37.340 [9].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nIAB\tIntegrated Access and Backhaul\nMBS\tMulticast Broadcast Service\nQMC\tQoE Measurement Collection\nQoE\tQuality of Experience\nSCTP\tStream Control Transmission Protocol\nXn-C\tXn Control plane\nXn-U\tXn User plane\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral aspects",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The interface allowing to interconnect NG-RAN nodes with each other is referred to as the Xn interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tXn interface general principles",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The general principles for the specification of the Xn interface are as follows:\n-\tthe Xn interface is open;\n-\tthe Xn interface supports the exchange of signalling information between two NG-RAN nodes, and the forwarding of PDUs to the respective tunnel endpoints;\n-\tfrom a logical standpoint, the Xn is a point-to-point interface between two NG-RAN nodes. A point-to-point logical interface should be feasible even in the absence of a physical direct connection between the two NG-RAN nodes.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tXn interface specification objectives",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Xn interface specifications facilitate the following:\n-\tinter-connection of NG-RAN nodes supplied by different manufacturers;\n-\tsupport of continuation between NG-RAN nodes of the NG-RAN services offered via the NG interface;\n-\tseparation of Xn interface Radio Network functionality and Transport Network functionality to facilitate introduction of future technology.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tXn interface capabilities",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Xn interface supports:\n-\tprocedures to support intra-NG-RAN mobility;\n-\tprocedures to support dual connectivity between NG-RAN nodes.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tFunctions of the Xn interface",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following clauses describe the functions supported in Xn interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tFunctions of Xn-C",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tXn-C interface management and error handling functions",
+                            "text_content": "These functions allow for managing of signalling associations between NG-RAN nodes, surveying the Xn interface and recovering from errors.\nThis function allows for the initial setup of an Xn interface between two NG-RAN nodes, including exchange of application level data.\nThis function allows the reporting of general error situations on application level.\nThis function allows an NG-RAN node to inform a second NG-RAN node that it has recovered from an abnormal failure and that either all or some of the contexts (except the application level data) related to the first node and stored in the second shall be deleted, and the associated resources released.\nThis function allows two NG-RAN nodes to update application level data at any time.\nThis function allows two NG-RAN nodes to remove the respective Xn interface.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tUE mobility management functions",
+                            "text_content": "This function allows the exchange of information between source and target NG-RAN nodes in order to initiate the handover of a certain UE to the target.\nThis function allows informing an already prepared target NG-RAN node that a prepared handover will not take place. It allows releasing the resources allocated during a preparation.\nThe Retrieve UE context function is used for a NG-RAN node to retrieve UE context from another one.\nThe RAN paging function allows a NG-RAN node to initiate the paging for a UE in the inactive state.\nThe data forwarding control function allows establishing and releasing transport bearers between source and target NG-RAN nodes for data forwarding.\nThis function allows informing a source NG-RAN node that the UE has successfully accessed a target NG-RAN node.\nThis function allows informing a source NG-RAN node that resources reserved for candidate target cell(s) during a conditional handover preparation are about to be released by the target NG-RAN node.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tDual connectivity function",
+                            "text_content": "The dual connectivity function enables usage of additional resources in a secondary node in the NG-RAN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.4\tEnergy saving function",
+                            "text_content": "This function enables decreasing energy consumption by indication of cell activation/deactivation or SSB beam activation/deactivation over the Xn interface.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.5\tResource coordination function",
+                            "text_content": "This function enables coordination of cell resource usage between two NG-RAN nodes.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.6\tSecondary RAT Data Volume Report function",
+                            "text_content": "This function enables the NG-RAN node to report Secondary RAT usage data information in case of MR-DC with 5GC, either with a dedicated procedure or by including Secondary RAT usage data information in other messages.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.7\tTrace function",
+                            "text_content": "The Trace function provides means to control trace sessions for a UE over Xn interface.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.8\tLoad management function",
+                            "text_content": "This function allows exchanging resource status and traffic load information between NG-RAN nodes, such that the NG-RAN node can control the traffic load appropriately.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.9\tData exchange for self-optimisation function",
+                            "text_content": "This function allows two NG-RAN nodes to exchange information in order to support self-optimization functionality.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.10\tIAB support function",
+                            "text_content": "This function is used to deliver F1-C traffic between the M-NG-RAN node and the S-NG-RAN node serving a dual-connected IAB-node, where the F1-C traffic is either received from the IAB-node or sent to the IAB-node.\nThis function allows the exchange of information between the F1-terminating IAB-donor and the non-F1-terminating IAB-donor of a boundary IAB-node, for the purpose of managing the migration of the boundary and descendant IAB-node traffic between the topologies managed by the two IAB-donors. This function also allows the exchange of information between the F1-terminating IAB-donor and the RRC-terminating IAB-donor of a mobile IAB-node, for the purpose of managing the migration of the mobile IAB-node traffic between the topologies managed by the two IAB-donors.\nThis function is used to exchange information between the F1-terminating IAB-donor and the non-F1-terminating IAB-donor of a boundary IAB-node in order to support resource multiplexing between the IAB-MT and the IAB-DU of the boundary IAB-node. This function is also used to exchange resource multiplexing related information between the F1-terminating IAB-donor and the RRC-terminating IAB-donor of a mobile IAB-node in order to support resource multiplexing between the IAB-MT and the IAB-DU of the mobile IAB-node.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.11\tSmall data transmission function",
+                            "text_content": "This function supports small data transmission sessions in RRC_INACTIVE both with and without anchor relocation.\nThe Partial UE Context Transfer function is used for the last serving NG-RAN node to provide part of the UE Context to the receiving gNB.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.12\tQMC support function",
+                            "text_content": "The QMC function provides means to support the mobility of QMC sessions over the Xn interface and to support the coordination of QMC information in case of dual connectivity.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.13\tMBS management support function",
+                            "text_content": "This function is used to support the management of MBS Sessions, including the addition of MBS related information in interface management and mobility procedures, and the support of RAN Multicast paging.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.14\tAI/ML support function",
+                            "text_content": "This function is used to support AI/ML for NG-RAN, including initiation of data collection and reporting of collected data.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tFunctions of Xn-U",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tData transfer function",
+                            "text_content": "The data transfer function allows the transfer of data between NG-RAN nodes to support dual connectivity or mobility operation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tFlow control function",
+                            "text_content": "The flow control function enables a NG-RAN node receiving user plane data from a second NG-RAN node to provide feedback information associated with the data flow.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.3\tAssistance information function",
+                            "text_content": "The assistance information function enables a NG-RAN node receiving user plane data from a second NG-RAN node to provide assistance information to the second node (e.g. related to radio conditions).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.4\tFast retransmission function",
+                            "text_content": "The fast retransmission function provides coordination between PDCP-hosting node and corresponding node in case of outage in one of the nodes, to enables the node in good RF conditions to handle data previously forwarded to the node in outage.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tXn interface procedures",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Xn interface supports procedures over the control plane (Xn-C) and user plane (Xn-U).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tControl plane protocol procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tMobility management procedures",
+                            "text_content": "The mobility management procedures are used to manage the UE mobility in Connected or RRC_Inactive modes:\n-\tHandover Preparation\n-\tHandover Cancel\n-\tSN Status Transfer\n-\tRetrieve UE Context\n-\tRAN Paging\n-\tXn-U Address Indication\n-\tUE Context Release\n-\tHandover Success Indication\n-\tConditional Handover Cancel\n-\tRetrieve UE Context Confirm\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tDual Connectivity procedures",
+                            "text_content": "The dual connectivity procedures are used to add, modify and releases resources for the operation of Dual Connectivity:\n-\tS-NG-RAN-node Addition Preparation\n-\tS-NG-RAN-node Reconfiguration Completion\n-\tM-NG-RAN-node initiated S-NG-RAN-node Modification Preparation\n-\tS-NG-RAN-node initiated S-NG-RAN-node Modification\n-\tM-NG-RAN-node initiated S-NG-RAN-node Release\n-\tS-NG-RAN-node initiated S-NG-RAN-node Release\n-\tS-NG-RAN-node Counter Check\n-\tRRC Transfer\n-\tNotification Control Indication\n-\tActivity Notification\n-\tSecondary RAT Data Usage Report\n-\tConditional PSCell Change Cancel\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tGlobal procedures",
+                            "text_content": "The global procedures are used to exchange configuration level data between two NG-RAN nodes, or to remove Xn connectivity between two NG-RAN nodes in a controlled manner:\n-\tXn Setup\n-\tNG-RAN-node Configuration Update\n-\tXn Removal\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.4\tInterface Management procedures",
+                            "text_content": "The interface management procedures are used to align resources between two NG-RAN nodes in the event of failures, and to report detected protocol errors:\n-\tReset\n-\tError Indication\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.5\tEnergy saving procedures",
+                            "text_content": "-\tCell Activation procedure: enables an NG-RAN node to request the activation of a previously deactivated cell or SSB beam hosted in another NG-RAN node.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.6\tResource coordination procedures",
+                            "text_content": "-\tE-UTRA - NR Cell Resource Coordination procedure: enables an ng-eNB and a gNB to interact for resource coordination purposes.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.7\tUE Tracing procedures",
+                            "text_content": "The following procedures are used to trace the UE:\n-\tTrace Start procedure\n-\tDeactivate Trace procedure\n-\tCell Traffic Trace\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.8\tLoad management procedures",
+                            "text_content": "The load management procedures are used by NG-RAN nodes to indicate resource status, overload and traffic load to each other.\n-\tResource Status Reporting Initiation\n-\tResource Status Reporting\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.9\tData exchange for self-optimisation procedures",
+                            "text_content": "The data exchange for self-optimisation procedures are used to transfer failure, access and mobility related information among NG-RAN nodes to enable self-optimisation\n-\tFailure Indication\n-\tHandover report\n-\tMobility Settings Change\n-\tAccess and Mobility Indication\n-\tSCG Failure Information Report\n-\tSCG Failure Transfer\n-\tRACH Indication\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.10\tIAB procedures",
+                            "text_content": "The IAB procedures are used to enable the transfer of F1/non-F1 traffic for IAB, to exchange information between the F1-terminating IAB-donor and the non-F1-terminating IAB-donor of a boundary IAB-node, to enable the delivery of F1-C traffic between the M-NG-RAN node and the S-NG-RAN node serving a dual-connected non-boundary IAB-node, to exchange resource multiplexing related information between the F1-terminating IAB-donor and the non-F1-terminating IAB-donor of a boundary IAB-node, to exchange information between the F1-terminating IAB-donor and the RRC-terminating IAB-donor of a mobile IAB-node, and to exchange resource multiplexing related information between the F1-terminating IAB-donor and the RRC-terminating IAB-donor of the  mobile IAB-node:\n-\tF1-C Traffic Transfer\n-\tIAB Transport Migration Management\n-\tIAB Transport Migration Modification\n-\tIAB Resource Coordination\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.11\tMBS Management procedures",
+                            "text_content": "The MBS management procedures are used to manage the MBS Session:\n-\tRAN Multicast Group Paging procedure\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.12\tSmall data transmission procedures",
+                            "text_content": "-\tPartial UE Context Transfer: enables exchange of information between NG-RAN nodes for SDT transmission without anchor relocation\nSmall data transmission is also supported by the following procedures:\n-\tRRC Transfer\n-\tRetrieve UE Context Confirm\n-\tRAN Paging\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.13\tQMC support procedures",
+                            "text_content": "The following procedures are used to transfer QMC configuration and session information to the target NG-RAN node during a UE’s intra-system intra-RAT mobility:\n-\tHandover Preparation\n-\tRetrieve UE Context\nThe following procedures are used to coordinate QMC configuration and reporting between the M-NG-RAN node and the S-NG-RAN node:\n-\tS-NG-RAN node Addition Preparation\n-\tM-NG-RAN node initiated S-NG-RAN node Modification Preparation\n-\tS-NG-RAN node initiated S-NG-RAN node Modification\n-\tS-NG-RAN node initiated S-NG-RAN node Change\n-\tRRC Transfer\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.14\tAI/ML support procedures",
+                            "text_content": "The following procedures are used to initiate data collection and report collected data to support, e.g., AI/ML for NG-RAN:\n-\tData Collection Reporting Initiation\n-\tData Collection Reporting\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tUser plane protocol procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The user plane protocol procedures are used to exchange user plane information between Xn-U protocol peers:\n-\tTransfer of Downlink User Data procedure: enables the node hosting the NR PDCP entity to provide user plane information to the corresponding node.\n-\tDownlink Data Delivery Status procedure: enables the corresponding node to provide feedback to the node hosting the NR PDCP entity.\n-\tTransfer of Assistance Information: enables the corresponding node to provide assistance information to the node hosting the NR PDCP entity.\n-\tTransfer of PDU Session Information procedure: enables an NG-RAN node to provide user plane information associated with the forwarding of data towards a peer NG-RAN node, when using PDU session tunnels.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tXn interface protocol structure",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tXn Control Plane",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The control plane protocol stack of the Xn interface is shown on Figure 7.1-1. The transport network layer is built on IP transport. For the reliable transport of signalling messages, SCTP is added on top of IP. The application layer signalling protocol is referred to as XnAP (Xn Application Protocol).\nThe figure depicts the Xn Interface Control Plane, which is a crucial component in the network architecture. It illustrates the various interfaces and their respective control planes, including the Xn Interface, Xn Interface Control Plane, and Xn Interface Control Plane. This figure is essential for understanding the network's control and management structure.\nFigure 7.1-1: Xn Interface Control Plane\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tXn User Plane",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Xn user plane (Xn-U) interface is defined between two NG-RAN nodes. The Xn-U interface provides non-guaranteed delivery of user plane PDUs between two NG-RAN nodes.\nThe protocol stack for Xn-U is shown in Figure 7.2-1.\nThe figure depicts the Xn - U protocol structure, which is a key component of the Xn - U protocol, which is a protocol used in the Xn - U protocol. The Xn - U protocol is a protocol used in the Xn - U protocol, which is a protocol used in the Xn - U protocol. The Xn - U protocol is a protocol used in the Xn - U protocol, which is a protocol used in the Xn - U protocol. The Xn - U protocol is a protocol used in the Xn - U protocol, which is a protocol used in the Xn - U protocol. The Xn - U protocol is a protocol used in the Xn - U protocol, which is a protocol used in the Xn - U protocol. The Xn - U protocol is a protocol used in the Xn - U protocol, which is a protocol used in the Xn - U protocol. The Xn - U protocol is a protocol used in the Xn - U protocol, which is a protocol used in the Xn - U protocol. The Xn - U protocol is a protocol used in the Xn - U protocol, which is a protocol used in the Xn - U protocol. The X\nFigure 7.2-1: Xn-U protocol structure\nThe user plane packets conveyed by GTP-U may be PDCP PDUs (e.g. in case of dual connectivity), PDCP SDUs (e.g. in case of DRB level data forwarding), or SDAP SDUs (e.g. in PDU Session level data forwarding).\nUser plane protocol messages (as defined in TS 38.425 [7] and TS 38.415 [10]) are carried by container fields in the GTP-U extension header as specified in TS 29.281 [11]. A single GTP-U packet may carry a user plane packet and/or a user plane protocol message. The mapping between container fields and Xn user plane protocol procedures and functions is described in Table 7.2-1.\nTable 7.2-1: Mapping between container fields and Xn user plane procedures / functions\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.2-1: Mapping between container fields and Xn user plane procedures / functions",
+                            "table number": 1,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tOther Xn interface specifications",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tNG-RAN Xn interface: Xn layer 1 (TS 38.421)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TS 38.421 [3] specifies the physical layer technologies that may be used to support the Xn interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.2\tNG-RAN Xn interface: Xn signalling transport (TS 38.422)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TS 38.422 [4] specifies how the XnAP signalling messages are transported over Xn.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.3\tNG-RAN Xn interface: Xn application protocol (XnAP) (TS 38.423)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TS 38.423 [5] specifies the radio network layer signalling procedures of the control plane between NG-RAN nodes.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.4\tNG-RAN Xn interface: Xn data transport (TS 38.424)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TS 38.424 [6] specifies the standards for user data transport protocols over the NG-RAN Xn interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.5\tNG-RAN Xn interface: NR user plane protocol (TS 38.425)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TS 38.425 [7] specifies the user plane protocol procedures for dual connectivity over the NG-RAN Xn interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.6\tNG-RAN Xn interface: PDU Session User Plane Protocol (TS 38.415)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TS 38.415 [10] specifies the user plane protocol procedures for data forwarding using PDU Session tunnels over the NG-RAN Xn interface.\nTS 38.415 [10] specifies the PDU Set Information user plane protocol for sending PDU Set Information and indication of End of Data Burst over the NG-RAN Xn interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.7\tSummary of NG-RAN Xn interface Technical Specifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The relationship between the technical specifications that define the NG-RAN Xn interface is shown in Figure 8.7-1.\nThe figure depicts the technical specifications of the 7-1 interface, including the number of ports, the number of data lines, and the number of signaling lines. It also shows the connection between the 7-1 interface and the 1-1 interface, as well as the connection between the 7-1 interface and the 2-1 interface. The figure is used to ensure that the correct connections are made between the different interfaces, and to ensure that the correct signals are transmitted between the different interfaces.\nFigure 8.7-1: Xn Interface Technical Specifications\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 2,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

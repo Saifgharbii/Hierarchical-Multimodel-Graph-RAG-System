@@ -1,0 +1,996 @@
+{
+    "document_name": "32423-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "The present document is part of a TS-family covering the 3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Telecommunication management, as identified below:\nTS 32.421:\t\"Subscriber and equipment trace; Trace concepts and requirements\";\nTS 32.422:\t\"Subscriber and equipment trace; Trace control and configuration management \";\nTS 32.423:\t\"Subscriber and equipment trace; Trace data definition and management\";\nSubscriber and MS Trace provide very detailed information at call level on one or more specific mobile(s). This data is an additional source of information to Performance Measurements and allows going further in monitoring and optimisation operations.\nContrary to Performance Measurements, which are a permanent source of information, Trace is activated on user demand for a limited period of time for specific analysis purpose\nTrace plays a major role in activities such as determination of the root cause of a malfunctioning mobile, advanced troubleshooting, optimisation of resource usage and quality, RF coverage control and capacity improvement, dropped call analysis, Core Network and TRAN end to end   procedure validation.\nThe capability to log data on any interface at call level for a specific user (e.g. IMSI or SUPI) or mobile type (e.g. IMEI or IMEISV) allows getting information which cannot be deduced from Performance Measurements such as perception of end-user QoS during his call (e.g. requested QoS vs. provided QoS), correlation between protocol messages and RF measurements, or interoperability with specific mobile vendors.\nMoreover, Performance Measurements provide values aggregated on an observation period, Subscriber and Equipment Trace give instantaneous values for a specific event (e.g. call, location update, etc.).\nIf Performance Measurements are mandatory for daily operations, future network planning and primary trouble shooting, Subscriber and MS Trace is the easy way to go deeper into investigation and network optimisation.\nIn order to produce this data, Subscriber and MS trace are carried out in the NEs, which comprise the network. The data can then be transferred to an external system (e.g. an Operations System (OS) in TMN terminology, for further evaluation).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document describes Trace data definition and management. It covers the trace records content, their format and transfer across UMTS networks, EPS networks or 5GS networks. GSM Trace is outside of the scope of this specification..\nThe present document also describes the data definition for Minimization of Drive Tests (MDT) across 3GPP networks.\nThe objectives of the present document are:\n-\tTo provide the descriptions for a standard set of Trace and MDT data;\n-\tTo define the common format of trace and MDT records; and\n-\tTo define a method for the reporting of Trace and MDT results across the management interfaces.\nClause 4 details the various Trace records content, Clause 5 defines GPB trace format for NR, Annex A provides Trace and MDT report file format, Annex B provides the trace report file conventions and transfer procedure, Annex C provides the trace reporting functional architecture and Annex D provides some trace and MDT files examples, Annex G provides normative GPB trace record schema and examples.\nTrace and MDT concepts and requirements are covered in TS 32.421 [2] while Trace control and configuration management are described in 3GPP TS 32.422 [3].\nThe definition of Trace and MDT data is intended to result in comparability of Trace and MDT data produced in a multi-vendor wireless 3GPP networks.\nThe following is beyond the scope of the present document, and therefore the present document does not describe:\n-\tAny notification mechanisms or IRPs for trace. Only file transfer mechanism is specified for trace data transfer;\n-\tAny data compression mechanisms for trace data transfer;\n-\tAny Trace capability limitations (e.g. maximum number of simultaneous traced mobiles for a given NE).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions, which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies.  In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TS 32.101: \"Telecommunication management; Principles and high level requirements\".\n[2]\t3GPP TS 32.421: \"Telecommunication management; Subscriber and equipment trace: Trace concepts and requirements.\"\n[3]\t3GPP TS 32.422: \"Telecommunication management; Subscriber and equipment trace: Trace control and configuration management \".\n[4]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[5]\tW3C Recommendation \"Extensible Markup Language (XML) 1.0\" (Second Edition, 6 October 2000) http://www.w3.org/TR/2000/REC-xml-20001006\n[6]\tW3C Recommendation \"Namespaces in XML\" (14 January 1999)\nhttp://www.w3.org/TR/1999/REC-xml-names-19990114\n[7]\tW3C Recommendation \"XML Schema Part 0: Primer\" (2 May 2001)\nhttp://www.w3.org/TR/2001/REC-xmlschema-0-20010502\n[8]\tW3C Recommendation \"XML Schema Part 1: Structures\" (2 May 2001)\nhttp://www.w3.org/TR/2001/REC-xmlschema-1-20010502\n[9]\tW3C Recommendation \"XML Schema Part 2: Datatypes\" (2 May 2001)\nhttp://www.w3.org/TR/2001/REC-xmlschema-2-20010502\n[10]\tInternational Standard ISO 8601: 1988 (E) \"Representations of dates and times\" (1988-06-15)\nhttp://www.iso.ch/markete/8601.pdf\n[11]\t3GPP TS 32.300: \"Telecommunication management; Configuration Management (CM); Name convention for Managed Objects\".\n[12]\t3GPP TS 32.622: \"Telecommunication management; Configuration Management (CM); Generic network resources Integration Reference Point (IRP): Network Resource Model (NRM)\".\n[13]\t3GPP TS 29.274: \"3GPP Evolved Packet System (EPS); Evolved General Packet Radio Service (GPRS) Tunnelling Protocol for Control plane (GTPv2-C); Stage 3\".\n[14]\t3GPP TS 29.212: \"Policy and Charging Control (PCC); Reference points\".\n[15]\t3GPP TS 29.273: \"Evolved Packet System (EPS); 3GPP EPS AAA interfaces\".\n[16]\t3GPP TS 36.413: \"Evolved Universal Terrestrial Radio Access Network (E-UTRAN); S1 Application Protocol (S1AP)\".\n[17]\t3GPP TS 36.423 \"Evolved Universal Terrestrial Radio Access Network (E-UTRAN); X2 Application Protocol (X2AP)\".\n[18]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[19]\t3GPP TS 23.502: \"Procedures for the 5G System; Stage 2\"\n[20]\t3GPP TS 38.300: \"NR and NG-RAN Overall Description; Stage 2\".\n[21]\t3GPP TS 38.331: \"NR; Radio Resource Control (RRC); Protocol specification\".\n[22]\t3GPP TS 38.401: \"NG-RAN; Architecture Description\".\n[23]\t3GPP TS 38.413: \"NG-RAN; NG Application Protocol (NGAP)\".\n[24]\t3GPP TS 38.423: \"NG-RAN; Xn Application Protocol (XnAP)\".\n[25]\tVoid\n[26]\t3GPP TS 38.473: \"NG-RAN; F1 Application Protocol (F1AP)\".\n[27]\t3GPP TS 24.501: \"Non-Access-Stratum (NAS) protocol for 5G System (5GS); Stage 3\".\n[28]\t3GPP TS 36.331: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Resource Control (RRC); Protocol specification\".\n[29]\t3GPP TS 23.107: \"Quality of Service (QoS) concept and architecture\".\n[30]\t3GPP TS 25.331: \"Radio Resource Control (RRC); Protocol specification\".\n[31]\t3GPP TS 36.314: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Layer 2 - Measurements\".\n[32]\t3GPP TS 37.320: \"Universal Terrestrial Radio Access (UTRA) and Evolved Universal Terrestrial Radio Access (E-UTRA); Radio measurement collection for Minimization of Drive Tests (MDT); Overall description; Stage 2\".\n[33]\t3GPP TS 36.213: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Physical layer procedures\".\n[34]\t3GPP TS 36.133: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Requirements for support of radio resource management\".\n[35]\t3GPP TS 38.314: \"NR; layer 2 measurements \".\n[36]\t3GPP TS 28.552: \"Management and orchestration; 5G performance measurements\".\n[37]\t3GPP TS 38.213: \"NR; Physical layer procedures for control\".\n[38]\t3GPP TS 36.214: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Physical layer; Measurements\".\n[39]\t3GPP TS 32.425: \"Telecommunication management; Performance Management (PM); Performance measurements Evolved Universal Terrestrial Radio Access Network (E-UTRAN)\".\n[40]\tIETF RFC 6455: \"The WebSocket Procotol\".\n[41]\tIETF RFC 7692: \"Compression Extensions for WebSocket\".\n[42]\t3GPP TS 38.215: \"NR; Physical layer measurements\".\n[43]\t3GPP TS 28.532: \"Management and orchestration; Generic management services\".\n[44]\t3GPP TS 38.305: \"NG Radio Access Network (NG-RAN); Stage 2 functional specification of User Equipment (UE) positioning in NG-RAN\".\n[45]\tLanguage Guide (Proto 3): .\n[46]\t3GPP TS 37.483: \"NG-RAN; E1 Application Protocol (E1AP)\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TS 32.421 [2], 3GPP TS 32.422 [3] , TS 23.501 [18], TS 38.300 [20], TS 38.401 [22], TS 37.320 [32] and the following apply.\nMinimum Level of detail: Allows for retrieval of a decoded subset of the IEs contained in the signalling interface messages.\nMedium Level of detail: Allows for retrieval of the decoded subset of the IEs contained in the signalling interface messages in the Minimum Level plus a selected set of decoded radio measurement IEs.\nMaximum Level of detail: Allows for retrieval of signalling interface messages within the Trace Scope in encoded format.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in  TR 21.905 [4],  TS 32.101 [1], TS 23.501 [18], TS 38.300 [20] and TS 38.401 [22] and TS 37.320 [32] apply.\nNSA\tNon Stand Alone\nIDC\tIn-Device Coexistence\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "4\tTrace record contents",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The trace reference, trace type and operation system identification are all provided on trace activation. \nEach record may contain an MSC Server, MGW, SGSN, GGSN, S-CSCF, P-CSCF, UTRAN, HSS, MME, Serving GW, E-UTRAN, AUSF, AMF, NEF, NRF, NSSF, PCF, SMF, SMSF, UDM, UPF, AF and , ng-eNB, gNB-CU-CP, gNB-CU-UP and gNB-DU event record. A key is included in the table indicating whether or not the field is mandatory.\nThe following table shows the template for trace record description for minimum and medium trace depth:\n\n\nInterface name: Contains the name of the interface, where the IE is available.\nProtocol name: Contains the protocol name on the interface, where the IE is available.\nIE name: The name of the Information Element, which should be decoded.\nMessage name(s): The name of the message(s), where the IE is included.\nTrace depth: Shows in which trace depth the IE should be recorded. It also classifies whether the IE is mandatory in the trace record or not (M, O or X: meaning described in the previous table)\n\n\nNOTE:\tAny kind of comments related to the IE can be made here. Also this is the placeholder for referencing the relevant 3GPP specifications, which define the IE.\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 1,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 2,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tMSC Server Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for MSC Server. \nThe trace record is the same for management based activation and for signalling based activation.\nFor MSC Server, the Minimum level of detail shall be supported.\n\n",
+                    "tables": [
+                        {
+                            "description": "The following table shows the trace record content for MSC Server. \nThe trace record is the same for management based activation and for signalling based activation.\nFor MSC Server, the Minimum level of detail shall be supported.",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tMGW Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table describes the trace record content for minimum and medium trace depth for Megaco protocol in the Media GateWay (MGW).\n\n",
+                    "tables": [
+                        {
+                            "description": "The following table describes the trace record content for minimum and medium trace depth for Megaco protocol in the Media GateWay (MGW).",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tSGSN Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for SGSN.\nThe trace record is the same for management based activation and for signalling based activation.\nFor SGSN, the Minimum level of detail shall be supported.\n\n",
+                    "tables": [
+                        {
+                            "description": "For SGSN, the Minimum level of detail shall be supported.",
+                            "table number": 5,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.5\tGGSN Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table describes the trace record content for minimum and medium trace depth for GGSN. \nThe record content is same for management based activation and for signalling based activation. \nFor GGSN, the Minimum level of detail shall be supported.\n\n",
+                    "tables": [
+                        {
+                            "description": "The following table describes the trace record content for minimum and medium trace depth for GGSN. \nThe record content is same for management based activation and for signalling based activation. \nFor GGSN, the Minimum level of detail shall be supported.",
+                            "table number": 6,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.6\tUTRAN Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For RNC, the Maximum level of detail shall be supported.\nTable 4.6.1 : UTRAN Trace Record Content\n\nDefinitions:\n\n- rncID of traced RNC:\tThe id of the RNC traced, e.g. the RNC which handles the connection of the traced MS, during the Trace Recording Session.\n- rncID of neighbouring RNC:\tThe ids of all Neighbouring RNC involved in the Iur procedures during the Trace Recording Session.\n- cId:\tThe cIds of all cells involved in the Iub and Iur procedures during the Trace Recording Session. The cId is provided with each NBAP and RNSAP messages\n\t\tfor which the cId is relevant.\n- rabId:\tSpecific recorded IE that contains the RAB identifier.\n- rlId:\tSpecific recorded IE that contains the Radio Link identifier\n- rbId:\tSpecific recorded IE that contains the Radio Bearer identifier\n- Message name:\tName of the protocol message\n- Record extensions:\tA set of manufacturer specific extensions to the record\n- Decoded:\tSome IEs shall be decoded (cf. detailed list in table 4.6.2. depending on trace \tdepth)\n- ASN.1:\tMessages in encoded format\n\nTable 4.6.2 : trace record description for minimum and medium trace depth\n\nConstraints:\nThe following optional IE names shall  be supported for corresponding  modes as described below:\nFor FDD mode:\n- Primary CPICH scrambling code of added cell\n- Primary CPICH scrambling code of removed cell\n- CPICH Ec/No\n- CPICH RSCP\n- UL Scrambling Code\n- Minimum UL channelization length\n- UARFCN downlink (Nd)\n- UARFCN uplink (Nu)\n- DL Scrambling Code\n- DL Code information\n- DL channelization code\n- Received total wide band power.\n\nFor TDD mode:\n- PCCPCH RSCP\n- Cell parameters Id\n- UARFCN (Nt)\n- Timeslot list\n- UL Timeslot information\n- DL Timeslot information\n- UL Time Slot ISCP Info.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.6.1 : UTRAN Trace Record Content",
+                            "table number": 7,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 4.6.2 : trace record description for minimum and medium trace depth",
+                            "table number": 8,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.7\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.8\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.9\tHSS Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table contains the Trace record description for the minimum and medium trace depth for MAP and Diameter protocol for the C, D, Gr, Gc,Cx, Sh, S6a, N70, N71 and NU1 interfaces in the HSS. \nThe trace record is the same for management based activation and for signalling based activation.\n\n",
+                    "tables": [
+                        {
+                            "description": "The following table contains the Trace record description for the minimum and medium trace depth for MAP and Diameter protocol for the C, D, Gr, Gc,Cx, Sh, S6a, N70, N71 and NU1 interfaces in the HSS. \nThe trace record is the same for management based activation and for signalling based activation.",
+                            "table number": 9,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.10\tBM-SC Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table describes the trace record content for minimum and medium trace depth for BM-SC.\nThe record content is same for management based activation and for signalling based activation.\nFor BM-SC, the Minimum level of detail shall be supported.\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 10,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.11\tPGW Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for PGW.\nThe trace record is the same for management based activation and for signalling based activation.\n\nPGW shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.11.1 : PGW Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\nTable 4.11.2 : PGW  trace record description for minimum and medium trace depth\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.11.1 : PGW Trace Record Content",
+                            "table number": 11,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 12,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.12\tMME Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for MME.\nThe trace record is the same for management based activation and for signalling based activation.\n\nMME shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.12.1 : MME Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n\nTable 4.12.2 : MME  trace record description for minimum and medium trace depth\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.12.1 : MME Trace Record Content",
+                            "table number": 13,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 14,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.13\tE-UTRAN Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For eNB, the Maximum level of detail shall be supported. The trace record is the same for management based activation and for signalling based activation.\nTable 4.13.1 : E-UTRAN Trace Record Content\n\nNOTE:\tFor the security keys in IEs or part of IEs that are containing security keys used by the eNB (e.g. KeNB), the value 0 shall be written in the trace file.\nDefinitions:\n\nGlobal eNBID of traced eNB:\tThe id of the eNB traced, e.g. the eNB which handles the connection of the traced MS, during the Trace Recording Session. The id corresponds to the “Global eNB ID”, as defined in [16] and [17].\nGlobal eNBID of neighbouring eNB:\tThe ids of all Neighbouring eNB involved in the X2 procedures during the Trace Recording Session. The id corresponds to the “Global eNB ID”, as defined in [16] and [17].\nGlobal gNBID of connected gNB-CU-CP node over X2 (for NSA):\tThe ids of all connected NSA nodes involved during the Trace Recording Session. The id corresponds to the “Global gNB ID”, as defined in [16] and [17].\n\ncell Id:\tThe cell Ids of the cells involved in the X2 procedures during the Trace Recording Session. The cell Ids is provided with each X2AP messages for which the cId is relevant.\nE-RABId:\tSpecific recorded IE that contains the E-RAB identifier.\nMessage name:\tName of the protocol message\nRecord extensions:\tA set of manufacturer specific extensions to the record\nDecoded:\tSome IEs shall be decoded (cf. detailed list in table 4.6.2. depending on trace \tdepth)\nASN.1:\tMessages in encoded format\nTable 4.13.2 : trace record description for minimum and medium trace depth\n\nConstraints:\nThe condition for capturing the following Information Element is that Cell Traffic Trace is used:\n-\tWait time from RRC protocol.\n-\tEstablishment Cause from RRC protocol.\n-\tSelected PLMN-Identity from RRC protocol.\n-\tRegisteredMME from RRC protocol.\n-\tE-UTRAN CGI from S1 interface from the following messages: Initial UE message, Handover Notify.\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.13.1 : E-UTRAN Trace Record Content",
+                            "table number": 15,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 4.13.2 : trace record description for minimum and medium trace depth",
+                            "table number": 16,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.14\tSGW Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for SGW.\nThe trace record is the same for management based activation and for signalling based activation.\n\nSGW shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.14.1 : SGW Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n\nTable 4.14.2 : SGW  trace record description for minimum and medium trace depth\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.14.1 : SGW Trace Record Content",
+                            "table number": 17,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 18,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.15\tEIR Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table contains the Trace record description for the minimum and medium trace depth for MAP(F), S13, S, MAP(Gf)  interfaces in the EIR. \nThe trace record is the same for management based activation and for signalling based activation.\n\n",
+                    "tables": [
+                        {
+                            "description": "The following table contains the Trace record description for the minimum and medium trace depth for MAP(F), S13, S, MAP(Gf)  interfaces in the EIR. \nThe trace record is the same for management based activation and for signalling based activation.",
+                            "table number": 19,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.16\tLTE MDT Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.16.1\tTrace Record for Immediate MDT measurements",
+                            "text_content": "The following table contains the Trace record description for LTE immediate MDT measurements. \nThe trace record is the same for management based activation and for signalling based activation.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The following table contains the Trace record description for LTE immediate MDT measurements. \nThe trace record is the same for management based activation and for signalling based activation.",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.16.2\tTrace Record for UE location information",
+                            "text_content": "The following table contains the Trace record description for LTE UE location information. The trace record is the same for management based activation and for signalling based activation.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The following table contains the Trace record description for LTE UE location information. The trace record is the same for management based activation and for signalling based activation.",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "4.17\tUMTS MDT Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.17.1\tTrace Record for Immediate MDT measurements",
+                            "text_content": "The following table contains the Trace record description for UMTS immediate MDT measurements. \nThe trace record is the same for management based activation and for signalling based activation.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The following table contains the Trace record description for UMTS immediate MDT measurements. \nThe trace record is the same for management based activation and for signalling based activation.",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.17.2\tTrace Record for UE location information",
+                            "text_content": "The following table contains the Trace record description for UMTS UE location information. The trace record is the same for management based activation and for signalling based activation.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The following table contains the Trace record description for UMTS UE location information. The trace record is the same for management based activation and for signalling based activation.",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "4.18\tAMF Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for AMF.\nThe trace record is the same for management based activation and for signalling based activation.\nAMF shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.18.1 : AMF Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.18.1 : AMF Trace Record Content",
+                            "table number": 24,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.19\tSMF Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for SMF.\nThe trace record is the same for management based activation and for signalling based activation.\nSMF shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.19.1 : SMF Trace Record Content\n\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.19.1 : SMF Trace Record Content",
+                            "table number": 25,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.20\tPCF Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for PCF.\nThe trace record is the same for management based activation and for signalling based activation.\nPCF shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.20.1 : PCF Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.20.1 : PCF Trace Record Content",
+                            "table number": 26,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.21\tAUSF Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for AUSF.\nThe trace record is the same for management based activation and for signalling based activation.\nAUSF shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.21.1 : AUSF Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.21.1 : AUSF Trace Record Content",
+                            "table number": 27,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.22\tNEF Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for NEF.\nThe trace record is the same for management based activation and for signalling based activation.\nNEF shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.22.1 : NEF Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.22.1 : NEF Trace Record Content",
+                            "table number": 28,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.23\tNRF Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for NRF.\nThe trace record is the same for management based activation and for signalling based activation.\nNRF shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.23.1 : NRF Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.23.1 : NRF Trace Record Content",
+                            "table number": 29,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.24\tNSSF Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for NSSF.\nThe trace record is the same for management based activation and for signalling based activation.\nNSSF shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.24.1 : NSSF Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.24.1 : NSSF Trace Record Content",
+                            "table number": 30,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.25\tUDM Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for UDM.\nThe trace record is the same for management based activation and for signalling based activation.\nUDM shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.25.1 : UDM Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.25.1 : UDM Trace Record Content",
+                            "table number": 31,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.26\tUPF Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for UPF.\nThe trace record is the same for management based activation and for signalling based activation.\nUPF shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.26.1 : UPF Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.26.1 : UPF Trace Record Content",
+                            "table number": 32,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.27\tSMSF Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for SMSF.\nThe trace record is the same for management based activation and for signalling based activation.\nSMSF shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.27.1 : SMSF Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.27.1 : SMSF Trace Record Content",
+                            "table number": 33,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.28\tAF Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for AF.\nThe trace record is the same for management based activation and for signalling based activation.\nAF shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.28.1 : AF Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.28.1 : AF Trace Record Content",
+                            "table number": 34,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.29\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.30\tgNB-CU-CP Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for gNB-CU-CP network element\nThe trace record is the same for management based activation and for signalling based activation.\ngNB-CU-CP shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.30.1 : gNB-CU-CP Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\nTable 4.30.2 : trace record description for minimum and medium trace depth\nConstraints:\nThe condition for capturing the following Information Element is that Cell Traffic Trace is used:\n-\tWait time from RRC protocol.\n-\tEstablishment Cause from RRC protocol.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.30.1 : gNB-CU-CP Trace Record Content",
+                            "table number": 35,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 4.30.2 : trace record description for minimum and medium trace depth",
+                            "table number": 36,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.31\tgNB-CU-UP Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for gNB-CU-UP network element\nThe trace record is the same for management based activation and for signalling based activation.\ngNB-CU-UP shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.31.1 : gNB-CU-UP Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.31.1 : gNB-CU-UP Trace Record Content",
+                            "table number": 37,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.32\tgNB-DU Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for gNB-DU network element\nThe trace record is the same for management based activation and for signalling based activation.\ngNB-DU shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.32.1 : gNB-DU Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.32.1 : gNB-DU Trace Record Content",
+                            "table number": 38,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.33\tng-eNB Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following table shows the trace record content for ng-eNB network element\nThe trace record is the same for management based activation and for signalling based activation.\nng-eNB shall support at least one of the following trace depth levels – Maximum, Medium or Minimum.\nTable 4.33.1 : ng-eNB Trace Record Content\nEncoded* - the messages are left encoded in the format it was received.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.33.1 : ng-eNB Trace Record Content",
+                            "table number": 39,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.34\tNR MDT Trace Record Content",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.34.1\tTrace Record for Immediate MDT measurements",
+                            "text_content": "The following table contains the Trace record description for NR immediate MDT measurements. \nThe trace record is the same for management based activation and for signalling based activation.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The following table contains the Trace record description for NR immediate MDT measurements. \nThe trace record is the same for management based activation and for signalling based activation.",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.34.2\tTrace Record for UE location information",
+                            "text_content": "The following table contains the Trace record description for NR UE location information. The trace record is the same for management based activation and for signalling based activation.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The following table contains the Trace record description for NR UE location information. The trace record is the same for management based activation and for signalling based activation.",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.34.3\tTrace Record for in-device coexistence interference",
+                            "text_content": "The following table contains the Trace record description for NR in-device coexistence interference. The trace record is the same for management based activation and for signalling based activation.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The following table contains the Trace record description for NR in-device coexistence interference. The trace record is the same for management based activation and for signalling based activation.",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tTrace format",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Trace data reporting consists of trace records that may be written to files or output to streams.\nTrace Records are used to carry the captured trace data being reported or to convey various administrative messages associated with the data collection. Administrative messages are intended for the consumer of files from the TCE for the file reporting case, or for the MnS Consumer in the case of stream output.  Cases where MnS Consumer may transfer data or convey administrative messages to the MnS Producer are out of scope of the present document.\nEncoding of trace records may be performed using XML (binary form) or GPB (Google Protocol Buffers).\nGPB encoded trace records are preceded by length indicator to facilitate decoding by the receiver. Streamed trace records use a transport protocol to facilitate framing of the messages.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tTrace Record",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tIntroduction",
+                            "text_content": "GPB encoded trace records are formatted in GPB version 3 (proto3) [45]. Individual Trace records are preceded with a GPB variable length 32 bit integer that indicates the size of the GPB encoded trace record.\nLogical Layout\n\nThe Streaming Trace Record comprises a header, payload and an optional common trace payload that contains the trace administrative message as shown in Figure 5.2.1-1.\n\nThe figure depicts a streaming trace record, illustrating the flow of data in a 5G network. It shows the various stages of data transmission, including the base station (gNB), user equipment (UE), and the network elements such as optical line terminals (OLTs) and distributed nodes. The layered design of the network aligns with SDN principles, allowing for efficient data flow and failover reliability.\nFigure 5.2.1.1: Streaming Trace Record\nThe format of the Trace Record Header in  Trace Record specified in the clause 5.2.2. The format of the Payload and the Common Trace Payload carrying Trace Administrative Message in Streaming Trace Record specified in the clause 5.2.3 and 5.2.4 respectively.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Logical Layout",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.2\tTrace Record Header",
+                            "text_content": "The trace record header contains the common fields as specified in the Table 5.2.2-1, in addition it may also contain vendor specific extensions.\nTable 5.2.2.1 : Common fields in the trace record header\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.2.1 : Common fields in the trace record header",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.3\tTrace Record Payload",
+                            "text_content": "The streaming trace record payload carries the captured Trace data being reported by the MnS Producer to the MnS Consumer and comprises the fields defined in Table 5.2.3-1.\nTable 5.2.3.1 : Fields in the trace record payload\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.3.1 : Fields in the trace record payload",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.4\tTrace administrative messages",
+                            "text_content": "The following administrative messages are defined for trace management purposes:\n- Trace Session Start\n- Trace Session Stop\n- Trace Recording Session Start\n- Trace Recording Session Stop\n- Trace Stream Heartbeat (streaming only)\n- Trace Session Not Started\n- Trace Recording Session Not Started\n- Trace Recording Session Dropped Events\n- Trace File Open (file based only)\n- Trace File Close (file based only)\n- Trace File Abnormal Closed (file based only)\n- Trace Recording Session Throttled Start\n- Trace Recording Session Throttled Stop\n\nThe Trace Session Start administrative message shall be used to convey the start of a Trace Session (see 3GPP TS 32.422 [3] for details). The  Trace Record in this case may have zero-size payload. The value of the traceRecordTypeId field in the  Trace Record Header is set to \"TRACE_SESSION_START\". The start trace session administrative message is not used for signalling based activation as there is no separate trigger for starting the session and the trace recording session.\nThe Trace Session Stop administrative message shall be used to convey the stop of a Trace Session (see 3GPP TS 32.422 [3] for details). The Trace Record in this case may have zero-size payload. The value of the traceRecordTypeId field in the Trace Record Header is set to \"TRACE_SESSION_STOP\".The stop trace session administrative message is not used for signalling based activation as there is no separate trigger for stoping the session and the trace recording session.\nThe Trace Recording Session Start administrative message shall be used to convey the start of a Trace Recording Session (see 3GPP TS 32.422 [3] for details). The Trace Record in this case may have zero-size payload. The value of the traceRecordTypeId field in the Streaming Trace Record Header is set to \"TRACE_ RECORDING_SESSION_START\".\nThe Trace Recording Session Stop administrative message shall be used to convey the stop of a Trace Recording Session (see 3GPP TS 32.422 [3] for details). The Trace Record in this case may have zero-size payload in the normal case, For the abnormal case, the trace record should include the reason for the session stop. One of the reasons could be overloaded. The value of the traceRecordTypeId field in the Streaming Trace Record Header is set to \"TRACE_ RECORDING_SESSION_STOP\".\nThe Trace Stream Heartbeat administrative message may be used in absence of the captured trace data and other administrative messages from the MnS Producer to the MnS Consumer. The message is intended to indicate that a streaming trace connection is alive and does not indicate whether there is an ongoing Trace Session or not.\nTransport protocol level keep-alive mechanisms may be used as an alternative (e.g. use of Ping and Pong WebSocket frames in IETF RFC 6455 [40]) and are out of scope of the present document.\nThe Trace Recording Session Not Started administrative message shall be used to convey that a trace recording session could not be started. For example, the number of simultaneous UE traces may be limited so that UE traces are not started when this limit is reached. It includes the detailed reason as string in the payload.\nThe Trace Recording Session Dropped Events administrative message shall be used to convey the number of dropped trace records. The message provides indication that trace records are dropped from a particular trace recording session. It includes the number of trace records dropped in the payload.\nThe Trace File Open administrative message shall be used to convey that trace file is opened for trace recording at the start of ROP period. The message provides indication when a file is opened.\nThe Trace File Close administrative message shall be used to convey that trace file is closed for trace recording at the end of ROP period. The message provides indication when a file is closed.\nThe Trace File Abnormal Closed administrative message shall be used to convey that trace file is closed abnormally. For example, the trace file is closed due to resource constraint such as out of memory.\nThe Trace Recording Session Throttled Start administrative message shall be used to convey that the lower priority trace records are missing. A possible reason is due to overload condition for a Trace Recording Session. The Trace Record in this case may have zero-size payload or include which kind of contents are missing. The value of the traceRecordTypeId field in the Trace Record Header is set to \"TRACE_ RECORDING_SESSION_THROTTLED_START\".\nThe Trace Recording Session Throttled Stop administrative message shall be used to convey that throttling is cleared for a Trace Recording Session. The Trace Record in this case may have zero-size payload. The value of the traceRecordTypeId field in the Trace Record Header is set to \"TRACE_ RECORDING_SESSION_THROTTLED_STOP\".\nThe Trace Session Not Started administrative message shall be used to convey that a trace session could not be started.  It includes the detailed reason as string in the payload.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.5\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.6\tStreaming Trace Format",
+                            "text_content": "When streaming trace data individual trace records and their associated length delimeter are carried in the payload of the transport protocol messages Figure 5.2.6.1 illustrates the concept.\nThe figure depicts the transport of trace records in a 5G network, illustrating the various paths through which data is transmitted. Key components include the base station (gNB), user equipment (UE), and scatterers. The diagram highlights the use of beamforming techniques to mitigate interference, ensuring reliable communication.\nFigure 5.2.6.1: Transport of Trace Records\nAs depicted in the Figure 5.2.6.1, each protocol-specific message delivers one or more trace records from the MnS Producer to the MnS Consumer. The header of the transport protocol message is protocol-specific. It may contain protocol specific extensions and/or options related to the transport stream. The payload of the transport protocol carries one of more Trace Records. The format of the individual Trace Records is specified in clause 5.2.\nThe procedures related to the connection establishment and meta-data exchange between the Streaming Trace data reporting MnS Producer and MnS Consumer are out of scope of the present document and are specified in TS 28.532 [43]\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.0\tIntroduction",
+            "description": "This annex describes the format of trace or MDT result files. Those files are to be transferred from the network (NEs or EM) to the NM.\nThe following conditions have been considered for the definition of this file format:\n-\tThe trace data volume and trace duration is not predictable. Depending on the data retrieval and storage mechanisms, several consecutive trace result files could be generated for a single traced call. The file naming convention shall allow rebuilding the temporal file sequences.\n-\tSince the files are transferred via a machine-machine interface, the files should be machine-readable using standard tools.\n-\tThe file format should be independent from the data transfer protocol used to carry the file from one system to another.\n-\tThe file format should be generic across UMTS and EPS systems.\n-\tThe file format should be flexible enough to support further trace data types and decoded IEs, as well as vendor specific trace data.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.1\tParameter description and mapping table",
+            "description": "The following table describes the XML trace file parameters.\nTable : XML trace file parameters\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table : XML trace file parameters",
+                    "table number": 46,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tXML file format definition",
+            "description": "For encoding of the information content, XML (see Extensible Markup Language (XML) 1.0, W3C Recommendation [5] , [6], [7], [8] and [9]) will be used. The XML schema contains the mark-up declarations that provide a grammar for the trace file format. The XML schema is defined below.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.2.1\tXML trace/MDT file diagram",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following figure A.2.1-1 describes the XML element structure of a trace/MDT XML file.\nThe figure depicts a detailed XML trace /MDT file diagram, illustrating the communication between different components in a network. The diagram includes various nodes, such as routers, switches, and servers, as well as links between them. The use of different colors and shapes helps to distinguish between different types of data and communication paths. The diagram also includes annotations and labels to indicate the flow of data and the relationships between different components. Overall, the figure provides a comprehensive overview of the network's structure and communication flow.\nFigure A.2.1-1 : XML trace/MDT file diagram\nNOTE:\tIn case a trace only recording session, the elements/attributes (such as \"meas\") which are specific to MDT but not used for trace should be excluded from the file; In case a MDT only recording session, the elements/attributes (such as \"msg\") which are specific to trace but not used for MDT should be excluded from the file: In case of a combined trace and MDT recording session, all the elements/attributes are included in the file.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.2\tTrace data file XML schema",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following XML schema traceData.xsd is the schema for trace or MDT data XML files:\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!--\n3GPP TS 32.423 Subscriber and Equipment Trace or MDT data definition and management\nTrace data file XML schema\ntraceData.xsd\n-->\n<schema\ntargetNamespace=\n\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData\"\nelementFormDefault=\"qualified\"\nxmlns=\"http://www.w3.org/2001/XMLSchema\"\nxmlns:td=\n\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData\"\n>\n<!-- XML types specific for Trace data file -->\n<complexType name=\"TraceReference\">\n\t<sequence>\n\t\t<element name=\"MCC\" type=\"td:MCCtype\"/>\n<element name=\"MNC\" type=\"td:MNCtype\"/>\n<element name=\"TRACE_ID\" type=\"td:Trace_IDtype\"/>\n</sequence>\n</complexType>\n<simpleType name=\"traceRecSessionRef\">\n<restriction base=\"hexBinary\">\n<maxLength value=\"2\"/>\n</restriction>\n</simpleType>\n\n<simpleType name=\"MCCtype\">\n<restriction base=\"string\">\n<pattern value=\"\\d{3}\"/>\n</restriction>\n</simpleType>\n<simpleType name=\"MNCtype\">\n<restriction base=\"positiveInteger\">\n<maxExclusive value=\"1000\"/>\n</restriction>\n</simpleType>\n<complexType name=\"PLMNtype\">\n<sequence>\n<element name=\"MCC\" type=\"td:MCCtype\"/>\n<element name=\"MNC\" type=\"td:MNCtype\"/>\n</sequence>\n</complexType>\n<simpleType name=\"Trace_IDtype\">\n<restriction base=\" hexBinary\">\n<length value=\"3\"/>\n</restriction>\n</simpleType>\n<!-- Trace data file root XML element -->\n<element name=\"traceCollecFile\">\n<complexType>\n<sequence>\n<element name=\"fileHeader\">\n<complexType>\n<sequence>\n<element name=\"fileSender\">\n<complexType>\n<attribute name=\"elementDn\" type=\"string\" use=\"optional\"/>\n<attribute name=\"elementType\" type=\"string\" use=\"optional\"/>\n</complexType>\n</element>\n<element name=\"traceCollec\">\n<complexType>\n<attribute name=\"beginTime\" type=\"dateTime\" use=\"required\"/>\n</complexType>\n</element>\n<element name=\"pOPLMN\" type=\"td:PLMNtype\" minOccurs=\"0\" maxOccurs=\"1\"/>\t\t\t\t\t\t</sequence>\n<attribute name=\"fileFormatVersion\" type=\"string\" use=\"required\"/>\n<attribute name=\"vendorName\" type=\"string\" use=\"optional\"/>\n</complexType>\n</element>\n<element name=\"traceRecSession\" minOccurs=\"0\" maxOccurs=\"unbounded\">\n<complexType>\n<sequence>\n<element name=\"ue\" minOccurs=\"0\">\n<complexType>\n<attribute name=\"idType\" type=\"string\" use=\"required\" />\n<attribute name=\"idValue\" type=\"long\" use=\"required\"/>\n</complexType>\n</element>\n<!-- Element specific to trace data file -->\n<element name=\"msg\" minOccurs=\"0\" maxOccurs=\"unbounded\">\n<complexType>\n<sequence>\n<element name=\"initiator\" minOccurs=\"0\">\n<complexType>\n<simpleContent>\n<extension base=\"string\">\n<attribute name=\"type\" type=\"NCName\" use=\"optional\"/>\n</extension>\n</simpleContent>\n</complexType>\n</element>\n<element name=\"target\" minOccurs=\"0\" maxOccurs=\"unbounded\">\n<complexType>\n<simpleContent>\n<extension base=\"string\">\n<attribute name=\"type\" type=\"NCName\" use=\"optional\"/>\n</extension>\n</simpleContent>\n</complexType>\n</element>\n<element name=\"proxy\" minOccurs=\"0\" maxOccurs=\"unbounded\">\n<complexType>\n<simpleContent>\n<extension base=\"string\">\n<attribute name=\"type\" type=\"NCName\" use=\"optional\"/>\n</extension>\n</simpleContent>\n</complexType>\n</element>\n\n<element name=\"rawMsg\" minOccurs=\"0\">\n<complexType>\n<simpleContent>\n<extension base=\"hexBinary\">\n<attribute name=\"protocol\" type=\"string\" use=\"required\"/>\n<attribute name=\"version\" type=\"string\" use=\"required\"/>\n<attribute name=\"NumOfTargets\" type=\"integer\" use=\"optional\"/>\n</extension>\n</simpleContent>\n</complexType>\n</element>\n<choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element ref=\"td:ie\"/>\n<element ref=\"td:ieGroup\"/>\n</choice>\n</sequence>\n<attribute name=\"function\" type=\"string\" use=\"required\"/>\n<attribute name=\"name\" type=\"string\" use=\"required\"/>\n<attribute name=\"changeTime\" type=\"float\" use=\"required\"/>\n<attribute name=\"vendorSpecific\" type=\"boolean\" use=\"required\"/>\n</complexType>\n</element>\n<!-- Element specific to MDT data file -->\n<element name=\"meas\" minOccurs=\"0\" maxOccurs=\"unbounded\">\n<complexType>\n<simpleContent>\n<extension base=\"string\">\n<attribute name=\"name\" type=\"string\" use=\"required\"/>\n\n<attribute name=\"changeTime\" type=\"float\" use=\"required\"/>\n<attribute name=\"vendorSpecific\" type=\"boolean\" use=\"required\"/>\n<attribute name=\"direction\" type=\"string\" use=\"optional\"/>\n<attribute name=\"drbId\" type=\"integer\" use=\"optional\"/>\n<attribute name=\"targetCell\" type=\"string\" use=\"required\"/>\n<attribute name=\"ueLocation\" type=\"string\" use=\"optional\"/>\n</extension>\n</simpleContent>\n</complexType>\n</element>\n<element name=\"traceSessionRef\" type=\"td:TraceReference\"/>\n</sequence>\n<attribute name=\"dnPrefix\" type=\"string\" use=\"optional\"/>\n<attribute name=\"traceRecSessionRef\" type=\"td:traceRecSessionRef\" use=\"required\"/>\n<attribute name=\"stime\" type=\"dateTime\" use=\"optional\"/>\n</complexType>\n</element>\n</sequence>\n</complexType>\n</element>\n<!-- Additional supporting XML elements -->\n<element name=\"ieGroup\">\n<complexType>\n<choice minOccurs=\"0\" maxOccurs=\"unbounded\">\n<element ref=\"td:ie\"/>\n<element ref=\"td:ieGroup\"/>\n</choice>\n<attribute name=\"name\" type=\"string\" use=\"optional\"/>\n<attribute name=\"value\" type=\"string\" use=\"optional\"/>\n</complexType>\n</element>\n<element name=\"ie\">\n<complexType>\n<simpleContent>\n<extension base=\"string\">\n<attribute name=\"name\" type=\"string\" use=\"required\"/>\n</extension>\n</simpleContent>\n</complexType>\n</element>\n</schema>\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "B.0\tIntroduction",
+            "description": "This annex describes naming conventions of files containing trace results and the procedure to transfer these files from the network to the NM.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.1\tFile naming convention",
+            "description": "The following convention shall be applied for trace result file naming:\n<Type><Startdate>.<Starttime>-<SenderType>.<SenderName>.[<TraceReference>].[<TraceRecordingSessionRef>]\n1)\tThe Type field indicates if the file contains trace data for single or multiple calls, where:\n-\t\"A\" means single Trace Recording Session, single sender NE;\n-\t\"B\" means multiple Trace Recording Sessions, single sender NE;\n-\t\"C\" means IMSI/IMEI (SV)  information for cell traffic trace or IMEI-TAC if area based MDT trace is involved (3GPP TS 32.422 [3] clause 4.4) .\n\n2)\tThe Startdate field indicates the date of the first record in the trace file. The Startdate field is of the form YYYYMMDD, where:\n-\tYYYY is the year in four-digit notation;\n-\tMM is the month in two digit notation (01 - 12);\n-\tDD is the day in two digit notation (01 - 31).\n3)\tThe Starttime field indicates the time of the first record in the trace file. The Starttime field is of the form HHMMSSshhmm, where:\n-\tHH is the two digit hour of the day (local time), based on 24 hour clock (00 - 23);\n-\tMM is the two digit minute of the hour (local time) (00 – 59);\n-\tSS is the two digit second of the minute (local time) (00 – 59);\n-\ts is the sign of the local time differential from UTC (+ or -), in case the time differential to UTC is 0 then the sign may be arbitrarily set to \"+\" or \"-\";\n-\thh is the two digit number of hours of the local time differential from UTC (00-23);\n-\tmm is the two digit number of minutes of the local time differential from UTC (00-59).\n4)\tSenderType field is the type of NE defined by IOC attribute managedElementType in 3GPP TS 32.622 [12] that recorded and sent the trace file; SenderName field is the identifier of the NE that recorded and sent the trace file.\n5)\tTraceRecordingSessionReference field is set only if the type field is A, and is represented in hexa-decimal format. TraceRecordingSessionReference is a 4 digit hexadecimal number and will not include filler digits for values less than 4 digits in length. All hexadecimal letters (A thru F) are capitalized.\n6)\tTraceReference field is set if the type field is A. For type B the Trace Reference is optional and will be used when one trace file is created per trace session with multiple trace recording session. Trace Reference is represented in hexadecimal format. Trace Reference as defined in 3GPP TS 32.422 [3] is composed of PLMN ID (MCC, MNC) and Trace ID. The PLMN identity consists of 3 digits for MCC followed by either - a filler digit plus 2 digits from MNC (in case of 2 digit MNC) or 3 digits from MNC (in case of a 3 digit MNC). MCC and MNC are in BCD format.\nExample: If MCC: 405, MNC: 139\noctet 1: 0x04 (MCC digit 2, MCC digit 1)\noctet 2: 0x15 (MNC digit 1, MCC digit 3)\noctet 3: 0x93 (MNC digit 3, MNC digit 2)\nAlso if the MNC is 2 digits (MCC: 405 and MNC 39)\noctet 1: 0x04 (MCC digit 2, MCC digit 1)\noctet 2: 0xF5 (MNC digit 1, MCC digit 3)\noctet 3: 0x93 (MNC digit 3, MNC digit 2)\n7)\tTrace Reference is set if the type field is C.\nSee bullet 6 above for details regarding the representation of the Trace Reference.Some examples describing file naming convention:\n1)\tfile name:\tA20090928.231500+0200-MME.MME5. 13F23200056.125,\nmeaning:\tfile produced by MME< MME5> on September 28, 2009, first trace record at 23:15:00 local time with a time differential of +2 hours against UTC. The file contains trace data for the Trace Session with the Trace reference 13F232000056 (where MCC is 312, MNC is 23, and Trace ID is 000056, all in hexadecimal format) and for the Trace Recording Session with the reference 125.\n2)\tfile name:\tB20030115.170000-0300-RNC.RNC02,\nmeaning: file produced by RNC<RNC02> on January 15, 2003, first trace record at 17:00:00 local time with a time differential of -3 hours against UTC. The file contains trace data for several Trace Recording Sessions.\n3)\tfile name:\tB20030115.170000-0300-RNC.RNC02. 4358070034D7,\nmeaning: file produced by RNC<RNC02> on January 15, 2003, first trace record at 17:00:00 local time with a time differential of -3 hours against UTC. The file contains trace 4358070034D7 (where MCC is 348, MNC is 570, and Trace ID is 0034D7) data for Trace reference  and several Trace Recording Sessions.\n4)\tfile name C20030115.170000-0300-MME.MME02. 26F452550021\nMeaning: file produced by MME<MME02> on January 15, 2003, first trace record at 17:00:00 local time with a time differential of -3 hours against UTC. The file contains IMSI/IMEI (SV) or IMEI-TAC information for one or more UEs traced at eNB with Trace Reference26F452550021 (where MCC is 624, MNC is 25, and Trace ID is 550021).\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.2\tFile transfer",
+            "description": "-\tData retrieval and storage mechanisms are vendor specific.\n-\tThere is no constraint on data retrieval periodicity.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.1\tFigure of Trace Reporting",
+            "description": "The following represents the trace reporting procedures.\n\n\nFigure C.1.1: Trace Reporting in System context A\n\n\n\n\nFigure C.1.2: Trace Reporting in System Context B\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "D.1\tExamples of trace XML file",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "D.1.1\tExample of XML trace file with the maximum level of details",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<traceCollecFile xmlns=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData http://www.3gpp.org/ftp/specs/archive/32_series/32423#traceData\">\n<fileHeader fileFormatVersion=\"32.423 V6.0\" vendorName=\"Company NN\">\n<pOPLMN>\n<MCC>460</MCC>\n<MNC>10</MNC>\n</pOPLMN>\n<fileSender elementDn=\"DC=a1.companyNN.com,SubNetwork=1, ManagedElement=RNC-1\" elementType=\"RNC\"/>\n<traceCollec beginTime=\"T09:30:47-05:00\"/>\n</fileHeader>\n<traceRecSession dnPrefix=\"DC=a1.companyNN.com,SubNetwork=1\" traceRecSessionRef=\" A1\" stime=\"T09:30:47-05:00\">\n<ue idType=\"IMSI\" idValue=\"32795\"/>\n<msg function=\"Iub\" name=\"Radio LinkSetup Request\" changeTime=\"0.005\" vendorSpecific=\"false\">\n<target type=\"Cell\">SubNetwork=1,ManagedElement=Cell-1</target>\n<rawMsg protocol=\"Nbap\" version=\"001\">A9FD64E</rawMsg>\n</msg>\n<traceSessionRef>\n<MCC>460</MCC>\n<MNC>10</MNC>\n<TRACE_ID>000122</TRACE_ID>\n</traceSessionRef>\n</traceRecSession>\n</traceCollecFile>\n\nAn additional example added;\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<traceCollecFile xmlns=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData http://www.3gpp.org/ftp/specs/archive/32_series/32423#traceData\">\n<fileHeader fileFormatVersion=\"32.423 V9.0\" vendorName=\"Company NN\">\n<pOPLMN>\n<MCC>460</MCC>\n<MNC>10</MNC>\n</pOPLMN>\n<fileSender elementDn=\"DC=a1.companyNN.com,SubNetwork=1, ManagedElement=MME-1 \" elementType=\"MME\"/>\n<traceCollec beginTime=\"T09:30:47-05:00\"/>\n</fileHeader>\n<traceRecSession dnPrefix=\"DC=a1.companyNN.com,SubNetwork=1\" traceRecSessionRef=\" B2\" stime=\"T09:30:47-05:00\">\n<ue idType=\"IMSI\" idValue=\"32795\"/>\n<msg function=\"S1AP\" name=\"Handover Request\" changeTime=\"0.005\" vendorSpecific=\"false\">\n<target type=\"Cell\">SubNetwork=1,ManagedElement=Cell-1</target>\n<target type=\"Cell\">SubNetwork=1,ManagedElement=Cell-2</target>\n<target type=\"Cell\">123.222.213.5 </target>\n<rawMsg protocol=\"S1AP\" version=\"001\" NumOfTargets=\"3\">A9FD64E12C</rawMsg>\n</msg>\n<traceSessionRef>\n<MCC>460</MCC>\n<MNC>10</MNC>\n<TRACE_ID>000122</TRACE_ID>\n</traceSessionRef>\n</traceRecSession>\n</traceCollecFile >\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "D.1.2\tExample of XML trace file with the minimum level of details",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<traceCollecFile xmlns=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"   xsi:schemaLocation=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData\">\n<fileHeader fileFormatVersion=\"32.423 V6.0\" vendorName=\"Company NN\">\n<pOPLMN>\n<MCC>460</MCC>\n<MNC>10</MNC>\n</pOPLMN>\n<fileSender elementDn=\"DC=a1.companyNN.com,SubNetwork=1, ManagedElement=RNC-1\" elementType=\"RNC\"/>\n<traceCollec beginTime=\"T09:30:47-05:00\"/>\n</fileHeader>\n<traceRecSession dnPrefix=\"DC=a1.companyNN.com,SubNetwork=1\" traceRecSessionRef=\"C3\" stime=\"T09:30:47-05:00\">\n<ue idType=\"IMSI\" idValue=\"32795\"/>\n<msg function=\"Iub\" name=\"Radio Link Setup Request\" changeTime=\"0.005\" vendorSpecific=\"false\">\n<target type=\"Cell\">SubNetwork=1,ManagedElement=Cell-1</target>\n<ie name=\"UL Scrambling Code\">54</ie>\n<ie name=\"UL SIR Target\">17.3</ie>\n<ie name=\"Min UL Channelisation Code Length\">8</ie>\n<ie name=\"Poncture Limit\">2</ie>\n<ieGroup name=\"RadioLink\" value=\"1\">\n<ie name=\"DL Scrambling Code\">1</ie>\n<ie name=\"DL Channelisation Code Number\">15</ie>\n<ie name=\"Maximum DL Power\">9.3</ie>\n<ie name=\"Minimum DL Power\">-10.1</ie>\n</ieGroup>\n</msg>\n<msg function=\"IuPs\" name=\"RAB Assignment Response\" changeTime=\"0.010\" vendorSpecific=\"false\">\n<ieGroup name=\"RAB\" value=\"1\">\n<ieGroup name=\"RAB Failed To Setup Or Modify\">\n<ie name=\"cause\">2</ie>\n</ieGroup>\n</ieGroup>\n</msg>\n<traceSessionRef>\n<MCC>460</MCC>\n<MNC>10</MNC>\n<TRACE_ID>000130</TRACE_ID>\n</traceSessionRef>\n</traceRecSession>\n</traceCollecFile>\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "D.1.3\tExample of XML trace file for IMSI information from the MME",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<traceCollecFile xmlns=http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData http://www.3gpp.org/ftp/specs/archive/32_series/32423#traceData\">\n<fileHeader fileFormatVersion=\"32.423 V8.0\" vendorName=\"Company NN\">\n<pOPLMN>\n<MCC>460</MCC>\n<MNC>10</MNC>\n</pOPLMN>\n<fileSender elementDn=\"DC=a1.companyNN.com,SubNetwork=1, ManagedElement=MME\" elementType=\"MME\"/>\n<traceCollec beginTime=\"2001-09-11T09:30:47-05:00\"/>\n</fileHeader>\n<traceRecSession dnPrefix=\"DC=a1.companyNN.com,SubNetwork=1\" traceRecSessionRef=\" A1\" stime=\"2001-09-11T09:30:47-05:00\">\n<ue idType=\"IMSI\" idValue=\"32795\"/>\n<traceSessionRef>\n<MCC>460</MCC>\n<MNC>10</MNC>\n<TRACE_ID>000130</TRACE_ID>\n</traceSessionRef>\n</traceRecSession>\n<traceRecSession dnPrefix=\"DC=a1.companyNN.com,SubNetwork=1\" traceRecSessionRef=\" B2\" stime=\"2001-09-11T09:30:47-05:00\">\n<ue idType=\"IMSI\" idValue=\"12345\"/>\n<traceSessionRef>\n<MCC>460</MCC>\n<MNC>10</MNC>\n<TRACE_ID>000150</TRACE_ID>\n</traceSessionRef>\n</traceRecSession>\n</traceCollecFile>\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "D.1.4\tExample of MDT XML file",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<traceCollecFile xmlns=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"   xsi:schemaLocation=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData\">\n<fileHeader fileFormatVersion=\"32.423 V6.0\" vendorName=\"Company NN\">\n<pOPLMN>\n<MCC>460</MCC>\n<MNC>10</MNC>\n</pOPLMN>\n<fileSender elementDn=\"DC=a1.companyNN.com,SubNetwork=1, ManagedElement=RNC-1\" elementType=\"RNC\"/>\n<traceCollec beginTime=\"T09:30:47-05:00\"/>\n</fileHeader>\n<traceRecSession dnPrefix=\"DC=a1.companyNN.com,SubNetwork=1\" traceRecSessionRef=\" A1\", stime=\"T09:30:47-05:00\">\n<ue idType=\"IMSI\" idValue=\"32795\"/>\n<meas name=\"RSRP\" changeTime=\"0.005\" vendorSpecific=\"false\" targetCell=\"Cell-1\"> 97 </meas>\n<meas name=\"RSRQ\" changeTime=\"0.010\" vendorSpecific=\"false\" targetCell=\"Cell-2\"> 34 </meas>\n<meas name=\"Power Headroom\" changeTime=\"0.015\" vendorSpecific=\"false\" targetCell=\"Cell-1\"> 5 </meas>\n<traceSessionRef>\n<MCC>460</MCC>\n<MNC>10</MNC>\n<TRACE_ID>000150</TRACE_ID>\n</traceSessionRef>\n</traceRecSession>\n</traceCollecFile>\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "D.1.5\tExample of XML trace file for RCEF report with the minimum level of details",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<traceCollecFile xmlns=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"   xsi:schemaLocation=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData\">\n<fileHeader fileFormatVersion=\"32.423 V6.0\" vendorName=\"Company NN\">\n<pOPLMN>\n<MCC>460</MCC>\n<MNC>10</MNC>\n</pOPLMN>\n<fileSender elementDn=\"DC=a1.companyNN.com,SubNetwork=1, ManagedElement=GNB-1\" elementType=\"GNB\"/>\n<traceCollec beginTime=\"2001-09-11T09:30:47-05:00\"/>\n</fileHeader>\n<traceRecSession dnPrefix=\"DC=a1.companyNN.com,SubNetwork=1\" traceRecSessionRef=\"C3\" stime=\"2001-09-11T09:30:47-05:00\">\n<ue idType=\"IMSI\" idValue=\"32795\"/>\n<msg function=\"Uu\" name=\"RRC Connection Establishment Failure Report\" changeTime=\"0.005\" vendorSpecific=\"false\">\n<target type=\"Cell\">SubNetwork=1,ManagedElement=Cell-1</target>\n<ieGroup name=\"Measurement Result Failed Cell\" value=\"1\">\n<ieGroup name=\"CGI Info\" value=\"1\">\n<ieGroup name=\"PLMN Identity\" value=\"1\">\n<ie name=\"MCC\">460</ie>\n<ie name=\"MNC\">490</ie>\n</ieGroup>\n<ie name=\"Cell Identity\">\"Cell-1\"</ie>\n</ieGroup>\n<ieGroup name=\"Measurement Result\" value=\"1\">\n<ieGroup name = \"Cell Results\" value=\"1\">\n<ieGroup name=\"SSB Cell Results\" value=\"1\">\n<ie name=\"rsrp\">102</ie>\n<ie name=\"rsrq\">110</ie>\n<ie name=\"sinr\">99</ie>\n</ieGroup>\n</ieGroup>\n<ieGroup name = \"RS Index Results\" value=\"1\">\n<ieGroup name=\"SSB Index Results\" value=\"1\">\n<ie name=\"SSB Index\">42</ie>\n<ie name=\"SSB RSRP Result\">94</ie>\n<ie name=\"SSB RSRQ Result\">98</ie>\n</ieGroup>\n<ieGroup name=\"SSB Index Results\" value=\"1\">\n<ie name=\"SSB Index\">61</ie>\n<ie name=\"SSB RSRP Result\">98</ie>\n<ie name=\"SSB RSRQ Result\">102</ie>\n</ieGroup>\n</ieGroup>\n</ieGroup>\n</ieGroup>\n<ie name=\"Number of failed connections\">5</ie>\n<ieGroup name=\"Per RA Info List\" value=\"1\">\n<ieGroup name=\"Per RA CSI-RS Info List\" value=\"1\">\n<ie name=\"CSI RS Index\">95</ie>\n<ie name=\"Number of preamble sent on CSI RS\">32</ie>\n</ieGroup>\n</ieGroup>\n<ie name=\"Time since failure\">161424</ie>\n</msg>\n<traceSessionRef>\n<MCC>460</MCC>\n<MNC>10</MNC>\n<TRACE_ID>000130</TRACE_ID>\n</traceSessionRef>\n</traceRecSession>\n</traceCollecFile>\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "D.1.6\tExample of XML trace file for RLF report with the minimum level of details",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<traceCollecFile xmlns=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"   xsi:schemaLocation=\"http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData http://www.3gpp.org/ftp/specs/archive/32_series/32.423#traceData\">\n<fileHeader fileFormatVersion=\"32.423 V6.0\" vendorName=\"Company NN\">\n<pOPLMN>\n<MCC>460</MCC>\n<MNC>10</MNC>\n</pOPLMN>\n<fileSender elementDn=\"DC=a1.companyNN.com,SubNetwork=1, ManagedElement=GNB-1\" elementType=\"GNB\"/>\n<traceCollec beginTime=\"2001-09-11T09:30:47-05:00\"/>\n</fileHeader>\n<traceRecSession dnPrefix=\"DC=a1.companyNN.com,SubNetwork=1\" traceRecSessionRef=\"C3\" stime=\"2001-09-11T09:30:47-05:00\">\n<ue idType=\"IMSI\" idValue=\"32795\"/>\n<msg function=\"Uu\" name=\"Radio Link Failure Report\" changeTime=\"0.005\" vendorSpecific=\"false\">\n<target type=\"Cell\">SubNetwork=1,ManagedElement=Cell-1</target>\n<ieGroup name=\"Measurement Result last served Cell\" value=\"1\">\n<ieGroup name=\"Measurement Results\" value=\"1\">\n<ieGroup name=\"Cell Results\" value=\"1\">\n<ieGroup name=\"SSB Results\" value=\"1\">\n<ie name=\"rsrp\">105</ie>\n<ie name=\"rsrq\">115</ie>\n<ie name=\"sinr\">110</ie>\n</ieGroup>\n<ieGroup name=\"CSI-RS Results\" value=\"1\">\n<ie name=\"rsrp\">65</ie>\n<ie name=\"rsrq\">72</ie>\n<ie name=\"sinr\">85</ie>\n</ieGroup>\n</ieGroup>\n</ieGroup>\n</ieGroup>\n<ie name=\"crnti\">234</ie>\n<ieGroup name=\"Failed Pcell ID\" value=\"1\">\n<ieGroup name=\"NR failed Pcell ID\" value=\"1\">\n<ieGroup name=\"Cell Global ID\" value=\"1\">\n<ieGroup name=\"PLMN Identity\" value=\"1\">\n<ie name=\"MCC\">460</ie>\n<ie name=\"MNC\">490</ie>\n</ieGroup>\n<ie name=\"Cell ID\">\"Cell-1\"</ie>\n</ieGroup>\n<ieGroup name=\"PCI ARFCN\" value=\"1\">\n<ie name=\"Phycial Cell ID\">104</ie>\n<ie name=\"ARFCN Value\">986</ie>\n</ieGroup>\n</ieGroup>\n</ieGroup>\n<ie name=\"Time since failure\">116800</ie>\n<ie name=\"Connection failure type\">0</ie>\n<ie name=\"RLF Cause\">3</ie>\n</msg>\n<traceSessionRef>\n<MCC>460</MCC>\n<MNC>10</MNC>\n<TRACE_ID>000130</TRACE_ID>\n</traceSessionRef>\n</traceRecSession>\n</traceCollecFile>\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "G.1\tTransport Protocol Payload Format",
+            "description": "The payload of one transport protocol message can carry one or more trace records as specified in clause 5.1. For GPB trace payload, the overall encoding format shall adhere to the following rules:\n-\tEach trace record is encoded as a single TraceRecord GPBv3 message following the schema in clause G.2.\n-\tEach TraceRecord message is preceded by a length field indicating the size in bytes of the following GPB message. This length field is encoded using the GPB ‘varint’ wire format.\n-\tIf the transport message payload includes multiple trace records, the length field for the next TraceRecord message shall immediately follow the preceding message.\n-\tNo extra padding (unused bytes) is allowed anywhere in the transport message payload.\nNOTE:\tThe total length of the transport message payload is assumed to be available but encoding of this value is specific to the transport protocol in use.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "G.2\tTrace Record Protocol Buffer (GPB) definitions",
+            "description": "Normative GPB Trace Record schema, defined per clause 5.2:\n\nsyntax = “proto3”;\n\n/* Trace Record per 3GPP 32.423 specification.\n* v16\n*/\n\nenum TraceRecordType {\nNORMAL = 0;\nTRACE_SESSION_START = 1;\nTRACE_SESSION_STOP = 2;\nTRACE_RECORDING_SESSION_START = 3;\nTRACE_RECORDING_SESSION_STOP = 4;\nTRACE_STREAM_HEARTBEAT = 5;\nTRACE_RECORDING_SESSION_DROPPED_EVENTS = 6;\nTRACE_RECORDING_SESSION_NOT_STARTED = 7;\nTRACE_FILE_OPEN = 8;\nTRACE_FILE_CLOSE = 9;\nTRACE_FILE_ABNORMAL_CLOSED = 10;\nTRACE_RECORDING_SESSION_THROTTLED_START = 11;\nTRACE_RECORDING_SESSION_THROTTLED_STOP = 12;\nTRACE_SESSION_NOT_STARTED = 13;\n}\nmessage GlobalGnbId {\nbytes plmn_identity = 1;\nint64 gnb_id = 2;\n}\n\n\nmessage TraceRecordHeader {\nint64  time_stamp = 1;\nstring nf_instance_id = 2;\nstring nf_type = 3;\nbytes trace_reference = 4;\nbytes trace_recording_session_ref = 5;\nTraceRecordType trace_rec_type_id = 6;\noptional bytes ran_ue_id = 7;\noptional string payload_schema_uri = 8;\nGlobalGnbId global_gnb_id = 9;\nmap<string, string> vendor_extension = 10;\n}\n\nmessage TraceSessionStart {\nmap<string, string> vendor_extension = 1;\n}\n\nmessage TraceSessionStop {\nmap<string, string> vendor_extension = 1;\n}\n\n\nmessage TraceRecordingSessionStart {\nmap<string, string> vendor_extension = 1;\n}\n\nmessage TraceRecordingSessionStop {\nstring reason = 2;\nmap<string, string> vendor_extension = 1;\n}\n\nmessage TraceStreamHeartbeat {\nmap<string, string> vendor_extension = 1;\n}\n\nmessage TraceRecordingSessionDroppedEvents {\nint64 number_of_dropped_events = 1;\nmap<string, string> vendor_extension = 2;\n}\n\nmessage TraceRecordingSessionNotStarted {\nstring reason = 1;\nmap<string, string> vendor_extension = 2;\n}\n\nmessage TraceFileOpen {\nmap<string, string> vendor_extension = 1;\n}\n\nmessage TraceFileClose {\nmap<string, string> vendor_extension = 1;\n}\n\nmessage TraceFileAbnormalClosed {\nstring reason = 1;\nmap<string, string> vendor_extension = 2;\n}\n\nmessage TraceRecordingSessionThrottledStart {\nstring reason = 1;\nmap<string, string> vendor_extension = 2;\n}\nmessage TraceRecordingSessionThrottledStop {\nmap<string, string> vendor_extension = 1;\n}\n\nmessage TraceSessionNotStarted {\nstring reason = 1;\nmap<string, string> vendor_extension = 2;\n}\n\n\nmessage CommonTracePayload {\noneof record_payload {\nTraceSessionStart trace_session_start = 1;\nTraceSessionStop trace_session_stop = 2;\nTraceRecordingSessionStart trace_recording_session_start = 3;\nTraceRecordingSessionStop trace_recording_session_stop = 4;\nTraceStreamHeartbeat trace_stream_heartbeat = 5;\nTraceRecordingSessionDroppedEvents trace_recording_session_dropped_events = 6;\nTraceRecordingSessionNotStarted trace_recording_session_not_started = 7;\nTraceFileOpen trace_file_open = 8;\nTraceFileClose trace_file_close = 9;\nTraceFileAbnormalClosed trace_file_abnormal_closed = 10;\nTraceRecordingSessionThrottledStart trace_recording_session_throttled_start = 11;\nTraceRecordingSessionThrottledStop trace_recording_session_throttled_stop = 12;\nTraceSessionNotStarted trace_session_not_started = 13;\n}\n}\n\nmessage TraceRecordPayload {\noptional int64 payload_size = 1;\nbytes binary_payload = 2;\n}\nmessage TraceRecord {\nTraceRecordHeader header = 1;\nTraceRecordPayload payload = 2;\n}\n\nmessage StreamingTraceRecord {\nTraceRecord record = 1;\noptional CommonTracePayload administrative_message = 2;\n}\n\n\n\nThe following examples illustrate the use of Prococol Buffer encoding for Streaming Trace administrative messages according to the definitions in clause 5.2.4.\nThe examples are in compact GPB format, using the schema defined in Annex G.\n\nExample 1, Decoded Trace Session start message:\n\nTraceRecord {\n    header {\n      time_stamp: 1584103023591,\n      nf_instance_id: NETWORK_MANAGED_ELEMENT_ID,\n      nf_type: RadioNode,\n      trace_reference: ''H,\n      trace_recording_session_reference: ''H,\ntrace_rec_type_id: TRACE_SESSION_START,\nran_ue_id: ''H,\n    },\n    payload: ''H\n  },\n  CommonTracePayload\n}\n\nExample 2, Decoded Trace Session stop message:\nTraceRecord {\n    header {\n      time_stamp: 158415623591,\n      nf_instance_id: NETWORK_MANAGED_ELEMENT_ID,\n      nf_type: RadioNode,\n      trace_reference: ''H,\n      trace_recording_session_reference: ''H,\ntrace_rec_type_id: TRACE_SESSION_STOP,\nran_ue_id: ''H,\n    },\n    payload: '0A 01 09 11'H\n  },\n  CommonTracePayload {\n    trace_session_stop {\n    }\n  }\n\nExample 3, Decoded Trace Recording Session Dropped Events message:\nTraceRecord {\n    header {\n      time_stamp: 1584103023591,\n      nf_instance_id: NETWORK_MANAGED_ELEMENT_ID,\n      nf_type: RadioNode,\n      trace_reference: ''H,\n      trace_recording_session_reference: ''H,\ntrace_rec_type_id: TRACE_RECORDING_SESSION_DROPPED_EVENTS,\nran_ue_id: ''H,\n    },\n    payload: '0A'H\n  },\n  CommonTracePayload {\n    trace_recording_session_dropped_events {\nnumber_of dropped_events: 6\n    }\n  }\n\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 47,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 48,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

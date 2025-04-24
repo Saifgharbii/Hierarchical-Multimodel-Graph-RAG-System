@@ -1,0 +1,676 @@
+{
+    "document_name": "23700-90-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "The work done for interconnection and migration did not fully address the needs for railways, additional work is required. Before starting additional normative stage 2 work on certain aspects, a study is initiated to identify gaps in existing mechanisms on interconnection and on migration and to develop solutions for those gaps. The technical report provides recommendations for solutions which are candidates for normative work.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document studies solutions to satisfy interconnection and migration needs for railways. It identifies enhancements to be included in the technical specifications for MCPTT (3GPP TS 23.379 [2]), MCVideo (3GPP TS 23.281 [3]), MCData (3GPP TS 23.282 [4]) and in the common functional architecture (3GPP TS 23.280 [5]) to support mission critical communications.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.379:\t\"Functional architecture and information flows to support Mission Critical Push To Talk (MCPTT); Stage 2\".\n[3]\t3GPP TS 23.281:\t\"Functional architecture and information flows to support Mission Critical Video (MCVideo); Stage 2\".\n[4]\t3GPP TS 23.282:\t\"Functional architecture and information flows to support Mission Critical Data (MCData); Stage 2\".\n[5]\t3GPP TS 23.280:\t\"Common functional architecture to support mission critical services; Stage 2\".\n[6]\t3GPP TR 23.744: \"Study on location enhancements for mission critical services\".\n[7]\t3GPP TS 33.180: \"Security of the Mission Critical (MC) service\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nexample: text used to clarify abstract rules by applying them literally.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\n<symbol>\t<Explanation>\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\n<ABBREVIATION>\t<Expansion>\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tScenarios",
+            "description": "NOTE:\tNo scenarios were identified.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tKey issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tKey issue 1 - Optimize the connectivity between MC systems",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The operation between multiple MC systems becomes for important and so the path of media and signalling needs to be re-considered. Optimisations on media and signalling routing may save transmission resources and may improve the quality of service.\nList of key issues:\n-\tStudy and describe the existing mechanism of routing of media and signalling between MC systems.\n-\tInvestigate optimizations and develop solutions to improve media and signalling routing between MC service systems.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tKey issue 2 - Functional alias handling",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The use of functional aliases outside the own home MC system has not been considered by current specifications. Same applies for the use of a functional alias between interconnected MC systems, i.e. between a partner MC system and the home MC system as well as between two partner MC systems. Considerations on functional alias management procedures (activation, deactivation or group binding etc.), which are applied outside the own home MC system, are also missing in current specifications.\nList of key issues:\n-\tDescribe the related procedures and elaborate the configuration needs for the use of functional alias in a partner MC system which was allocated by the home MC system.\n-\tDescribe the use of functional alias (allocated by the home MC system) used in multiple partner MC systems.\n-\tDescribe functional alias activation and deactivation procedures and configuration needs when the MC service user is migrated into a partner MC system.\n-\tElaborate how the transfer and the retrieval of functional alias binding with MC service groups is done when using a functional alias over multiple MC systems.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tKey issue 3 - Group communication between MC systems",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Group communications require further considerations when MC service users are spread to multiple MC systems or when MC service users re-locate to another MC system during an ongoing group communication.\nList of key issues:\n-\tDevelop solutions which enable group communications that are spread to multiple MC systems.\n-\tDevelop solutions which allow migration to another MC system during an ongoing group communication.\n-\tElaborate security implications when MC service users are involved that belong to different MC systems.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tKey issue 4 - Location information with multiple MC systems",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The use of location related procedures when involving users of multiple MC service systems are not covered by current specifications.\nList of key issues:\n-\tStudy current location information procedures and configuration data and elaborate its applicability when MC service users operating in multiple MC systems are involved.\n-\tDevelop solutions (incl. required configuration data) to support location information management procedures for operation in multiple MC systems.\n-\tElaborate any security related aspects when location information is exchanged and managed between multiple MC systems.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tKey issue 5 - Quick migration towards another MC system",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For railways there is a need to migrate from one MC system to another MC system (organization) at high speed with no loss of service (regular border crossing scenario).\nList of key issues:\n-\tStudy current migration solutions and investigate possible improvements.\n-\tIf required, develop new solutions to support quick migration from one MC system to another MC system.\n-\tElaborate which configuration data is required to support quick migration.\n-\tElaborate if there are any security implications to support quick migration.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.6\tKey issue 6 - Call forwarding/transfer between MC systems",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The use of supplementary services between interconnected MC systems, i.e. between a partner MC system and the home MC system as well as between two partner MC systems, has not been specified.\nSolutions are needed to enable call forwarding and call transfer procedures between interconnected MC systems.\nList of key issues:\n-\tDevelop solutions which enable call forwarding to MC service users in a different MC system.\n-\tDevelop solutions which enable call transfer involving MC service users in a different MC system.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.7\tKey issue 7 - IP connectivity between MC systems",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "IP connectivity related aspects that involve two MC systems needs further investigations. Point-to-point and group standalone transmissions are to be considered as well as scenarios when the MC service user is abroad and uses home breakout or local breakout.\nList of key issues:\n-\tInvestigate and develop solutions for IP connectivity point-to-point transmissions that involves two MC systems (support home and local breakout).\n-\tInvestigate and develop solutions for IP connectivity group standalone transmissions that involves two MC systems (support home and local breakout).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.8\tKey issue 8 – Offline-Migration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Migration aspects in case there is no interconnection between two MC systems have not been considered by current specifications. Reasons for no interconnection between the MC systems may be, due to regulatory constraints, the use of tactical networks in e.g., remote areas and in the case of connection loss. Where cooperation is wanted, an authorized MC service user still needs to be enabled to obtain service from another MC system, where the primary and the partner MC systems are not interconnected.\nList of key issues:\n-\tDevelop solutions which enable an MC service user to obtain service from another MC system, where there is no interconnection between primary and the partner MC systems.\n-\tElaborate if there are any security implications, to enable an MC service user to obtain MC services from another MC system, where there is no interconnection between the MC systems.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tArchitectural requirements",
+            "description": "NOTE:\tNo architectural requirements were identified.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "7\tSolutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tSolution on functional architecture enhancements to support location information",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.1.1\tGeneral",
+                            "text_content": "This solution addresses the key issue 4 described in clause 5.4 on defining a functional architecture when using multiple interconnected MC systems.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.2\tSolution description",
+                            "text_content": "The in 3GPP TR 23.744 [6] clause 6.14 described functional architecture of interconnected MC systems for the exchange of location information is used to support the following scenarios:\na.\timmediate location information requests and reports;\nb.\thistory location information requests and reports;\nc.\tevent triggered location information reports based on subscriptions;\nd.\tconfiguration of event triggered location information reports; and\ne.\thandling of location information subscriptions, e.g. subscription requests, cancellation of subscriptions.\nThe in 3GPP TR 23.744 [6] clause 6.14 described reference points between entities of interconnected MC systems for the exchange of location information are used to support following scenarios:\na.\tutilizing the connection of the MC gateway servers; and\nb.\tutilizing the connection of the Location management servers.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.3\tSolution evaluation",
+                            "text_content": "The enhancements of the functional architecture described in 3GPP TR 23.744 [6] clause 6.14 fulfil the need for the exchange of location information in case of interconnection.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.2\tSolutions on providing location information",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.2.1\tGeneral",
+                            "text_content": "This solution addresses the key issue 4 described in clause 5.4 on defining the usage of the functional architecture when using multiple interconnected MC systems.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.2\tSolution description",
+                            "text_content": "Building on 3GPP TR 23.744 [6] clause 6.15.2.7 as well as clause 6.15.2.8 the functional alias(es) may be included to the described information flows.\nThe on-demand request of location information procedure described in 3GPP TR 23.744 [6] clause 6.15.2.9 is utilized.\nBuilding on 3GPP TS 23.280 [5] clauses 10.9.2.11, 10.9.2.12, 10.9.2.13, 10.9.2.14, 10.9.2.15 as well as clause 10.9.1.16 the functional alias(es) may be included to the described information flows.\nBuilding on 3GPP TS 23.280 [5] clauses 10.9.3.9.2.2, 10.9.3.9.3.3 as well as clause 10.9.3.9.4.3 additional procedures are needed to cover cases of the interconnected MC systems.\nBuilding on 3GPP TR 23.744 [6] clause 6.15.2.4 the functional alias(es) may be included to the described information flow.\nThe event-triggered location information notification procedure described in 3GPP TR 23.744 [6] clause 6.15.2.6 is utilized.\nBuilding on 3GPP TR 23.744 [6] clause 6.15.2.14 as well as clause 6.15.2.15 the functional alias(es) may be included to the described information flows.\nThe location reporting temporary configuration procedure described in 3GPP TR 23.744 [6] clause 6.15.2.16 is utilized.\nBuilding on 3GPP TR 23.744 [6] clauses 6.15.2.2, 6.15.2.3, 6.15.2.11 as well as clause 6.15.2.12 the functional alias(es) may be included to the described information flows.\nThe Location information subscription procedure described in 3GPP TR 23.744 [6] clause 6.15.2.5 is utilized.\nThe Location information cancel subscription procedure described in 3GPP TR 23.744 [6] clause 6.15.2.13 is utilized.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.3\tSolution evaluation",
+                            "text_content": "The following aspects of the key issue 4 - Location information with multiple MC systems is addressed with the above solution:\n-\tThe current available information flows and procedures in 3GPP TR 23.744 [6] and 3GPP TS 23.280 [5] are analysed for interconnected MC systems. Especially 3GPP TR 23.744 [6] is addressing a wide range of information flows and procedures required for the interconnected MC system use case.\n-\tMissing procedures for the exchange of history location information are identified and require further investigation for the explicit need with the interconnected MC system use case.\n-\tThe analysed information flows and procedures in 3GPP TR 23.744 [6] and 3GPP TS 23.280 [5] do not show additional security implications for the interconnected MC system use case.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.3\tPrivate call using functional alias towards a partner MC system",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.3.1\tGeneral",
+                            "text_content": "This solution addresses the key issue 2 described in clause 5.2 on functional alias handling.\nThe solution provides the possibility for an MCPTT user to initiate a private MCPTT call using a functional alias as target address towards an MCPTT user in a partner MCPTT system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.3.2\tSolution description",
+                            "text_content": "Allow the MCPTT server in the primary MC system, to send an MCPTT private call request to an MCPTT server in the partner MC system using a functional alias without incorporating the MCPTT ID of the called party.\nExtend the MCPTT service configuration data so that the MC server in the primary MC system can identify that the functional alias belongs to a partner MC system. This is done by using certain formats for functional aliases belonging to the partner MC system towards the private call request is to be forwarded.\nThe MCPTT service configuration data is extended to contain the list of MC system identities and corresponding functional alias mask (e.g. *.sbb.ch) information for all partner MCPTT systems. Based on the functional alias mask configured for all the partner MCPTT systems, the primary MCPTT server can route the request to the proper partner MCPTT system.\nProposed modifications in 3GPP TS 23.379 [2] Table A.5-2 MCPTT service configuration data (on-network):\nTable 7.3.2.2-1: MCPTT service configuration data (on network)\n\nNOTE: The use of the same functional alias in multiple MC systems is not supported.\nThe MCPTT private call request between MCPTT servers is modified to allow only using the functional alias as called party address, i.e. the MCPTT ID address is not resolved and not contained by the primary MCPTT server.\nProposed modifications in 3GPP TS 23.379 [2] Table 10.7.2.1.2-1: MCPTT private call request (MCPTT server to MCPTT server) information elements:\nTable 7.3.2.3-1: MCPTT private call request (MCPTT server to MCPTT server) information elements\n\nThe MCPTT private call setup procedure between MCPTT servers is modified to allow using the functional alias as called party address, i.e. the MCPTT ID address is not resolved by the primary MCPTT system, instead the primary MCPTT server uses the functional alias mask information configured in the MCPTT service configuration data to send the request towards the proper MCPTT system.\nProposed changes against 3GPP TS 23.379 [2] clause 10.7.2.3.1: Private call setup in automatic commencement mode - MCPTT users in multiple MCPTT systems:\nNOTE: The changes are applicable when using manual commencement mode as well.\nThe figure depicts a private call setup in automatic commencement mode, with users in multiple MCPTT systems. It shows the setup of the call, including the number of users, the number of call participants, and the call duration. The figure also includes the call status, such as the call status and the call duration.\nFigure 7.3.2.4-1: Private call setup in automatic commencement mode - users in multiple MCPTT systems\n1./2.\tNo change.\n3.\tThe MCPTT private call request contains the MCPTT ID or functional alias of invited user.\nNOTE:\tEnd-to-end encryption requires the target MCPTT ID.\n4./5.\tNo change.\n6.\tIf the MCPTT private call request is initiated by using a functional alias as called party address, then the target MCPTT system is identified by help of configured functional alias mask in the MCPTT service configuration data.\n7.\tIf the MCPTT server private call request contains a functional alias as called party address, the MCPTT server resolves the MCPTT ID of the called MCPTT user by using the functional alias address.\n8.-12.\tNo change.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3.2.2-1: MCPTT service configuration data (on network)",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3.2.3-1: MCPTT private call request (MCPTT server to MCPTT server) information elements",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.3.3\tSolution evaluation",
+                            "text_content": "The solution describes a private MCPTT call setup using a functional alias as target address towards an MCPTT user in a partner MCPTT system. The solution relies on proper MCPTT service configuration data so that the MC server in the primary MC system can identify the partner MC system to which the call is to be routed.\nThe solution principle can be re-used for private MCVideo call and point-to-point MCData call scenarios.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.4\tFunctional alias support for migrated users",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.4.1\tGeneral",
+                            "text_content": "This solution addresses the key issue 2 described in clause 5.2 on functional alias handling.\nThe solution provides the possibility to configure proper functional aliases for MC service users migrating to a partner MC system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.4.2\tSolution description",
+                            "text_content": "The solution relies on the existing procedure \"MC service user receiving MC service from a partner MC system\" described in 3GPP TS 23.280 [5] clause 10.1.4.3.2. The procedure can provide the list of functional aliases for use in the partner MC system as part of the migration MC service user profile.\nA set of functional aliases for each primary MC system is configured in the partner MC system. After the MC user is migrated from the primary MC system into the partner MC system, the partner MC system provides the MC user profile for migration which includes a preconfigured set of functional aliases allowed to be used within the partner MC system.\nThe MC configuration management server provides the functional alias management server functionality as described in subclause 7.4.2.2.13 of 3GPP TS 23.280 [5]. The configuration management server functionality is extended with the configuration function for functional alias sets for different partner MC system.\nNOTE:\tDifferent migrated MC users from different partner MC systems may need different functional alias sets; i.e. the configuration acts on MC partner system basis.\nThe procedure is described in 3GPP TS 23.280 [5] clause 10.1.4.3.2: MC service user receiving MC service from a partner MC system:\nThe figure depicts a user profile retrieval system in a partner MC system, showing the process of retrieving user data from a partner system. The system includes a user interface, a database, and a retrieval algorithm. The figure illustrates the steps involved in retrieving user data, including data collection, data validation, and data processing.\nFigure 7.4.2.2-1: Retrieval of user profile in partner MC system\nWithin step 5 above the partner MC system has the option of modifying the MC user profile for migrated users. Step 5 is enhanced to support functional alias sets for use in the partner MC system.\nAfter the MC service UE has received the MC service user profile in step 9, the MC service user is able to activate functional aliases within the partner MC system and use them for communication in the partner MC system.\nNOTE:\tThe use of the same functional alias in multiple MC systems is not supported.\nThe configuration management server in the primary MC system of the MC service user stores the list of allowed functional aliases and related information as part of the MC service user profile which can be differently configured for each partner MC system. The current specified user profile configuration data set can be used for that purpose. The partner MC system may modify the list of allowed functional aliases according to local configuration information, e.g. remove, add or modify functional aliases.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.4.3\tSolution evaluation",
+                            "text_content": "The solution describes that the existing procedure called MC service user receiving MC service from a partner MC system described in 3GPP TS 23.280 [5] can be used to provide a list of functional aliases to be used in the partner MC system. The solution is applicable to all MC services and call scenarios.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.5\tMigration during an ongoing group communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.5.1\tGeneral",
+                            "text_content": "This solution addresses the key issue 3 described in clause 5.3 on group communication between MC systems.\nThe solution provides the capability for an MC service user to migrate to another MC system during an ongoing group communication and to continue the group communication in the other MC system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.5.2\tSolution description",
+                            "text_content": "The procedure is based on the following existing procedures:\n-\tMC service group de-affiliation procedure as described in TS 23.280 [5] clause 10.8.4.2, or\n-\tDe-affiliation from MC service group(s) defined in partner MC service system and is described in TS 23.280 [5] clause 10.8.4.3.\n-\tMC service user receiving MC service from a partner MC system as described in TS 23.280 [5] clause 10.1.4.3.2.\n-\tMC service group affiliation procedure as described in TS 23.280 [5] clause 10.8.3.1, or\n-\tAffiliation to MC service group(s) defined in partner MC system as described in TS 23.280 [5] clause 10.8.3.2 or clause 10.8.3.2a.\n-\tLate entry pre-arranged group call as described in TS 23.379 [2] clause 10.6.2.3.1.1.4.\nNOTE 1: The solution is about MCPTT group calls but is applicable for other services too.\nPre-conditions:\n1.\tThe MCPTT client is a receiving party in one or more ongoing group calls in the primary MC system.\n2.\tThe MCPTT UE detects the need to change the MC system.\nThe figure depicts a migration scenario for a partner MC system during an ongoing group call, illustrating the process of transitioning from a legacy system to a modernized one. The figure shows the MC system's interface, the partner's interface, and the call flow, highlighting the steps involved in the migration process.\nFigure 7.5.2.1-1:\tMigration to partner MC system during an ongoing group calls\n1.\tThe MCPTT client requests de-affiliation from MCPTT groups. The MCPTT groups are either defined in the primary MC system (TS 23.280 [5] clause 10.8.4.2) or the partner MC system (TS 23.280 [5] clause 10.8.4.3). The MCPTT client de-authorizes from the primary MC System.\n2.\tAfter migration to the partner MC system, the configuration management client triggers retrieval of the MC service user profile used within the partner MC system (TS 23.280 [5] clause 10.1.4.3.2).\nNOTE 2:\tUser authentication, service authorisation and signalling plane procedures are not shown.\n3.\tThe MCPTT client requests affiliation to MCPTT groups. The MCPTT groups are either defined in the primary MC system (TS 23.280 [5] clause 10.8.3.1) or the partner MC system (TS 23.280 [5] clause 10.8.3.2 or clause 10.8.3.2a).\n4.\tIf any of the received group calls are ongoing in the partner MC system, the partner MC system shall initiate a late-entry procedure towards the MCPTT client. If any of the received group calls are taken place in the primary MC system but not yet in the partner MC system, the affiliation by the migrated MCPTT UE triggers the late-entry procedure which then includes the MCPTT UE and the partner MC system into the group call.\nThe MCPTT client may indicate the successful migration of group communications to the MCPTT user.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.5.3\tSolution evaluation",
+                            "text_content": "The solution provides the capability for an MCPTT user to migrate to another MCPTT system during an ongoing MCPTT group communication and to continue the group communication in the partner MC system. The solution relies on existing procedures on group affiliation and group de-affiliation, user profile retrieval in the partner MC system and late entry for pre-arranged group calls.\nThe solution principle can be re-used for MCVideo and MCData group call scenarios, if needed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.6\tMigration during an ongoing private communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.6.1\tGeneral",
+                            "text_content": "This solution addresses the key issue 5 described in clause 5.5 on quick migration towards another MC system.\nThe solution provides the capability for an MC service user to migrate to another MC system during an ongoing private communication and to continue the private communication in the other MC system without MC service user interaction.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.6.2\tSolution description",
+                            "text_content": "NOTE 1:\tThe solution is about MCPTT private calls but is applicable for other services too.\nPre-conditions:\n1.\tThe MCPTT client has one or more ongoing private calls in the primary MC system.\n2.\tThe MCPTT UE detects the need to change the MC system.\nThe figure depicts a scenario where a private call is being conducted on a partner MC system. The call is being migrated to the main system, as indicated by the arrows pointing from the partner MC system to the main system. The main system is equipped with a new call control unit (CCU) that is connected to the partner MC system. The figure also shows the main system's call control unit (CCU) and the partner MC system's call control unit (CCU). The main system's CCU is connected to the main system's network, while the partner MC system's CCU is connected to the partner MC system's network. The figure also shows the main system's network interface module (NIM) and the partner MC system's network interface module (NIM). The main system's NIM is connected to the main system's network, while the partner MC system's NIM is connected to the partner MC system's network. The figure also shows the main system's network interface module (NIM) and the partner MC system's network interface module (NIM). The main system's NIM is connected to the main system's network, while the partner MC system's\nFigure 7.6.2.1-1:\tMigration to partner MC system during an ongoing private call\n1.\tMCPTT client 1 requests private call suspend to put the call into suspended state in MCPTT client 2. The call is cleared between MCPTT server 1 and MCPTT server 2, and knowledge of the suspended call is held by MCPTT client 1 and MCPTT client 2. The MCPTT users of MCPTT client 1 and MCPTT client 2 get an indication that the private call has been suspended. MCPTT client 1 and MCPTT client 2 start a timer to allow the call suspended state to be cleared if the call is not resumed within a predetermined time interval.\n2.\tAfter migration to the other MC system, the configuration management client 1 triggers retrieval of the MC service user profile used within the partner MC system (TS 23.280 [5] clause 10.1.4.3.2).\nNOTE 2:\tUser authentication, service authorisation and signalling plane procedures are not shown.\n3.\tMCPTT client 1 requests a new private call to MCPTT client 2, with the call resume indication to remove the call suspended state in MCPTT client 2. The MCPTT users of MCPTT client 1 and MCPTT client 2 get an indication that the private call has been resumed.\nNOTE 3:\tAny local call restrictions are considered.\nNOTE 4:\tIf another private call request is sent to MCPTT client 1 or MCPTT client 2 before the call has resumed, the actions of the receiving MCPTT client are outside the scope of the present document and could include rejecting this new private call request.\nThe MCPTT client may indicate the successful migration of private call communications to the MCPTT user.\nTable 7.6.2.2.1-1 describes the information flow MCPTT private call suspend request from the MCPTT client to the MCPTT server, from the MCPTT server to the MCPTT server and from the MCPTT server to the MCPTT client.\nTable 7.6.2.2.1-1: MCPTT private call suspend request information elements\n\nTable 7.6.2.2.2-1 describes the information flow MCPTT private call suspend response from the MCPTT client to the MCPTT server, from the MCPTT server to the MCPTT server and from the MCPTT server to the MCPTT client.\nTable 7.6.2.2.2-1: MCPTT private call suspend response information elements\n\nTable 7.6.2.2.3-1 describes the information flow MCPTT private call resume request from the MCPTT client to the MCPTT server.\nTable 7.6.2.2.3-1: MCPTT private call resume request (MCPTT client to MCPTT server) information elements\n\nTable 7.6.2.2.3a-1 describes the information flow MCPTT private call resume request from the MCPTT server to the MCPTT server.\nTable 7.6.2.2.3a-1: MCPTT private call resume request (MCPTT server to MCPTT server) information elements\n\nTable 7.6.2.2.3b describes the information flow MCPTT private call resume request from the MCPTT server to the MCPTT client.\nTable 7.6.2.2.3b: MCPTT private call resume request (MCPTT server to MCPTT client) information elements\n\nTable 7.6.2.2.4-1 describes the information flow MCPTT private call resume response from the MCPTT client to the MCPTT server.\nTable 7.6.2.2.4-1: MCPTT private call resume response (MCPTT client to MCPTT server) information elements\n\nTable 7.6.2.2.4a -1 describes the information flow MCPTT private call resume response from the MCPTT server to the MCPTT server and the MCPTT server to the MCPTT client.\nTable 7.6.2.2.4a-1: MCPTT private call resume response information elements\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.6.2.2.1-1: MCPTT private call suspend request information elements",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.6.2.2.2-1: MCPTT private call suspend response information elements",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.6.2.2.3-1: MCPTT private call resume request (MCPTT client to MCPTT server) information elements",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.6.2.2.3a-1: MCPTT private call resume request (MCPTT server to MCPTT server) information elements",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.6.2.2.3b: MCPTT private call resume request (MCPTT server to MCPTT client) information elements",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.6.2.2.4-1: MCPTT private call resume response (MCPTT client to MCPTT server) information elements",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.6.2.2.4a-1: MCPTT private call resume response information elements",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.6.3\tSolution evaluation",
+                            "text_content": "The solution provides the capability for an MCPTT user to migrate to another MCPTT system during an ongoing MCPTT private communication and to continue the private communication in the partner MC system. The solution relies on a new MCPTT private call suspend/resume procedure and an existing procedure for user profile retrieval in the partner MC system.\nThe solution principle can be re-use for MCVideo and MCData group call scenarios, if needed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.7\tOptimize the connectivity between MC systems",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.7.1\tGeneral",
+                            "text_content": "This solution addresses the key issue 1 described in clause 5.1 on media and signalling routing. The aspect of the optimal routing of the media is of particular interest, so that delays especially in the media plane caused by the route involving the Home MC system can be eliminated. This is of elementary interest, especially used for data traffic in the process automation context. Also voice and video may benefit from the proposed approach in reducing latencies.\nThe solution addresses the aspect how to obtain the information about the association between MC service user and the partner MC system when MC service user was migrated to another MC system. The proposed new procedural elements will determine target MC service user migration status before the media gets routed to the target MC system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.7.2\tSolution description",
+                            "text_content": "The basic approaches with regard to migration, the necessary authentication and the migrated call handling have already been specified in 3GPP TS 23.280 [5]. For example, in the rail environment, more dynamic is anticipated because a train can use several partner organizations for its communication needs regardless of time during its mission (e.g., cargo trains commute between Rotterdam and Genoa). Terminating communication requirements are particularly affected and only the MC service server of the primary MC system has the current association with the respective partner MC system of its MC service client. Such information is decisive for the determination of the partner MC system to control the call routing accordingly. Accordingly, for each migrated MC service client call routing, a lookup to determine the currently visited partner organization need to be preceded.\nThe proposed MC system interrogation is a real time query to obtain current up-to-date status information of the corresponding MC service client. The resulting MC system interrogation status information of the MC service client will determine corresponding call routing, message delivery etc. towards the corresponding MC service user. In general, the MC system interrogation can be used for various purposes to obtain status information of a dedicated MC service client.\nFigure 7.7.2.2-1 shows the procedure where an MC service client in MC system 1 initiates a private call to an MC service client which is migrated to MC system 3.\nPreconditions:\n-\tThe corresponding MC systems are interconnected.\n-\tMC service client belonging to primary MC system 2 migrated to partner MC system 3.\n-\tInterconnected MC systems can derive the corresponding primary MC system of the targeted/migrated MC service users.\n-\tFunctional alias resolution is executed prior call request forwarding starts.\nThe figure depicts a network diagram with various components, including a MC system, MC service client association, and a network interface controller (NICA). The MC system is responsible for managing the network's resources and ensuring efficient communication between the MC service client and the NICA. The MC service client is the client that requests the MC system to manage the network resources. The NICA is the central controller that manages the network's resources and ensures the efficient communication between the MC system and the MC service client.\nFigure 7.7.2.2-1: Interrogation to determine the MC system and MC service client association\n1.\tMC service client associated with MC system 1 initiates a call request to a target MC service client belonging to MC system 2. MC system 1 need to figure out to which target MC system the call request needs to be forwarded. The called MC service ID is used to determine the primary MC system to request necessary MC user information to be able to route the communication/media.\n2.\tRequest MC user info is used to retrieve the current MC user migration status and to obtain relevant routing information of the corresponding MC system where the MC service client is currently located.\n3.\tMC system 2 looks up MC service user information to figure out current MC service users to MC system association. In the illustrated case, the MC service user is migrated to MC system 3.\n4.\tMC system 2 responds to the request with Response MC user info, which includes the MC service ID of MC service client 2, currently migrated to MC system 3\n5.\tMC system 1 uses the received MC user information to forward the communication/media to MC system 3 addressing MC service client belonging to MC system 2.\n6.\tThe call response acknowledges the communication request toward MC service client of MC system 1.\n7.\tNecessary media, if necessary, floor control and transmission control is established between the corresponding MC service client.\nThe corresponding primary MC service server needs to keep track about the migration status of its associated MC service user. This information gets looked up to route communications/media to the corresponding MC system who the MC service user is located. The information necessary for routing calls/communications towards a MC service user need to contain unique MC system identifier e.g., organisation identifier.\nThe information flows address the aspect that various MC service communications may use the proposed flows to forward a communication directly to the target MC system without passing through the primary MC system of the migrated MC service user.\nThe MC system uses the flow to determine the primary MC system ID based on the targeted MC service user primary MC system association.\nTable 7.7.2.4.2-1: Request MC user info - information elements\n\nThe response MC user info is used to inform the requesting MC system about the migration status of the interrogated MC service user.\nTable 7.7.2.4.3-1: Response MC user info - information elements\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.7.2.4.2-1: Request MC user info - information elements",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.7.2.4.3-1: Response MC user info - information elements",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.7.3\tSolution evaluation",
+                            "text_content": "The solution proposes a new procedure to allow flexibility in communication/media routing for the use case when MC service users enter during their whole mission multiple MC systems and those MC systems are interconnected. The MC user information retrieval allows real time lookup of current MC service user migration status and corresponding necessary routing information to reach migrated MC service users. The communication and the corresponding media can be directly routed towards the MC system where the migrated MC service resides bypassing the Primary MC system of the migrated MC service user.\nThis solution impacts current assumed call flow processing at the MC service server (MO side) where in the MC service server does not forward the call request to the home MC system of the addressed MC service user and the media routing is always directly between the originated MC system 1 (call originator) and the terminating MC system 3 (migrated MC service user).\nThe proposed procedure and corresponding flows can be used independent from the MC service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.8\tPrivate call using functional alias towards a partner MC system",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.8.1\tGeneral",
+                            "text_content": "This solution addresses the key issue 2 described in clause 5.2 on functional alias handling.\nThe solution provides the possibility for an MCPTT user to initiate a private MCPTT call using a functional alias, defined in the partner MC system, as target address towards an MCPTT user in a partner MC system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.8.2\tSolution description",
+                            "text_content": "Allow the MCPTT functional alias controlling server in the primary MC system interworks with the MCPTT functional alias controlling server in the partner MC system to resolve the functional alias used for a private call towards a partner MC system using a functional alias.\nIn TS 3GPP TS 23.280 [5], clause 8.1.5 defines the functional alias as a form of a URI. As a common form of an URI it is represented as userinfo@host where the user info part can be the functional alias and the host part can be the domain that hosts the functional alias controlling server. With this clarification in 3GPP TS 23.280 [5], the functional alias shall identify where its MC service functional alias controlling server locates.\nWe have standardized how the functional alias is used in a private call in the same MC system in 3GPP TS 23.379 [2] clause 10.7.2.2 that includes end-to-end encryption security and the same mechanism is proposed to be used in a private call between 2 MC systems, i.e. the resolution of the called party functional alias (i.e. the MCPTT ID) shall be used by the originating party to setup the private call. Doing this the primary MCPTT FA controlling server shall query the partner MCPTT FA controlling server to resolve the called party functional alias for the private call.\nTo clarify the architectural requirement of the format of the functional alias, it is proposed to add clarification to the 3GPP TS 23.280 [5] clause 8.1.5 as:\n-\tFunctional alias provides a complementary, role-based user identification scheme which can be used by MC service users for operational purposes in the form of meaningful elements such as the function, the order number or vehicle identifications that can be used within any form of MC service communication. Functional alias takes a form of a URI where the host part of the URI shall identify the home MC system functional alias controlling server. The application addressing remains in its form and forms the foundation for the association with the corresponding functional alias. An MC service user can simultaneously activate several functional aliases but only one can be associated to a certain communication.\n-\tEach functional alias is subject to the uniqueness principle within an organization and can be shared simultaneously by several MC service users, depending on the assignment. In this case, all assigned MC service users sharing a functional alias can be included in a communication.\n-\tAn MC service user can simultaneously use different functional aliases from multiple service organizations to allow the MC service user to be reachable by different organizations.\n-\tThe use of a functional alias always requires an association with the MC service ID. The MC service ID needs to be used to provide the security context for a communication.\nWhen the MCPTT FA controlling server receives a request to resolve a functional alias and if the requested functional alias belongs to a different MC system, the MCPTT FA controlling server sends a request to the partner MC system's MCPTT FA controlling server for resolution. The partner MC system's MCPTT FA controlling server will resolve the functional alias with a terminating MCPTT ID and returns it to the requesting MCPTT FA controlling server.\nThe information flow in 3GPP TS 3GPP 23.379 [2] clause 10.7.2.1.8 is modified as:\nTable 7.8.2.3-1 describes the information flow MCPTT functional alias resolution response from the MCPTT functional alias controlling server to another MCPTT functional alias controlling server, the MCPTT functional alias controlling server to the MCPTT server and the MCPTT server to the MCPTT client.\nTable 7.8.2.3-1: MCPTT functional alias resolution response information elements\n\nTable 7.8.2.3-2 describes the information flow MCPTT functional alias resolution request from the MCPTT server to the MCPTT functional alias controlling server and from the MCPTT functional alias controlling server to another MCPTT functional alias controlling server.\nTable 7.8.2.3-2: MCPTT functional alias resolution request information elements\n\nThe MCPTT private call setup procedure between MCPTT servers is modified to allow using the functional alias as called party address, i.e. the MCPTT ID address is resolved by the partner MC system through the primary MCPTT server and primary MCPTT functional alias controlling server.\nProposed changes against 3GPP TS 23.379 [2] clause 10.7.2.3.1: Private call setup in automatic commencement mode - MCPTT users in multiple MC systems with additional functional alias resolution steps similar to the mechanism used in TS 3GPP 23.379 [2] clause 10.7.2.2.1:\nNOTE:\tThe changes are applicable when using manual commencement mode as well.\nAdditional new pre-condition:\n1.\tA secured connection has been established between the MCPTT functional alias controlling servers in different MC systems.\nThe figure depicts a private call setup in automatic commencement mode, with users in multiple MCs. The setup includes a call setup, a call control, and a call termination.\nFigure 7.8.2.4-1: Private call setup in automatic commencement mode - users in multiple MC\nsystems\n1-2.\tsame as step 1-2 in 3GPP TS 23.379 [2] clause 10.7.2.3.1, no change.\n3.\tThe MCPTT private call request contains the MCPTT ID or functional alias of invited user.\n4.\tIf the MCPTT private call request contains a functional alias instead of an MCPTT ID as called party, the MCPTT server 1 shall resolve the functional alias to the corresponding MCPTT ID for which the functional alias is active using steps 5-8 below. The MCPTT server shall also check whether MCPTT client 1 can use the functional alias to setup a private call. If authorized, proceed to step 5.\nOtherwise (using MCPTT ID for the MCPTT private call) the MCPTT server 1 checks whether the MCPTT user at MCPTT client 1 is authorized to initiate the private call to the MCPTT user at MCPTT client 2; if authorized proceed to step 11.\n5-10\tnew additional steps as:\n5.\tThe MCPTT server 1 sends MCPTT functional alias resolution request message to the MCPTT FA controlling server 1 to resolve the functional alias of the called party.\n6.\tThe MCPTT FA controlling server 1 determines that the function alias belongs to MCPTT service provider 2 and forwards the MCPTT functional alias resolution request message to MCPTT FA controlling server 2.\n7.\tThe MCPTT FA controlling server 2 resolve the functional alias and determines the corresponding MCPTT ID shall be used to terminate the call and returns it to the MCPTT FA controlling server 1 in the MCPTT functional alias resolution response message.\nNOTE:\tDepending on implementation the MCPTT server can apply additional call restrictions and decide whether the call is allowed to proceed with the resolved MCPTT ID(s) (e.g. whether the MCPTT ID is within the allowed area of the functional alias). If the MCPTT server detects that the functional alias used as the target of the private call request is simultaneously active for multiple MCPTT users, then the MCPTT server can proceed by selecting an appropriate MCPTT ID based on some selection criteria. The selection of an appropriate MCPTT ID is left to implementation. This selection criteria can include rejection of the call, if no suitable MCPTT ID is selected.\n8.\tThe MCPTT FA controlling server 1 returns the corresponding MCPTT ID to MCPTT server 1 in the MCPTT functional alias resolution response message. The MCPTT server 1 shall check if MCPTT user at MCPTT client 1 is authorized to initiate the private call to the MCPTT user at MCPTT client 2. If not authorized stop the procedure, otherwise continue with step 9.\n9.\tThe MCPTT server 1 responds with a MCPTT functional alias resolution response message that contains the resolved MCPTT ID back to MCPTT client 1.\n10.\tThe MCPTT client 1 sends a new MCPTT private call request towards the resolved MCPTT ID.\n11.\tsame as step 6 in 3GPP TS 23.379 [2] clause 10.7.2.3.1, no change.\n12.\tsame as step 5 in 3GPP TS 23.379 [2] clause 10.7.2.3.1, no change.\n13-15.\tsame as step 7-9 in 3GPP TS 23.379 [2] clause 10.7.2.3.1, no change.\n16.\tThe receiving MCPTT client 2 accepts the private call automatically, and an acknowledgement is sent to the MCPTT server 2.\n17.\tThe MCPTT server 2 forwards the MCPTT private call response message to MCPTT server 1.\n18-19.\tsame as steps 11-12 in 3GPP TS 23.379 [2] clause 10.7.2.3.1, no change.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.8.2.3-1: MCPTT functional alias resolution response information elements",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.8.2.3-2: MCPTT functional alias resolution request information elements",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.8.3\tSolution evaluation",
+                            "text_content": "The solution describes a private MCPTT call setup using a functional alias as target address towards an MCPTT user in a partner MC system with end-to-end encryption security. The solution relies on new communications between the MCPTT functional alias controlling server between interconnected MC systems with similar functional alias resolution mechanism described in 3GPP TS 3GPP 23.379 [2] clause 10.7.2.2.1.\nThe solution principle can be re-used for private MCVideo call and point-to-point MCData call scenarios.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.9\tSolution on IP connectivity between MC systems",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.9.1\tGeneral",
+                            "text_content": "This solution addresses the key issue 7 described in clause 5.7 on IP connectivity between MC systems defining an alternative to the existing scheme in 3GPP TS 23.280 [5] applicable for IP communications to migrated MC services users bypassing primary MC system. The solution provides an alternative call processing approach bypassing the primary MC system of the migrated MC service user and can be used as a contribution to limited media plane delays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.9.2\tSolution description",
+                            "text_content": "The common functional model in 3GPP TS 23.280 [5] and the functional model that corresponds to MCData in 3GPP TS 23.282 [4] already provides the necessary means for interconnection either using topology hiding using an MC gateway server or without topology hiding not using an MC gateway server.\nThe necessary reference points applicable for interconnection and migration in 3GPP TS 23.280 [5] and 3GPP TS 23.282 [4] apply for direct communications between MC systems bypassing the primary MC system associated with a migrated MC service user.\nNOTE:\tMCPTT service and MCVideo service can also reuse defined reference points for interconnection.\nTo determine the MC system of the migrated MC service user, the procedure and flow described in clause 7.7 is applied. For call processing applicable generic procedures for interconnection according to 3GPP TS 23.280 [5] applied.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.9.3\tSolution evaluation",
+                            "text_content": "The enhancements proposed in clause 7.7 allow the determination of the actual hosting MC system of the migrated MC service user. The response user data info contains necessary information about MC system identifier to route the call request directly towards target MC system without passing the primary MC system.\nThis solution is applicable when communication recording in the primary MC system is not required.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.10\tSolution on migration without interconnection between two MC systems",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.10.1\tGeneral",
+                            "text_content": "This solution addresses key issue 8 described in clause 5.8 on enabling an authorized MC service user to migrate to another MC system, where there is no interconnection between the primary and the partner MC systems.\nAs stated in 3GPP TS 23.280 [5], clause 5.2.9.1, \"MC service interconnection needs to be provided between MC systems that wish to provide migration of their MC service users.\". However, there are scenarios where an MC service user may need to migrate to an MC partner system (e.g., tactical networks, MC systems without interconnection due to regulatory constraint), where there is no interconnection between the MC systems.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.10.2\tSolution description",
+                            "text_content": "Pre-conditions\n-\tThe MC service user wishes to migrate to a partner MC system, even if there is no interconnetion to the primary MC system.\n-\tThe primary and partner Identity Management Server have been provisioned with signing certificates using an out of band mechanism, as specified in 3GPP TS 33.180 [X], clause 5.1.4.2.\n-\tMC service user authentication and authorization has taken place in the primary MC system, which has supplied necessary credentials to the MC service client to permit service authorization to take place in the partner system.\n-\tThe MC service client has been configured with an MC service user profile, by the primary MC system, that contains the necessary parameters needed for connectivity with the partner MC system, including authorization for migration.\n-\tThe partner MC system has been provisioned with a user profile for the migrating MC service user.\nThe figure depicts a service authorization process for migrating to a partner MC system. It illustrates the steps involved in obtaining authorization from the partner system, including obtaining necessary permissions, verifying the system's readiness, and ensuring compatibility with the partner's system. The figure also includes a flowchart to guide the process, with arrows indicating the sequence of actions.\nFigure 7.10.2-1\tService authorization for migration to partner MC system\n1.\tThe MC service UE migrates to the partner MC system by using the available access information and credentials provided by the primary MC system and after establishing the local PLMN connectivity.\n2.\tThe partner MC system performs an authorization check to verify that the MC service user is permitted to migrate, using the inter-domain MC user service authorization procedures, as specified in 3GPP TS 33.180 [7].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.10.3\tSolution evaluation",
+                            "text_content": "The solution describes how an MC service user can migrate to another MC system, where there is no interconnection between the primary and partner MC systems.\nThe solution is applicable for all MC services and uses present security mechanisms, as described in 3GPP TS 33.180[7], clause 5.1.4.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.11\tPrivate call forwarding between MCPTT systems",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.11.1\tGeneral",
+                            "text_content": "This solution addresses the call forwarding related aspects of key issue 6 described in clause 5.6 on call forwarding/call transfer between MC systems.\nThe solution provides the possibility of forwarding MCPTT private calls between MCPTT users in different MCPTT systems.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.11.2\tSolution description",
+                            "text_content": "Currently call forwarding for MCPTT private calls is defined within one MCPTT system. The following solution defines the necessary changes to allow call forwarding between MCPTT users in different MCPTT systems.\nThe MCPTT private call forwarding related information flows are modified (and marked with highlighting) to cover necessary elements and messages between MCPTT servers to support MCPTT private call forwarding for users in different MCPTT systems.\nProposed modifications in 3GPP TS 23.379 [2] Table 10.7.2.1.2-1: MCPTT private call request (MCPTT server to MCPTT server) information elements:\nNOTE 1: This information flow uses as a baseline Table 7.3.2.3-1.\nTable 7.11.2.2-1: MCPTT private call request (MCPTT server to MCPTT server) information elements\n\nProposed modifications in 3GPP TS 23.379 [2] Table 10.7.5.1.2-1: MCPTT private call forwarding request from the MCPTT client to the MCPTT server and from the MCPTT server to the MCPTT server.\nTable 7.11.2.2-2: MCPTT private call forwarding request (MCPTT client to MCPTT server and MCPTT server to MCPTT server) information elements\n\nProposed modifications in 3GPP TS 23.379 [2] Table 10.7.5.1.5-1: MCPTT private call forwarding request from the MCPTT client to the MCPTT server and from the MCPTT server to the MCPTT server.\nTable 7.11.2.2-3: MCPTT private call forwarding response (MCPTT client to MCPTT server and MCPTT server to MCPTT server) information elements\n\nThe procedure for MCPTT private call forwarding describes the case of an MCPTT users in a partner MCPTT system as target of the MCPTT private call forwarding.\nNOTE 1: The procedure shows manual commencement mode, but the changes are also applicable when using automatic commencement mode.\nNOTE 2: The procedure focusses on the interaction between the MCPTT servers, which is independent of the condition for the call forwarding. Therefore, the procedure is generically applicable for all types of call forwarding.\nPre-conditions:\n1.\tMCPTT client 2 is authorized to use call forwarding and has immediate call forwarding enabled with the destination MCPTT client 3.\n2.\tMCPTT client 1 is authorized to make private calls to MCPTT client 2.\n3.\tThe redirection counter is below the limit.\n4.\tMCPTT client 1 has the necessary security information to initiate a private call with MCPTT client 2 and MCPTT client 3 if end-to-end encryption is required for the private call.\nThe figure depicts a simplified private call setup with manual commencement mode, where the call is forwarded to the partner MCPTT system. The setup includes a forwarding target in the partner MCPTT system.\nFigure 7.11.2.3.1-1: Simplified private call setup with MCPTT private calls forwarding in manual commencement mode with forwarding target in the partner MCPTT system\n1.\tMCPTT client 1 sends an MCPTT private call request towards MCPTT server 1.\nNOTE 1:\tIf the target of the MCPTT private call request is a functional alias, the procedure resolves the functional alias to the corresponding MCPTT ID for which the functional alias is active. For simplicity details are not described.\n2.\tMCPTT server 1 detects that MCPTT client 2 has immediate call forwarding enabled to MCPTT client 3 which is registered in MCPTT system 2.\n3.\tMCPTT server 1 sends an MCPTT private call forwarding request towards MCPTT client 1.\nNOTE 2:\tIf the target of the MCPTT private call forwarding is a functional alias, the procedure resolves the functional alias to the corresponding MCPTT ID for which the functional alias is active. For simplicity details of the resolution are not described.\n4.\tThe user at MCPTT client 1 is notified that a call forwarding is in process.\n5.\tMCPTT client 1 sends an MCPTT call private forwarding response back to MCPTT server.\n6.\tMCPTT client 1 sends an MCPTT private call request towards MCPTT server 1 that includes a call forwarding indication set to true.\n7.\tMCPTT server 1 verifies that MCPTT client 1 is authorized to perform an MCPTT private call as a result of the MCPTT private call forwarding request. MCPTT server 1 verifies that the MCPTT private call request contains MCPTT client 3 that is the authorized target from step 3, and the forwarding indication is set to true.\n8.\tMCPTT server 1 sends an MCPTT private call request towards MCPTT server 2.\n9.\tMCPTT server 2 sends an MCPTT private call request towards MCPTT client 3.\nNOTE 3:\tMCPTT server 2 detects that the private call request contains a forwarding indication is set to true and therefore skips the authorization checking.\n10.\tOptionally MCPTT server 1 sends an MCPTT progress indication to MCPTT client 1.\n11.\tThe user at MCPTT client 3 is alerted. MCPTT client 3 sends an MCPTT ringing to MCPTT server 2. This step is not required in case of automatic commencement mode.\n12.\tMCPTT server 2 sends an MCPTT ringing to MCPTT server 1. This step is not required in case of automatic commencement mode.\n13.\tMCPTT server 1 sends an MCPTT ringing to MCPTT client 1. This step is not required in case of automatic commencement mode.\n14.\tMCPTT client 3 sends an MCPTT private call response to MCPTT server 2. In manual commencement mode this occurs after the user at MCPTT client 3 has accepted the call.\n15.\tMCPTT server 2 sends an MCPTT private call response to MCPTT server 1. In manual commencement mode this occurs after the user at MCPTT client 3 has accepted the call.\n16.\tMCPTT server 1 sends an MCPTT private call response to MCPTT client 1 indicating that MCPTT client 3 has accepted the call.\n17.\tThe media plane for communication between MCPTT client 1 and MCPTT client 3 is established.\nThe procedure for MCPTT private call forwarding describes the case of an MCPTT private call forwarding occurring in the partner MCPTT system.\nNOTE 1: The procedure shows manual commencement mode, but the changes are also applicable when using automatic commencement mode.\nNOTE 2: The procedure focusses on the interaction between the MCPTT servers, which is independent of the condition for the call forwarding. Therefore, the procedure is generically applicable for all types of call forwarding.\nPre-conditions:\n1.\tMCPTT client 3 is authorized to use call forwarding and has immediate call forwarding enabled with the destination MCPTT client 2.\n2.\tMCPTT client 1 is authorized to make private calls to MCPTT client 3.\n3.\tThe redirection counter is below the limit.\n4.\tMCPTT client 1 has the necessary security information to initiate a private call with MCPTT client 2 and MCPTT client 3 if end-to-end encryption is required for the private call.\n\nThe figure depicts a simplified private call setup with manual commencement mode, where the call is forwarded to the partner MCPTT systems.\nFigure 7.11.2.3.2-1: Simplified private call setup with MCPTT private calls forwarding in manual commencement mode with forwarding in the partner MCPTT systems\n1.\tMCPTT client 1 sends an MCPTT private call request towards MCPTT server 1 for establishing an MCPTT private call with MCPTT client 3 registered at MCPTT system 2.\nNOTE 1:\tIf the target of the MCPTT private call request is a functional alias, the procedure resolves the functional alias to the corresponding MCPTT ID for which the functional alias is active. For simplicity details are not described.\n2.\tMCPTT server 1 sends an MCPTT private call request towards MCPTT server 2 for establishing an MCPTT private call with MCPTT client 3 registered at MCPTT system 2.\n3.\tMCPTT server 2 detects that MCPTT client 3 has immediate call forwarding enabled to MCPTT client 2 registered at MCPTT system 1.\nNOTE 2:\tIf the target of the MCPTT private call forwarding is a functional alias, the procedure resolves the functional alias to the corresponding MCPTT ID for which the functional alias is active. For simplicity details of the resolution are not described.\n4.\tMCPTT server 2 sends an MCPTT private call forwarding request towards MCPTT server 1.\n5.\tMCPTT server 1 sends an MCPTT private call forwarding request towards MCPTT client 1.\n6.\tThe user at MCPTT client 1 is notified that a call forwarding is in process.\n7.\tMCPTT client 1 sends an MCPTT call private forwarding response back to MCPTT server 1.\n8.\tMCPTT server 1 sends an MCPTT call private forwarding response back to MCPTT server 2.\n9.\tMCPTT client 1 sends an MCPTT private call request towards MCPTT server 1 that includes a call forwarding indication set to true.\n10.\tMCPTT server 1 verifies that MCPTT client 1 is authorized to perform the MCPTT private call as a result of the MCPTT private call forwarding request. MCPTT server 1 verifies that the MCPTT private call request contains MCPTT client 3 that is the authorized target from step 5, and the forwarding indication is set to true.\n11.\tMCPTT server 1 sends an MCPTT private call request towards MCPTT client 2.\n12.\tOptionally MCPTT server 1 sends an MCPTT progress indication to MCPTT client 1.\n13.\tThe user at MCPTT client 2 is alerted. MCPTT client 2 sends an MCPTT ringing to MCPTT server 1. This step is not required in case of automatic commencement mode.\n14.\tMCPTT server 1 sends an MCPTT ringing to MCPTT client 1. This step is not required in case of automatic commencement mode.\n15.\tMCPTT client 2 sends an MCPTT private call response to MCPTT server 1. In manual commencement mode this occurs after the user at MCPTT client 3 has accepted the call.\n16.\tMCPTT server 1 sends an MCPTT private call response to MCPTT client 1 indicating that MCPTT client 3 has accepted the call.\n17.\tThe media plane for communication between MCPTT client 1 and MCPTT client 3 is established.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.11.2.2-1: MCPTT private call request (MCPTT server to MCPTT server) information elements",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.11.2.2-2: MCPTT private call forwarding request (MCPTT client to MCPTT server and MCPTT server to MCPTT server) information elements",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.11.2.2-3: MCPTT private call forwarding response (MCPTT client to MCPTT server and MCPTT server to MCPTT server) information elements",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.11.3\tSolution evaluation",
+                            "text_content": "The solution describes MCPTT private call forwarding for MCPTT users in different MCPTT systems. The solution defines enhanced communication between the interconnected MCPTT systems by combining functionality as defined in 3GPP TS 3GPP 23.379 [2] clause 10.7.2.3 and clause 10.7.5.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.12\tPrivate call transfer between MCPTT systems",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.12.1\tGeneral",
+                            "text_content": "This solution addresses the call transfer related aspects of key issue 6 described in clause 5.6 on call forwarding/call transfer between MC systems. The solution provides the possibility of transferring MCPTT private calls between MCPTT users in different MCPTT systems.\nNOTE:\tThis solution describes the procedures for announced private call transfer. Unannounced private call transfer does not require any additional functionality regarding interconnect, so it is covered in this solution as well.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.12.2\tSolution description",
+                            "text_content": "Currently call transfer for MCPTT private calls is defined within one MCPTT system. The following solution defines the necessary changes to allow call transfer between MCPTT users in different MCPTT systems.\nThe MCPTT private call transfer related information flows are modified (and marked with highlighting) to cover necessary elements and messages between MCPTT servers to support MCPTT private call transfer for users in different MCPTT systems. Below are the proposed modifications in 3GPP TS 23.379 [2] clause 10.7.6.1.1 and clause 10.7.6.1.3.\n10.7.6.1.1\tMCPTT private call transfer request (MCPTT client – MCPTT server)\nTable 10.7.6.1.1-1 describes the information flow MCPTT private call transfer request from the MCPTT client to the MCPTT server and from the MCPTT server to the MCPTT server.\nTable 10.7.6.1.1-1: MCPTT private call transfer request (MCPTT client to MCPTT server and MCPTT server to MCPTT server) information elements\n\n10.7.6.1.3\tMCPTT private call transfer response (MCPTT server – MCPTT client)\nTable 10.7.6.1.3-1 describes the information flow MCPTT private call transfer response from the MCPTT server to the MCPTT client and from the MCPTT server to the MCPTT server.\nTable 10.7.6.1.3-1: MCPTT private call transfer response (MCPTT server to MCPTT client and MCPTT server to MCPTT server) information elements\n\nThe procedure for MCPTT private call announced transfer covers the case where an MCPTT client requests an ongoing MCPTT private call (with or without floor control) to be transferred to another MCPTT user with prior announcement.\nFigure 7.12.3.2.1-1 below illustrates the procedure for MCPTT private call announced transfer with target in partner MCPTT system.\nNOTE 1:\tThe procedure for MCPTT private call unannounced transfer is very similar, the only difference is that steps 2 to 6 are skipped.\nPre-conditions:\n1.\tMCPTT client 2 is authorized to use call transfer.\n2.\tMCPTT client 1 is authorized to make private calls to MCPTT client 2.\n3.\tMCPTT client 2 is authorized to make private calls to MCPTT client 3.\n4.\tMCPTT client 2 is authorized to transfer private calls to MCPTT client 3.\n5.\tMCPTT client 2 supports simultaneous sessions for MCPTT private calls as described in 3GPP TS 23.379 [2] clause 10.8.\n6.\tMCPTT client 1 has the necessary security information to initiate a private call with MCPTT client 2 and MCPTT client 3, and MCPTT client 2 has the necessary security information to initiate a private call with MCPTT client 3 if end2end encryption is required for the private call.\nThe figure depicts a private call announcement transfer with a target in a partner MCPTT system. The call is initiated by the sender, who announces the transfer to the receiver. The receiver then initiates the call by announcing the transfer to the sender. The transfer is initiated by the sender, who announces the transfer to the receiver. The transfer is initiated by the sender, who announces the transfer to the receiver.\nFigure 7.12.3.2.1-1: MCPTT private call announced transfer with target in partner MCPTT system\n1.\tMCPTT client 1 initiates an MCPTT private call to MCPTT client 2 using the normal MCPTT call establishment as described in 3GPP TS 23.379 [2] clause 10.7.2.2. The user at MCPTT client 1 can talk with the user at MCPTT client 2. The user at MCPTT client 2 decides to transfer the call.\n2.\tThe MCPTT user at MCPTT client 2 puts the call with MCPTT user at MCPTT client 1 on hold.\n3.\tMCPTT client 2 initiates an MCPTT private call to MCPTT client 3 using the normal MCPTT call establishment procedures as described in 3GPP TS 23.379 [2] clause 10.7.2.3.\nNOTE 2:\tThe solution for private call using functional alias towards a partner MC system is defined in clause 7.8.\n4.\tThe user at MCPTT client 2 can talk with the user at MCPTT client 3 and announces the call transfer.\n5.\tThe MCPTT client 2 releases the MCPTT private call with MCPTT client 3 using the normal MCPTT call release procedure as described in 3GPP TS 23.379 [2] clause 10.7.2.3. This step can occur at any time after step 4.\n6.\tThe MCPTT user at MCPTT client 2 puts the call with MCPTT client 1 off hold and confirms that the call will be transferred.\n7.\tThe MCPTT client 2 sends an MCPTT call transfer request to the MCPTT server 1.\n8.\tThe MCPTT server 1 verifies that MCPTT client 2 is authorized to transfer the MCPTT private call to MCPTT client 3. This check is based on entries in the user profile of the user at MCPTT client 2. First, the MCPTT server 1 checks the value of the \"Allow private call transfer\" entry. If it is false, the authorization check has failed, and the procedure continues with step 10. Otherwise, the MCPTT server 1 checks if the \"Authorised to transfer private calls to any MCPTT user\" entry is true. If this is the case the check has passed, and for target type of MCPTT ID the procedure continues with step 10 and for target ID type of functional alias the procedure continues with step 9. The subsequent checking depends on the type of target ID. If the target ID is a MCPTT ID, the MCPTT server 1 checks for a matching entry of the target MCPTT ID in the \"List of MCPTT users that the MCPTT user is authorised to use as targets for call transfer\" list. If a matching entry is found, the check has passed, if no matching entry is found the check has failed, for any outcome the procedure continues with step 10. If the target ID is a functional alias, the MCPTT server 1 checks for a matching entry of the target functional alias in the \"List of functional aliases that the MCPTT user is authorised to use as targets for call transfer\" list. If a matching entry is found, the check has passed, and the procedure continues with step 9. If no matching entry is found, the authorization check has failed, and the procedure continues with step 10.\n9.\tIf the target of the MCPTT private call transfer is a functional alias instead of an MCPTT ID the MCPTT server 1 resolves the functional alias to the corresponding MCPTT ID for which the functional alias is active.\nNOTE 3:\tDepending on implementation the MCPTT server can apply additional call restrictions and decide whether the call is allowed to proceed with the resolved MCPTT ID(s) (e.g. whether the MCPTT ID is within the allowed area of the functional alias). If the MCPTT server detects that the functional alias used as the target of the MCPTT private call transfer is simultaneously active for multiple MCPTT users, then the MCPTT server can proceed by selecting an appropriate MCPTT ID based on some selection criteria. The selection of an appropriate MCPTT ID is left to implementation. The selection criteria can include rejection of the call, if no suitable MCPTT ID is selected.\n10.\tIf the authorization check has failed, or the target of the transfer is a functional alias that is not active, or the target of the transfer is a functional alias that is simultaneously active by multiple users and the outcome of the selection is a rejection, the MCPTT private call transfer is cancelled, and the MCPTT server 1 sends an MCPTT private call transfer response with result \"fail\" back to MCPTT client 2. The MCPTT private call between MCPTT client 1 and MCPTT client 2 remains up, and the procedure stops. Otherwise, the procedure continues.\n11.\tThe MCPTT server 1 sends an MCPTT call transfer request towards the MCPTT client 1.\n12.\tThe user at MCPTT client 1 is notified that a call transfer is in progress.\n13.\tMCPTT client 1 sends an MCPTT private call request towards the MCPTT server 1 that includes a call transfer indication set to true.\n14.\tThe MCPTT server 1 verifies that MCPTT client 1 is authorized to perform the MCPTT private call as a result of the MCPTT private call transfer request based on the fact that the transfer indication is present and set to true in the MCPTT private call request.\nNOTE 4:\tFor call transfer the MCPTT server does not check if the initial originating MCPTT user at MCPTT client 1 is authorized to make an MCPTT private call to the final target MCPTT user at MCPTT client 3.\n15.\tThe MCPTT server 1 sends an MCPTT call request to MCPTT server 2.\n16.\tThe MCPTT server 2 sends an MCPTT call request to MCPTT client 3.\nNOTE 5:\tMCPTT server 2 detects that the private call request contains a transfer indication set to true and therefore skips the authorization checking.\n17.\tThe user at MCPTT client 3 is notified about the incoming call.\n18.\tMCPTT client 3 sends an MCPTT private call response back to the MCPTT server 2.\n19.\tMCPTT server 2 sends an MCPTT private call response back to the MCPTT server 1.\n20.\tThe MCPTT server 1 forwards the MCPTT private call response towards MCPTT client 1.\n21.\tMCPTT client 1 sends an MCPTT call transfer response back to MCPTT server 1.\n22.\tThe MCPTT server 1 forwards the MCPTT private transfer response towards MCPTT client 2.\n23.\tMCPTT client 2 initiates release of the private call between MCPTT client 1 and MCPTT client 2 as described in subclause 10.7.2.3.\n24.\tThe media plane for communication between MCPTT client 1 and MCPTT client 3 is established.\nThe procedure for MCPTT private call announced transfer covers the case where an MCPTT client requests an ongoing MCPTT private call (with or without floor control) to be transferred to another MCPTT user with prior announcement.\nFigure 7.12.3.2.2-1 below illustrates the procedure for MCPTT private call announced transfer with transferring MCPTT user in partner MCPTT system.\nNOTE 1:\tThe procedure for MCPTT private call unannounced transfer is very similar, the only difference is that steps 2 to 6 are skipped.\nPre-conditions:\n1.\tMCPTT client 3 is authorized to use call transfer.\n2.\tMCPTT client 1 is authorized to make private calls to MCPTT client 3.\n3.\tMCPTT client 3 is authorized to make private calls to MCPTT client 2.\n4.\tMCPTT client 3 is authorized to transfer private calls to MCPTT client 2.\n5.\tMCPTT client 3 supports simultaneous sessions for MCPTT private calls as described in 3GPP TS 23.379 [2] clause 10.8.\n6.\tMCPTT client 1 has the necessary security information to initiate a private call with MCPTT client 2 and MCPTT client 3, and MCPTT client 3 has the necessary security information to initiate a private call with MCPTT client 2 if end2end encryption is required for the private call.\nThe figure depicts a private call announcement transfer in a 12-channel 12-point system, with the user in the partner system. The transfer is initiated by the user's announcement, and the system acknowledges the transfer by announcing the user's transfer.\nFigure 7.12.3.2.2-1: MCPTT private call announced transfer transferring MCPTT user in partner MCPTT system\n1.\tMCPTT client 1 initiates an MCPTT private call to MCPTT client 3 using the normal MCPTT call establishment as described in 3GPP TS 23.379 [2] clause 10.7.2.3. The user at MCPTT client 1 can talk with the user at MCPTT client 3. The user at MCPTT client 3 decides to transfer the call.\nNOTE 2:\tThe solution for private call using functional alias towards a partner MC system is defined in clause 7.8.\n2.\tThe MCPTT user at MCPTT client 3 puts the call with MCPTT user at MCPTT client 1 on hold.\n3.\tMCPTT client 3 initiates an MCPTT private call to MCPTT client 2 using the normal MCPTT call establishment procedures as described in 3GPP TS 23.379 [2] clause 10.7.2.3.\nNOTE 3:\tThe solution for private call using functional alias towards a partner MC system is defined in clause 7.8.\n4.\tThe user at MCPTT client 3 can talk with the user at MCPTT client 2 and announce the call transfer.\n5.\tThe MCPTT client 3 releases the MCPTT private call with MCPTT client 2 using the normal MCPTT call release procedure as described in 3GPP TS 23.379 [2] clause 10.7.2.3. This step can occur at any time after step 4.\n6.\tThe MCPTT user at MCPTT client 3 puts the call with MCPTT client 1 off hold and confirms that the call will be transferred.\n7.\tThe MCPTT client 3 sends an MCPTT call transfer request to the MCPTT server 2.\n8.\tThe MCPTT server 2 verifies that MCPTT client 3 is authorized to transfer the MCPTT private call to MCPTT client 2. This check is based on entries in the user profile of the user at MCPTT client 3. First, the MCPTT server 2 checks the value of the \"Allow private call transfer\" entry. If it is false, the authorization check has failed, and the procedure continues with step 10. Otherwise, the MCPTT server 2 checks if the \"Authorised to transfer private calls to any MCPTT user\" entry is true. If this is the case the check has passed, and for target type of MCPTT ID the procedure continues with step 10 and for target ID type of functional alias the procedure continues with step 9. The subsequent checking depends on the type of target ID. If the target ID is an MCPTT ID, the MCPTT server 2 checks for a matching entry of the target MCPTT ID in the \"List of MCPTT users that the MCPTT user is authorised to use as targets for call transfer\" list. If a matching entry is found, the check has passed, if no matching entry is found the check has failed, for any outcome the procedure continues with step 10. If the target ID is a functional alias, the MCPTT server 2 checks for a matching entry of the target functional alias in the \"List of functional aliases that the MCPTT user is authorised to use as targets for call transfer\" list. If a matching entry is found, the check has passed, and the procedure continues with step 9. If no matching entry is found, the authorization check has failed, and the procedure continues with step 10.\n9.\tIf the target of the MCPTT private call transfer is a functional alias instead of an MCPTT ID the MCPTT server 2 resolves the functional alias to the corresponding MCPTT ID for which the functional alias is active.\nNOTE 4:\tDepending on implementation the MCPTT server can apply additional call restrictions and decide whether the call is allowed to proceed with the resolved MCPTT ID(s) (e.g. whether the MCPTT ID is within the allowed area of the functional alias). If the MCPTT server detects that the functional alias used as the target of the MCPTT private call transfer is simultaneously active for multiple MCPTT users, then the MCPTT server can proceed by selecting an appropriate MCPTT ID based on some selection criteria. The selection of an appropriate MCPTT ID is left to implementation. The selection criteria can include rejection of the call, if no suitable MCPTT ID is selected.\n10.\tIf the authorization check has failed, or the target of the transfer is a functional alias that is not active, or the target of the transfer is a functional alias that is simultaneously active by multiple users and the outcome of the selection is a rejection, the MCPTT private call transfer is cancelled, and the MCPTT server 2 sends an MCPTT private call transfer response with result \"fail\" back to MCPTT client 3. The MCPTT private call between MCPTT client 3 and MCPTT client 2 remains up, and the procedure stops. Otherwise, the procedure continues.\n11.\tThe MCPTT server 2 sends an MCPTT call transfer request towards the MCPTT server 1.\n12.\tThe MCPTT server 1 sends an MCPTT call transfer request towards the MCPTT client 1.\n13.\tThe user at MCPTT client 1 is notified that a call transfer is in progress.\n14.\tMCPTT client 1 sends an MCPTT call transfer response back to the MCPTT server 1.\n15.\tMCPTT client 1 sends an MCPTT private call request towards the MCPTT server 1 that includes a call transfer indication set to true.\n16.\tThe MCPTT server 1 verifies that MCPTT client 1 is authorized to perform the MCPTT private call as a result of the MCPTT private call transfer request based on the fact that the transfer indication is present and set to true in the MCPTT private call request.\nNOTE 5:\tFor call transfer the MCPTT server does not check if the initial originating MCPTT user at MCPTT client 1 is authorized to make an MCPTT private call to the final target MCPTT user at MCPTT client 2.\n17.\tThe MCPTT server 1 sends an MCPTT call request to MCPTT client 3.\n18.\tThe user at MCPTT client 2 is notified about the incoming call.\n19.\tMCPTT client 2 sends an MCPTT private call response back to the MCPTT server 1.\n20.\tThe MCPTT server 1 forwards the MCPTT private call response towards MCPTT client 1.\n21.\tMCPTT client 1 sends an MCPTT call transfer response back to the MCPTT server 1.\n22.\tThe MCPTT server 1 sends an MCPTT call transfer response back to the MCPTT server 2.\n23.\tThe MCPTT server 2 sends an MCPTT call transfer response back to the MCPTT client 3.\n24.\tMCPTT client 3 initiates release of the private call between MCPTT client 3 and MCPTT client 1 as described in 3GPP TS 23.379 [2] clause 10.7.2.3.\n25.\tThe media plane for communication between MCPTT client 1 and MCPTT client 2 is established.\n7.12.3\tSolution evaluation\nThe solution describes private call transfer MCPTT for MCPTT users in different MCPTT systems. The solution defines enhanced communication between the interconnected MCPTT systems by combining functionality as defined in 3GPP TS 3GPP 23.379 [2] clauses 10.7.2.3 and 10.7.6.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 10.7.6.1.1-1: MCPTT private call transfer request (MCPTT client to MCPTT server and MCPTT server to MCPTT server) information elements",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 10.7.6.1.3-1: MCPTT private call transfer response (MCPTT server to MCPTT client and MCPTT server to MCPTT server) information elements",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "8\tOverall evaluation",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tKey issue and solution evaluation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.1.1\tIntroduction",
+                            "text_content": "All the key issues and solutions specified in this technical report are listed in table 8.1.2-1. It includes the mapping of the key issues (clause 5) to the solutions (clause 7) and corresponding solution evaluations.\nIn addition, table 8.1.2-1 lists the impacts to other working groups that will need consideration during the Rel-18 normative phase.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.1.2\tResults",
+                            "text_content": "\nTable 8.1.2-1: Key issues, solutions, and solution evaluations\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.1.2-1: Key issues, solutions, and solution evaluations",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "9\tConclusions",
+            "description": "This technical report fulfills the objective to develop solutions for specific interconnection and migration needs for railways which were not satisfied yet. It identifies enhancements to be included in the technical specifications for MCPTT (3GPP TS 23.379 [2]), MCVideo (3GPP TS 23.281 [3]), MCData (3GPP TS 23.282 [4]) and in the common functional architecture (3GPP TS 23.280 [5]).\nThe results from the study will be considered for follow-up normative work in Rel-18 as follows:\n1)\tThe solution on functional architecture enhancements to support location information (clause 7.1) and the solution on providing location information (clause 7.2) may be used.\n2)\tThe solutions on private call using functional alias towards a partner MC system (clause 7.3 and clause 7.8) will be used as basis to define a proper mechanism.\n3)\tThe solutions describing migration during an ongoing communication (clause 7.4 and clause 7.5) will be used as basis to define proper procedures.\n4)\tThe solutions on addressing the connectivity between MC systems to optimize media and signalling routing (clause 7.7) and on IP connectivity between MC systems (clause 7.9) provides the necessary guidance to cover rail communication use cases excluding the primary MC system for communication routing in the migration context.\n5)\tThe solution on migration without interconnection between two MC systems (clause 7.10) will be used to enable an authorized MC service user to migrate to another MC system, where there is no interconnection between the primary and the partner MC system.\n6)\tThe solution on private call forwarding between MCPTT systems (clause 7.11) will be used to forward MCPTT private calls towards an MCPTT user in a different MCPTT system.\nNo dependencies to other 3GPP groups were identified in the overall evaluation (clause 8) which are required for fulfilling the solutions listed above.\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 22,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

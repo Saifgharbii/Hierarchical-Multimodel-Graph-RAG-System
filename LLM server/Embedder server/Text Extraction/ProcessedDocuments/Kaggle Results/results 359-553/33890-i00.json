@@ -1,0 +1,374 @@
+{
+    "document_name": "33890-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document studies security aspects for any potential enhancements based on the ongoing study in TR 23.700-87 [2]. For each of the key issues in the scope of the SA WG2 study, the security aspects that are to be covered in this study are as follows:\n- Analysing the potential security aspects on how to verify and authorize the 3rd party specific identity information during a call both on originating and terminating sides.\n- Analysing potential security impacts from supporting service-based architecture in IMS media control interfaces.\n- Analysing potential security aspects to support Data Channel usage in IMS network.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TR 23.700-87: \"Study on system architecture enhancement for next generation real time communication\".\n[3]\t3GPP TS 33.328: \"IP Multimedia Subsystem (IMS) media plane security\".\n[4]\t 3GPP TS 24.229: IP Multimedia call control protocol based on Session Initiation Protocol (SIP) and Session Description Protocol (SDP); Stage 3\".\n[5]\tATIS-1000074: Signature-based Handling of Asserted information using Tokens (SHAKEN)\n[6]\tIETF draft-ietf-stir-passport-rcd-18, \"PASSporT Extension for Rich Call Data\"\n[7]\tdraft-ietf-sipcore-callinfo-rcd-03: \"SIP Call-Info Parameters for Rich Call Data\".\n[8]\tIETF RFC 8224: \"Authenticated Identity Management in the Session Initiation Protocol (SIP)\".\n[9]\tIETF RFC 8831: “WebRTC Data Channels”\n[10]\t3GPP TS 23.334: “IP Multimedia Subsystem (IMS) Application Level Gateway (IMS-ALG) - IMS Access Gateway (IMS-AGW) interface: Procedures descriptions”\n[11]\t3GPP TS 33.501: \"Security architecture and procedures for 5G system\".\n[12]\t3GPP TS 23.228: “IP Multimedia Subsystem (IMS); Stage 2”\n[13]                    IETF RFC 8827: “WebRTC Security Architecture”\n[14]\t3GPP TS 32.274: \"Telecommunication management; Charging management; Short Message Service (SMS) charging\"\n[15]\tGSMA NG.129: \"IMS Data Channel White Paper\"\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nDC\tData Channel\nDCMF\tMedia Function of Data Channel Server\nDCMTSI\tData Channel Multimedia Telephony Service for IMS\nDCSF\tControl Function of Data Channel Server\nP2A\tPerson to Application\nP2P\tPerson to Person\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tAssumptions",
+            "description": "Solutions are built on the media security principles as in TS 33.328 [3] and conclusions drawn in TR 23.700-87 [2].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tKey issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tKey issue #1: Third party specific user identities",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tKey issue details",
+                            "text_content": "According to TR 23.700-87 [2], there are scenarios that the third party subscribers (e.g. employees) use third party IDs (e.g., enterprise employee ID). The IMS network can present the third party ID to the callee during subsequent calling process. The third party subscriber can access the IMS network directly or via a SIP trunk as well.\nFrom the security point of view, the enhanced IMS network shall be able to support the identity verification and authorization of third-party user during an IMS call.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tThreats",
+                            "text_content": "A malicious UE can use IDs belonging to others or forged IDs to initiate IMS calls in the IMS network;\nA malicious UE can use an ID that no longer belongs to it to initiate IMS calls in the IMS network (e.g., the user use the ID allocated by a particular company even after leaving it).\nThe ID's transfer between IMS networks may be manipulated by intermediary network entities. Consequently, the callee may receive a wrong ID.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tPotential security requirements",
+                            "text_content": "Third party specific user identities shall be authorized and verified by the originating IMS network before or during a call.\nThe originating IMS network shall be able to coordinate with the third party to verify and authorize the third-party specific user identities.\nThe IMS network shall be able to support the integrity protection of the third-party specific user identities on the originating side and terminating side.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tKey issue #2: Security aspects of Data Channel usage in IMS network",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tKey issue details",
+                            "text_content": "Existing IMS procedures need to be changed to support Data Channel usage in IMS as is being studied in TR 23.700-87 [2]. It needs to be studied whether usage of Data Channel in IMS brings new security threats and requirements, and if so, it needs to be studied whether existing solutions could be re-used or if new solutions would need to be developed.\nOne of the security issues of Data Channel is as follows. Clause N.3 of TS 33.328 [3] describes media security of the WebRTC data channel, but only e2ae (End-to-access edge) security is specified at the moment. It means that an SCTP over DTLS connection is established between the DCMTSI client and the IMS-AGW (see section 5.20.2 of TS 23.334 [10]). The text is void of any references to e2e security mode for the IMS data channels. However, GSMA has pointed in their LS to a use case where Data Channel Server (DCS) can be deployed in an external data server outside the operator’s administrative domain. Such server may have or may not have WebRTC data channel protocol support.  According to IETF RFC 8831 [9] (clause 6.2), SCTP over DTLS connection needs to be established between two endpoints supporting WebRTC data channel protocol (i.e., the DCMTSI client and the external data server). Current security mechanisms in WebRTC data channel needs to be reviewed and possibly reused for data channel in IMS.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tSecurity threats",
+                            "text_content": "The lack of security over the IMS data channel can open up for attackers to eavesdrop or tamper with the data transferred over the data channel.\nThe lack of authentication between UE and peers (i.e., another UE and data channel server) before media exchange can open up for spoofing attack from both sides and Man-in-the-Middle attacks as well.\nIf only the Mb interface i.e., DCMTSI client to IMS-AGW part of the data channel path is protected, IMS-AGW to external data server path will stay unprotected and exposed to attacks like eavesdropping, modification and replay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tPotential security requirements",
+                            "text_content": "Communication over IMS data channel shall be confidentiality, integrity and replay protected.\nThe peers over IMS data channel shall be mutually authenticated.\nThe path between IMS-AGW and external data server shall be confidentiality, integrity and replay protected.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tKey issue #3: security aspects of SBA in IMS media control plane",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tKey issue details",
+                            "text_content": "Service based architecture is introduced in IMS media control plane. Security for service based architecture need to be considered. Current security mechanisms in 5GC SBA needs to be reviewed and possibly resued for service based architecture in IMS. Co-existence of 5G service based and legacy IMS media control interfaces also needs to be considered.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tSecurity threats",
+                            "text_content": "The attacker can easily obtain or tamper context transferred between IMS nerwork functions when there is no confidentiality and integrity protection between these IMS nodes.\nIf no authentication has been performed before signalling exchange between IMS NFs, these nodes will potentially suffer spoofing attack from both sides and Man-in-the-Middle attack.\nIf no authorization has been performed in service based architecture, a requester NF can potentially obtain information and request NF service which are not allowed for it.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.3\tPotential security requirements",
+                            "text_content": "Service based interfaces in IMS media control plane should support mutual authentication, confidentiality and integrity protection.\nNF service access shall be authorized in service based architecture.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tProposed solutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.0\tMapping of solutions to key issues",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 6.1-1: Mapping of solutions to key issues\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.1-1: Mapping of solutions to key issues",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.1\tSolution #1: How the Originating IMS network signs the 3rd party IDs and terminating IMS network verifies the 3rd party IDs",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tIntroduction",
+                            "text_content": "This solution addresses the key issue #1 (Third party specific user identities). As stated in the key issue details, there are scenarios that the 3rd party subscribers (e.g., employees) use third party IDs (e.g., enterprise employee ID). The IMS network can present the 3rd party ID (3P ID) to the callee during subsequent calling process. From the security point of view, the enhanced IMS network needs to be able to support the identity verification and authorization of 3rd party user during an IMS call.\nThis solution proposes to use the existing Ms reference point and procedures as described in TS 24.229 [4] and STIR/SHAKEN framework [5] while adopting draft-ietf-stir-passport-rcd-18 [6].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tSolution details",
+                            "text_content": "The Ms reference point as described in TS 24.229 [4] is used to request signing of a SIP Identity header field and verification of a signed assertion in a SIP Identity header field. This enables calling number verification using signature verification and attestation information based on the STIR/SHAKEN framework.\nThe figure depicts a Ms reference point operation, which is a key component in the design of a 5G network. It illustrates the process of establishing a reference point for the network, which is essential for ensuring reliable communication. The figure shows the various components involved, such as the reference point, the network, and the user equipment (UE). The figure also includes a visual representation of the network topology, which is crucial for understanding the network's structure and design.\nFigure 6.1.2.1-1: Ms reference point operation (see TS 24.229 [XX], Annex V.2)\nHere is the SHAKEN Reference Architecture in ATIS-1000074 [5].\n\nThe figure depicts the SHAKEN Reference Architecture, which is a standardized reference model for SDN-based network virtualization. It outlines the key components and relationships within the network, including the network virtualization layer, the SDN controller, and the network virtualization fabric. The architecture is designed to support the deployment of SDN controllers and network virtualization technologies, enabling efficient network management and optimization.\nFigure 6.1.2.1-2: SHAKEN Reference Architecture\nHowever, securing the display name of a caller was outside the scope of Secure Telephone Identity Revisited (STIR) while draft-ietf-stir-passport-rcd-18 [6] documents an optional mechanism for PASSporT and the associated STIR procedures allowing to sign and verify additional data elements including for example:\n-\tthe name of the calling person or of an entity;\n-\tthe traditional caller ID along with related display information that would be rendered to the called party during alerting;\n-\thyperlinks to images, such as logos or pictures of faces, or to similar external profile information;\n-\tinformation related to the location of the caller;\n-\tinformation related to an organization the caller is associated with, or categories/departments of organizations and institutions;\n-\tpossibly other Rich Call Data (RCD) information elements.\nThe types of 3rd party user identities as used in IMS need to be aligned with the definitions in [6] and include the calling person's name and job title, information related to the organization the caller is associated with and information related to the caller's location. The overall reference architecture is depicted in Figure 6.X.2.1-1. The 3rd party (Enterprise) network can be connected to the serving IMS network via UNI or NNI interfaces. The serving IMS network handles outbound SIP calls from the Third Party.\nThere are several options how and where the 3rd party user identities are signed and verified. These options allow for different deployment scenarios, e.g., using UNI or NNI interface between 3rd Party and IMS network, with different levels of impact to the 3rd Party network and the IMS network provider and with different levels of trust relationship between both.\nThis solution proposes that the originating IMS network invokes the signing on behalf of 3rd Party. In this case the signing AS in Figure 6.1.2.1-1 is invoked by the originating IMS network and the verification of the signature is invoked in the terminating IMS network.\nPrerequisites:\n1. The 3rd Party specific user identities and the corresponding rich call data information related to each 3rd Party specific user identity that are subject for signing in the originating IMS network are associated to the corresponding IMS identities in a Database. The address of the applicable Database for the user can be stored in HSS. Who owns and how this Database is administered/provisioned is out of scope of the present solution.\nNOTE 1: \tIn the PBX case, it is assumed that this Database is under control of the 3rd Party (Enterprise) as the enterprise is responsible for assigning the IMS identities which are provided by the IMS operator to their employees and therefore also maintaining the corresponding Rich Call Data information. Otherwise, the Database could be provided by the originating IMS operator and allow certain access to the calling UE via a UE self-management portal. The access to the enterprise administrator (in the PBX case) or the UE (in the single UE case) self-management portal is assumed to be secured. How this is done is out of scope of the present solution.\n2. \tOriginating IMS network is assumed to have a secure channel to the Database which includes Rich Call Data information. How this secure channel is set-up is out of scope of the present solution.\nNOTE 2:  When the Database is located outside the IMS operator domain, the access to the Database can be secured in the same way as the SIP trunk link between the IMS network and the PBX; i.e., using mutual TLS as defined in Clause S.2.2 of TS 23.228 [12].\nNOTE 3:  If the user has multiple 3rd party IDs, the RCD data that matches the provided 3rd  party ID for the IMS identity will be selected. If no match is found, a default RCD data record or no RCD data for the IMS identity will be selected depending on the operator policy.\nThe preceding context and figure name suggest that the task is to analyze a telecommunication figure and write a short paragraph (3-5 sentences) describing its content. The figure is labeled \"Figure 6.1.2.2-1: How Originating IMS network invokes the signing on behalf of 3 rd  party (SIP trunk)\".\n\nThe paragraph should provide a technical but concise summary of the figure's content. The paragraph should include the following elements:\n\n1. The figure's title and its context.\n2. The figure's content and key points.\n3. The figure's significance and how it relates to the task.\n\nHere's a possible paragraph:\n\nThe figure depicts the process of how the Originating IMS network invokes the signing on behalf of the 3rd party (SIP trunk) in an IMS network. This process is crucial for ensuring the security and reliability of the network. The figure shows the various components involved, such as the Originating IMS network, the 3rd party, and the SIP trunk, and how they work together to ensure a secure and reliable communication channel. The figure also highlights the importance of redundancy and failover in the network, as well\nFigure 6.1.2.2-1: How Originating IMS network invokes the signing on behalf of 3rd party (SIP trunk)\n1. The 3rd party PBX sends a SIP INVITE that contains the IMS Identity of the calling UE and that may or may not contain the third party ID on behalf of 3rd party subscriber to IBCF.\n2. The IBCF forwards the SIP request to the IMS subsystem entity. The IMS subsystems include I/S-CSCF, MMtel AS and etc. (details not shown in the figure)\n3. The originating IMS subsystem checks whether the IMS subscription of the calling PBX is authorized to use 3P IDs. If the PBX is not authorized to use 3P IDs, then the originating IMS subsystem ignores the 3P ID within the SIP INVITE (if present) and do not execute the rest of 3P ID related steps during the call set-up. The call continues without presenting 3P ID to the called endpoint.\nIf the PBX is authorized to use 3P IDs, the originating IMS subsystem gets Rich Call Data of 3rd party susbscriber from the Database based on the received IMS identity. If no RCD data exists for this user (IMS identity), the rest of 3P ID related steps are not executed during the call set-up. The call continues without presenting 3P ID to the called endpoint.\nNOTE:  \tIf no 3P ID is received in the SIP INVITE from the PBX, suppression of a Database lookup can be optionally applied based on a local policy. If there is a mismatch between the received 3P ID in the SIP INVITE and data retrieved from the Database based on the IMS identity, it is governed by a local policy of the originating IMS subsystem how the population of the Rich Call Data into the SIP Identity header will be done.\n4. The originating IMS subsystem adds a P-Asserted-Identity header field asserting the telephone number and Rich Call Data of the 3rd party subscriber and invokes the STI-AS to sign the Identity header based on Figure 6.X.2.1-2: SHAKEN Reference Architecture and TS 24.229 [4].\n5. STI-AS interacts with SKS (not shown in the figure) and signs the SIP identity header according to STIR/SHAKEN framework and draft-ietf-stir-passport-rcd-18.\n6. STI-AS returns the signed SIP identity header back to IMS subsystem.\n7. The originating IMS subsystem, through standard solution, routes the call to the egress IBCF. Then SIP INVITE is routed over the NNI through the standard inter-domain routing configuration. The terminating service provider’s ingress IBCF receives the INVITE over the NNI and forwards to terminating IMS subsystems.\n8. The terminating IMS subsystem entity invokes the STI-VS to verify the signed SIP identity header\n9. STI-VS interacts with STI-CR to validate the certificate and extracts public key and verify the signature in the Identity header field, which validates the Caller ID and Rich Call Data when signing the INVITE on the originating STI-AS based on Figure 6.X.2.1-2: SHAKEN Reference Architecture and TS 24.229 [4].\n10. Depending on the result of the STI validation, STI-VS determines that the call is to be completed with an appropriate indicator and the result is passed back to terminating IMS subsystem which continues to set up the call to the terminating SIP UA. If the Caller ID is validated OK but not the rich call data, the call can continue but without showing name card info to terminating SIP UA.\n11. The SIP INVITE with verstat parameter is sent to terminating SIP UA.\n12. The terminating SIP UA sends 18X and 200 to originating IMS subsystem.\n13. Originating IMS subsystem sends 18X and 200 to originating SIP UA. The call continues following standard solution.\n\nThe preceding context and figure name suggest that the task is to analyze a telecommunication figure and write a short paragraph (3-5 sentences) describing its content. The figure is labeled \"Figure 6.1.2.3-1: How Originating IMS network invokes the signing on behalf of 3 rd  party (single SIP registration).\"\n\nThe figure depicts a network architecture, specifically an IMS (Internet Mobile Submarine Cable) network, which is a type of telecommunication infrastructure used for mobile communication. The figure shows the network's structure, including the originating IMS network, the 3rd party (a third party involved in the signing process), and the signing on behalf of the 3rd party.\n\nThe paragraph should provide a brief overview of the figure's content, highlighting the key components and the role of each component in the network's operation. The paragraph should also explain how the figure relates to the preceding context and the figure name, providing a technical yet concise summary of the information presented.\nFigure 6.1.2.3-1: How Originating IMS network invokes the signing on behalf of 3rd party (single SIP registration)\n1. The 3rd party subscriber sends a SIP INVITE that contains the IMS Identity of the calling UE and may or may not contain the 3P ID.\n2. The originating IMS subsystem checks whether the IMS subscription of the calling UE is authorized to use 3P IDs.  If the UE is not authorized to use 3P IDs, then the originating IMS subsystem ignores the 3P ID within the SIP INVITE (if present) and do not execute the rest of 3P ID related steps during the call set-up. The call continues without presenting 3P ID to the called endpoint.\nIf the UE is authorized to use 3P IDs, the originating IMS subsystem gets Rich Call Data of 3rd party subscriber from the Database based on the received IMS identity. If no RCD data exist for this user (IMS identity), the rest of 3P ID related steps are not executed during the call set-up. The call continues without presenting 3P ID to the called endpoint.\nNOTE:  \tIf no third-party ID info is received in the SIP INVITE from the UE, suppression of a Database lookup can be optionally applied based on a local policy. If there is a mismatch between the received 3P ID in the SIP INVITE and data retrieved from the Database based on the IMS identity, it is governed by a local policy of the originating IMS subsystem how the population of the Rich Call Data into the SIP Identity header will be done.\n3. The originating IMS subsystem adds a P-Asserted-Identity header field asserting the telephone number and rich call data of the SIP UA and invokes the STI-AS to sign the Identity header based on Figure 6.1.2.1-2: SHAKEN Reference Architecture and TS 24.229 [4].\n4. STI-AS interacts with SKS (not shown in the figure) and signs the SIP identity header according to STIR/SHARKEN framework and draft-ietf-stir-passport-rcd-18.\n5. STI-AS returns the signed SIP identity header back to IMS subsystem.\n6. The originating IMS subsystems, through standard solution, routes the call to the egress IBCF. Then SIP INVITE is routed over the NNI through the standard inter-domain routing configuration. The terminating service provider’s ingress IBCF receives the INVITE over the NNI and forwards to terminating IMS subsystems.\n7. The terminating IMS subsystems invoke the STI-VS to verify the signed SIP identity header.\n8. STI-VS interacts with STI-CR to validate the certificate and extracts public key and verify the signature in the Identity header field, which validates the Caller ID and rich call data when signing the INVITE on the originating STI-AS based on Figure 6.X.2.1-2: SHAKEN Reference Architecture and TS 24.229 [4].\n9. Depending on the result of the STI validation, STI-VS determines that the call is to be completed with an appropriate indicator and the result is passed back to terminating IMS subsystem which continues to set up the call to the terminating SIP UA. If the Caller ID is validated OK but not the Rich Call Data, the call can continue but without showing name card info to terminating SIP UA.\n10. The SIP INVITE with verstat parameter is sent to terminating SIP UA.\n11. The terminating SIP UA sends 18X and 200 to originating IMS subsystem.\n12. Originating IMS subsystem sends 18X and 200 to originating SIP UA. The call continues following standard solution.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tEvaluation",
+                            "text_content": "This solution addresses the requirements of KI#1 and is applicable to both UNI (SIP UA) and NNI (IP PBX) case. The solution reuses existing STIR/SHAKEN architecture with enhancements that the STI-AS and STI-VS needs to support the signing and verification of the Rich Call Data identity header.\nThe solution relies on a Database which contains the association of the 3rd Party specific user identities and the corresponding Rich call data information with the corresponding IMS identities.\nThe solution requires no changes on the IP PBX and SIP UA. The solution requires minimal impact on the existing IMS procedures.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tSolution #2: SHAKEN based third-party specific user identities",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tIntroduction",
+                            "text_content": "This solution addresses key issue #1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tSolution details",
+                            "text_content": "Following preconditions are fulfilled before a third party specific user identity can be used:\n-\tFor the originating UE, subscription data for the usage of third party specific user identity is configured in the HSS.\n-\tFor the terminating UE, subscription data for the verification of third party specific user identity is configured in the HSS.\n-\tThird party Authorization server is authorized by the serving IMS network to provide third party specific user identity for specific group of UEs.\n-\tThe originating UE is authorized by third party Authorization Server to use designated third party specific user identity by one of the two following methods:\n-\tOption A: The third party leverages the subscriber management capability exposed by HSS via NEF to allocate a designated Public User Identity and associated Service Profile for the UE.\n-\tOption B: The third party assigned a token to the UE for the authorization of third party specific ID via application layer. How the third party Authorization Server distributes the token to the UEs and the content of the token are out of the scope of this study report.\nFigure 6.2.2-1: Call flow for using third party identity\nThe enhancement to SHAKEN reference call flow specified in clause 4.3 of ATIS-1000074 [5] are as following:\n0a.\t (For option A) The third party Authorization Server is authorized by NEF to request allocation of designated IMPU and associated Service Profile for the UE to HSS. The allocated IMPU is received and configured in the UE in IMS registration procedure.\n0b.\t (For option B) Third party Authorization server is authorized by the serving IMS network to provide third party specific user identity. The UE interacts with the third party via application layer to receive a token for the authorization of third party specific ID.\nIn the PBX case, it is assumed that the PBX will authenticate the UE and create the SIP INVITE on behalf of UE which is out of scope of this solution.\nFor legacy UEs and PBX, option A should be used since the legacy UE can only use IMPU.\n1.\tThe originating UE or the PBX creates a SIP INVITE with:\n-\tthe Public User Identity allocated by third party (for option A); or\n-\t an Authorization Header which contains the third party specific user identity, realm of the third party Authorization Server and the token assigned by the third party Authorization Server (for option B).\nNOTE 1:\tHow the UE or the PBX interacts with the third party Authorization Server via application layer to get the third party specific user identity or token is out of scope of this study.\n2.\tOriginating IMS network (e.g. S-CSCF) checks the UE subscription data to confirm that the UE or the PBX is allowed to use a third party specific user ID. The S-CSCF resolves the address of the third party Authorization Server based on the Public User Identity (option A) or realm information in the authorization request (option B). The authorization request is forwarded to the NEF. The NEF discovers and selects the third party Authorization Server for the authorization of using third party specific user identity.\n3.\tThe third party Authorization Server authorizes the request and creates an enterprise name card for the user, which is going to be delivered in the SIP header. For option B, the authorization can be done using the token received in the INVITE as mentioned above or as described in clause 6.2.2.2.\nIf the authorization request is rejected, the IMS call can continue without presentation of third party specific user identity and optionally with a failed code, i.e., verstat tel URI parameter as described in TS 24.229 [4].\nNOTE 2: The key information of enterprise name card and integrity protection mechanism are specified in draft-ietf-sipcore-callinfo-rcd-03 [7] and draft-ietf-stir-passport-rcd-18 [6].\n4-5.\tThe Signing Server signs the SIP INVITE and adds Identity header field(s) per IETF RFC 8224 [8] using the third party specific user ID in the P-Asserted-Identity header field and enterprise name card information. The signing can reuse Ms reference point as described in TS 24.229 [4].\n6\tSIP INVITE with signature is sent to the terminating IMS networks.\n7-8.\tUpon receiving the SIP INVITE with third party specific user identity, the terminating IMS checks whether the terminating UE has subscribed for verification of third party identity. If allowed, the terminating IMS triggers the verification procedure with the Verification Server.\n9.\tThe third party specific user identity and enterprise name card is received and rendered in the terminating UE.\nThis clause provides an alternative authorisation method for option B at step 3 in clause  6.2.2.1.\nRather than using the token to authorise the UE, the authorization sever may initiate an authentication procedure with UE based on local policy upon receiving the request from IMS. After successful authentication, the authorization sever can create an enterprise name card for the user. The authentication between UE and the authorization server is out of scope of this study.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tEvaluation",
+                            "text_content": "This solution meets the requirements of KI#1. 3rd party on its own performs the user verification and name cards delivery, therefore, the solution can be applied in case that the users of the 3rd party change dynamically (e.g., employees leaving or joining an enterprise).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tSolution #3: Service based interface protection in media control plane",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tIntroduction",
+                            "text_content": "This solution proposes to reuse the security mechanisms defined for 5GC to protect the service based interface in IMS media control plane.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tSolution details",
+                            "text_content": "All service based network functions in IMS media control plane shall support protection in network or transport layer as specified in clause 13.1.0 of TS 33.501 [11].\nAll service based network functions in IMS media control plane and NRF shall support either static authorization as specified in clause 13.3.0, clause 13.3.1 and clause 13.3.2.1 of TS 33.501 [11] or OAuth 2.0 based authorization as specified in clause 13.4.1.1 TS 33.501 [11].\nNOTE: It is assumed that slice related aspects or indirect communication using SCP are not applicable in IMS.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.3\tEvaluation",
+                            "text_content": "The solution meets the security requirements of KI#3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tSolution #4: End-to-access-edge security for IMS data channels",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tIntroduction",
+                            "text_content": "This solution addresses key issue #2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.2\tSolution details",
+                            "text_content": "There are two types of data channels according to TR 23.700-87 [2], i.e., bootstrap data channel which is used to transfer data channel application list and data channel applications between the UE and the network and application data channel which is used to transfer data of data channel applications between the UEs or between the UE and the network.\nFor application data channel, it can be further classified into 4 types: P2A without the involvement of DCSF, P2A with DCSF, P2P without DCMF/enhanced MRF, and P2P with DCMF/enhanced MRF.\nIn bootstrap data channel case (bootstrap data channel between UE and DCMF/enhanced MRF as showed in the figure 6.4.2.1-1), two P2A cases of application data channel (application data channel between UE and DC application server as showed in the figure 6.4.2.1-1) and P2P with DCMF/enhanced MRF case of application data channel (application data channel between UE and UE in remote IMS as showed in the figure 6.4.2.1-1), the DCMF/enhanced MRF is proposed to terminate DTLS protecting with UE.\nIn the P2P without DCMF/enhanced MRF case, the IMS-AGW is responsible for terminate DTLS protecting with UE.\nThe protection between DCMF/enhanced MRF and DCSF can be TLS or DTLS which depends on the underlying protocols, i.e., UDP or TCP.\nThe figure depicts a schematic representation of an IMS (Integrated Microwave System) supporting DC usage, with DCMF (Distributed Microwave Filter) technology highlighted. The figure illustrates the various components and their connections, including the DCMF, the DC line, and the DC line terminal (OLT). The DCMF is a key component in the IMS system, responsible for filtering and shaping the DC signal to ensure optimal performance. The figure also includes a reference to TS 23.700-87, which outlines the requirements for DC usage in the IMS system.\nFigure 6.4.2.1-1: IMS supporting DC usage with DCMF (see TS 23.700-87 [2], clause 6.20.1.2)\nNOTE:  The protocols between DCMF/DCSF and DC application server are out of scope of this study.\nThe DTLS between UE and the IMS is established based on the certificate fingerprints exchanged over SDP. To ensure the integrity of the certificate fingerprint the signalling path is assumed to be protected. In case the DTLS is between UE and DCMF/enhanced MRF, the P-CSCF should include the certificate fingerprint of the DCMF/enhanced MRF in the SDP answer to UE. In case the DTLS is between UE and IMS-AGW, the P-CSCF should include the certificate fingerprint of the IMS-AGW in the SDP answer to UE. In both cases, the UE should include its certificate fingerprint in the SDP offer to P-CSCF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.3\tEvaluation",
+                            "text_content": "The solution meets the security requirements of KI#2 when the external DC Application Server only supports the HTTP protocol and e2e security between UE and application server is not addressed in this solution.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.5\tSolution #5: How to avoid e2ae limitation and achieve e2e security for IMS Data Channel",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.5.1\tIntroduction",
+                            "text_content": "This solution addresses the key issue #2 (Security aspects of Data Channel usage in IMS network). As stated in the key issue details, clause N.3 of TS 33.328 [3] describes media security of the WebRTC data channel, but only e2ae (end-to-access edge) security is specified now. It means that an SCTP over DTLS connection is established between the DCMTSI client and the IMS-AGW (see section 5.20.2 of TS 23.334 [10]). The text is void of any references to e2e security mode for the IMS data channels. However, there exist use cases in TS 23.700-87 [2] (Solutions #3, #6, #9, #16, and #20) where Data Channel Server (DCS) or related data channel application functionality can be deployed in an external data server outside the operator’s administrative domain. According to IETF RFC 8831 [9] (clause 6.2), SCTP over DTLS connection needs to be established between two endpoints supporting WebRTC data channel protocol (e.g., the DCMTSI client and the external data channel server or data channel application server).\nThis solution proposes to allow the DTLS connection from the data channel endpoints to pass transparently through the IMS network by allowing e2e security mode for IMS (and thus WebRTC) data channel media if the external Data Server supports both HTTP and IETF RFC 8831 WebRTC data channel protocols. In the model when the external Data Server supports only HTTP protocol and responds to DCMTSI service requests for the data channel content, end-to-access edge (e2ae) encryption is used, therefore all data channel traffic is anchored in IMS network and is transported unencrypted from IMS-AGW towards the external entities.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.5.2\tSolution details",
+                            "text_content": "The MDC2 reference point as described in TS 23.700-87 [2] Solution#20(and similar reference points in other solutions in that document) is used for transport of data channel media between DC Media Function (either DCMF or enhanced MRF) and DC Application Server, see Figure 6.5.2.1-1 as one example of such solution. If the external DC application server supports both HTTP and IETF RFC 8831 WebRTC data channel protocols, the server responds to UE(DCMTSI client)service requests for the data channel content and the content driving the interaction with the server is delivered over the data channel. In order to establish the WebRTC data channel between the UE and the DC Application Server a signaling channel is required e.g. to exchange fingerprints binding the certificates. The end-to-end (e2e) encryption for the data channel should be used as specified in IETF RFC 8831 [9] and IETF RFC 8827 [13].\nThe figure depicts a communication system with a focus on the use of IMS-external data channel media, as referenced in TS 23.700-87 [2], clause 6.20.1. The system includes a combination of IMS-external data channel media and traditional data channel media, with the latter being used for voice and video services. The figure illustrates the various components and their interconnections, highlighting the importance of proper design and implementation to ensure reliable and efficient communication.\nFigure 6.5.2.1-1: Use of IMS-external data channel media (see TS 23.700-87 [2], clause 6.20.1)\nThere are two types of Data Channels: Bootstrap Data Channel and Application Data Channel. According to GSMA NG.129 [15], the application Data Channel supports the P2P, P2A and A2P use cases. The data channel related P2P/P2A/A2P definitions follow from TS 32.274 [14] and are applied accordingly to this document with the following meaning:\n1.\tPerson-to-Person (P2P): The session is originated by a UE and terminated on another UE.\n2.\tPerson-to-Application (P2A): The session is originated by a UE and terminated on a third-party application.\n3.\tApplication-to-Person (A2P): The session is originated by a third-party application and terminates on a UE.For the P2P use case, DC media resources are not required. So, the application data channel can either involve DCMF (enhanced MRF) or not.\nFor the P2A/A2P use cases, DC media resources are required. So, the application data channel should involve DCMF (enhanced MRF).\nThe IMS Data Channel user plane (not depicted in Figure 6.5.2.1-1) from UE (DCMTSI client in terminal) to the IMS-AGW is secured with DTLS regardless of e2ae or e2e security being used. The DC Application server can be deployed outside the operator’s administrative domain and provides service logic and/or media content for the data channel application.\nIf the DC Application server supports only the HTTP protocol, the data channel is established between the DCMTSI and the IMS. An SCTP connection over DTLS over UDP is established between the DCMTSI client (UE) and the IMS-AGW which is applied to P2P use case without DC media resources. An SCTP connection over DTLS over UDP is established between the DCMTSI client (UE) and DCMF (enhanced MRF) which is applied to the A2P/P2A use cases, the P2P use case with DC media resources and the bootstrap data channel. The data channel transport layer is terminated at IMS-AGW or DCMF (enhanced MRF) and e2ae security is achieved.\nIf the DC Application server supports both HTTP and IETF RFC 8831 [9] WebRTC data channel protocols, the application data channel is established between the DCMTSI client (UE) and the External DC Application Server. An SCTP connection over DTLS over UDP is established directly between the DCMTSI client (UE) and the external DC Application server, which is applied to the A2P and P2A use cases. In order to establish the WebRTC data channel, a signaling channel is required e.g., to exchange fingerprints binding the certificates.\nIMS-AGW does not terminate DTLS and thus only anchors IP and UDP protocol layers towards DCMF/enhanced MRF, and DCMF/enhanced MRF is also transparent to DTLS traffic between Mb and MDC2 reference points, e2e security is achieved between the UE and the DC Application Server, without security risks even if the DC Application Server is placed outside of the operator’s domain.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.5.3\tEvaluation",
+                            "text_content": "The solution addresses the KI#2 Security aspects of Data Channel usage in IMS network for the two cases: when the external DC Application Server supports only HTTP protocol and when the external DC Application Server supports both HTTP protocol and WebRTC Data Channel protocols. The following changes are suggested:\n-\tTS 33.328 [3] needs to be enhanced to allow e2e security for IMS (and WebRTC) Data Channel media and should (recommend or) mandate using e2e security whenever IMS Data Channel media is used towards an entity deployed outside the operator’s administrative domain.\n-\tTS 23.334 [10] needs to be enhanced to describe use of e2e security for IMS (and WebRTC) Data Channel media.\n-\tTS 24.229 [4] needs to be enhanced to describe use of e2e security for IMS (and WebRTC) Data Channel media.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tConclusions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tConclusion on Key Issue #3",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For key issue#3, it is recommended to use solution #3 to protect the service based interfaces in IMS media control plane and the service access authorization\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tConclusion on Key Issue #2",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following conclusions are agreed for KI#2:\nA)\tThe DCMF/enhanced MRF will terminate DTLS for the following cases:\n1)\tBootstrap data channel;\n2)\tP2A/A2P application data channel if the external Data Server supports only HTTP;\n3)\tP2P application data channel with the involvement of DCMF/enhanced MRF;\nB)\tIf the external Data Server supports both HTTP and IETF RFC 8831 WebRTC data channel protocols for the P2A/A2P Application data channel use cases or P2P cases when the DCMF is not used to anchor the Application data channel, end-to-end (e2e) encryption for the data channel should be supported as specified in IETF RFC 8831 [9] and IETF RFC 8827 [13].\nNOTE:\tLI considerations are nor addressed in the present document.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tConclusions for Key Issue #1",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "It is concluded that no normative work is pursued for key issue #1 according to the conclusion in TR 23.700-87 [2].\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

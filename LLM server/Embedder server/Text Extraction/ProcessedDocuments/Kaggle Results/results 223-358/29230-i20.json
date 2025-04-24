@@ -1,0 +1,270 @@
+{
+    "document_name": "29230-i20.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document lists the 3GPP specific Diameter protocol codes, including the AVP codes and Experimental result codes.\nThis document lists also the application identifiers assigned to 3GPP specific Diameter applications by IANA and the Diameter command code range which is assigned to 3GPP by IANA.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies.  In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TS 29.228: \"IP Multimedia (IM) Subsystem Cx and Dx interfaces; Signalling flows and message contents\".\n[2]\t3GPP TS 29.229:  \"Cx and Dx interfaces based on the Diameter protocol; Protocol details\".\n[3]\t3GPP TS 29.328: \"IP Multimedia (IM) Subsystem Sh interface; Signalling flows and message contents\".\n[4]\t3GPP TS 29.329: \"Sh Interface based on the Diameter protocol; Protocol details\".\n[5]\t3GPP TS 32.299: \"Telecommunication management; Charging management; Diameter charging applications\".\n[6]\t3GPP TS 29.234, Release 11: \"3GPP system to Wireless Local Area Network (WLAN) interworking; Stage 3\".\n[7]\t3GPP TS 29.109: \"Generic Authentication Architecture (GAA); Zh and Zn Interfaces based on the Diameter protocol; Stage 3\".\n[8]\t3GPP TS 29.209, Release 6: \"Policy control over Gq interface\".\n[9]\tIETF RFC 3588: \"Diameter Base Protocol\".\n[10]\tIETF RFC 3589: \"Diameter Command Codes for Third Generation Partnership Project (3GPP) Release 5\".\n[11]\tIANA's Enterprise-Numbers:\n[12]\tIANA's AAA parameters register:\n[13]\t3GPP TS 29.061: \"Interworking between the Public Land Mobile Network (PLMN) supporting packet based services and Packet Data Networks (PDN)\".\n[14]\t3GPP TS 32.296: \"Telecommunication management; Charging management; Online Charging System (OCS): Applications and interfaces\".\n[15]\t3GPP TS 29.210, Release 6: \"Charging rule provisioning over Gx interface\".\n[16]\t3GPP TS 29.140, Release 6: \"Multimedia Messaging Service (MMS); MM10 interface based on Diameter protocol; Stage 3\".\n[17]\t3GPP TS 29.211, Release 6: \"Rx Interface and Rx/Gx signalling flows\".\n[18]\t3GPP TS 29.214: \"Policy and Charging Control over Rx reference point\".\n[19]\t3GPP TS 29.212: \"Policy and Charging Control (PCC);Reference points\".\n[20]\t3GPP TS 29.273: \"Evolved Packet System (EPS); 3GPP EPS AAA interfaces\".\n[21]\t3GPP TS 29.272: \"Evolved Packet System (EPS); Mobility Management Entity (MME) and Serving GPRS Support Node (SGSN) related interfaces based on Diameter protocol\".\n[22]\t3GPP TS 29.215: \"Policy and Charging Control (PCC) over S9 reference point; Stage 3\".\n[23]\tIETF RFC 5516: \"Diameter Command Code Registration for Third Generation Partnership Project (3GPP) Evolved Packet System (EPS)\".\n[24]\t3GPP TS 29.172: \"Location Services (LCS); Evolved Packet Core (EPC) LCS Protocol (ELP) between the Gateway Mobile Location Centre (GMLC) and the Mobile Management Entity (MME); SLg interface\".\n[25]\t3GPP TS 29.173: \"Location Services (LCS); Diameter-based SLh interface for Control Plane LCS\".\n[26]\t3GPP TS 29.219: \"Policy and Charging Control: Spending Limit Reporting over Sy reference point\".\n[27]\t3GPP TS 29.368: \"Tsp interface protocol between the MTC Interworking Function (MTC-IWF) and Service Capability Server (SCS)\".\n[28]\t3GPP TS 29.336: \"Home Subscriber Server (HSS) diameter interfaces for interworking with packet data networks and applications\".\n[29]\t3GPP TS 29.337: \"Diameter-based T4 interface for communications with packet data networks and applications\".\n[30]\t3GPP TS 29.338: \"Diameter based protocols to support SMS capable MMEs\".\n[31]\t3GPP TS 29.468: \"Group Communication System Enablers for LTE (GCSE_LTE)\".\n[32]\t3GPP TS 29.343: \"Proximity-services (ProSe) function to ProSe application server aspects (PC2)\".\n[33]\t3GPP TS 29.344: \"Proximity-services (ProSe) Function to Home Subscriber Server (HSS) aspects\".\n[34]\t3GPP TS 29.345: \"Inter-Proximity-services (Prose) function signalling aspects; Stage 3\".\n[35]\t3GPP TS 29.217: \"Policy and Charging Control over Np reference point\".\n[36]\t3GPP TS 29.128: \"Diameter based T6a/T6b interface between the MME/SGSN and the SCEF\".\n[37]\t3GPP TS 29.153: \"Service exposure functionality between SCEF and RCAF reference point\".\n[38]\t3GPP TS 29.154: \"Service capability exposure functionality over Nt Reference point\".\n[39]\t3GPP TS 29.283: \"Diameter Data Management applications\".\n[40]\t3GPP TS 29.388: \"V2X Control Function to V2X Control Function to Home Subscriber Server (HSS) aspects (V4)\".\n[41]\t3GPP TS 29.389: \"Inter-V2X Control Function Signalling aspects (V6)\".\n[42]\t3GPP TS 29.561: \"Interworking between 5G Network and external Data Networks; Stage 3\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following terms and definitions apply.\n3GPP specific: A definition which is used in conjunction with the 3GPP's vendor identifier.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following abbreviations apply:\nAVP\tAttribute-Value-Pair\nCR\tChange Request\nIANA\tInternet Assigned Numbers Authority\nIETF\tInternet Engineering Task Force\nLS\tLiaison Statement\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tApplication identifiers",
+            "description": "The Diameter applications are identified with the application identifiers as specified in the RFC 3588 [9]. There are two kind of applications: IETF standards track applications and vendor specific applications. All application identifiers are assigned by IANA [12]. This chapter lists the application identifiers assigned by IANA to all 3GPP Diameter applications.\nThe application identifiers are transferred in Diameter command's header in the Application-ID field.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\t3GPP specific application identifiers",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The 3GPP specific application identifiers allocated by IANA are listed in the following table.\nTable 4.1: 3GPP specific application identifiers\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.1: 3GPP specific application identifiers",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tCommand codes",
+            "description": "The command codes are used for communicating the command associated with the Diameter message. The command code is carried in the Diameter header's Command-Code field. The command codes can be divided into standard command codes allocated by IANA and experimental command codes for testing purposes only.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tCommand codes allocated for 3GPP",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Based on the IETF RFC 3589 [10] the IANA has allocated a standard command code range 300 - 313 for 3GPP. The command codes are presented in the following table.\nTable 5.1/1: Command code values allocated for 3GPP\n\nEditor's Note:\tThe following command codes have been allocated to 3GPP, but they have not been used yet.\nTable 5.1/2: Command codes allocated for 3GPP\n\nAs defined in the IETF RFC 5516 [23]. IANA has allocated the following command code values for the S6a/S6d interface application and S13/S13' interface  application.\nTable 5.1/3: SAE related Standard Command code valuess allocated for 3GPP\n\nBesides the standard command code values allocated for 3GPP, IANA has allocated the following vendor-specific command code values for 3GPP vendor-specific Diameter applications:\nTable 5.1/4: Vendor-specific command codes allocated for 3GPP\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 5.1/1: Command code values allocated for 3GPP",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 5.1/2: Command codes allocated for 3GPP",
+                            "table number": 5,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 5.1/3: SAE related Standard Command code valuess allocated for 3GPP",
+                            "table number": 6,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 5.1/4: Vendor-specific command codes allocated for 3GPP",
+                            "table number": 7,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tVendor identifier",
+            "description": "The vendor identifier (also known as Enterprise number) indicates the vendor specific attributes, result codes and application identifiers in Diameter commands. The vendor identifier is used in the Vendor-ID field of the AVP header and in the Vendor-Id AVP. The Vendor-Id AVP is used to identify the vendor in the Vendor-Specific-Application-Id and Experimental-Result-Code grouped AVPs.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\t3GPP's vendor identifier",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The IANA has allocated a vendor identifier value 10415 for 3GPP [11].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tAttribute-Value-Pair codes",
+            "description": "The AVP codes are used together with the vendor identifier to identify each attribute uniquely. There are multiple AVP namespaces. The IETF IANA namespace, that is, the AVPs with vendor identifier zero or without vendor identifier, is controlled by IANA.  Each vendor controls the AVP codes within their AVP namespaces.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\t3GPP specific AVP codes",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The 3GPP specific AVPs have the Vendor-Specific bit ('V' bit) set in the AVP header and they carry the 3GPP's vendor identifier in the Vendor-ID field of the AVP header. The 3GPP specific AVP codes are presented in the following table.\nTable 7.1: 3GPP specific AVP codes\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.1: 3GPP specific AVP codes",
+                            "table number": 8,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tExperimental result codes",
+            "description": "The Diameter answer messages must carry either Result-Code AVP or Experimental-Result AVP. The values of Result-Code AVP are controlled by IANA. The Experimental-Result AVP is a grouped AVP containing the Vendor-Id AVP and Experimental-Result-Code AVP, thus the experimental result codes are controlled in a vendor-specific manner.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\t3GPP specific result codes",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The 3GPP specific result codes are always transferred in the Experimental-Result AVP, which has the Vendor-Id with value of 3GPP's vendor identifier. The 3GPP specific result codes shall follow the same classification as defined for the values of Result-Code AVP in IETF RFC 3588 [9]. That means, the result codes are grouped to following ranges:\n-\t1xxx (Informational)\n-\t2xxx (Success)\n-\t4xxx (Transient Failures)\n-\t5xxx (Permanent Failures)\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.1.1\tInformational",
+                            "text_content": "The Informational result codes shall use the values from 1001 to 1999 in the Experimental-Result-Code AVP.\nEditor's note: No informational result codes have been yet defined in 3GPP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.1.2\tSuccess",
+                            "text_content": "The Success result codes shall use the values from 2001 to 2999 in the Experimental-Result-Code AVP. The reserved 3GPP specific Success result codes are presented in the following table.\nTable 8.1.2: 3GPP specific Success result codes\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.1.2: 3GPP specific Success result codes",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.1.3\tTransient Failures",
+                            "text_content": "The Transient Failure result codes shall use the values from 4001 to 4999 in the Experimental-Result-Code AVP. The reserved 3GPP specific Transient Failure result codes are presented in the following table.\nTable 8.1.3: 3GPP specific Transient Failure result codes\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.1.3: 3GPP specific Transient Failure result codes",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.1.4\tPermanent Failures",
+                            "text_content": "The Permanent Failure result codes shall use the values from 5001 to 5999 in the Experimental-Result-Code AVP. The reserved 3GPP specific Permanent Failure result codes are presented in the following table.\nTable 8.1.4: 3GPP specific Permanent Failure result codes\n\nThis annex defines the recommended assignment procedure of Diameter codes and identifiers within the 3GPP.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.1.4: 3GPP specific Permanent Failure result codes",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.1\tApplication identifiers",
+            "description": "If a working group detects it will require a new application identifier, it should contact the 3GPP TSG-CN WG 4 via a Liaison Statement. The LS shall contain the name of the Diameter application and a reference to the corresponding 3GPP TS. The 3GPP TSG-CN WG 4 will then request the application identifier from IANA. When the application identifier is received, the corresponding working group will be informed by 3GPP TSG-CN WG 4 and the table 4.1 in this specification will be updated.\nAccording to RFC 3588 the creation of a new application should be avoided if at all possible and therefore it is recommended to use the existing application identifiers whenever possible.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tCommand codes",
+            "description": "If a working group detects there is a need for a new command code(s) from the 3GPP's range, it should contact the 3GPP TSG-CN WG 4 via an LS. The LS shall contain the reference to the 3GPP TS, which specifies the command(s). The 3GPP TSG-CN WG 4 will inform the assigned command code(s) to the corresponding working group and the table 5.1 in this specification will be updated.\nIt should be noted that the standard command codes allocated for 3GPP are scarce resource and getting new ones would require IETF specification work to be done. Therefore it is recommended to use the existing command codes  whenever possible.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.3\tAVP codes",
+            "description": "If a working group detects a Diameter application needs new 3GPP specific AVP codes, it should contact the 3GPP TSG-CN WG 4 via an LS. The LS shall contain the name of the Diameter application and a reference to the corresponding 3GPP TS. The 3GPP TSG-CN WG 4 will allocate a range of 100 AVP codes for the application. The range will be informed to the corresponding working group and the table 7.1 will be updated in this specification to show the reserved range. The working group can use the allocated range as a working assumption when defining the actual AVPs.\nWhen the corresponding working group has specified the AVPs, and the specification has been approved and is under CR control,  it should inform the AVPs to the 3GPP TSG-CN WG 4 via an LS. The LS should list the used AVP codes in the form of the table 7.1.\nIf there will be defined new AVPs for a Diameter application through the CR procedure, the assigned AVP range can be used, but the 3GPP TSG-CN WG 4 should be also informed about the new AVP codes via an LS.\nRe-using of the existing AVPs is recommended, but special attention should be paid on the use of enumerated AVPs. Defining new values for an enumerated AVP should be agreed case by case with the working group responsible of the particular enumerated AVP. 3GPP TSG-CN WG 4 shall be informed via an LS about the new values assigned to the enumerated AVP.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.4\tResult codes",
+            "description": "If a working group detects a Diameter application needs new 3GPP specific result codes, it should contact the 3GPP TSG-CN WG 4 via an LS. The LS shall contain the name of the Diameter application and a reference to the corresponding 3GPP TS. The 3GPP TSG-CN WG 4 will allocate a range of 20 result codes from each required result code group for the application. The ranges will be informed to the corresponding working group and the tables in the chapter 8 of this specification will be updated to show the reserved ranges. The working group can use the allocated ranges as a working assumption when defining the actual result codes.\nWhen the corresponding working group has specified the result codes, and the specification has been approved and  is under CR control, it should convey the codes to the 3GPP TSG-CN WG 4 via an LS. The LS should list the used result codes in the form of the tables in chapter 8.\nIf there will be defined new result codes for a Diameter application through the CR procedure, the assigned result code ranges can be used, but the 3GPP TSG-CN WG 4 should be also informed about the new result codes via an LS.\nRe-using of the existing result codes is recommended.\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 12,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

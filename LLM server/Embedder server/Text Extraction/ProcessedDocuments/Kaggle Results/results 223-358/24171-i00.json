@@ -1,0 +1,184 @@
+{
+    "document_name": "24171-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the operations and information coding for the Non-access Stratum (NAS) layer protocol for supporting the Location Services (LCS) in the Evolved Universal Terrestrial Radio Access Network (E-UTRAN).\nThe present document is applicable to the User Equipment (UE) and to the Mobility Management Entity (MME) in the Evolved Packet System (EPS).\nThe present document is developed in accordance to the general principles stated in 3GPP TS 23.271 [1].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.271: \"Functional stage 2 description of LCS\".\n[3]\t3GPP TS 24.301: \"Non-Access-Stratum (NAS) protocol for Evolved Packet System (EPS)\".\n[4]\t3GPP TS 36.355: \"LTE Positioning Protocol\".\n[5]\t3GPP TS 24.080: \" radio interface layer 3 supplementary services specification; Formats and coding \".\n[6]\t3GPP TS 24.030: \"LCS Supplementary service operations; Stage 3\".\n[7]\t3GPP TS 29.171: \"Definition of SLs interface for Control Plane LCS\".\n[8]\t3GPP TS 23.272: \"Circuit Switched (CS) fallback in Evolved Packet System (EPS); Stage 2\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 23.272 [8] apply:\nCS fallback\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nEPS\tEvolved Packet System\nIE\tInformation Element\nE-UTRAN\tEvolved Universal Terrestrial Radio Access Network\nLCS\tLocation Services\nLPP\tLTE Positioning Protocol\nLTE\tLong Term Evolution\nMME\tMobility Management Entity\nMO-LR\t Originated Location Request\nMT-LR\t Terminated Location Request\nNAS\tNon-access Stratum\nUE\tUser Equipment\n\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tOverview",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.1.1\tNAS aspect",
+                            "text_content": "To enable transfer of application protocol messages between the MME and the UE, a generic \"container\" message is defined on the downlink (Downlink Generic NAS Transport message) and the uplink (Uplink Generic NAS Transport message). The message protocol and procedures are described in 3GPP TS 24.301 [3].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.2\tLCS aspect",
+                            "text_content": "Location Services (LCS) uses the generic containers provided by the NAS Generic Transport mechanism to transfer LCS signalling messages between the UE and the network.\nCurrently, container in the generic transport messages can carry the following LCS information:\n-\tLTE Positioning Protocol (LPP) messages (Refer to 3GPP TS 36.355 [4])\n-\tBoth downlink and uplink LPP messages are supported\n-\tA Routing Identifier is transported as the Additional Information IE in Uplink/Downlink Generic NAS Transport message for LPP messages (Refer to 3GPP TS 24.301 [3])\n-\tLocation services messages\n-\tMessages for MO-LR operations (Refer to 3GPP TS 24.080 [5])\n-\tMessages for MT-LR LCS location notification  (Refer to 3GPP TS 24.080 [5])\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.2\tLCS Support capabilities",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tUE support of LCS",
+                            "text_content": "The UE announces to the network its ability to support LCS notification mechanism and/or LPP messages using the UE Network Capability IE defined in 3GPP TS 24.301 [3].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tMME support of LCS",
+                            "text_content": "The network announces to the UE its ability to support LCS MO-LR mechanism in E-UTRAN and GERAN/UTRAN using the EPS network feature support IE defined in 3GPP TS 24.301[3].  These information are taken into account by the UE, in addition to UE's LCS and CSFB capabilities for UE to determine whether to initiate EPC-MO-LR procedure or CS fallback procedure for CS-MO-LR in GERAN/UTRAN as specified in 3GPP TS 23.272 [8], subclause 8.3.1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tSupport of LCS signaling",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This clause defines the E-UTRAN LCS operations (subclause 5.2) and the format and coding of the messages (subclause 5.3).\nThe messages defined in this subclause can be transported in the Downlink Generic NAS Transport message and the Uplink Generic NAS Transport message defined in 3GPP TS 24.301 [3].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tLCS operations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.0\tGeneral",
+                            "text_content": "The operations defined in this subclause are for E-UTRAN LCS support only.\nThe MO-LR operation and the Location Notification operation for E-UTRAN LCS are similar to that for GERAN and UTRAN LCS. The operations for GERAN and UTRAN location signalling support are defined in 24.030 [6].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.1\tNetwork initiated location services operations",
+                            "text_content": "The Location Notification operation enables the MME to trigger the end-user notification verification process on the UE using NAS signaling.  The NAS signaling (see  5.2.1.1.1) are transported using the Downlink Generic NAS Transport message and the Uplink Generic NAS Transport message defined in 3GPP TS 24.301 [3]. Figure 5.2.1.1.0-1 illustrates an example of the NAS signaling transport for an EPC-MT-LR session.\n\nThe figure depicts a NAS signaling transport for Location Notification, illustrating the communication between the network and the user device. The diagram shows the various components involved in the signaling process, including the network access server (NAS), the user device, and the location service provider (LSP). The figure highlights the importance of network access control (NAC) and location-based services (LBS) in ensuring secure and reliable communication.\nFigure 5.2.1.1.0-1: NAS signaling transport for Location Notification\nNOTE:\tThe optional Additional Information IE of the Downlink/Uplink Generic NAS Transport message is not used when the LCS Location Notification signaling are transported in the Generic Message Container.\nThe network invokes a location notification procedure by sending a REGISTER message containing a LCS-LocationNotification invoke component to the UE. This may be sent either to request verification for MT-LR or to notify about already authorized MT-LR.\nIn case of privacy verification the UE shall respond to the request by sending a RELEASE COMPLETE message containing the mobile subscriber's response in a return result component (see figure 5.2.1.1.1-1).\nIf the timer T(LCSN) expires in the network before any response from the UE (e.g. due to no response from the user), the network shall interpret this by applying the default treatment defined in TS 3GPP 23.271 [2] (i.e. disallow location if barred by subscription and allow location if allowed by subscription).\nIn the case of location notification no response is required from the UE, the UE shall terminate the dialogue by sending a RELEASE COMPLETE message containing a LocationNotification return result.\nIf the UE is unable to process the request received from the network, it shall return an error indication by sending a RELEASE COMPLETE message containing a return error component. Error values are specified in 3GPP TS 24.080 [5].\n\n\nUE\tNetwork\nREGISTER\n<------------------------------------------------------------------------------------------------------------------------\nFacility (Invoke = LCS-LocationNotification (notificationType, locationType, lcsClientExternalID, lcsClientName,  lcsRequestorID, lcsCodeword, lcsServiceTypeId))\n\nRELEASE COMPLETE\n------------------------------------------------------------------------------------------------------------------------>\nFacility (Return result = LCS-LocationNotification (verificationResponse))\n\nRELEASE COMPLETE\n-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  ->\nFacility (Return error (Error))\n\nRELEASE COMPLETE\n-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  ->\nFacility (Reject (Invoke_problem))\n\nRELEASE COMPLETE\n<-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -\n\n\nFigure 5.2.1.1.1-1: Location Notification\nThe MME sends LPP message and the associated Routing Identifier in the Downlink Generic NAS Transport message (Refer to 3GPP TS 24.301 [3]). Figure 5.2.1.2-1: illustrates an example of the NAS signaling transport for downlink LPP messages.\n\nThe figure depicts a NAS signaling transport for downlink LPP messages, illustrating the communication between the network slicing controller (NSC) and the network slicing plane (NSP). The figure shows the communication paths, including the network slicing controller (NSC) and the network slicing plane (NSP), as well as the signaling transport. The figure is used to facilitate the communication between the NSC and the NSP, ensuring efficient and reliable communication.\nFigure 5.2.1.2-1: NAS signaling transport for downlink LPP messages\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\t initiated location services operations",
+                            "text_content": "The MO-LR operation enables the UE to launch MO positioning session using NAS signaling.  The NAS signaling (see  5.2.2.1.1 and 5.2.2.1.2) are transported using the Downlink Generic NAS Transport message and the Uplink Generic NAS Transport message defined in 3GPP TS 24.301 [3]. Figure 5.2.2.1.0-1 illustrates an example of the NAS signaling transport for an EPC-MO-LR session.\n\nThe figure depicts a NAS signaling transport for MO-LR, which is a method used in network-on-chip (NoC) architectures to enable low-latency communication between different layers of the system. The figure shows the flow of data between the network processor (NPU) and the memory controller (MC), illustrating the importance of efficient communication in modern computing systems.\nFigure 5.2.2.1.0-1: NAS signaling transport for MO-LR\nNOTE:\tThe optional Additional Information of the Downlink/Uplink Generic NAS Transport message is not used when the MO-LR signaling are transported in the Generic Message Container.\nThe UE invokes a MO-LR by sending a REGISTER message to the network containing a LCS-MOLR invoke component. SS Version Indicator value 1 or above shall be used.\nThe receiving network entity shall initiate the handling of location request in the network. The network shall pass the result of the location procedure to the UE by sending a FACILITY message to the UE containing a LCS-MOLR return result component. When location estimate is kept in the network entity and this information satisfies the requested accuracy and the requested maximum age of location, then the network may reuse this information and the positioning measurement procedure may be skipped.\nThe network shall pass the result of the location procedure to the UE only if the location estimate is given in a format that the UE supports, as indicated by either the presence (and content) or the absence of the parameter supportedGADShapes, which may be sent by the UE in the LCS-MOLR operation.\nThe UE may terminate the dialogue by sending a RELEASE COMPLETE message in the case of single location request (see figure 5.2.2.1.1-1). The UE may also initiate another location request operation by sending a FACILITY message to the network containing a LCS-MOLR invoke component (see figure 5.2.2.1.1-2). After the last location request operation the UE shall terminate the dialogue by sending a RELEASE COMPLETE message.\nIf the UE additionally received a mapped lcs-QoS applicable to EPS for the deferred MT-LR servive continuity from 5GS to EPS with multiple lcs-QoS case, the UE shall send the mapped lcs-QoS to the network.\nIf the network is unable to successfully fulfil the request received from the UE (e.g. to provide a location estimate or location assistance information), it shall clear the transaction by sending a RELEASE COMPLETE message containing a return error component. Error values are specified in 3GPP TS 24.080 [5]. If the network is unable to provide a location estimate due to lack of support in the UE for the type of shape of the location estimate, then it shall use the error Facility Not Supported.\nIf the network has returned a result to the UE in a FACILITY message but, after some PLMN administered time period has elapsed, has not received either a new location request operation in a FACILITY message or a RELEASE COMPLETE message from the UE, the network may clear the transaction by sending a RELEASE COMPLETE message.\nDuring the MO-LR operation the UE shall run a timer T(LCSL). This timer is started when the operation is sent, and stopped when a response is received from the network. If this timer expires the UE shall assume that the operation has failed, and may terminate the dialogue by sending a RELEASE COMPLETE message, and shall inform the user of the failure.\n\n\nUE\tNetwork\nREGISTER\n------------------------------------------------------------------------------------------------------------------------>\nFacility (Invoke = LCS-MOLR (molr-Type, lcs-QoS, lcsClientExternalID, mlc-Number, supportedGADShapes, lcsServiceTypeID, ageOfLocationInfo, locationType, pseudonymIndicator, multiplePositioningProtocolPDUs))\n\nFACILITY\n<------------------------------------------------------------------------------------------------------------------------\nFacility (Return result = LCS-MOLR (velocityEstimate, add-LocationEstimate))\n\nRELEASE COMPLETE\n<-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -\nFacility (Return error (Error))\n\nRELEASE COMPLETE\n<-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -\nFacility (Reject (Invoke_problem))\n\nRELEASE COMPLETE\n------------------------------------------------------------------------------------------------------------------------>\n\n\nFigure 5.2.2.1.1-1: Single mobile originated location request\n\nUE\tNetwork\nREGISTER\n------------------------------------------------------------------------------------------------------------------------>\nFacility (Invoke = LCS-MOLR (molr-Type, lcs-QoS, lcsClientExternalID, mlc-Number, supportedGADShapes, lcsServiceTypeID, ageOfLocationInfo, locationType, pseudonymIndicator, multiplePositioningProtocolPDUs))\n\nFACILITY\n<------------------------------------------------------------------------------------------------------------------------\n(Return result = LCS-MOLR (velocityEstimate, add-LocationEstimate))\n\nRELEASE COMPLETE\n<-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -\nFacility (Return error (Error))\n\nRELEASE COMPLETE\n<-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -\nFacility (Reject (Invoke_problem))\n\nFACILITY\n------------------------------------------------------------------------------------------------------------------------>\nFacility (Invoke = LCS-MOLR (molr-Type, lcs-QoS, lcsClientExternalID, mlc-Number, supportedGADShapes, lcsServiceTypeID, ageOfLocationInfo, locationType, pseudonymIndicator, multiplePositioningProtocolPDUs))\n\nFACILITY\n<------------------------------------------------------------------------------------------------------------------------\n(Return result = LCS-MOLR (velocityEstimate, add-LocationEstimate))\n\nRELEASE COMPLETE\n<-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -\nFacility (Return error (Error))\n\nRELEASE COMPLETE\n<-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -\nFacility (Reject (Invoke_problem))\n\n\nRELEASE COMPLETE\n------------------------------------------------------------------------------------------------------------------------>\n\nFigure 5.2.2.1.1-2: Multiple mobile originated location requests\nNOTE:\tOnly the following IEs defined in MO-LR Invoke in 3GPP TS 24.080 [5] are used for E-UTRAN LCS:\n-\tmolr-Type\n-\tlcs-QoS\n-\tlcsServiceTypeID\n-\tageOfLocationInformation\n-\tlocationType\n-\tmlc-Number\n-\tlcsClientExternalID\n-\tpseudonymIndicator\n-\tsupportedGADShapes\n-\tmultiplePositioningProtocolPDUs\nNOTE 1:\tmultiplePositioningProtocolPDUs IE is added to the LCS-MOLR Invoke to allow for passing multiple UE positioning information LPP messages (e.g. UE location measurements or UE capabilities) to the E-SMLC for E-UTRAN LCS. Its ASN.1 description is given in 3GPP TS 24.080 [5].\nNOTE 2:\tThe lcs-QoS can indicate the mapped lcs-QoS which is obtained by the UE in 5GS for the deferred MT-LR servive continuity from 5GS to EPS with multiple lcs-QoS case.\nThe UE sends LPP message and the associated Routing Identifier in the Uplink Generic NAS Transport message (Refer to 3GPP TS 24.301 [3]). Figure 5.2.2.2-1 illustrates an example of the NAS signaling transport for uplink LPP messages.\n\nThe figure depicts a NAS signaling transport for uplink LPP messages, illustrating the communication between the network slicing controller (NSC) and the network slicing plane (NSP). The diagram shows the communication paths, including the network slicing controller (NSC), network slicing plane (NSP), and the uplink LPP message. The figure highlights the importance of network slicing in enabling efficient and flexible communication between different slices, ensuring that the network can adapt to changing network conditions and user needs.\nFigure 5.2.2.2-1: NAS signaling transport for uplink LPP messages\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tLCS messages and coding",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tMessages for common LCS operations",
+                            "text_content": "The LCS message format and information elements coding for the MO-LR and the Location Notification operations (subclause 5.2) are defined in 24.080 [5] for the following messages:\n-\tRegister message\n-\tFacility message\n-\tRelease Complete message\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tMessages for E-UTRAN LCS operations only",
+                            "text_content": "The MME shall set the Generic Message Container Type to \"LPP message container\" in the Downlink Generic NAS Transport message.\nThe MME includes a Routing Identifier in the Additional Information IE of the Downlink Generic NAS Transport message associated with the positioning session between the MME and E-SMLC.\nThe Routing identifier is the Correlation ID, which is defined in 3GPP TS 29.171 [7],  so that the MME can map the Routing identifier to the Correlation identifier when the MME receives an S1-AP Transport Message.\nThe UE shall set the Generic Message Container Type to \"LPP message container\" in the Uplink Generic NAS Transport message.\nThe UE includes a Routing Identifier received in the Additional Information IE of the Downlink Generic NAS Transport message in the the Additional Information IE of the Uplink Generic NAS Transport message. (See editor's note below on Routing Identifier). This association of the Routing Identifier is provided at the LPP level: the UpLink Generic NAS Transport message carries an LPP message that is a response to or instigated by the LPP message in the Downlink Generic NAS Transport message.The Routing identifier is the Correlation ID, which is defined in 3GPP TS 29.171 [7], so that the MME can map the Routing identifier to the Correlation identifier when the MME receives an S1-AP Transport Message.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

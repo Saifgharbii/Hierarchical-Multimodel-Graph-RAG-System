@@ -1,0 +1,421 @@
+{
+    "document_name": "33533-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the security and privacy aspects of Ranging based services and Sidelink positioning in the 5G System (5GS) for commercial, V2X and public safety use cases, with the UE in coverage, partial coverage, and out-of-coverage of 5G network using 5G NR PC5 RAT, based on the architecture defined in TS 23.586 [2].\nSecurity features for Ranging based services and Sidelink positioning include:\n-\tauthorization for Ranging/SL positioning service;\n-\tsecurity and privacy protection for Ranging/SL positioning UE discovery;\n-\tsecurity and privacy protection for unicast communication of Ranging/SL positioning control; and\n-\tsecurity and privacy protection for broadcast/groupcast communication of Ranging/SL positioning control.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.586: \"Architectural Enhancements to support Ranging based services and Sidelink Positioning\".\n[3]\t3GPP TS 23.273: \"5G System (5GS) Location Services (LCS); Stage 2\".\n[4]\t3GPP TS 23.304: \"Proximity based Services (ProSe) in the 5G System (5GS)\".\n[5]\t3GPP TS 23.287: \"Architecture enhancements for 5G System (5GS) to support Vehicle-to-Everything (V2X) services\".\n[6]\t3GPP TS 33.503: \"Security Aspects of Proximity based Services (ProSe) in the 5G System (5GS)\".\n[7]\t3GPP TS 38.355: \" NR; Sidelink Positioning Protocol (SLPP); Protocol Specification\".\n[8]\t3GPP TS 33.536: \"Security aspects of 3GPP support for advanced Vehicle-to-Everything (V2X) services\".\n[9]\t3GPP TS 33.303: \"Proximity-based Services (ProSe); Security aspects\".\n[10]\t3GPP TS 33.535: \"Authentication and Key Management for Applications (AKMA) based on 3GPP credentials in the 5G System (5GS)\".\n[11]\t3GPP TS 33.501: \"Security architecture and procedures for 5G System\".\n[12]\t3GPP TS 33.220: \"Generic Authentication Architecture (GAA); Generic Bootstrapping Architecture (GBA)\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and TS 23.586 [2] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nLocated UE\nNetwork-based Operation\nPositioning\nRanging\nRanging/SL Positioning Application Identifier\nSL Reference UE\nSidelink Positioning\nSL Positioning Client UE\nSL Positioning Server UE\nTarget UE\nUE-only Operation\nUser Info ID\nApplication Layer ID\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nAKMA\tAuthentication and Key Management for Applications\nDCR\tDirect Communication Request\nGBA\tGeneric Bootstrapping Architecture\nRSPP\tRanging/SL Positioning Protocol\nSLPEK\tSidelink Positioning Encryption Key\nSLPGK\tSidelink Positioning Group Key\nSLPIK\tSidelink Positioning Integrity Key\nSLPK\tSideLink Positioning Key\nSLPKMF\tSideLink Positioning Key Management FunctionSLPP\tSideLink Positioning Protocol\nSLPTK\tSidelink Positioning Traffic Key\nUTC\tUniversal Time Coordinated\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tOverview of security architecture",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The overall architecture for Ranging/SL Positioning is specified in clause 4.2 of TS 23.586 [2], which involves the LCS architecture specified in TS 23.273 [3] and 5G Prose architecture specified in TS 23.304 [4]. The reference architecture also supports roaming scenario and inter-PLMN scenario.\nBased on the architecture specified in TS 23.586 [2], the security architecture for Ranging/SL Positioning also supports roaming and inter-PLMN scenario and reuses the security architecture of 5G ProSe services and security architecture of LCS services with necessary enhancements or adaptations.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tFunctional entities and reference points",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tFunctional entities",
+                            "text_content": "The SideLink Positioning Key Management Function (SLPKMF) is the logical function handling network related operations required for generation and provisioning of security materials used for Ranging/SL positioning services. The SLPKMF has the similar functionalities as those of 5G Prose Key Management Function (PKMF) specified in TS 33.503 [6] and can be a standalone entity or collocated with 5G PKMF. In addition to the functionalities supported by 5G PKMF, the SLPKMF shall support the following functions:\n-\tSupport key management for secure unicast direct link establishment between the UEs for Ranging/SL Positioning services provided by network.\n-\tSupport UE role authorization via the UDM.\n-\tSupport key management for protection of SLPP signalling broadcast/groupcast.\nThe address of SLPKMF can be preconfigured on the UE or provisioned by the PCF to the UE.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tReference points",
+                            "text_content": "In addition to the reference points specified in clause 4.2 of TS 23.586 [2], the following reference points are added or enhanced for supporting Ranging/SL positioning security architecture:\nNL6:\tThe reference point between the UDM and the GMLC. It is used to transport the UE privacy profile to GMLC for authorization of Ranging/SL Positioning service exposure.\nPC8*:\tThe reference point between the UE and the SLPKMF, which relies on 5GC user plane for transport (i.e. an \"over IP\" reference point). It is used to transport security materials to UEs for Ranging/SL Positioning discovery and communication.\nNpc9*:\tThe reference point between the SLPKMFs of the UEs subscribed in different PLMNs. It is used to transport security materials between SLPKMFs to support Ranging/SL Positioning services in inter-PLMN scenarios.\nNpc10*:\tThe reference point between the UDM and the SLPKMF. It is used to request subscription information related to Ranging/SL Positioning service from the UDM for UE authorization.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tCommon security",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This clause describes the security requirements and procedures commonly applied to different features of Ranging/SL positioning services, including Ranging/SL positioning discovery, Ranging/SL positioning communication with unicast mode, broadcast/groupcast mode, etc.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tSecurity for PC8* interface",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tGeneral",
+                            "text_content": "The security requirements on PC8* interface between ProSe capable UE and SLPKMF are derived based on the definition of the SLPKMF described in clause 4.2.1.1 and the definition of PC8* interface described in clause 4.2.2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tSecurity requirements",
+                            "text_content": "The 5G System shall support mutual authentication between the ProSe capable UE and the SLPKMF.\nThe 5G System shall support integrity protection for the transmission between the ProSe capable UE and the SLPKMF.\nThe 5G System shall support confidentiality protection for the transmission between the ProSe capable UE and the SLPKMF.\nThe 5G System shall support anti-replay protection for the transmission between the ProSe capable UE and the SLPKMF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tSecurity procedures for PC8* using GBA",
+                            "text_content": "When using GBA for the security procedures on PC8* interface, the use of either TLS v1.2 or TLS v. 1.3 as described in clause 5.3.3.2 of TS 33.303 [9] applies with the following changes:\n-\tThe SLPKMF takes the role of ProSe function.\n-\tConfidentiality protection shall be enabled.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.4\tSecurity procedures for PC8* using AKMA",
+                            "text_content": "When using AKMA for the security procedures on PC8* interface, the specification in clause B.1.3.2 of TS 33.535 [10] applies with the following changes:\n-\tThe SLPKMF takes the role of AF.\n-\tConfidentiality protection shall be enabled.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tSecurity of service-based interfaces used in Ranging/SL Positioning",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Npc9* and Npc10* defined in clause 4.2.2 are realized by corresponding NF service-based interfaces. Security procedures specified in clause 13 of TS 33.501 [11] apply to these interfaces.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tSecurity for Ranging/SL positioning features",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tSecurity for Ranging/SL positioning UE discovery",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tGeneral",
+                            "text_content": "For ProSe capable UEs, the discovery procedures of both Model A and Model B defined in clause 6.3.2 of TS 23.304 [4] are used for Ranging/SL Positioning UE discovery.\nFor V2X capable UEs, the procedures for V2X communication defined in clause 6.3.3 of TS 23.287 [5] are used for Ranging/SL Positioning UE discovery.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tSecurity requirements",
+                            "text_content": "The 5G system shall support integrity protection, confidentiality protection and anti-replay protection of discovery messages.\nThe SLPKMF shall be able to provision discovery security materials to ProSe capable UEs. The discovery security materials are associated with the Ranging/SL Positioning application identifier defined in TS 23.586 [2] and used to protect the integrity of discovery messages and privacy sensitive information (e.g. UE identity) in the messages.\nThe ciphering algorithm for discovery message confidentiality shall be configured by the network during discovery key request procedure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tSecurity procedures for ProSe capable UEs",
+                            "text_content": "The security mechanisms for both models of restricted 5G ProSe UE-to-Network Relay Discovery defined in clause 6.1.3.2 of TS 33.503 [6] are reused for ProSe capable UEs to provide protection for Ranging/SL positioning UE discovery with the following changes:\n-\tSLPKMF rather than 5G DDNMF/5G PKMF is used to provision discovery security materials for Ranging/SL positioning UE discovery.\n-\tRanging/SL Positioning application identifier (as defined in clause 3.1 of TS 23.586 [2]) instead of the Relay Service Code (RSC) is included in the Discovery Key Request/Response messages.\n-\tThe SLPKMF of the monitoring/discoverer UE discovers the SLPKMF(s) of potential announcing/discoveree UE(s) supporting the Ranging/SL Positioning application identifier based on a configured list of PLMNs supporting the corresponding Ranging/SL Positioning application.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.4\tSecurity procedures for V2X capable UEs",
+                            "text_content": "Based on clause 5.3.3.1 of TS 33.536 [8], the Direct Communication Request (DCR) message is not protected for V2X capable UEs.\nNOTE:\tAny information that needs security protection for Ranging/SL Positioning UE discovery needs to be sent in the Direct Security Mode Complete message.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tAuthorization for Ranging/SL positioning service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tGeneral",
+                            "text_content": "According to clause 4.1 of TS 23.586 [2], a UE capable of Ranging/SL Positioning may take different roles in various Ranging/SL Positioning operations. Each of the UEs in a Ranging/SL Positioning service acts in its own authorized role. The UE shall follow the policy/parameters defined in clause 5.1 of TS 23.586 [2] for authorization with the network. TS 23.586 [2] clause 5.6 also specifies that Ranging/SL Positioning service can be exposed to an authorized SL Positioning Client UE, 5GC NF or AF or LCS client to obtain the relative or absolution distance/direction result between two UEs capable of Ranging/SL positioning.\nThis clause specifies the authorization requirements and procedures for the operations in Ranging/SL positioning services wherever authorization or privacy check is required.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tAuthorization requirements",
+                            "text_content": "The 5G system shall support the authorization of the role of the UE (e.g. as a Target UE/SL Reference UE/SL Positioning Server UE/Located UE) in a Ranging/Sidelink Positioning service.\nThe 5G system shall support authorization of the UE for Ranging/SL positioning communication in unicast mode, broadcast/groupcast mode.\nThe 5G system shall support authorization of the AF, 5GC NF, LCS Client or SL Positioning Client UE for Ranging/SL Positioning service exposure.\nThe 5G system shall support privacy protection of the to-be-measured UEs for Ranging/SL Positioning service exposure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.3\tProcedures of UE role authorization during discovery",
+                            "text_content": "According to TS 23.586 [2] clause 5.2, the role of the UE is included in discovery messages for 5G ProSe capable UEs and included in unicast link establishment messages for V2X capable UEs.\nFor ProSe capable UEs, before claiming its role to the peer UE(s) in the discovery message, the role of the claiming UE shall be authorized by the network. The UE role authorization shall be performed via the SLPKMF through Discovery Key Request/Response messages during the security procedure for Ranging/SL positioning discovery as defined in clause 6.2.3. The authorization information used to check whether the UE is allowed to act the claimed role in a Ranging/SL positioning service is included in UE subscription data as specified in clause 5.8 of TS 23.586 [2]. The SLPKMF shall retrieve subscription information from the UDM for authorizing the role claimed by the UE. Only after successful authorization of the UE's role, the SLPKMF shall then generate and provision discovery security materials to the UE, which indicates the successful authorization of the UE role.\nIf the UE claims its role to the peer UE(s) in DCR and DCA messages, the UE role authorization may be performed by the peer UE against its locally configured information, which can be provisioned by the application. If the UE role is not acceptable, the peer UE shall discard or reject the request directly.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.4\tProcedures of UE authorization for Ranging/SL positioning communication",
+                            "text_content": "The details of UE authorization for Ranging/SL positioning communication in unicast mode are specified in clause 6.4.3.\nThe details of UE authorization for Ranging/SL positioning communication in broadcast/groupcast mode are specified in clause 6.4.4.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.5\tProcedures for authorization of AF/5GC NF/LCS Client for Ranging/SL positioning service exposure",
+                            "text_content": "For the authorization of the AF, 5GC NF or LCS client for Ranging/SL Positioning service exposure, the SL-MT-LR procedure specified in TS 23.273 [3] is taken as the baseline. The authorization shall be performed towards all the n UEs (n ≥ 2), i.e. UE1, UE2, ..., UEn in the request message. If all of the UEs grant permission for Ranging/SL Positioning exposure, the GMLC shall forward the service request from the AF/5GC NF to the AMF. If none of the UEs grants permission for Ranging/SL Positioning exposure, the GMLC shall reject the service request. If part of the UEs grant and part of the UEs don't grant permission for Ranging/SL Positioning exposure, the GMLC shall decide t, o proceed with or reject the service request from the AF5GC NF or LCS client based on implementation, e.g. a local rule configured by the network operator. If the GMLC decides to accept the service request, it shall only inclu, de the identities of the UEs granting permission in the service request forwarded to the AMF.\nWhen receiving the RangingSL Pos or LCS client itioning service request from the AF/5GC NF, the GMLC interacts with the UDM to check the UE privacy profile. The UE LCS Privacy Profile defined in clause 5.4.2 of TS 23.273 [3] is taken as the baseline for the UE privacy profile for Ranging/SL positioning services.\nNOTE:\tThe details of the UE privacy profile for Ranging/SL positioning services needs to be align with SA2.\nThe GMLC interacts with the AMF to request the ranging result of UEs, which may include an indication of a privacy related action. If the indicator of privacy check related action indicates that the UE must either be notified or notified with privacy verification, a notification invoke message is sent to the UE if the signalling connection established. However, if the Ranging/SL Positioning service is disallowed by the UE, or signalling connection establishment fails and UE notification (including UE notification with privacy verification) is required, the AMF shall provide failure response to the GMLC.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.6\tProcedures for authorization of UE for Ranging/SL positioning service exposure",
+                            "text_content": "According to TS 23.586 [2], clause 5.6.2, Ranging/SL Positioning service can be exposed to the SL Positioning Client UE through PC5 or through 5GC control plane. The SL Positioning Client UE shall be authorized for Ranging/SL Positioning service exposure.\nFor Ranging/SL Positioning service exposure through the network via control plane (i.e. clause 6.7.1.2.3 of TS 23.586 [2]), the MO-LR authorization as specified in TS 23.273 [3] is reused for the authorization of the SL positioning Client UE.\nIf the Client UE is not authorized, the Ranging/SL Positioning service request shall be rejected.\nTo preserve the privacy of the Target/Reference UEs, the privacy profiles of the Target/Reference UEs shall be checked. Upon receiving Ngmlc_Location_ProvideRanging_Request from the AMF (i.e. step 3 in clause 6.7.1.2.3 of TS 23.586 [2]), the GMLC shall perform the privacy check for the Target/Reference UEs as defined in clause 6.3.5 during the SL-MT-LR procedure (i.e. step 4 in clause 6.7.1.2.3 of TS 23.586 [2]).\nFor Ranging/SL Positioning service exposure through PC5 (i.e. clause 6.7.1.1 of TS 23.586 [2]), the SL Positioning Client UE authorization is triggered by the Reference/Target UE during PC5 link establishment. The authorization can be performed by the network via the SLPKMF for ProSe capable UEs or by the Reference/Target UE if the authorization information is available in the UE.\nIf the Client UE is not authorized, the Ranging/SL Positioning service request shall be rejected.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.7\tProcedure of UE privacy verification for UE-only operation",
+                            "text_content": "For UE-only Operation in which the network is not involved in Ranging/Sidelink positioning, the authorization for UE privacy is based on the local configured privacy verification information to determine whether its location related information can be exposed to the peer UE or not. If the privacy profile allows location exposure, the UE (e.g. Located UE) accepts the request to expose its location related information and proceeds.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tSecurity for communication of Ranging/SL positioning control",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tGeneral",
+                            "text_content": "Ranging/SL Positioning control is defined in TS 23.586 [2], which is supported by the Ranging/SL Positioning layer above the AS layer. The Ranging/SL Positioning layer provides the support of Ranging/SL Positioning Protocol (RSPP) (i.e. Sidelink Positioning Protocol (SLPP) defined in TS 38.355 [7]) between the UEs and between the UE and LMF for Ranging/SL Positioning.\nRanging/SL Positioning control over RSPP is performed on SR5 reference point between UEs. PC5-U is used as the transport layer for RSPP as specified in clause 5.3.2 of TS 23.586 [2]. Depending on type of the UE (V2X capable or 5G ProSe capable), V2X Communication procedures defined in TS 23.287 [5] or 5G ProSe Direct Communication procedures defined in TS 23.304 [4] are used for RSPP transport between UEs.\nRanging/SL Positioning control over the protocol between the UE and LMF is specified in clauses 6.20 of TS 23.273 [3].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.2\tSecurity requirements",
+                            "text_content": "The 5G system shall support mutually authentication between the UEs during unicast direct communication establishment for Ranging/SL Positioning control over RSPP.\nThe 5G system shall support integrity, confidentiality and anti-replay protection for the information transferred during unicast direct communication for Ranging/SL Positioning control over RSPP.\nThe 5G system shall support cryptographic separation for each SR5 interface and for each peer UE during unicast direct communication for Ranging/SL Positioning control over RSPP.\nThe 5G system shall support integrity, confidentiality and anti-replay protection for the information transferred during unicast communication for Ranging/SL Positioning control over the protocol between the UE and LMF.\nThe 5G system shall support a means to provide confidentiality, integrity and anti-replay protection of SL positioning signalling during broadcast/groupcast communication for Ranging/SL positioning.\nThe 5G system shall provide a means to mitigate trackability and linkability attacks of the UE during broadcast/ groupcast communication for Ranging/SL positioning.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.3\tSecurity procedures for unicast direct communication over RSPP between the UEs",
+                            "text_content": "Ranging/SL Positioning services could be provided by an application provider (i.e. the services requested by a Ranging/SL positioning application server) or by a network operator (i.e. the services requested by a 5GC NF). For Ranging/SL Positioning services provided by application providers, long-term credentials provided by applications are assumed available on the UE. For Ranging/SL Positioning services provided by network operators (e.g. 5GC-MO-LR and 5GC-MT-LR services using SL positioning as defined in TS 23.586 [2] and TS 23.273 [3]), there are no long-term credentials provided by applications on the UE (e.g. Located UE). The security procedures for unicast communication for Ranging/SL Positioning services provided by application and for Ranging/SL Positioning services provided by network are specified separately in subclauses 6.4.3.2 and 6.4.3.3.\nIf long-term credentials provided by application are available on the UE, the security procedures defined for V2X unicast mode communication in clause 5.3 of TS 33.536 [8] are reused on V2X capable UEs. The security procedures defined for 5G ProSe unicast mode Direct Communication in clause 6.2.3 of TS 33.503 [6] are reused on ProSe capable UEs.\nFor Ranging/SL Positioning services provided by network operators, the network shall support key provisioning and management for unicast direct communication. The security procedures defined for 5G ProSe UE-to-Network Relay communication in clause 6.3.3.2 of TS 33.503 [6] are reused with the following modifications:\n-\tThe SLPKMF instead of 5G PKMF is used to generate and provision the key materials for secure unicast direct communication of Ranging/SL Positioning services.\n-\tUE SLP Key Request/Response are used instead of ProSe Remote User Key Request/Response.\n-\tRanging/SL Positioning Application Identifier is used instead of RSC.\n-\tSLPK and SLPK ID are used instead of UP-PRUK and UP-PRUK ID.\n-\tSLP Key Request/Response are used instead of Key Request/Response.\n-\tKSLP is used instead of KNRP.\n-\tKDF of KSLP uses Ranging/SL Positioning Application Identifier as input instead of RSC.\nNOTE:\tThis procedure does not apply to V2X capable UEs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.4\tSecurity procedure for broadcast/groupcast communication over RSPP",
+                            "text_content": "This clause describes the security mechanism for broadcast/groupcast communication over RSPP. The RSPP messages for broadcast/groupcast communication are protected at the RSPP layer.\nFigure 6 illustrates the security flows for broadcast/groupcast communication, showcasing the various stages of data encryption and authentication. The figure depicts the communication process from the sender to the receiver, highlighting the use of Transport Layer Security (TLS) for secure data transmission. The diagram emphasizes the importance of end-to-end security, ensuring that data remains protected throughout its journey. Key components include the use of digital certificates for identity verification and the establishment of secure tunnels for data transfer. The figure underscores the complexity of modern communication systems and the need for robust security measures to safeguard against potential threats.\nFigure 6.4.4.2-1: Security flows for broadcast/groupcast communication\n0a and 0b. Both sending and receiving UEs shall be provisioned with the parameters/policy for Ranging/SL positioning service as specified in clause 5.1 of TS 23.586 [2].\n1a.\tThe sending UE shall establish a secure connection with the Sidelink Positioning Key Management Function (SLPKMF) based on the security procedures specified in clause 5.2.5 of TS 33.503 [6]. The sending UE sends a Key Request message to Sidelink Positioning Key Management Function (SLPKMF) including the Ranging/SL positioning application identifier provisioned in step 0a, and UE security capabilities.\n1b.\tThe SLPKMF shall reply with the Key Response message containing the Sidelink Positioning Group Key (SLPGK), the Sidelink Positioning Group Key ID (SLPGK ID), the validity time, and the chosen ciphering and integrity algorithms. The SLPKMF may be locally configured with the UE's authorization information. Otherwise, the SLPKMF interacts with the UDM of the UE to retrieve the UE's authorization information. The chosen ciphering and integrity algorithms are determined by SLPKMF based on the received UE security capabilities in step 1a. The Key Response message may include multiple SLPGK and SLPGK ID pairs with different validity times. Group member ID shall be assigned by the SLPKMF which is included in the Key Response message. As an alternative, the sending UE may generate a Group member ID randomly.\nNOTE 1: \tFor V2X capable UEs, the security materials (e.g. SLPGK, SLPGK ID, validity time) and the ciphering and integrity algorithms used for broadcast/groupcast communication are provisioned at the application, which is out of the scope of the present document.\nNOTE 2: \tIn case the SLPLMF of a receiving UE is different from the SLPKMF of a sending UE, the provisioning of security materials as specified in clause 6.1.3.2 in TS 33.503 [6] is reused.\nNOTE 3: \tSidelink Positioning Group refers to a specific Ranging/SL positioning service. Accordingly, Group member ID refers to the identifier of the UE that is authorized to use the Ranging/SL positioning service.\n2.\tThe receiving UE shall perform a Key Request procedure to get security materials from the SLPKMF as described in step 1. This may happen any time before step 5.\n3.\tThe sending UE shall derive the Sidelink Positioning Traffic Key (SLPTK) from SLPGK using Group member ID, and SLPTK ID as specified in Annex A.3 of present document. SLPTK ID is a counter set to a unique value in the sending UE that has not been previously used together with the same SLPGK and the associated SLPGK ID. The UE shall use a new SLPGK and SLPGK ID pair based on  step 1 before the SLPTK ID wraps around. The UE shall calculate the Sidelink Positioning Encryption Key (SLPEK) and Sidelink Positioning Integrity Key (SLPIK) from SLPTK using the chosen ciphering and integrity algorithms, respectively as specified in Annex A.4 of present document.\n4.\tThe sending UE shall protect the message as described in clause 6.4.4.3.1 and send the message.\n5.\tUpon receiving the message matching the SLPGK ID, the receiving UE shall calculate SLPTK, SLPEK and SLPIK if it has not calculated them. The receiving UE derives security keys as in step 3 using the SLPGK ID, SLPTK ID and Group member ID (if it is included) in the received message. Then, the UE shall decrypt the message and verifies the integrity of the message as described in clause 6.4.4.3.2.\nThe UE sending a message shall construct the message as follows:\n1)\tForm RSPP message header that contains Group member ID, SLPGK ID, SLPTK ID, and a counter. Then, append the Payload to it as illustrated in figure 6.4.4.3.1-1. The counter is used in combination with the selected ciphering algorithm and integrity algorithm.\nNOTE 1:\tThe counter can be a time counter.\n2.\tIf the chosen integrity algorithm is not the NULL algorithm, calculate MAC of the message header and the Payload based on the chosen integrity algorithm.  If the chosen algorithm is the NULL algorithm, then the sending UE shall set the MAC to a 32-bit random string or all zeros in the message header. The use and mode of operation of the chosen integrity algorithm are specified in Annex D of TS 33.501 [11].\n3.\tIf the chosen ciphering algorithm is not the NULL algorithm, encrypt the Payload and MAC based on the chosen ciphering algorithm. The use and mode of operation of the chosen ciphering algorithm are specified in Annex D of TS 33.501 [11].\nIn case the Group member ID is provided by the SLPKMF, multiple Group member IDs can be provisioned for privacy. If multiple Group member IDs are provisioned by the SLPKMF or Group member IDs are self-generated, the sending UE shall change its Group member ID according to its policy.\nNOTE 2: \tAdditional procedures to mitigate trackability/linkability attacks may apply to Group member ID, SLPGK ID, SLPTK ID, and Counter.\nFigure 6 illustrates the RSPP (Radio Signal Positioning Protocol) message format for sidelink positioning broadcast/groupcast communication in a 4G/5G network. The figure showcases the various components involved, including the mobile station (MS), network elements, and positioning information exchange. The message structure is depicted with detailed fields, emphasizing the precision required for accurate positioning. The figure highlights the importance of efficient communication protocols in enhancing location-based services in mobile networks.\nFigure 6.4.4.3.1-1: RSPP message format for Sidelink Positioning\nbroadcast/groupcast communication\nThe UE receiving a message shall do the following steps:\n1.\tIf the chosen ciphering algorithm is not the NULL algorithm, undo confidentiality protection based on the chosen ciphering algorithm.\n2.\tIf the chosen integrity algorithm is not the NULL algorithm, verify the integrity of the received message by checking MAC based on the chosen integrity algorithm. The message with MAC part filled with all zeroes is discarded.\nNOTE:\tFreshness verification may be required.\nThe key hierarchy for broadcast/groupcast communication over RSPP follows the key hierarchy for one-to-many ProSe direct communication as specified in TS 33.303 [9]. The different layers of keys (see figure 6.4.4.4-1) are the following:\nFigure 6.4.4.4-1 illustrates the key hierarchy for broadcast and groupcast communication over the Resource Reservation Protocol (RSPP). The figure depicts the various levels of the RSPP protocol stack, from the physical layer to the application layer. The top level represents the application layer, which defines the services and protocols that will be used for communication. Below this, the transport layer handles the transport of data between the application layer and the network layer. The network layer is responsible for routing the data to its destination, while the data link layer takes care of the physical transmission of data over the network. Finally, the physical layer is responsible for transmitting the data over the network medium. The figure also shows the various types of broadcast and groupcast communication, such as unicast, multicast, and anycast, and how they are handled at each level of the RSPP protocol stack.\nFigure 6.4.4.4-1: Key hierarchy for broadcast/groupcast communication over RSPP\n-\tSLPGK: SL Positioning Group Key is a 256-bit root key specific to a Ranging/SL positioning application (for broadcast) or group (for groupcast) provisioned with an expiry time. Each SLPGK has an SLPGK ID to identify it. This allows several SLPGKs to be held simultaneously for one Ranging/SL positioning application (for broadcast) or Ranging/SL positioning group (for groupcast). SLPGK may either be provisioned by the SLPKMF to the UE or be derived by the UE from locally configured long-term credentials.\n-\tSLPTK: SL Positioning Traffic Key is a 256-bit intermediate key derived by the UE from SLPGK. It is unique per UE to ensure that each UE generates unique SLPTKs for protecting the messages it sends. Each SLPTK has a 16-bit SLPTK ID to identify it. SLPTK ID is a counter in the UE set to a unique value that has not been previously used together with the same SLPGK and associated SLPGK ID. Every time a new SLPTK needs to be derived, the SLPTK ID counter is incremented.\n-\tSLPEK and SLPIK: The SL Positioning Encryption Key (SLPEK) and SL Positioning Integrity Key (SLPIK) are derived by the UE from SLPTK and used as broadcast/groupcast keys to protect the integrity and confidentiality of RSPP messages for Sidelink Positioning broadcast/groupcast communication respectively.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.5\tSecurity procedure for communication between the UE and LMF",
+                            "text_content": "The communication for Ranging/SL Positioning control between the UE and LMF is protected by using NAS security context created for the UE.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tSecurity related services",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This clause defines the network services required to support the security procedures described in clause 6.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tSLPKMF services",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.2.1\tGeneral",
+                            "text_content": "The following table illustrates the SLPKMF Services and Service Operations.\nTable 7.2.1-1: List of SLPKMF Services\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.2.1-1: List of SLPKMF Services",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.2.2\tNslpkmf_Discovery service",
+                            "text_content": "Service operation name: Nslpkmf_Discovery_AnnounceAuthorize.\nDescription: The consumer NF obtains the authorization from the SLPKMF for announcing in the PLMN.\nInput, Required: User Info ID, Ranging/SL Positioning Application Identifier, UE Role.\nInput, Optional: None.\nOutput, Required: Authorization result.\nOutput, Optional: None.\nService operation name: Nslpkmf_Discovery_MonitorAuthorize.\nDescription: The consumer NF obtains the authorization from the SLPKMF for monitoring in the PLMN.\nInput, Required: User Info ID, Ranging/SL Positioning Application Identifier, UE Role, PC5 UE security capability.\nInput, Optional: None.\nOutput, Required: The chosen PC5 ciphering algorithm, discovery security materials.\nOutput, Optional: Discovery User Integrity Key (DUIK).\nService operation name: Nslpkmf_Discovery_DiscoveryAuthorize.\nDescription: The consumer NF obtains the authorization from the SLPKMF for a discoverer UE in the PLMN to operate Model B restricted discovery.\nInput, Required: User info ID, Ranging/SL Positioning Application Identifier, UE Role, PC5 UE security capability.\nInput, Optional: None.\nOutput, Required: The chosen PC5 ciphering algorithm, discovery security materials.\nOutput, Optional: Discovery User Integrity Key (DUIK).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.3\tNslpkmf_SLPKMFKeyRequest service",
+                            "text_content": "Service operation name: Nslpkmf_SLPKMFKeyRequest_UnicastKey.\nDescription: Provides Ranging related keying material for unicast communication.\nInput, Required: Ranging/SL Positioning Application Identifier, SLPK ID, KSLP freshness parameter 1.\nInput, Optional: None.\nOutput, Required: KSLP, KSLP freshness parameter 2.\nOutput, Optional: None.\nService operation name: Nslpkmf_SLPKMFKeyRequest_GroupcastKey.\nDescription: Provides Ranging related keying material for groupcast communication.\nInput, Required: SLPGK ID, Group Identifier.\nNOTE:\tFor broadcast operation, Ranging/SL Positioning Application Identifier is used as the Group Identifier.\nInput, Optional: None.\nOutput, Required: SLPGK.\nOutput, Optional: None.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.1\tKDF interface and input parameter construction",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.1.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This annex specifies the use of the Key Derivation Function (KDF) specified in TS 33.220 [12] for the present document. This annex specifies how to construct the input string, S, and the input key KEY to the KDF. Note that \"KEY\" is denoted \"Key\" in TS 33.220 [12].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.1.2\tFC value allocations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The FC number space used is allocated as per B.2.2 of TS 33.220 [12].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.2\tCalculation of KSLP",
+            "description": "When calculating KSLP from SLPK, the following parameters shall be used to form the input S to the KDF specified in Annex B of TS 33.220 [12]:\n-\tFC = 0x8C\n-\tP0 = Ranging/SL Positioning Application Identifier\n-\tL0 = length of Ranging/SL Positioning Application Identifier (i.e. 0x00 0x03)\n-\tP1 = KSLP nonce 1\n-\tL1 = length of KSLP nonce 1 (i.e. 0x00 0x10)\n-\tP2 = KSLP nonce 2\n-\tL2 = length of KSLP nonce 2 (i.e. 0x00 0x10)\nThe input key to the KDF is the 256-bit SLPK.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.3\tCalculation of SLPTK",
+            "description": "When calculating a SLPTK from SLPGK, the following parameters shall be used to form the input S to the KDF that is specified in Annex B of TS 33.220 [12]:\n-\tFC = 0x8D\n-\tP0 = Group Member Identity\n-\tL0 = length of Group Member Identity\n-\tP1 = SLPTK Identity\n-\tL1 = length of SLPTK Identity\nThe input key shall be the 256-bit SLPGK.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.4\tCalculation of keys from SLPTK",
+            "description": "When calculating a SLPIK or SLPEK from SLPTK, the following parameters shall be used to form the input S to the KDF that is specified in Annex B of TS 33.220 [12]:\n-\tFC = 0x8E\n-\tP0 = 0x00 if SLPEK is being derived or 0x01 if SLPIK is being derived\n-\tL0 = length of P0 (i.e. 0x00 0x01)\n-\tP1 = algorithm identity\n-\tL1 = length of algorithm identity (i.e. 0x00 0x01)\nThe algorithm identity shall be set as described in TS 33.501 [11].\nThe input key shall be the 256-bit SLPTK.\nFor an algorithm key of length n bits, where n is less or equal to 256, the n least significant bits of the 256 bits of the KDF output shall be used as the algorithm key.\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 4,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

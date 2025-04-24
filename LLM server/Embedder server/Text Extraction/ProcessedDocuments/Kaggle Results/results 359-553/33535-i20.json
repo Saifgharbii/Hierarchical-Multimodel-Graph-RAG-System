@@ -1,0 +1,763 @@
+{
+    "document_name": "33535-i20.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the security features and mechanisms to support authentication and key management aspects for applications based on subscription credential(s) in 5G system as defined in TS 33.501 [2].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 33.501: \"Security architecture and procedures for 5G system\".\n[3]\t3GPP TS 23.501: \"System Architecture for the 5G System\".\n[4]\t3GPP TS 33.220: \"Generic Authentication Architecture (GAA); Generic Bootstrapping Architecture (GBA)\".\n[5]\t3GPP TS 23.222: \"Common API Framework for 3GPP Northbound APIs\".\n[6]\tIETF RFC 7542: \"The Network Access Identifier\".\n[7]\t3GPP TS 33.222: \" Generic Authentication Architecture (GAA); Access to network application functions using HypertextTransfer Protocol over Transport Layer Security (HTTPS)\".\n[8]\tVoid\n[9]\t3GPP TS 23.003: \"Numbering, addressing and identification\".\n[10]\tIETF RFC 9110: \"HTTP Semantics\".\n[11]\t3GPP TS 29.503: \"5G System; Unified Data Management Services \".\n[12]\tIETF RFC 9146: \"The Datagram Transport Layer Security (DTLS) Protocol Version 1.3\"\n[13]\t3GPP TS 33.210: \"3G Security; Network Domain Security; IP network layer security\".\n[14]\tIETF RFC 8613: \"Object Security for Constrained RESTful Environments (OSCORE)\".\n[15]\tIETF RFC 8949: \"Concise Binary Object Representation (CBOR)\".\n[16]\tIETF RFC 5869: \"HMAC-based Extract-and-Expand Key Derivation Function (HKDF)\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nAKMA subscription data: The data in the home operator's network indicating whether or not the subscriber is allowed to use AKMA.\nAKMA context: A set of parameters stored in AAnF, including SUPI, GPSI, KAKMA and A-KID.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nA-KID\tAKMA Key IDentifier\nA-TID\tAKMA Temporary UE IDentifier\nAAnF\tAKMA Anchor Function\nAF\tApplication Function\nAF_ID\tAF Identifier\nAKMA\tAuthentication and Key Management for Applications\nAMF\tAccess and Mobility Management Function\nAUSF\tAUthentication Server Function\nCBOR\tConcise Binary Object Representation\nCoAP\tConstrained Application Protocol\nKAF\tAKMA Application Key\nKAKMA\tAKMA Anchor Key\nKDF\tKey Derivation Function\nNEF\tNetwork Exposure Function\nOSCORE\tObject Security for Constrained RESTful Environments\nRID\tRouting InDicator\nUDM\tUnified Data Management\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tArchitecture for AKMA",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tReference model",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Figure 4.1-1 shows a fundamental network model of AKMA, as well as the interfaces between them.\nThe figure depicts a fundamental network model for AKMA, which stands for Advanced Knowledge Management Architecture. It illustrates the various components and their interconnections, including the network's topology, the flow of data, and the communication between different entities. The model is designed to support advanced knowledge management systems, ensuring efficient and secure communication.\nFigure 4.1-1: Fundamental Network Model for AKMA\nNOTE:\tFigure 4.1-1 shows the case where AAnF is deployed as a standalone function. Deployments can choose to collocate AAnF with AUSF or with NEF according to operators' deployment scenarios.\nFigure 4.1-2 shows the AKMA architecture using the reference point representation.\nThe figure depicts the AKMA architecture, which stands for Adaptive Key Management Architecture, in reference point representation for internal and external AFs of a HPLMN. It illustrates the hierarchical structure of the network, with internal AFs (e.g., core switches) and external AFs (e.g., optical line terminals) represented as reference points. The figure highlights the importance of redundancy and failover mechanisms to ensure network reliability.The figure depicts the AKMA architecture, which stands for Adaptive Key Management Architecture, in reference point representation for internal and external AFs of a HPLMN. It illustrates the hierarchical structure of the network, with internal AFs (e.g., core switches) and external AFs (e.g., optical line terminals) represented as reference points. The figure highlights the importance of redundancy and failover mechanisms to ensure network reliability.\nFigure 4.1-2: AKMA Architecture in reference point representation for (a) internal AFs of HPLMN and (b) external AFs\nThe AKMA service requires a new logical entity, called the AKMA Anchor Function (AAnF).\nThe AKMA Architecture in Figure 4.1-2 is applicable to both roaming scenario and non-roaming scenario:\n-\tnon-roaming: UE is in HPLMN and accessing an AF;\n-\troaming scenario#1: UE is in VPLMN and accessing an internal HPLMN AF;\n-\troaming scenario#2: UE is in VPLMN and accessing an internal VPLMN AF;\n-\troaming scenario#3: UE is in VPLMN and accessing an external AF in the Data Network.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tNetwork elements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tAAnF",
+                            "text_content": "The AAnF is the anchor function in the HPLMN. The AAnF stores the AKMA Anchor Key (KAKMA) and SUPI/GPSI for AKMA service, which is received from the AUSF/UDM after the UE completes a successful 5G primary authentication. The AAnF also generates the key material to be used between the UE and the Application Function (AF) and maintains UE AKMA contexts. The AAnF sends SUPI/GPSI of the UE to AF located inside the operator's network according to the AF request or sends SUPI to NEF. If GPSI is required, the AAnF retrieves the GPSI from UDM based on available SUPI. The AAnF has the capability to trigger a primary authentication for KAKMA refreshing purpose.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tAF",
+                            "text_content": "The AF is defined in TS 23.501 [3] with additional functions:\n-\tAF with the AKMA service enabling requests for AKMA Application Key, called KAF, from the AAnF using A-KID.\n-\tAF shall be authenticated and authorized by the operator network before providing the KAF to the AF.\n-\tThe AF located inside the operator's network performs the AAnF selection.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.3\tNEF",
+                            "text_content": "The NEF is defined in TS 23.501 [3] with additional functions:\n-\tThe NEF enables and authorizes the external AF assessing AKMA service and forwards the request towards the AAnF.\n-\tThe NEF performs the AAnF selection.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.4\tAUSF",
+                            "text_content": "The AUSF is defined in TS 23.501 [3] with additional functions:\n-\tAUSF provides the SUPI and AKMA key material (A-KID,KAKMA) of the UE to the AAnF.\n-\tAUSF performs the AAnF selection.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.5\tUDM",
+                            "text_content": "The UDM is defined in TS 23.501 [3] with the additional functions:\n-\tUDM stores AKMA subscription data of the subscriber.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tAKMA Service Based Interfaces(SBIs)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.0\tGeneral",
+                            "text_content": "The following interfaces are involved in AKMA network architecture:\n-\tNnef: Service-based interface exhibited by NEF.\n-\tNudm: Service-based interface exhibited by UDM.\nNOTE 1:\tUDM services related to AKMA service are defined in TS 33.501 [2] clause 14.2.2 and 14.2.6.\n-\tNaanf: Service-based interface exhibited by AAnF.\nThe AAnF interacts with the AUSF and the AF using Service-based Interfaces. When the AF is located in the operator's network, the AAnF shall use Service-Based Interface to communicate with the AF directly. When the AF is located outside the operator's network, the NEF shall be used to exchange the messages between the AF and the AAnF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.1\tVoid",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.4\tSecurity requirements and principles for AKMA",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4.0\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following security requirements are applicable to AKMA:\n-\tAKMA shall reuse the same UE subscription and the same credentials used for 5G access.\n-\tAKMA shall reuse the 5G primary authentication procedure and methods specified in TS 33.501 [2] for the sake of implicit authentication for AKMA services.\n-\tThe SBA interface between the AAnF and the AUSF shall be confidentiality, integrity and replay protected.\n-\tThe SBA interface between AAnF and AF/NEF shall be confidentiality, integrity and replay protected.\n-\tThe SBA interface between AAnF and UDM shall be confidentiality, integrity and replay protected.\n-\tThe AKMA Application Key (KAF) shall be provided with a maximum lifetime based on the operator’s local authentication policy.\nNOTE:\tVoid\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.4.1\tRequirements on Ua* reference point",
+                            "text_content": "The Ua* reference point is application specific. The generic requirements for Ua* are:\n-\tUa* protocol shall be able to carry AKMA Key Identifier (A-KID) .\n-\tThe UE and the AKMA AF shall be able to secure the reference point Ua* using the AKMA Application Key derived from the AKMA Anchor Key.\nNOTE 1:\tThe exact method of securing the reference point Ua* depends on the application protocol used over reference point Ua*.\nNOTE 2:\tVoid\n-\tThe Ua* protocol shall be able to handle the expiration of KAF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.4.2\tRequirements on AKMA Key Identifier (A-KID)",
+                            "text_content": "Requirements for AKMA Key Identifier (A-KID) are:\n-\tA-KID shall be globally unique.\n-\tA-KID shall be usable as a key identifier in protocols used in the reference point Ua*.\n-\tAKMA AF shall be able to identify the AAnF serving the UE from the A-KID.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.4.3\tRequirements on the UE",
+                            "text_content": "The requirements on the UE are:\n-\tApplications on the UE shall not be able to get access to KAKMA.\n-\tAn application on the UE shall only get the KAF keys related to specific AF Identifiers (AF_IDs) that the application is authorized to get.\n-\tAn application on the UE shall not be able to get access to the KAF keys that belong to other applications.\nNOTE:\tHow these requirements are satisfied is out of scope of 3GPP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.5\tAKMA reference points",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The AKMA architecture reuses the following reference point from the 5GC for the execution of the primary authentication procedure:\nN1:\tReference point between the UE and the AMF.\nN2:\tReference point between the (R)AN and the AMF.\nN12:\tReference point between AMF and AUSF.\nN13:\tReference point between the UDM and the AUSF.\nN33:\tReference point between NEF and an external AF.\nThe AKMA architecture defines the following reference points:\nN61:\tReference point between the AAnF and the AUSF.\nN62:\tReference point between the AAnF and an internal AF.\nN63:\tReference point between the AAnF and NEF.\nUa*:\tReference point between the UE and an AF.\nNOTE: The reference point Ua* carries the application protocol, which is secured using the key material agreed between UE and AAnF as a result of successful AKMA procedures.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.6\tRoaming",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.6.1\tAKMA roaming requirements",
+                            "text_content": "-\tThe roaming subscriber shall be able to utilize the AKMA feature provided by the home network.\n-\tThe home network shall be able to control whether its subscriber is authorized to use the service in the visited network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.7\tUse of Authentication Proxy (AP)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.7.1\tArchitecture of using AP",
+                            "text_content": "An Authentication Proxy (AP) is a proxy which takes the role of an AF and delegates a group of Application Servers (ASs). It may reside between the UE and the AS as depicted in the figures below. The AP helps the ASs behind the AP to execute AKMA procedures to save the consumption of signalling resources and AAnF computing resources. It may also relieve the AS of security tasks. The use of an AP is fully compatible with the architecture specified in the present document.\nThe AP can assure the ASs that the request is coming from an authorized subscriber of the MNO.\nThe figure depicts the environment and reference points of an AP when it is internal, showing the surrounding environment and the reference points of the AP.\nFigure 4.7.1-1: Environment and reference points of AP when AP is internal\n\nThe figure depicts the environment and reference points of an AP when it is external, illustrating the various elements such as the environment, reference points, and the AP's location.\nFigure 4.7.1-2: Environment and reference points of AP when AP is external\nIf the Ua* is HTTP based, the UE is configured with the FQDN of AS, and the AP is a reverse proxy to handle the communication between the UE and the AS. The AP takes the role of an AF. The AKMA Application Key (i.e. KAF), which is utilized between the UE and the AP, is derived based on the FQDN of the AS.\nIf the Ua* is not HTTP based, it is left to implementation, e.g., how the AP identifies the traffic towards corresponding AS may be pre-configured in the AP by the operator who deploys the AP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.7.2\tAP-AS reference point",
+                            "text_content": "The HTTP protocol is run over the AP-AS reference point.\nConfidentiality and integrity protection can be provided for the reference point between the AP and the AS using NDS/IP mechanisms as specified in TS 33.210 [13]. For traffic between different security domains, the Za reference point shall be operated. For traffic inside a security domain, it is up to the operator to decide whether to deploy the Zb reference point.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.7.3\tExample of using AP for TLS tunnels",
+                            "text_content": "When the TLS based protocol is used as Ua* profile, the AP can be used to handle the TLS security relation with the UE and relieves the AS of this task. When an HTTPS request is destined towards an AS behind an AP, the AP terminates the TLS tunnel and performs UE authentication. The AP proxies the HTTP requests received from UE to one or many application servers. The AP may add an assertion of identity of the subscriber for use by the AS, when the AP forwards the request from the UE to the AS.\nThe figure depicts the environment and reference points of an AP for TLS tunnels when the AP is internal. It shows the location of the AP, the reference points for the TLS tunnels, and the distance between them. The figure is used to ensure that the AP is correctly located and that the tunnels are properly configured for communication.\nFigure 4.7.3-1: Environment and reference points of AP for TLS tunnels when AP is internal\nThe figure depicts the environment and reference points of an AP for TLS tunnels when the AP is external. It shows the location of the AP, the reference points for the TLS tunnels, and the surrounding environment.\nFigure 4.7.3-2: Environment and reference points of AP for TLS tunnels when AP is external\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tKey management",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tAKMA key hierarchy",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The key hierarchy (see Figure 5.1-1) includes the following keys: KAUSF, KAKMA, KAF. KAUSF is generated by AUSF as specified in clause 6.1 of TS 33.501 [2].\nKeys for AAnF:\n-\tKAKMA is a key derived by ME and AUSF from KAUSF.\nKeys for AF:\n-\tKAF is a key derived by ME and AAnF from KAKMA.\nKAKMA and KAF are derived according to the procedures of clauses 6.1 and 6.2.\nThe figure depicts the AKMA (Advanced Key Management Architecture) Key Hierarchy, which is a key management system used in 5G networks. The hierarchy includes various components such as the Key Management Service (KMS), Key Distribution Center (KDC), Key Distribution Point (KDP), and Key Distribution Unit (KDU). The diagram illustrates the hierarchical structure and the distribution of keys across these components, ensuring secure and efficient key management in 5G networks.\nFigure 5.1-1: AKMA Key Hierarchy\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tAKMA key lifetimes",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The KAKMA and A-KID are valid until the next successful primary authentication is performed (implicit lifetime), in which case the KAKMA and A-KID are replaced.\nAKMA Application Keys KAF shall use explicit lifetimes based on the operator's policy. The lifetime of KAF shall be sent by the AAnF as described in clauses 6.2 and 6.3. In case that a new AKMA Anchor Key KAKMA is established, the AKMA Application Key KAF can continue to be used for the duration of the current application session or until its lifetime expires, whichever comes first. When the KAF lifetime expires, a new AKMA Application Key is established based on the current AKMA Anchor Key KAKMA.\nNOTE: When the KAF lifetime expires and the KAKMA has not changed in AAnF, according to the Annex A.4, the AKMA Application Key which is established based on the current AKMA Anchor Key KAKMA is not a new one.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tAKMA Procedures",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tDeriving AKMA key after primary authentication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "There is no separate authentication of the UE to support AKMA functionality. Instead, AKMA reuses the 5G primary authentication procedure executed e.g. during the UE Registration to authenticate the UE. A successful 5G primary authentication results in KAUSF being stored at the AUSF and the UE. Figure 6.1-1 shows the procedure to derive KAKMA after a successful primary authentication.\n\nThe figure depicts a simplified representation of the process of deriving the key authentication (K) and access key management (AKMA) after primary authentication. It illustrates the steps involved in the authentication process, including the use of a key management system (KMS) to ensure secure key distribution and management. The figure is a visual aid to understand the process and is not a technical summary.\nFigure 6.1-1: Deriving KAKMA after primary authentication\n1)\tDuring the primary authentication procedure, the AUSF interacts with the UDM in order to fetch authentication information such as subscription credentials (e.g. AKA Authentication vectors) and the authentication method using the Nudm_UEAuthentication_Get Request service operation.\n2)\tIn the response, the UDM may also indicate to the AUSF whether the AKMA Anchor key needs to be generated for the UE. If the AKMA indication is included, the UDM shall also include the RID of the UE.\n3)\tIf the AUSF receives the AKMA indication from the UDM, the AUSF shall store the KAUSF and generate the AKMA Anchor Key (KAKMA) and the A-KID from KAUSF after the primary authentication procedure is successfully completed.\nThe UE shall generate the AKMA Anchor Key (KAKMA) and the A-KID from the KAUSF before initiating communication with an AKMA Application Function.\n4)\tAfter AKMA key material is generated, the AUSF selects the AAnF as defined in clause 6.7, and shall send the generated A-KID and KAKMA to the AAnF together with the SUPI of the UE using the Naanf_AKMA_KeyRegistration Request service operation. The AAnF shall store the latest information sent by the AUSF.\nNOTE 1:\tThe AUSF need not store any AKMA key material after delivery to the AAnF.\nNOTE 1a: When re-authentication runs, the AUSF generates a new A-KID, and a new KAKMA and sends the new generated A-KID and KAKMA to the AAnF. After receiving the new generated A-KID and KAKMA, the AAnF deletes the old A-KID and KAKMA and stores the new generated A-KID and KAKMA.\n5)\tThe AAnF sends the response to the AUSF using the Naanf_AKMA_AnchorKey_Register Response service operation.\nA-KID identifies the KAKMA key of the UE.\nA-KID shall be in NAI format as specified in clause 2.2 of IETF RFC 7542 [6], i.e. username@realm. The username part shall include the RID and the A-TID (AKMA Temporary UE Identifier), and the realm part shall include Home Network Identifier.\nThe A-TID shall be derived from KAUSF as specified in Annex A.3.\nThe AUSF shall use the RID received from the UDM as described in step 2 to derive A-KID.\nNOTE 2:\tThe chance of A-TID collision is not zero but practically low as the A-TID derivation is based on KDF specified in Annex B of TS 33.220 [4]. The detection of A-TID collision as well as potential handling of collision is not addressed in the present document.\nKAKMA shall be derived from KAUSF as specified in Annex A.2. Since KAKMA and A-TID in A-KID are both derived from KAUSF based on primary authentication run, the KAKMA and A-KID can only be refreshed by a new successful primary authentication.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tDeriving AKMA Application Key for a specific AF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tAAnF response with UE Identity",
+                            "text_content": "Figure 6.2-1 shows the procedure used by the AF to request application function specific AKMA keys from the AAnF, when the AF is located inside the operator's network.\nThe figure depicts a 2-1 K-ary-acyclic-merging-based (K-AF) generation from K-ary-acyclic-merging-based (K-AKMA) in a 2-1 K-ary-acyclic-merging-based (K-AF) system. The figure illustrates the process of generating K-AFs from K-AKMA, which is a key concept in the field of communication systems. The figure shows the generation of K-AFs from K-AKMA, with the K-AFs being represented by the 2-1 K-ary-acyclic-merging-based (K-AF) system. The figure also includes the K-AKMA system, which is a key concept in the field of communication systems. The figure is important for understanding the process of generating K-AFs from K-AKMA and for understanding the key concepts in the field of communication systems.\nFigure 6.2-1: KAF generation from KAKMA\nBefore communication between the UE and the AKMA AF can start, the UE and the AKMA AF need to know whether to use AKMA. This knowledge is implicit to the specific application on the UE and the AKMA AF or indicated by the AKMA AF to the UE (see clause 6.5).\n1.\tThe UE shall generate the AKMA Anchor Key (KAKMA) and the A-KID from the KAUSF before initiating communication with an AKMA Application Function. When the UE initiates communication with the AKMA AF, it shall include the derived A-KID (see clause 6.1) in the Application Session Establishment Request message. The UE may derive KAF before sending the message or afterwards.\n2.\tIf the AF does not have an active context associated with the A-KID, then the AF selects the AAnF as defined in clause 6.7, and sends a Naanf_AKMA_ApplicationKey_Get request to AAnF with the A-KID to request the KAF for the UE. The AF also includes its identity (AF_ID) in the request.\nAF_ID consists of the FQDN of the AF and the Ua* security protocol identifier (see Annex A.4). The latter parameter identifies the security protocol that the AF will use with the UE.\nThe AAnF shall check whether the AAnF can provide the service to the AF based on the configured local policy or based on the authorization information available in the signalling (i.e., Oauth2.0 token). If it succeeds, the following procedures are executed. Otherwise, the AAnF shall reject the procedure.\nThe AAnF shall verify whether the subscriber is authorized to use AKMA based on the presence of the UE specific KAKMA key identified by the A-KID.\nIf KAKMA is present in AAnF, the AAnF shall continue with step 3.\nIf KAKMA is not present in the AAnF, the AAnF shall continue with step 6 with an error response.\n3.\tOnce receving the request from the AF, if the AAnF determines this specific AF needs GPSI, according to its local policy, the AAnF sends a Nudm_SDM_Get Request to the UDM to fetch the GPSI of the UE. If the specific AF does not need GPSI, the AAnF shall continue with step 5.\n4.\tThe UDM responds with the GPSI of the UE. The AAnF shall store the received GPSI as part of UE’s AKMA context.\n5.\tThe AAnF derives the AKMA Application Key (KAF) from KAKMA if it does not already have KAF.\nThe key derivation of KAF shall be performed as specified in Annex A.4.\n6.\tThe AAnF sends Naanf_AKMA_ApplicationKey_Get response to the AF with SUPI/GPSI, KAF and the KAF expiration time. Whether to send SUPI or GPSI is determined by AAnF based on the local policy.\n7.\tThe AF sends the Application Session Establishment Response to the UE. If the information in step 6 indicates failure of AKMA key request, the AF shall reject the Application Session Establishment by including a failure cause. Afterwards, UE may trigger a new Application Session Establishment request with the latest A-KID to the AKMA AF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tAAnF response without UE Identity",
+                            "text_content": "In some scenarios, anonymous user access to the AF is desirable (e.g., UE identification is not required at the AF). For allowing such anonymous user access to the AF, the procedure detailed in clause 6.2.1 of the present document is used with the following changes:\n-\tin step 2, instead of Naanf_AKMA_ApplicationKey_Get request,  Naanf_AKMA_ApplicationKey_AnonUser_Get request is used by the AF; and\n-\tin step 6, the AAnF sends Naanf_AKMA_ApplicationKey_AnonUser_Get response to the AF with KAF and the KAF expiration time.\nThe A-KID functions as a temporary user identifier.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tAKMA Application Key request via NEF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Figure 6.3-1 shows the procedure used by the AF to request KAF from the AAnF via NEF, when the AF is located outside the operator's network.\nThe figure depicts a 3-1-1 application key request via NEF (Network Element Function) in the AKMA (Application Key Management) protocol. The diagram illustrates the key request process, including the NEF function, the request, and the response. The figure also shows the NEF function in action, with the request and response being shown in separate lines.\nFigure 6.3-1: AKMA Application Key request via NEF\n1.\tWhen the AF is about to request AKMA Application Key for the UE from the AAnF, e.g. when UE initiates application session establishment request as in clause 6.2.1, the AF discovers the HPLMN of the UE based on the A-KID and sends the request towards the AAnF via NEF service API. The request shall include the A-KID and the AF_ID and optionally UE Id not needed indication.\nNOTE:\tIn the case of architecture without CAPIF support, the AF is locally configured with the API termination points for the service. In the case of architecture with CAPIF support, the AF obtains the service API information from the CAPIF core function via the Availability of service APIs event notification or Service Discover Response as specified in TS 23.222 [5].\n2.\tIf the AF is authorized by the NEF to request KAF, including the authorization after verification of the AF_ID in step 1, the NEF discovers and selects an AAnF as defined in clause 6.7.\n3.\tThe NEF sends a Naanf_AKMA_ApplicationKey_Get request to the selected AAnF with the A-KID to request the KAF for the UE.\nThe AAnF shall process the request in the same way as specified in clause 6.2.1 with following changes:\nIf KAKMA is present in AAnF, the AAnF shall continue with step 4 in this clause.\nIf KAKMA is not present in the AAnF, the AAnF shall continue with step 5 in this clause with an error response.\n4.\tThe AAnF generates the KAF as specified in clause 6.2.1 and sends the response to the NEF with the KAF, the KAF expiration time (KAF exptime) and SUPI.\n5.\tThe NEF forwards the response to the AF with the KAF, the KAF expiration time (KAF exptime) and optionally GPSI (external ID). Based on local policy, the NEF uses the Nudm_SubscriberDataManagement service which is specified in TS 29.503[11] to translate SUPI to GPSI (external ID) and optionally include GPSI (external ID) in the response. If UE Id not needed indication is received in the incoming request, the NEF shall not provide the GPSI (external ID) to AF. The NEF shall not send the SUPI to the AF.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.4\tAKMA key change",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tKAKMA re-keying",
+                            "text_content": "KAKMA shall be re-keyed by running a successful primary authentication as described in clause 6.1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.2\tKAF re-keying",
+                            "text_content": "The KAF re-keying depends on the lifetime of the KAF and may be triggered by the AF, which means that when a new KAKMA is derived, the KAF will not be re-keyed automatically.\nWhen the lifetime of KAF expires, the AF may reject UE’s access to the AF or refresh the KAF as described in clause 6.4.3 based on its policy. If the AF chooses to reject UE’s access, the AF may provide a cause indicating that the KAF has expired via Ua* protocol specific means so that the UE can take appropriate action. If therehas been a change of KAUSF (e.g., due to a successful run of primary authentication), the UE may re-try accessing the AF by using the A-KID derived from the new KAUSF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.3\tKAF refresh",
+                            "text_content": "There is no support for an explicit KAF refresh procedure in this document. If a primary authentication does not take place, the KAUSF, KAKMA and KAF remain unchanged since the latest primary authentication.\nThe KAF may be refreshed by the KAKMA refresh defined in clause 6.4.4 as decided by AAnF.\nNOTE 1: The AAnF can decide KAKMA refresh based on local policy..\nUa* protocol may support refresh of derived session keys from KAF. If the Ua* protocol supports the refresh of derived session keys from KAF, the AF may refresh the KAF at any time using the Ua* protocol.\nNOTE 2:\tHow a fresh key is derived for AKMA is up to Ua* protocol implementation.\nNOTE 3:\tA session key based on KAF refreshed using the Ua* protocol is only known by UE and AF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.4\tKAKMA refresh",
+                            "text_content": "As defined in TS 33.501[2] clause 6.1.5, the AAnF may decide to refresh the KAKMA based on the operator’s local authentication policy by sending the Nudm_UECM_AuthTrigger Request message to the UDM. The UDM may further decide whether to trigger the primary authentication as defined in clause 6.1.5 of TS 33.501[2].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.5\tInitiation of AKMA",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "In case when the UE does not know to use AKMA for a service, then the following procedure shown in figure 6.5-1 applies.\nThe figure depicts the initiation of the Automatic Key Management Protocol (AKMA) in a 5G network. The diagram illustrates the process of key management, which is crucial for secure communication in the 5G era. The figure shows the initiation of the protocol, with the key management server (KMS) initiating the process, followed by the key management client (KMC) receiving the key and initiating the protocol. The figure also shows the key management protocol, which is a key management protocol that ensures the security of the communication.\nFigure 6.5-1: Initiation of AKMA\n1.\tThe UE may start communication over reference point Ua* with the AF with or without any AKMA-related parameters.\n2.\tIf the AF requires the use of shared keys obtained by means of the AKMA, but the request from UE does not include AKMA-related parameters, the AF replies with an AKMA initiation message. The form of this initiation message may depend on the particular reference point Ua*.\nIn case the UE knows to use AKMA for a service, then it directly initiates the procedure in clause 6.2.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.6\tAAnF AKMA context removal",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.6.1\tGeneral",
+                            "text_content": "This procedure is used to remove the AKMA context in the AAnF. NF consumers may initiate this procedure due to local policy.\nThe figure depicts a context removal procedure for an AnF AKMA (Anomalous Frequency Modulation and Amplification) system. The procedure involves the use of a frequency-domain analysis tool to identify and remove the anomalous frequency components in the signal. The figure illustrates the process of identifying the anomalous frequency components, their removal, and the resulting signal. The figure is used to demonstrate the effectiveness of the AnF AKMA system in removing anomalous frequency components, ensuring the integrity of the signal.\nFigure 6.6.1-1: AAnF AKMA context removal procedure\n1. NF initiates an AAnF AKMA context removal procedure to delete the AKMA context in AAnF.\n2. NF discovers the AAnF of the UE, as specified in clause 6.7 and sends a Naanf_AKMA_Context_Remove request with SUPI to AAnF to remove AKMA context for the UE.\n3. AAnF shall delete AKMA Context (e.g. SUPI, A-KID and KAKMA) from its local database identified by SUPI.\n4. AAnF sends a Naanf_AKMA_Context_Remove response to NF. This response is just an acknowledgement of the request received.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.7\tAAnF Discovery and Selection",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NF consumer or the SCP performs AAnF discovery to discover an AAnF instance.\nIn the case of NF consumer-based discovery and selection, the following applies:\n-\tInternal AFs and the NEF performs AAnF instance selection that handles the AKMA request. The AF/NEF shall utilize the NRF to discover the AAnF instance(s) unless AAnF information is available by other means, e.g. locally configured on the AF/NEF.\n-\tThe AUSF performs AAnF selection to allocate an AAnF Instance to send the AKMA key material related to the UE. The AUSF shall utilize the NRF to discover the AAnF instance(s) unless AAnF information is available by other means, e.g. locally configured on the AUSF.\n-\tThe NF specified in clause 6.6 performs AAnF instance selection that handles the AKMA request. The NF shall utilize the NRF to discover the AAnF instance(s) unless AAnF information is available by other means, e.g. locally configured on the the NF specified in clause 6.6.\nThe AAnF selection functionality in NF consumer or in SCP should consider the following factor:\n-\tthe UE's Routing Indicator.\nNOTE 1:\tThe AF/NEF obtains the Routing Indicator as part of the A-KID in the AKMA request. The AUSF obtains the Routing Indicator within the Nudm_UEAuthentication_Get Response from the UDM.\nInternal AFs, the NEF and the AUSF shall select the same AAnF set based on the UE’s Routing Indicator.\nWhen the UE's Routing Indicator is set to its default value as defined in TS 23.003 [9], the AAnF NF consumer can select any AAnF instance within the home network of the UE.\nNOTE 2:\tIn scenarios where multiple sets of AAnFs are deployed, it is left up to implementation how to ensure that the AAnF NF consumers select an AAnF instance within the AAnF set the UE belongs to when the UE's Routing Indicator is set to its default value.\nIn the case of delegated discovery and selection in SCP, the AAnF NF consumer shall send all available factors to the SCP.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tSecurity related services",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tServices provided by AAnF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.1.1\tGeneral",
+                            "text_content": "The following table shows the AAnF Services and AAnF Service Operations.\nTable 7.1.1-1: List of AAnF Services\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.1.1-1: List of AAnF Services",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.1.2\tNaanf_AKMA_AnchorKey_Register service operation",
+                            "text_content": "Service operation name: Naanf_AKMA_AnchorKey_Register.\nDescription: The NF consumer requests the AAnF to store the AKMA related key material.\nInput, Required: SUPI, A-KID, KAKMA\nInput, Optional: None.\nOutput, Required: None.\nOutput, Optional: None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.3\tNaanf_AKMA_ApplicationKey_Get service operation",
+                            "text_content": "Service operation name: Naanf_AKMA_ApplicationKey_Get.\nDescription: The NF consumer requests AKMA Application Key and UE ID from the AAnF.\nInput, Required: A-KID, AF_ID\nInput, Optional: None.\nOutput, Required: KAF, KAF expiration time and SUPI or GPSI.\nOutput, Optional: None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.4\tNaanf_AKMA_Context_Remove operation",
+                            "text_content": "Service operation name: Naanf_AKMA_Context_Remove.\nDescription: The NF consumer requests the AAnF to remove the AKMA related key material.\nInput, Required: SUPI.\nInput, Optional: None.\nOutput, Required: None.\nOutput, Optional: None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.5\tNaanf_AKMA_ApplicationKey_ AnonUser_Getservice operation",
+                            "text_content": "Service operation name: Naanf_AKMA_ApplicationKey_AnonUser_Get.\nDescription: The NF consumer requests only the AKMA Application Key from the AAnF. This service is for allowing anonymous user access to the AF based on A-KID (i.e., UE identification is not required at the AF). The A-KID functions as a temporary user identifier.\nInput, Required: A-KID, AF_ID\nInput, Optional: None.\nOutput, Required: KAF, KAF expiration time.\nOutput, Optional: None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.2\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tServices provided by NEF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.3.1\tGeneral",
+                            "text_content": "The NEF exposes AKMA Application Key derivation service to the requester NF.\nThe following table shows the NEF Services and NEF Service Operations related to AKMA service.\nTable 7.3.1-1: List of NEF Services\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3.1-1: List of NEF Services",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.3.2\tNnef_AKMA_ApplicationKey_Get service operation",
+                            "text_content": "Service operation name: Nnef_AKMA_ApplicationKey_Get.\nDescription: The NF consumer requests the NEF to provide AF related key material.\nInput, Required: A-KID, AF_ID\nInput, Optional: UEID not needed indication.\nOutput, Required: KAF, KAF expiration time.\nOutput, Optional: GPSI (external ID).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.4\tServices provided by UDM",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "UDM services related to AKMA service are defined in TS 33.501 [2] clause 14.2.2 and 14.2.6.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.1\tKDF interface and input parameter construction",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.1.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "All key derivations for AKMA shall be performed using the key derivation function (KDF) specified in Annex B.2.2 of TS 33.220 [4].\nThis clause specifies how to construct the input string, S, and the input key, KEY, for each distinct use of the KDF. Note that \"KEY\" is denoted \"Key\" in TS 33.220 [4].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.1.2\tFC value allocations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The FC number space used is controlled by TS 33.220 [4], FC values allocated for the present document are in the range of 0x80 – 0x82.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.2\tKAKMA derivation function",
+            "description": "When deriving a KAKMA from KAUSF, the following parameters shall be used to form the input S to the KDF:\n-\tFC = 0x80;\n-\tP0 = \"AKMA\";\n-\tL0 = length of \"AKMA\"; (i.e. 0x00 0x04)\n-\tP1 = SUPI;\n-\tL1 = length of SUPI.\nThe input key KEY shall be the KAUSF.\nSUPI shall be the same value as parameter P0 in Annex A.7.0 of TS 33.501 [2].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.3\tA-TID derivation function",
+            "description": "When deriving the A-TID from KAUSF, the following parameters shall be used to form the input S to the KDF:\n-\tFC = 0x81;\n-\tP0 = \"A-TID\";\n-\tL0 = length of \"A-TID\"; (i.e. 0x00 0x05)\n-\tP1 = SUPI;\n-\tL1 = length of SUPI.\nThe input key KEY shall be KAUSF.\nSUPI shall be the same value as parameter P0 in Annex A.7.0 of TS 33.501 [2].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.4\tKAF derivation function",
+            "description": "When deriving a KAF from KAKMA, the following parameters shall be used to form the input S to the KDF:\n-\tFC = 0x82;\n-\tP0 =AF_ID;\n-\tL0 = length of AF_ID\nThe input key KEY shall be KAKMA.\nAF_ID is constructed as follows:\nAF_ID = FQDN of the AF || Ua* security protocol identifier, where the Ua* security protocol identifier is specified as Ua security protocol identifier in Annex H of TS 33.220 [4].\n\nAnnex B (normative): \nAKMA profiles for Ua* protocols\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.1\tTLS based protocols",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "B.1.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This annex contains profiles of the share key-based UE authentication with certificate-based AF authentication and the shared key-based mutual authentication between UE and AF that are similar to the ones defined in 3GPP TS 33.222 [7].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.1.2\tShared key-based UE authentication with certificate-based AF authentication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "B.1.2.1\tGeneral",
+                            "text_content": "The following clause provides the changes needed to adapt the Ua protocol given in clause 5.3 of TS 33.222 [7] to work with a KAF derived using the AKMA procedures.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "B.1.2.2\tProcedures",
+                            "text_content": "The procedures follow those given in clause 5.3.0 of TS 33.222 [7] with the AKMA AF taking the role of the NAF from GBA (see TS 33.220 [4]), with the following changes.\nAt step 2, if the clients supports AKMA with this protocol then the client shall add the constant string \"3gpp-akma\" to the \"User-Agent\" HTTP header as product tokens as specified in IETF RFC 9110 [10].\nAt step 3, if the AF selects AKMA for deriving the key, then the AF shall include the \"3GPP-bootstrapping-akma\" within the WWW-Authenticate header field. If the AF has choice between GBA_Digest (see TS 33.220 [4]) and AKMA keying, then the AF shall select AKMA over GBA_Digest (see TS 33.222 [7] for similar consideration between GBA methods).\nNOTE 1: The choice between AKMA and AKA-based GBA is application dependent.\nAt step 4, on receiving the response from the AF, the client shall verify that the FQDN in the realm attribute corresponds to the FQDN of the AF it established the TLS connection with. If failure the client shall terminate the TLS connection with the AF.\nAt step 5 given AKMA has been selected for keying, the client shall send a response with an Authorization header field where Digest is inserted using the A-KID as username. KAF shall be used as password in the Digest calculation.\nAt step 6 given AKMA has been selected for keying, the AF shall verify the value of the password attribute using KAF retrieved from AAnF using the A-KID received as username attribute in the query. If the AF is not able to obtain the AF-specific key when using AKMA mode, the AF shall respond with an appropriate error message not containing the realm attributes from step 3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "B.1.3\tShared key-based mutual authentication between UE and AF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "B.1.3.1\tGeneral",
+                            "text_content": "The following clause provides the changes needed to adapt the Ua protocol given in clause 5.4 of TS 33.222 [7] to work with a KAF derived using the AKMA procedures.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "B.1.3.2\tProcedures",
+                            "text_content": "The procedures follow those given in clause 5.4.0.1 of TS 33.222 [7] with the AKMA AF taking the role of the NAF from GBA (see TS 33.220 [4]), with the following changes.\nAt step 2, the AF shall include a constant string \"3GPP-AKMA\" is used as PSK-identity hint to indicate that AKMA based keying is supported.\nAt step 3, the UE may use an AKMA generated key if support was indicated by the AF (even if GBA-based keys were also indicated as supported by the AF). To use AKMA generated key, the UE shall derive the TLS premaster secret from KAF and shall send a ClientKeyExchange message including a PSK identity consisting of \"3GPP-AKMA\" and the A-KID. If the UE has choice between GBA_Digest (see TS 33.220 [4]) and AKMA keying, then the UE shall select AKMA over GBA_Digest (see TS 33.222 [7] for similar consideration between GBA methods).\nNOTE 1: The choice between AKMA and AKA-based GBA is application dependent.\nAt step 4, if the AF receives the \"3GPP-AKMA\" prefix and the A-KID in the ClientKeyExchange messages it fetches the AF specific shared secret (KAF) from the AAnF using the A-KID. The AF shall derive the TLS premaster secret from the AF specific key (KAF).\nThe procedures follow those given in clause 5.4.0.2 of TS 33.222 [7] with the AKMA AF taking the role of the NAF from GBA (see TS 33.220 [4]), with the following changes.\nIn step 1, the PSK identities in the ClientHello shall include a prefix indicating the PSK-identity name space (i.e. \"3GPP-AKMA\") and the A-KID to indicate the UE supports keying with AKMA.\nIn step 2 if the AF is willing to establish a TLS tunnel using PSK authentication with AKMA keys, then the AF shall indicate the index of the AKMA psk identity in the ServerHello message. If the AF has choice between GBA_Digest (see TS 33.220 [4]) and AKMA keying, then the AF shall select AKMA over GBA_Digest (see TS 33.222 [7] for similar consideration between GBA methods).\nNOTE 1: The choice between AKMA and AKA-based GBA is application dependent.\nThe UE and NAF shall derive the TLS external PSK from KAF.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "C.1\tGeneral",
+            "description": "This Annex covers the aspects specific to the AKMA Ua* protocol based on DTLS. This feature is optional to be supported for the UE and AF. If the feature is supported, the following clauses apply.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "C.1.1\tRequirement on the UE",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "UE hosts the DTLS client. The UE should be able to send the AKMA PSK identity to the AF to indicate which key (KAF) the UE intends to use to secure the Ua* reference point based on DTLS.\nThe PSK identity specified in B.1 for TLS is also applicable for DTLS.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "C.1.2\tRequirement on the AF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "DTLS should be supported by the AF for the UE-AF reference point (Ua*).\nThe AF should be able to require that a certain key (i.e., KAF) used to secure the Ua reference point based on DTLS.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "C.2\tShared key-based mutual authentication between UE and AF",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "C.2.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The TLS profile specified in TS 33.210 [13] clause 6.2 apply to DTLS 1.3[12].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "C.2.2\tProcedures for DTLS 1.3",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The procedures given in B.1.3.2.2 for TLS 1.3 is also applicable for DTLS 1.3.\nAKMA PSK identity should be delivered via DTLS message.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "D.1\tGeneral",
+            "description": "This annex describes how to secure access to an AF using Object Security for Constrained RESTful Environments (OSCORE) [14].\nThe specification of the OSCORE as an AKMA Ua* protocol follows the architecture of GBA OSCORE Ua protocol in TS 33.220 [4], Annex P with the AF taking the role of the NAF.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "D.2\tRequirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "D.2.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This Annex covers the aspects specific to the AKMA Ua* protocol based on OSCORE. This feature is optional to be supported for the UE and AF. If the feature is supported, the following clauses apply.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "D.2.2\tRequirements on the UE",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "To utilise AKMA as described in this document the UE shall be equipped with an CoAP capable client implementing the particular features of AKMA as specified in this document.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "D.2.3\tRequirements on the AF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "To utilise AKMA as described in this document the AF shall support the features of AKMA as specified in this document.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "D.2.4\tRequirements on the OSCORE",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The same requirements outlined in TS 33.220 [4], clause P.2.4 apply in this clause.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "D.3\tIETF OSCORE as an AKMA Ua* protocol",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "D.3.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The IETF OSCORE as an AKMA Ua* protocol is specified in this clause by providing the details about the procedures, the OSCORE security context and how it is related to the AKMA KAF and the encoding of OSCORE messages using IETF CBOR specified in IETF RFC 8949 [15].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "D.3.2\tProcedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The procedures for the AKMA OSCORE Ua* protocol are the same as the TS 33.220 [4], clause P.3.2 with the following changes.\n1)\tIn Step 1, the CoAP Client (UE) shall send a CoAP request to the AF. This is the Application Session Establishment Request in Step 1 in clause 6.2. The CoAP request shall consist of the following:\ni)\tCoAP Method: POST.\nii)\tURI of the AKMA resource on the AF. The URI shall have the format of <AF_IP_or_FQDN>/akma, where AF_IP_or_FQDN indicates the IP address or the FQDN of the host that hosts the AF.\nNOTE 1: It is assumed that the AF IP address or FQDN is already provisioned to the UE for AKMA purposes.\niii)\tPayload: CoAP Security protocol identifer, A-KID, N1, AF-SID, ?OSC-INP\nThe parameters \"CoAP Security protocol identifier\", N1, AF-SID, ?OSC-INP have the same semantics as the corresponding parameters in TS 33.220 [4], clause Y.2.3. Step 1.\n2)\t Steps 2-4 follow clause 6.2 in the present document.\n3)\tThe CoAP Server (AF) shall respond to the CoAP Client (UE) with a CoAP response. This is the Application Session Establishment Response in Step 5 in clause 6.2. The response shall have the following content:\ni)\tResponse Code: \"Created\".\nii)\tPayload: N2, UE-SID.\nThe parameters N2, UE-SID have the same semantics as the corresponding parameters in TS 33.220 [4], clause P.2.3. Step 3.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "D.3.3\tOSCORE Security context",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The OSCORE security context used in AKMA OSCORE Ua* protocol is similar to the GBA OSCORE security context specified in TS 33.220 [4], clause Y.3.3 with the following changes. The OSCORE security context for the OSCORE profile of Ua* shall have the following values:\n-\tOMS = OSCORE Master Secret = HKDF(KAF, \"AKMA-OSCORE\").\n-\tMaster Salt = Request Payload | Response Payload.\n-\tUE Sender ID = UE-SID generated by CoAP Server and sent to the CoAP Client in the Application Session Establishment Response (Step 3 in clause D.3.2).\n-\tAF Sender ID = AF-SID generated by CoAP Client and sent to the CoAP Server in the Application Session Establishment Request(Step 1 in clause D.3.2).\nwhere HKDF shall be the HMAC-based Key Derivation Function specified in IETF RFC 5869 [16].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "D.3.4\tRefresh of OSCORE key material",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "OSCORE allows both the communication endpoints (UE or AF) to renegotiate the OSCORE security context after the OSCORE security context is established, according to Appendix B.2 in IETF RFC 8613 [14], which is shown in the figure D.3.4-1, Step 1.\nMoreover even if KAF remains constant upon a new application session establishment (Step 1 in clause D.3.2) or a renegotiation of the OSCORE key material, the nonces N1, N2, used in OSCORE security context shall be (stochastically) different from the previous OSCORE security context negotiation to ensure that the OSCORE security context is different.\nThe figure depicts a key refresh process in an OSCORE system, illustrating the steps involved in updating the system's key. The process is crucial for maintaining the security and integrity of the system.\nFigure D.3.4-1: OSCORE key refresh\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "D.3.5\tOSCORE Ua* protocol payload encoding",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "IETF CoAP and OSCORE shall use the IETF Concise Binary Object Representation (CBOR) specified in the IETF RFC 8949 [15] for payload encoding for efficient information transfer between constrained IoT devices.\nThe CoAP media type for CBOR encoding shall be:\n-\tMedia Type: application/cbor\n-\tCoAP Content-Format: 60\nThe Request Payload in the Application Session Request shall be formatted as a CBOR Array as follows:\nRequest Payload = [\nA-KID : bstr,\n      N1 : bstr, \n      AF-SID : bstr, \n      ? OSC-INP: bstr\n]\nA-KID = [\n     RID : tstr,\n     A-TID : bstr,\n     HPLMN-ID : tstr\n]\nOSC-INP = {           ; CBOR Map\n      ? 1 => int,\t   ; version \n      ? 3 => int,\t   ; hkdf \n      ? 4 => int,   ; alg \n      ? 5 => bstr, ; salt \n      ? 6 => bstr \t; contextId\n}\nThe Response Payload in the Application Session Response shall be formatted as a CBOR Array as follows:\nReponse Payload = [         ; CBOR Array\n\tN2 : bstr, \n\tUE-SID : bstr\n]\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 5,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

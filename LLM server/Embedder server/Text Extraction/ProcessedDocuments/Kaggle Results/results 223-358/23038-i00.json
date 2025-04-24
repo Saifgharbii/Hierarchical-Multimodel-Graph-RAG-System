@@ -1,0 +1,668 @@
+{
+    "document_name": "23038-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tIndicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the specification;\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document defines the character sets, languages and message handling requirements for SMS, CBS and USSD and may additionally be used for Man Machine Interface (MMI) (3GPP TS 22.030 [2]).\nThe specification for the Data Circuit terminating Equipment/Data Terminal Equipment (DCE/DTE) interface (3GPP TS  27.005 [8]) will also use the codes specified herein for the transfer of SMS data to an external terminal.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\tvoid\n[2]\t3GPP TS 22.030: \"Man-Machine Interface (MMI) of the User Equipment (UE)\".\n[3]\t3GPP TS 23.090: \"Unstructured Supplementary Service Data (USSD) - Stage 2\".\n[4]\t3GPP TS 23.040: \"Technical realization of the Short Message Service (SMS) \".\n[5]\t3GPP TS 23.041: \"Technical realization of Cell Broadcast Service (CBS)\".\n[6]\t3GPP TS 24.011: \"Point-to-Point (PP) Short Message Service (SMS) support on mobile radio interface\".\n[7]\tVoid.\n[8]\t3GPP TS 27.005: \"Use of Data Terminal Equipment - Data Circuit terminating Equipment (DTE - DCE) interface for Short Message Service (SMS) and Cell Broadcast Service (CBS)\".\n[10]\tISO/IEC 10646: \"Information technology; Universal Multiple-Octet Coded Character Set (UCS)\".\n[11]\t3GPP TS 24.090: \"Unstructured Supplementary Service Data (USSD); Stage 3\".\n[12]\tISO 639: \"Code for the representation of names of languages\".\n[13]\t3GPP TS 23.042: \"Compression algorithm for text messaging services\".\n[14]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[15]\t\"Wireless Datagram Protocol Specification\", Wireless Application Protocol Forum Ltd.\n[16]\tISO 1073-1 and ISO 1073-2 Alphanumeric character sets for optical recognition – Parts 1 and 2: Character sets OCR-A and OCR-B, respectively - Shapes and dimensions of the printed image.\n[17]\t3GPP TS 31.102: \"Characteristics of the USIM application\"\n[18]\t3GPP TS 51.011 Release 4 (version 4.x.x): “Specification of the Subscriber Identity Module - Mobile Equipment (SIM - ME) interface”\n[19]\t3GPP TS 24.294: \"IMS Centralized Services (ICS) Protocol via I1 Interface\".\n[20]\t3GPP TS 24.008: \"Mobile radio interface Layer 3 specification; Core network protocols; Stage 3\".\n[21]\t3GPP TS 24.301: \" Non-Access-Stratum (NAS) protocol for Evolved Packet System (EPS); Stage 3\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tAbbreviations and definitions",
+            "description": "For the purposes of the present document, the following terms and definitions apply:\nNational Language Identifier: A code representing a specific language and thereby selecting a specific National Language Table.\nNational Language Locking Shift Table: A national language table which replaces the GSM 7 bit default alphabet table in the case where the locking shift mechanism as defined in subclause 6.2.1.2.3 is used.\nNational Language Single Shift Table: A national language table which replaces the GSM 7 bit default alphabet extension table in the case where the single shift mechanism as defined in subclause 6.2.1.2.2 is used.\nNational Language Table: A table containing the characters of a specific national language.\nFor the purposes of the present document, the abbreviations used in the present document are listed in 3GPP TR 21.905 [14].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "4\tSMS Data Coding Scheme",
+            "description": "The TP-Data-Coding-Scheme field, defined in 3GPP TS 23.040 [4], indicates the data coding scheme of the TP-UD field, and may indicate a message class. Any reserved codings shall be assumed to be the GSM 7 bit default alphabet (the same as codepoint 00000000) by a receiving entity. The octet is used according to a coding group which is indicated in bits 7..4. The octet is then coded as follows:\n\n\nGSM 7 bit default alphabet indicates that the TP-UD is coded from the GSM 7 bit default alphabet given in clause 6.2.1. When this character set is used, the characters of the message are packed in octets as shown in clause 6.1.2.1.1, and the message can consist of up to 160 characters. The GSM 7 bit default alphabet shall be supported by all MSs and SCs offering the service. If the GSM 7 bit default alphabet extension mechanism is used then the number of displayable characters will reduce by one for every instance where the GSM 7 bit default alphabet extension table is used. 8-bit data indicates that the TP-UD has user-defined coding, and the message can consist of up to 140 octets.\nUCS2 character set indicates that the TP-UD has a UCS2 [10] coded message, and the message can consist of up to 140 octets, i.e. up to 70 UCS2 characters. The General notes specified in clause 6.1.1 override any contrary specification in UCS2, so for example even in UCS2 a <CR> character will cause the MS to return to the beginning of the current line and overwrite any existing text with the characters which follow the <CR>.\nWhen a message is compressed, the TP-UD consists of the GSM 7 bit default alphabet or UCS2 character set compressed message, and the compressed message itself can consist of up to 140 octets in total.\nWhen a mobile terminated message is class 0 and the MS has the capability of displaying short messages, the MS shall display the message immediately and send an acknowledgement to the SC when the message has successfully reached the MS irrespective of whether there is memory available in the (U)SIM or ME. The message shall not be automatically stored in the (U)SIM or ME.\nThe ME may make provision through MMI for the user to selectively prevent the message from being displayed immediately.\nIf the ME is incapable of displaying short messages or if the immediate display of the message has been disabled through MMI then the ME shall treat the short message as though there was no message class, i.e. it will ignore bits 0 and 1 in the TP-DCS and normal rules for memory capacity exceeded shall apply.\nWhen a mobile terminated message is Class 1, the MS shall send an acknowledgement to the SC when the message has successfully reached the MS and can be stored. The MS shall normally store the message in the ME by default, if that is possible, but otherwise the message may be stored elsewhere, e.g. in the (U)SIM. The user may be able to override the default meaning and select their own routing.\nWhen a mobile terminated message is Class 2 ((U)SIM-specific), an  MS shall ensure that the message has been transferred to the SMS data field in the (U)SIM before sending an acknowledgement to the SC. The MS shall return a \"protocol error, unspecified\" error message (see 3GPP TS 24.011 [6]) if the short message cannot be stored in the (U)SIM and there is other short message storage available at the MS. If all the short message storage at the MS is already in use, the MS shall return \"memory capacity exceeded\". This behaviour applies in all cases except for an  MS supporting (U)SIM Application Toolkit when the Protocol Identifier (TP-PID) of the mobile terminated message is set to \"(U)SIM Data download\" (see 3GPP TS 23.040 [4]).\nWhen a mobile terminated message is Class 3, the MS shall send an acknowledgement to the SC when the message has successfully reached the MS and can be stored, irrespectively of whether the MS supports an SMS interface to a TE, and without waiting for the message to be transferred to the TE. Thus the acknowledgement to the SC of a TE-specific message does not imply that the message has reached the TE. Class 3 messages shall normally be transferred to the TE when the TE requests \"TE-specific\" messages (see 3GPP TS 27.005 [8]). The user may be able to override the default meaning and select their own routing.\nThe message class codes may also be used for mobile originated messages, to provide an indication to the destination SME of how the message was handled at the MS.\nThe MS will not interpret reserved or unsupported values but shall store them as received. The SC may reject messages with a Data Coding Scheme containing a reserved value or one which is not supported.\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 3,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tCBS Data Coding Scheme",
+            "description": "The CBS Data Coding Scheme indicates the intended handling of the message at the MS, the character set/coding, and the language (when applicable). Any reserved codings shall be assumed to be the GSM 7 bit default alphabet (the same as codepoint 00001111) by a receiving entity. The octet is used according to a coding group which is indicated in bits 7..4. The octet is then coded as follows:\n\n\nThese codings may also be used for USSD and MMI/display purposes.\nThe message length specified in this subclause is not applicable for UTRAN, E-UTRAN, and NG-RAN, but only applicable for GSM.\nSee 3GPP TS 24.090 [11] for specific coding values applicable to USSD for MS originated USSD messages and MS terminated USSD messages. USSD messages using the default alphabet are coded with the GSM 7-bit default alphabet given in clause 6.2.1. The message can then consist of up to 182 user characters.\nCell Broadcast messages using the default alphabet are coded with the GSM 7-bit default alphabet given in clause 6.2.1. The Message Information Page then consists of 93 user characters.\nIf the GSM 7 bit default alphabet extension mechanism is used then the number of displayable characters will reduce by one for every instance where the GSM 7 bit default alphabet extension table is usedCell Broadcast Messages Information Page using 8-bit data have user-defined coding, and will each be 82 octets in length.\nUCS2 character set indicates that the message is coded in UCS2 [10]. The General notes specified in clause 6.1.1 override any contrary specification in UCS2, so for example even in UCS2 a <CR> character will cause the MS to return to the beginning of the current line and overwrite any existing text with the characters which follow the <CR>. Cell Broadcast Messages Information Page encoded in UCS2 consist of 41 characters each.\nWhen a CBS message received by the MS is message class 0 and the MS has the capability of displaying CBS messages, the MS shall display the message immediately. The message shall not be automatically stored in the (U)SIM or ME.\nThe ME may make provision through MMI for the user to selectively prevent the message from being displayed immediately.\nIf the ME is incapable of displaying CBS messages or if the immediate display of the message has been disabled through MMI then the ME shall treat the CBS message as though there was no message class, i.e. it will ignore bits 0 and 1 in the TP-DCS but may store the message either on the ME or on the (U)SIM.\nClass 1 and Class 2 messages may be routed by the ME to user-defined destinations, but the user may override any default meaning and select their own routing.\nClass 3 messages will normally be selected for transfer to a TE, in cases where a ME supports an SMS/CBS interface to a TE, and the TE requests \"TE-specific\" cell broadcast messages (see 3GPP TS 27.005 [8]). The user may be able to override the default meaning and select their own routing.\nMessages with a User Data Header Structure are encoded as described in 3GPP TS 23.040 [4] for SMS, in subclauses 3.10 and 9.2.3.24.\nThe use of Cell Broadcast DCS values for messages with a User Data Header structure implies that the 82-bytes CB payload has a User Data Header structure.\nThe CBS message information field will contain the IEs as described in 3GPP TS 23.040. The concatenation IEs will not be used, as CB concatenation will rely in that case on the existing CB mechanism. Note that IEs that cannot be split and that IEs that are too large to fit in one CB segment cannot be transmitted using this mechanism. Also, some IEs as defined for SMS are not applicable for CB:\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 4,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 5,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "6\tIndividual parameters",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tGeneral principles",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tGeneral notes",
+                            "text_content": "Except where otherwise indicated, the following shall apply to all character sets:\n1:\tThe characters marked \"1)\" are not used but are displayed as a space.\n2:\tThe characters of this set, when displayed, should approximate to the appearance of the relevant characters specified in ISO 1073 [16]and the relevant national standards.\n3:\tControl characters:\n\n\n4:\tThe display of characters within a message is achieved by taking each character in turn and placing it in the next available space from left to right and top to bottom.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.2\tCharacter packing",
+                            "text_content": "If a character number  is noted in the following way:\nb7\tb6\tb5\tb4\tb3\tb2\tb1\na\tb\tc\td\te\tf\tg\nThe packing of the 7-bitscharacters in octets is done by completing the octets with zeros on the left.\nFor examples, packing:\n-\tone character in one octet:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n0\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n\n-\ttwo characters in two octets:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n0\t0\t2a\t2b\t2c\t2d\t2e\t2f\n\n-\tthree characters in three octets:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n3f\t3g\t2a\t2b\t2c\t2d\t2e\t2f\n0\t0\t0\t3a\t3b\t3c\t3d\t3e\n\n-\tseven characters in seven octets:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n3f\t3g\t2a\t2b\t2c\t2d\t2e\t2f\n4e\t4f\t4g\t3a\t3b\t3c\t3d\t3e\n5d\t5e\t5f\t5g\t4a\t4b\t4c\t4d\n6c\t6d\t6e\t6f\t6g\t5a\t5b\t5c\n7b\t7c\t7d\t7e\t7f\t7g\t6a\t6b\n0\t0\t0\t0\t0\t0\t0\t7a\n\n-\teight characters in seven octets:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n3f\t3g\t2a\t2b\t2c\t2d\t2e\t2f\n4e\t4f\t4g\t3a\t3b\t3c\t3d\t3e\n5d\t5e\t5f\t5g\t4a\t4b\t4c\t4d\n6c\t6d\t6e\t6f\t6g\t5a\t5b\t5c\n7b\t7c\t7d\t7e\t7f\t7g\t6a\t6b\n8a\t8b\t8c\t8d\t8e\t8f\t8g\t7a\n\nThe bit number zero is always transmitted first.\nTherefore, in 140 octets, it is possible to pack (140x8)/7=160 characters.\nIf a character number  is noted in the following way:\nb7\tb6\tb5\tb4\tb3\tb2\tb1\na\tb\tc\td\te\tf\tg\n\nthe packing of the 7-bits characters in octets is done as follows:\nbit number\n7\t6\t5\t4\t3\t2\t1\t0\noctet number\n1\t\t2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n2\t\t3f\t3g\t2a\t2b\t2c\t2d\t2e\t2f\n3\t\t4e\t4f\t4g\t3a\t3b\t3c\t3d\t3e\n4\t\t5d\t5e\t5f\t5g\t4a\t4b\t4c\t4d\n5\t\t6c\t6d\t6e\t6f\t6g\t5a\t5b\t5c\n6\t\t7b\t7c\t7d\t7e\t7f\t7g\t6a\t6b\n7\t\t8a\t8b\t8c\t8d\t8e\t8f\t8g\t7a\n8\t\t10g\t9a\t9b\t9c\t9d\t9e\t9f\t9g\n.\n.\n81\t\t93d\t93e\t93f\t93g\t92a\t92b\t92c\t92d\n82\t\t0\t0\t0\t0\t0\t93a\t93b\t93c\n\nThe bit number zero is always transmitted first.\nTherefore, in 82 octets, it is possible to pack (82x8)/7 = 93.7, that is 93 characters. The 5 remaining bits are set to zero as stated above.\nIf a character number  is noted in the following way:\nb7\tb6\tb5\tb4\tb3\tb2\tb1\na\tb\tc\td\te\tf\tg\nThe packing of the 7-bit characters in octets is done by completing the octets with zeros on the left.\nFor example, packing:\n-\tone character in one octet:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n0\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n\n-\ttwo characters in two octets:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n0\t0\t2a\t2b\t2c\t2d\t2e\t2f\n\n-\tthree characters in three octets:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n3f\t3g\t2a\t2b\t2c\t2d\t2e\t2f\n0\t0\t0\t3a\t3b\t3c\t3d\t3e\n\n-\tsix characters in six octets:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n3f\t3g\t2a\t2b\t2c\t2d\t2e\t2f\n4e\t4f\t4g\t3a\t3b\t3c\t3d\t3e\n5d\t5e\t5f\t5g\t4a\t4b\t4c\t4d\n6c\t6d\t6e\t6f\t6g\t5a\t5b\t5c\n0\t0\t0\t0\t0\t0\t6a\t6b\n\n-\tseven characters in seven octets:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n3f\t3g\t2a\t2b\t2c\t2d\t2e\t2f\n4e\t4f\t4g\t3a\t3b\t3c\t3d\t3e\n5d\t5e\t5f\t5g\t4a\t4b\t4c\t4d\n6c\t6d\t6e\t6f\t6g\t5a\t5b\t5c\n7b\t7c\t7d\t7e\t7f\t7g\t6a\t6b\n0\t0\t0\t1\t1\t0\t1\t7a\n\nThe bit number zero is always transmitted first.\n-\teight characters in seven octets:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n3f\t3g\t2a\t2b\t2c\t2d\t2e\t2f\n4e\t4f\t4g\t3a\t3b\t3c\t3d\t3e\n5d\t5e\t5f\t5g\t4a\t4b\t4c\t4d\n6c\t6d\t6e\t6f\t6g\t5a\t5b\t5c\n7b\t7c\t7d\t7e\t7f\t7g\t6a\t6b\n8a\t8b\t8c\t8d\t8e\t8f\t8g\t7a\n\n-\tnine characters in eight octets:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n3f\t3g\t2a\t2b\t2c\t2d\t2e\t2f\n4e\t4f\t4g\t3a\t3b\t3c\t3d\t3e\n5d\t5e\t5f\t5g\t4a\t4b\t4c\t4d\n6c\t6d\t6e\t6f\t6g\t5a\t5b\t5c\n7b\t7c\t7d\t7e\t7f\t7g\t6a\t6b\n8a\t8b\t8c\t8d\t8e\t8f\t8g\t7a\n0\t9a\t9b\t9c\t9d\t9e\t9f\t9g\n\n-\tfifteen characters in fourteen octets:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n3f\t3g\t2a\t2b\t2c\t2d\t2e\t2f\n4e\t4f\t4g\t3a\t3b\t3c\t3d\t3e\n5d\t5e\t5f\t5g\t4a\t4b\t4c\t4d\n6c\t6d\t6e\t6f\t6g\t5a\t5b\t5c\n7b\t7c\t7d\t7e\t7f\t7g\t6a\t6b\n8a\t8b\t8c\t8d\t8e\t8f\t8g\t7a\n10g\t9a\t9b\t9c\t9d\t9e\t9f\t9g\n11f\t11g\t10a\t10b\t10c\t10d\t10e\t10f\n12e\t12f\t12g\t11a\t11b\t11c\t11d\t11e\n13d\t13e\t13f\t13g\t12a\t12b\t12c\t12d\n14c\t14d\t14e\t14f\t14g\t13a\t13b\t13c\n15b\t15c\t15d\t15e\t15f\t15g\t14a\t14b\n0\t0\t0\t1\t1\t0\t1\t15a\n\n-\tsixteen characters in fourteen octets:\n-\tbits number:\n7\t6\t5\t4\t3\t2\t1\t0\n2g\t1a\t1b\t1c\t1d\t1e\t1f\t1g\n3f\t3g\t2a\t2b\t2c\t2d\t2e\t2f\n4e\t4f\t4g\t3a\t3b\t3c\t3d\t3e\n5d\t5e\t5f\t5g\t4a\t4b\t4c\t4d\n6c\t6d\t6e\t6f\t6g\t5a\t5b\t5c\n7b\t7c\t7d\t7e\t7f\t7g\t6a\t6b\n8a\t8b\t8c\t8d\t8e\t8f\t8g\t7a\n10g\t9a\t9b\t9c\t9d\t9e\t9f\t9g\n11f\t11g\t10a\t10b\t10c\t10d\t10e\t10f\n12e\t12f\t12g\t11a\t11b\t11c\t11d\t11e\n13d\t13e\t13f\t13g\t12a\t12b\t12c\t12d\n14c\t14d\t14e\t14f\t14g\t13a\t13b\t13c\n15b\t15c\t15d\t15e\t15f\t15g\t14a\t14b\n16a\t16b\t16c\t16d\t16e\t16f\t16g\t15a\n\nThe bit number zero is always transmitted first.\nTherefore, in 160 octets, is it possible to pack (160*8)/7 = 182.8, that is 182 characters. The remaining 6 bits are set to zero as stated above.\nPacking of 7 bit characters in USSD strings is done in the same way as for SMS (clause 6.1.2.1). The character stream is bit padded to octet boundary with binary zeroes as shown above.\nIf the total number of characters to be sent equals (8n-1) where n=1,2,3 etc. then there are 7 spare bits at the end of the message. To avoid the situation where the receiving entity confuses 7 binary zero pad bits as the @ character, the carriage return or <CR> character (defined in clause 6.1.1) shall be used for padding in this situation, just as for Cell Broadcast.\nIf <CR> is intended to be the last character and the message (including the wanted <CR>) ends on an octet boundary, then another <CR> must be added together with a padding bit 0. The receiving entity will perform the carriage return function twice, but this will not result in misoperation as the definition of <CR> in clause 6.1.1 is identical to the definition of <CR><CR>.\nThe receiving entity shall remove the final <CR> character where the message ends on an octet boundary with <CR> as the last character.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tCharacter sets and coding",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This section provides list of character sets and codings to be supported by SMS, CBS, USSD and IEs included in NAS messages as specified in 3GPP TS 24.008 [20] and 3GPP TS 24.301 [21]. Implementation of the GSM 7 bit default alphabet is mandatory. Support of other character sets is optional.\nIt should be noted that support of Latin and non-Latin languages by GSM 7 bit default alphabet is limited. It is therefore essential to introduce UCS 2 character set in mobile stations, SCs and systems handling SMSs, CBSs, USSDs, and IEs included in NAS messages.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tGSM 7 bit Default Alphabet",
+                            "text_content": "Bits per character:\t7\nCBS/USSD/IE of NAS message pad character:\tCR\nCharacter table:\n\n\nThe table below is reserved for symbols of international significance (e.g currency symbols).  It also contains a mechanism to permit escape (Note 1) to additional tables for symbols of international significance in the event that the table below becomes fully populated.\n\n\nThe national language tables are used for adding the special characters of certain languages that cannot be expressed using the GSM default 7 bit alphabet.\nThe principle is to use the National Language Identifier to indicate to a receiving entity that the message has been encoded using a national language table. Both single shift and locking shift mechanisms are defined.\nThe single shift mechanism, as defined in subclause 6.2.1.2.2, applies to a single character and it replaces the GSM 7 bit default alphabet ension table defined in subclause 6.2.1.1 with a National Language Single Shift Table (see subclause A.2).\nThe locking shift mechanism, as defined in subclause 6.2.1.2.3, applies throughout the message, or the current segment in case of a concatenated message, and it replaces the GSM 7 bit default alphabet defined in subclause 6.2.1 with a National Language Locking Shift Table (see subclause A.3) that defines the whole character set needed for the language.\nIn case that several languages are used, which require different national language tables, it is recommended to encode the message in UCS-2, however it is possible to use both single shift and locking shift with the corresponding tables in a single message.\nImplementations based on older reference versions (so-called \"legacy implementations\") will use the fallback mechanisms that are defined in the earlier versions of the specification for handling of unknown characters.\nIn the case where single shift is not combined with locking shift, single shift means that the receiving entity shall decode all characters in the message (or the current segment in case of a concatenated message) using the GSM 7 bit default alphabet unless the escape mechanism is used, i.e <escape><character>, as defined in subclause 6.2.1.\nThe case where single shift and locking shift (which may be for the same or different languages) are combined is described in subclause 6.2.1.2.3.\nIf the escape mechanism is used then instead of the GSM 7 bit default alphabet ension table in subclause 6.2.1.1 the receiving entity shall decode the subsequent character using the National Language Single Shift Table for the indicated language in table 6.2.1.2.4.1. Each time a sending entity requires to send a character from the National Language Single Shift Table the sending entity shall encode this as <escape><character>, where the <character> is encoded using the indicated National Language Single Shift Table.\nLocking Shift means that the receiving entity shall decode all characters in the message (or the current segment in case of a concatenated message) using the National Language Locking Shift Table unless the escape mechanism is used. i.e. <escape><character>, as defined in subclause 6.2.1.\nIf the escape mechanism is used and no National Language Single Shift Table is indicated (see subclause 6.2.1.2.4), the receiving entity shall decode the message (or the current segment in case of a concatenated message) using the GSM 7 bit default alphabet extension table as defined in subclause 6.2.1.1.\nIf the escape mechanism is used and a National Language Single Shift Table is indicated (see subclause 6.2.1.2.4), the receiving entity shall decode the message (or the current segment in case of a concatenated message) using the National Language Single Shift Table as defined in subclause 6.2.1.2.2.\nA National Language Single Shift IE and a National Language Locking Shift IE can be included in the TP User Data Header, as defined in 3GPP TS 23.040 [4]. The receiving entity shall decode using single shift or locking shift as applicable for the language indicated in the National Language Identifier within these IEs.\nThe National Language Identifier octet is encoded as shown in table 6.2.1.2.4.1.\nTable 6.2.1.2.4.1\n\nWhen supporting a specific national language, the sending entity shall support the encoding of messages using the corresponding National Language Identifier defined in subclause 6.2.1.2.4.\nThe receiving entity should be able to decode messages usingthe  National Language Identifiers defined in subclause 6.2.1.2.4 for the languages that are supported by that entity.\nIf a message is received, containing a National Language Identifier indicating a reserved value or a value that is not supported by the receiving entity, the receiving entity shall ignore the IE (see 3GPP TS 23.040 [4]) in which the National Language Identifier was indicated.\nThe receiving entity shall be capable of processing both single shift and locking shift within the same message.\nIt is an implementation option for the sending entity whether to use the single shift mechanism, the locking shift mechanism or both.\nNOTE 1:\tA message using the locking shift mechanism cannot make use of characters from the GSM 7 bit Default Alphabet table unless such characters are replicated in the National Language Locking Shift Table or (in the case of locking shift and single shift), the National Language Single Shift table.\nNOTE 2:\tEncoding of a message using the national locking shift mechanism is not intended to be implemented until a formal request is issued by the relevant national regulatory body. This is because a receiving entity not supporting the relevant locking-shift decoding will present different characters from the ones intended by the sending entity.\nNOTE 3:\tAn SMS message using a locking shift table for a language may not be properly displayed when the terminal does not support the locking shift table for that language. When the network is aware of the list of the locking shift tables supported by the UE, the network can deliver the SMS messages using an appropriate encoding.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.1.2.4.1",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.2\t8 bit data",
+                            "text_content": "8 bit data is user defined\nPadding:\tCR in the case of an 8 bit character set\nOtherwise - user defined\nCharacter table:\tUser Specific\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tUCS2",
+                            "text_content": "Bits per character:\t16\nCBS/USSD pad character:\tCR\nCharacter table:\tISO/IEC 10646 [10]\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.1\tIntroduction",
+            "description": "This annex contains character tables for specific languages whose characters are not wholly or partially present within the GSM 7 bit default alphabet.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tNational Language Single Shift Tables",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.2.1\tTurkish National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 10,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.2\tSpanish National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE: \tThis table also includes the character \"ç\" used in Catalan.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 11,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.3\tPortuguese National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 12,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.4\tBengali National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Bengali characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 13,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.5\tGujarati National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Gujarati characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 14,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.6\tHindi National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE: In the table below, the Hindi characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 15,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.7\tKannada National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE: In the table below, the Kannada characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 16,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.8\tMalayalam National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Malayalam characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 17,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.9\tOriya National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Oriya characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 18,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.10\tPunjabi National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Punjabi characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 19,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.11\tTamil National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Tamil characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 20,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.12\tTelugu National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Telugu characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 21,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.13\tUrdu National Language Single Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Urdu characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 22,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.3\tNational Language Locking Shift Tables",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.3.1\tTurkish National Language Locking Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 23,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.2\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.3\tPortuguese National Language Locking Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 24,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.4\tBengali National Language Locking Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Bengali characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 25,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.5\tGujarati National Language Locking Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Gujarati characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 26,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.6\tHindi National Language Locking Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Hindi characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 27,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.7\tKannada National Language Locking Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Kannada characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 28,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.8\tMalayalam National Language Locking Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Malayalam characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 29,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.9\tOriya National Language Locking Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Oriya characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 30,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.10\tPunjabi National Language Locking Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Punjabi characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 31,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.11\tTamil National Language Locking Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Tamil characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 32,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.12\tTelugu National Language Locking Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Telugu characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 33,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.13\tUrdu National Language Locking Shift Table",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "NOTE:\tIn the table below, the Urdu characters are represented using Unicode.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 34,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "B.1\tIntroduction",
+            "description": "This annex provides guidelines for creating language tables.\nIt is recommended that the characters and their positions in the table are checked by people fluent in the appropriate language, and preferably endorsed by an appropriate responsible body.\nIt is recommended that character positions are carefully selected so that receiving entities, which do not support the specific table, display symbols (glyphs) similar to the wanted symbols (glyphs) as far as possible.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.2\tTemplate for Single Shift Language Tables",
+            "description": "The format and structure of the table below shall be used to document the Language specific character codes used in the National Language selection mechanism.\nIt is recommended that a National Language Single Shift Table includes the characters represented in the GSM 7 bit default alphabet extension table (as defined in subclause 6.2.1.1) in the same character position. This ensures the availability of these characters in case when the single shift mechanism is used.\nLanguage – (Note. The actual Country and table content will be annotated when the country is known).\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 35,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.3\tTemplate for Locking Shift Language Tables",
+            "description": "The format and structure of the table below shall be used to document the Language specific character codes used in the National Language selection mechanism.\nLanguage – (Note. The actual Country and table content will be annotated when the country is known).\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 36,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.1\tIntroduction",
+            "description": "This annex gives an overview on how the national language ension mechanism of the GSM 7 bit default alphabet works. This annex shows how a message with an indication of the Turkish National Language Identifier is decoded, but the same principles apply to other languages.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.2\tExample of single shift",
+            "description": "This example outlines the behaviour of both supporting and non-supporting receiving entities where the Turkish National Language Single Shift Table is indicated in the received message. In this example there is no locking shift mechanism used in parallel.\nA non-supporting receiving entity will ignore the National Language Single Shift IE, and decode the message contents using the GSM 7 bit default alphabet table defined in subclause 6.2.1, including possible escape characters to the GSM 7 bit default alphabet extension table specified in subclause 6.2.1.1. For example the Turkish word \"Türkçe\" will be displayed as \"Türkce\".\nA receiving entity that supports the Turkish National Language Single Shift Table will detect a National Language Single Shift IE in a TP User Data Header. This IE tells the receiving entity that the single shift mechanism is used.\nA supporting receiving entity will notice the language code, in this example coded as '0000 0001', and therefore use the Turkish National Language Single Shift Table defined in subclause A.2.1 instead of the GSM 7 bit default alphabet ension table defined in subclause 6.2.1.\nIf the n character is any character except <escape>, then the GSM 7 bit default alphabet table is used for the decode. If the n character is <escape> then the Turkish language specific table is used for the decode of the one character that follows the <escape>. This process will be repeated until the end of the received message, or until the end of the current segment of a concatenated message.\nThe Language selection at the start of a message takes 4 octets which correspond to five 7 bit characters which reduces the maximum number of characters per single message to 155.\nThereafter, the number of characters within that single message will be dependent upon the number of times a character is used that is within the National Language Single Shift Table.\nEvery character used from the National Language Single Shift Table will need an additional character to identify the escape to the National Language Single Shift Table. The available 155 character capacity of a single message will therefore be reduced accordingly. This reduction of overall message length also applies when using characters from the GSM 7 bit default alphabet ension table (see subclause 6.2.1.1) when the National Language Single Shift IE is not used.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.3\tExample of locking shift",
+            "description": "This example outlines the behaviour of both supporting and non-supporting receiving entities where the Turkish National Language Locking Shift Table is indicated in the received message.\nA non-supporting receiving entity will ignore the National Language Locking Shift IE, and decode the message contents using the GSM 7 bit default alphabet defined in subclause 6.2.1, including possible escape characters to the GSM 7 bit default alphabet ensions specified in subclause 6.2.1.1.\nA receiving entity that supports the scheme will detect a National Language Locking Shift IE in a TP User Data Header. This IE tells the receiving entity that the locking shift mechanism is used. If no National Language Single Shift IE is indicated additionally to the National Language Locking Shift IE, then the whole message is decoded using the National Language Locking Shift Table defined for Turkish language in subclause 6.2.1.2.4.1.\nIf, in addition  to the National Language Locking Shift IE (which may be for Turkish or another language),  a National Language Single Shift IE for the Turkish language is indicated, then <escape> makes an exception to the use of the National Language Locking Shift Table for the Turkish or another language. In that case a character following <escape> is decoded using the National Language Single Shift Table for the Turkish language, after which the use of the National Language Locking Shift Table for the Turkish or another language is resumed until the n <escape> or the end of the message is met.\nThe Language selection at the start of a message takes 4 octets which corresponds to five 7 bit characters which reduces the maximum number of characters per single message to 155, unless the National Language Single Shift IE has also been included, in which case there is a further reduction of 3 octets making 7 octets in total, which corresponds to eight 7 bit characters, which reduces the maximum number of characters per single message to 152.\nThereafter, if the single shift mechanism is used additionally to the locking shift mechanism, the number of characters within that single message will be dependent upon the number of times a character is used that is within the National Language Single Shift Table.\nEvery character in the National Language Single Shift Table will use an additional character. The available 152 character single message length will therefore be reduced accordingly. This reduction of overall message length also applies when using characters from the GSM 7 bit default alphabet ension table (see subclause 6.2.1.1) when the National Language Single Shift IE is not used.\n\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 37,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 38,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

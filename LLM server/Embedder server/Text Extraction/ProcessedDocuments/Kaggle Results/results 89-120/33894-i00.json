@@ -1,0 +1,239 @@
+{
+    "document_name": "33894-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need Not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document studies some Zero Trust Security principles that can be applied to the 5G System core network. The present document will further analyse potential threats, study necessary security enhancements, and document various decisions related to solutions as to be adopted or not adopted after evaluating the associated risks and the complexity. The present document specifically covers the following aspects:\n-\tAnalyse the 3GPP 5GS security scenarios related to the 5G core network that may benefit from a Zero Trust principle and identify the associated threats.\n-\tAnalyse the suitable Zero Trust security mechanisms (i.e. for enabling trust evaluation and ensuring trust) to address the threats identified where potential security risk exists.\n-\tProvide recommendations for support of additional Zero Trust principles in 5GS security architecture with suitable future normative work directions, where such recommendations may include 3GPP 5G security requirements, technical enhancements, and procedural enhancements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\tNIST Special Publication 800-207: \"Zero Trust Architecture\".\n[3]\t3GPP TR 33.738: \"Study on security aspects of enablers for network automation for the 5G system phase 3\".\n[4]\t3GPP TS 33.501: \"Security architecture and procedures for 5G System\".\n[5]\t3GPP TS 33.210: \"Network Domain Security (NDS); IP network layer security\".\n[6]\t3GPP TS 23.288: \"Architecture enhancements for 5G System(5GS) to support network data analytics services\".\n[7]\t3GPP TS 29.520: \"5G System; Network Data Analytics Services; Stage 3\".\n[8]\tNIST Special Publication 800-92: \"Guide to Computer Security Log Management\".\n[9]\t3GPP TS 23.502: \"Procedures for the 5G System (5GS)\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and TS 33.501 [4] apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and TS 33.501 [4] apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tVoid",
+            "description": "\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tEvaluation of the current security mechanisms",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tTenet Evaluation Details",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tTenet #1: Resources",
+                            "text_content": "According to Tenet 1 in NIST SP 800-207 [2], it is expected that a zero trust architecture adheres to the principle that \"all data sources and computing resources are considered resources\".\nIdentifying resources, and hence what needs protection in an enterprise would be one of the most important steps in a zero trust plan. In this regard, Tenet 1 provides a definition for what is to be considered as a resource. In the context of the 5G Core any NF and their services are resources.\nThis tenet provides a definition for what needs protection in an enterprise network and serves rather as deployment guidance than a technical requirement. Therefore, this clause is not applicable for this tenet.\nAny Network Functions and their services in the 5G Core are to be considered as a resource in the context of a zero trust deployment plan.\nBesides that, no additional security requirement related to 5G Core are needed for Tenet 1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tTenet #2: All communication is secured regardless of network location",
+                            "text_content": "According to the NIST tenet 2 in NIST SP 800-207 [2], 'Network location alone does not imply trust. Access requests from assets located on enterprise-owned network infrastructure (e.g. inside a legacy network perimeter) must meet the same security requirements as access requests and communication from any other nonenterprise-owned network. In other words, trust should not be automatically granted based on the device being on enterprise network infrastructure. All communication should be done in the most secure manner available, protect confidentiality and integrity, and provide source authentication.'.\nThe relevant principle for 5GS core network is that all communications should be done in the most secure manner available, such as with confidentiality, integrity, and source authentication (as applicable). That implies there is default trust inside a secure domain. As a result, except supporting secure communications, other aspects mentioned in the tenet-2 is not applicable to the telecommunications network.\nAll the security mechanisms specified in TS 33.501 [4] pertaining to SBA communication such as in clause 13.1 as well as non-service based interfaces involving an entity in the 5G Core network such as clause 9, 12, etc.\nIn general, the tenet is about communication security. From this perspective, the 5G Core security standards provide two means to protect communication in and with the 5G Core. On the network layer, there is the NDS/IP framework, relying on IPsec, specified in TS 33.210 [5]. On the transport layer there is TLS for which the profile is also captured in TS 33.210 [5]. Both security protocols provide integrity, confidentiality, and replay protection. NDS/IP is applicable to all interfaces involving the 5G Core since they are all IP based. TLS is on the other hand applicable to all service-based ones since they are HTTP based. IPsec has the advantage of providing topology hiding but TLS whenever applicable can alleviate the dependency on perimeter security should the IPsec tunnel be terminated at the perimeter. With TLS the operator can further push the protection end points deeper within the perimeter.\nBased on this analysis, no further actions are needed with respect to this tenet since the 5G Core standards provide the necessary means to secure the communication with and within the 5G Core and also independently of the location of the end points.\nExcept supporting secure communications, other aspects mentioned in the tenet-2 is not applicable to the telecommunications network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tTenet #3: Access granularity",
+                            "text_content": "According to tenet 3 of NIST SP 800-207 [2], a zero-trust architecture has to adhere to the principle that \"Access to individual enterprise resources is granted on a per-session basis\". This tenet is about access authorization to resources.\nAll the security mechanisms specified in TS 33.501 [4] related to SBA security.\nAuthorization is one of the most important mechanisms for protecting enterprise resources. From this aspect, 5GC indeed provides the necessary authorization and authentication mechanisms for NF to be deployed in the operator network.\nIn the 5GC, one can assimilate the notion of session from NIST SP 800-207 [2] to the TLS session, considering that TLS is used for the SBI interface protection as defined in TS 33.501 [4]. In fact, NF consumers and producers are first required to mutually authenticate during the TLS session establishment via certificates. Then the NF consumer may be required to present an OAuth2.0 authorization token to the producer in the service request within the TLS tunnel. These two mechanisms provide the necessary tools for an operator to control authorization at almost a service invocation level. In facts, via the claims in the OAuth tokens, an operator can restrict access to single instances, to particular services, to particular type of producers, to indicate the restrictions for different resources in 5GC NFs, etc. In addition, via the optional \"additional scope\", the operator can further restrict the allowed resources and the allowed actions. This means that besides the per-TLS session authorization, 5GC core network provides much concrete granularity on the authorization based on the OAuth 2.0 mechanism.\nHowever, the usage of such security mechanisms is left to the discretion of the operator and will depend on the deployment context. Nevertheless, based on the current standards, the operator of a 5G Core has the means to impose very granular and tight restrictions for access to resources. Therefore, no further actions from standard perspective are identified for this tenet.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.4\tTenet #4: Resource access",
+                            "text_content": "According to tenet 4 of NIST SP 800-207 [2], a zero trust architecture has to adhere to the principle that \"Access to resources is determined by dynamic policy-including the observable state of client identity, application/service, and the requesting asset-and may include other behavioural and environmental attributes… Environmental attributes may include such factors as requestor network location, time, reported active attacks, etc.\".\nThe tenet in NIST SP 800-207 [2] describes the access to resources by clients which is related to a user or service, but the user (being part of UE) is not in the scope of this study. Nevertheless, without fully assimilating NFs to users, one can evaluate this tenet from the perspective of NFs being clients when acting as service consumers in the 5G Core.\nThe dynamic authorization mechanism based on OAuth2.0 specified in clause 13.4 of TS 33.501 [4].\nBefore accessing services, an NF consumer may be required to obtain and present an OAuth2.0 token as specified in TS 33.501 [4]. But the existing Oauth based access control decisions do not consider the factors e.g. related to behavioural aspects/reported attack. The specified requirements include detailed provisions for the usage of the claims. In particular, the scope claims, the optional \"additional scope\", the NF set ID, and slice information provide the necessary flexibility to the operators to authorize access at the desired granularity level. For example, the claims can be changed to restrict the access to single instances, to particular services, to particular type of producers, or even to restrict the allowed actions depending on the operator's policy. Observe that such restrictions or expansions of the scopes do not have to be static and can be changed dynamically even at every service invocation.\nNIST SP 800-207  [2] goes to a great extent into describing the use of \"behavioral attributes\" as input to the access authorization process. On this particular aspect, the current security standards do not take into account this so far and do not provide any mechanisms for the definition and the collection of such attributes for NFs. Nevertheless, should there be any useful information collected from NFs for access authorization purposes, the same information would be also equally relevant in a security monitoring context. This is covered under the evaluation of Tenet 5 in clause 5.1.5.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.5\tTenet #5: Maintain the integrity and security posture of all owned and associated assets",
+                            "text_content": "According to tenet 5 in NIST SP 800-207 [2], \"The enterprise monitors and measures the integrity and security posture of all owned and associated assets\". Further description in NIST SP 800-207 [2] shows that this tenet majorly covers operational security and evaluation of the asset's security posture during evaluation of resource request. The tenet focuses on the posture of all resources and devices. In the context of this study, resources and devices can be assimilated to 5G System consisting of RAN, Core and UEs, whereas the RAN and UE being out of scope. In general, for 5G System entities the tenet recommends processes in place in order to ensure that the security best practices and guidelines are followed as well as a robust security monitoring and reporting solution in place.\nAll the associated assets connected to the network infrastructure are continuously monitored to ensure that they remain configured in a state that is known to be legitimate and secure. Therefore, the security challenge \"Trust Nothing and Verify Everything\" is considered.\nIn the 5G core network, this principle refers to the data that can be collected from the NFs that can be used to perform threat assessment as part of continuous security monitoring and trust evaluation.\nThe mechanisms specified in TS 23.288 [6] pertaining to data collection from NFs, e.g. clause 6.2.2 and analytics, e.g. clauses 6.3 to 6.7.\nThere is currently no explicit standardized security monitoring within NWDAF or in other NF.\nThe NWDAF defined in TS 29.520 [7] is used to preform network analytics on data collected from user equipment, network functions, and Operations, Administration and Maintenance (OAM) systems, etc.\nMonitoring of the integrity and security posture of the 5G Core, that also take into account other factors of the infrastructure, already exists today in operators' network infrastructure. These monitoring systems are out of scope of the 3GPP specifications.\nIn general, the tenet touches upon two aspects. The first one is related to operation security. In this regard, it is expected that the proper security practices and guidelines are followed during deployment and operations in order to detect and mitigate vulnerabilities. This includes as described in NIST SP 800-207 [2] regular updates, security patches, and mitigation plans should there be a breach, etc. The enforcement of such practices depends heavily on the implementation and deployment context, e.g. infrastructure, enterprise network, etc. Therefore, it does not warrant the development of standard solutions. Nevertheless, it is worth mentioning that the 3GPP security standards in general are continuously evolving. In fact, vulnerabilities in the security mechanisms revealed either by individual 3GPP members or through one of the established CVD programs are always discussed and remediated whenever deemed necessary.\nThe second aspect is related to monitoring. In this regard, TS 23.288 [6] provides a framework for data collection services that can further enhance whatever security monitoring solution an operator has. For NF monitoring, the framework of TS 23.288 [6] includes analytics for performance monitoring in clause 6.6 and load monitoring in clause 6.5. Such data could be used for example to evaluate the state of the NF and whether it is behaving normally. However, the framework in TS 23.288 [6] relies on the NWDAF, a 5G Core NF, to leverage such services. From a higher-level perspective taking into account the enterprise as a whole with the 5G Core being one part of it, such relevant information exposed by the 5G Core NFs (if any) directly or indirectly via the NWDAF is very likely to be used by an entity outside the 5G Core itself. This could be the operator security monitoring solution or whatever current proprietary solutions being used to achieve the same goals. Overall, this does not warrant standardizing a 5G Core-specific security monitoring procedure.\nNWDAF supports data collection and network monitoring for general aspects related to NF load, performance etc. However, the NWDAF is a Network Function in the 5G Service-Based Architecture itself. According to NIST SP 800-92 [8], sections 2.3.2 and 5.1.3, as well as similar guidance on security logs like, it is important to separate and isolate security logs, So, a security monitoring function can be outside the SBA and the security monitoring function itself would be mostly proprietary.\nIt is worth noticing that on the one hand, such information could include data like network traffic or logs that is not accessible at the SBA layer. This type of data is not specific to the 5G system itself and highly dependent on the deployment, e.g. platforms and technologies used. Therefore, for data collection and sharing, care must be taken in order to follow the security best practices such as the guidelines of NIST SP 800-92 [8] on security logs.\nTherefore, based on this analysis, it is worth investigating whether there is any additional information that could be exposed by the 5G Core NFs for monitoring purposes. In the event of that this study determines that strengthening of the external to 3GPP security monitoring is needed, with not yet specified data collection, this information needs to be well defined and explicitly specified to allow for interoperability and secure operation of installed base.\nBesides this no further actions are required.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.6\tTenet #6: Access security",
+                            "text_content": "According to tenet 6 of NIST SP 800-207 [2], a zero-trust architecture has to adhere to the principle that \"All resource authentication and authorization are dynamic and strictly enforced before access is allowed\". The remaining description of the tenet in NIST SP 800-207 [2] relates more to user access to resources and related aspects such as credential management, activity monitoring, etc. Clause 2.2 provides \"A Zero Trust View of a Network\" in NIST SP 800-207 [2], which states that every asset must have its security posture evaluated via a PEP before a request is granted to an enterprise-owned resource (similar to tenet 6 above for assets as well as subjects). In the 5G Core context, and without fully assimilating NFs to users, this tenet can be evaluated from the perspective of NFs consumers. More precisely, how the access by service consumers to the services of producers is secured.\nAll the security mechanisms specified in TS 33.501 [4] related to SBA security, in particular clauses 13.3 and 13.4 on authentication and authorization.\nAccording to the current security mechanisms, NF consumers and producers may be first required to mutually authenticate during the TLS session establishment via certificates. Then the NF consumer may be required to present an OAuth2.0 authorization token to the producer in the service request within the TLS tunnel. These two mechanisms provide the necessary tools for an operator to control access to the service producer resources dynamically at almost a service invocation level.\nThe choice of the security mechanisms including the static authorization is left to the discretion of the operator and will depend on the deployment context. Nevertheless, based on the current standards, the operator of a 5G Core has the means to enforce a dynamic access authorization in the sense of this tenet by the specified OAuth2.0 mechanism.\nThe currently standardized access control related security mechanisms support authentication and authorization for network service access based on identity and credentials. However, they do not consider security monitoring related information (e.g. threat assessments, security posture etc.,) or any other aspect that is highly dependent on the deployment. Lack of considering security monitoring information for access decisions will allow the NFs with malicious behaviours to remain unidentifiable and continue to access the services from NF service producers which may lead to lateral movement of the attacks. From a standardization perspective, at the 3GPP SBA layer one can investigate whether there is any additional information that could be exposed for security monitoring purposes and how such information is used for access control decisions e.g. authorization. This is covered in the evaluation of Tenet 5 in clause 5.1.5.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.7\tTenet #7: Data collection to improve security posture",
+                            "text_content": "According to tenet 7 titled, 'The enterprise collects as much information as possible about the current state of assets, network infrastructure and communications and uses it to improve its security posture' in NIST SP 800-207 [2], \"An enterprise are expected to collect data about asset security posture, network traffic and access requests, process that data, and use any insight gained to improve policy creation and enforcement. In relation to this, section 3.3.1 of [2] gives more details on how this data can also be used to provide context for access requests from subjects (see section 3.3.1).\".\nSecurity posture data collected from the network can be used for dynamically improving zero trust related security policies. These improvements could include the creation of new policies and enforcement of such policies.\nThere are currently no standard procedures for data collection to improve overall core network security posture.\nTenet 7 is an overall directive for operator network to:\n-\tfacilitate data collection related to security posture, control plane network traffic (i.e. message exchanges between NFs) and access requests;\n-\tprocessing of data (based on operator specific implementation); and\n-\tuse any insight gained to improve policy creation and enforcement (based on operator policies) in the 5GC.\nThe tenet reuses principles and mechanisms that are covered in detail in other tenets such as tenet 5 and 6. This tenet provides some additional clarifications on what kind of data can be collected (i.e. related to tenet 5). Consequently, any provisions for such tenets would constitute the building blocks for tenet 7. The data collection related to abnormal behaviour from NFs and related security analysis outcome considerations can help to apply more fine-grained security policies in 5GC.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tSecurity Mechanism Evaluation summary",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Based on the evaluation of the current security mechanisms with respect to the zero trust security tenets in the context of the 5GC discussed in clause 5.1, a summary is presented in the following table 5.2-1. Table 5.2-1 contains excerpts from the evaluation details in clause 5.1. For detail content refer to clause 5.1.\nTable 5.2-1: Overall Tenet Evaluation Summary\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 5.2-1: Overall Tenet Evaluation Summary",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tKey issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tKey Issue #1: Need for continuous security monitoring",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tKey issue details",
+                            "text_content": "The 5G system includes heterogeneous and varied Network Functions (NF) deployments, where the current security mechanisms determine service access among NFs by authentication (i.e. identifier and credentials based) and authorization. If any NF runs into errors (e.g. due to configuration issues) or behaves maliciously (e.g. due to insider threats/privilege misuse or cyber-attacks), then such NF behaviour information or related threat assessments will not be considered in the current security mechanisms (e.g. for any service access). Some of the zero trust tenets [2] (i.e. tenets 5,7) provides motivation that resource access (i.e. access control to network services) can be evaluated while also taking into account the dynamic policy(ies) that are defined and enforced related to security monitoring (i.e. threat assessments) and continuous trust evaluation, for example., according to NIST SP 800-207 [2] evaluation factor(s) may include observable state of the requestor, characteristics, behavioural attributes (e.g. subject analytics, measured deviations from the observed usage patterns), environmental attributes (location, time, reported attacks), security posture, etc.\nThe solutions addressing this key issue can aim to identify relevant factors for data collection that could potentially enhance security monitoring and mitigate against insider attacks. The solution(s), where relevant, can consider the work being carried out in 3GPP TR 33.738 [3] (e.g. anomalous NF behaviour detection, cyber-attack detection, etc.).\nNOTE:\tConsidering NIST SP 800-207 [2], Zero trust security models assume that an attacker may be present in the environment.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tSecurity threats",
+                            "text_content": "If any NF that has been deployed in the core network, becomes compromised or starts to behave maliciously, and remain undetected then the NF could be misused in attacks leading to a service failure, data loss/theft, etc.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tPotential security requirements",
+                            "text_content": "The 5GS is required to support mechanisms to collect necessary data to enable security monitoring.\nNOTE 1:\tThe actual set of data that can be collected to realize any threat assessments will be addressed during the solution phase.\nNOTE 2:\tThe algorithms or logic for trust monitoring and evaluation are outside the scope of 3GPP.\nNOTE 3:\tThe handling of potentially compromised NFs (e.g. based on detection) with required security aspects (e.g. applying necessary security patches/fixes) is Operator's implementation choice.\nNOTE 4:\tThe key issue and related work considers SBA in the Core network and so, the solutions details should consider the same as the scope of the solution.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tSolutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tSolution #1: Data Collection to enable security monitoring for the Core Network",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.1.1\tIntroduction",
+                            "text_content": "The solution addresses KI#1.\nThe solution describes how various data can be collected and exposed to an external function (i.e. operator's security evaluation and monitoring entity which is outside the 3GPP domain e.g. a SIEM). The data that need to be collected related to NFs for security monitoring can include information on any violations to the normal behaviour (i.e. 3GPP specified service-based message exchanges in TS 23.502 [9] clause 5.2) observed in a NF (i.e. an evaluation target). The collected data such as malicious behaviours/activity need to go through security evaluation to enable the overall security monitoring process.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.2\tSolution details",
+                            "text_content": "The malicious behaviour related data can be identified related to various events such as predefined service operation violations (e.g. malformed messages), unintended configuration change(s), message requests exceeding configured limits, and current resource utilization information (if exceeds resource utilization limits) which can be collected as inference data in the form of security logs or reports from the evaluation targets indirectly via the OAM. For malicious behaviour related new data, the solution involves indirect data collection from the evaluation target(s) via the OAM to limit the impact (e.g. over the existing event exposure services) by reusing and leveraging OAM data collection procedure specified in TS 23.288 [6]. The data collection and exposure to enable security evaluation for monitoring is shown in figure 7.1.2-1.\nFigure 7 illustrates the process of enabling security monitoring during the normal active phase of Network Function Virtualization (NFV) by following steps 1.2-1. The figure depicts the network infrastructure, including virtual network functions (VNFs) and their interconnections, with security monitoring points indicated. The procedure involves configuring security policies, establishing monitoring sessions, and ensuring proper communication between VNFs and security components. The figure emphasizes the importance of proactive security measures in NFV environments to detect and respond to potential threats.\nFigure 7.1.2-1: Procedure to enable Security Monitoring during normal active phase of the NF\nStep 1.\tThe NWDAF based on operator local policy can collect the data and provide to the external operator function to enable (i.e. assist) security evaluation and monitoring.\nStep 2a-b.\tThe NWDAF can collect data related to NF load and resource utilization by reusing existing data collection procedures specified in TS 23.288 [6] clause 6.5.2 related to NF load (i.e. collection from NRF) and NF resource usage (i.e. collection from OAM).\nStep 2c.\tThe NWDAF can use management service from OAM to additionally collect inference data related to various malicious behaviours specific to event identifiers for one or more evaluation target NF(s). For OAM based data collection, the NWDAF can reuse TS 23.288 [6] clause 6.2.3.2 to collect input data specific to the evaluation target NF(s) identification information and target event identifier(s). The OAM collects the inference data (e.g. as a form of security logs/reports) from the target evaluation NFs based on the events indicated and provides the collected inference data to the NWDAF.\nNOTE 1:\tHow the OAM collects the inference data and what type of additional security related data (e.g. security logs or events) is collected is for further study.\nStep 3.\tThe NWDAF acts as proxy and can provide the collected data to an external operator managed function (i.e. to enable security evaluation and monitoring) via the NEF.\nNOTE 2:\tThe external operator function/entity, algorithm(s) or intelligence used for the evaluation, security analysis is up to the operator's implementation.\nNOTE 3:\tThe interface used between NWDAF to NEF and NEF to AF i.e. the external operator function is up to the normative work (e.g. it can be similar to the interface between NEF and external AF (or) can be same as N6). For NEF service exposure to AF, existing NEF services (e.g. TS 23.502 [9] clause 5.2.6.2.2) can be reused as much as possible with the necessary adaptations.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.3\tEvaluation",
+                            "text_content": "The solution has not been evaluated.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "8\tConclusions",
+            "description": "Key Issue #1 Conclusion:\nSolution#1 illustrates how existing services can be used to collect the necessary data listed in the solution for security monitoring purposes in line with the principles of zero trust (Tenet 5). However, no consensus could be reached on the normative work.\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 4,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

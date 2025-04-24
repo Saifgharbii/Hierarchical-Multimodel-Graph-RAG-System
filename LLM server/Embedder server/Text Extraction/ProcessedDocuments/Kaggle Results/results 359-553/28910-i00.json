@@ -1,0 +1,364 @@
+{
+    "document_name": "28910-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document studies on enhancement of autonomous network levels. It introduces the relevant study items and work items in 3GPP, identifies the additional generic MnS requirements of generic autonomous network level for the scenarios defined in Rel-17 and documents potential solutions for the identified generic MnS requirements. It also identifies the enhanced autonomy capabilities corresponding to different autonomous network levels for additional management use cases which is not defined in Rel-17 and documents potential solutions for the enhanced autonomy capabilities. Based on the investigation and studies, it provides recommendations for the further normative work.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 28.310: \"Management and orchestration; Energy efficiency of 5G\".\n[3]\t3GPP TR 28.813: \"Management and orchestration; Study on new aspects of Energy Efficiency (EE) for 5G\".\n[4]\t3GPP TS 28.100: \"Management and orchestration; Levels of autonomous network\".\n[5]\t3GPP TS 28.312:\" Management and orchestration; Intent driven management services for mobile networks\".\n[6]\t3GPP TS 28.104: \"Management and orchestration; Management Data Analytics\".\n[7]\t3GPP TS 28.532: \"Management and orchestration; Generic management services\".\n[8]\t3GPP TS 28.541: \"Management and orchestration; 5G Network Resource Model (NRM); Stage 2 and stage 3\".\n[9]\t3GPP TS 28.622: \"Telecommunication management; Generic Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\".\n[10]\t3GPP TS 28.552: \"Management and orchestration; 5G performance measurements\".\n[11]\t3GPP TS 32.422: \"Telecommunication management; Subscriber and equipment trace; Trace control and configuration management\".\n[12]\t3GPP TS 28.313: \"Management and orchestration; Self-Organizing Networks (SON) for 5G networks\".\n[13]\t3GPP TS 28.535: \"Management and orchestration; Management services for communication service assurance; Requirements\".\n[14]\t3GPP TS 28.105: \"Management and orchestration; Artificial Intelligence / Machine Learning (AI/ML) management\".\n[15]\t3GPP TS 28.554: \"Management and orchestration; 5G end to end Key Performance Indicators (KPI)\".\n[16]\t3GPP TR 28.912: \"Study on enhanced intent driven management services for mobile networks\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nANL\tAutonomous Network Level\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tIntroduction on relevant specifications in 3GPP",
+            "description": "In  TS 28.100 [4], categorizations of the tasks in a workflow are specified in clause 4.3.4 including intent handling, awareness, analysis, decision and execution, and these task categories are used in the framework approach for evaluating autonomous network levels (ANL) in clause 5 of TS 28.100.\nIn clause 4.2.1 of TS 28.535 [13], management control loop including monitor, analytic, decision, execution is described. And in clause 6.1 of TS 28.104 [6], management loop including observation, analytics, decision, execution is specified as well. The management control loop and management loop defined in TS 28.535 [13] and TS 28.104 [6] are similar, and both of them have the similar consideration with the workflow specified in TS 28.100 [4], i.e. awareness, analysis, decision and execution. MDA role in the management loop is within the scope of analytics (see TS 28.100 [4]).\nIn addition to the above four items included in management control loop or management loop, intent handling is also introduced in TS 28.100 [4] which means certain autonomous network levels are required to support intent driven management control loop autonomously. And in clause 4.2.2 of TS 28.312 [5], intent driven MnS is defined with the capabilities including intent translation and intent fulfilment result/information evaluating, which are the main tasks included in the categorization of intent handling defined in clause 4.3.4 of TS 28.100 [4].\nAnd if Artificial Intelligence/Machine Learning (AI/ML) technology is utilized in autonomous networks, AI/ML model training MnS specified in TS 28.105 [14], can be used to enable analytics or decision autonomy capabilities and thus to achieve certain autonomous network levels.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tIssue investigations and potential solutions for scenarios listed in TS 28.100 [4]",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tKey Issue# 5.1: Enhancement of generic autonomous network level for network optimization",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tDescription",
+                            "text_content": "The generic autonomous network level for network optimization is defined in Clause 7.1 in TS 28.100 [4], which includes generic workflow, generic classification of autonomous network level, generic autonomy capability description for management system, generic MnS requirements and solutions for generic MnS requirements.\nBased on current definition, the generic autonomy capability description for management system for level 4 is documented in clause 7.1.3 in TS 28.100 [4]. However, the additional MnS requirements for level 4 are not specified in clause 7.1.4 in TS 28.100 [4].\nRegarding the solutions for MnS requirements for level 2, currently only solutions for the network issues which can be detected based on threshold is specified. The MDA feature specified in TS 28.104 [6] delivers the analytic capabilities for identifying more network issues (e.g. coverage issue, SLS issue, network slice throughput issue), so the MDA MnS can be used to support MnS requirements for level 2 which focus on the autonomous analytic capability. So it is necessary to analyse which concrete MnS requirements for level 2 are already supported by MDA MnS, and which MnS requirements can be supported by enhancement of MDA MnS.\nFollowing additional MnS requirements for level 4 needs to be specified to support generic autonomy capability description for management system for level 4.\nREQ-ANL-NetOpt-Level_4-MnS-1 The 3GPP management system shall have the capability allowing its authorized consumer to specify the network optimization intent.\nREQ-ANL-NetOpt-Level_4-MnS-2 The 3GPP management system shall have the capability allowing its authorized consumer to obtain the fulfilment information of the network optimization intent.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\t\tPotential solutions",
+                            "text_content": "Following solutions for MnS requirements for level 4 needs to be added in TS 28.100 [4] Table 7.1.5-1: Solutions for generic MnS requirements of autonomous network level for network optimization.\nTable 5.1.2-1: Potential solutions for generic MnS requirements of autonomous network level 4 for generic network optimization\n\nFollowing are the additional solutions description for MnS requirements for level 2 to be added in TS 28.100 [4].\nRegarding the REQ-ANL-NetOpt-Level_2-MnS-2 and REQ-ANL-NetOpt-Level_2-MnS-4, the MDA MnS defined in TS 28.104 [6] can be used. The analytics output can represent network issue identification and network issue demarcation result. Which means MnS consumer can use the MDA MnS to obtain the network issue and corresponding demarcation result.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.2-1: Potential solutions for generic MnS requirements of autonomous network level 4 for generic network optimization",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.1a\tKey Issue# 5.1a: Enhancement of autonomous network level for radio network coverage optimization",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1a.1\tDescription",
+                            "text_content": "The solution for MnS requirements for radio network coverage optimization is described in A.1.3, Based on current definition, following aspects needs to be further enhanced:\n-\tThe MnS component type A (operation and notification), MnS component type B (Information model) and MnS component type C (management data) to support the MnS requirements for radio network coverage optimization have not been explicitly described.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1a.2\tPotential solutions",
+                            "text_content": "Based on the solutions for MnS requirements of autonomous network level for radio network coverage optimization defined in clause A.1.3 in TS 28.100 [2], following are the enhanced solutions description for generic MnS requirements of autonomous network level for radio network coverage optimization.\nNote: \tThe solutions below are not used to evaluate the autonomous network level, which are MnS solutions to support MnS requirements for 3gpp management system derived from autonomy capability of each level.\nTable 5.1a.2-1: Solutions for generic MnS requirements of autonomous network level for radio network coverage optimization\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1a.2-1: Solutions for generic MnS requirements of autonomous network level for radio network coverage optimization",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.1b\tKey Issue# 5.1b: Analysis on the solution for MnS requirements of autonomous network level for RAN UE throughput optimization",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1b.1\tDescription",
+                            "text_content": "Autonomous network level for RAN UE throughput optimization is documented in clause A.2 in TS 28.100 [4]. In TS 28.100 [4], corresponding workflow and classification of autonomous network level for RAN UE throughput optimization is defined, however it is not clear whether the solution for generic MnS requirements of autonomous network level for RAN UE optimization is well defined. So it is necessary to analyse the solutions for corresponding MnS requirements.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1b.2\t\tPotential solutions",
+                            "text_content": "Based on the existing generic MnS requirements of Level 1-Level 3 for the generic network optimization in TS 28.100 [4] and additional MnS requirements for Level 4 for the generic network optimization in clause 5.1, following are the solution descriptions to be added in TS 28.100 [4] which can be used to satisfy MnS requirements of autonomous network level for RAN UE throughput optimization.\n-\tRegarding the REQ-ANL-NetOpt-Level_1-MnS-1, 2, 3, NR NRM (e.g. NRCellCU, NRCellRelation, NRCellDU) defined in TS 28.541 [8] are used to represent network adjustment solution. The UE throughput measurements (e.g. Average DL UE throughput in gNB, Distribution of DL UE throughput in gNB) defined in TS 28.552 [10] and RAN UE Throughput KPIs (e.g. DL RAN UE throughput for a sub-network, DL RAN UE throughput for a NRCellDU) defined in TS 28.554 [15] are used to represent the network related information.\nRegarding the REQ-ANL-NetOpt-Level_4-MnS-1, 2, the attribute \"aveULRANUEThptTarget\", \"aveDLRANUEthptTarget\",\"lowULRANUEThptRatioTarget\" and \"lowDLRANUEThptRatioTarget\" of RadioNetworkExpectation in intent information model in TS 28.312 [5] as expectation targets for RAN UE throughput assurance.\nFollowing are the gap analysis for the solutions to Level 1-Level 4 MnS requirements for RAN UE throughput optimization:\n-\tGap: No existing solutions can be used to support additional MnS requirements to support autonomous network levels 2 and 3. The mechanism to allow MnS consumer to obtain the RAN UE throughput issue identification, demarcation and root cause analysis result is missing.\n-\tSolution: MDA feature (TS 28.104 [6]) is developed to identify ongoing issues impacting the performance of the network and services, and help to identify in advance potential issues that may cause potential failure and/or performance degradation. Providing RAN UE throughput analytic output including information related to RAN UE throughput issue identification, demarcation and root cause analysis result is a potential enhancement to MDA. This capability can be used as potential reference solution for ANL.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tKey Issue# 5.2: Enhancement of generic autonomous network level for RAN NE deployment",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tDescription",
+                            "text_content": "The generic autonomous network level for RAN NE deployment is defined in Clause 7.2 in TS 28.100 [4], which includes generic workflow, generic classification of autonomous network level, generic autonomy capability description for management system, generic MnS requirements and solutions for generic MnS requirements.\nBased on current definition, the generic autonomy capability description for management system for level 4 is documented in clause 7.2.3 in TS 28.100 [4]. However, the additional MnS requirements for level 4 are not specified in clause 7.2.4 in TS 28.100 [4].\nFollowing additional MnS requirements for level 4 needs to be specified in TS 28.100 [4] to support generic autonomy capability description for management system for level 4.\nREQ-ANL-RanNeDeploy-Level_4-MnS-1 The 3GPP management system shall have the capability allowing its authorized consumer to specify the intent for delivering RAN NE(s).\nREQ-ANL- RanNeDeploy-Level_4-MnS-2 The 3GPP management system shall have the capability allowing its authorized consumer to obtain the fulfilment information of the intent for delivering RAN NE(s).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tPotential solutions",
+                            "text_content": "Following are the solution for MnS requirements for level 4 for RAN NE deployment which needs to be added in TS 28.100 [4]. The RadioNetworkExpectation defined in TS 28.312 [5] can be used as the intent expectation for delivering RAN NE(s). A radio subnetwork can contain one or multiple RAN NE(s). The attribute \"coverageTACContext\", \"pLMNContext\", \"nRFqBandContext\" and \"rATContext\" in ObjectContext can be used as expected radio setting parameters for delivering RAN NE(s). The attribute \"weakRSRPRatioTarget\", \"lowSINRRatioTarget\", \"aveULRANUEThptTarget\" and \"aveDLRANUEthptTarget\" in ExpectationTarget can be used as expected network capacity and performance targets for delivering RAN NE(s). The expected transport setting parameters for delivering RAN NE(s) is missing in RadioNetworkExpectation in TS 28.312 [5] but it is investigated in TR 28.912 [16] and can be used.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tKey Issue# 5.3: Enhancement of generic autonomous network level for fault management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tDescription",
+                            "text_content": "The generic autonomous network level for fault management is defined in Clause 7.3 in TS 28.100 [4], which includes generic workflow, generic classification of autonomous network level, generic autonomy capability description for management system, generic MnS requirements and solutions for generic MnS requirements.\nBased on current definition, the generic autonomy capability description for management system for level 4 is documented in clause 7.3.3 in TS 28.100 [4]. However, the corresponding MnS requirements for level 4 are not specified in clause 7.3.4 in TS 28.100 [4].\nFollowing additional MnS requirements for level 4 need to be specified in TS 28.100 [4] to support generic autonomy capability description for management system for level 4.\nREQ-ANL-FM-Level_4-MnS-1 The 3GPP management system shall have the capability allowing its authorized consumer to specify the intent expectation for fault management.\nREQ-ANL-FM-Level_4-MnS-2 The 3GPP management system shall have the capability allowing its authorized consumer to obtain the fulfilment information of the fault management related intent.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tPotential solution",
+                            "text_content": "The intent driven MnS defined in TS 28.312 can be used to satisfy the REQ-ANL-FM-Level_4-MnS-1 and REQ-ANL-FM-Level_4-MnS-2 with following information specified:\nconcrete intent expectation and context for fault management (including the definition for intent expectation for fault management).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tIssue investigations and potential solutions for new scenarios",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tKey Issue# 6-1: Autonomous network level for RAN energy saving use case",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tDescription",
+                            "text_content": "The massive deployment of mobile network has brought about a rapid increase in energy consumption. The energy cost and carbon emission also become great challenges for the NOP. Operators are aiming at reducing power consumption in 5G networks to lower their OPEX with energy saving solutions. RAN energy saving represent the energy saving aspects (including capacity booster cell - gNB is fully or partially overlaid by the candidate cell(s) in TS 28.310 [2], area based energy saving in TR 28.813 [3], and other energy saving aspects) for RAN. So, introducing the autonomous network level for energy saving will benefit for operator to achieve the full autonomy goal step by step and have clear view on which typical issues can be addressed by telecom system in corresponding steps. The requirements for each autonomous level for energy saving are different. So it is important to introduce the autonomous network level definition for energy saving.\nThe concrete energy saving solutions should not be defined in the present document. This key issue only focus on autonomous network level defined for energy saving.\nIntent handling:\n-\tTask A: RAN energy saving control information generation and determination. The tasks of generating and determining the RAN energy saving related control information (e.g. threshold value of high energy consumption issue analysis) and RAN energy saving actions generation) based on received RAN energy saving intent (e.g. expectation on energy saving targets in the specified areas with considering network performance (e.g. RAN UE throughput) assurance, as well as the frequencies and RATs to be considered).\n-\tTask B: RAN energy saving intent fulfilment evaluation. The tasks of evaluating RAN energy saving intent fulfilment information (e.g. energy saving targets (e.g. target RAN energy consumption and RAN UE throughput in the specified area are satisfied or not).\nAwareness:\n-\tTask C: RAN energy saving related information collection. The tasks of collecting energy efficiency measurements (e.g. Data Volume measurement, PEE (Power, Energy and Environmental) measurements, network performance data (e.g. RAN UE throughput), network configuration data (e.g. energy saving state), environment data (e.g. electronic map, site location) and alarm data.\nAnalysis:\n-\tTask D: RAN energy saving issues identification. The tasks of identifying energy saving issues (including energy efficiency issues (e.g. high energy consumption, low energy efficiency) as TS 28.104 [6] described and performance issue (e.g. low RAN UE throughput) which may be caused by energy saving actions.\n-\tTask E: RAN traffic and performance prediction. The tasks of analysing current and historical RAN traffic load (e.g. PRB utilization rate, RRC connection number, etc.) and network performance (e.g. RAN UE throughput) to predict the traffic load trend and network performance trend over a period of time which could be used as references for energy saving solutions, analysis evaluation and determination.\n-\tTask F: RAN energy saving issue demarcation. The tasks of analysing the RAN energy saving issues and determine the RAN energy efficiency issue categories (e.g. high energy consumption, low energy efficiency) and corresponding area (which can be identified by geographical area, RAN NEs or cells), as well as determining the performance issue is caused by energy saving actions.\n-\tTask G: RAN energy saving issue root cause analysis. The tasks of analysing the root cause of the RAN energy saving issue, including RAN energy efficiency issues and performance issues caused by energy saving actions).\n-\tTask H: RAN energy saving solutions analysis. The tasks of generating the recommended energy saving solution (e.g. activate or deactivate energy saving state for the energy saving objects, adjust the carrier configuration or transmit power, adjust the energy saving thresholds for different service types.) which can address the identified energy saving issues.\nDecision:\n-\tTask I: RAN energy saving solutions evaluation and determination. The tasks of evaluating the energy saving gains, as well as evaluating the RAN performance if such energy saving actions to be executed, and determining the optimal energy saving solutions (i.e. a set of energy saving actions) to be executed.\nExecution:\n-\tTask J: RAN energy saving solutions execution. The tasks of adjusting the RAN energy saving actions (e.g. activate or deactivate energy saving state for the energy saving objects, adjust the carrier configuration or transmit power, adjust the energy saving thresholds for different service types.) which can address the identified energy saving issues).\nLevel 0:\n-\tAll the tasks in the RAN energy saving workflow (Task A, Task B, Task C, Task D, Task E, Task F, Task G, Task H, Task I, Task J) are accomplished by human.\nLevel 1:\n-\tTelecom system executes the part of RAN energy saving solutions execution tasks (e.g. activate or deactivate energy saving state for the energy saving cell) based on the specified RAN energy saving solutions (Task J). Telecom system also can execute the tasks of collecting part of energy saving related information (including energy efficiency related information (including Data Volume measurement, PEE (Power, Energy and Environmental) measurements, etc.), network performance data, network configuration data and alarm data) based on the specified collection control information (Task C). At this level, telecom system can assist human to improve the execution and awareness efficiency for RAN energy saving.\n-\tAll the other tasks in the RAN energy saving workflow (Task A, Task B, Task D, Task E, Task F, Task G, Task H, Task I) are accomplished by human.\nLevel 2:\n-\tCompared to Level 1, telecom system additionally executes the tasks of RAN energy saving issues identification, part of RAN energy saving demarcation and RAN energy saving issue root cause analysis for the energy efficiency issues based on the specified RAN energy saving issue analysis control information (Task D, Task F, Task G). In this level, telecom system also can execute the task of collecting RAN energy saving related information (including energy efficiency data, performance data, network configuration data, environment data, alarm data) based on the specified collection control information (Task C), The tasks of RAN energy saving solutions execution (Task J) are fully accomplished by telecom system. At this level, telecom system can assist human to achieve the closed loop for RAN energy saving based on human defined control information.\n-\tAll the other tasks in the RAN energy saving workflow (Task A, Task B, Task E, Task H, Task I) are accomplished by human.\nLevel 3:\n-\tCompared to Level 2, telecom system additionally executes the tasks of RAN energy saving solutions analysis (Task H) and RAN energy saving solutions evaluation and determination (Task I) based on the specified RAN energy saving solution analysis and decision control information. In this level, telecom system also can execute the tasks of RAN traffic load and performance prediction (Task E) based on the specified RAN traffic load and performance prediction control information. The tasks of RAN energy saving related information collection (Task C), RAN energy saving issues identification (Task D) and RAN energy saving demarcation (including RAN energy efficiency issues demarcation and RAN performance issues caused by energy saving actions) (Task F) are fully accomplished by telecom system. At this level, the telecom system can achieve the closed loop automation for RAN energy saving based on the human defined control information.\n-\tAll the other tasks in the RAN energy saving workflow (Task A, Task B) are accomplished by human.\nLevel 4:\n-\tCompared to Level 3, the telecom system additionally executes the tasks of RAN energy saving control information generation and determination (Task A), and RAN energy saving intent fulfilment evaluation (Task B) based on received RAN energy saving intent and intent handling control information. The tasks of RAN energy saving issue root cause analysis (including root cause analysis for energy efficiency issues and performance issues caused by energy saving actions) (Task G), RAN energy saving solutions analysis (Task H), RAN energy saving solutions evaluation and determination (Task I), and RAN traffic load and performance prediction (Task E) are fully accomplished by telecom system. At this level, telecom system can achieve the intent driven closed loop automation for RAN energy saving based on human defined intent handling control information.\n-\tThe intent handling control information maybe pre-defined and specified by human to assist the telecom system.\nLevel 5:\n-\tTelecom system can autonomously execute the entire workflow of RAN energy saving for all scenarios, which means the telecom system can achieve the full autonomy for RAN energy saving for full scenarios.\nThe figure depicts an autonomous network level for RAN energy saving scenario, illustrating the various energy-saving techniques and their impact on network performance.\nFigure 6.1.1.3-1: Autonomous network level for RAN energy saving scenario\nLevel 1 for RAN energy saving: The 3GPP management system has the following autonomy capabilities:\n-\tAdjust network based on the specified energy saving solution.\n-\tCollect energy saving related information (including energy efficiency related information (including Data Volume measurement, PEE (Power, Energy and Environmental) measurements etc.), network performance data, network configuration data and alarm data).\nLevel 2 for RAN energy saving: The 3GPP management system has following autonomy capabilities:\n-\tIdentify the RAN energy saving issues based on the specified RAN energy saving issue demarcation control information.\n-\tDemarcate the RAN energy saving issue (including the RAN energy efficiency issue categories (e.g. high energy consumption, low energy efficiency) and corresponding area) based on the specified RAN energy saving issue demarcation control information.\n-\tAnalyse the root cause of RAN energy saving issue (including RAN energy efficiency issues and performance issues caused by energy saving actions) based on the specified RAN energy saving issue analysis control information.\nLevel 3 for RAN energy saving: The 3GPP management system has the following autonomy capabilities:\n-\tGenerate the recommended energy saving solution based on specified RAN energy saving adjustment control information.\n-\tEvaluate the recommended RAN energy saving solution and determine the optimal energy saving solutions to be executed based on specified RAN energy saving adjustment decision control information.\n-\tPredict the traffic load trend and network performance trend.\nLevel 4 for RAN energy saving: The 3GPP management system has the following autonomy capabilities:\n-\tDetermine or update RAN energy saving control information according to RAN energy saving targets based on specified target translation control information.\n-\tEvaluate RAN energy saving target fulfilment result based on specified target evaluation control information.\nLevel 5 for RAN energy saving: The 3GPP management system has the following autonomy capabilities:\n-\tGenerate the RAN energy saving target translation and evaluation control information.\nREQ-ANL-RANES_1 The 3GPP management system shall have the capability allowing its authorized consumer to specify the RAN energy saving solutions and RAN energy saving related information collection control information.\nREQ-ANL-RANES_2 The 3GPP management system shall have the capability allowing its authorized consumer to specify the control information of RAN energy saving issues identification, RAN energy saving issue demarcation, RAN energy saving issue root cause analysis and obtain the corresponding analysis result.\nREQ-ANL-RANES_3 The 3GPP management system shall have the capability allowing its authorized consumer to specify the RAN energy saving solutions analysis control information and obtain the RAN energy saving solution to be executed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tPotential solutions",
+                            "text_content": "Based on the MnS requirements of autonomous network level for RAN energy saving defined for each level, following provide the guidelines for the potential MnS solutions used to support corresponding MnS requirements of autonomous network level for RAN energy saving.\nNote: the solutions below are not used to evaluate the autonomous network level, which are MnS solutions to support MnS requirements for 3gpp management system derived from autonomy capability of each level.\nRegarding the REQ-ANL-RANES_1, the NR NRM (e.g. NRCellCU, beam, and NRCellRelation, CESManagementFunction IOC) defined in TS 28.541 [8] are used to represent network adjustment solution. The RSRP measurements (e.g. SS-RSRP), RSRQ measurements (e.g. SS-RSRQ), SINR measurements (e.g. SS-SINR) defined in TS 28.552 [6], RSRPs of the serving cell and neighbour cells, and UE location in MDT reports, power, energy and environmental (PEE) measurements (e.g. PNF Energy consumption) and data volume measurements defined in TS 28.552 [10] and performance measurements for gNB (e.g. UE throughput) are used to represent the RAN energy saving related information.\nRegarding the REQ-ANL-RANES_2, the MDA MnS defined in TS 28.104 [6] can be used. The analytics output can represent RAN energy saving issue identification and RAN energy saving issue demarcation result. The \"EnergyEfficiencyProblematicObject \" and \"EnergyEfficiencyProblemType \" of analytics output for energy saving analysis in TS 28.104 [6] can be used to obtain the RAN energy saving issue and corresponding demarcation result.\nRegarding the REQ-ANL-RANES_3, following are two potential solution:\n1.\tThe CESManagementFunction IOC defined in TS 28.310 [2] can be used to specify the RAN energy saving solutions analysis control information, RAN energy saving solutions evaluation and determination control information.\n2.\tThe RadioNetworkExpectation defined in TS 28.312 [5] can be used as the targets for RAN energy saving. The attribute \"targetCondition \", \" targetValueRange \", \" targetContexts \" and \"rATContext\" in ObjectContext can be used as expected setting parameters. The attribute \"weakRSRPRatioTarget\", \"lowSINRRatioTarget\", \"aveULRANUEThptTarget\" and \"aveDLRANUEthptTarget\" in ExpectationTarget can be used as expected network capacity and performance targets. The \"RanEnergyEfficiencyTarget \" and \"RanEnergyConsumptionTarget\" in TR 28.912 [16] can be used as expected setting parameters for RAN energy saving.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tKey Issue# 6-2: Autonomous network level for 5GC NF deployment",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tDescription",
+                            "text_content": "5GC NF deployment use case refers to the entire workflow of deploying a 5GC NF, full autonomy of 5GC NF deployment can help the network operator to reduce OPEX by reducing manual involvement in such tasks. However, full autonomy of 5GC NF deployment is a long term goal, it will be beneficial for operator to achieve this goal step by step and have clear view on which typical issues can be addressed by utilizing network autonomy mechanisms in corresponding steps. The requirements for each autonomous level for 5GC NF deployment are different.\nFollowing are the entire workflow for 5GC NF deployment:\nIntent handling:\n-\tTask A: 5GC NF deployment policy generation based on received 5GC NF deployment intent （e.g. type of the 5GC NF, capability of the 5GC NF). The tasks of generating and determining the 5GC NF deployment related policies (e.g. 5GC NF configuration data generation policies, dialing test policies and 5GC NF virtualised resource feasibility polices).\n-\tTask B: 5GC NF deployment intent evaluation, the tasks of evaluating 5GC NF deployment fulfilment information (e.g. satisfied or not).\nAwareness:\n-\tTask C: 5GC NF information collection, this task includes collecting the network environment data before deployment of 5GC NF information and collecting the 5GC NF and related network data when the 5GC NF is deployed (e.g. PM, FM and virtualised resource information).\nAnalysis:\n-\tTask D: 5GC NF deployment data analysis, the tasks of analysing and generating the recommended configuration data and required virtualised resource information (e.g. VNFD, flavour ID) for deployment of the 5GC NF.\n-\tTask E: 5GC NF virtualised resource feasibility check analysis, the tasks of analysing there is enough virtualised resource is available for deployment of the 5GC NF.\nTask F: 5GC NF commissioning test and dialing test, the tasks of performing the 5GC NF commissioning test and dialing test before putting 5GC NF into service (e.g. ensure the configuration and network connection (including 5GC NF configuration and transport network configuration) is correct).\nDecision:\n-\tTask G: 5GC NF configuration data and virtualised resource information determination, the tasks of evaluating and determining the 5GC configuration data and virtualised resource information (e.g. VNF package) to be used for deploying the 5GC NF.\nExecution:\n-\tTask H: 5GC NF deployment, the tasks of deploying the 5GC NF based on determined VNF package, flavour ID and configuring the 5GC NF based on determined data.\nLevel 0:\n-\tAll the tasks in the 5GC NF deployment workflow (Task A, Task B, Task C, Task D, Task E, Task F, Task G, Task H) are accomplished by human.\nLevel 1:\n-\tTelecom system executes tasks of deploying the 5GC NF based on onboarded VNF package and activating configuration data prepared by human (Task H) and tasks of collecting part of 5GC NF information (including virtualised resource information) based on specified rules(Task C).\n-\tAll the other tasks in the 5GC NF deployment workflow (Task A, Task B, Task D, Task E, Task F, Task G) are accomplished by human.\nLevel 2:\n-\tCompared to Level 1, telecom system additionally executes the tasks of collecting 5GC information (including virtualised resource information) (Task C). Telecom system also can execute the tasks of analysing the deployment data for the 5GC based on the network function generation rules (e.g. configuration template) specified by human (Task D). The tasks of 5GC NF deployment (Task H) are fully accomplished by telecom system.\n-\tAll the other tasks in the 5GC NF deployment workflow (Task A, Task B, Task E, Task F, Task G) are accomplished by human.\nLevel 3:\n-\tCompared to Level 2, the telecom system additionally executes tasks of analysing and determining the deployment data for the 5GC NF based on the network configuration data generation policies specified by human (Task D). Telecom system also can executes tasks of performing 5GC virtualised resource feasibility check and commissioning/dialing test by human (Task E and Task F). The tasks of 5GC NF information collection (Task C) are fully accomplished by telecom system.\n-\tAll the other tasks in the5GC deployment workflow (Task A, Task B) are accomplished by human.\nLevel 4:\n-\tCompared to Level 3, the telecom system can additionally execute the tasks of 5GC NF deployment policy generation (Task A) and 5GC NF deployment intent evaluation (Task B) based on intent handling control information specified by human. The tasks of 5GC deployment data analysis (Task D), 5GC virtualised resource feasibility check (Task E), 5GC NF commissioning and dialing test (Task F), 5GC NF configuration data and virtualised resource information determination (Task G) are fully accomplished by telecom system.\n-\tThe intent handling control information maybe pre-defined and specified by human.\nLevel 5:\n-\tTelecom system can autonomously execute the entire workflow of 5GC NF deployment for all scenarios.\nThe figure depicts a classification of autonomous network level for 5G Core Network (5GC) NF deployment, illustrating the various levels of network control and management. The diagram includes a hierarchical structure with sub-levels, each representing a different level of network control and management. The figure also includes key components such as network functions virtualization (NFV), network slicing, and network orchestration, which are essential for managing and optimizing the network. The figure provides a clear and concise visual representation of the network control and management processes involved in 5G Core Network (5GC) NF deployment.\nFigure 6.2.1.3-1: Classification of autonomous network level for 5GC NF deployment\nLevel _1 for 5GC NF deployment: The 3GPP management system has the following autonomy capabilities:\n-\tConfigure 5GC NF with the specified 5GC configuration data\n-\tRequest deploying 5GC NF based on the VNF package\n-\tCollect 5GC NF information based on the specified 5GC information collection rule\nLevel _2 for 5GC NF deployment: The 3GPP management system has the following autonomy capabilities:\n-\tAnalyse the deployment data for the 5GC NF based on the specified network function generation rules\nLevel _3 for 5GC NF deployment: The 3GPP management system has the following autonomy capabilities:\n-\tAnalyse and determine the deployment data for the 5GC NF based on the specified network function generation policies.\n-\tPerform the 5GC NF commissioning and dialing analysis based on specified control information.\n-\tPerform the 5GC NF virtualised resource feasibility analysis based on specified virtualised resource feasibility analysis information.\nLevel _4 for 5GC NF deployment: The 3GPP management system has the following autonomy capabilities:\n-\tDetermine or update 5GC NF deployment policies according to 5GC NF deployment targets based on specified targets translation control information.\n-\tEvaluate 5GC NF deployment targets fulfilment result based on specified targets evaluation control information.\nLevel _5 for 5GC NF deployment: The 3GPP management system has the following autonomy capabilities:\n-\tGenerate the 5GC NF deployment target translation and evaluation control information.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tPotential solutions",
+                            "text_content": "Based on the MnS requirements of autonomous network level for 5GC NF deployment defined for each level, following provide the guidelines for the potential MnS solutions used to support corresponding MnS requirements of autonomous network level for 5GC NF deployment.\nNote: the solutions below are not used to evaluate the autonomous network level, which are MnS solutions to support MnS requirements for 3gpp management system derived from autonomy capability of each level.\nThe NR NRM (e.g. AMFFunction, SMFFunction, and UPFFunction IOC) defined in TS 28.541 [8] are used to represent 5GC NF deployment solution. The performance measurements for AMF (e.g. registered subscribers measurement), performance for SMF (e.g. PDU session measurement), performance measurements for UPF (e.g. data packets measurement) and virtual resource usage related measurements defined in TS 28.552 [6] are used to represent the 5GC NF deployment related information.\nThe MDA MnS defined in TS 28.104 [6] can be used. The Analytics output can represent 5GC NF deployment issue identification and 5GC NF deployment virtualised resource usage feasibility result. The MDA assisted fault management and resource related analytics in TS 28.104 [6] can be used to obtain the 5GC NF deployment issue and virtualised resource usage analysis result.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tKey Issue# 6-3: Management of Autonomous Network Level (ANL)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tDescription",
+                            "text_content": "TS 28.100 [4] specifies the framework approach for evaluating autonomous network levels and concrete autonomous network level definition for network optimization, RAN NE deployment and fault management. Each autonomous network level definition includes workflow, classification of autonomous network level, autonomy capability description for management system, MnS requirements and solutions for generic MnS requirements. The autonomous network level definition in TS 28.100 [4] can be used to determine the ANL (L0-L5) for corresponding scenarios.\nAutonomy functionalities such as SON functionalities, MDA functionalities, intent handling functionalities or combination of these management functionalities can be used to satisfy autonomy capabilities identified in different autonomous network level. For example, the CCO functionality can be used to satisfy the autonomy capabilities identified in level 3 for coverage optimization. So, from NOP view, if a NOP have a target to make its network to achieve certain autonomous network level specified by TS 28.100 [4], it is necessary to know which autonomy functionalities provided by corresponding NEP(s) can be used to satisfy the autonomy capabilities in corresponding autonomous network level.\nThe figure depicts a network architecture with multiple network functions (NEPs) providing various functionalities, such as network slicing, network slicing, and network slicing.\nFigure 6.3.1.1-1: Autonomy functionalities provided by multiple NEPs\nCorrespondingly, the 3GPP management system should support these autonomy functionalities to realize autonomy capabilities to support certain autonomous network level.\nDifferent MnS Consumers (e.g. Operator) have different autonomy requirements (represented by ANL) for the same or different scenarios. Even same MnS consumer may have different autonomy requirements for different scenarios of same scenario type. For example, MnS consumer expect level 3 for the radio coverage optimization scenario, while expect level 2 for the RAN UE throughput optimization scenario. Several autonomy functionalities implemented by 3GPP management system, such as SON functionalities, MDA functionalities, intent handling functionalities or combination of these management functionalities can be used to satisfy different autonomy requirements. So, based on the expected ANL (e.g. level 3) for certain scenario (coverage optimization), 3GPP management system (as MnS producer) needs to:\n- \tIdentifies corresponding autonomy capabilities for the expected ANL based on the type of the required scenario (e.g. network optimization).\n- \tSelects one or multiple autonomy functionalities (e.g. CCO Function) to satisfy the identified autonomy capabilities and manages their inter-related execution.\n- \tDetermine the MnS(s) which is necessary to support the autonomy functionalities (e.g. specify the control information for the autonomy functionalities).\nMnS consumer needs to be aware of which autonomy functionalities can be used to satisfy its autonomy requirements and which MnS(s) can be consumed to support the performing of the functionalities. So, 3GPP management system also needs to send the identified autonomy functionalities and corresponding MnS(s) to MnS Consumer.\nThe figure depicts a 3D representation of a system with various components, including a request for autonomy functionalities to satisfy autonomy requirements. The figure illustrates the system's architecture, with a focus on the request for autonomy functionalities, which are essential for the system to meet its autonomy requirements.\nFigure 6.3.1.2-1: Request autonomy functionalities to satisfy autonomy requirements\nBased on the obtained autonomy functionalities and corresponding MnS(s) from MnS producer, MnS consumer will assess whether to use these autonomy functionalities to fulfil the expected ANL for the expected scenario. In case MnS consumer decide to use these autonomy functionalities, MnS consumer will request MnS producer to perform these autonomy functionalities and consumer corresponding supported MnS(s) to control and monitor these autonomy functionalities.\nThe figure depicts a request to control and monitor autonomy functionalities, with a focus on the control and monitoring of autonomous vehicles. The figure includes various elements such as a request form, a list of functionalities, and a diagram illustrating the control and monitoring system. The request form includes fields for the user's name, email, and the purpose of the request, while the list of functionalities includes details such as the ability to control the vehicle's speed, steering, and braking. The diagram illustrates the control and monitoring system, showing how the system interacts with the vehicle's sensors and actuators to ensure the vehicle's safety and performance.\nFigure 6.3.1.3-1: Request to control and monitor autonomy functionalities\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2 \tPotential requirements",
+                            "text_content": "REQ-ANL_Mgmt_1: The 3GPP Management system should have the capability to allow an authorized consumer to request the autonomy functionalities with the specified autonomy requirements (including scenario and corresponding ANL).\nREQ-ANL_Mgmt_2: The 3GPP Management system should have the capability to allow an authorized consumer to obtain the autonomy functionalities to satisfy the specified autonomy requirements.\nREQ-ANL_Mgmt_3: The 3GPP Management system should have the capability to allow an authorized consumer to obtain the MnS(s) information to control and monitor the autonomy functionalities.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tConclusion and recommendation",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tConclusion of key issue investigation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.1.1\tKey Issue# 5.1: generic autonomous network level for network optimization",
+                            "text_content": "Based on analysis and potential solutions described in clause 5.1.2, Regarding the REQ-ANL-NetOpt-Level_2-MnS-2 and REQ-ANL-NetOpt-Level_2-MnS-4 specified in TS 28.100 [4], the MDA MnS defined in TS 28.104 [6] can be used. The Analytics output can represent network issue identification and network issue demarcation result. Which means MnS consumer can use the MDA MnS to obtain the network issue and corresponding demarcation result.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.2\tKey Issue# 5.1a: autonomous network level for radio network coverage optimization",
+                            "text_content": "Based on analysis and potential solutions described in clause 5.1a.2, the enhanced solutions description for generic MnS requirements of autonomous network level for radio network coverage optimization is recommended.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.3\tKey Issue# 5.1b: autonomous network level for RAN UE throughput optimization",
+                            "text_content": "Based on analysis and potential solutions described in clause 5.1b.2, it is recommended to enhance MDA by adding new capability for RAN UE throughput problem analysis in TS 28.104 [6].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.4\tKey Issue# 5.2: autonomous network level for RAN NE deployment",
+                            "text_content": "Based on analysis and potential solutions described in clause 5.2.2, the RadioNetworkExpectation defined in TS 28.312 [5] can be used as the intent expectation for delivering RAN NE(s) for RAN NE deployment.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.5\tKey Issue# 5.3: autonomous network level for fault management",
+                            "text_content": "Based on analysis and potential solutions described in clause 5.3.2, the intent driven MnS defined in TS 28.312 can be used to satisfy the MnS requirements in clause 5.3.1.2 for fault management.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.6\tKey Issue# 6.1: autonomous network level for RAN energy saving",
+                            "text_content": "Based on analysis and potential solutions described in clause 5.3.3, the guidelines for the potential MnS solutions used to support corresponding MnS requirements of autonomous network level for RAN energy saving are identified. The NR NRM defined in TS 28.541 [8] can be used to represent network adjustment solution. The corresponding measurements defined in TS 28.552 [6], can be used to represent the RAN energy saving related information. And the analytics output can represent RAN energy saving issue identification and RAN energy saving issue demarcation result.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.7\tKey Issue# 6.2: autonomous network level for 5GC NF deployment",
+                            "text_content": "Based on analysis and potential solutions described in clause 6.2, the guidelines for the potential MnS solutions used to support corresponding MnS requirements of autonomous network level for 5GC NF deployment are identified. The NR NRM defined in TS 28.541 [8] can be used to represent 5GC NF deployment solution. The corresponding measurements defined in TS 28.552 [6], can be used to represent the 5GC NF deployment related information. And the analytics output can represent 5GC NF deployment issue identification and 5GC NF deployment virtualised resource usage feasibility result.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.8\tKey Issue# 6.3: management of autonomous network level",
+                            "text_content": "Management of autonomous network level is investigated in clause 6.3, which provides the capabilities for requesting autonomy functionalities and requesting to control and monitor autonomy functionalities for certain ANL. No normative work is recommended because it is depends on implementation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.2\tConclusion and recommendation in general",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The study has identified additional generic MnS requirements and potential solutions of generic autonomous network level for the scenarios defined in Rel-17 including:\n-\tGeneric network optimization\n-\tRadio network coverage optimization\n-\tRAN UE throughput optimization\n-\tRAN NE deployment, fault management\nThe study has also identified the generic MnS requirements and potential solutions of generic autonomous network level for additional management use cases which are not defined in Rel-17 including:\n-\tRAN energy saving\n-\t5GC NF deployment\n-\tManagement of autonomous network level\nBased on investigation of RAN UE throughput optimization, it is recommended to enhance MDA by adding new capability for RAN UE throughput problem analysis in TS 28.104 [6].\nBased on investigation of other management use cases above, existing MnS, NR NRM and corresponding measurements described in clause 7.1 can be used as potential solutions for the identified MnS requirements. No normative work is recommended for those use cases in this study.\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 5,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

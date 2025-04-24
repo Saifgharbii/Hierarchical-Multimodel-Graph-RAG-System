@@ -1,0 +1,540 @@
+{
+    "document_name": "23700-95-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document studies the potential enhancements in CAPIF and application enablement frameworks (e.g. SEAL, EDGEAPP, vertical enabler layers) to support the subscriber-aware northbound API access (SNA), whose requirements are specified in TS 22.261 [2].\nThis study takes into consideration the existing works for CAPIF (3GPP TS 23.222 [3]), SEAL (3GPP TS 23.434 [4]), and EDGEAPP (3GPP TS 23.558 [5]).\nAny potential enhancements to security procedures related to CAPIF and application enablement frameworks (e.g. EDGEAPP, SEAL, vertical enabler layers) to support SNA are not in the scope of this study.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 22.261: \"Service requirements for the 5G system; Stage 1\"\n[3]\t3GPP TS 23.222: \"Common API Framework for 3GPP Northbound APIs\"\n[4]\t3GPP TS 23.434: \"Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows\"\n[5]\t3GPP TS 23.558: \"Architecture for enabling Edge Applications\"\n[6]\t3GPP TS 29.513: \"Policy and Charging Control signalling flows and QoS parameter mapping\"\n[7]\t3GPP TS 23.682: \"Architecture enhancements to facilitate communications with packet data networks and applications\"\n[8]\t3GPP TS 33.501: \"Security architecture and procedures for 5G system\"\n[9]\tIETF RFC 6749: \"The OAuth 2.0 Authorization Framework\"\n[10]\tIETF RFC 8693: \"OAuth 2.0 Token Exchange\"\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nnested API invocation: A series of API invocations in which the first API invocation towards the API exposing function 1 triggers this API exposing function to request another API invocation towards the API exposing function 2, which is in the same API provider domain that the API exposing function 1.\nresource owner: An entity capable of granting access to a protected resource.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\n<symbol>\t<Explanation>\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nAEF\tAPI Exposing Function\nAF\tApplication Function\nCAPIF\tCommon API Framework\nCCF\tCAPIF Core Function\nSNA\tSubscriber-aware northbound API access\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tKey issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tKey Issue #1: UE-originated API invocation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.1.1\tDescription",
+                            "text_content": "The UE-originated API invocation scenario corresponds to the following requirement specified in TS 22.261 [2]:\n-\tThe 5G system shall be able to provide a UE with secure access to APIs (e.g. triggered by an application that is not visible to the 5G system), by authenticating and authorizing the UE.\nIn this scenario, the application on the UE invokes the northbound APIs. The scenario is illustrated in figure 4.1.1-1.\nFrom CAPIF point of view, the application on the UE in this scenario plays the role of the API invoker, as defined in TS 23.222 [3].\nThe figure depicts a simplified representation of an API invocation in a 5G network, illustrating the process of a user-originated request being sent to the network. The figure shows the various components involved in the API invocation, including the user's device, the network, and the network's response. The figure is a simplified representation, highlighting the key components and their interactions.\nFigure 4.1.1-1: UE-originated API invocation\nOpen issues:\n1)\tWhether the existing CAPIF functional model is sufficient for the UE-originated API invocation.\na)\tIf the existing CAPIF functional model is insufficient, how it must be modified to accommodate for the API invoker in the UE.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.2\tKey Issue #2: AF-originated API invocation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tDescription",
+                            "text_content": "In the AF-originated API invocation scenario, the AF invokes the northbound APIs, and the application on the UE consumes the service from the AF. The scenario is illustrated in figure 4.2.1-1.\nThe figure depicts a simplified representation of an API invocation in an application programming interface (API) system. It shows the flow of API requests and responses, with the request being initiated by an API client and the response being received by an API server. The figure includes various components such as the API client, API server, and the request and response headers, as well as the status code and response body. The figure is useful for understanding the structure and flow of API interactions in a system.\nFigure 4.2.1-1: AF-originated API invocation\nOpen issues:\n1)\tWhether the existing CAPIF functional model is sufficient for the AF-originated API invocation.\na)\tIf the existing CAPIF functional model is insufficient, how it should be updated.\n2)\tStudy the business relationship between the user (UE), the AF and the northbound API provider.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tKey Issue #3: Providing and revoking resource owner consent upon invoking APIs",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.1\tDescription",
+                            "text_content": "Invocation of some northbound APIs may require obtaining resource owner consent (e.g. API to retrieve the location of the UE).\nIn the SNA context, it is for further study how to obtain resource owner consent when the API invocation is related to the resource owner (e.g. the user).\nIn addition, the system should ensure that there are mechanisms for the resource owner to revoke the resource owner consent provided previously for the API invocation.\nIn an API provider domain, several AEFs can expose resources of the resource owner and it is possible that the AEFs themselves may interact with each other to utilize the resources. For a nested API invocation, the API invoker performs an API invocation towards the AEF1 which also results in AEF1 to perform another API invocation to AEF2. This nested API interactions may require multiple queries to obtain resource owner consent information from resource owner to support API invocations towards the AEF1 and AEF2. It is beneficial for the resource owner to reduce the resource owner consent inquiry so that the resource owner does not have to provide the consent twice for the nested API invocations. It is for further study how to reduce such resource owner consent inquiries for nested API invocations.\nOpen issues:\n1)\tWhether and how CAPIF functions can determine the resource owner upon API invocation.\n2)\tWhether and how CAPIF can support obtaining resource owner consent from resource owner.\n3)\tWhether and how CAPIF can support revoking resource owner consent by the resource owner.\n4)\tWhether and how CAPIF can reduce resource owner consent inquiries for a nested API invocation.\nNOTE:\tThis document studies the high-level architecture to solve this issue. The detailed procedure for providing the resource owner consent will be specified in SA3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.4\tKey Issue #4: Discovery of target API information",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.4.1\tDescription",
+                            "text_content": "As per the below requirement from 3GPP TS 22.261 [2] (clause 6.10.2), the third party needs to be provided with information to locate the target APIs in the network.\n-\tprovide a third-party with information to identify networks and APIs on those networks.\nAn AF may serve UEs that belong to different PLMNs. When the AF is not aware of the PLMN provider of the UEs and has to discover the service API in relation to such UEs, then it is not clear how to discover the service APIs. How the AF can determine the right AEF instance, which is exposing the required Northbound API for which the AF wants to consume that Northbound API with the UE(s) information.\nOpen Issue:\n-\tWhether and how to support discovery of the target Service API information in CAPIF with respect to UE(s) information, especially when:\n-\tAF is serving UEs belonging to multiple PLMNs; and\n-\tThere are multiple instances of the AEF within a PLMN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tArchitectural requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "[AR-5.1-a] The confidentiality of the UE's external identity (e.g. MSISDN) shall be preserved during the API invocation supported by CAPIF.\n[AR-5.1-b] The CAPIF shall support the authentication of the resource owner.\n[AR-5.1-c] The CAPIF shall enable the resource owner(s) to provide and revoke resource owner consent.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tSolutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.0\tMapping of Solutions to Key Issues",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 6.0-1: Mapping of Solutions to Key Issues\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.0-1: Mapping of Solutions to Key Issues",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.1\tSolution #1: Business relationship in SNA",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tSolution description",
+                            "text_content": "This solution addresses the key issue #2 with regard to the business relationship between the user (UE), the AF and the northbound API provider in the AF-originated API invocation scenario. Considering the business relationship, the resource owner (which is a UE-side entity) is a new entity that has not been in the existing CAPIF business relationship, thus the business relationship should be updated to include the resource owner.\nFigure 6.1.1-1 shows the typical business relationship in SNA. This business relationship can be applied to both AF- and UE-originated API invocation scenario, as the API invoker in figure 6.1.1-1 can either be an application on the UE or the AF.\nThe figure depicts a network architecture with various business relationships, such as service provider, network operator, and network equipment vendor, represented by different colored dots. The figure illustrates the interdependencies and interactions between these entities, highlighting the importance of collaboration and coordination in the network management and operation.\nFigure 6.1.1-1: Business relationships in SNA\nThe API invoker has service agreement with a CAPIF provider, and the API provider provides APIs associated with the resource owner. The CAPIF provider and the API provider can be part of the same organization (e.g. PLMN operator), as described in 3GPP TS 23.222 [3] clause 5. When the CAPIF provider is a PLMN operator, the resource owner may be a subscriber of the PLMN.\nNOTE:\tIn the current release, both the CAPIF provider and the API provider should belong to the same organization (e.g., PLMN operator).\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tSolution evaluation",
+                            "text_content": "This solution enhances the existing CAPIF business relationship by introducing the resource owner, which is viable.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tSolution #2: Functional model description for SNA",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tSolution description",
+                            "text_content": "This solution addresses the key issues #1, #2 and #3 with regard to the functional model to support the UE- and AF-originated API invocation and to support obtaining and revoking resource owner consent from the resource owner client. As the resource owner client is a new entity for CAPIF, the functional model for the CAPIF should be updated including the resource owner client and authorization function.\nFigure 6.2.1.2.1-1 shows the reference point based functional model for the CAPIF with enhancements to support SNA.\nThe figure depicts a functional model for the CAPIF authorization with SNA enhancements, illustrating the integration of security and network functions.\nFigure 6.2.1.2.1-1: Functional model for the CAPIF authorization with SNA enhancements\nThe resource owner client(s) are application clients used by end-users or subscribers of the API provider domain's service provider.\nThe resource owner client(s) interacts with the authorization function via CAPIF-8. The resource owner communicates with the authorization function to provide and revoke resource owner consent. The resource owner interactions are supported via a resource owner client, which is a client-side entity. Triggering the resource owner client to provide authorization is not supported via CAPIF-8.\nNOTE 1:\tCAPIF-8 details will be addressed by SA3.\nThe API exposing function (e.g NEF) acts as a resource owner consent enforcement point as specified in 3GPP TS 33.501 [8] and interacts with the authorization function via CAPIF-9. The API exposing function can retrieve the resource owner consent parameters from.the authorization function.\nThe API invoker interacts with authorization function via CAPIF-10/CAPIF-10e.\nNOTE 2:\tSecurity aspects including specification of the authorisation procedures are to be decided in SA3.\nIn the current release, 3rd party API providers (i.e., API providers outside the PLMN trust domain) are not supported.\nThis clause provides the deployment models for the functional model specified in clause 6.2.1.2.\nFigure 6.2.1.3.2-1 shows a deployment model for PLMN providing the API provider. In this deployment model, the authorization function resides in the CAPIF core function. Those functions are in a single node depicted by a red box.\nThe deployment of the authorization function within the CAPIF core function is depicted in Figure 6.2.1.3.2 -1. This figure illustrates the authorization function's role in the CAPIF core function, which is responsible for managing user access to the system. The diagram shows the authorization function's components, such as the authorization server, authorization server interface, and authorization server application, as well as the authorization server's role in the system. The authorization server is responsible for validating user credentials and determining whether they have the necessary permissions to access the system. The authorization server interface is used to interact with the authorization server and manage user access. The authorization server application is the application that processes user requests and determines the appropriate authorization level for each request. Overall, the deployment of the authorization function within the CAPIF core function is crucial for ensuring the security and integrity of the system.\nFigure 6.2.1.3.2-1: Deployment of the authorization function within the CAPIF core function\nThe CAPIF provider and API provider can be the same organization (e.g. PLMN operator). In such cases, the authorization function of the API provider domain and the CCF is collocated in the same node to provide authorization services (e.g. authorization grant and access token).\nFigure 6.2.1.3.2-1 illustrates the deployment where the authorization function and the CAPIF core function are collocated in a single node depicted by a red box. The deployment of other CAPIF functionalities are not shown in this illustration.\nThe figure depicts a collocated deployment of the Authorization function and CAPIF core function in a single node, illustrating the integration of these two critical components within a single system. The figure shows the authorization function and CAPIF core function in a single node, highlighting the importance of these components in ensuring the security and functionality of the network.\nFigure 6.2.1.3.3-1: Collocated deployment of Authorization function and CAPIF core function in a single node\nA single node (denoted by red box) provides the CAPIF APIs and the Authorization APIs towards the API invokers in this deployment case. API invokers are served by the node for the authentication and authorization (for both API invoker related authorization and resource owner related authorization) requirements.\nThe CAPIF provider and API provider can be different organizations (e.g. PLMN operator can be CAPIF provider and an MVNO can be the API provider) within the PLMN trust domain.\nFigure 6.2.1.3.4-1 illustrates the deployment where the CAPIF entities are deployed by different organizations. Nodes (denoted by red boxes) identify one example of deployment.\nThe figure depicts the deployment of the enhanced CAPIF (Certified Advanced Packet Infrastructure for Future Networks) by different organizations within the PLMN (Public Mobile Network) trust domain. It illustrates the various organizations involved, their respective roles, and the infrastructure they have implemented to ensure the security and reliability of the network.\nFigure 6.2.1.3.4-1: Deployment of the enhanced CAPIF by different organizations within the PLMN trust domain\nThe node providing CAPIF core function is deployed by the CAPIF provider (e.g. PLMN operator). The functions of the API provider domain functions can be deployed in multiple nodes. Example: The AEF, APF and AMF can reside in one node and the Authorization function can reside in another node. It is also possible that all functions of the API provider domain can reside in one node.\nTypically this type of deployment is where the authentication and authorization for subscribers/users of API provider (i.e. MVNO) are managed by the API provider itself.\nIf API invokers wish to utilize the API provider users' resources via the service API exposed by the API provider, then API invoker is required to obtain the resource owner authorization from API provider's authorization function and obtain the API invoker's authorization from the CAPIF provider's CCF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tSolution evaluation",
+                            "text_content": "This solution enhances the existing CAPIF functional model by introducing the resource owner client and the authorization function, which is viable.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tSolution #3: Obtaining resource owner consent upon service API invocation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tSolution description",
+                            "text_content": "This solution addresses the key issues #1, #2 and #3 with regard to obtaining resource owner consent in the UE- and AF-originated API invocation scenarios. Acting as the resource owner consent enforcement point, the AEF judges whether the invoked service API requires the resource owner consent and whether a valid resource owner consent is already included in the service API invocation. If the resource owner consent is required and a valid resource owner consent is not included in the API invocation, the AEF in collaboration with the resource owner client and the authorization function obtains a valid resource owner consent before the service API execution is continued. For the interaction between the authorization function and the resource owner client, the resource owner registration may optionally be performed prior to the service API invocation.\nNOTE: Whether the resource owner registration is required and used for the purpose of obtaining resource owner authorization is to be decided by SA3.\nClause 6.3.1.2 shows the procedure for resource owner registration and clause 6.3.1.3 shows the procedure for obtaining resource owner consent.\nFigure 6.3.1.2-1 shows the procedure for resource owner registration.\nPre-conditions:\n1.\tThe resource owner client is authorised to access the authorization function; and\n2.\tThe resource owner client has information for accessing the authorization function.\nThe figure depicts a procedure for resource owner registration in a 3.1.2 context, illustrating the steps involved in obtaining and maintaining access to a specific resource.\nFigure 6.3.1.2-1: Procedure for resource owner registration\n1.\tThe resource owner client sends resource owner registration request to the authorization function, including the resource owner identity (e.g. GPSI) and security credentials.\n2.\tThe authorization function initiates the verification procedure and validates the resource owner registration request.\n3.\tThe resource owner registration function sends resource owner registration response.\nFigure 6.3.1.3-1 shows the procedure to obtain resource owner consent upon service API invocation.\nPre-conditions:\n1.\tThe resource owner client is registered to the authorization function and can be accessed by the API exposing function.\nThe figure depicts a procedure for obtaining resource owner consent upon service API invocation, illustrating the steps involved in obtaining consent from the resource owner. The figure includes a flowchart with arrows indicating the sequence of actions, and a table with relevant information such as the resource owner's name, consent type, and consent status. The figure is essential for ensuring compliance with the Resource Owner Consent Principle, which is a key principle in API design and management.\nFigure 6.3.1.3-1: Procedure for obtaining resource owner consent upon service API invocation\n1.\tThe API invoker sends service API invocation request to the API exposing function via CAPIF-2.\n2.\tThe API exposing function determine if the resource owner consent verification is required to execute the service API. If the resource owner consent verification is not required for the API invocation, the steps 3-5 will be skipped.\nNOTE:\tThe API exposing function determines if the resource owner consent verification is required based on implemented API logic.\nThe API exposing function identifies the resource owner client in 3GPP network context by one of the following processes:\n-\tIf the service API invocation indicates the resource owner client by GPSI, the API exposing function identifies the resource owner client by retrieving the resource owner information from the authorization function, which has received the resource owner information in resource owner registration, as shown in clause 6.3.1.2.\n-\tIf the service API invocation indicates the resource owner client by UE (IP or Ethernet) address, the API exposing function identifies the resource owner client by interacting with BSF, as specified in TS 29.513 [6].\n-\tIf the service API invocation indicates the resource owner client by external group identifier, the API exposing function identifies the individual resource owner clients by interacting with HSS/UDM, as specified in TS 23.682 [7].\n-\tIf the service API invocation indicates the resource owner client by \"any UE\" identification, the API exposing function regards all the available resource owner clients as the target resource owner clients.\n3.\tThe API exposing function obtains the resource owner consent from the resource owner client. The result of the resource owner consent response may be stored in the API exposing function.\nNOTE:\tThe detailed procedure to obtain the resource owner consent and manage such resource owner consent information will be specified in SA3.\n4.\tIf the API invocation is allowed, the process for service API execution is continued. If the API invocation is denied, the service API execution is rejected.\n5.\tThe API exposing function sends service API invocation response to the API invoker based on the result of the service API execution.\nThe resource owner client may update resource owner consent anytime to allow or deny future API invocation.\nNOTE:\tThe detailed procedure to update the resource owner consent will be specified in SA3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tSolution evaluation",
+                            "text_content": "This solution addresses KI#3. This solution addresses the case where API invoker has access token given by the CAPIF core function (as per clause 8.11 of TS 23.222 [3]) to perform service API invocation, but without any authorization grant by the resource owner before the service API invocation.\nNOTE:\tThe API exposing function may need a solution to contact UE through firewall in Step 3 of clause 6.3.1.2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tSolution #4: API invoker obtaining resource owner consent",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tSolution description",
+                            "text_content": "This solution addresses the key issues #1, #2 and #3 with regard to obtaining resource owner consent in the UE- and AF-originated API invocation scenarios. CAPIF may authorize the API invoker to invoke the service API based on the resource owner consent slightly before the API invocation. The procedures to obtain the resource owner consent may reuse well-known authorization procedures such as OAuth 2.0 [9].\nClause 6.4.1.1 shows the procedure for obtaining resource owner consent in a near real-time manner.\nFigure 6.4.1.1-1 shows the procedure to obtain resource owner consent prior to the service API invocation, which is used in the near real-time consent scenario.\nPre-conditions:\n1.\tThe resource owner can communicate with the API invoker.\nThe figure depicts a procedure for an API invoker to obtain resource owner consent before invoking a service API. The figure includes a flowchart with steps for obtaining consent, such as obtaining the consent of the resource owner, obtaining the necessary permissions, and ensuring that the consent is valid. The figure also includes a check box to indicate that the consent has been obtained, and a button to proceed with the API invocation.\nFigure 6.4.1.1-1: Procedure for API invoker obtaining resource owner consent prior to the service API invocation\n1.\tThe API invoker requests authorization grant and access token to invoke the service API.\nNOTE:\tThe detailed procedure to obtain resource owner consent and provide an access token is studied in SA3.\n2.\tThe API invoker sends service API invocation request to the API exposing function with the access token received in step 1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.2\tSolution evaluation",
+                            "text_content": "This solution addresses KI#3. Unlike Solution #3, this solution requires that the API invoker get authorized to invoke the service API by the resource owner before sending the service API invocation request. The procedure to obtain the authorization grant and access token before the service API invocation is compliant with the ordinary OAuth 2.0 flow and is a viable solution to be considered.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.5\tSolution #5: UE-originated API invocation within CAPIF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.5.1\tSolution description",
+                            "text_content": "KI#1 describes the scenario of UE application client (AC) invokes 3GPP northbound APIs (e.g. NEF location API). In figure 6.5.1-1, the AC plays the role of the API invoker, and triggers a number of service operations with CCF and AEF (e.g. onboarding, security, API discovery).\nThe figure depicts an overview of CAPIF operations, which stands for Centralized Access Point Infrastructure Facility. It illustrates the various steps involved in managing and maintaining the network infrastructure, including network planning, network design, network deployment, network operation, and network maintenance. The figure provides a visual representation of the complex process of managing a network infrastructure, highlighting the importance of collaboration and coordination among different teams and stakeholders to ensure the smooth operation of the network.\nFigure 6.5.1-1: Overview of CAPIF operations\nThe existing CAPIF model and procedures for UE-originated API invocation with CAPIF may be used but it is not so efficient since UE may be installed with many application clients (e.g. 100-200 apps). To reduce the number of CAPIF interactions per UE, a CAPIF client agent in the UE can be used as a common API invoker. Such CAPIF client agent executes the onboarding, authentication and authorization for security, service API discovery (discovered result can be re-used by all ACs), CAPIF event subscription with CCF.\nNOTE 1:\tThe interactions between ACs and CAPIF client agent (API invoker) in the UE for achieving per application granularity operation is out of scope.\nNOTE 2:\tSecurity aspects including specification of the authentication and authorisation procedures for UE-originated API invocation with the CAPIF client agent are to be decided in SA3.\nIn short, the CAPIF client agent (as an application in the UE) is seen as an API invoker (see figure 6.5.1-2).\nThe figure depicts the functionality of the CAPIF client agent in the UE, showcasing its interaction with the network and its role in managing the user's data.\nFigure 6.5.1-2: CAPIF client agent functionality in the UE\nNOTE:\tReference point detail between AC and CAPIF client agent is out of 3GPP scope.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.5.2\tSolution evaluation",
+                            "text_content": "This solution addresses KI#1. It introduces an option to have a common API invoker (i.e. CAPIF client agent) for the UE so that the signalling over CAPIF reference points can be optimized. Without enforcement in the UE, i.e. updates to the UE, the application developer can choose whether to use this CAPIF client agent. Therefore, from CAPIF's perspective, the CAPIF client agent is seen as a normal API invoker, so there is no impact on the current CAPIF architecture.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.6\tSolution #6: Discover a proper AEF with owner information",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.6.1\tSolution description",
+                            "text_content": "The API provider hosts one or more service APIs and has a service API arrangement with CAPIF provider to offer the service APIs to the API invoker, as described in 3GPP TS 23.222 [3]. A CAPIF provider may have business relationships with multiple API providers (e.g. MNOs).\nThe AF knows UE IP address from the Application traffic. If the AF wants to contact with an API exposing function (AEF) provided by MNO but does not know which MNO the UE belongs to, the AF can utilize the information provided by Regional Internet Registry (RIR). e.g. Asia-Pacific Network Information Centre (APNIC) is responsible for providing allocation and administration services to Asia-Pacific's Internet service providers (ISPs) and Internet users. IP \"whois\" service can be used to retrieve IP address related information, for instance, with input of IP address 223.167.255.255 in  it gives the following result including the owner for such IP address (only partial result is listed here for relevant info):\n% APNIC found the following authoritative answer from: whois.apnic.net\n% [whois.apnic.net]\n% Whois data copyright terms\n% Information related to '223.166.0.0 - 223.167.255.255'\n% Abuse contact for '223.166.0.0 - 223.167.255.255' is 'hqs-ipabuse@chinaunicom.cn'\ninetnum:        223.166.0.0 - 223.167.255.255\nnetname:        UNICOM-SH\ndescr:          CHINA UNICOM Shanghai city network\ndescr:          China Unicom\ndescr:          No.21,Jin Rong Street,Beijing,100033\ndescr:          P.R.China\ncountry:        CN\nadmin-c:\ntech-c:\nremarks:        service provider\nmnt-by:\nmnt-lower:\nmnt-routes:\nstatus:         ALLOCATED PORTABLE\nmnt-irt:        IRT-CU-CN\nlast-modified:  2013-08-08T23:17:38Z\nsource:         APNIC\nNoting that such interaction with IP address administrative authority is out of the scope of 3GPP.\nOnce the AF knows which MNO it should contact for the API invocation related to a UE, the AF queries the CAPIF core function (CCF) with required API provider name (e.g. China Mobile Beijing) and CCF responds with the AEF information matching the required API provider name. The CCF knows the API provider name either via API management function triggered Registration procedure for the whole API provider domain functions or via the API publish function triggered service API information publish procedure for the AEF offered API(s). The impact for CAPIF procedures is illustrated in figure 6.6.1-1, and tables 6.6.1-1, table 6.6.1-2 and 6.6.1-3 describe the information flow impact with highlighted IEs.\nThe figure depicts the API provider name used in CAPIF procedures, which is a crucial component in the process of managing and controlling APIs. The figure shows the name of the API provider, along with its associated functions and parameters, providing a clear and concise representation of the information needed for CAPIF procedures.\nFigure 6.6.1-1: API provider name used in CAPIF procedures\nTable 6.6.1-1: Registration request\n\nTable 6.6.1-2: Service API publish request\n\nTable 6.6.1-3: Service API discover request\n\nThe API provider name can be shared between CCFs over CAPIF-6/6e reference point and the interconnection service API discovery may also include the required API provider name as query parameter.\nAlternatively, to reduce the burden on API invoker side, API invoker may include subscriber IP address in the service API discover request in step 6 above and CCF uses implementation specific means (e.g. whois) to resolve the subscriber IP address to its owner information (e.g. API provider name) and then find the matching service API information with the owner information. CCF may also receive from the API provider, the mapping information between the subscriber IP address range information and the AEF information. For example, a NEF provider may share the IP address range information related to its subscribers that NEF provides the service to, while publishing the APIs at CCF.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.6.1-1: Registration request",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.6.1-2: Service API publish request",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.6.1-3: Service API discover request",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.6.2\tSolution evaluation",
+                            "text_content": "This solution addresses KI#4, it enables the API invoker to discover a proper AEF with API provider name or subscriber IP address for invoking an API related to UE. It is assumed that all AEF instances provided by the API provider know their owner's information and API invoker knows subscriber IP address. This solution is a viable CAPIF solution to be considered.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.7\tSolution #7: Reducing resource owner consent inquiry in a nested API invocation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.7.1\tSolution description",
+                            "text_content": "This solution addresses the key issue #3 with regard to reduce resource owner consent inquiries for a nested API invocation, in which the first API invocation towards the API exposing function 1 triggers this API exposing function to request another API invocation towards the API exposing function 2, which is in the same API provider domain that the API exposing function 1. Some service APIs may require invoking another service APIs. For example, if the API invoker invokes SEAL locationInfoRetrieval API, the location management server (acting as an API exposing server for the API invoker and as an API invoker for the NEF) may invoke NEF API to retrieve UE location information from 5GC. This solution suggests how the CAPIF entities obtain the resource owner consent if more than one API exposing function is involved in the procedure, specifically when these API exposing functions are in the same trust domain.\nFigure 6.7.1.1-1 shows the procedure to obtain resource owner consent in a nested API invocation, in which an API exposing function receiving the service API invocation request interacts with another API exposing function to provide the service.\nPre-conditions:\n1.\tThe resource owner can communicate with the API invoker.\n2.\tThe API exposing functions 1 and 2 are in the same trust domain.\nThe figure depicts a procedure for obtaining resource owner consent in a nested API invocation, illustrating the steps involved in obtaining consent from the resource owner. The figure includes a flowchart with arrows indicating the sequence of actions, a list of steps, and a table with relevant information. The table provides details such as the resource owner's name, the consent type, and the consent status. The figure is a visual representation of the process, making it easy to understand and follow.\nFigure 6.7.1.1-1: Procedure for obtaining resource owner consent in a nested API invocation\n1.\tThe API invoker requests authorization grant and access token to invoke the service API exposed by the API exposing function 1.\nNOTE:\tThis step may use either the existing procedure to obtain authorization to access service API specified in TS 23.222 [3] or the procedure that involves the resource owner client to get resource owner consent. For the latter case, the detailed procedure to obtain resource owner consent and provide an access token is studied in SA3.\n2.\tThe API invoker sends service API invocation request to the API exposing function 1 with the access token received in step 1.\n3.\tBased on the service API invocation request, the API exposing function 1 decides to invoke another service API exposed by the API exposing function 2.\n4.\tThe API exposing function 1, acting as an API invoker, obtains the access token to access the service API exposed by the API exposing function 2.\nNOTE:\tThe existing mechanisms such as OAuth 2.0 Token Exchange [10] can be used to obtain the access token for the nested API invocation. The detailed procedure for authorization for nested API invocations in this step will be studied in SA3\n5.\tThe API invoker sends service API invocation request to the API exposing function with the access token received in step 1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.7.2\tSolution evaluation",
+                            "text_content": "This solution clarifies how to obtain the resource owner consent in a nested API invocation. The step 4 in the clause 6.7.1.1 outlines a specific case where the API exposing functions 1 and 2 are in the same trust domain and the CAPIF can provide authorization for nested API invocation. The detailed security aspects for this case will be studied in SA3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tOverall evaluation",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following clauses contain an overall evaluation of the solutions presented in this technical report, and their applicability to the identified key issues.\n-\tClause 7.2 provides an evaluation of the business relationship and the functional model studied in clauses 6.1 and 6.2; and\n-\tClause 7.3 lists the solutions for the key issues including impact on other working groups that will need consideration.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tArchitecture evaluation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The business relationship solution (Solution #1) in clause 6.1 describes the enhanced CAPIF business relationship introducing the resource owner as a new stakeholder. The functional model solution (Solution #2) in clause 6.2 describes the enhanced CAPIF functional model applicable for both the UE- and AF-originated API invocation scenarios. A summary of the architecture and key issues specified in this technical report are listed in table 7.2-1.\nTable 7.2-1: Architecture evaluation\n\nBoth the business relationship and the functional model are viable and will be considered in the normative work.\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.2-1: Architecture evaluation",
+                            "table number": 7,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tKey issue and solution evaluation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.3.1\tIntroduction",
+                            "text_content": "The mapping of solutions to key issues in this technical report is listed in table 6.0-1. In addition, Table 7.3.1-1 lists the impacts to other working groups that will need consideration during the Rel-18 normative phase.\nTable 7.3.1-1: Key issues, solutions, and dependency on other working groups\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3.1-1: Key issues, solutions, and dependency on other working groups",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.3.2\tOverall evaluation of solutions for Key Issue #1",
+                            "text_content": "Key Issue #1 is an issue about the CAPIF functional model to support the UE-originated API invocation. Three solutions are proposed in this document.\nSolutions #3 and #4 propose procedures to support providing and revoking the resource owner consent. These solutions have no normative impact regarding the Key Issue #1.\nSolution #5 proposes that a CAPIF client agent be introduced to reduce the number of interactions between the UE and the CAPIF entities. This solution is proposed specifically for the UE-originated API invocation scenario but does not impact the existing CAPIF architecture.\nFor Key Issue #1, the security aspects including specification of the authentication and authorisation procedures for UE-originated API invocation within CAPIF are to be decided in SA3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.3.3\tOverall evaluation of solutions for Key Issue #2",
+                            "text_content": "Key Issue #2 is an issue about the CAPIF functional model to support the AF-originated API invocation. Two solutions are proposed in this document.\nSolutions #3 and #4 propose procedures to support providing and revoking the resource owner consent. These solutions have no normative impact regarding the Key Issue #2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.3.4\tOverall evaluation of solutions for Key Issue #3",
+                            "text_content": "Key Issue #3 is an issue about providing and revoking resource owner consent upon invoking APIs. Three solutions are proposed in this document.\nSolution #3 proposes procedures to support providing and revoking the resource owner consent. The procedure in the clause 6.3.1.3 assumes that the resource owner consent is, if needed, provided after the service API invocation request from the API invoker. To enable the interaction between the resource owner client and the authorization function after the service API invocation request from the API invoker, the resource owner registration may optionally be performed beforehand. Even if the resource owner client has performed the resource owner registration, the API exposing function may need a solution to contact UE through firewall.\nSolution #4 also proposes a procedure to support providing and revoking the resource owner consent. Unlike Solution #3, this solution assumes that the API invoker get authorized to invoke the service API by the resource owner before sending the service API invocation request. The procedure to obtain the authorization grant and access token before the service API invocation is compliant with the ordinary OAuth 2.0 flow and is a viable solution to be considered.\nSolution #7 proposes a procedure to reduce the resource owner consent inquiries in a nested API invocation. This solution suggests that the existing mechanisms such as OAuth 2.0 Token Exchange [10] can be used when obtaining the access token for the nested API invocation. The detailed procedure will be studied in SA3.\nWhether and how security related mechanisms for these solutions can be specified should be decided by SA3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.3.5\tOverall evaluation of solutions for Key Issue #4",
+                            "text_content": "Key Issue #4 is an issue about discovery of target API information. One solution is proposed in this document.\nSolution #6 proposes a procedure to enable the API invoker to discover a proper AEF with API provider name or subscriber IP address for invoking an API related to UE. The CCF receives the API provider name and subscriber IP address range information from the API provider to discover the proper AEF. This solution supports proper API discovery in cases where the AF is serving UE belonging to multiple PLMNs and there are multiple instances of the AEF within a PLMN.\nThe solutions above will be considered in the normative work.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "8\tConclusions",
+            "description": "This technical report fulfills the objectives of the study on application enablement aspects for subscriber-aware northbound API access. The results from the study will be considered for the follow-up normative work in Release 18 as follows:\n1.\tThe architectural requirements (clause 5) will be considered the basis for the technical specification;\n2.\tThe architecture solutions including the business relationship (clause 6.1) and the functional models (clause 6.2) will be considered the enhancements to the existing CAPIF specification;\n3.\tThe individual solutions (clause 6) will be considered the candidate solutions with necessary enhancements as appropriate, according to the overall evaluation (clause 7).\nSA3 feedback will be considered for progressing the architecture related solutions (e.g. enhanced CAPIF functional models and deployment models) to the normative phase.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.1\tAF-originated API invocation (Gaming)",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.1.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This use case is an example of AF-originated API invocation with a gaming application. In this use case, the end user (also a subscriber of the MNO) allows the AF (game provider's server) to invoke the QoS API (offered by MNO) to modify the QoS of the end user.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.1.2\tPre-conditions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "An end user (also a subscriber of the MNO) is playing a time-sensitive game using a game client application on the end user’s UE communicating with a game provider's server. The end user wants to have a high-quality and low-latency communication for better service experience, so the game server (AF or API invoker) tries to invoke the QoS API provided by the 5GC of the MNO to change the end user's QoS according to the request from the game client application on the end user's UE. Changing the QoS may affect the charging rate to the end user, so the game server needs to get authorized to invoke the API by the end user.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.1.3\tService flows",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "1.\tThe game server triggers an authorization procedure of the QoS API provider where the MNO subscriber (end user) is asked to confirm whether the game server can invoke QoS API with extra charge.\n2.\tThe MNO subscriber (end user) authorizes the game server to apply the QoS change with extra charge.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.1.4\tPost-conditions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "After receiving this authorization as per the authorization procedure, the game server invokes the QoS API.\nNOTE:\tThis is an example of real-time or near real-time request of authorization, but the game server may also use the authorization information given by the MNO subscriber in the past authorization procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.2\tUE-originated API invocation (Location tracking)",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.2.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This use case is an example of UE-originated API invocation with a location tracking application. In this use case, the end user (also a subscriber of the MNO) on UE X allows the end user on UE Y to invoke an API to track the location of the end user on UE X.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.2\tPre-conditions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "A tracking application enables the user on UE Y to track the location of a user on UE X. An API Provider AP provides location APIs for the end users on UE X and UE Y, and the tracking application on the UE utilizes the location APIs to provide the tracking functionality.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.3\tService flows",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "1.\tTracking application of UE Y triggers the AP to obtain consent from end user on UE X.\n2.\tConsent is obtained from the end user on UE X via an authorization procedure of the AP allowing “Tracking application on UE Y\" to invoke the location API for UE X exposed by AP (UE-originated API invocation as shown in Figure 4.1.1-1).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.4\tPost-conditions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "After receiving the authorization as per the authorization procedure of the AP, the tracking application on UE Y invokes the location API of AP for obtaining location of user on UE X.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 9,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

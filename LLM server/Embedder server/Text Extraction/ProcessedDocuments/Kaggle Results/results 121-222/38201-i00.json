@@ -1,0 +1,239 @@
+{
+    "document_name": "38201-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document provides a general description of the physical layer of NR radio interface. The present document also describes the document structure of the 3GPP physical layer specifications, i.e. TS 38.200 series.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\"\n[2]\t3GPP TS 38.202: \"NR; Services provided by the physical layer\"\n[3]\t3GPP TS 38.211: \"NR; Physical channels and modulation\"\n[4]\t3GPP TS 38.212: \"NR; Multiplexing and channel coding\"\n[5]\t3GPP TS 38.213: \"NR; Physical layer procedures for control\"\n[6]\t3GPP TS 38.214: \"NR; Physical layer procedures for data\"\n[7]\t3GPP TS 38.215: \"NR; Physical layer measurements\"\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nDefinition format\n<defined term>: <definition>.\nexample: text used to clarify abstract rules by applying them literally.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\nSymbol format\n<symbol>\t<Explanation>\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nBPSK\tBinary Phase Shift Keying\nCP\tCyclic Prefix\nDFT-s-OFDM\tDiscrete Fourier Transform-spread-Orthogonal Frequency Division Multiplexing\nDU\tDistributed Unit\nE-UTRA\tEvolved Universal Terrestrial Radio Access\nFDD\tFrequency Division Duplex\nFEC\tForward Error Correction\nHARQ\tHybrid Automatic Repeat Request\nIAB\tIntegrated Access and Backhaul\nLDPC\tLow Density Parity Check\nMAC\tMedium Access Control\nMIMO\tMultiple Input Multiple Output\nMT\tMobile Termination\nNCR\tNetwork-Controlled Repeater\nOFDM\tOrthogonal Frequency Division Multiplexing\nPBCH\tPhysical Broadcast Channel\nPDCCH\tPhysical Downlink Control Channel\nPDSCH\tPhysical Downlink Shared Channel\nPRACH\tPhysical Random Access Channel\nPSBCH\tPhysical Sidelink Broadcast Channel\nPSCCH\tPhysical Sidelink Control Channel\nPSFCH\tPhysical Sidelink Feedback Channel\nPSSCH\tPhysical Sidelink Shared Channel\nPUCCH\tPhysical Uplink Control Channel\nPUSCH\tPhysical Uplink Shared Channel\nQAM\tQuadrature Amplitude Modulation\nQPSK\tQuadrature Phase Shift Keying\nRLC\tRadio Link Control\nRRC\tRadio Resource Control\nSAP\tService Access Point\nSRS\tSounding Reference Signal\nTDD\tTime Division Duplex\nUE\tUser Equipment\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral description of layer 1",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tRelation to other layers",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.1.1\tGeneral protocol architecture",
+                            "text_content": "The radio interface described in this specification covers the interface between the User Equipment (UE) and gNB, between gNBs, between IAB-node DU and IAB-node MT/UE, between gNB and NCR-MT, and between UEs. The radio interface is composed of the Layer 1, 2 and 3. The TS 38.200 series describes the Layer 1 (Physical Layer) specifications. Layers 2 and 3 are described in the 38.300 series.\nThe figure depicts the radio interface protocol architecture around the physical layer, illustrating the various components and their interactions. It includes the radio interface protocol (RIP), the physical layer, and the network layer. The figure shows the use of different protocols such as Ethernet, IP, and MPLS, as well as the use of different network layers like the physical layer, the network layer, and the transport layer. The figure also shows the use of different protocols like Ethernet, IP, and MPLS, as well as the use of different network layers like the physical layer, the network layer, and the transport layer.\nFigure 1: Radio interface protocol architecture around the physical layer\nFigure 1 shows the NR radio interface protocol architecture around the physical layer (Layer 1). The physical layer interfaces the Medium Access Control (MAC) sub-layer of Layer 2 and the Radio Resource Control (RRC) Layer of Layer 3. The circles between different layer/sub-layers indicate Service Access Points (SAPs). The physical layer offers a transport channel to MAC. The transport channel is characterized by how the information is transferred over the radio interface. MAC offers different logical channels to the Radio Link Control (RLC) sub-layer of Layer 2. A logical channel is characterized by the type of information transferred.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.2\tService provided to higher layers",
+                            "text_content": "The physical layer offers data transport services to higher layers. The access to these services is through the use of a transport channel via the MAC sub-layer. Details are specified in [2].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.2\tGeneral description of layer 1",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tMultiple access",
+                            "text_content": "The multiple access scheme for the NR physical layer is based on Orthogonal Frequency Division Multiplexing (OFDM) with a cyclic prefix (CP). For uplink, Discrete Fourier Transform-spread-OFDM (DFT-s-OFDM) with a CP is also supported. To support transmission in paired and unpaired spectrum, both Frequency Division Duplex (FDD) and Time Division Duplex (TDD) are enabled.\nThe Layer 1 is defined in a bandwidth agnostic way based on resource blocks, allowing the NR Layer 1 to adapt to various spectrum allocations. A resource block spans 12 sub-carriers with a given sub-carrier spacing.\nThe radio frame has a duration of 10ms and consists of 10 sub-frames with a sub-frame duration of 1ms. A sub-frame is formed by one or multiple adjacent slots, each having 14 adjacent symbols. Further details on the frame structure are specified in [2].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tPhysical channels and modulation",
+                            "text_content": "The physical channels defined in the downlink are:\n-\tthe Physical Downlink Shared Channel (PDSCH),\n-\tthe Physical Downlink Control Channel (PDCCH),\n-\tthe Physical Broadcast Channel (PBCH),\nThe physical channels defined in the uplink are:\n-\tthe Physical Random Access Channel (PRACH),\n-\tthe Physical Uplink Shared Channel (PUSCH),\n-\tand the Physical Uplink Control Channel (PUCCH).\nThe physical channels defined in the sidelink are:\n-\tthe Physical Sidelink Broadcast Channel (PSBCH),\n-\tthe Physical Sidelink Control Channel (PSCCH),\n-\tthe Physical Sidelink Feedback Channel (PSFCH),\n-\tand the Physical Sidelink Shared Channel (PSSCH).\nIn addition, signals are defined as reference signals, primary and secondary synchronization signals.\nThe modulation schemes supported are\n-\tin the downlink, QPSK, 16QAM, 64QAM, 256QAM, and 1024QAM,\n-\tin the uplink, QPSK, 16QAM, 64QAM and 256QAM for OFDM with a CP and π/2-BPSK, QPSK, 16QAM, 64QAM and 256QAM for DFT-s-OFDM with a CP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.3\tChannel coding",
+                            "text_content": "The channel coding scheme for transport blocks is quasi-cyclic LDPC codes with 2 base graphs and 8 sets of parity check matrices for each base graph, respectively. One base graph is used for code blocks larger than certain sizes or with initial transmission code rate higher than thresholds; otherwise, the other base graph is used. Before the LDPC coding, for large transport blocks, the transport block is segmented into multiple code blocks with equal size. The channel coding scheme for PBCH and control information is Polar coding based on nested sequences. Puncturing, shortening and repetition are used for rate matching. Further details of channel coding schemes are specified in [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.4\tPhysical layer procedures",
+                            "text_content": "There are several Physical layer procedures involved. Such procedures covered by the physical layer are;\n-\tCell search\n-\tPower control\n-\tUplink synchronisation and Uplink timing control\n-\tRandom access related procedures\n-\tHARQ related procedures\n-\tBeam management and CSI related procedures\n-\tSidelink related procedures\n-\tChannel access procedures\nThrough the control of physical layer resources in the frequency domain as well as in the time and power domains, implicit support of interference coordination is provided in NR.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.5\tPhysical layer measurements",
+                            "text_content": "Radio characteristics are measured by the UE and the network and reported to higher layers. These include, e.g. measurements for intra- and inter-frequency handover, inter RAT handover, timing measurements, and measurements for RRM.\nMeasurements for inter-RAT handover are defined in support of handover to E-UTRA.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tDocument structure of physical layer specification",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tOverview",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The physical layer specification consists of a general document (TS 38.201), and seven documents (TS 38.202, 38.211 through 38.215, and 37.213). The relation between the physical layer specifications in the context of the higher layers is shown in Figure 2.\nThe figure depicts a graphical representation of the relationship between various physical layer specifications in a 5G network. It illustrates the various components and their interconnections, highlighting the importance of proper design and implementation to ensure efficient and reliable communication.\nFigure 2: Relation between Physical Layer specifications\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tTS 38.201: Physical layer; General description",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The scope is to describe:\n-\tThe contents of the Layer 1 documents (TS 38.200 series);\n-\tWhere to find information;\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tTS 38.202: Physical layer services provided by the physical layer",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The scope is to describe services provided by the physical layer, and to specify:\n-\tServices and functions of the physical layer;\n-\tModel of physical layer of the UE;\n-\tParallel transmission of simultaneous physical channels and SRS;\n-\tMeasurements provided by the physical layer.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tTS 38.211: Physical channels and modulation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The scope is to establish the characteristics of the Layer-1 physical channels, generation of physical layer signals and modulation, and to specify:\n-\tDefinition of the uplink, downlink and sidelink physical channels;\n-\tFrame structure and physical resources;\n-\tModulation mapping (BPSK, QPSK, etc);\n-\tOFDM signal generation;\n-\tScrambling, modulation and upconversion;\n-\tLayer mapping and precoding;\n-\tPhysical shared channel in uplink, downlink and sidelink;\n-\tReference signal in uplink, downlink and sidelink;\n-\tPhysical random access channel;\n-\tPrimary and secondary synchronization signals.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tTS 38.212: Multiplexing and channel coding",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The scope is to describe the transport channel and control channel data processing, including multiplexing, channel coding and interleaving, and to specify:\n-\tChannel coding schemes;\n-\tRate matching;\n-\tUplink transport channels and control information;\n-\tDownlink transport channels and control information;\n-\tSidelink transport channels and control information.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.6\tTS 38.213: Physical layer procedures for control",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The scope is to establish the characteristics of the physical layer procedures for control, and to specify:\n-\tSynchronization procedures;\n-\tUplink power control;\n-\tRandom access procedure;\n-\tUE procedure for reporting control information;\n-\tUE procedure for receiving control information.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.7\tTS 38.214: Physical layer procedures for data",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The scope is to establish the characteristics of the physical layer procedures for data, and to specify:\n-\tPower control;\n-\tPhysical downlink shared channel related procedures;\n-\tPhysical uplink shared channel related procedure;\n-\tPhysical sidelink shared channel related procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.8\tTS 38.215: Physical layer measurements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The scope is to establish the characteristics of the physical layer measurements, and to specify:\n-\tControl of UE/NG-RAN measurements;\n-\tMeasurement capabilities for NR.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.9\tTS 37.213: Physical layer procedures for shared spectrum channel access",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The scope is to establish the characteristics of the physical layer procedures for shared spectrum channel, and to specify:\n-\tDownlink channel access procedures;\n-\tUplink channel access procedures;\n-\tSidelink channel access procedures.\nThe following table contains the preferred mathematical notations used in L1 documentation.\n\n\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 1,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 2,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

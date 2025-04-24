@@ -1,0 +1,492 @@
+{
+    "document_name": "23700-96-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn drafting the TS/TR, pay particular attention to the use of modal auxiliary verbs! TRs shall not contain any normative provisions.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document studies and evaluates the application architecture aspects and solutions to address potential new and enhanced location capabilities for vertical application enabler, including the following aspects:\n-\tEnabling location performance (accuracy, availability and latency) enhancements through combined use and fusion of 3GPP and non-3GPP location technologies at the application layer;\n-\tIdentification and classification of location related requirements (including location QoS) for vertical application services;\n-\tArchitecture enhancement leveraging 5G positioning and location services;\n-    Enabling location sources and positioning methods selection based on the requested location QoS;\n-    Initialization and configuration for fused location service;\n-\tEnabling value-added location service capabilities exposure to vertical applications;\n-\tEnhancements on SEAL location management addressing the aspects above.\nNOTE:\tThis study will not duplicate solutions already available in Core Network and RAN.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 22.261: \"Service requirements for next generation new services and markets; Stage 1\".\n[3]\t3GPP TS 23.271: \"Functional stage 2 description of Location Services (LCS)\".\n[4]\t3GPP TS 23.273: \"5G System (5GS) Location Services (LCS); Stage 2\".\n[5]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[6]\t3GPP TS 38.305: \"Stage 2 functional specification of User Equipment (UE) positioning in NG-RAN\".\n[7]\t3GPP TS 22.104: \"Service requirements for cyber-physical control applications in vertical domains; Stage 1\".\n[8]\t3GPP TS 22.125: \"Unmanned Aerial System (UAS) support in 3GPP; Stage 1\".\n[9]\t3GPP TS 22.071: \"Location Services (LCS); Service description; Stage 1\".\n[10]\tOpen Mobile Alliance, OMA AD SUPL: \"Secure User Plane Location Architecture\", (http://www.openmobilealliance.org).\n[11]\tOpen Mobile Alliance, OMA AD MLS: \"Mobile Location Service Architecture\", (http://www.openmobilealliance.org).\n[12]\t3GPP TS 23.502: \" Procedures for the 5G System (5GS); Stage 2\".\n[13]\t3GPP TS 23.434: \"Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows\".\n[14]\t3GPP TS 29.572: \"Location Management Services; Stage 3\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nexample: text used to clarify abstract rules by applying them literally.\nFor the purposes of the present document, the following terms and definitions given in TS 22.261 [2] apply:\n5G enhanced positioning area: see TS 22.261 [2].\n5G positioning service area: see TS 22.261 [2].\nFor the purposes of the present document, the following terms and definitions given in TS 23.271 [3] apply:\nCurrent Location: see TS 23.271 [3].\nLCS Server: see TS 23.271 [3].\nLocation Estimate: see TS 23.271 [3].\nVelocity: see TS 23.271 [3].\nFor the purposes of the present document, the following terms and definitions given in TS 23.273 [4] apply:\nLCS Client: see TS 23.273 [4].\nFor the purposes of the present document, the following terms and definitions given in TS 23.501 [5] apply:\n5G Access Network: see TS 23.501 [5].\n5G Core Network: see TS 23.501 [5].\n5G System: see TS 23.501 [5].\nNG-RAN: see TS 23.501 [5].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nGMLC\tGateway Mobile Location Centre\nLCS\tLoCation Services\nLDR\tLocation Deferred Request\nLMF\tLocation Management Function\nLPP\tLTE Positioning Protocol\nMO-LR\tMobile Originated Location Request\nMT-LR\tMobile Terminated Location Request\nNI-LR\tNetwork Induced Location Request\nSLP\tSUPL Location Platform\nSUPL\tSecure User Plane Location\nTNAN\tTrusted Non-3GPP Access Network\nUNAN\tUntrusted Non-3GPP Access Network\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tArchitectural assumptions and requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tArchitectural assumptions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For discussions of architecture aspects of application enablement in this document, the following architectural assumptions apply:\n-\tThe positioning methods include the standard positioning methods supported for NG-RAN access as specified in clause 4.3 in 3GPP TS 38.305 [6], and the positioning methods supported for non-3GPP access as specified in clause 5.3.1 in 3GPP TS 23.273 [4].\n-\tThe source of location may include other standard location service (non-3GPP location service of e.g. OMA) from the third party.\n-\tThe PLMN operator must be able to protect user location data and privacy when the application enablement architecture is within the PLMN operator domain.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tArchitectural requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following is the architectural requirements to support 5G-enabled fused location service.\n-\tThe application layer architecture should take the baseline location management server specified in 3GPP TS 23.434[13] and the location resources and positioning methods should not conflict with the existing one in TS 23.501[5] and 23.502[12].\n-\tThe application layer architecture shall provide mechanisms to enable location performance (accuracy, availability and latency) enhancements through combined use and fusion of 3GPP and non-3GPP location technologies;\n-\tThe application layer architecture shall enhance the SEAL location-related architecture to provide more accurate UE location report. And enhance the LM-UU interface to transfer the fused location information.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tKey issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tKey issue #1: Architecture enhancement of application enablement for location",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The 3GPP TS 22.261 [2], 3GPP TS 22.104 [7], 3GPP TS 22.125 [8] have specified high accuracy positioning requirements of 5G for the support of various vertical applications. The major aspects of the study are the support of fusion or combination of different location technologies and the value added location capabilities at the application enabler, so that to enable the enhanced performance and meeting the vertical's needs.\nIt should be studied whether and how the SEAL location-related architecture enhancement or new architecture model is needed based on evaluations of existing location management architectures, functional entities and capabilities with following aspects:\n-\tFunctional entit(ies) supporting the combined use and fusion of different location technologies at the application layer;\n-\tArchitecture enhancement addressing the consideration of flexibility, scalability and reliability;\n-\tSupport for high-accuracy positioning based on LCS and 5G network exposure;\n-\tProviding value-added location servicies to accommodate new service requirements and the evolving application enablement capabilities;\n-\tArchitecture aspects that make sure UE provided location is not spoofed;\n-\tArchitecture aspects that comply with local, national, and regional location privacy requirements;\n-\tArchitecture aspects exploiting edge computing capabilities including EDGEAPP and 5GC edge capabilities.\nThe MNO may deploy both LCS and SUPL due to deployment and cost considerations while achieving consistent location performances. It is for further study:\n-\tThe possible application layer architectural models to support both SUPL and LCS.\n-\tThe potential scenarios that LCS and SUPL location towards the same target UE are received by application layer at the same time.\n-\tThe architectural aspects to support selection or coordination between LCS and SUPL at the application layer when both location services are supported.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tKey issue #2: Support of LCS QoS",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "According to 3GPP TS 23.273 [4] and 3GPP TS 22.071 [9], the LCS QoS which is characterised by LCS QoS Class, Accuracy and Response Time may be required by the application (LCS client) for location requests. For certain LCS services the LCS QoS Class is non-negotiable.\nTo support the LCS QoS the following aspects need to be studied:\n-\tHow to support invocation of LCS service (as defined by SA2) with a required LCS QoS, including how and when the LCS QoS attributes are specified in an application scenario, and how to potentially use the LCS QoS attributes differently for different vertical scenarios;\n-\tHow to support the identification of an appropriate LCS QoS requirement between all interested parties.;\n-\tHow to potentially retrieve the continuity and consistency of LCS QoS for the vertical applications;\n-\tHow to potentially support the negotiation of required LCS QoS that is application driven.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tKey issue #3: Location service differentiation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Within the core network the LCS client has been categorized (as LCS client type) such that the privacy check, potitioning methods schemes and other procedures can be differentiated.\nWithin the application enabler layer there are also the dimensions to distinguish location services so that the service handling (e.g. priority information, service coverage, geographical area and other information used to invoke LCS service, the selection of location source, etc.) is differentiated. Also the location services distinguished based on use cases and regulation need to be considered.\nIt is for further study:\n-\tThe possible dimensions to distinguish location service in application enabler layer and how to enable the location service differentiation.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tKey issue #4: Void",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tKey issue #5: Initialization and configuration for fused location service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The application enabler needs to consider how the location service based on multiple or various location sources is initiated and configured.\nThis key issue aims to study:\n-\tHow to initiate and start the fused location service for a target UE in different scenarios, environment, network condition, type of service and etc.\n-\tHow to initiate and start the fused location service such that the location capabilities of target UE and the application layer location service can be coordinated.\n-\tWhat configurations are needed for the initialization of fused location service and how.\n-\tWhat application layer sessions are established for the fused location service and how.\n5.6\tKey issue #6: Value-Added Location Services\nHow does the FLS/SEAL LMS get the UE location from 3GPP and non-3GPP defined accesses are described in this TR, TS23.273 and TS23.434. A lot of value-added location services provide location enhanced functions to the upper layer consumer. Mobile internet and industrial application can use one or more value-added location services. Different value-added location services may require different architectures, interfaces, functions and procedures.\nThe following aspects can be addressed in the study:\n-\tIdentify which value-added service is to be studied and provide the functional description?\nThe following value-added location services can be studied, and more value-added services can be further included and studied in the solution part (not exhausted):\n-\tLocation format mapping\n-\tLocation Event Trigger provision, invoke, revoke\n-\tPeriodic and or event Triggered location reporting\n-\tReal time location information Pushing\n-\tGeofencing\n-\t(Indoor) Map provision\n-\tLocation Alerting\n-\tReal time Tracing request or playback (continuous locations in a map)\n-\tHistory Trace request or playback\n-\tTime information of the first entering and the last leaving an area (e.g. working campus)\n-\tThe length of time to stay in an area\n-\tThe times to re-enter and re-leave an area\n-\tLocation information analysis\n-\tHeatmap\n-\tSpeed\n-\tHeading Direction\n-\tIdentify whether the value-added service as listed above can be supported based on the procedures defined for the SEAL LMS and FLS.\nNOTE:\tExisting location service may be enhanced if not fully supported.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tVoid",
+            "description": "\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "7\tSolutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.0\tMapping of solutions to key issues",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 7.0-1 Mapping of solutions to key issues\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.0-1 Mapping of solutions to key issues",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.1\tSolution #1: Standalone functional architecture for fused location service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.1.1\tSolution description",
+                            "text_content": "This solution addresses key issue #1: Architecture enhancement of application enablement for location.\nThe figure 7.1.1.1-1 identifies the architecture of fused location service enabled by 5GS.\nThe given telecommunication figure, labeled as \"Figure 7.1.1 .1-1: Functional architecture of fused location service,\" depicts a detailed functional architecture of a fused location service. The figure illustrates the various components and their interconnections, including the location server, location database, location service, and location application. The architecture is designed to provide a unified location service, enabling seamless integration of location-based services across different applications and devices.\nFigure 7.1.1.1-1: Functional architecture of fused location service\nThe architecture is composed of logical function modules that are not necessarily physical entities and can reside in or co-locate with existing application layer entities as appropriate.\nIn the architecture, the Fused Location Server (FLS) and Application Specific Server can be within the MNO domain or third party service provider domain.\nThe FLS architecture supports multiple possible sources of location information including:\n-\tAMF location service exposed by NEF (as defined in 3GPP TS 23.502 [12]);\n-\tLCS location retrieved from either NEF or GMLC (as defined in 3GPP TS 23.273 [4]);\n-\tSUPL location retrieved from SLP (as defined in OMA AD SUPL [10]);\nNOTE:\tWhether and how the SUPL location service can be exposed by 5GC is within the remit of SA2.\n-\tCertain RAT-independent positioning retrieved from 3rd party location server or Fused Location Client.\n-\tRetrieve the target UE Positioning via the FLS-1 interface.\nEditor's Note: It is FFS to show the relationship of Fused Location Function with SEAL-LM.\nThe Fused Location Server provides location information of the target UE based on positioning or location data retrieved from one or multiple location sources. The Fused Location Server can get the location information via the non-3GPP defined access from the Fused Location Client and additionally can get location information via the 3GPP access. The Fused Location Server selects one or more access types, one or more location methods, and Control Plane /User Plane (e.g. SUPL [10]) methods based on the requested location QoS. The Fused Location Server provides a normalized description of location data to the application-specific server (e.g. of ecosystem partners) through the northbound API.\nFor the non-3GPP defined accesses, the FLS also needs to support the five types of interaction with the Fused Location Client to retrieve the location information via the non-3GPP defined accesses:\n-\tGet the UE location information;\n-\tProvide location notification to the FLC in the target UE and get a guarantee to get location information from the target UE;\n-\tInstall location event triggers in the FLC in the target UE to support the target UE terminated deferred location information;\nThe 3rd Party Location Server provides the location of a certain location technology (typically the network-based positioning) e.g. Bluetooth.\nThe Fused Location Client represents the client of the target UE providing the UE-based positioning via the non-3GPP defined access and location-related information and provides the UE location information via the non-3GPP defined access to the Fused Location Server via an IP connection.\nNOTE 1:\tHow does the Fused Location Client get the UE location information via the non-3GPP defined access is out of scope of 3GPP.\nThe NEF (as defined in 3GPP TS 23.501 [5]) exposes location service of 5GC when Fused Location Server is external to MNO domain.\nThe GMLC (as defined in 3GPP TS 23.273 [4]) provides LCS when Fused Location Server is within the MNO domain.\nThe SLP (as defined in OMA AD SUPL [10]) provides location of SUPL network.\nThe interfaces are described as followed:\nFLS-1:\tReference point supporting location reporting, location determination, location management and exchange of location contextual information (e.g. UE ID, location capabilities of the non-3GPP defined access, the available non-3GPP defined accesses ) over application layer transactions between the Fused Location Server and the Fused Location Client of the target UE. The FLS-1 may support HTTP or WebSocket and the IP connection between the Fused Location Client and Fused Location Server\nNOTE 2:\tThe IP connection between the Fused Location Client and Fused Location Server can be provided by the 5GS PDU Session.\nFLS-2:\tService-based interface exposing fused location data   to the applications (e.g. the vertical applications, the applications of ecosystem partners, etc.). The FLS-2 may support HTTP or WebSocket.\nFLS-3:\tReference point between the FLS and a database for storing and retrieving location information for the target UE and user profile for the target UE.\nNOTE 3:\tThe definition of FLS-3 is out of scope of this specification.\nFLS-4:\tThe reference point is used for location retrieval of the target UE from that 3rd party location server. The FLS-X can be a service-based interface. The FLS-4 may support HTTP or WebSocket.\nNOTE 4:\tThe definition of FLS-4 is out of scope of this specification.\nNnef:\tService-based interface as defined in 3GPP TS 23.501 [5].\nLe:\tReference point as defined in OMA AD MLS [11].\nLM-UU:\tReference point as defined in 3GPP TS 23.434 [13].\nLM-S:\t\tReference point as defined in 3GPP TS 23.434 [13].\nNOTE 5:\tIf the UE supports MUSIM, the FLS can get the UE location information from the PLMNs via the LM-S reference of each PLMN.\nFLS fuses different location information from multiple resources and provides a better location service/information to the Application Server via its northbound API. And the SEAL LMS can be one of its location sources as described in figure 7.1.1.3-1.\nThe SEAL LMS does not support getting location information from the non-3GPP defined access, the FLS needs to have the interface FLS-1 to get location information from the non-3GPP defined access.\nThe FLS needs to get the location information from other PLMNs if the target UE is with multiple PLMN accesses, in such cased, the FLS-1 and or the LM-S reference point is to provide such location information from different PLMNs.\nThe FLS-3 reference point is defined for storing and retrieving location information for the target UE and user profile for the target UE.\nThe figure depicts a merged architecture with Interaction between Fused Location Server and SEAL LMS, illustrating the integration of these two components in a 5G network. The figure shows the Fused Location Server (FLS) as the central location server, responsible for managing location information and coordinating with the SEAL LMS. The SEAL LMS, on the other hand, is responsible for managing location information and coordinating with the FLS. The figure also includes a visual representation of the network topology, showing the locations of the FLS and SEAL LMS, as well as the paths between them.\nFigure 7.1.1.3: Merged architecture with Interaction between Fused Location Server and SEAL LMS\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.2\tSolution evaluation",
+                            "text_content": "The merged architecture defined in figure 7.1.1.3-1 is the architecture to merge the Fused Location Server.\nBased on the merged architecture, the SEAL LMS needs to upgrade to support Le interface.\nSEAL LMS only gets the location information for the target UE via the 3GPP defined accesses and provides the location information to the FLS via the LM-S interface, additionally, the FLS gets the location information via the non-3GPP defined accesses from the FLS-1 reference point.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.2\tSolution #2: Support of both LCS and SUPL at Fused Location Function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.2.1\tSolution description",
+                            "text_content": "This solution addresses key issue #1 in respect of application layer support of both LCS and SUPL.\nAccording to OMA AD SUPL [10], Secure User Plane Location (SUPL) is an Enabler which utilizes existing standards where available and possible, to transfer assistance data and positioning data over a User Plane bearer, such as IP, to aid network and SUPL Enabled Terminal (SET) based positioning technologies in the calculation of a SET's position.\nWhen MNO deploys both LCS and SUPL, the 3GPP TS 23.271 [3] defines the operation of SUPL in EPC, in which the location of SUPL can be retrived from GMLC. The potential interworking of control plane LCS and OMA SUPL both deployed by an MNO is outside the scope of that specification. For 5G LCS the support for SUPL is not defined in 3GPP TS 23.273 [4]. The 3GPP TS 38.305 [6] Annex A (informative) provides an architecture for interworking between LCS and OMA SUPL, in which the location of SUPL is directly exposed from SLP without the involvement of core network entities.\nConsidering the existing specifications regarding architecture aspects of SUPL, the potential architectural models of application layer consisting the location source of LCS and SUPL are shown in below figure .\n\nThe figure depicts a possible architectural model for fused location functions (FLCs) and spatial user equipment (SUPLs), illustrating the relationship between location source (LSC) and spatial user equipment (SUPL). The model includes a location source (LSC) and spatial user equipment (SUPL) as key components, with a focus on the fusion of location information. The figure also includes a dashed line to represent redundancy paths, ensuring failover reliability.\nFigure 7.2.1.1-1: Possible Fused Location Function architectural models consisting location source of LCS and SUPL\nThe potential architectural models include:\na)\tLCS and SUPL locations are exposed by 5GC (from GMLC) through the same interface (Le) to the LCS client which is within the MNO domain.\nb)\tLCS and SUPL locations are exposed by 5GC (from GMLC) and OMA SLP separately, the LCS client and SUPL agent are within the MNO domain.\nNOTE:\tThe SLP can belong to the operators' management and also can under the 3rd party location server's control. The LMS retrieves SUPL from SLP within the 3rd party location server via LM-3P reference point if the SLP belongs to the 3rd party location server.\nc)\tLCS and SUPL locations are exposed by 5GC (from NEF) and OMA SLP separately to the AF and SUPL agent that are external to the MNO domain.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.2\tSolution evaluation",
+                            "text_content": "This solution is based on the architecture in  solution 8 of KI#1 and defines how to fuse the location information from different sources via different interfaces and the possible architecture models.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.3\tSolution #3: Functional architecture for fused location service leveraging SEAL location management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.3.1\tSolution description",
+                            "text_content": "This solution leverages SEAL to address key issue #1: Architecture enhancement of application enablement for location.\nThe figure 7.3.1.1-1 identifies the architecture of fused location service enabled by 5GS leveraging SEAL.\n\nThe given telecommunication figure, labeled as \"Figure 7.3.1 .1-1: Functional architecture of fused location service leveraging SEAL location management,\" depicts a detailed functional architecture of a fused location service. The figure illustrates the various components and their interconnections, highlighting the importance of SEAL location management in the system. The architecture includes a fusion center (FC), a location server (LS), and a location management system (LMS), all interconnected through a network of fiber-optic cables. The figure also includes a visual representation of the network topology, with nodes representing the various components and lines representing the fiber-optic cables. The figure provides a comprehensive overview of the system's architecture, highlighting the importance of SEAL location management in ensuring the efficient and reliable operation of the fused location service.\nFigure 7.3.1.1-1: Functional architecture of fused location service leveraging SEAL location management\nEditor's note:\tRepresenting LMC offering service (e.g. clause 9.3.4 in 23.434) to LMS is FFS.\nEditor's note: How to prevent the loop communication between the FLF and LMS when Application Specific Server is consuming their services is FFS\nIn the architecture, the SEAL Location management server (LMS) interacts with the Fused location function for fusion of different location technologies.\nThe architecture supports multiple sources of location information including:\n-\tLocation of AMF service exposed by NEF (as defined in 3GPP TS 23.502 [12]);\n-\tLCS location retrieved from either NEF or GMLC (as defined in 3GPP TS 23.273 [4]);\n-\tSUPL location retrieved from SLP (as defined in OMA AD SUPL [10]);\n-\tLocation retrieved from 3rd party location server or location management client.\nThe Location management server provides location information of the target UE based on positioning or location data retrived from one or multiple location sources.\nFused location function provides normalized description of location data to the Location management server through the API.\nThe 3rd Party Location Server provides the location of a certain location technology (typically the network-based positioning) e.g. Bluetooth.\nThe Location management client represents the client of the requestor/sender UE for location reporting as defined in 3GPP TS 23.434 [13].\nThe Fused location client represents the client of the sender UE for location reporting via non-3GPP access over FLS-X1 interface.\nThe location management server is a functional entity that receives and stores user location information and provides user location information to the vertical application server as defined in 3GPP TS 23.434 [13]. The location management server acquires location information from one or more sources including:\n-\tthe NEF (as defined in 3GPP TS 23.501 [5] and 3GPP TS 23.273 [4]) via N33 reference point;\n-\tthe GMLC (as defined in 3GPP TS 23.273 [4]) via Le reference point;\n-\tthe SLP (as defined in OMA AD SUPL [10]) of SUPL network;\n-\tthe Fused location function; and\n-\tthe location management client.\nThe VAL client and VAL server (vertical application layer entities) are as defined in 3GPP TS 23.434 [13].\nThe interfaces are described as followed:\nLM-UU:\tReference point as defined in 3GPP TS 23.434 [13].\nLM-S:\t\tReference point as defined in 3GPP TS 23.434 [13].\nFLS-X2:\tThe reference point is used for location retrieval of the target UE from 3rd party location server.\nNOTE:\tThe definition of FLS-X2 is out of scope of this specification.\nN33:\tService-based interface as defined in 3GPP TS 23.501 [5].\nLe:\tReference point as defined in OMA AD MLS [11].\nFLS-S:\tReference point used for fused location retrieval from Fused location function either by VAL Server or by Location management server.\nEditor's note:\tImpacts of architectural changes to existing SEAL LM procedures in 3GPP TS 23.434 [13] are FFS.\nEditor's note: The enhancements to location management client, LM-UU and LM-S providing fused location service are FFS.\nIn deployments where Fused Location Function resides outside of SEAL LMS is shown by Figure 7.3.1.1-1. In another deployment the Fused Location Function can be collocated within SEAL LMS. Such function model is as shown in Figure 7.3.1.3-1.\nNOTE:\tThis deployment option could be considered as the functional architecture diagram for 5GFLS during normative specification.\nThe given telecommunication figure, labeled as \"Figure 7.3.1 .3-1: Functional architecture of fused location service collated within SEAL location management,\" depicts a detailed functional architecture of a location service collated within SEAL location management. The figure illustrates the various components and their interconnections, including the fusion center (FC), location service (LS), and location management system (LMS). The architecture is designed to ensure efficient and reliable location services, with redundancy and failover mechanisms in place. The figure also highlights the use of SDN principles for network management and control.\nFigure 7.3.1.3-1: Functional architecture of fused location service collacted within SEAL location management\nEditor's note: Moving deployment model to another clause is FFS\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.3.2\tSolution evaluation",
+                            "text_content": "Editor's Note:\tThis clause provides an evaluation of the solution. The evaluation should include the descriptions of the impacts to existing architectures.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.4\tSolution #4: Location service registration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.4.1\tSolution description",
+                            "text_content": "This solution addresses key issue #5: Initialization and configuration for fused location service.\nThe procedure for location service registration is illustrated in figure 7.4.1-1. This procedure is based on the fused location architecture of KI#1. The purpose of this procedure is for the Location Management Client (LMC) to register to the location services available at the Fused Location Function (FLF) which is part of Location Management Server (LMS) while ensuring the privacy of the user.\nIf the Multi-USIM is supported by the LMC, the LMC performs the registration procedure for each PLMN of the Multi-USIM PLMNs.\n\nThe figure depicts a location service registration procedure, illustrating the steps involved in registering a location service. The figure includes a registration form, a location service provider (LSP), and a location service user (LSU). The LSUs are shown in different locations, indicating the various locations where the service can be used. The figure also includes a map of the location service area, showing the locations where the service can be used. The figure is a visual representation of the registration process, making it easy for users to understand the steps involved.\nFigure 7.4.1-1: Location service registration procedure\n1.\tThe LMC of a target UE sends location service registration request to the FLF which is part of LMS via the LM-UU interface over non-3GPP access, carrying the identifier of the UE (e.g. GPSI,  UUID, etc.) and non-3GPP defined access location capabilities(e.g. the available non-3GPP defined access types, the location methods, the location accuracy and latency of the non-3GPP defined access types).\nNOTE:\tThe LMC does not directly communicate with the FLF but communicate with LMS directly, and LMS will coordinate with FLF internally after receiving LMC requests.\nTo access the FLF via the LM-UU interface over non-3GPP access, the LMC can use any available non-3GPP defined accesses to send the location service registration request.\nThe LMS with FLF can be pre-configured in the UE or be discovered via the DNS query.\n2.\tThe FLF checks authorization for the UE's request. If the FLF supports privacy checking it also performs or assists with e.g. 5GC on privacy check.\n3.\tThe FLF, upon successful authorization and privacy check (if any), responds to the LMC with registration result and stores the UE identifier information and non-3GPP defined access location capabilities into the UE location context.\nIf the Multi-USIM is supported by the LMC, the LMC performs steps 1 to 3 to register its identifier (e.g. MSISDN) associated with each PLMN of the Multi-USIM PLMNs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.4.2\tSolution evaluation",
+                            "text_content": "This solution is based on the new architecture proposed in KI#1. The location management client can provide its UE IDs and the location capabilities of the available non-3GPP defined accesses to the fused location function which is part of location management server through LM-UU interface over non-3GPP access, and the fused location function can generate and store this information as the UE location context, and also can use these UE location contexts in the subsequent location procedures.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.5\tSolution #5: Location profiling for supporting fused location service enablement",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.5.1\tSolution description",
+                            "text_content": "This solution addresses key issue #3 Location service differentiation. The solution discusses the creation of Location profiles at a fused location service at the application enablement layer; and the mapping of Location profiles to one or more vertical applications. Such profiling is based on a variety of factors which correspond to use-case / vertical driven hybrid positioning requirements and policies. This notion of profiling (which is different from the service profile) is based on the various factors which may affect the positioning methods and QoS, and fixes also the communication parameters per vertical requirement-use case, without providing any additional information at the 3rd party app. The attributes that can be used for the Location profile can be some of the following (however how the Location profiles are constructed can be up to implementation):\n-\tthe vertical / application service type;\n-\tthe environment (indoor/outdoor, urban/suburban,);\n-\tthe QoS requirements, e.g. accuracy;\n-\tthe capabilities of the UEs involved;\n-\tthe energy constraints for the devices;\n-\tpreference on certain positioning methods, e.g. RAT-dependent or RAT-independent methods;\n-\tLCS service level (in case of IIOT vertical);\n-\tpriorities of location methods;\n-\twhether location augmentation is required;\n-\twhether location prediction is required;\n-\twhether sidelink positioning assistance is required;\n-\twhether proximity-based location estimate is required;\n-\twhether location verification is required.\nAn example Location profile can be shown in Table 7.5.1.1-1 below.\nTable 7.5.1.1-1: Exemplary location profile attributes\n\nWithout this solution, app server needs to consolidate all measurements and interact with different systems to get the required location. The profiling helps the optimization of the process based on the environment, UE context, etc., per profile checking/monitoring. Also, the configuration of combined positioning methods to meet the LCS requirements, done with minimum exposure to the 3rd party/customer.\nThe procedure includes the translation of the vertical request to a Location profile and the procedures with the involved entities to derive the requested location report. The fused location function/client may also fetch location reports in an iterative manner based on method priorities, to ensure that the vertical requirement is met, with the minimum signaling/complexity.\nFigure 7.5.1.2-1 illustrates a solution for the location profiling for supporting fused location exposure.\nPre-conditions:\n1.\tThe VAL server has registered to receive fused location function services.\n\nThe figure depicts a location profiling system for fused location derivation and exposure, illustrating the process of determining the location of a device based on its location profile. The system uses a combination of location-based and exposure-based techniques to achieve accurate location determination.\nFigure 7.5.1.2-1: Location profiling for fused location derivation and exposure\n1.\tThe Fused Location Function(FLF) which is part of the Location Management Server(LMS) configures a set of location service profiles, where each location service profile includes metrics like the positioning method, QoS parameters, location service producers involved, environment/ area type, etc.\nNOTE 1:\tHow the profiling attributes are selected/configured is up to implementation.\n2.\tThe LMS receives a location request from a fused location service consumer (VAL server), where this request may include a VAL server ID, location QoS requirements (accuracy, response time,..), location granularity (coordinates, cell-level, civic addresses, topological location), vertical specific support information (planned route, road maps,...), time validity for the requirement, area of validity, event triggering criteria (under which criteria the location report needs to be sent), etc.\n3.\tThe fused location enabler function within the LMS determines a mapping of the fused location service consumer (VAL server) to a location service profile based on the location request and the information provided within the request.\n4.\tThe FLF within the LMS informs to the Location Management Client (LMC) optionally the involved 3gpp functions and the configuration of the mapping of the application to a Location profile. This may include the report configuration per Location profile (thresholds for event triggering, periodicity of reporting, format of reporting, minimum time between consecutive reports) as well as the priority of positioning methods and location report granularity (coordinates, cell-level, civic addresses, topological location).\nNOTE 2:\tThe FLF does not directly communicate with the LMC but through the LMS, and the LMS will coordinate with FLF internally when received LMC requests\n5a. The FLF within the LMS requests from the LMC a local fused location estimate of the target VAL UE or for the UEs within the application in close vicinity.\n5b. The LMC responds to the FLF a local fused location estimate based on the request.\n6.\tThe FLF within the LMS performs a location request to one or more of the following (based on the Location profile):\n-\tto GMLC directly or via NEF (see TS 23.273), acting as AF. The LCS service request is sent to GMLC or AMF, via NEF using the service-based interface or CAPIF API; or directly to GMLC if allowed to (e.g. fused location function is within the MNO trust domain).\n-\tto 3rd party location servers as described in KI#1.\n7.\tThe FLF within the LMS calculates the fused location estimated based on combining location reports from previous steps, and may also perform additional processing e.g. for location augmentation, and verification based on the Location profile. Then, it checks whether the estimate fulfills the Location profile requirement (based on QoS parameters such as accuracy, response time).\n8-9.\tIf the requirement is not fulfilled, the FLF within the  LMS iteratively requests further location information and re-checks whether the requirement is met or not.\n10.\tThe LMS sends the fused location report to the VAL server.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.5.1.1-1: Exemplary location profile attributes",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.5.2\tSolution evaluation",
+                            "text_content": "This solution is based on the architecture proposed in  solution 8 of KI#1 and discusses the creation of location profiles at FLF within the LMS, and the mapping of location profiles to one or more vertical applications.The Fused Location Function (FLF) which is part of the Location Management Server(LMS) could enable the translation/mapping of the vertical request to a location profile, derive the requested location report, and then fetch the aggregated/fused location data from more data sources (such as GMLC, 3rd party location servers, and etc.) in an iterative manner to ensure that the vertical requirement is met and send the final fused location report to the VAL server at last.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.6\tSolution #6: Location service configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.6.1\tSolution description",
+                            "text_content": "This solution addresses key issue #5: Initialization and configuration for fused location service.\nThe high-level service flow for fused location service configuration is illustrated in figure 7.6.1.1-1. This service flow is based on the fused location architecture of KI#1.\n\nThe figure depicts a service flow for a fused location service configuration, illustrating the steps involved in configuring the service. The flow includes the following steps: \n\n1. Service request is received.\n2. The service request is processed by the location service.\n3. The location service sends a location request to the location server.\n4. The location server processes the location request and sends a location response to the location service.\n5. The location service sends a location request to the location server.\n6. The location server processes the location request and sends a location response to the location service.\n7. The location service sends a location request to the location server.\n8. The location server processes the location request and sends a location response to the location service.\n9. The location service sends a location request to the location server.\n10. The location server processes the location request and sends a location response to the location service.\n11. The location service sends a location request to the location server.\n12. The location server processes the location request and sends a location response to the location service.\n13. The location service sends a location request to the location server.\n14. The location server processes the location\nFigure 7.6.1.1-1: Service flow for fused location service configuration\n1.\tThe location service is initiated at the Fused Location Function(FLF) within Location Management Server(LMS). This can be triggered by an application through e.g. a service request or triggered by an event, by which the location service requirements for a target UE are identified.\n2.\tThe LMS enhanced with FLF may query the location capability of the target UE, e.g. the location system or location service, or location methods supported by the UE. The FLF may need to decide the location source from which to receive location information based on the location service requirements as well as the target UE's location capability.\nThe LMS enhanced with FLF may configure location report parameters (such as thresholds for event triggering, periodicity of reporting, format of reporting, minimum time between consecutive reports, etc.) and send to the location management client of the target UE.\n3a.\tThe LMS enhanced with FLF may invoke the LCS service e.g. 5GC-MT-LR Procedure (as defined in 3GPP TS 23.273 [4]) including location report configuration by acting as AF or LCS client.\n3b.\tThe LMS enhanced with FLF may invoke the SUPL service from the 3rd party location server ,e.g. network initiated flows (as defined in OMA AD SUPL [10]) including location report configuration by acting as the SUPL agent.\nNOTE: The interaction between LMS and OMA is up to the implementation and out of 3GPP scope.\n3c. If the LMS enhanced with FLF decides to receive location from the 3rd party location system, the LMS enhanced with FLF configures the location service with the 3rd party location server to establish the secured data connection and session for location reports, and to support the location system configuration tailored for the location service requirements.\n3d. The LMS enhanced with FLF interacts with the location management client of the target UE to provide the location service configurations including information about the fused location configuration.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.6.2\tSolution evaluation",
+                            "text_content": "This solution is based on the architecture proposed in solution 8 of KI#1. The Fused Location Function (FLF) which is part of Location Management Server (LMS) can acquire different location information from multiple resources. For example, from 3GPP access (LCS location retrieved from either NEF or GMLC, etc.), non-3GPP access (target UE location retrieved via LM-UU), or the 3rd party location server (SUPL location retrieved from SLP, etc.) to provide an accurate UE location. Besides, the FLF used as an additional source of the LMS can configure the location service with the 3rd party location server and communicate with the location management client of the target UE to provide the location service configurations.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.7\tSolution #7: Location QoS based location sources and positioning methods selection",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.7.1\tSolution description",
+                            "text_content": "This solution addresses key issue #2: Support of LCS QoS.\nThe Fused Location Function firstly needs to produce the fused location data from multiple sources based on the  requested location QoS (e.g. the requirements of the positioning accuracy, reliability and latency). Based on the requested location QoS, the FLF needs to select one or more access types, one or more location methods (as described in TS 29.572 [14] ) and related CP/UP(SUPL) methods based on the requested location QoS (not exhausted):\n-\t2G/3G/4G/5G/NR satellite access\n-\tNon-3GPP access connected to 5GC\n-\tGNSS (e.g. GPS, Galilieo, BeiDou etc.)\n-\tBarometric Pressure\n-\tWLAN\n-\tBluetooth\n-\tTerrestrial Beacon System (TBS) positioning based on MBS signals\n-\tMotion Sensor\n-\tRFID\n-\tRadio finger-print\n-\tCell ID\n-\tECID\n-\tOTDOA\n-\tDL_TDOA\n-\tDL_AOD\n-\tMulti-RTT\n-\tNR_ECID\n-\tUL_TDOA\n-\tUL_AOA\n-\tUltra Wide Band (UWB)\n-\tFingerprint\n\n\nThe figure depicts a network layout with various sources and positioning methods, including 7.1.1, 7.1.2, and 7.1.3, which are used to determine the optimal location for sources and positioning methods.\nFigure 7.7.1.1-1: location sources and positioning methods selection\n1.\tThe application-specific server sends a location request to the Location Management Server(LMS) enhanced with Fused Location Function(FLF)  to request the location information of the target Location Management Client(LMC) (e.g. UE Identity, location QoS, etc). The location QoS can include the location accuracy, reliability and latency,etc. as described in clause 4.1b of TS23.273[4].\n2.\tThe LMS enhanced with FLF queries the UE location context (e.g. in the internal database) with the location QoS to retrieve the available access type, positioning methods as described in TS 29.572 [14] for the targetLMC.\n3.\tThe LMS enhanced with FLF selects the available access type (i.e. different location sources) and positioning methods to get the UE location information from these available access types.\nNOTE:\tThe FLF does not directly communicate with the LMC but through the LMS, and the LMS will coordinate with FLF internally when received LMC requests.\n4.\tThe LMS enhanced with FLF fuses the UE location information from different sources to get a fused UE location that meets the location QoS requirements.\n5.\tThe LMS enhanced with  FLF provides the fused UE location that meets the location QoS requirements to the application-specific server.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.7.2\tSolution evaluation",
+                            "text_content": "This solution is based on the architecture proposed in  Solution 8 of KI#1. Compared to existing On-demand usage of location information in SEAL LM (TS 23.434[13], clause 9.3.9), the FLF which is part of LMS can aggregate/fuse location data from more data sources so that more accurate location can be reported. Different location source can provide location information with different location QoS, the FLF takes the different advantages of these different location sources and decides to select which location sources based on the required location QoS and fuses the location information from the selected location sources to produce the final location information to meet the location QoS.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.8\tSolution #8: Architecture for fused location service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.8.1\tSolution description",
+                            "text_content": "This solution addresses key issue #1: Architecture enhancement of application enablement for location.\nFigure 7.8.1.1-1 identifies the architecture of fused location service.\n\nThe given telecommunication figure, labeled as \"Figure 7.8.1 .1-1: Functional architecture of fused location service,\" depicts a detailed functional architecture of a fused location service. The figure illustrates the various components and their interconnections, including the location server, location database, location service, and location application. The architecture is designed to provide a unified location service, enabling seamless integration of location-based services across different applications and devices.\nFigure 7.8.1.1-1: Functional architecture of fused location service\nThe architecture is composed of logical function modules that are not necessarily physical entities and can reside in or co-locate with existing application layer entities as appropriate.\nIn the architecture, the Fused Location Function (FLF) is part of the Location Management Server (LMS), and the LMS and Application Specific Server can be within the MNO domain or third-party service provider domain.\nThe FLF fuses different location information from multiple resources and provides a better location service/information to the Application Specific Server via the LMS northbound API.\nThe FLF supports multiple possible sources of location information including:\n-\tLCS location retrieved from SEAL LMS internally as defined in 3GPP TS 23.434 [13];\n-\tRetrieve the target UE positioning from 3rd party location server, e.g. the SLP (as defined in OMA AD SUPL [10]) of SUPL network;\n-\tRetrieve the target UE Positioning via the LM-UU interface over non-3GPP access.\n-\tRetrieve target UE location information via the LM-UU interface relating to a UE's other PLMN connection(s), if supported by the UE.\nThe FLF provides location information of the target UE based on positioning or location data retrieved from one or multiple location sources. The FLFcan get the location information from the target UE, the SEAL LMS and the 3rd party location server. The FLFselects one or more location sources and one or more location methods based on the requested location QoS. The FLFprovides a normalized description of location data to the application-specific server (e.g. of ecosystem partners) through the northbound API LM-S.\nThe Location Management Client(LMC) is the SEAL Location Management Client as defined in 3GPP TS 23.434 [13] enhanced with new functions which could- represent the client of the target UE providing the UE-based positioning and location-related information (e.g. the WiFi SSID list for WiFi SSID fingerprint based UE positioning) and providing the UE location information to the FLF within the LMSvia an IP connection through LM-UU interface over non-3GPP access.\nNOTE 1:\tHow does the LMC get its UE location related information is out of the scope of 3GPP.\nThe LMS is the SEAL Location Management Server enhanced with FLF. The SEAL Location Management Server is a functional entity that receives and stores user location information and provides user location information as defined in 3GPP TS 23.434 [13]. The LMS acquires location information from one or more sources including:\n-\tthe NEF (as defined in 3GPP TS 23.501 [5] and 3GPP TS 23.273 [4]) via N33 reference point;\n-\tthe GMLC (as defined in 3GPP TS 23.273 [4]) via Le reference point which is not defined in 3GPP TS 23.434[13];\n-\tthe SEAL location management client as defined in 3GPP TS 23.434[13].\nThe 3rd Party Location Server provides the location of certain location technology (typically the network-based positioning).\nThe interfaces are described as following:\nLM-UU:\tReference point as defined in 3GPP TS 23.434 [13].\tThe Reference point is enhanced to support location reporting, location determination, location management, and exchange of location contextual information (e.g. UE ID, location capabilities of the target UE, the available positioning methods supported by the target UE, such as the WiFi SSID list for WiFi SSID fingerprint based UE positioning) between the FLF of the LMS and the LMC of the target UE.\nLM-3P:\tThe reference point is used for location retrieval of the target UE from that 3rd party location server. The LM-3P can be a service-based interface that may support HTTP or WebSocket.\nNOTE 2:\tThe LM-3P is assumed to be based on the well defined protocols in location related services and the definition of LM-3P is out of scope of this specification.\nNnef/N33:\tService-based interface as defined in 3GPP TS 23.501 [5].\nLe:\tReference point as defined in 3GPP TS23.271 [3].\nLM-S:\t\tReference point as defined in 3GPP TS 23.434 [13].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.8.2\tSolution evaluation",
+                            "text_content": "With this architecture, the FLF can fuse additional UE location sources to determine a better UE location. The FLF can retrieve UE location from the LMC via LM-UU interface over non-3GPP access and the 3rd party server via LM-3P interface. However, how the FLF gets or retrieves the UE location from the 3rd party is out of scope of 3GPP. The FLF can be used as an additional source for location information to enhance the LMS.\nIn this architecture, the SEAL LMS is enhanced with FLF and supports the enhanced LM-UU interface over non-3GPP access, and LM-3P interface. The LM-3P interface is out of scope of 3GPP. The LMC is enhanced to provide UE location information to FLF via LM-UU interface over non-3GPP access.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "8\tOverall evaluation",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following clauses contain an overall evaluation of the solutions presented in this technical report, including their applicability to the identified key issues and possible dependencies to other groups.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.2\tArchitecture enhancements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The solution #1 proposes a standalone functional architecture for fused location service, including the functional architecture, functional components, reference points and the merged architecture to support interaction between FLS and SEAL LMS.\nThe solution #8 proposes an enhanced architecture for application enablement for location, including the fused functional architecture, functional components and reference points, etc.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.3\tSolution evaluations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.3.1\tGeneral",
+                            "text_content": "All the key issues and solutions specified in this technical report are listed in Table 8.3.1-1. This table includes the mapping of the key issues to the solutions, and possible dependencies to other groups.\nTable 8.3.1-1 Key issues and solutions\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.3.1-1 Key issues and solutions",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.3.2\tOverall evaluation of key issue#1",
+                            "text_content": "The KI#1 mainly studies whether and how the SEAL location-related architecture enhancement or new architecture model is needed based on evaluations of existing location management architectures, functional entities, and capabilities with the following aspects:\n-\tFunctional entity(ies) supporting the combined use and fusion of different location technologies at the application layer;\n-\tArchitecture enhancement addressing the consideration of flexibility, scalability,  and reliability;\n-\tSupport for high-accuracy positioning based on LCS and 5G network exposure;\n-\tArchitecture aspects that make sure UE provided the location is not spoofed;\n-\tArchitecture aspects that comply with local, national, and regional location privacy requirements.\nTo address the open issues aforementioned, there are four solutions proposed as follows:\nSolution #1 introduces a new Fused Location Server(FLS) which supports multiple possible sources of location information and proposes a merged architecture to support interaction between FLS and SEAL LMS. The solution indicated FLS is the primary contact for location information queries. The SEAL LMS only gets the location information for the target UE via the 3GPP defined accesses and provides the location information to the FLS. Additionally, the FLS gets the location information via the non-3GPP defined accesses. Based on the merged architecture, the SEAL LMS needs to upgrade to support Le interface. And this solution add the complexity for location information queries and has no benefit compared to Solution#8.\nSolution #2 defines in different deployment how to fuse the location information from different sources via different interfaces and the possible architecture models based on the same architecture in Solution#8.\nSolution #3 proposes a functional architecture of fused location service leveraging SEAL location management. In the architecture, the SEAL Location Management Server (LMS) interacts with the Fused Location Function (FLF) for a fusion of different location technologies. And the FLF can be deployed to reside outside of SEAL LMS or to be within SEAL LMS. However, this solution is incomplete(including 6 Editor’s Notes) and does not clarify how loop communication between LMS and FLF can be prevented.\nSolution #8 proposes an enhanced architecture for SEAL LMS. In this architecture, the SEAL LMS is enhanced with FLF, which is part of the LMS, and supports the enhanced LM-UU interface over non-3GPP access, and the LM-3P interface to interact with 3rd party location server. The LM-3P interface is out of the scope of 3GPP.\nBased on the agreement, achitecture enhancements from solution #8 can be used for the baseline architecture in the normative phase, and the feature interaction between Location Management Client and Location Management Server will be addressed in normative work. And solution 2 will act as supplement for the the baseline architecture.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.3.3\tOverall evaluation of key issue#2",
+                            "text_content": "The KI#2 mainly studies the following open issues:\n-\tHow to support invocation of LCS service (as defined by SA2) with a required LCS QoS, including how and when the LCS QoS attributes are specified in an application scenario, and how to potentially use the LCS QoS attributes differently for different vertical scenarios;\n-\tHow to support the identification of an appropriate LCS QoS requirement between all interested parties.;\n-\tHow to potentially retrieve the continuity and consistency of LCS QoS for the vertical applications;\n-\tHow to potentially support the negotiation of required LCS QoS that is application driven.\nSolution #7 addresses KI#2 and is based on the architecture proposed in Solution#8. In Solution#7, as different location sources can provide different location information with different location QoS, the Fused Location Function (FLF) takes the advantages of these different location sources and decides to select which location sources based on the required location QoS and fuses the location information from the selected location sources to generate the final location information to meet the requested location QoS.\nSolution #7 can be considered in the normative work.The feature interaction between Location Management Server and VAL server, and detailed APIs and information flows can be discussed/addressed in the normative phase.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.3.4\tOverall evaluation of key issue#3",
+                            "text_content": "The open issue for KI#3 includes:\n-\tThe possible dimensions to distinguish location service in the application enabler layer and how to enable the location service differentiation.\nSolution #5 addresses KI#3 and introduces the creation of location profiles at a fused location service at the application enablement layer and the mapping of location profiles to one or more vertical applications. In Solution#5, the Fused Location Function (FLF) which is part of the Location Management Server(LMS) could enable the translation/mapping of the vertical request to a location profile, derive the requested location report, and then fetch the aggregated/fused location data from more data sources in an iterative manner to ensure that the vertical requirement is met and send the final fused location report to the VAL server at last.\nSolution #5 can be considered in the normative work, the detailed list of location profiles, APIs and information flows can be discussed in the normative phase.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.3.5\tOverall evaluation of key issue#4",
+                            "text_content": "Void\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.3.6\tOverall evaluation of key issue#5",
+                            "text_content": "The open issue for KI#5 includes:\n-\tHow to initiate and start the fused location service for a target UE in different scenarios, environments, network conditions, types of service, etc.\n-\tHow to initiate and start the fused location service such that the location capabilities of target UE and the application layer location service can be coordinated.\n-\tWhat configurations are needed for the initialization of fused location service and how.\n-\tWhat application layer sessions are established for the fused location service and how.\nThere are two solutions that address the above open issues for KI#5.\nSolution #4 defines the procedure for fused location service registration from Location Management Client (LMC) to Location Management Server (LMS). The LMC can provide its UE IDs and the location capabilities of the available non-3GPP defined accesses to the Fused Location Function (FLF) which is part of LMS through the LM-UU interface over non-3GPP access, and the FLF can generate and store this information as the UE location context, and also can use these UE location contexts in the service flow (such as the one depicted in Figure 7.6.1.1-1) for fused location service.\nSolution #6 describes the high-level service flow for fused location service configuration. The location service is initiated at the LMS and triggered by an application. The FLF in the LMS may query the location management client of the target UE, and invoke the location service and/or SUPL service with 5GC, and/or the 3rd party location server, etc.\nSolution #4 covers open issues#1 and #2 of KI#3, and Solution#6 covers open issues#3 and #4 of KI#3. Both solutions can be considered in the normative work. The feature interaction between Location Management Client and Location Management Server for Sol#4 and the feature interaction between Location Management Server and VAL server for Sol#6, the detailed APIs and information flows can be discussed/addressed in the normative phase.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.3.7\tOverall evaluation of key issue#6",
+                            "text_content": "There is no solution for KI#6. However, the importance and necessity of KI#6 have been recognized and documented. As the amount of addressed aspects/features for valued-added location service (such as Location Event Trigger provision, invoke, revoke; Real time location information Pushing; Location Alerting and so on) is huge, the study time for KI#6 in Rel18 is limited, and its realization is independent of the current architecture, the KI#6 is proposed to be investigated in future release.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "9\tConclusions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "9.1\tGeneral conclusions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This technical report fulfils the objectives of the study on 5G-enabled fused location service capability exposure.\nThe report includes the following:\n1.\tDefinition of terms and abbreviations used in the study (clause 3);\n2.\tKey issues identified by the study (clause 5);\n3.\tEnhancements to Service Enabler Architecture Layer for Verticals (SEAL) specified in 3GPP TS 23.434, corresponding to the key issues and architectural assumptions and requirements (clause 4);\n4.\tIndividual solutions addressing the key issues (clause 7);\n5.\tOverall evaluations of all the solutions (clause 8).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "9.2\tConclusions for normative work",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.2.1\tGeneral conclusions",
+                            "text_content": "The study concludes with the following general considerations for the normative work:\n1.\tDefinition of terms and abbreviations captured in clause 3 will be reused;\n2.\tArchitectural requirements identified in clause 4 will be used for updated baseline architectural requirements.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.2.2\tArchitecture enhancement conlusions",
+                            "text_content": "The study concludes with the following architectural enhancements considerations for the normative work:\n1.\tArchitecture enhancements from solution #8 as specified in clause 7.8 will be used for updating the baseline location management server specified in 3GPP TS 23.434:\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.2.3\tSolution conclusions",
+                            "text_content": "The study concludes with the following solution considerations for the normative work:\n1.\tFollowing individual solutions, corresponding to the key issues, will be considered as candidate solutions:\n1)\tFor key issue#1 (Architecture enhancement of application enablement for location)\nThe solution#8 will be considered in the normative phase and used as baseline enhanced architecture for 5G-enabled fused location service. The enhanced architecture for SEAL LMS will be specified in TS23.434 to support solution#8.\nThe solution#2 will be considered in the normative phase and act as supplement for solution#8.\nThe enhanced architecture for SEAL LMS will be specified in TS23.434 to support solution#2.\n\n2)\tFor key issue #2 (Support of LCS QoS)\nThe solution#7 will be considered in the normative phase. The function and procedure will be specified in TS23.434 to support solution#7.\nThe detailed APIs and information flows can be discussed in the normative phase.\n\n3)\tFor key issue#3 (Location service differentiation)\nThe solution#5 will be considered in the normative phase. The function and procedure will be specified in TS23.434 to support solution#5.\nThe detailed APIs and information flows can be discussed in the normative phase.\n\n4)\tFor key issue#4(Void)\nVoid\n\n5)\tFor key issue#5(Initialization and configuration for fused location service)\nThe solution#4 and solution#6 will be considered in the normative phase. The function and procedure will be specified in TS23.434 to support solution#4 and solution#6.\nThe detailed APIs and information flows can be discussed in the normative phase.\n\n6)\tFor key issue#6(Value-Added Location Services)\nTo be studied in future release.\n\n2.\tIndividual solutions, not listed under bullet 1 may be adopted in technical specification with appropriate enhancements.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1174 @@
+{
+    "document_name": "29580-i40.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the stage 3 protocol and data model for the Nmbsf Service Based Interface. It provides stage 3 protocol definitions and message flows, and specifies the API for each service offered by the MBSF.\nThe 5G System stage 2 architecture and procedures are specified in 3GPP TS 23.501 [2] and 3GPP TS 23.502 [3]. The stage 2 architecture and procedures for 5G Multicast/Broadcast Services are specified in 3GPP TS 23.247 [14] and 3GPP TS 26.502 [15].\nThe Technical Realization of the Service Based Architecture and the Principles and Guidelines for Services Definition are specified in 3GPP TS 29.500 [4] and 3GPP TS 29.501 [5].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[3]\t3GPP TS 23.502: \"Procedures for the 5G System; Stage 2\".\n[4]\t3GPP TS 29.500: \"5G System; Technical Realization of Service Based Architecture; Stage 3\".\n[5]\t3GPP TS 29.501: \"5G System; Principles and Guidelines for Services Definition; Stage 3\".\n[6]\tOpenAPI: \"OpenAPI Specification Version 3.0.0\", .\n[7]\t3GPP TR 21.900: \"Technical Specification Group working methods\".\n[8]\t3GPP TS 33.501: \"Security architecture and procedures for 5G system\".\n[9]\tIETF RFC 6749: \"The OAuth 2.0 Authorization Framework\".\n[10]\t3GPP TS 29.510: \"5G System; Network Function Repository Services; Stage 3\".\n[11]\tIETF RFC 9113: \"HTTP/2\".\n[12]\tIETF RFC 8259: \"The JavaScript Object Notation (JSON) Data Interchange Format\".\n[13]\tIETF RFC 9457: \"Problem Details for HTTP APIs\".\n[14]\t3GPP TS 23.247: \"Architectural enhancements for 5G multicast-broadcast services; Stage 2\".\n[15]\t3GPP TS 26.502: \"5G Multicast-Broadcast User Service Architecture\".\n[16]\t3GPP TS 29.554: \"5G System; Background Data Transfer Policy Control Service; Stage 3\".\n[17]\t3GPP TS 29.571: \"5G System; Common Data Types for Service Based Interfaces; Stage 3\".\n[18]\t3GPP TS 29.122: \"T8 reference point for northbound Application Programming Interfaces (APIs)\".\n[19]\tOMA: \"OMNA BCAST Service Class Registry\", .\n[20]\t3GPP TS 29.581: \"5G System; Multicast/Broadcast Service Transport Services; Stage 3\".\n[21]\tIANA: \"Reliable Multicast Transport (RMT) FEC Encoding IDs and FEC Instance IDs\", https://www.iana.org/assignments/rmt-fec-parameters/rmt-fec-parameters.xhtml#rmt-fec-parameters-1\n[22]\tIETF RFC 7396: \"JSON Merge Patch\".\n[23]\t3GPP TS 26.517: \"5G Multicast-Broadcast User Services; Protocols and Formats\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nFor the purpose of the present document, the terms and definitions given in clause 3 of 3GPP TS 23.247 [14] and clause 3 of 3GPP TS 26.502 [15] also apply, including the ones referencing other specifications.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nFEC\tForward Erasure Correction\nMBS\tMulticast/Broadcast Service.\nMBSF\tMulticast/Broadcast Service Function\nMBSTF\tMulticast/Broadcast Service Transport Function\nTMGI\tTemporary Mobile Group Identity\nURI\tUniform Resource Identifier\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tOverview",
+            "description": "In the frame of Multicast/Broadcast Services (MBS), the Multicast/Broadcast Service Function (MBSF) provides services to NF service consumers (e.g. AF, NEF) via the Nmbsf service based interface. The MBSF supports for this purpose the functionalities defined in 3GPP TS 26.502 [15] and 3GPP TS 23.247 [14], i.e. service level functionalities to support MBS and the control of the MBSTF, when used.\nFigures°4-1 and 4.2 depict the Multicast/Broadcast related reference architecture of the MBSF respectively in SBI representation and reference point representation.\nThe figure depicts a reference model for the MBSF Services, specifically the SBI representation, which is a key component in the 5G network. It illustrates the various services and their respective roles, such as the base station (gNB), user equipment (UE), and scatterers. The figure highlights the importance of beamforming techniques to mitigate interference and ensure reliable communication.\nFigure 4-1: Reference model for the MBSF Services – SBI representation\nThe figure depicts a reference model for the MBSF services, illustrating the reference point representation. It shows the various components and their interconnections, including the MBSF services, the reference point, and the reference point representation. The figure is essential for understanding the MBSF services and their interconnections, as well as for designing and implementing MBSF services.\nFigure 4-2: Reference Model for the MBSF Services – Reference point representation\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tServices offered by the MBSF",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The MBSF provides the following services:\n-\tNmbsf_MBSUserService\n-\tNmbsf_MBSUserDataIngestSession\nTable 5.1-1 summarizes the corresponding APIs defined for this specification.\nTable 5.1-1: API Descriptions\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 5.1-1: API Descriptions",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tNmbsf_MBSUserService Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tService Description",
+                            "text_content": "The Nmbsf_MBSUserService service exposed by the MBSF enables an NF service consumer to:\n-\trequest the creation of a new MBS User Service;\n-\tretrieve the properties of an existing MBS User Service;\n-\trequest the update/modification of the properties of an existing MBS User Service; and\n-\trequest the deletion of an existing MBS User Service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tService Operations",
+                            "text_content": "The service operations defined for the Nmbsf_MBSUserService service are shown in table 5.2.2.1-1.\nTable 5.2.2.1-1: Nmbsf_MBSUserService Service Operations\n\nThis service operation is used by an NF service consumer to request the creation of a new MBS User Service at the MBSF.\nThe following procedures are supported by the \"Nmbsf_MBSUserServie_Create\" service operation:\n-\tMBS User Service Creation.\nFigure 5.2.2.2.2-1 depicts a scenario where an NF service consumer requests the creation of a new MBS User Service at the MBSF.\nThe figure depicts the user service creation procedure for MBS (Mobile Backhaul Service) in a 5G network. It illustrates the steps involved in creating a user service, including the selection of a service type, the selection of a service provider, and the configuration of the service. The figure also includes a flowchart to guide the user through the process.\nFigure 5.2.2.2.2-1: MBS User Service Creation procedure\n1.\tIn order to request the creation of a new MBS User Service, the NF service consumer (e.g. AF, NEF) shall send an HTTP POST request message to the MBSF targeting the \"MBS User Services\" collection resource, with the request body containing the MBSUserService data structure which shall include:\n-\ta list of external service identifier(s), within the \"extServiceIds\" attribute;\n-\tthe service type, within the the \"servType\" attribute;\n-\tthe service class, within the \"servClass\" attribute;\n-\tthe supported MBS User Service Announcement mode(s), within the \"servAnnModes\" attribute;\n-\tone or several set(s) of per language service name and/or service description, within the \"servNameDescs\" attribute; and\n-\tthe list of supported features, if feature negotiation needs to take place, within the \"suppFeat\" attribute;\nand may include:\n-\tthe main service language, within the \"mainServLang\" attribute.\n2.\tUpon success, the MBSF shall create a new \"Individual MBS User Service\" resource and respond to the NF service consumer with a \"201 Created\" status code, including an HTTP Location header field containing the URI of the created resource, and the response body containing a representation of the created \"Individual MBS User Service\" resource within the MBSUserService data structure.\nOn failure, the MBSF shall take proper error handling actions, as specified in clause 6.1.7, and respond to the NF service consumer with an appropriate error status code.\nThis service operation is used by an NF service consumer to retrieve the properties of an existing MBS User Service at the MBSF.\nThe following procedures are supported by the \"Nmbsf_MBSUserServie_Retrieve\" service operation:\n-\tMBS User Service Retrieval.\nFigure 5.2.2.3.2-1 depicts a scenario where an NF service consumer requests the retrieval of the properties of an existing \"Individual MBS User Service\" resource from the MBSF.\nThe figure depicts the user service retrieval procedure for MBS (Mobile Backhaul Service) users, illustrating the steps involved in retrieving user services from the MBS. The figure includes a flowchart with arrows indicating the sequence of actions, such as selecting the desired user service, initiating the service request, and receiving the response. The figure also includes a legend to explain the different colors and symbols used in the flowchart.\nFigure 5.2.2.3.2-1: MBS User Service Retrieval procedure\n1.\tIn order to retrieve the properties of an existing MBS User Service, the NF service consumer (e.g. AF, NEF) shall send an HTTP GET request message targeting the corresponding \"Individual MBS User Service\" resource, using the URI \"{apiRoot}/nmbsf-mbs-us/<apiVersion>/mbs-user-services/{mbsUserServId}\", as shown in step 1 of figure 5.2.2.3.2-1.\nIf the MBSF determines that the received HTTP GET request needs to be redirected, the MBSF shall respond with an HTTP redirect response, as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\n2.\tUpon success, the MBSF shall respond to the NF service consumer with an HTTP \"200 OK\" status code with the response body containing a representation of the requested \"Individual MBS User Service\" resource within the MBSUserService data structure.\nOn failure, the MBSF shall take proper error handling actions, as specified in clause 6.1.7, and respond to the NF service consumer with an appropriate error status code.\nThis service operation is used by an NF service consumer to request the update or modification of an existing MBS User Service at the MBSF.\nThe following procedures are supported by the \"Nmbsf_MBSUserServie_Update\" service operation:\n-\tMBS User Service Update.\nFigure 5.2.2.4.2-1 depicts a scenario where an NF service consumer requests the update of an existing \"Individual MBS User Service\" resource at the MBSF.\nThe figure depicts the user service update procedure for MBS (Mobile Backhaul Service) users, illustrating the steps involved in updating the service. The figure includes a flowchart with arrows indicating the sequence of actions, and a list of steps, which are crucial for ensuring a smooth and efficient update process.\nFigure 5.2.2.4.2-1: MBS User Service Update procedure\n1.\tIn order to request the update or modification of an existing MBS User Service, the NF service consumer (e.g. AF, NEF) shall send an HTTP PUT or PATCH request message targeting the corresponding \"Individual MBS User Service\" resource, with the request body containing the MBSUserService data structure (when HTTP PUT is used) or the MBSUserServicePatch data structure (when HTTP PATCH is used). Only the \"servType\" attribute shall not be updated.\nIf the MBSF determines that the received HTTP PUT or PATCH request message needs to be redirected, the MBSF shall respond with an HTTP redirect response, as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\n2.\tUpon success, the MBSF shall update the concerned \"Individual MBS User Service\" resource and respond to the NF service consumer with either:\na)\tan HTTP \"200 OK\" status code with the response body containing the updated representation of the resource within the MBSUserService data structure; or\nb)\tan HTTP \"204 No Content\" status code.\nOn failure, the MBSF shall take proper error handling actions, as specified in clause 6.1.7, and respond to the NF service consumer with an appropriate error status code.\nThis service operation is used by the NF service consumer to request the deletion of an existing MBS User Service at the MBSF.\nThe following procedures are supported by the \"Nmbsf_MBSUserServie_Delete\" service operation:\n-\tMBS User Service Deletion.\nFigure 5.2.2.5.2-1 depicts a scenario where an NF service consumer requests the deletion of an existing \"Individual MBS User Service\" resource at the MBSF.\nThe figure depicts a user service deletion procedure for a MBS (Multi-Bank Switching Center) user. The MBS is responsible for managing the switching and routing of voice and data traffic between different banks. The figure shows the steps involved in deleting a user service, including the deletion of the user's account, the removal of the user's service, and the removal of the user's associated network. The figure is important for understanding the process of managing user services in a MBS environment.\nFigure 5.2.2.5.2-1: MBS User Service Deletion procedure\n1.\tIn order to request the deletion of an existing MBS User Service, the NF service consumer (e.g. AF, NEF) shall send an HTTP DELETE request message targeting the corresponding \"Individual MBS User Service\" resource.\nIf the MBSF determines that the received HTTP DELETE request needs to be redirected, the MBSF shall respond with an HTTP redirect response, as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\n2.\tUpon success, the MBSF shall:\n-\tdelete the targeted \"Individual MBS User Service\" resource; and\n-\trespond to the NF service consumer with an HTTP \"204 No Content\" status code.\nOn failure, the MBSF shall take proper error handling actions, as specified in clause 6.1.7, and respond to the NF service consumer with an appropriate error status code.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.2.1-1: Nmbsf_MBSUserService Service Operations",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tNmbsf_MBSUserDataIngestSession Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tService Description",
+                            "text_content": "The Nmbsf_MBSUserDataIngestSession service exposed by the MBSF enables an NF service consumer to:\n-\tcreate an MBS User Data Ingest Session, including a set of subordinate MBS Distribution Session(s);\n-\tretrieve the properties of an existing MBS User Data Ingest Session;\n-\tupdate an existing MBS User Data Ingest Session and its set of subordinate MBS Distribution Session(s);\n-\tdelete an MBS User Data Ingest Session along with its subordinate MBS Distribution Session(s);\n-\tcreate a subscription to monitor event(s) related to the MBS User Data Ingest Session;\n-\tupdate or modify an existing subscription to MBS User Data Ingest Session event(s) monitoring;\n-\tdelete an existing subscription to MBS User Data Ingest Session event(s) monitoring; and\n-\treceive notification(s) about the event(s) related to the MBS User Data Ingest Session.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tService Operations",
+                            "text_content": "The service operations defined for the Nmbsf_MBSUserDataIngestSession service are shown in table 5.3.2.1-1.\nTable 5.3.2.1-1: Nmbsf_MBSUserDataIngestSession Service Operations\n\nThis service operation is used by the NF service consumer to request the creation of an MBS User Data Ingest Session including a set of subordinate MBS Distribution Session(s).\nThe following procedures are supported by the \"Nmbsf_MBSUserDataIngestSession_Create\" service operation:\n-\tMBS User Data Ingest Session Creation.\nFigure 5.3.2.2.2-1 depicts a scenario where an NF service consumer requests the creation of an MBS User Data Ingest Session, including a set of subordinate MBS Distribution Session(s), at the MBSF.\nThe figure depicts a user data ingestion session creation procedure for a MBS (Multi-Building Service) user. It illustrates the steps involved in creating a session, including the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session type, the selection of a session\nFigure 5.3.2.2.2-1: MBS User Data Ingest Session Creation procedure\n1.\tIn order to create a new MBS User Data Ingest Session, including a set of subordinate MBS Distribution Session(s), the NF service consumer (e.g. AF, NEF) shall send an HTTP POST request message targeting the \"Individual MBS User Data Ingest Sessions\" collection resource, with the request body containing the MBSUserDataIngSession data structure that shall include:\n-\tthe identifier of the parent MBS User Service, within the \"mbsUserServId\" attribute;\n-\tone or several MBS Distribution Session(s), within the \"mbsDisSessInfos\" attribute; and\n-\tthe list of supported features, if feature negotiation needs to take place, within the \"suppFeat\" attribute;\nand may include:\n-\tone or several set(s) of period(s) of time during which the MBS User Data Ingest Session is active in the MBS System, within the \"actPeriods\" attribute.\nNOTE:\tAt the end of the last time period provided within the \"actPeriods\" attribute, the MBS User Data Ingest Session is automatically released and deleted by the MBSF.\nWithin the \"mbsDisSessInfos\" attribute, the parameters of each MBS Distribution Session to be created are provided within the MBSDistributionSessionInfo data structure encoding the corresponding map entry, and:\n-\tif no MBS session identifier is provided, i.e. the \"mbsSessionId\" attribute is not present, the MBSF shall later request TMGI allocation as part of the creation of the corresponding MBS session at the MB-SMF; and\n-\tif a source specific multicast address (SSM) is provided within the \"mbsSessionId\" attribute and the \"locationDependent\" attribute is present and set to \"true\" (i.e. to indicate a location dependent MBS service), the MBSF shall also request TMGI allocation as part of the creation of the corresponding MBS session at the MB-SMF.\n2.\tUpon success, the MBSF shall create a new \"Individual MBS User Data Ingest Session\" resource and respond to the NF service consumer with an HTTP \"201 Created\" status code, including an HTTP Location header field containing the URI of the created resource, and the response body containing a representation of the created \"Individual MBS User Data Ingest Session\" resource within the MBSUserDataIngSession data structure.\nOn failure, the MBSF shall take proper error handling actions, as specified in clause 6.2.7, and respond to the NF service consumer with an appropriate error status code.\nThis service operation is used by the NF service consumer to retrieve the properties of an existing MBS User Data Ingest Session.\nThe following procedures are supported by the \"Nmbsf_MBSUserDataIngestSession_Retrieve\" service operation:\n-\tMBS User Data Ingest Session Retrieval.\nFigure 5.3.2.3.2-1 depicts a scenario where an NF service consumer retrieves the properties of an existing \"Individual MBS User Data Ingest Session\" resource from the MBSF.\nThe figure depicts a user data ingestion session retrieval procedure for a mobile base station (MBS) user. It illustrates the steps involved in retrieving user data from the MBS, including the selection of the user, the data ingestion process, and the retrieval of the data. The figure is a visual representation of the process, making it easier to understand and follow.\nFigure 5.3.2.3.2-1: MBS User Data Ingest Session Retrieval procedure\n1.\tIn order to retrieve the properties of an existing MBS User Data Ingest Session, the NF service consumer (e.g. AF, NEF) shall send an HTTP GET request message targeting the corresponding \"Individual MBS User Data Ingest Session\" resource.\nIf the MBSF determines that the received HTTP GET request message needs to be redirected, the MBSF shall respond with an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\n2.\tUpon success, the MBSF shall respond with an HTTP \"200 OK\" status code with the response body containing a representation of the requested \"Individual MBS User Data Ingest Session\" resource within the MBSUserDataIngSession data structure.\nOn failure, the MBSF shall take proper error handling actions, as specified in clause 6.2.7, and respond to the NF service consumer with an appropriate error status code.\nThis service operation is used by the NF service consumer to request the update of an existing MBS User Data Ingest Session and potentially also its set of subordinate MBS Distribution Session(s) at the MBSF.\nThe following procedures are supported by the \"Nmbsf_MBSUserDataIngestSession_Update\" service operation:\n-\tMBS User Data Ingest Session Update.\nFigure 5.3.2.4.2-1 depicts a scenario where an NF service consumer requests the update or modification of an existing \"Individual MBS User Data Ingest Session\" resource at the MBSF.\nThe figure depicts a user data ingestion session update procedure for a MBS (Multi-Building Service) user. The session involves the update of user data, which is essential for maintaining the accuracy and reliability of the MBS service. The figure illustrates the steps involved in the update process, including the selection of the user data, the transmission of the update, and the verification of the update. The figure is crucial for ensuring that the MBS service remains up-to-date and reliable for its users.\nFigure 5.3.2.4.2-1: MBS User Data Ingest Session Update procedure\n1.\tIn order to request the update or modification of an existing MBS User Data Ingest Session and potentially also its set of subordinate MBS Distribution Session(s), the NF service consumer (e.g. AF, NEF) shall send an HTTP PUT or PATCH request message targeting the corresponding \"Individual MBS User Data Ingest Session\" resource, with the request body containing the MBSUserDataIngSession data structure (for an HTTP PUT request) or the MBSUserDataIngSessionPatch data structure (for an HTTP PATCH request).\nThe attributes that may be updated/modified at any time are as follows:\n-\tthe set(s) of active period(s) of the MBS User Data Ingest Session, within the \"actPeriods\" attribute; and\n-\twithin each map entry of the \"mbsDisSessInfos\" attribute encoded using the MBSDistributionSessionInfo data structure (for an HTTP PUT request) or the MBSUserDataIngSessionPatch data structure (for an HTTP PATCH request):\n-\tthe MBS Service Information, within the \"mbsServInfo\" attribute;\n-\tthe MBS Frequency Selection Area (FSA) Identifier, for a broadcast service type, within the \"mbsFSAId\" attribute; and\n-\tthe target service area(s), within the \"tgtServAreas\" attribute.\nThe other attributes, except for the \"mbsSessionId\", the \"mbsDisSessionId\" and the \"locationDependent\" attributes, which shall never be updated after being provisioned, all the other attributes within each map entry of the \"mbsDisSessInfos\" attribute encoded using the MBSDistributionSessionInfo data structure (for an HTTP PUT request) or the MBSUserDataIngSessionPatch data structure (for an HTTP PATCH request) may be updated only if the corresponding MBS Distribution Session is in the \"INACTIVE\" state.\nAs part of an MBS User Data Ingest Session update/modification procedure, the AF may also add new MBS Distribution Session(s) and/or remove existing MBS Distribution Session(s). In order to do so:\n-\tif a new MBS Distribution Session shall be created, the AF shall include its properties encoded using the MBSDistributionSessionInfo data structure as a new map entry within the \"mbsDisSessInfos\" attribute with a newly assigned string-based map key that shall be unique within the scope of the parent MBS User Data Ingest Session; and\n-\tif an existing MBS Distribution Session shall be deleted, the AF shall include the corresponding map entry set to the value \"NULL\" within the \"mbsDisSessInfos\" attribute with the map key set to its string-based map key provisioned during the request that initially created the MBS Distribution Session.\nIf the MBSF determines that the received HTTP PUT or PATCH request needs to be redirected, the MBSF shall respond with an HTTP redirect response, as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\n2.\tUpon success, the MBSF shall respond with either:\na)\tan HTTP \"200 OK\" status code with the response body containing the updated representation of the \"Individual MBS User Data Ingest Session\" resource within the MBSUserDataIngSession data structure; or\nb)\tan HTTP \"204 No Content\" status code.\nOn failure, the MBSF shall take proper error handling actions, as specified in clause 6.2.7, and respond to the NF service consumer with an appropriate error status code.\nThis service operation is used by the NF service consumer to request the deletion of an MBS User Data Ingest Session along with its subordinate MBS Distribution Session(s) at the MBSF.\nThe following procedures are supported by the \"Nmbsf_MBSUserDataIngestSession_Delete\" service operation:\n-\tMBS User Data Ingest Session Deletion.\nFigure 5.3.2.5.2-1 depicts a scenario where an NF service consumer requests the deletion of an existing \"Individual MBS User Data Ingest Session\" resource at the MBSF.\nThe figure depicts a user data ingestion session deletion procedure for a MBS (Multi-Bank Switching Center) user. The session is deleted when the user data is no longer required, and the process involves the deletion of the session log, user data, and any associated metadata. This ensures that the user data is properly managed and does not cause unnecessary storage or network traffic.\nFigure 5.3.2.5.2-1: MBS User Data Ingest Session Deletion procedure\n1.\tIn order to request the deletion of an existing MBS User Data Ingest Session along with its subordinate MBS Distribution Session(s), the NF service consumer (e.g. AF, NEF) shall send an HTTP DELETE request message targeting the corresponding \"Individual MBS User Data Ingest Session\" resource.\nIf the MBSF determines that the received HTTP DELETE request message needs to be redirected, the MBSF shall respond with an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\n2.\tUpon success, the MBSF shall:\n-\tdelete the targeted \"Individual MBS User Data Ingest Session\" resource; and\n-\trespond with an HTTP \"204 No Content\" status code.\nOn failure, the MBSF shall take proper error handling actions, as specified in clause 6.2.7, and respond to the NF service consumer with an appropriate error status code.\nThis service operation is invoked by an NF service consumer to request the creation of a subscription to MBS User Data Ingest Session Status event(s) reporting at the MBSF.\nThe following procedures are supported by the \"Nmbsf_MBSUserDataIngestSession_StatusSubscribe\" service operation:\n-\t MBS User Data Ingest Session Status Subscription Creation.\nFigure 5.3.2.6.2-1 depicts a scenario where an NF service consumer requests the creation of a subscription to MBS User Data Ingest Session Status event(s) reporting at the MBSF.\nThe figure depicts a user data ingestion session in a MBS (Multi-Building Service) user data subscription status, illustrating the creation procedure and the status of the subscription.\nFigure 5.3.2.6.2-1: MBS User Data Ingest Session Status Subscription Creation procedure\n1.\tIn order to request the creation of a new MBS User Data Ingest Session Status Subscription, the NF service consumer shall send an HTTP POST request message targeting the \"MBS User Data Ingest Session Status Subscriptions\" resource, with the request body containing the MBSUserDataIngStatSubsc data structure that shall include:\n-\tthe identifier of the MBS User Data Ingest Session to which the subscription is related, within the \"mbsIngSessionId\" attribute;\n-\tthe list of subscribed MBS User Data Ingest Session Status event(s), within the \"eventSubscs\" attribute; and\n-\tthe URI towards which the notifications should be sent, within the \"notifUri\" attribute.\n2.\tUpon success, the MBSF shall create a new \"Individual MBS User Data Ingest Session Status Subscription\" resource and respond to the NF service consumer with an HTTP \"201 Created\" status code including an HTTP Location header field containing the URI of the created resource, i.e. \"{apiRoot}/nmbsf-mbs-ud-ingest/<apiVersion>/status-subscriptions/{subscriptionId}\", and the response body containing a representation of the created \"Individual MBS User Data Ingest Session Status Subscription\" resource within the MBSUserDataIngStatSubsc data structure.\nOn failure, the MBSF shall take proper error handling actions, as specified in clause 6.2.7, and respond to the NF service consumer with an appropriate error status code.\nThis service operation is invoked by an NF service consumer to request the update/modification of a subscription to MBS User Data Ingest Session Status event(s) reporting at the MBSF.\nThe following procedures are supported by the \"Nmbsf_MBSUserDataIngestSession_StatusSubscribeMod\" service operation:\n-\tMBS User Data Ingest Session Status Subscription Update.\nFigure 5.3.2.7.2-1 depicts a scenario where an NF service consumer requests the update/modification of an existing \"Individual MBS User Data Ingest Session Status Subscription\" resource at the MBSF.\nThe figure depicts a user data ingestion session in a MBS (Multi-Building System) user data update procedure. It shows the status of the subscription, the update procedure, and the steps involved in updating the user data.\nFigure 5.3.2.7.2-1: MBS User Data Ingest Session Status Subscription Update procedure\n1.\tIn order to request the update or modification of an existing MBS User Data Ingest Session Status Subscription, the NF service consumer shall send an HTTP PUT or PATCH request message targeting the corresponding \"Individual MBS User Data Ingest Session Status Subscription\" resource, with the request body including the MBSUserDataIngStatSubsc data structure (for an HTTP PUT request) or the MBSUserDataIngStatSubscPatch (for an HTTP PATCH request).\nOnly the list of subscribed events (i.e. the \"eventSubscs\" attribute) and/or the notification URI (i.e. the \"notifURI\" attribute) may be updated/modified by the NF service consumer.\nIf the MBSF determines that the received HTTP PUT or PATCH request message needs to be redirected, the MBSF shall respond with an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\n2.\tUpon success, the MBSF shall update/modify the corresponding \"Individual MBS User Data Ingest Session Status Subscription\" resource and respond to the NF service consumer with either:\na)\tan HTTP \"200 OK\" status code with the response body containing the updated representation of the \"Individual MBS User Data Ingest Session Status Subscription\" resource within the MBSUserDataIngStatSubsc data structure; or\nb)\tan HTTP \"204 No Content\" status code.\nOn failure, the MBSF shall take proper error handling actions, as specified in clause 6.2.7, and respond to the NF service consumer with an appropriate error status code.\nThis service operation is used by an NF service consumer to request the deletion of an existing MBS User Data Ingest Session Status Subscription at the MBSF.\nThe following procedures are supported by the \"Nmbsf_MBSUserDataIngestSession_StatusUnsubscribe\" service operation:\n-\tMBS User Data Ingest Session Status Subscription Deletion.\nFigure 5.3.2.8.2-1 depicts a scenario where an NF service consumer requests the deletion of an existing \"Individual MBS User Data Ingest Session Status Subscription\" resource at the MBSF.\nThe figure depicts a user data ingestion session in an 8-2-1 MBS (Multi-Bank Switching) system, illustrating the status subscription deletion procedure. The session includes a user data ingestion process, status subscription deletion, and a deletion procedure.\nFigure 5.3.2.8.2-1: MBS User Data Ingest Session Status Subscription Deletion procedure\n1.\tIn order to request the deletion of an existing MBS User Data Ingest Session Status Subscription, the NF service consumer shall send an HTTP DELETE request message targeting the corresponding \"Individual MBS User Data Ingest Session Status Subscription\" resource.\nIf the MBSF determines that the received HTTP DELETE request message needs to be redirected, the MBSF shall respond with an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\n2.\tUpon success, the MBSF shall:\n-\tdelete the corresponding \"Individual MBS User Data Ingest Session Status Subscription\" resource; and\n-\trespond to the NF service consumer with an HTTP \"204 No Content\" status code.\nOn failure, the MBSF shall take proper error handling actions, as specified in clause 6.2.7, and respond to the NF service consumer with an appropriate error status code.\nThis service operation is used by the MBSF to notify a previously subscribed NF service consumer on MBS User Data Ingest Session Status event(s).\nThe following procedures are supported by the \"Nmbsf_MBSUserDataIngestSession_StatusNotify\" service operation:\n-\tMBS User Data Ingest Session Status Notification.\nFigure 5.3.2.9.2-1 depicts a scenario where the MBSF sends a notification request to a previously subscribed NF service consumer on MBS User Data Ingest Session Status event(s).\nThe figure depicts a user data ingestion session status notification procedure for a 9-2-1 MBS (Multi-Building Service) user data ingestion session. The figure shows the status of the session, including the number of successful and failed data ingestion attempts, the number of successful and failed data ingestion attempts, and the number of successful and failed data ingestion attempts. The figure also includes a status notification procedure for the MBS user data ingestion session, which is a crucial step in ensuring the smooth operation of the MBS system.\nFigure 5.3.2.9.2-1: MBS User Data Ingest Session Status Notification procedure\n1.\tIn order to notify the NF service consumer on the occurrence of previously subscribed MBS User Data Ingest Session Status event(s), the MBSF shall send an HTTP POST request targeting the URI \"{notifUri}\", with the \"notifUri\" variable set to the notification URI received during the creation of the corresponding MBS User Data Ingest Session Status Subscription as specified in clause 5.3.2.6.2, and the request body including the MBSUserDataIngStatNotif data structure that shall include:\n-\tthe identifier of the MBS User Data Ingest Session to which the notification is related, within the \"mbsIngSessionId\" attribute; and\n-\tthe reported MBS User Data Ingest Session Status event(s), within the \"eventNotifs\" attribute.\nIf the NF service consumer determines that the received HTTP POST request message needs to be redirected, the NF service consumer shall respond with an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\n2.\tUpon success, the NF Service Consumer shall respond to the MBSF with an HTTP \"204 No Content\" status code.\nOn failure, the NF service consumer shall take proper error handling actions, as specified in clause 6.2.7, and respond to the MBSF with an appropriate error status code.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.2.1-1: Nmbsf_MBSUserDataIngestSession Service Operations",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tAPI Definitions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tNmbsf_MBSUserService Service API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tIntroduction",
+                            "text_content": "The Nmbsf_MBSUserService service shall use the Nmbsf_MBSUserService API.\nThe API URI of the Nmbsf_MBSUserService Service shall be:\n{apiRoot}/<apiName>/<apiVersion>\nThe request URIs used in HTTP requests from the NF service consumer towards the NF service producer shall have the Resource URI structure defined in clause 4.4.1 of 3GPP TS 29.501 [5], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [5].\n-\tThe <apiName> shall be \"nmbsf-mbs-us\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 6.1.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tUsage of HTTP",
+                            "text_content": "HTTP/2, IETF RFC 9113 [11], shall be used as specified in clause 5 of 3GPP TS 29.500 [4].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [4].\nThe OpenAPI [6] specification of HTTP messages and content bodies for the Nmbsf_MBSUserService API is contained in Annex A.2.\nSee clause 5.2.2 of 3GPP TS 29.500 [4] for the usage of HTTP standard headers.\nJSON, IETF RFC 8259 [12], shall be used as content type of the HTTP bodies specified in the present specification as specified in clause 5.4 of 3GPP TS 29.500 [4]. The use of the JSON format shall be signalled by the content type \"application/json\".\nJSON object used in the HTTP PATCH request shall be encoded according to \"JSON Merge Patch\" and shall be signalled by the content type \"application/merge-patch+json\", as defined in IETF RFC 7396 [22].\nThe \"Problem Details\" JSON object shall be used to indicate additional details of the error in an HTTP response body and shall be signalled by the content type \"application/problem+json\", as defined in IETF RFC 9457 [13].\nThe mandatory HTTP custom header fields specified in clause 5.2.3.2 of 3GPP TS 29.500 [4] shall be supported, and the optional HTTP custom header fields specified in clause 5.2.3.3 of 3GPP TS 29.500 [4] may be supported.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tResources",
+                            "text_content": "This clause describes the structure for the Resource URIs and the resources and methods used for the service.\nFigure 6.1.3.1-1 depicts the resource URIs structure for the Nmbsf_MBSUserService API.\nThe figure depicts a resource URI structure of the Nmbsf_MBSUserService API, which is used to access the user service of the Mobile Backhaul Service Framework (MBSF). The structure includes the resource identifier, resource type, and resource name, providing a clear and concise representation of the API's structure.\nFigure 6.1.3.1-1: Resource URI structure of the Nmbsf_MBSUserService API\nTable 6.1.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 6.1.3.1-1: Resources and methods overview\n\nThis resource represents the collection of MBS User Services managed by the MBSF.\nResource URI: {apiRoot}/nmbsf-mbs-us/<apiVersion>/mbs-user-services\nThis resource shall support the resource URI variables defined in table 6.1.3.2.2-1.\nTable 6.1.3.2.2-1: Resource URI variables for this resource\n\nThe GET method allows an NF service consumer (e.g. AF, NEF) to retrieve all the active MBS User Service(s) managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.1.3.2.3.1-1.\nTable 6.1.3.2.3.1-1: URI query parameters supported by the GET method on this resource\n\nThis method shall support the request data structures specified in table 6.1.3.2.3.1-2 and the response data structures and response codes specified in table 6.1.3.2.3.1-3.\nTable 6.1.3.2.3.1-2: Data structures supported by the GET Request Body on this resource\n\nTable 6.1.3.2.3.1-3: Data structures supported by the GET Response Body on this resource\n\nTable 6.1.3.2.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.1.3.2.3.1-5: Headers supported by the 308 Response Code on this resource\n\nThe POST method allows an NF service consumer (e.g. AF, NEF) to request the creation of a new MBS User Service.\nThis method shall support the URI query parameters specified in table 6.1.3.2.3.2-1.\nTable 6.1.3.2.3.2-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 6.1.3.2.3.2-2 and the response data structures and response codes specified in table 6.1.3.2.3.2-3.\nTable 6.1.3.2.3.2-2: Data structures supported by the POST Request Body on this resource\n\nTable 6.1.3.2.3.2-3: Data structures supported by the POST Response Body on this resource\n\nTable 6.1.3.2.3.2-4: Headers supported by the 201 response code on this resource\n\nThere are no resource custom operations defined for this resource in this release of the specification.\nThis resource represents an \"Individual MBS User Service\" resource managed by the MBSF.\nResource URI: {apiRoot}/nmbsf-mbs-us/<apiVersion>/mbs-user-services/{mbsUserServId}\nThis resource shall support the resource URI variables defined in table 6.1.3.3.2-1.\nTable 6.1.3.3.2-1: Resource URI variables for this resource\n\nThe GET method allows an NF service consumer (e.g. AF, NEF) to retrieve an existing \"Individual MBS User Service\" resource managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.1.3.3.3.1-1.\nTable 6.1.3.3.3.1-1: URI query parameters supported by the GET method on this resource\n\nThis method shall support the request data structures specified in table 6.1.3.3.3.1-2 and the response data structures and response codes specified in table 6.1.3.3.3.1-3.\nTable 6.1.3.3.3.1-2: Data structures supported by the GET Request Body on this resource\n\nTable 6.1.3.3.3.1-3: Data structures supported by the GET Response Body on this resource\n\nTable 6.1.3.3.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.1.3.3.3.1-5: Headers supported by the 308 Response Code on this resource\n\nThe PUT method allows an NF service consumer (e.g. AF, NEF) to request the update of an existing \"Individual MBS User Service\" resource managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.1.3.3.3.2-1.\nTable 6.1.3.3.3.2-1: URI query parameters supported by the PUT method on this resource\n\nThis method shall support the request data structures specified in table 6.1.3.3.3.2-2 and the response data structures and response codes specified in table 6.1.3.3.3.2-3.\nTable 6.1.3.3.3.2-2: Data structures supported by the PUT Request Body on this resource\n\nTable 6.1.3.3.3.2-3: Data structures supported by the PUT Response Body on this resource\n\nTable 6.1.3.3.3.2-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.1.3.3.3.2-5: Headers supported by the 308 Response Code on this resource\n\nThe PATCH method allows an NF service consumer (e.g. AF, NEF) to request the modification of an existing \"Individual MBS User Service\" resource managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.1.3.3.3.3-1.\nTable 6.1.3.3.3.3-1: URI query parameters supported by the PATCH method on this resource\n\nThis method shall support the request data structures specified in table 6.1.3.3.3.3-2 and the response data structures and response codes specified in table 6.1.3.3.3.3-3.\nTable 6.1.3.3.3.3-2: Data structures supported by the PATCH Request Body on this resource\n\nTable 6.1.3.3.3.3-3: Data structures supported by the PATCH Response Body on this resource\n\nTable 6.1.3.3.3.3-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.1.3.3.3.3-5: Headers supported by the 308 Response Code on this resource\n\nThe DELETE method allows an NF service consumer (e.g. AF, NEF) to request the deletion of an existing \"Individual MBS User Service\" resource managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.1.3.3.3.4-1.\nTable 6.1.3.3.3.4-1: URI query parameters supported by the DELETE method on this resource\n\nThis method shall support the request data structures specified in table 6.1.3.3.3.4-2 and the response data structures and response codes specified in table 6.1.3.3.3.4-3.\nTable 6.1.3.3.3.4-2: Data structures supported by the DELETE Request Body on this resource\n\nTable 6.1.3.3.3.4-3: Data structures supported by the DELETE Response Body on this resource\n\nTable 6.1.3.3.3.4-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.1.3.3.3.4-5: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.3.1-1: Resources and methods overview",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.2-1: Resource URI variables for this resource",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-1: URI query parameters supported by the GET method on this resource",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-2: Data structures supported by the GET Request Body on this resource",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-3: Data structures supported by the GET Response Body on this resource",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.2-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.2-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.2-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.2-4: Headers supported by the 201 response code on this resource",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.2-1: Resource URI variables for this resource",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.1-1: URI query parameters supported by the GET method on this resource",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.1-2: Data structures supported by the GET Request Body on this resource",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.1-3: Data structures supported by the GET Response Body on this resource",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.2-1: URI query parameters supported by the PUT method on this resource",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.2-2: Data structures supported by the PUT Request Body on this resource",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.2-3: Data structures supported by the PUT Response Body on this resource",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.2-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.2-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.3-1: URI query parameters supported by the PATCH method on this resource",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.3-2: Data structures supported by the PATCH Request Body on this resource",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.3-3: Data structures supported by the PATCH Response Body on this resource",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.3-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.3-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.4-1: URI query parameters supported by the DELETE method on this resource",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.4-2: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.4-3: Data structures supported by the DELETE Response Body on this resource",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.4-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.4-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.4\tCustom Operations without associated resources",
+                            "text_content": "There are no custom operations without associated resources defined for this API in this release of the specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.5\tNotifications",
+                            "text_content": "There are no notifications defined for this API in this release of the specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.6\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the Nmbsf_MBSUserService API.\nTable 6.1.6.1-1 specifies the data types defined for the Nmbsf_MBSUserService service based interface protocol.\nTable 6.1.6.1-1: Nmbsf_MBSUserService specific Data Types\n\nTable 6.1.6.1-2 specifies data types re-used by the Nmbsf_MBSUserService service based interface protocol from other specifications, including a reference to their respective specifications, and when needed, a short description of their use within the Nmbsf_MBSUserService service based interface.\nTable 6.1.6.1-2: Nmbsf_MBSUserService re-used Data Types\n\nThis clause defines the structures to be used in resource representations.\nTable 6.1.6.2.2-1: Definition of type MBSUserService\n\nTable 6.1.6.2.3-1: Definition of type ServiceNameDescription\n\nTable 6.1.6.2.4-1: Definition of type MBSUserServicePatch\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nThe simple data types defined in table 6.1.6.3.2-1 shall be supported.\nTable 6.1.6.3.2-1: Simple data types\n\nThe enumeration ServiceAnnouncementMode represents MBS User Service Announcement Modes. It shall comply with the provisions of table 6.1.6.3.3-1.\nTable 6.1.6.3.3-1: Enumeration ServiceAnnouncementMode\n\nThere are no data types describing alternative data types or combinations of data types defined for this API in this release of the specification.\nTable 6.1.6.5.1-1: Binary Data Types\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.6.1-1: Nmbsf_MBSUserService specific Data Types",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.1-2: Nmbsf_MBSUserService re-used Data Types",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.2-1: Definition of type MBSUserService",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.3-1: Definition of type ServiceNameDescription",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.4-1: Definition of type MBSUserServicePatch",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.3.2-1: Simple data types",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.3.3-1: Enumeration ServiceAnnouncementMode",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.5.1-1: Binary Data Types",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.7\tError Handling",
+                            "text_content": "For the Nmbsf_MBSUserService API, HTTP error responses shall be supported as specified in clause 4.8 of 3GPP TS 29.501 [5]. Protocol errors and application errors specified in table 5.2.7.2-1 of 3GPP TS 29.500 [4] shall be supported for an HTTP method if the corresponding HTTP status codes are specified as mandatory for that HTTP method in table 5.2.7.1-1 of 3GPP TS 29.500 [4].\nIn addition, the requirements in the following clauses are applicable for the Nmbsf_MBSUserService API.\nNo specific procedures for the Nmbsf_MBSUserService service are specified.\nThe application errors defined for the Nmbsf_MBSUserService service are listed in Table 6.1.7.3-1.\nTable 6.1.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.7.3-1: Application errors",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.8\tFeature negotiation",
+                            "text_content": "The optional features listed in table 6.1.8-1 are defined for the Nmbsf_MBSUserService API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [4].\nTable 6.1.8-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.8-1: Supported Features",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.9\tSecurity",
+                            "text_content": "As indicated in 3GPP TS 33.501 [8] and 3GPP TS 29.500 [4], the access to the Nmbsf_MBSUserService API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [9]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [10]) plays the role of the authorization server.\nIf OAuth2 is used, an NF Service Consumer, prior to consuming services offered by the Nmbsf_MBSUserService API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [10], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF that the NF Service Consumer used for discovering the Nmbsf_MBSUserService service.\nThe Nmbsf_MBSUserService API defines a single scope \"nmbsf-mbs-us\" for the entire service, and it does not define any additional scopes at resource or operation level.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tNmbsf_MBSUserDataIngestSession Service API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tIntroduction",
+                            "text_content": "The Nmbsf_MBSUserDataIngestSession service shall use the Nmbsf_MBSUserDataIngestSession API.\nThe API URI of the Nmbsf_MBSUserDataIngestSession Service shall be:\n{apiRoot}/<apiName>/<apiVersion>\nThe request URIs used in HTTP requests from the NF service consumer towards the NF service producer shall have the Resource URI structure defined in clause 4.4.1 of 3GPP TS 29.501 [5], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [5].\n-\tThe <apiName> shall be \"nmbsf-mbs-ud-ingest\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 6.2.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tUsage of HTTP",
+                            "text_content": "HTTP/2, IETF RFC 9113 [11], shall be used as specified in clause 5 of 3GPP TS 29.500 [4].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [4].\nThe OpenAPI [6] specification of HTTP messages and content bodies for the Nmbsf_MBSUserDataIngestSession API is contained in Annex A.3.\nSee clause 5.2.2 of 3GPP TS 29.500 [4] for the usage of HTTP standard headers.\nJSON, IETF RFC 8259 [12], shall be used as content type of the HTTP bodies specified in the present specification as specified in clause 5.4 of 3GPP TS 29.500 [4]. The use of the JSON format shall be signalled by the content type \"application/json\".\nJSON object used in the HTTP PATCH request shall be encoded according to \"JSON Merge Patch\" and shall be signalled by the content type \"application/merge-patch+json\", as defined in IETF RFC 7396 [22].\nThe \"Problem Details\" JSON object shall be used to indicate additional details of the error in a HTTP response body and shall be signalled by the content type \"application/problem+json\", as defined in IETF RFC 9457 [13].\nThe mandatory HTTP custom header fields specified in clause 5.2.3.2 of 3GPP TS 29.500 [4] shall be supported, and the optional HTTP custom header fields specified in clause 5.2.3.3 of 3GPP TS 29.500 [4] may be supported.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tResources",
+                            "text_content": "This clause describes the structure for the Resource URIs and the resources and methods used for the service.\nFigure 6.2.3.1-1 depicts the resource URIs structure for the Nmbsf_MBSUserDataIngestSession API.\nThe figure depicts the resource URI structure of the Nmbsf_MBSUserDataIngestSession API, which is used to retrieve user data from the MBS (Mobile Backhaul System) in a 5G network. The structure includes the base URI, the path, and the parameters required for the API call.\nFigure 6.2.3.1-1: Resource URI structure of the Nmbsf_MBSUserDataIngestSession API\nTable 6.2.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 6.2.3.1-1: Resources and methods overview\n\nThis resource represents the collection of MBS User Data Ingest Sessions managed by the MBSF.\nResource URI: {apiRoot}/nmbsf-mbs-ud-ingest/<apiVersion>/sessions\nThis resource shall support the resource URI variables defined in table 6.2.3.2.2-1.\nTable 6.2.3.2.2-1: Resource URI variables for this resource\n\nThe GET method allows an NF service consumer (e.g. AF, NEF) to retrieve all the active MBS User Data Ingest Sessions managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.2.3.2.3.1-1.\nTable 6.2.3.2.3.1-1: URI query parameters supported by the GET method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.2.3.1-2 and the response data structures and response codes specified in table 6.2.3.2.3.1-3.\nTable 6.2.3.2.3.1-2: Data structures supported by the GET Request Body on this resource\n\nTable 6.2.3.2.3.1-3: Data structures supported by the GET Response Body on this resource\n\nTable 6.2.3.2.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.2.3.1-5: Headers supported by the 308 Response Code on this resource\n\nThe POST method allows an NF service consumer (e.g. AF, NEF) to request the creation of a new MBS User Data Ingest Session including one or several subordinate MBS Distribution Session(s).\nThis method shall support the URI query parameters specified in table 6.2.3.2.3.2-1.\nTable 6.2.3.2.3.2-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.2.3.2-2 and the response data structures and response codes specified in table 6.2.3.2.3.2-3.\nTable 6.2.3.2.3.2-2: Data structures supported by the POST Request Body on this resource\n\nTable 6.2.3.2.3.2-3: Data structures supported by the POST Response Body on this resource\n\nTable 6.2.3.2.3.2-4: Headers supported by the 201 response code on this resource\n\nThere are no resource custom operations defined for this resource in this release of the specification.\nThis resource represents an \"Individual MBS User Data Ingest Session\" resource managed by the MBSF.\nResource URI: {apiRoot}/nmbsf-mbs-ud-ingest/<apiVersion>/sessions/{sessionId}\nThis resource shall support the resource URI variables defined in table 6.2.3.3.2-1.\nTable 6.2.3.3.2-1: Resource URI variables for this resource\n\nThe GET method allows an NF service consumer (e.g. AF, NEF) to retrieve an existing \"Individual MBS User Data Ingest Session\" resource managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.2.3.3.3.1-1.\nTable 6.2.3.3.3.1-1: URI query parameters supported by the GET method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.3.3.1-2 and the response data structures and response codes specified in table 6.2.3.3.3.1-3.\nTable 6.2.3.3.3.1-2: Data structures supported by the GET Request Body on this resource\n\nTable 6.2.3.3.3.1-3: Data structures supported by the GET Response Body on this resource\n\nTable 6.2.3.3.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.3.3.1-5: Headers supported by the 308 Response Code on this resource\n\nThe PUT method allows an NF service consumer (e.g. AF, NEF) to update an existing \"Individual MBS User Data Ingest Session\" resource managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.2.3.3.3.2-1.\nTable 6.2.3.3.3.2-1: URI query parameters supported by the PUT method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.3.3.2-2 and the response data structures and response codes specified in table 6.2.3.3.3.2-3.\nTable 6.2.3.3.3.2-2: Data structures supported by the PUT Request Body on this resource\n\nTable 6.2.3.3.3.2-3: Data structures supported by the PUT Response Body on this resource\n\nTable 6.2.3.3.3.2-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.3.3.2-5: Headers supported by the 308 Response Code on this resource\n\nThe PATCH method allows an NF service consumer (e.g. AF, NEF) to modify an existing \"Individual MBS User Data Ingest Session\" resource managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.2.3.3.3.3-1.\nTable 6.2.3.3.3.3-1: URI query parameters supported by the PATCH method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.3.3.3-2 and the response data structures and response codes specified in table 6.2.3.3.3.3-3.\nTable 6.2.3.3.3.3-2: Data structures supported by the PATCH Request Body on this resource\n\nTable 6.2.3.3.3.3-3: Data structures supported by the PATCH Response Body on this resource\n\nTable 6.2.3.3.3.3-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.3.3.3-5: Headers supported by the 308 Response Code on this resource\n\nThe DELETE method allows an NF service consumer (e.g. AF, NEF) to delete an existing \"Individual MBS User Data Ingest Session\" resource managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.2.3.3.3.4-1.\nTable 6.2.3.3.3.4-1: URI query parameters supported by the DELETE method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.3.3.4-2 and the response data structures and response codes specified in table 6.2.3.3.3.4-3.\nTable 6.2.3.3.3.4-2: Data structures supported by the DELETE Request Body on this resource\n\nTable 6.2.3.3.3.4-3: Data structures supported by the DELETE Response Body on this resource\n\nTable 6.2.3.3.3.4-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.3.3.4-5: Headers supported by the 308 Response Code on this resource\n\nThere are no resource custom operations defined for this resource in this release of the specification.\nThis resource represents the collection of MBS User Data Ingest Session Status Subscriptions managed by the MBSF.\nResource URI: {apiRoot}/nmbsf-mbs-ud-ingest/<apiVersion>/status-subscriptions\nThis resource shall support the resource URI variables defined in table 6.2.3.4.2-1.\nTable 6.2.3.4.2-1: Resource URI variables for this resource\n\nThe GET method allows an NF service consumer (e.g. AF, NEF) to retrieve all the active MBS User Data Ingest Session Status Subscriptions managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.2.3.4.3.1-1.\nTable 6.2.3.4.3.1-1: URI query parameters supported by the GET method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.4.3.1-2 and the response data structures and response codes specified in table 6.2.3.4.3.1-3.\nTable 6.2.3.4.3.1-2: Data structures supported by the GET Request Body on this resource\n\nTable 6.2.3.4.3.1-3: Data structures supported by the GET Response Body on this resource\n\nTable 6.2.3.4.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.4.3.1-5: Headers supported by the 308 Response Code on this resource\n\nThe POST method allows an NF service consumer (e.g. AF, NEF) to request the creation of a new MBS User Data Ingest Session Status Subscription at the MBSF.\nThis method shall support the URI query parameters specified in table 6.2.3.4.3.2-1.\nTable 6.2.3.4.3.2-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.4.3.2-2 and the response data structures and response codes specified in table 6.2.3.4.3.2-3.\nTable 6.2.3.4.3.2-2: Data structures supported by the POST Request Body on this resource\n\nTable 6.2.3.4.3.2-3: Data structures supported by the POST Response Body on this resource\n\nTable 6.2.3.4.3.2-4: Headers supported by the 201 response code on this resource\n\nThere are no resource custom operations defined for this resource in this release of the specification.\nThis resource represents an \"Individual MBS User Data Ingest Session Status Subscription\" resource managed by the MBSF.\nResource URI: {apiRoot}/nmbsf-mbs-ud-ingest/<apiVersion>/status-subscriptions/{subscriptionId}\nThis resource shall support the resource URI variables defined in table 6.2.3.5.2-1.\nTable 6.2.3.5.2-1: Resource URI variables for this resource\n\nThe GET method allows an NF service consumer (e.g. AF, NEF) to retrieve an existing \"Individual MBS User Data Ingest Session Status Subscription\" resource managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.2.3.5.3.1-1.\nTable 6.2.3.5.3.1-1: URI query parameters supported by the GET method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.5.3.1-2 and the response data structures and response codes specified in table 6.2.3.5.3.1-3.\nTable 6.2.3.5.3.1-2: Data structures supported by the GET Request Body on this resource\n\nTable 6.2.3.5.3.1-3: Data structures supported by the GET Response Body on this resource\n\nTable 6.2.3.5.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.5.3.1-5: Headers supported by the 308 Response Code on this resource\n\nThe PUT method allows an NF service consumer (e.g. AF, NEF) to update an existing \"Individual MBS User Data Ingest Session Status Subscription\" resource managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.2.3.5.3.2-1.\nTable 6.2.3.5.3.2-1: URI query parameters supported by the PUT method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.5.3.2-2 and the response data structures and response codes specified in table 6.2.3.5.3.2-3.\nTable 6.2.3.5.3.2-2: Data structures supported by the PUT Request Body on this resource\n\nTable 6.2.3.5.3.2-3: Data structures supported by the PUT Response Body on this resource\n\nTable 6.2.3.5.3.2-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.5.3.2-5: Headers supported by the 308 Response Code on this resource\n\nThe PATCH method allows an NF service consumer (e.g. AF, NEF) to modify an existing \"Individual MBS User Data Ingest Session Status Subscription\" resource managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.2.3.5.3.3-1.\nTable 6.2.3.5.3.3-1: URI query parameters supported by the PATCH method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.5.3.3-2 and the response data structures and response codes specified in table 6.2.3.5.3.3-3.\nTable 6.2.3.5.3.3-2: Data structures supported by the PATCH Request Body on this resource\n\nTable 6.2.3.5.3.3-3: Data structures supported by the PATCH Response Body on this resource\n\nTable 6.2.3.5.3.3-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.5.3.3-5: Headers supported by the 308 Response Code on this resource\n\nThe DELETE method allows an NF service consumer (e.g. AF, NEF) to delete an existing \"Individual MBS User Data Ingest Session Status Subscription\" resource managed by the MBSF.\nThis method shall support the URI query parameters specified in table 6.2.3.5.3.4-1.\nTable 6.2.3.5.3.4-1: URI query parameters supported by the DELETE method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.5.3.4-2 and the response data structures and response codes specified in table 6.2.3.5.3.4-3.\nTable 6.2.3.5.3.4-2: Data structures supported by the DELETE Request Body on this resource\n\nTable 6.2.3.5.3.4-3: Data structures supported by the DELETE Response Body on this resource\n\nTable 6.2.3.5.3.4-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.5.3.2-5: Headers supported by the 308 Response Code on this resource\n\nThere are no resource custom operations defined for this resource in this release of the specification.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.3.1-1: Resources and methods overview",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.2-1: Resource URI variables for this resource",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.1-1: URI query parameters supported by the GET method on this resource",
+                                    "table number": 50,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.1-2: Data structures supported by the GET Request Body on this resource",
+                                    "table number": 51,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.1-3: Data structures supported by the GET Response Body on this resource",
+                                    "table number": 52,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 53,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 54,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.2-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 55,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.2-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 56,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.2-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 57,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.2-4: Headers supported by the 201 response code on this resource",
+                                    "table number": 58,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.2-1: Resource URI variables for this resource",
+                                    "table number": 59,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.1-1: URI query parameters supported by the GET method on this resource",
+                                    "table number": 60,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.1-2: Data structures supported by the GET Request Body on this resource",
+                                    "table number": 61,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.1-3: Data structures supported by the GET Response Body on this resource",
+                                    "table number": 62,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 63,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 64,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.2-1: URI query parameters supported by the PUT method on this resource",
+                                    "table number": 65,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.2-2: Data structures supported by the PUT Request Body on this resource",
+                                    "table number": 66,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.2-3: Data structures supported by the PUT Response Body on this resource",
+                                    "table number": 67,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.2-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 68,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.2-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 69,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.3-1: URI query parameters supported by the PATCH method on this resource",
+                                    "table number": 70,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.3-2: Data structures supported by the PATCH Request Body on this resource",
+                                    "table number": 71,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.3-3: Data structures supported by the PATCH Response Body on this resource",
+                                    "table number": 72,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.3-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 73,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.3-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 74,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.4-1: URI query parameters supported by the DELETE method on this resource",
+                                    "table number": 75,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.4-2: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 76,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.4-3: Data structures supported by the DELETE Response Body on this resource",
+                                    "table number": 77,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.4-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 78,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.4-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 79,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.2-1: Resource URI variables for this resource",
+                                    "table number": 80,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.1-1: URI query parameters supported by the GET method on this resource",
+                                    "table number": 81,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.1-2: Data structures supported by the GET Request Body on this resource",
+                                    "table number": 82,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.1-3: Data structures supported by the GET Response Body on this resource",
+                                    "table number": 83,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 84,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 85,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.2-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 86,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.2-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 87,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.2-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 88,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.2-4: Headers supported by the 201 response code on this resource",
+                                    "table number": 89,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.2-1: Resource URI variables for this resource",
+                                    "table number": 90,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.1-1: URI query parameters supported by the GET method on this resource",
+                                    "table number": 91,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.1-2: Data structures supported by the GET Request Body on this resource",
+                                    "table number": 92,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.1-3: Data structures supported by the GET Response Body on this resource",
+                                    "table number": 93,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 94,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 95,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.2-1: URI query parameters supported by the PUT method on this resource",
+                                    "table number": 96,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.2-2: Data structures supported by the PUT Request Body on this resource",
+                                    "table number": 97,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.2-3: Data structures supported by the PUT Response Body on this resource",
+                                    "table number": 98,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.2-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 99,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.2-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 100,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.3-1: URI query parameters supported by the PATCH method on this resource",
+                                    "table number": 101,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.3-2: Data structures supported by the PATCH Request Body on this resource",
+                                    "table number": 102,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.3-3: Data structures supported by the PATCH Response Body on this resource",
+                                    "table number": 103,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.3-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 104,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.3-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 105,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.4-1: URI query parameters supported by the DELETE method on this resource",
+                                    "table number": 106,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.4-2: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 107,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.4-3: Data structures supported by the DELETE Response Body on this resource",
+                                    "table number": 108,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.4-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 109,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.5.3.2-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 110,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.4\tCustom Operations without associated resources",
+                            "text_content": "There are no custom operations without associated resources defined for this API in this release of the specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.5\tNotifications",
+                            "text_content": "Notifications shall comply to clause 6.2 of 3GPP TS 29.500 [4] and clause 4.6.2.3 of 3GPP TS 29.501 [5].\nTable 6.2.5.1-1: Notifications overview\n\nThe MBS User Data Ingest Session Status Notification is used by the MBSF to notify the NF service consumer (e.g. AF, NEF) about event(s) related to an MBS User Data Ingest Session.\nThe Callback URI \"{notifUri}\" shall be used with the callback URI variables defined in table 6.2.5.2.2-1.\nTable 6.2.5.2.2-1: Callback URI variables\n\nThis method shall support the request data structures specified in table 6.2.5.2.3.1-1 and the response data structures and response codes specified in table 6.2.5.2.3.1-2.\nTable 6.2.5.2.3.1-1: Data structures supported by the POST Request Body\n\nTable 6.2.5.2.3.1-2: Data structures supported by the POST Response Body\n\nTable 6.2.5.2.3.1-3: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.5.2.3.1-4: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.5.1-1: Notifications overview",
+                                    "table number": 111,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.5.2.2-1: Callback URI variables",
+                                    "table number": 112,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.5.2.3.1-1: Data structures supported by the POST Request Body",
+                                    "table number": 113,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.5.2.3.1-2: Data structures supported by the POST Response Body",
+                                    "table number": 114,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.5.2.3.1-3: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 115,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.5.2.3.1-4: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 116,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.6\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the Nmbsf_MBSUserDataIngestSession API.\nTable 6.2.6.1-1 specifies the data types defined for the Nmbsf_MBSUserDataIngestSession service based interface protocol.\nTable 6.2.6.1-1: Nmbsf_MBSUserDataIngestSession specific Data Types\n\nTable 6.2.6.1-2 specifies data types re-used by the Nmbsf_MBSUserDataIngestSession service based interface protocol from other specifications, including a reference to their respective specifications, and when needed, a short description of their use within the Nmbsf_MBSUserDataIngestSession service based interface.\nTable 6.2.6.1-2: Nmbsf_MBSUserDataIngestSession re-used Data Types\n\nThis clause defines the structures to be used in resource representations.\nTable 6.2.6.2.2-1: Definition of type MBSUserDataIngSession\n\nTable 6.2.6.2.3-1: Definition of type MBSDistributionSessionInfo\n\nTable 6.2.6.2.4-1: Definition of type MBSUserDataIngSessionPatch\n\nTable 6.2.6.2.5-1: Definition of type ObjectDistrMethInfo\n\nTable 6.2.6.2.6-1: Definition of type PacketDistrMethInfo\n\nTable 6.2.6.2.7-1: Definition of type MBSUserDataIngStatSubsc\n\nTable 6.2.6.2.8-1: Definition of type SubscribedEvent\n\nTable 6.2.6.2.9-1: Definition of type MBSUserDataIngStatNotif\n\nTable 6.2.6.2.10-1: Definition of type EventNotification\n\nTable 6.2.6.2.11-1: Definition of type MBSUserServAnmt\n\nTable 6.2.6.2.12-1: Definition of type MBSDistSessionAnmt\n\nTable 6.2.6.2.13-1: Definition of type ObjectDistMethAnmtInfo\n\nTable 6.2.6.2.14-1: Definition of type FECConfig\n\nTable 6.2.6.2.15-1: Definition of type AddFecParams\n\nTable 6.2.6.2.16-1: Definition of type MBSUserDataIngStatSubscPatch\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nThe simple data types defined in table 6.2.6.3.2-1 shall be supported.\nTable 6.2.6.3.2-1: Simple data types\n\nThe enumeration DistributionMethod represents the MBS Distribution Method. It shall comply with the provisions of table 6.2.6.3.3-1.\nTable 6.2.6.3.3-1: Enumeration DistributionMehod\n\nThe enumeration Event represents the MBS User Data Ingest Session Status events. It shall comply with the provisions of table 6.2.6.3.4-1.\nTable 6.2.6.3.4-1: Enumeration Event\n\nThere are no data types describing alternative data types or combinations of data types defined for this API in this release of the specification.\nTable 6.2.6.5.1-1: Binary Data Types\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.6.1-1: Nmbsf_MBSUserDataIngestSession specific Data Types",
+                                    "table number": 117,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.1-2: Nmbsf_MBSUserDataIngestSession re-used Data Types",
+                                    "table number": 118,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.2-1: Definition of type MBSUserDataIngSession",
+                                    "table number": 119,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.3-1: Definition of type MBSDistributionSessionInfo",
+                                    "table number": 120,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.4-1: Definition of type MBSUserDataIngSessionPatch",
+                                    "table number": 121,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.5-1: Definition of type ObjectDistrMethInfo",
+                                    "table number": 122,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.6-1: Definition of type PacketDistrMethInfo",
+                                    "table number": 123,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.7-1: Definition of type MBSUserDataIngStatSubsc",
+                                    "table number": 124,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.8-1: Definition of type SubscribedEvent",
+                                    "table number": 125,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.9-1: Definition of type MBSUserDataIngStatNotif",
+                                    "table number": 126,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.10-1: Definition of type EventNotification",
+                                    "table number": 127,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.11-1: Definition of type MBSUserServAnmt",
+                                    "table number": 128,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.12-1: Definition of type MBSDistSessionAnmt",
+                                    "table number": 129,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.13-1: Definition of type ObjectDistMethAnmtInfo",
+                                    "table number": 130,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.14-1: Definition of type FECConfig",
+                                    "table number": 131,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.15-1: Definition of type AddFecParams",
+                                    "table number": 132,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.16-1: Definition of type MBSUserDataIngStatSubscPatch",
+                                    "table number": 133,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.3.2-1: Simple data types",
+                                    "table number": 134,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.3.3-1: Enumeration DistributionMehod",
+                                    "table number": 135,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.3.4-1: Enumeration Event",
+                                    "table number": 136,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.5.1-1: Binary Data Types",
+                                    "table number": 137,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.7\tError Handling",
+                            "text_content": "For the Nmbsf_MBSUserDataIngestSession API, HTTP error responses shall be supported as specified in clause 4.8 of 3GPP TS 29.501 [5]. Protocol errors and application errors specified in table 5.2.7.2-1 of 3GPP TS 29.500 [4] shall be supported for an HTTP method if the corresponding HTTP status codes are specified as mandatory for that HTTP method in table 5.2.7.1-1 of 3GPP TS 29.500 [4].\nIn addition, the requirements in the following clauses are applicable for the Nmbsf_MBSUserDataIngestSession API.\nNo specific procedures for the Nmbsf_MBSUserDataIngestSession service are specified.\nThe application errors defined for the Nmbsf_MBSUserDataIngestSession service are listed in Table 6.2.7.3-1.\nTable 6.2.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.7.3-1: Application errors",
+                                    "table number": 138,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.8\tFeature negotiation",
+                            "text_content": "The optional features listed in table 6.2.8-1 are defined for the Nmbsf_MBSUserDataIngestSession API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [4].\nTable 6.2.8-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.8-1: Supported Features",
+                                    "table number": 139,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.9\tSecurity",
+                            "text_content": "As indicated in 3GPP TS 33.501 [8] and 3GPP TS 29.500 [4], the access to the Nmbsf_MBSUserDataIngestSession API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [9]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [10]) plays the role of the authorization server.\nIf OAuth2 is used, an NF Service Consumer, prior to consuming services offered by the Nmbsf_MBSUserDataIngestSession API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [10], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF that the NF Service Consumer used for discovering the Nmbsf_MBSUserDataIngestSession service.\nThe Nmbsf_MBSUserDataIngestSession API defines a single scope \"nmbsf-mbs-ud-ingest\" for the entire service, and it does not define any additional scopes at resource or operation level.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "This Annex specifies the formal definition of the API(s) defined in the present specification. It consists of OpenAPI specifications in YAML format.\nThis Annex takes precedence when being discrepant to other parts of the specification with respect to the encoding of information elements and methods within the API(s).\nNOTE 1:\tThe semantics and procedures, as well as conditions, e.g. for the applicability and allowed combinations of attributes or values, not expressed in the OpenAPI definitions but defined in other parts of the specification also apply.\nInformative copies of the OpenAPI specification files contained in this 3GPP Technical Specification are available on a Git-based repository that uses the GitLab software version control system (see 3GPP TS 29.501 [5] clause 5.3.1 and 3GPP TR 21.900 [7] clause 5B).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tNmbsf_MBSUserService API",
+            "description": "openapi: 3.0.0\n\ninfo:\ntitle: nmbsf-mbs-us\nversion: 1.1.0-alpha.2\ndescription: |\nAPI for MBS User Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: >\n3GPP TS 29.580 V18.1.0; 5G System; Multicast/Broadcast Service Function Services.\nurl: 'https://www.3gpp.org/ftp/Specs/archive/29_series/29.580/'\n\nservers:\n- url: '{apiRoot}/nmbsf-mbs-us/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials: []\n\n\npaths:\n/mbs-user-services:\nget:\nsummary: Retrieve all the active MBS User Service(s) managed by the MBSF.\ntags:\n- MBS User Services (Collection)\noperationId: RetrieveMBSUserServices\nresponses:\n'200':\ndescription: >\nOK. All the active MBS User Services managed by the MBSF are returned.\ncontent:\napplication/json:\nschema:\ntype: array\nitems:\n$ref: '#/components/schemas/MBSUserService'\nminItems: 0\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'406':\n$ref: 'TS29571_CommonData.yaml#/components/responses/406'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\npost:\nsummary: Request the creation of a new MBS User Service.\ntags:\n- MBS User Services (Collection)\noperationId: CreateMBSUserService\nrequestBody:\ndescription: >\nContains the parameters to request the creation of a new MBS User Service at the MBSF.\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserService'\nresponses:\n'201':\ndescription: >\nCreated. A new MBS User Service is successfully created and a representation of the\ncreated Individual MBS User Service resource is returned.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserService'\nheaders:\nLocation:\ndescription: >\nContains the URI of the newly created resource, according to the structure\n{apiRoot}/nmbsf-mbs-us/v1/mbs-user-services/{mbsUserServId}\nrequired: true\nschema:\ntype: string\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n\n/mbs-user-services/{mbsUserServId}:\nparameters:\n- name: mbsUserServId\nin: path\ndescription: Identifier of the Individual MBS User Service resource.\nrequired: true\nschema:\ntype: string\n\nget:\nsummary: Retrieve an existing Individual MBS User Service resource.\ntags:\n- Individual MBS User Service (Document)\noperationId: RetrieveIndMBSUserService\nresponses:\n'200':\ndescription: >\nOK. The requested Individual MBS User Service resource is successfully returned.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserService'\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'406':\n$ref: 'TS29571_CommonData.yaml#/components/responses/406'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\nput:\nsummary: Request the update of an existing Individual MBS User Service resource.\ntags:\n- Individual MBS User Service (Document)\noperationId: UpdateIndMBSUserService\nrequestBody:\ndescription: >\nContains the updated representation of the Individual MBS User Service resource.\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserService'\nresponses:\n'200':\ndescription: >\nOK. The concerned Individual MBS User Service resource is successfully updated and a\nrepresentation of the updated resource is returned in the response body.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserService'\n'204':\ndescription: >\nNo Content. The concerned Individual MBS User Service resource is successfully updated\nand no content is returned in the response body.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\npatch:\nsummary: Request the modification of an existing Individual MBS User Service resource.\ntags:\n- Individual MBS User Service (Document)\noperationId: ModifyIndMBSUserService\nrequestBody:\ndescription: >\nContains the parameters to request the modification of the Individual MBS User Service\nresource.\nrequired: true\ncontent:\napplication/merge-patch+json:\nschema:\n$ref: '#/components/schemas/MBSUserServicePatch'\nresponses:\n'200':\ndescription: >\nOK. The concerned Individual MBS User Service resource is successfully modified and a\nrepresentation of the updated resource is returned in the response body.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserService'\n'204':\ndescription: >\nNo Content. The concerned Individual MBS User Service resource is successfully modified\nand no content is returned in the response body.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\ndelete:\nsummary: Request the deletion of an existing Individual MBS User Service resource.\ntags:\n- Individual MBS User Service (Document)\noperationId: DeleteIndMBSUserService\nresponses:\n'204':\ndescription: >\nNo Content. The concerned Individual MBS User Service resource is successfully deleted.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{tokenUri}'\nscopes: {}\ndescription: >\nWhen the Nmbsf_MBSUserService is consumed by a trusted or internal AF, then\n'nmbsf-mbs-us' shall be used as the scope (i.e. within the 'scopes' property) and\n'{nrfApiRoot}/oauth2/token' shall be used as the URI to retrieve the token\n(i.e. 'tokenUri').\n\n#\n# STRUCTURED DATA TYPES\n#\nschemas:\nMBSUserService:\ndescription: Represents the parameters of an MBS User Service.\ntype: object\nproperties:\nextServiceIds:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nminItems: 1\nservType:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MbsServiceType'\nservClass:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nservAnnModes:\ntype: array\nitems:\n$ref: '#/components/schemas/ServiceAnnouncementMode'\nminItems: 1\nservNameDescs:\ntype: array\nitems:\n$ref: '#/components/schemas/ServiceNameDescription'\nminItems: 1\nmainServLang:\ntype: string\nsuppFeat:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'\nrequired:\n- extServiceIds\n- servType\n- servClass\n- servAnnModes\n- servNameDescs\n\nServiceNameDescription:\ndescription: >\nRepresents a set of per language service name and/or service description.\ntype: object\nproperties:\nservName:\ntype: string\nservDescrip:\ntype: string\nlanguage:\ntype: string\nrequired:\n- language\nanyOf:\n- required: [servName]\n- required: [servDescrip]\n\nMBSUserServicePatch:\ndescription: >\nRepresents the requested modifications to the parameters of an MBS User Service.\ntype: object\nproperties:\nextServiceIds:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nminItems: 1\nservClass:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nservAnnModes:\ntype: array\nitems:\n$ref: '#/components/schemas/ServiceAnnouncementMode'\nminItems: 1\nservNameDescs:\ntype: array\nitems:\n$ref: '#/components/schemas/ServiceNameDescription'\nminItems: 1\nmainServLang:\ntype: string\n\n# SIMPLE DATA TYPES\n#\n\n#\n# ENUMERATIONS\n#\nServiceAnnouncementMode:\nanyOf:\n- type: string\nenum:\n- VIA_MBS_5\n- VIA_MBS_DISTRIBUTION_SESSION\n- PASSED_BACK\n- type: string\ndescription: >\nThis string provides forward-compatibility with future extensions to the enumeration\nand is not used to encode content defined in the present version of this API.\ndescription: |\nRepresents the service announcement mode.\nPossible values are:\n- VIA_MBS_5: Indicates the MBS User Service Announcement compiled by the MBSF is advertised\nto the MBSF Client at reference point MBS-5.\n- VIA_MBS_DISTRIBUTION_SESSION: Indicates the MBS User Service Announcement compiled by\nthe MBSF is advertised to the MBSF Client via the MBS Distribution Session at reference\npoint MBS-4-MC.\n- PASSED_BACK: Indicates the MBS User Service Announcement compiled by the MBSF is passed\nback to the MBS Application Provider by the MBSF, and then advertised to the MBSF Client\nvia application-private means at reference point MBS-8.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.3\tNmbsf_MBSUserDataIngestSession API",
+            "description": "openapi: 3.0.0\n\ninfo:\ntitle: nmbsf-mbs-ud-ingest\nversion: 1.1.0-alpha.5\ndescription: |\nAPI for MBS User Data Ingest Session Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: >\n3GPP TS 29.580 V18.4.0; 5G System; Multicast/Broadcast Service Function Services.\nurl: 'https://www.3gpp.org/ftp/Specs/archive/29_series/29.580/'\n\nservers:\n- url: '{apiRoot}/nmbsf-mbs-ud-ingest/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials: []\n\npaths:\n/sessions:\nget:\nsummary: Retrieve all the active MBS User Data Ingest Sessions managed by the MBSF.\ntags:\n- MBS User Data Ingest Sessions (Collection)\noperationId: RetrieveMBSUserDataIngSessions\nresponses:\n'200':\ndescription: >\nOK. All the active MBS User Data Ingest Sessions managed by the MBSF are returned.\ncontent:\napplication/json:\nschema:\ntype: array\nitems:\n$ref: '#/components/schemas/MBSUserDataIngSession'\nminItems: 0\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'406':\n$ref: 'TS29571_CommonData.yaml#/components/responses/406'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\npost:\nsummary: Request the creation of a new MBS User Data Ingest Session.\ntags:\n- MBS User Data Ingest Sessions (Collection)\noperationId: CreateMBSUserDataIngSession\nrequestBody:\ndescription: >\nContains the parameters to request the creation of a new MBS User Data Ingest Session\nat the MBSF.\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngSession'\nresponses:\n'201':\ndescription: >\nCreated. A new MBS User Data Ingest Session is successfully created and a representation\nof the created Individual MBS User Data Ingest Session resource is returned.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngSession'\nheaders:\nLocation:\ndescription: >\nContains the URI of the newly created resource, according to the structure\n{apiRoot}/nmbs-mbs-ud-ingest/v1/sessions/{sessionId}\nrequired: true\nschema:\ntype: string\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n\n/sessions/{sessionId}:\nparameters:\n- name: sessionId\nin: path\ndescription: Identifier of the Individual MBS User Data Ingest Session resource.\nrequired: true\nschema:\ntype: string\n\nget:\nsummary: Retrieve an existing Individual MBS User Data Ingest Session resource.\ntags:\n- Individual MBS User Data Ingest Session (Document)\noperationId: RetrieveIndMBSUserDataIngSession\nresponses:\n'200':\ndescription: >\nOK. The requested Individual MBS User Data Ingest Session resource is successfully\nreturned.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngSession'\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'406':\n$ref: 'TS29571_CommonData.yaml#/components/responses/406'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\nput:\nsummary: Request the update of an existing Individual MBS User Data Ingest Session resource.\ntags:\n- Individual MBS User Data Ingest Session (Document)\noperationId: UpdateIndMBSUserDataIngSession\nrequestBody:\ndescription: >\nContains the updated representation of the Individual MBS User Data Ingest Session\nresource.\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngSession'\nresponses:\n'200':\ndescription: >\nOK. The concerned Individual MBS User Data Ingest Session resource is successfully\nupdated and a representation of the updated resource is returned in the response body.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngSession'\n'204':\ndescription: >\nNo Content. The concerned Individual MBS User Data Ingest Session resource is\nsuccessfully updated and no content is returned in the response body.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\npatch:\nsummary: Request the modification of an existing Individual MBS User Data Ingest Session resource.\ntags:\n- Individual MBS User Data Ingest Session (Document)\noperationId: ModifyIndMBSUserDataIngSession\nrequestBody:\ndescription: >\nContains the parameters to request the modification of the Individual MBS User Data Ingest\nSession resource.\nrequired: true\ncontent:\napplication/merge-patch+json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngSessionPatch'\nresponses:\n'200':\ndescription: >\nOK. The concerned Individual MBS User Data Ingest Session resource is successfully\nmodified and a representation of the updated resource is returned in the response body.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngSession'\n'204':\ndescription: >\nNo Content. The concerned Individual MBS User Data Ingest Session resource is\nsuccessfully modified and no content is returned in the response body.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\ndelete:\nsummary: Request the deletion of an existing Individual MBS User Data Ingest Session resource.\ntags:\n- Individual MBS User Data Ingest Session (Document)\noperationId: DeleteIndMBSUserDataIngSession\nresponses:\n'204':\ndescription: >\nNo Content. The Individual MBS User Data Ingest Session resource is successfully\ndeleted.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n\n/status-subscriptions:\nget:\nsummary: Retrieve all the active MBS User Data Ingest Session Status Subscription resources managed by the MBSF.\ntags:\n- MBS User Data Ingest Session Status Subscriptions (Collection)\noperationId: RetrieveMBSUserDataIngStatSubscs\nresponses:\n'200':\ndescription: >\nOK. All the active MBS User Data Ingest Session Status Subscriptions managed by the MBSF\nare returned.\ncontent:\napplication/json:\nschema:\ntype: array\nitems:\n$ref: '#/components/schemas/MBSUserDataIngStatSubsc'\nminItems: 0\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'406':\n$ref: 'TS29571_CommonData.yaml#/components/responses/406'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\npost:\nsummary: Request the creation of a new MBS User Data Ingest Session Status Subscription.\ntags:\n- MBS User Data Ingest Session Status Subscriptions (Collection)\noperationId: CreateMBSUserDataIngStatSubsc\nrequestBody:\ndescription: >\nContains the parameters to request the creation of a new MBS User Data Ingest Session\nStatus Subscription.\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngStatSubsc'\nresponses:\n'201':\ndescription: >\nCreated. Successful creation of a new Individual MBS User Data Ingest Session\nStatus Subscription resource.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngStatSubsc'\nheaders:\nLocation:\ndescription: >\nContains the URI of the newly created resource, according to the structure\n{apiRoot}/nmbs-mbs-ud-ingest/v1/status-subscriptions/{subscriptionId}\nrequired: true\nschema:\ntype: string\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\ncallbacks:\nmbsUserDataIngestSessionStatusNotif:\n'{request.body#/notifUri}':\npost:\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngStatNotif'\nresponses:\n'204':\ndescription: No Content. Successful reception of the notification.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n\n/status-subscriptions/{subscriptionId}:\nparameters:\n- name: subscriptionId\nin: path\ndescription: >\nIdentifier of the Individual MBS User Data Ingest Session Status Subscription resource.\nrequired: true\nschema:\ntype: string\n\nget:\nsummary: Retrieve an existing Individual MBS User Data Ingest Session Status Subscription resource.\ntags:\n- Individual MBS User Data Ingest Session Status Subscription (Document)\noperationId: RetrieveIndMBSUserDataIngStatSubsc\nresponses:\n'200':\ndescription: >\nOK. Successful retrieval of the requested Individual MBS User Data Ingest Session\nStatus Subscription resource.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngStatSubsc'\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'406':\n$ref: 'TS29571_CommonData.yaml#/components/responses/406'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\nput:\nsummary: Request the update of an existing Individual MBS User Data Ingest Session Status Subscription resource.\ntags:\n- Individual MBS User Data Ingest Session Status Subscription (Document)\noperationId: UpdateIndMBSUserDataIngStatSubsc\nrequestBody:\ndescription: >\nContains the updated representation of the Individual MBS User Data Ingest Session Status\nSubscription resource.\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngStatSubsc'\nresponses:\n'200':\ndescription: >\nOK. The concerned Individual MBS User Data Ingest Session Status Subscription resource\nis successfully updated and a representation of the updated resource is returned in the\nresponse body.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngStatSubsc'\n'204':\ndescription: >\nNo Content. The concerned Individual MBS User Data Ingest Session Status Subscription\nresource is successfully updated and no content is returned in the response body.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\npatch:\nsummary: Request the modification of an existing Individual MBS User Data Ingest Session Status Subscription resource.\ntags:\n- Individual MBS User Data Ingest Session Status Subscription (Document)\noperationId: ModifyIndMBSUserDataIngStatSubsc\nrequestBody:\ndescription: >\nContains the parameters to request the modification of the Individual MBS User Data Ingest\nSession Status Subscription resource.\nrequired: true\ncontent:\napplication/merge-patch+json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngStatSubscPatch'\nresponses:\n'200':\ndescription: >\nOK. The concerned Individual MBS User Data Ingest Session Status Subscription resource\nis successfully modified and a representation of the updated resource is returned in the\nresponse body.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MBSUserDataIngStatSubsc'\n'204':\ndescription: >\nNo Content. The concerned Individual MBS User Data Ingest Session Status Subscription\nresource is successfully modified and no content is returned in the response body.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\ndelete:\nsummary: Request the deletion of an existing Individual MBS User Data Ingest Session Status Subscription resource.\ntags:\n- Individual MBS User Data Ingest Session Status Subscription (Document)\noperationId: DeleteMBSUserDataIngStatSubsc\nresponses:\n'204':\ndescription: >\nNo Content. Successful deletion of the existing Individual MBS User Data Ingest Session\nStatus Subscription resource.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{tokenUrl}'\nscopes: {}\ndescription: >\nWhen the Nmbsf_MBSUserDataIngestSession is consumed by a trusted or internal AF, then\n'nmbsf-mbs-ud-ingest' shall be used as the scope (i.e. with the 'scopes' property) and\n'{nrfApiRoot}/oauth2/token' shall be used as the URI to retrieve the token\n(i.e. 'tokenUri').\n\n#\n# STRUCTURED DATA TYPES\n#\nschemas:\nMBSUserDataIngSession:\ndescription: Represents MBS User Data Ingest Session information.\ntype: object\nproperties:\nmbsUserServId:\ntype: string\nmbsDisSessInfos:\ntype: object\nadditionalProperties:\n$ref: '#/components/schemas/MBSDistributionSessionInfo'\nminProperties: 1\nnullable: true\ndescription: >\nRepresents one or more MBS Distribution Session(s) composing the MBS User Data Ingest\nSession.\nThe key of the map shall be any unique string encoded value.\nactPeriods:\ntype: array\nitems:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/TimeWindow'\nminItems: 1\nmbsUserServAnmt:\n$ref: '#/components/schemas/MBSUserServAnmt'\nmbsUserServiceAnmt:\n$ref: 'TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription'\nmbsUserServiceAnmtUrl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nsuppFeat:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'\nrequired:\n- mbsUserServId\n- mbsDisSessInfos\n\nMBSDistributionSessionInfo:\ndescription: Represents MBS Distribution Session information.\ntype: object\nproperties:\nmbsDistSessionId:\ntype: string\nmbsDistSessState:\n$ref: 'TS29581_Nmbstf_DistSession.yaml#/components/schemas/DistSessionState'\nmbsSessionId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MbsSessionId'\nassociatedSessionId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/AssociatedSessionId'\nmbsServInfo:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MbsServiceInfo'\nmaxContBitRate:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/BitRate'\nmaxContDelay:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PacketDelBudget'\ndistrMethod:\n$ref: '#/components/schemas/DistributionMethod'\nfecConfig:\n$ref: '#/components/schemas/FECConfig'\nobjDistrInfo:\n$ref: '#/components/schemas/ObjectDistrMethInfo'\npckDistrInfo:\n$ref: '#/components/schemas/PacketDistrMethInfo'\ntrafficMarkingInfo:\ntype: string\ntgtServAreas:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MbsServiceArea'\nextTgtServAreas:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ExternalMbsServiceArea'\nmbsFSAId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MbsFsaId'\nlocationDependent:\ntype: boolean\ndescription: >\nRepresents an indication that this MBS Distribution Session belongs to a location-\ndependent MBS. This attribute shall be set to \"true\" to indicate that the MBS\nDistribution Session belongs to a location-dependent MBS; or set to \"false\" to\nindicate that the MBS Distribution Session does not belong to a location-dependent MBS.\nThe default value is \"false\", if omitted.\ndefault: false\nmultiplexedServFlag:\ntype: boolean\ndescription: >\nRepresents an indication that this MBS Distribution Session belongs to a multiplex, i.e.\nforms part of a set of MBS Distribution Sessions under the same parent MBS User Data\nIngest Session with identical or empty sets of target service areas and multiplexed onto\nthe same MBS Session at the MB-SMF.\ndefault: false\nrestrictedFlag:\ntype: boolean\ndescription: >\nRepresents an indication that this MBS Distribution Session is not open to any UE, i.e.\nrestricted to a set of UEs according to their MBS related subscription information.\nThis attribute may be included only if the parent MBS User Service is of Multicast\nservice type. This attribute shall be set to \"true\" to indicate that this MBS\nDistribution Session is restricted to a set of UE(s); or set to \"false\" to indicate that\nthis MBS Distribution Session is open to any UE.\nThe default value is \"false\", if omitted.\ndefault: false\nrequired:\n- distrMethod\n- maxContBitRate\n\nMBSUserDataIngSessionPatch:\ndescription: >\nRepresents the requested modifications to an MBS User Data Ingest Session Status\nSubscription.\ntype: object\nproperties:\nmbsDisSessInfos:\ntype: object\nadditionalProperties:\n$ref: '#/components/schemas/MBSDistributionSessionInfo'\nminProperties: 1\nnullable: true\ndescription: >\nContains the requested modifications to one or more MBS Distribution Session(s)\ncomposing the MBS User Data Ingest Session.\nThe key of the map shall be any unique string encoded value.\nactPeriods:\ntype: array\nitems:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/TimeWindow'\nminItems: 1\n\nObjectDistrMethInfo:\ndescription: >\nRepresents additional MBS Distribution Session parameters for the case of an Object\nDistribution Method.\ntype: object\nproperties:\noperatingMode:\n$ref: 'TS29581_Nmbstf_DistSession.yaml#/components/schemas/ObjDistributionOperatingMode'\nobjAcqMethod:\n$ref: 'TS29581_Nmbstf_DistSession.yaml#/components/schemas/ObjAcquisitionMethod'\nobjAcqIds:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nminItems: 0\nobjIngUri:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nobjDistrUri:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nobjRepairUri:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nrequired:\n- operatingMode\n- objAcqMethod\n- objAcqIds\n\nPacketDistrMethInfo:\ndescription: >\nRepresents additional MBS Distribution Session parameters for the case of Packet\nDistribution Method.\ntype: object\nproperties:\noperatingMode:\n$ref: 'TS29581_Nmbstf_DistSession.yaml#/components/schemas/PktDistributionOperatingMode'\npckIngMethod:\n$ref: 'TS29581_Nmbstf_DistSession.yaml#/components/schemas/PktIngestMethod'\ningEndpointAddrs:\n$ref: 'TS29581_Nmbstf_DistSession.yaml#/components/schemas/MbStfIngestAddr'\nrequired:\n- operatingMode\n- pckIngMethod\n- ingEndpointAddrs\n\nMBSUserDataIngStatSubsc:\ndescription: >\nRepresents an MBS User Data Ingest Session Status Subscription.\ntype: object\nproperties:\nmbsIngSessionId:\ntype: string\neventSubscs:\ntype: array\nitems:\n$ref: '#/components/schemas/SubscribedEvent'\nminItems: 1\nnotifUri:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nrequired:\n- mbsIngSessionId\n- eventSubscs\n- notifUri\n\nMBSUserDataIngStatSubscPatch:\ndescription: >\nRepresents the requested modifications to an MBS User Data Ingest Session Status\nSubscription.\ntype: object\nproperties:\neventSubscs:\ntype: array\nitems:\n$ref: '#/components/schemas/SubscribedEvent'\nminItems: 1\nnotifUri:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\n\nSubscribedEvent:\ndescription: >\nRepresents a subscribed MBS User Data Ingest Session Status event and the related\ninformation.\ntype: object\nproperties:\nstatusEvent:\n$ref: '#/components/schemas/Event'\nmbsDistSessionId:\ntype: string\nrequired:\n- statusEvent\n\nMBSUserDataIngStatNotif:\ndescription: >\nRepresents an MBS User Data Ingest Session Status Notification.\ntype: object\nproperties:\nmbsIngSessionId:\ntype: string\neventNotifs:\ntype: array\nitems:\n$ref: '#/components/schemas/EventNotification'\nminItems: 1\nrequired:\n- mbsIngSessionId\n- eventNotifs\n\nEventNotification:\ndescription: Represents Event Notification.\ntype: object\nproperties:\nstatusEvent:\n$ref: '#/components/schemas/Event'\nmbsDisSessionId:\ntype: string\nmbsSessionId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MbsSessionId'\nstatusAddInfo:\ntype: string\ntimeStamp:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/DateTime'\nrequired:\n- statusEvent\n- timeStamp\n\nMBSUserServAnmt:\ndeprecated: true\ndescription: >\nRepresents the MBS User Service Announcement currently associated with the MBS User Data\nIngest Session.\ntype: object\nproperties:\nextServiceId:\ntype: array\nitems:\ntype: string\nminItems: 1\nservClass:\ntype: string\nstartTime:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/DateTime'\nendTime:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/DateTime'\nservNameDescs:\ntype: array\nitems:\n$ref: 'TS29580_Nmbsf_MBSUserService.yaml#/components/schemas/ServiceNameDescription'\nminItems: 1\nmainServLang:\ntype: string\nmbsDistSessAnmt:\nadditionalProperties:\n$ref: '#/components/schemas/MBSDistSessionAnmt'\nminProperties: 1\ndescription: >\nRepresents the set of MBS Distribution Session Announcements currently associated with\nthis MBS User Service Announcement.\nrequired:\n- extServiceId\n- servClass\n- servNameDescs\n\nMBSDistSessionAnmt:\ndescription: >\nRepresents the set of MBS Distribution Session Announcements currently associated with this\nMBS User Service Announcement.\ntype: object\nproperties:\nmbsSessionId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MbsSessionId'\nmbsFSAId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MbsFsaId'\ndistrMethod:\n$ref: '#/components/schemas/DistributionMethod'\nobjDistrAnnInfo:\n$ref: '#/components/schemas/ObjectDistMethAnmtInfo'\nsesDesInfo:\ntype: array\nitems:\ntype: string\nminItems: 1\nrequired:\n- distrMethod\n- sesDesInfo\n\nObjectDistMethAnmtInfo:\ndescription: >\nRepresents MBS Distribution Session Announcement parameters for Object Distribution Method.\ntype: object\nproperties:\nobjDistrSched:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/TimeWindow'\nobjDistrBaseUri:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nobjRepBaseUri:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\n\nFECConfig:\ndescription: Represents FEC configuration information.\ntype: object\nproperties:\nfecScheme:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nfecOverHead:\ntype: integer\nadditionalParams:\ntype: array\nitems:\n$ref: '#/components/schemas/AddFecParams'\nminItems: 1\nrequired:\n- fecScheme\n- fecOverHead\n\nAddFecParams:\ndescription: Represents additional scheme-specific parameters for AL-FEC configuration.\ntype: object\nproperties:\nparamName:\ntype: string\nparamValue:\ntype: string\nrequired:\n- paramName\n- paramValue\n\n# SIMPLE DATA TYPES\n#\n\n#\n# ENUMERATIONS\n#\nDistributionMethod:\nanyOf:\n- type: string\nenum:\n- OBJECT\n- PACKET\n- type: string\ndescription: >\nThis string provides forward-compatibility with future extensions to the enumeration\nand is not used to encode content defined in the present version of this API.\ndescription: |\nRepresents the MBS Distribution method.\nPossible values are:\n- OBJECT: Indicates the Object Distribution Method.\n- PACKET: Indicates the Packet Distribution Method.\n\nEvent:\nanyOf:\n- type: string\nenum:\n- USER_DATA_ING_SESS_STARTING\n- USER_DATA_ING_SESS_STARTED\n- USER_DATA_ING_SESS_TERMINATED\n- DIST_SESS_STARTING\n- DIST_SESS_STARTED\n- DIST_SESS_TERMINATED\n- DIST_SESS_SERV_MNGT_FAILURE\n- DIST_SESS_POL_CRTL_FAILURE\n- DATA_INGEST_FAILURE\n- DELIVERY_STARTED\n- SESSION_TERMINATED\n- SESSION_STARTED\n- SESSION_RELEASED\n- DIST_SESS_ACTIVATED\n- DIST_SESS_EST_FAILURE\n- USER_SER_AD\n- type: string\ndescription: >\nThis string provides forward-compatibility with future extensions to the enumeration\nand is not used to encode content defined in the present version of this API.\ndescription: |\nRepresents the MBS User Data Ingest Session Status events.\nPossible values are:\n- USER_DATA_ING_SESS_STARTING: >\nIndicates that the MBS User Data Ingest Session is starting. This is an \"MBS User Data\nIngest Session\" level event.\n- USER_DATA_ING_SESS_STARTED: >\nIndicates that the MBS User Data Ingest Session established. This is an \"MBS User Data\nIngest Session\" level event.\n- USER_DATA_ING_SESS_TERMINATED: >\nIndicates that the MBS User Data Ingest Session is terminated. This is an \"MBS User Data\nIngest Session\" level event.\n- DIST_SESS_STARTING: >\nIndicates that the MBS Distribution Session is starting. This is an \"MBS Distribution\nSession\" level event.\n- DIST_SESS_STARTED: >\nIndicates that the MBS Distribution Session started. This is an \"MBS Distribution\nSession\" level event.\n- DIST_SESS_TERMINATED: >\nIndicates that the MBS Distribution Session is terminated. This is an \"MBS Distribution\nSession\" level event.\n- DIST_SESS_SERV_MNGT_FAILURE: >\nIndicates that the MBS Distribution Session could not be started (e.g. the necessary\nresources could not be allocated by the MBS system). This is an \"MBS Distribution\nSession\" level event.\n- DIST_SESS_POL_CRTL_FAILURE: >\nIndicates that the MBS Distribution Session could not be started because of a policy\nauthorization/control failure or rejection. This is an \"MBS Distribution Session\"\nlevel event.\n- DATA_INGEST_FAILURE: >\nThe MBS User Data Ingest is failed because the MBSTF is expecting data (the MBS Session\nis active), but not receiving it. This is an \"MBS Distribution Session\" level event.\n- DELIVERY_STARTED: >\nThe MBS User Data delivery is started.\n- SESSION_TERMINATED: >\nThe MBS User Data Ingest Session is terminated.\n- SESSION_STARTED: >\nThe MBS Session is started.\n- SESSION_RELEASED: >\nThe MBS Session is released.\n- DIST_SESS_ACTIVATED:\nIndicates that the MBS Distribution Session is activated successfully.\n- DIST_SESS_EST_FAILURE:\nIndicates that the MBSF failed to successfully establish the MBS Distribution Session at\nthe MBSTF. This is an \"MBS Distribution Session\" level event.\n- USER_SER_AD:\nIndicates that the MBSF advertises the User Service Announcement information to the MBS\nApplication Provider.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.1\tGeneral",
+            "description": "This Annex lists withdrawn API versions of the APIs defined in the present specification. Clause 4.3.1.6 of 3GPP TS 29.501 [5] describes the withdrawal of API versions.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.2\tNmbsf_MBSUserService API",
+            "description": "The API versions listed in table B.2-1 are withdrawn for the Nmbsf_MBSUserService API.\nTable B.2-1: Withdrawn API versions of the Nmbsf_MBSUserService service\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.2-1: Withdrawn API versions of the Nmbsf_MBSUserService service",
+                    "table number": 140,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.3\tNmbsf_MBSUserDataIngestSession API",
+            "description": "The API versions listed in table B.3-1 are withdrawn for the Nmbsf_MBSUserDataIngestSession API.\nTable B.3-1: Withdrawn API versions of the Nmbsf_MBSUserDataIngestSession service\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.3-1: Withdrawn API versions of the Nmbsf_MBSUserDataIngestSession service",
+                    "table number": 141,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 142,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

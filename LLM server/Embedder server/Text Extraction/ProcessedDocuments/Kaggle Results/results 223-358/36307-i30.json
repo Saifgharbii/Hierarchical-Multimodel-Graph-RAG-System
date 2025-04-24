@@ -1,0 +1,975 @@
+{
+    "document_name": "36307-i30.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the  and may change following formal  approval. Should the  modify the contents of the present document, it will be re-released by the  with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to  for information;\n2\tpresented to  for approval;\n3\tor greater indicates  approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies requirements for Rel-17 UEs supporting release independent features like:\n-\tadditional E-UTRA operating frequency bands on top of Rel-17 of TS 36.101 [2] and TS 36.133 [3];\n-\tadditional E-UTRA CA configurations (intra-band/inter-band) on top of Rel-17 of TS 36.101 [2] and TS 36.133 [3];\n-\tadditional operating bands and/or CA configurations for specific features (like UE category 0, M1, NB1);\n-\tother release independent features (like 4Rx antenna port, high speed scenario, 8Rx antenna port, NB-IoT or eMTC operation over NTN).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n\tFor a specific reference, subsequent revisions do not apply.\n\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 36.101: \"Evolved Universal Terrestrial Radio Access (E-UTRA); User Equipment (UE) Radio Transmission and Reception\".\nNOTE: The considered release is given in the text of the present document that uses TS 36.101 [2].\n[3]\t3GPP TS 36.133: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Requirements for Support of Radio Resource Management\".\nNOTE: The considered release is given in the text of the present document that uses TS 36.133 [3].\n[4]\t3GPP TS 36.306: \"Evolved Universal Terrestrial Radio Access (E-UTRA); User Equipment (UE) radio access capabilities\".\nNOTE: The considered release is given in the text of the present document that uses TS 36.306 [4].\n[5]\tVoid\n[6]\t3GPP TS 36.102: \"Evolved Universal Terrestrial Radio Access (E-UTRA); User Equipment (UE) radio transmission and reception for satellite access\".\nNOTE: The considered release is given in the text of the present document that uses TS 36.102 [6].\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nrelease independent: applicable to some frozen releases, starting from a certain release Rel-M\nNOTE 1:\tNormally, a feature is introduced only in the latest open release Rel-N and future releases are based on the previous one so that future releases inherit the requirements of this feature. Introducing a feature \"in a release independent way from Rel-M onwards\" (M<N) means it was decided by TSG RAN that this feature would be also beneficial in previous, already frozen releases starting with Rel-M until Rel-(N-1). In order to avoid touching TS 36.101 [2] or TS 36.133 [3] of these frozen releases, the corresponding requirements are captured in TS 36.307 via pointers to [2] or [3] of the release in which the feature was introduced.\nNOTE 2:\tRelease independent does not mean applicable to all releases.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\n4Rx\t4 UE receiver antenna ports\nCA\tCarrier Aggregation\nCRS\tCell-specific Reference Signal\nCSI\tChannel State Indicator\nFDD\tFrequency Division Duplex\nLAA\tLicense-Assisted Access\nRRC\tRadio Resource Control\nRRM\tRadio Resource Management\nSDR\tSustained Data Rate\nTDD\tTime Division Duplex\nUE\tUser Equipment\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\nN\tRelease in which a feature is introduced into TS 36.101 [2] or TS 36.133 [3]\nM\tRelease from which onwards (including release M) a feature is release independent\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "3A\tRelease independent features",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3A.0\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TSG-RAN has agreed for certain features (see the following clauses) to introduce them in a \"release independent way\".\nThis means for each feature:\n-\tit is \"introduced\" in a release N, i.e. TS 36.101 [2] and TS 36.133 [3] of release N define certain UE requirements for this feature; the feature is indicated in the tables of the following clauses;\n-\tit is \"release independent\" starting from a release M (M<N); M for the given feature is provided in the tables of the following clauses;\n-\tUEs supporting this feature have to fulfil additional requirements in release M or higher which are specified in one or more Annexes of TS 36.307 of release N; the applicable Annexes for a given feature are provided in the tables of the following clauses.\nThe applicable UE Categories are specified in TS 36.306 [4] according to the release to which the UE conforms.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3A.1\tAdditional E-UTRA operating bands",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Requirements for a Rel-17 UE for additional E-UTRA operating bands compared to TS 36.101 Rel-17 [2] are introduced via this clause.\nTable 3A.1-1: E-UTRA operating bands and UE power class\n\nFor example, Band 19 was introduced in the Release 9 specifications. In order to implement a UE conforming to Release 8 but supporting Band 19, it is necessary for the UE to additionally conform to some parts of the Release 9 specifications (see corresponding Annexes of TS 36.307 Rel-9 which will point to the requirements in the Rel-9 of TS 36.101 [2] or TS 36.133 [3] to be fulfilled), such as the radio frequency and radio resource management requirements for the Band 19.\n",
+                    "tables": [
+                        {
+                            "description": "Table 3A.1-1: E-UTRA operating bands and UE power class",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3A.2\tAdditional E-UTRA CA configurations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Requirements for a Rel-17 UE for additional E-UTRA CA configurations compared to TS 36.101 Rel-17 [2] are introduced via this clause.\nTable 3A.2-1: Intra-band contiguous CA configurations and UE CA power class\n\nTable 3A.2-2: Inter-band CAconfigurations\n\nFor example, CA configuration CA_1A-19A was introduced in the Release 11 specifications. In order to implement a UE conforming to Release 10 but supporting the CA configuration CA_1A-19A, it is necessary for the UE to additionally conform to some parts of the Release 11 specifications (see corresponding Annexes of TS 36.307 Rel-11 which will point to the requirements in the Rel-11 of TS 36.101 [2] or TS 36.133 [3] to be fulfilled), such as the radio frequency and radio resource management requirements for the CA configuration CA_1A-19A.\n\nTable 3A.2-3: Intra-band non-contiguous CA configurations\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 3A.2-1: Intra-band contiguous CA configurations and UE CA power class",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 3A.2-2: Inter-band CAconfigurations",
+                            "table number": 5,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 3A.2-3: Intra-band non-contiguous CA configurations",
+                            "table number": 6,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3A.3\tAdditional operating bands and/or CA configurations for specific features",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For a specific feature introduced in an earlier release, it may be decided in a later release to apply this specific feature in a release independent way for additional operating bands and/or CA configurations. For a Rel-17 UE corresponding requirements are then introduced via this clause.\nTable 3A.3-1: Operating bands for specific features\n\nTable 3A.3-2: CA configurations for specific features\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 3A.3-1: Operating bands for specific features",
+                            "table number": 7,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 3A.3-2: CA configurations for specific features",
+                            "table number": 8,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3A.4\tOther release independent features",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This clause covers requirements for a Rel-17 UE coming from all other release independent features that are not covered under clause 3A.1, 3A.2 and 3A.3, e.g. generic baseband requirements or requirements that are not band/CA configuration specific.\nTable 3A.4-1: Additional requirements of other release independent features\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 3A.4-1: Additional requirements of other release independent features",
+                            "table number": 9,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4 – 292\tVoid",
+            "description": "\nThe following information is provided in order to assist a UE derive the DL EARFCN and UL EARFCN in a multi-band environment, in which multiple overlapping operating bands may be indicated in the fields freqBandIndicator and multiBandInfoList of SIB1.\nThe overlapping bands, independent of release, which may be indicated in a cell are shown in Table A-1 for applicable E-UTRA bands. The DL EARFCN and UL EARFCN are derived according to TS 36.101 Rel-17 [2].\nTable A-1: Overlapping bands (multi-band environments) for each E-UTRA band\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table A-1: Overlapping bands (multi-band environments) for each E-UTRA band",
+                    "table number": 10,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.1\tPurpose of annex",
+            "description": "The purpose of Annex B is to group the requirements that are common for several bands or CA configurations in this specification and use the common tables as references.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.2\tCommon RRM requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "B.2.1\tCommon RRM requirements for a release independent band",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.1-1 are specified in TS 36.133 Rel-17 [3].\n\nTable B.2.1-1: Common RRM requirements for a release independent band\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.1-1: Common RRM requirements for a release independent band",
+                            "table number": 11,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.2\tCommon RRM requirements for an intra-band contiguous CA configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.2-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.2-1: Common RRM requirements for a release independent single-band CA configuration\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.2-1: Common RRM requirements for a release independent single-band CA configuration",
+                            "table number": 12,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.3\tCommon RRM requirements for an intra-band non-contiguous CA with single uplink configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.3-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.3-1: Common RRM requirements for a release independent single-band CA configuration\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.3-1: Common RRM requirements for a release independent single-band CA configuration",
+                            "table number": 13,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.4\tCommon RRM requirements for an inter-band CA with single uplink configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.4-1 are specified in TS 36.133 Rel-17 [3].\n\nTable B.2.4-1: Common RRM requirements for a release independent band-combination CA configuration\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.4-1: Common RRM requirements for a release independent band-combination CA configuration",
+                            "table number": 14,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.5\tCommon RRM requirements for an inter-band CA with dual uplink configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.5-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.5-1: Common RRM requirements for a release independent band-combination CA configuration with dual uplink\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.5-1: Common RRM requirements for a release independent band-combination CA configuration with dual uplink",
+                            "table number": 15,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.6\tCommon RRM requirements for an intra-band non-contiguous CA with dual uplink configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.6-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.6-1: Common RRM requirements for a release independent single-band CA configuration with dual uplink\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.6-1: Common RRM requirements for a release independent single-band CA configuration with dual uplink",
+                            "table number": 16,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.7\tCommon RRM requirements for an inter-band CA with three uplink configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.7-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.7-1: Common RRM requirements for a release independent band-combination CA configuration with three uplink\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.7-1: Common RRM requirements for a release independent band-combination CA configuration with three uplink",
+                            "table number": 17,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.8\tCommon RRM requirements for operating bands for UE category NB1",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.8-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.8-1: Common RRM requirements for release independent\noperating bands for UE category NB1\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.8-1: Common RRM requirements for release independent\noperating bands for UE category NB1",
+                            "table number": 18,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.9\tCommon RRM requirements for operating bands for UE category 0",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.9-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.9-1: Common RRM requirements for release independent\noperating bands for a UE category 0\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.9-1: Common RRM requirements for release independent\noperating bands for a UE category 0",
+                            "table number": 19,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.10\tCommon RRM requirements for operating bands for UE category M1",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.10-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.10-1: Common RRM requirements for release independent\noperating bands for a UE category M1\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.10-1: Common RRM requirements for release independent\noperating bands for a UE category M1",
+                            "table number": 20,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.11\tCommon RRM requirements for operating bands for UE category M2",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.11-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.11-1: Common RRM requirements for release independent\noperating bands for a UE category M2\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.11-1: Common RRM requirements for release independent\noperating bands for a UE category M2",
+                            "table number": 21,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.12\tCommon RRM requirements for operating bands for UE category NB2",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.12-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.12-1: Common RRM requirements for release independent\noperating bands for UE category NB2\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.12-1: Common RRM requirements for release independent\noperating bands for UE category NB2",
+                            "table number": 22,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.13\tCommon RRM requirements for operating bands for LTE-based V2X Communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.13-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.13-1: Common RRM requirements for release independent operating bands for LTE-based V2X communication\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.13-1: Common RRM requirements for release independent operating bands for LTE-based V2X communication",
+                            "table number": 23,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.14\tCommon RRM requirements for an inter-band CA with four uplink configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.14-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.14-1: Common RRM requirements for a release independent band-combination CA configuration with four uplink\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.14-1: Common RRM requirements for a release independent band-combination CA configuration with four uplink",
+                            "table number": 24,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.15\tCommon RRM requirements for operating bands for UE category 1bis",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.2.15-1 are specified in TS 36.133 Rel-17 [3].\nTable B.2.15-1: Common RRM requirements for release independent\noperating bands for a UE category 1bis\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.15-1: Common RRM requirements for release independent\noperating bands for a UE category 1bis",
+                            "table number": 25,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "B.3\tCommon UE performance requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "B.3.1\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.3.2\tCommon UE performance requirements and tests for different CA configurations and combination sets",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.3.2-1 are specified in TS 36.101 Rel-17 [2].\nTable B.3.2-1: Common UE performance requirements and tests for different CA configurations and combination sets\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.3.2-1: Common UE performance requirements and tests for different CA configurations and combination sets",
+                            "table number": 26,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.3.3\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.3.4\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.3.5\tCommon UE performance requirements and tests for operating bands for UE category 0",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.3.5-1 are specified in TS 36.101 Rel-17 [2].\nTable B.3.5-1: Common UE performance requirements and tests for release independent operating bands for UE category 0\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.3.5-1: Common UE performance requirements and tests for release independent operating bands for UE category 0",
+                            "table number": 27,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.3.6\tCommon UE performance requirements and tests for operating bands for UE category M1 and M2",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.3.6-1 are specified in TS 36.101 Rel-17 [2].\nTable B.3.6-1: Common UE performance requirements and tests for release independent operating bands for UE category M1 and M2\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.3.6-1: Common UE performance requirements and tests for release independent operating bands for UE category M1 and M2",
+                            "table number": 28,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.3.7\tCommon UE performance requirements and tests for operating bands for UE category NB1 and NB2",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.3.7-1 are specified in TS 36.101 Rel-17 [2].\nTable B.3.7-1: Common UE performance requirements and tests for release independent operating bands for UE category NB1 and NB2\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.3.7-1: Common UE performance requirements and tests for release independent operating bands for UE category NB1 and NB2",
+                            "table number": 29,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.3.8\tCommon UE performance requirements and tests for operating bands for UE category 1bis",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.3.8-1 are specified in TS 36.101 Rel-17 [2].\nTable B.3.8-1: Common UE performance requirements and tests for release independent operating bands for UE category 1bis\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.3.8-1: Common UE performance requirements and tests for release independent operating bands for UE category 1bis",
+                            "table number": 30,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "B.4\tCommon UE RF requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "B.4.1\tCommon UE RF requirements for a release independent band",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.1-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.1-1: Common UE RF requirements for a release independent band\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.1-1: Common UE RF requirements for a release independent band",
+                            "table number": 31,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.2\tCommon UE RF requirements for an intra-band contiguous CA configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.2-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.2-1: Common UE RF requirements for a release independent intra-band contiguous CA configuration\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.2-1: Common UE RF requirements for a release independent intra-band contiguous CA configuration",
+                            "table number": 32,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.3\tCommon UE RF requirements for an single uplink inter-band CA configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.3-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.3-1: Common UE RF requirements for a release independent inter-band CA configuration\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.3-1: Common UE RF requirements for a release independent inter-band CA configuration",
+                            "table number": 33,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.4\tCommon UE RF requirements for an inter-band CA configuration including an operating band without uplink band",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.4-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.4-1: Common UE RF requirements for a release independent inter-band CA configuration including an operating band without uplink band\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.4-1: Common UE RF requirements for a release independent inter-band CA configuration including an operating band without uplink band",
+                            "table number": 34,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.5\tCommon UE RF requirements for a single uplink intra-band non-contiguous CA configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.5-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.5-1: Common UE RF requirements for a release independent single uplink intra-band non-contiguous CA configuration\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.5-1: Common UE RF requirements for a release independent single uplink intra-band non-contiguous CA configuration",
+                            "table number": 35,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.6\tCommon UE RF requirements for dual uplink inter-band CA configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.6-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.6-1: Common UE RF requirements for a release independent dual uplink inter-band CA configuration\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.6-1: Common UE RF requirements for a release independent dual uplink inter-band CA configuration",
+                            "table number": 36,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.7\tCommon UE RF requirements for dual uplink intra-band non-contiguous CA configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.7-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.7-1: Common UE RF requirements for a release independent dual uplink intra-band non-contiguous CA configuration\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.7-1: Common UE RF requirements for a release independent dual uplink intra-band non-contiguous CA configuration",
+                            "table number": 37,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.8\tCommon UE RF requirements for three uplink inter-band CA configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.8-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.8-1: Common UE RF requirements for a release independent three uplink inter-band CA configuration\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.8-1: Common UE RF requirements for a release independent three uplink inter-band CA configuration",
+                            "table number": 38,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.9\tCommon UE RF requirements for operating bands for UE category NB1 and NB2",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.9-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.9-1: Common UE RF requirements for release independent operating bands for UE category NB1\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.9-1: Common UE RF requirements for release independent operating bands for UE category NB1",
+                            "table number": 39,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.10\tCommon UE RF requirements for operating bands for UE category 0",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.10-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.10-1: Common UE RF requirements for release independent operating bands for UE category 0\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.10-1: Common UE RF requirements for release independent operating bands for UE category 0",
+                            "table number": 40,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.11\tCommon UE RF requirements for operating bands for UE category M1 and M2",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.11-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.11-1: Common UE RF requirements for release independent operating bands for UE category M1 and M2\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.11-1: Common UE RF requirements for release independent operating bands for UE category M1 and M2",
+                            "table number": 41,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.12\tCommon UE RF requirements for operating bands for LTE-based V2X operation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.12-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.12-1: Common UE RF requirements for release independent operating bands for V2X operation\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.12-1: Common UE RF requirements for release independent operating bands for V2X operation",
+                            "table number": 42,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.13\tCommon UE RF requirements for four uplink inter-band CA configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.13-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.13-1: Common UE RF requirements for a release independent four uplink inter-band CA configuration\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.13-1: Common UE RF requirements for a release independent four uplink inter-band CA configuration",
+                            "table number": 43,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.4.14\tCommon UE RF requirements for operating bands for UE category 1bis",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements and test cases listed in Table B.4.14-1 are specified in TS 36.101 Rel-17 [2].\nTable B.4.14-1: Common UE RF requirements for release independent operating bands for UE category 1bis\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.4.14-1: Common UE RF requirements for release independent operating bands for UE category 1bis",
+                            "table number": 44,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "C.1\tCommon UE RF requirements",
+            "description": "The requirements and test cases listed in Table C.1-1 are specified in TS 36.101 Rel-17 [2].\nTable C.1-1: RF requirements for 4Rx for single band\n\nThe requirements and test cases listed in Table C.1-2 are specified in TS 36.101 Rel-17 [2].\nTable C.1-2: RF requirements for 4Rx for CA\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table C.1-1: RF requirements for 4Rx for single band",
+                    "table number": 45,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table C.1-2: RF requirements for 4Rx for CA",
+                    "table number": 46,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.2\tCommon UE demodulation and CSI requirements",
+            "description": "The requirements and test cases listed in Table C.2-1 are specified in TS 36.101 Rel-17 [2].\nTable C.2-1: UE Demodulation and CSI requirements for 4Rx for single band\n\nThe requirements and test cases listed in Table C.2-2 are specified in TS 36.101 Rel-17 [2].\nTable C.2-2: UE Demodulation and CSI requirements for 4Rx CA/DC\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table C.2-1: UE Demodulation and CSI requirements for 4Rx for single band",
+                    "table number": 47,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table C.2-2: UE Demodulation and CSI requirements for 4Rx CA/DC",
+                    "table number": 48,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "D.1\tCommon RRM requirements for performance enhancements for high speed scenario",
+            "description": "The requirements and test cases listed in Table D.1-1 are specified in TS 36.133 Rel-17 [3].\nTable D.1-1: RRM requirements for performance enhancements for high speed scenario\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table D.1-1: RRM requirements for performance enhancements for high speed scenario",
+                    "table number": 49,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "D.2\tCommon UE demodulation requirements for performance enhancements for high speed scenario",
+            "description": "The requirements and test cases listed in Table D.2-1 are specified in TS 36.101 Rel-17 [2].\nTable D.2-1: UE Demodulation requirements for performance enhancements for high speed scenario\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table D.2-1: UE Demodulation requirements for performance enhancements for high speed scenario",
+                    "table number": 50,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "E.1 Common UE RF requirements",
+            "description": "The requirements and test cases listed in Table E.1-1 are specified in TS 36.101 Rel-17 [2].\nTable E.1-1: RF requirements for 8Rx\n\nThe requirements and test cases listed in Table E.1-2 are specified in TS 36.101 Rel-17 [2].\nTable E.1-2: RF requirements for 8Rx for CA\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table E.1-1: RF requirements for 8Rx",
+                    "table number": 51,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table E.1-2: RF requirements for 8Rx for CA",
+                    "table number": 52,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "E.2\tCommon UE demodulation and CSI requirements",
+            "description": "The requirements and test cases listed in Table E.2-1 and Table E.2-2 are specified in TS 36.101 Rel-17 [2].\nTable E.2-1: UE Demodulation and CSI requirements for 8Rx for single band\n\nTable E.2-2: UE Demodulation and CSI requirements for 8Rx CA/DC\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table E.2-1: UE Demodulation and CSI requirements for 8Rx for single band",
+                    "table number": 53,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table E.2-2: UE Demodulation and CSI requirements for 8Rx CA/DC",
+                    "table number": 54,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "F.1\tCommon UE RF requirements",
+            "description": "The requirements and test cases listed in Table F.1-1 are specified in TS 36.102 Rel-18 [6].\nTable F.1-1: RF requirements for NB-IoT operation over NTN\n\nThe requirements and test cases listed in Table F.1-2 are specified in TS 36.102 Rel-18 [6].\nTable F.1-2: RF requirements for eMTC operation over NTN\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table F.1-1: RF requirements for NB-IoT operation over NTN",
+                    "table number": 55,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table F.1-2: RF requirements for eMTC operation over NTN",
+                    "table number": 56,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "F.2\tCommon RRM requirements",
+            "description": "The requirements and test cases listed in Table F.2-1 are specified in 36.133 Rel-18 [3]. Note the requirements apply to serving cell measurements and GEO intra-frequency measurements when no satellite assistance information is provided to the UE.\nT Table F.2-1: RRM requirements for NB-IoT operation over NTN\n\nThe requirements and test cases listed in Table F.2-2 are specified in 36.133 Rel-18 [3]. Note the requirements apply to serving cell measurements and GEO intra-frequency measurements when no satellite assistance information is provided to the UE.\n\nTable F.2-2: RRM requirements for eMTC operation over NTN\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "T Table F.2-1: RRM requirements for NB-IoT operation over NTN",
+                    "table number": 57,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table F.2-2: RRM requirements for eMTC operation over NTN",
+                    "table number": 58,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "F.3\tCommon UE Demodulation requirements",
+            "description": "The requirements and test cases listed in Table F.3-1 are specified in TS 36.102 Rel-18 [6].\nTable F.3-1: Demodulation requirements for NB-IoT operation over NTN\n\nThe requirements and test cases listed in Table F.3-2 are specified in TS 36.102 Rel-18 [6].\nTable F.3-2: Demodulation requirements for eMTC operation over NTN\n\nTable G.1: Change History\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table F.3-1: Demodulation requirements for NB-IoT operation over NTN",
+                    "table number": 59,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table F.3-2: Demodulation requirements for eMTC operation over NTN",
+                    "table number": 60,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table G.1: Change History",
+                    "table number": 61,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 62,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

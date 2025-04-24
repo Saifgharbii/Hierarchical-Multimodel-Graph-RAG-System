@@ -1,0 +1,851 @@
+{
+    "document_name": "37113-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document covers the assessment of NR, E-UTRA, UTRA, GSM/EDGE and NB-IoT Multi-Standard Radio (MSR) Base Stations and associated ancillary equipment in respect of Electromagnetic Compatibility (EMC).\nThe present document specifies the applicable test conditions, performance assessment and performance criteria for NR, E-UTRA, UTRA, GSM/EDGE and NB-IoT Base Stations and associated ancillary equipment in one of the following categories:\n-\tMulti-Standard Radio (MSR) Base Stations for NR, E-UTRA, UTRA and GSM/EDGE meeting the requirements of TS 37.104 [6], with conformance demonstrated by compliance to TS 37.141 [11].\nNOTE:\tFor NR, scope of this specification is limited to BS type 1-C. For EMC requirements of the MSR BS for BS type 1-H and BS type 1-O, refer to TS 37.114 [39].\n-\tBS type 1-C for NR meeting the requirements of TS 38.104 [35], with conformance demonstrated by compliance to TS 38.141-1 [36]\n-\tBase Stations for E-UTRA meeting the requirements of TS 36.104 [4], with conformance demonstrated by compliance to TS 36.141 [9].\n-\tBase Stations for UTRA FDD meeting the requirements of TS 25.104 [2], with conformance demonstrated by compliance to TS 25.141 [7].\n-\tBase Stations for UTRA TDD meeting the requirements of TS 25.105 [3], with conformance demonstrated by compliance to TS 25.142 [8].\n-\tBase Stations for GSM/EDGE meeting the requirements of TS 45.005 [5], with conformance demonstrated by compliance to TS 51.021 [10].\n-\tBase Stations for NB-IoT meeting the requirements of TS 36.104 [4], with conformance demonstrated by compliance to TS 36.141 [9].\nIn addition to MSR base stations, the present document covers other BS supporting more than one RAT.\nTechnical requirements related to the antenna port of Base Stations are not included in the present document. These are found in the relevant product standards [2-11, 35, 36].\nThe environment classification used in the present document refers to the residential, commercial, and light industrial environment classification used in IEC 61000-6-1 [12], IEC 61000-6-3 [13] and IEC 61000-6-8 [41].\nThe EMC requirements have been selected to ensure an adequate level of compatibility for apparatus at residential, commercial and light industrial environments. The levels, however, do not cover extreme cases which may occur in any location but with low probability of occurrence.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 25.104: \"Base Station (BS) radio transmission and reception (FDD)\".\n[3]\t3GPP TS 25.105: \"Base Station (BS) radio transmission and reception (TDD)\".\n[4]\t3GPP TS 36.104: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Base Station (BS) radio transmission and reception \".\n[5]\t3GPP TS 45.005: \"Radio transmission and reception\".\n[6]\t3GPP TS 37.104: \"NR, E-UTRA, UTRA and GSM/EDGE; Multi-Standard Radio (MSR) Base Station (BS) radio transmission and reception\".\n[7]\t3GPP TS 25.141: \"Base Station (BS) conformance testing (FDD)\".\n[8]\t3GPP TS 25.142: \"Base Station (BS) conformance testing (TDD)\".\n[9]\t3GPP TS 36.141: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Base Station (BS) conformance testing\".\n[10]\t3GPP TS 51.021: \"Base Station System (BSS) equipment specification; Radio aspects\".\n[11]\t3GPP TS 37.141: \"NR, E-UTRA, UTRA and GSM/EDGE; Multi-Standard Radio (MSR) Base Station (BS) conformance testing\".\n[12]\tIEC 61000-6-1: 2005: \"Electromagnetic compatibility (EMC) - Part 6-1: Generic standards –Immunity for residential, commercial and light-industrial environments\".\n[13]\tIEC 61000-6-3: 2020: \"Electromagnetic compatibility (EMC) - Part 6-3: Generic standards – Emission standard for equipment in residential environments\".\n[14]\tIEC 60050-161: \"International Electrotechnical Vocabulary (IEV) - Part 161: Electromagnetic compatibility\".\n[15]\tITU-R Recommendation SM.329: \"Unwanted emissions in the spurious domain\".\n[16]\tITU-R Recommendation SM.1539-1 (2001): \"Variation of the boundary between the out-of-band and spurious domains required for the application of Recommendations ITU-R SM.1541 and ITU-R SM.329\".\n[17]\tVoid\n[18]\tVoid\n[19]\tIEC 61000-3-2 (2004): \"Electromagnetic compatibility (EMC) - Part 3-2: Limits - Limits for harmonic current emissions (equipment input current ≤ 16 A)\".\n[20]\tIEC 61000-3-12 (2005): \"Electromagnetic compatibility (EMC) - Part 3-12: Limits - Limits for harmonic current produced by equipment connected to public low-voltage system with input current >16 A and ≤ 75 A\".\n[21]\tIEC 61000-3-3 (2002): \"Electromagnetic compatibility (EMC) - Part 3-3: Limits - Limitation of voltage fluctuations and flicker in low-voltage supply systems for equipment with rated current ≤ 16 A\".\n[22]\tIEC 61000-3-11 (2000): \"Electromagnetic compatibility (EMC) - Part 3-11: Limits – Limitation of voltage fluctuations and flicker in low-voltage supply systems for equipment with rated current ≤ 75 A and subject to conditional connections\".\n[23]\tIEC 61000-4-3: \"Electromagnetic compatibility (EMC) - Part 4-3: Testing and measurement techniques - Radiated, radio-frequency electromagnetic field immunity test\".\n[24]\tIEC 61000-4-2: \"Electromagnetic compatibility (EMC) - Part 4-2: Testing and measurement techniques - Electrostatic discharge immunity test\".\n[25]\tIEC 61000-4-4: \"Electromagnetic compatibility (EMC) - Part 4-4: Testing and measurement techniques - Electrical fast transient/burst immunity test\".\n[26]\tIEC 61000-4-6: \"Electromagnetic compatibility (EMC) - Part 4-6: Testing and measurement techniques - Immunity to contacted disturbances, induced by radio frequency fields\".\n[27]\tIEC 61000-4-11: \"Electromagnetic compatibility (EMC) - Part 4-11: Testing and measurement techniques - Voltage dips, short interruptions and voltage variations. Immunity tests\".\n[28]\tIEC 61000-4-5: \"Electromagnetic compatibility (EMC) - Part 4-5: Testing and measurement techniques - Surge immunity test\".\n[29]\t3GPP TS 25.101: \"User Equipment (UE) radio transmission and reception (FDD)\".\n[30]\t3GPP TS 25.102: \"User Equipment (UE) radio transmission and reception (TDD)\".\n[31]\t3GPP TS 36.101: \"Evolved Universal Terrestrial Radio Access (E-UTRA); User Equipment (UE) radio transmission and reception\".\n[32]\t3GPP TS 45.008: \"Radio subsystem link control\".\n[33]\t3GPP TS 51.010-1: \" Mobile Station (MS) conformance specification; Part 1: Conformance specification\".\n[34]\tCISPR 32: \"Electromagnetic compatibility of multimedia equipment - Emission requirements\".\n[35]\t3GPP TS 38.104: \"NR; Base Station (BS) radio transmission and reception\".\n[36]\t3GPP TS 38.141-1: \"NR; Base Station (BS) conformance testing; Part 1: Conducted conformance testing\".\n[37]\t3GPP TS 38.141-2: \"NR; Base Station (BS) conformance testing; Part 2: Radiated conformance testing\".\n[38]\t3GPP TS 38.101-4: \"NR; User Equipment (UE) radio transmission and reception; Part 4: Performance requirements\".\n[39]\t3GPP TS 37.114: \"Active Antenna System (AAS) Base Station (BS), Electromagnetic Compatibility (EMC)\".\n[40]\tIEC 61000-4-21: \"Electromagnetic Compatibility (EMC) Part 4-21: Testing And Measurement Techniques Reverberation Chamber Test Methods\".\n[41]\tIEC 61000-6-8: 2020: \"Electromagnetic compatibility (EMC) - Part 6-8: Generic standards - Emission standard for professional equipment in commercial and light-industrial locations\".\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nAncillary equipment: Equipment (apparatus), used in connection with a receiver, transmitter or transceiver is considered as an ancillary equipment (apparatus) if:\n-\tthe equipment is intended for use in conjunction with a receiver, transmitter or transceiver to provide additional operational and/or control features to the radio equipment, (e.g. to extend control to another position or location); and\n-\tthe equipment cannot be used on a stand-alone basis to provide user functions independently of a receiver, transmitter or transceiver; and\n-\tthe receiver, transmitter or transceiver to which it is connected, is capable of providing some intended operation such as transmitting and/or receiving without the ancillary equipment (i.e. it is not a sub-unit of the main equipment essential to the main equipment basic functions).\nantenna connector: connector at the conducted interface of the BS type 1-C\nBand category: group of operating bands for which the same MSR scenarios apply\nBase Station equipment: Radio and/or ancillary equipment intended for operation at a fixed location and powered directly or indirectly (e.g. via an AC/DC converter or power supply) by AC mains network, or an extended local DC mains network.\nBase Station RF bandwidth: The bandwidth in which a Base Station transmits and/or receives multiple carriers and/or RATs simultaneously.\nBase Station RF bandwidth edge: The frequency of one of the edges of the Base Station RF bandwidth.\nBS type 1-C: NR base station operating at FR1 with requirements set consisting only of conducted requirements defined at individual antenna connectors.\nChannel bandwidth: The RF bandwidth supporting a single E-UTRA RF carrier with the transmission bandwidth configured in the uplink or downlink of a cell. The channel bandwidth is measured in MHz and is used as a reference for transmitter and receiver RF requirements.\nContinuous phenomena (continuous disturbance): Electromagnetic disturbance, the effects of which on a particular device or equipment cannot be resolved into a succession of distinct effects (IEC 60050-161 [14]).\nLower RF bandwidth edge:  The frequency of the lower edge of the Base Station RF bandwidth, used as a frequency reference point for transmitter and receiver requirements.\nMaximum Base Station RF bandwidth: The maximum RF bandwidth supported by a BS within an operating band.\nMaximum throughput: The maximum achievable throughput for a reference measurement channel.\nMB-MSR Base Station: MSR Base Station characterized by the ability of its transmitter and/or receiver to process two or more carriers in common active RF components simultaneously, where at least one carrier is configured at a different non-overlapping operating band than the other carrier(s).\nMSR Base station: Base Station characterized by the ability of its receiver and transmitter to process two or more carriers in common active RF components simultaneously in a declared RF bandwidth, where at least one carrier is of a different RAT than the other carrier(s).\nNOTE:\tA Base Station where receiver or transmitter processes carriers of different RATs simultaneously, but not through common active RF components, is not an MSR BS according to the above definition. Such a BS is in the present specification referred to as \"other BS supporting more than one RAT\".\nNB-IoT In-band operation: NB-IoT is operating in-band when it utilizes the resource block(s) within a normal E-UTRA carrier.\nNB-IoT guard band operation: NB-IoT is operating in guard band when it utilizes the unused resource block(s) within an E-UTRA carrier's guard-band.\nNB-IoT standalone operation: NB-IoT is operating standalone when it utilizes its own spectrum, for example the spectrum currently being used by GERAN systems as a replacement of one or more GSM carriers, as well as scattered spectrum for potential IoT deployment.\nRadio communications equipment: Telecommunications equipment which includes one or more transmitters and/or receivers and/or parts thereof for use in a fixed, mobile or portable application. It can be operated with ancillary equipment but if so, is not dependent on it for basic functionality.\nRadio equipment: Equipment which contains Radio digital unit and Radio unit.\nRadio digital unit: Equipment which contains base band and functionality for controlling Radio unit.\nRadio unit: Equipment which contains transmitter and/or receiver.\nPort: A particular interface, of the specified equipment (apparatus), with the electromagnetic environment. For example, any connection point on an equipment intended for connection of cables to or from that equipment is considered as a port (see figure 3.1.1).\nReceiver exclusion band: The receiver exclusion band is the band of frequencies over which no tests of radiated immunity of a receiver are made. The exclusion band for receivers is expressed relative to the base station receive band.\nSignal and control port: Port which carries information or control signals, excluding antenna ports.\nTelecommunication port: Ports which are intended to be connected to telecommunication networks (e.g. public switched telecommunication networks, integrated services digital networks), local area networks (e.g. Ethernet, Token Ring) and similar networks.\nNOTE:\tTelecommunication port is called \"wired network port\" in CISPR 32 [34].\nThroughput: The number of payload bits successfully received per second for a reference measurement channel in a specified reference condition.\nTransient phenomena: Pertaining to or designating a phenomena or a quantity which varies between two consecutive steady states during a time interval short compared with the time-scale of interest (IEC 60050-161 [14]).\nTransmitter exclusion band: The transmitter exclusion band is the band of frequencies over which no tests of radiated immunity of a transmitter are made. The exclusion band for transmitters is expressed relative to the carrier frequencies used (the carrier frequencies of the base stations activated transmitter(s)).\nUpper RF bandwidth edge: The frequency of the upper edge of the Base Station RF bandwidth, used as a frequency reference point for transmitter and receiver requirements.\nFigure 3.1-1 illustrates various ports in a 5G network, highlighting their functionalities and connections.\nFigure 3.1-1: Examples of ports\nThe figure depicts a 5G network scenario with a single BS (base station) solution, illustrating the signal propagation in a 5G network. The figure shows the signal path, including the base station, user equipment (UE), and scatterers. Key components include the base station (gNB), user equipment (UE), and scatterers. The diagram highlights beamforming techniques to mitigate interference.\nFigure 3.1-2: BS with single enclosure solution\nThe figure depicts a 5G network with a BS (base station) and multiple enclosures, illustrating the signal propagation in a multi-path environment. The BS is equipped with beamforming techniques to mitigate interference, while the enclosures are designed to provide redundancy and failover reliability. The layered architecture aligns with SDN principles, emphasizing the importance of network virtualization and automation.\nFigure 3.1-3: BS with multiple enclosure solution\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\nBWChannel\tChannel bandwidth\nFC,high\tCenter frequency of the highest transmitted/received carrier.\nFC,low\tCenter frequency of the lowest transmitted/received carrier.\nFDL_high\tThe highest frequency of the downlink operating band\nFDL_low\tThe lowest frequency of the downlink operating band\nfoffset\tFrequency offset used for discovering narrowband response for receivers\nFoffset, RAT\tFrequency offset from FC,high to the upper  RF bandwidth edge or FC,low to the lower RF bandwidth edge for a specific RAT\nFUL_high\tThe highest frequency of the uplink operating band\nFUL_low\tThe lowest frequency of the uplink operating band\nΔfOBUE\tMaximum offset of the operating band unwanted emissions mask from the operating band edge\nΔfOOB\tMaximum offset of the out-of-band boundary from the uplink operating band edge\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nAC\tAlternating Current\nAMN\tArtificial Mains Network\nARFCN\tAbsolute Radio Frequency Channel Number\nBC\tBand Category\nBER\tBit Error Ratio\nBLER\tBlock Error Ratio\nCDN\tCoupling/Decoupling Network\nCS\tCapability Set\nDC\tDirect Current\nE-UTRA\tEvolved Universal Terrestrial Radio Access\nEARFCN\tE-UTRA Absolute Radio Frequency Channel Number\nEMC\tElectromagnetic Compatibility\nEPC\tEvolved Packet Core\nESD\tElectrostatic discharge\nEUT\tEquipment Under Test\nFR\tFrequency Range\nFRC\tFixed Reference Channel\nMB-MSR\tMulti-Band Multi-Standard Radio\nMSR\tMulti-Standard Radio\nNB-IoT\tNarrowband – Internet of Things\nNR\tNew Radio\nNR-ARFCN\tNR Absolute Radio Frequency Channel Number\nNTC\tTest Configuration for Non-contiguous operation\nRAT\tRadio Access Technology\nRF\tRadio frequency\nrms\troot mean square\nTC\tTest Configuration\nUARFCN\tUTRA Absolute Radio Frequency Channel Number\nUTRA\tUniversal Terrestrial Radio Access\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tTest conditions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The equipment shall be tested in normal test environment defined in base station conformance testing specification TS 37.141 [11]. The test conditions shall be recorded in the test report.\nFor a EUT which contains more than one BS, it is sufficient to perform tests relating to each type of port of each representative type of the BS forming part of the EUT. For an MSR BS or other BS supporting more than one RAT, tests shall be performed with RATs activated according to the test configuration in subclause 4.5. Tests shall be performed relating to each type of port, and need not be repeated for each RAT if operating RATs are assessed simultaneously during the test. For other BS supporting more than one RAT however (other than MSR BS), tests relating to the antenna port(s) shall always be performed for each supported RAT.\nFor BS capable of multi-band operation, the requirements in the present document apply for each supported operating band unless otherwise stated. Operating bands and RATs shall be activated according to the test configuration in subclause 4.5. Tests shall be performed relating to each type of port and all RATs per band shall be assessed during the tests.\nThe manufacturer shall declare the supported operating band(s) according to subclause 4.4 of TS 37.141 [11]. Requirements apply only for the declared operating band and corresponding Band Category.\nThe manufacturer shall declare the supported capability set(s) according to subclause 4.7 of TS 37.141 [11]. Tests performed on a Base Station according to a declared Capability Set cover all single RAT and multi-RAT configurations included in the declared Capability Set. Exception can be made for immunity testing based on declaration DEMC.2 and DEMC.4 (see table 4.6-1), as detailed in Annex B.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tArrangements for establishing a communication link",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The wanted RF signal nominal frequency shall be selected by setting the channel number according to the following:\n-\tThe NR Absolute Radio Frequency Channel Number (NR-ARFCN) for NR carrier,\n-\tThe Absolute Radio Frequency Channel Number (EARFCN) for E-UTRA carrier,\n-\tThe Absolute Radio Frequency Channel Number (UARFCN) for UTRA carrier,\n-\tThe Absolute Radio Frequency Channel Number (ARFCN) for GSM/EDGE carrier,\n-\tNB-IoT\tNarrowband – Internet of Things\nA communication link shall be set up with a suitable test system capable of evaluating the required performance criteria (hereafter called \"the test system\") at the radio interface and telecommunication port/ports (the S1/Iub/Abis interface). The test system shall be located outside of the test environment.\nWhen the EUT is required to be in the transmit/receive mode, the following conditions shall be met:\n-\tThe EUT shall be commanded to operate at maximum rated transmit power;\n-\tAdequate measures shall be taken to avoid the effect of the unwanted signal on the measuring equipment;\n-\tThe wanted RF input signal level shall be set to a level where the performance is not limited by the receiver noise floor or strong signal effects.\nNOTE:\t15 dB above the reference sensitivity level has been used as an example of the wanted input signal level in UTRA TDD, UTRA FDD, E-UTRA or NB-IoT EMC specifications for establishing a stable communication link. The RAT-specific reference sensitivity levels are specified in:\n-\tTS 25.142 [8] for UTRA TDD,\n-\tTS 25.141 7 for UTRA FDD,\n-\tTS 36.141 9 for E-UTRA or for NB-IoT,\n-\tTS 38.141-1 [36] for NR.\n-\tFor GSM/EDGE the wanted receiver input signal level shall be set to a nominal value of -47 dBm.\nFor immunity tests subclause 4.3 shall additionally apply.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tMultiple enclosure BS solution",
+                            "text_content": "For a BS with multiple enclosures, the BS part with Radio digital unit and the Radio unit may be tested separately. Communication link shall be set up in the same way as if they are in single BS enclosure. The Radio Digital unit and the Radio unit shall communicate over an interface enabling establishment of a communication link.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tNarrow band responses on receivers",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Responses on receivers or duplex transceivers occurring during the immunity test at discrete frequencies which are narrow band responses (spurious responses), are identified by the following method:\n-\tif during an immunity test the quantity being monitored goes outside the specified tolerances (clause 6), it is necessary to establish whether the deviation is due to a narrow band response or to a wide band (EMC) phenomenon. Therefore, the test shall be repeated with the unwanted signal frequency first increased, and then decreased by an offset foffset, where:\n-\tFor E-UTRA or for NR, foffset = 2 x BWChannel, where BWChannel is the channel bandwidth as defined in TS 36.104 [9] for E-UTRA, or in TS 38.104 [35] for NR;\n-\tFor UTRA, foffset = 10 MHz\n-\tFor GSM/EDGE, foffset = 400 kHz\n-\tFor NB-IoT, foffset = 400 kHz\n-\tif the deviation disappears in either or both of the above offset cases, then the response is considered as a narrow band response;\n-\tif the deviation does not disappear, this may be due to the fact that the offset has made the frequency of the unwanted signal correspond to the frequency of another narrow band response. Under these circumstances the procedure is repeated with the increase and decrease of the frequency of the unwanted signal set to 1.25 x foffset;\n-\tif the deviation does not disappear with the increased and/or decreased frequency, the phenomenon is considered wide band and therefore an EMC problem and the equipment fails the test.\nNarrow band responses are disregarded.\nFor an MSR BS or other BS supporting more than one RAT, the method above shall be applied for each tested RAT. For BS capable of multi-band operation, all supported operating bands shall be considered for narrowband responses.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tExclusion bands",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "An exclusion band is a band of frequencies over which no tests of radiated immunity are made.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.4.1\tTransmitter exclusion band",
+                            "text_content": "For testing of radiated immunity there shall be no transmitter exclusion band.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.4.2\tReceiver exclusion band",
+                            "text_content": "The receiver exclusion band for Base Stations is the band of frequencies over which no tests of radiated immunity of a receiver are made.\nThe range of the exclusion band shall be:\nFUL_low  – ΔfOOB<f < FUL_high + ΔfOOB\nWhere:\nThe value of FUL_low and FUL_high are defined for each operating band for NR, E-UTRA, UTRA and GSM/EDGE in TS 37.104 [6].\nThe values of ΔfOOB are defined in table 4.4.2-1.\nTable 4.4.2-1: Maximum ΔfOOB offset outside the uplink operating band\n\nFor BS capable of multi-band operation, the total receiver exclusion band shall be the combination of the exclusion bands for each operating band supported by the BS.\nTable 4.4-2: Void\nTable 4.4-3: Void\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.4.2-1: Maximum ΔfOOB offset outside the uplink operating band",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "4.5\tBS test configurations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The present clause defines the BS test configurations that shall be used for demonstrating conformance. This is specified in table 4.5-1, 4.5-1a, 4.5-1b, and 4.5-1c for multi-RAT capable MSR Base Stations, in table 4.5-2 for single-RAT capable BS and in table 4.5-3 for multi-band capable BS. For other BS supporting more than one RAT (other than MSR BS), table 4.5-2 applies separately for each RAT supported.\nThe test configurations apply according to the declared RAT Capability Set (CS) of the MSR Base Station according to clause 4.7 of TS 37.141 [11] and the Band Category of the declared operating band (BC1, BC2 or BC3), as listed in the heading of each table.\nThe test configurations (TCx) are defined in TS 37.141 [11], clause 4.8.\nFor a BS declared to be capable of contiguous operation only, the test configuration(s) in tables 4.5-1 and 4.5-2 denoted by a \"C\" shall be used for testing.\nFor a BS declared to be capable of contiguous and non-contiguous operation and where the parameters in the manufacture's declaration according to clause 4.7.2 of TS 37.141 [11] are identical for contiguous and non-contiguous operation, the test configurations denoted by \"CNC\" shall be used.\nFor a BS declared to be capable of contiguous and non-contiguous operation and where the parameters in the manufacture's declaration according to clause 4.7.2 of TS 37.141 [11] are not identical for contiguous and non-contiguous operation, the test configurations denoted by \"C/NC\" shall be used for testing.\nFor a BS declared to support NB-IoT operating in-band, the test configuration(s) in table 4.5-1 and 4.5-2 denoted by \"NI\" shall be used for testing.\nFor a BS declared to support NB-IoT operating in guard band, the test configuration(s) in table 4.5-1 and 4.5-2 denoted by \"NG\" shall be used for testing.\nFor a BS declared to support NB-IoT operating in guard band and in-band, the test configuration(s) in table 4.5-1 and 4.5-2 denoted by \"NG\" or/and \"NI\" shall be used for testing.\nFor a BS declared to support NB-IoT standalone, the test configuration(s) in table 4.5-1a, 4.5-1b and 4.5-2 and entries that refer to single-RAT specifications shall be used for testing.\nFor a MSR BS where signals from supported RATs are processed in common active components (see DEMC.2 and DEMC.4 in table 4.6-1), it is sufficient to consider a reduced set of CSs for immunity testing, as described in Annex B.\nFor immunity tests:\n-\tThe communication link for the RAT(s) listed in the table shall be established according to clause 4.2.\n-\tTests for ports relating to the RAT(s) supported shall be performed according to clause 4.1.\n\nTable 4.5-1: Test configurations for single-band Multi-RAT capable MSR BS (CS3-7)\n\nTable 4.5-1a: Test configurations for single-band Multi-RAT capable MSR BS (CS9-13)\n\nTable 4.5-1b: Test configurations for single-band Multi-RAT capable MSR BS (CS14-17)\n\nTable 4.5-1c: Test configurations for single-band Multi-RAT capable MSR BS (CS18-19)\n\nTable 4.5-2: Test configurations for single-band Single-RAT multi-carrier capable BS\n\nTable 4.5-3: Test configurations for multi-band capable BS (CS1-CS7, CS16 and CS18-CS19)\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.5-1: Test configurations for single-band Multi-RAT capable MSR BS (CS3-7)",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 4.5-1a: Test configurations for single-band Multi-RAT capable MSR BS (CS9-13)",
+                            "table number": 5,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 4.5-1b: Test configurations for single-band Multi-RAT capable MSR BS (CS14-17)",
+                            "table number": 6,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 4.5-1c: Test configurations for single-band Multi-RAT capable MSR BS (CS18-19)",
+                            "table number": 7,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 4.5-2: Test configurations for single-band Single-RAT multi-carrier capable BS",
+                            "table number": 8,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 4.5-3: Test configurations for multi-band capable BS (CS1-CS7, CS16 and CS18-CS19)",
+                            "table number": 9,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.6\tManufacturer declarations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following EMC-specific manufacturer’s declarations listed in table 4.6-1 are required, except as noted, to be provided by the manufacturer for MSR BS requirements testing.\nNOTE:\tThe below listed manufacturer’s declarations are supplementary to declarations covered in TS 37.141 [11].\nTable 4.6-1: EMC-specific manufacturer declarations\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.6-1: EMC-specific manufacturer declarations",
+                            "table number": 10,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tPerformance assessment",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following information shall be recorded in or annexed to the test report:\n-\tthe primary functions of the radio equipment to be tested during and after the EMC testing;\n-\tthe intended functions of the radio equipment which shall be in accordance with the documentation accompanying the equipment;\n-\tthe method to be used to verify that a communications link is established and maintained;\n-\tthe user-control functions and stored data that are required for normal operation and the method to be used to assess whether these have been lost after EMC stress;\n-\tthe ancillary equipment to be combined with the radio equipment for testing (where applicable);\n-\tthe information about ancillary equipment intended to be used with the radio equipment;\n-\tinformation about the common and/or RAT-specific active RF components and other HW blocks for a communication link in MSR BS or other BS supporting more than one RAT (see declaration DEMC.2);\n-\tinformation about the common and/or band-specific active RF components and other HW blocks for a communication link in BS capable of multi-band operation (see declaration DEMC.3);\n-\tan exhaustive list of ports, classified as either power or signal/control. Power ports shall further be classified as AC or DC power.\nPerformance assessment of a BS with multiple enclosures may be done separately for the BS part with the Radio digital unit and the Radio unit respectively, according to the manufacturer's choice.\nA communication link used by more than one tested RAT or more than one tested operating band, shall be assessed on all tested RATs and operating bands. Communication link(s) and/or radio performance parameters for the RATs and operating bands can during the test be assessed simultaneously or separately for each RAT and band, depending on the test environment capability.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tAssessment of performance in Downlink",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "In the immunity tests, the output of the transmitter shall be connected to equipment which meets the requirements for the performance assessment of RAT and bearer used in the immunity tests according to the following:\n-\tThroughput assessment in TS 38.101-4 [38] in case of NR\n-\tThroughput assessment in TS 36.101 [31] in case of E-UTRA\n-\tBLER assessment in TS 25.101 [29] in case of UTRA FDD\n-\tBLER assessment in TS 25.102 [30] in case of UTRA TDD\n-\tBER assessment in annex A.1 in case of GSM/EDGE\n-\tThroughput assessment in TS 36.101 [31] in case of NB-IoT\nPower control shall be OFF during the immunity testing.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tAssessment of performance in Uplink",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "In the immunity tests, the performance in the uplink shall be monitored at a telecommunications port(s) by using suitable test equipment according to the following:\n-\tThe value of the throughput shall be monitored in case of E-UTRA, and/or in case of NR\n-\tThe value of the BLER shall be monitored in case of UTRA FDD and UTRA TDD\n-\tThe value of the BER shall be monitored in case of GSM/EDGE (see annex A.2)\n-\tThe value of the throughput shall be monitored in case of NB-IoT\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tAncillary equipment",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "At the manufacturer's discretion the test may be performed on the ancillary equipment separately or on a representative configuration of the combination of radio and ancillary equipment. In each case EUT is tested against all applicable immunity and emission clauses of the present document and in each case, compliance enables the ancillary equipment to be used with different radio equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tPerformance criteria",
+            "description": "The test should, where possible, be performed using a bearer with the characteristics of data rate and performance criteria defined for NR, E-UTRA, UTRA, GSM/EDGE and NB-IoT below. If the test is not performed using one of these bearers (for example, if none of them are supported by the BS) the characteristics of the bearer used shall be recorded in the test report.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tPerformance criteria for continuous phenomena for BS",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tE-UTRA performance criteria",
+                            "text_content": "The throughput in table 6.1.1-1 is stated relative to the maximum throughput of the FRC. The maximum throughput for an FRC is equal to the payload size * the number of uplink subframes per second.\nThe BS Uplink and Downlink paths shall each meet the performance criteria defined in table 6.1.1-1 during the test. If the Uplink and Downlink paths are evaluated as a one loop then the criteria is two times the throughput reduction shown in table 6.1.1-1. After each test case BS shall operate as intended with no loss of user control function, stored data and the communication link shall be maintained.\nTable 6.1.1-1: E-UTRA BS Performance criteria for continuous phenomena for BS\n\nNOTE 1:\tThe performance criteria, \"Throughput > 95 % / No loss of service\", applies also if a bearer with another characteristics is used in the test.\nNOTE 2:\tThe performance criteria, \"Throughput > 90 % / No loss of service\", applies instead if the Uplink and Downlink paths are evaluated as a one loop.\nNOTE 3:\tThis is the information data rate of a single instance of the bearer mapped to 25 resource blocks. The performance criteria shall be met for each consecutive application of a single instance of the bearer mapped to disjoint frequency ranges with a width of 25 resource blocks each.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.1-1: E-UTRA BS Performance criteria for continuous phenomena for BS",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.2\tUTRA performance criteria",
+                            "text_content": "The BS Uplink and Downlink paths shall each meet the performance criteria defined in table 6.1.2-1 during the test. If the Uplink and Downlink paths are evaluated as a one loop, then the criterion is two times the value shown in table 6.1.2-1. After each test case BS shall operate as intended with no loss of user control function, stored data and the communication link shall be maintained.\nTable 6.1.2-1: UTRA BS performance criteria for continuous phenomena for BS\n\nNOTE:\tThe performance criteria, \"BLER < 10-2 / No loss of service\", applies also if a bearer with another characteristics is used in the test.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.2-1: UTRA BS performance criteria for continuous phenomena for BS",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.3\tGSM/EDGE performance criteria",
+                            "text_content": "The BER of the downlink shall be assessed during the test according to one of the test methods of Annex A.1.\nIf the test method of Annex A.1.1 is used, the measured BER of the class 2 bits of TCH/FS shall not exceed 1,6 % during the test.\nNOTE:\tThis BER is the upper limit in TS 45.008 [32] for RXQUAL = 3.\nIf the test method of Annex A.1.2 is used, the value of RXQUAL shall not exceed 3 during the test.\nAt the conclusion of the test the EUT shall operate as intended with no loss of user control functions or stored data, and the communication link shall have been maintained.\nThe BER of the uplink shall be assessed during the test according to one of the test methods of Annex A.2.\nIf the test method of Annex A.2.1 is used, the value of RXQUAL shall not exceed 3 during the test.\nIf the test method of Annex A.2.2 is used, the measured BER of the class 2 bits of TCH/FS shall not exceed 1,6 % during the test.\nNOTE:\tThis BER is the upper limit in TS 45.008 [32] for RXQUAL = 3.\nFor a base station, the RXQUAL of the uplink shall not exceed three (3) measured during the test sequence.\nAt the conclusion of the test the EUT shall operate as intended with no loss of user control functions or stored data, and the communication link shall have been maintained.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.4\tNB-IoT performance criteria",
+                            "text_content": "The throughput in table 6.1.4-1 is stated relative to the maximum throughput of the FRC. The Maximum throughput for an FRC equals the Payload size / (Number of Resource Unit * time to send one Resource Unit).\nThe BS Uplink and Downlink paths shall each meet the performance criteria defined in table 6.1.4-1 during the test. If the Uplink and Downlink paths are evaluated as a one loop, then the criterion is two times the throughput reduction shown in table 6.1.4-1. After each test case BS shall operate as intended with no loss of user control function, stored data and the communication link shall be maintained.\nTable 6.1.4-1: NB-IoT BS Performance criteria for continuous phenomena for BS\n\nNOTE 1:\tThe performance criteria, \"Throughput > 95 % / No loss of service\", applies also if a bearer with another characteristics is used in the test.\nNOTE 2:\tThe performance criteria, \"Throughput > 90 % / No loss of service\", applies instead if the Uplink and Downlink paths are evaluated as a one loop.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.4-1: NB-IoT BS Performance criteria for continuous phenomena for BS",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.5\tNR performance criteria",
+                            "text_content": "The throughput in table 6.1.5-1 is stated relative to the maximum throughput of the FRC. The maximum throughput for an FRC is equal to the [payload size * the number of uplink subframes per second].\nThe BS Uplink and Downlink paths shall each meet the performance criteria defined in table 6.1.5-1 during the test. If the Uplink and Downlink paths are evaluated as a one loop, then the criterion is two times the throughput reduction shown in table 6.1.5-1. After each test case BS shall operate as intended with no loss of user control function, stored data and the communication link shall be maintained.\nTable 6.1.5-1: NR BS performance criteria for continuous phenomena for BS\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.5-1: NR BS performance criteria for continuous phenomena for BS",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tPerformance criteria for transient phenomena for BS",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "At the conclusion of the total test comprising the series of individual exposures the EUT shall operate as intended with no loss of user control functions or stored data, as specified by the manufacturer, and the communication link shall have been maintained.\nThe below characteristics should be chosen based on manufacture declaration as defined in related single RAT BS RF testing specification, and are defined as:\nThe below characteristics should be chosen based on manufacture declaration and are defined as:\n-\tThe E-UTRA channel bandwidth and bearer information data rate are defined in table 6.1.1-1, based on declaration defined in TS 36.141 [9].\n-\tThe UTRA bearer information data rate are defined in table 6.1.2-1, based on declaration defined in TS 25.141 [7].\n-\tThe GSM/EDGE the test BER assessment are defined in clause 6.1.3.1 for downlink and clasue 6.1.3.2 for uplink, while the criteria is defined in clause 6.2, based on declaration defined in TS 51.021 [10].\n-\tThe NB-IoT sub-carrier spacing and reference measurement channel are defined in table 6.1.4-1, based on declaration defined in TS 36.141 [9].\n-\tThe NR channel bandwidth, sub-carrier spacing and bearer information data rate are defined in table 6.1.5-1, based on declaration defined in TS 38.141-1 [36], and/or TS 38.141-2 [37].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.3\tPerformance criteria for continuous phenomena for Ancillary equipment",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The apparatus shall continue to operate as intended during and after the test. No degradation of performance or loss of function is allowed below the performance level specified by the manufacturer, when the apparatus is used as intended. The performance level may be replaced by a permissible performance loss. If the minimum performance level or the permissible performance loss is not specified by the manufacturer, either of these may be derived from the product description and documentation and what the user may reasonably expect from the apparatus if used as intended.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.4\tPerformance criteria for transient phenomena for Ancillary equipment",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The apparatus shall continue to operate as intended after the test. No degradation of performance or loss of function is allowed below the performance level specified by the manufacturer, when the apparatus is used as intended. The performance level may be replaced by a permissible performance loss. During the test, degradation of performance is however allowed. If the minimum performance level or the permissible performance loss is not specified by the manufacturer, either of these may be derived from the product description and documentation and what the user may reasonably expect from the apparatus if used as intended.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tApplicability overview",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tEmission",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 7.1-1: Emission applicability\n\nNOTE:\tThe radiated emissions requirement for the BS equipment covers radiated emissions in the spurious domain. For GSM/EDGE, it corresponds to the \"Radiated spurious emissions\" requirement in TS 51.021 [10] for radio aspects.\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.1-1: Emission applicability",
+                            "table number": 15,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tImmunity",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 7.2-1: Immunity applicability\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.2-1: Immunity applicability",
+                            "table number": 16,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tEmission",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tTest configurations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This subclause defines the configurations for emission tests as follows:\n-\tthe equipment shall be tested under normal test conditions as specified in the functional standards;\n-\tthe test configuration shall be as close to normal intended use as possible;\n-\tif the equipment is part of a system, or can be connected to ancillary equipment, then it shall be acceptable to test the equipment while connected to the minimum configuration of ancillary equipment necessary to exercise the ports;\n-\tif the equipment has a large number of ports, then a sufficient number shall be selected to simulate actual operation conditions and to ensure that all the different types of termination are tested;\n-\tthe test conditions, test configuration and mode of operation shall be recorded in the test report;\n-\tports which in normal operation are connected shall be connected to an ancillary equipment or to a representative piece of cable correctly terminated to simulate the input/output characteristics of the ancillary equipment, Radio Frequency (RF) input/output ports shall be correctly terminated;\n-\tports which are not connected to cables during normal operation, e.g. service connectors, programming connectors, temporary connectors etc. shall not be connected to any cables for the purpose of EMC testing. Where cables have to be connected to these ports, or interconnecting cables have to be extended in length in order to exercise the EUT, precautions shall be taken to ensure that the evaluation of the EUT is not affected by the addition or extension of these cables;\n-\tthe test arrangements for transmitter and receiver clauses of the transceiver are described separately for the sake of clarity. However, where possible the test of the transmitter clause and receiver clause of the EUT may be carried out simultaneously to reduce test time.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.2\tRadiated emission from Base Station and ancillary equipment",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.2.1\tRadiated emission for Base Stations",
+                            "text_content": "This test is applicable to BS, except for BS that are only single-RAT GSM/EDGE capable. This test shall be performed on a representative configuration of the BS.\nFor BS that are only single-RAT GSM/EDGE capable, the test method and limits in clause 8 of TS 51.021 [10] apply.\nThis test assesses the ability of BS to limit unwanted emission from the enclosure port.\na)\tA test site fulfilling the requirements of ITU-R SM. 329 [15] shall be used. The BS shall be placed on a non-conducting support and shall be operated from a power source via a RF filter to avoid radiation from the power leads.\nMean power of any spurious components shall be detected by the test antenna and measuring receiver (e.g. a spectrum analyser). At each frequency at which a component is detected, the BS shall be rotated and the height of the test antenna adjusted to obtain maximum response, and the effective radiated power (e.r.p.) of that component determined by a substitution measurement. The measurement shall be repeated with the test antenna in the orthogonal polarization plane.\nNOTE:\tEffective radiated power (e.r.p.) refers to the radiation of a half wave tuned dipole instead of an isotropic antenna. There is a constant difference of 2,15 dB between e.i.r.p. and e.r.p.\ne.r.p. (dBm)  e.i.r.p. (dBm)  2,15\tRef: ITU-R SM.329 ANNEX 1 [15].\nb)\tThe BS shall transmit with rated power declared by the manufacturer with all transmitters active. Set the BS to transmit a signal as stated in subclause 4.5.\nc)\tThe received power shall be measured over the frequency range from 30 MHz to FDL_low - ΔfOBUE and from FDL_high + ΔfOBUE up to 12.75 GHz. The video bandwidth shall be approximately three times the resolution bandwidth. If this video bandwidth is not available on the measuring receiver, it shall be the maximum available and at least 1 MHz. Unless otherwise stated, all measurements are done as mean power (RMS). ΔfOBUE is defined in table 8.2.1.3-2.\nThe frequency boundary and reference bandwidths for the detailed transitions of the limits between the requirements for out of band emissions and spurious emissions are based on ITU-R Recommendations SM.329 [10] and SM.1539 [23].\nThe BS shall meet the limits below:\nTable 8.2.1.3-1: Limits for radiated emissions from BS\n\nTable 8.2.1.3-2: Maximum offset of OBUE outside the downlink operating band\n\nThe interpretation of the results recorded in a test report for the radiated emission measurements described in the present document shall be as follows:\n-\tthe measured value related to the corresponding limit will be used to decide whether an equipment meets the requirements of the present document;\n-\tthe value of the measurement uncertainty for the measurement of each parameter shall be included in the test report;\n-\tthe recorded value of the measurement uncertainty shall be, for each measurement, equal to or lower than the figures in table 8.2.1-4-1 for BS.\nTable 8.2.2 specifies the Maximum measurement uncertainty of the Test System. The Test System shall enable the equipment under test to be measured with an uncertainty not exceeding the specified values. All tolerances and uncertainties are absolute values, and are valid for a confidence level of 95 %, unless otherwise stated.\nA confidence level of 95% is the measurement uncertainty tolerance interval for a specific measurement that contains 95% of the performance of a population of test equipment.\nTable 8.2.1.4-1: Maximum measurement uncertainty (BS)\n\nNOTE:\tIf the Test System for a test is known to have a measurement uncertainty greater than that specified in table 8.2.2, this equipment can still be used, provided that an adjustment is made follows:\nAny additional uncertainty in the Test System over and above that specified in table 8.2.1.4-1 is used to tighten the Test Requirements - making the test harder to pass. This procedure will ensure that a Test System not compliant with table 8.2.1.4-1 2 does not increase the probability of passing a EUT that would otherwise have failed a test if a Test System compliant with table 8.2.1.4-1 had been used.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.2.1.3-1: Limits for radiated emissions from BS",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.1.3-2: Maximum offset of OBUE outside the downlink operating band",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.1.4-1: Maximum measurement uncertainty (BS)",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.2.2\tRadiated emission, ancillary equipment",
+                            "text_content": "This test is applicable to ancillary equipment. This test shall be performed on a representative configuration of the ancillary equipment.\nThis test assesses the ability of ancillary equipment to limit unwanted emission from the enclosure port.\nThe test method shall be in accordance with CISPR 32 34.\nThe ancillary equipment shall meet the limits according to CISPR 32 34 table A.4 and table A.5.\nFor the referred limit values, the following shall apply:\n-\tWhere the limits value varies over a given frequency range, it changes linearly with respect to the logarithm of the frequency.\n-\tWhere there is a step in the relevant limit, the lower value shall be applied at the transition frequency.\nTable 8.2.2.3-1: Void\nTable 8.2.2.3-2: Void\nAlternatively, for ancillary equipment intended to be used in telecommunication centres only, the class A limits given in CISPR 32 [34], annex A, table A.2 and table A.3 may be used.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "8.3\tConducted emission DC power input/output port",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This test is applicable to equipment which may have DC cables longer than 3 m.\nIf the DC power cable of the radio equipment is intended to be less than 3 m in length and intended only for direct connection to a dedicated AC to DC power supply, then the measurement shall be performed only on the AC power input of that power supply as specified in subclause 8.4.\nThis test shall be performed on a representative configuration of the radio equipment, the associated ancillary equipment, or representative configuration of the combination of radio and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.3.1\tDefinition",
+                            "text_content": "This test assesses the ability of radio equipment and ancillary equipment to limit internal noise from the DC power input/output ports.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.3.2\tTest method",
+                            "text_content": "The test method shall be in accordance with CISPR 32 [34] and the Artificial Mains Network (AMN) shall be connected to a DC power source.\nIn the case of DC output ports, the ports shall be connected via an AMN to a load drawing the rated current of the source.\nA measuring receiver shall be connected to each AMN measurement port in turn and the conducted emission recorded.\nThe equipment shall be installed with a ground plane as defined in CISPR 32 [34]. The reference earth point of the AMNs shall be connected to the reference ground plane with a conductor as short as possible.\nThe measurement receiver shall be in accordance with the requirements of CISPR 32 [34].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.3.3\tLimits",
+                            "text_content": "The equipment shall meet the limits according to CISPR 32 [11] table A.9, which are defined for average detector receiver and for quasi-peak detector receiver. If the average limit is met when using a quasi-peak detector, the equipment shall be deemed to meet both limits and measurement with the average detector receiver is not necessary.\nWhere there is a step in the referred limit values, the lower value shall be applied at the transition frequency.\nTable 8.3.3-1: Void\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "8.4\tConducted emissions, AC mains power input/output port",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This test is applicable to equipment powered by the AC mains.\nThis test is not applicable to AC output ports which are connected directly (or via a circuit breaker) to the AC power port of the EUT.\nThis test shall be performed on a representative configuration of the radio equipment, the associated ancillary equipment, or representative configuration of the combination of radio and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.4.1\tDefinition",
+                            "text_content": "This test assesses the ability of radio equipment and ancillary equipment to limit internal noise from the AC mains power input/output ports.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.4.2\tTest method",
+                            "text_content": "The test method shall be in accordance with CISPR 32 [34].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.4.3\tLimits",
+                            "text_content": "The equipment shall meet the limits according to CISPR 32 [11] table A.10, which are defined the average detector receiver and for quasi-peak detector receiver. If the average limit is met when using a quasi-peak detector, the equipment shall be deemed to meet both limits and measurement with the average detector receiver is not necessary.\nFor the referred limit values following shall apply:\n-\tWhere the limits value varies over a given frequency range, it changes linearly with respect to the logarithm of the frequency.\n-\tWhere there is a step in the relevant limit, the lower value shall be applied at the transition frequency.\nTable 8.4.3-1: Void\nAlternatively, for equipment intended to be used in telecommunication centres the limits given in CISPR 32 [11] table A.9 shall be used.\nTable 8.4.3-2: Void\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "8.5\tHarmonic current emissions (AC mains input port)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements of IEC 61000-3-2 [19] for harmonic current emission apply for equipment covered by the scope of the present document. For equipment with an input current of greater than 16 A per phase, IEC 61000-3-12 [20] applies.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.6\tVoltage fluctuations and flicker (AC mains input port)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements of IEC 61000-3-3 [21] for voltage fluctuations and flicker apply for equipment covered by the scope of the present document. For equipment with an input current of greater than 16 A per phase, IEC 61000-3-12 [20] applies.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.7\tTelecommunication ports",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This test is applicable for radio equipment and/or ancillary equipment for fixed use which have telecommunication ports.\nThis test shall be performed on a representative configuration of radio equipment, the associated ancillary equipment, or a representative configuration of the combination of radio and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.7.1\tDefinition",
+                            "text_content": "This test assesses the EUT unwanted emission present at the telecommunication ports.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.7.2\tTest method",
+                            "text_content": "The test method shall be in accordance with CISPR 32 [34].\nThe measurement frequency range extends from 150 kHz to 30 MHz.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.7.3\tLimits",
+                            "text_content": "The telecommunication ports shall meet the limits according to CISPR 32 [34] table A.12, clause A12.2.\nFor the referred limit values, following shall apply:\n-\tWhere the limits value varies over a given frequency range, it changes linearly with respect to the logarithm of the frequency.\n-\tWhere there is a step in the relevant limit, the lower value shall be applied at the transition frequency.\nTable 8.7.3-1: Void\nAlternatively, for equipment intended to be used in telecommunication centres only, the limits given in CISPR 32 [11] table A.11 clause A11.2 shall be used.\nTable 8.7.3-2: Void\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "9\tImmunity",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "9.1\tTest configurations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This subclause defines the configurations for immunity tests as follows:\n-\tthe equipment shall be tested under normal test conditions as specified in the functional standards;\n-\tthe test configuration shall be as close to normal intended use as possible;\n-\tif the equipment is part of a system, or can be connected to ancillary equipment, then it shall be acceptable to test the equipment while connected to the minimum configuration of ancillary equipment necessary to exercise the ports;\n-\tif the equipment has a large number of ports, then a sufficient number shall be selected to simulate actual operation conditions and to ensure that all the different types of termination are tested;\n-\tthe test conditions, test configuration and mode of operation shall be recorded in the test report;\n-\tports which in normal operation are connected shall be connected to an ancillary equipment or to a representative piece of cable correctly terminated to simulate the input/output characteristics of the ancillary equipment, Radio Frequency (RF) input/output ports shall be correctly terminated;\n-\tports which are not connected to cables during normal operation, e.g. service connectors, programming connectors, temporary connectors etc. shall not be connected to any cables for the purpose of EMC testing. Where cables have to be connected to these ports, or interconnecting cables have to be extended in length in order to exercise the EUT, precautions shall be taken to ensure that the evaluation of the EUT is not affected by the addition or extension of these cables;\n-\tImmunity tests on the entire base station shall be performed by establishing communication links at the radio interface (e.g. with the mobile simulator) and the S1/Iub/ Abis interface (e.g. with an RNC/EPC/BSC simulator) and evaluating the BLER/throughput/BER (see Figure 9.1-1);\n-\tImmunity tests shall be performed on both the Uplink and Downlink paths. The tests shall also include both the radio interface and the S1/Iub/ Abis interface. BLER/throughput/BER evaluation may be carried out at either interface, where appropriate, and the measurements for the Uplink and Downlink paths may be carried out as a single path looped at either the radio interface or S1/Iub/ Abis interface. In case of looping is used care have to be taken that the BLER/throughput/BER information doesn't change due to looping.\n-\tFor BS capable of multi-RAT and/or multi-band operation, communication links shall be established in such a way that all tested RATs and operating band(s) are activated during the test according to the applicable test configurations in subclause 4.5. Performance assessment may be done separately for each tested RAT and/or operating band.\nThe figure depicts a communication link set up for BS (base station) immunity measurement, illustrating the various components and their arrangement. The BS is equipped with antennas, a power supply, and a communication link. The figure also includes a measurement setup, such as a power meter, a signal generator, and a communication link. The BS is connected to a network, and the measurement setup is positioned to capture the signal strength and other relevant parameters.\nFigure 9.1-1: Communication link set up for BS immunity measurement\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "9.2\tRF electromagnetic field (80 MHz - 6000 MHz)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The test shall be performed on a representative configuration of the equipment, the associated ancillary equipment, or representative configuration of the combination of radio and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.2.1\tDefinition",
+                            "text_content": "This test assesses the ability of radio equipment and ancillary equipment to operate as intended in the presence of a radio frequency electromagnetic field disturbance at the enclosure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.2.2\tTest method and level",
+                            "text_content": "The test method shall be in accordance with IEC 61000-4-3 [23], which specifies test methodology based on anechoic chamber. The use of reverberation chamber test method according to IEC 61000-4-21 [40], clause 6.1 and Annex D as alternative method is allowed.\nThe following requirements shall apply:\n-\tthe test level shall be 3 V/m amplitude modulated to a depth of 80 % by a sinusoidal audio signal of 1 kHz;\n-\tthe stepped frequency increments shall be 1 % of the momentary frequency;\n-\tthe test shall be performed over the frequency range 80 MHz - 6000 MHz with the exception of the exclusion band for receivers (see subclause 4.4);\n-\tresponses in stand-alone receivers or receivers which are part of transceivers occurring at discrete frequencies which are narrow band responses, shall be disregarded, see subclause 4.3;\n-\tthe frequencies selected during the test shall be recorded in the test report.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.2.3\tPerformance criteria",
+                            "text_content": "Base station:\nThe performance criteria of subclause 6.1 shall apply.\nAncillary equipment:\nThe performance criteria of subclause 6.3 shall apply.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.3\tElectrostatic discharge",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The test shall be performed on a representative configuration of the radio equipment, the associated ancillary equipment, or representative configuration of the combination of radio and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.3.1\tDefinition",
+                            "text_content": "This test assesses the ability of radio equipment and ancillary equipment to operate as intended in the event of an electrostatic discharge.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.3.2\tTest method and level",
+                            "text_content": "The test method shall be in accordance with IEC 61000-4-2 [24]:\n-\tfor contact discharge, the equipment shall pass at ±4 kV;\n-\tfor air discharge shall pass at ±8 kV;\n-\telectrostatic discharge shall be applied to all exposed surfaces of the EUT except where the user documentation specially indicates a requirement for appropriate protective measures.\nNOTE:\tEnsure that the EUT is fully discharged between each ESD exposure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.3.3\tPerformance criteria",
+                            "text_content": "Base station:\nThe performance criteria of subclause 6.2 shall apply.\nAncillary equipment:\nThe performance criteria of subclause 6.4 shall apply.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.4\tFast transients common mode",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The test shall be performed on AC mains power input ports.\nThis test shall be performed on signal ports, telecommunication ports, control ports and DC power input/output ports if the cables may be longer than 3 m.\nWhere this test is not carried out on a port or any other ports because the manufacturer declares in DEMC.1 (see table 4.6-1) that it is not intended to be used with cables longer than 3 m, a list of ports which were not tested for this reason shall be included in the test report.\nThis test shall be performed on a representative configuration of the equipment, the associated ancillary equipment, or representative configuration of the combination of radio and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.4.1\tDefinition",
+                            "text_content": "This test assesses the ability of radio equipment and ancillary equipment to operate as intended in the event of fast transients present on one of the input/output ports.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.4.2\tTest method and level",
+                            "text_content": "The test method shall be in accordance with IEC 61000-4-4 [25]:\n-\tthe test level for signal ports, telecommunication ports and control ports shall be 0,5 kV open circuit voltage as given in IEC 61000-4-4 [25];\n-\tthe test level for DC power input/output ports shall be 0.5 kV open circuit voltage as given in IEC 61000-4-4 [25];\n-\tthe test level for AC mains power input ports shall be 1 kV open circuit voltage as given in IEC 61000-4-4 [25].\nFor AC and DC power input ports the transients shall be applied (in parallel) to all the conductors in the cable with reference to the cabinet reference earth (true common mode) and the source impedance shall be 50 .\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.4.3\tPerformance criteria",
+                            "text_content": "Base station:\nThe performance criteria of subclause 6.2 shall apply.\nAncillary equipment:\nThe performance criteria of subclause 6.4 shall apply.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.5\tRF common mode (0,15 MHz - 80 MHz)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The test shall be performed on AC mains power input/output ports.\nThis test shall be performed on signal ports, telecommunication ports, control and DC power input/output ports, which may have cables longer than 3 m.\nWhere this test is not carried out on a port or any other ports because the manufacturer declares in DEMC.1 (see table 4.6-1) that it is not intended to be used with cables longer than stated above, a list of ports which were not tested shall be included in the test report.\nThis test shall be performed on a representative configuration of the equipment, the associated ancillary equipment, or representative configuration of the combination of radio and ancillary equipment.\nNOTE:\tThis test can also be performed using the clamp injection method, where appropriate, see IEC 61000-4-6 [26].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.5.1\tDefinition",
+                            "text_content": "This test assesses the ability of radio equipment and ancillary equipment to operate as intended in the presence of a radio frequency electromagnetic disturbance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.5.2\tTest method and level",
+                            "text_content": "The test method shall be in accordance with IEC 61000-4-6 [26]:\n-\tthe test signal shall be amplitude modulated to a depth of 80 % by a sinusoidal audio signal of 1 kHz;\n-\tthe stepped frequency increments shall be 50 kHz in the frequency range 150 kHz to 5 MHz and 1% frequency increment of the momentary frequency in the frequency range 5 MHz to 80 MHz;\n-\tthe test level shall be severity level 2 as given in IEC 61000-4-6 [26] corresponding to 3 V rms, at a transfer impedance of 150 Ω;\n-\tthe test shall be performed over the frequency range 150 kHz - 80 MHz;\n-\tthe injection method to be used shall be selected according to the basic standard IEC 61000-4-6 [26];\n-\tresponses of stand-alone receivers or receivers which are part of transceivers occurring at discrete frequencies which are narrow band responses, shall be disregarded, see subclause 4.3;\n-\tthe frequencies of the immunity test signal selected and used during the test shall be recorded in the test report.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.5.3\tPerformance criteria",
+                            "text_content": "Base station:\nThe performance criteria of subclause 6.1 shall apply.\nAncillary equipment:\nThe performance criteria of subclause 6.3 shall apply.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.6\tVoltage dips and interruptions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The tests shall be performed on AC mains power input ports.\nThese tests shall be performed on a representative configuration of the equipment, the associated ancillary equipment, or representative configuration of the combination of radio and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.6.1\tDefinition",
+                            "text_content": "These tests assess the ability of radio equipment and ancillary equipment to operate as intended in the event of voltage dips and interruptions present on the AC mains power input ports.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.6.2\tTest method and level",
+                            "text_content": "The test method shall be in accordance with IEC 61000-4-11 [27], wherethe test levels shall be:\n-\tVoltage dip: 0 % residual voltage for 0.5 cycle;\n-\tVoltage dip: 0 % residual voltage for 1 cycle;\n-\tVoltage dip: 70 % residual voltage for 25/30 cycles (at 50/60 Hz);\n-\tVoltage interruption: 0 % residual voltage for 250/300 cycles (at 50/60 Hz).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.6.3\tPerformance criteria",
+                            "text_content": "For a 0 % residual voltage dip test, the performance criteria for transient phenomena shall be applied:\n-\tCriteria 6.2 for base station\n-\tCriteria 6.4 for ancillary equipment\nFor a 70% residual voltage dip test and for voltage interruption test, the following applies:\n1.\tIn the case where the equipment is fitted with or connected to a battery back-up, the following performance criteria shall be applied:\n-\tCriteria 6.2 for base station\n-\tCriteria 6.4 for ancillary equipment\n2.\tIn the case where the equipment is powered solely from the AC mains supply (without the use of a parallel battery back-up) volatile user data may have been lost and if applicable the communication link need not to be maintained and lost functions should be recoverable by user or operator:\n-\tNo unintentional responses shall occur at the end of the test, when the voltage is restored to nominal\n-\tIn the event of loss of communications link or in the event of loss of user data, this fact shall be recorded in the test report\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.7\tSurges, common and differential mode",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The tests shall be performed on AC mains power input ports.\nThis test shall be additionally performed on telecommunication ports.\nThese tests shall be performed on a representative configuration of the equipment, the associated ancillary equipment, or representative configuration of the combination of radio and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.7.1\tDefinition",
+                            "text_content": "These tests assess the ability of radio equipment and ancillary equipment to operate as intended in the event of surges being present at the AC mains power input ports and telecommunication ports.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.7.2\tTest method and level",
+                            "text_content": "The test method shall be in accordance with IEC 61000-4-5 [28].\nThe requirements and evaluation of test results given in subclause 9.7.2.1 (telecommunication ports, outdoor cables), subclause 9.7.2.2 (telecommunication ports, indoor cables) and subclause 9.7.2.3 (AC power ports) shall apply, but no test shall be required where normal functioning cannot be achieved, because of the impact of the CDN on the EUT.\nThe test level for telecommunications ports, intended to be directly connected to the telecommunications network via outdoor cables, shall be 1 kV line to ground as given in IEC 61000-4-5 [28]. In this case the total output impedance of the surge generator shall be in accordance with the basic standard IEC 61000-4-5 [28].\nThe test generator shall provide the 1,2/50 s pulse as defined in IEC 61000-4-5 [28].\nThe test level for telecommunication ports, intended to be connected to indoor cables (longer than 10 m) shall be 0,5 kV line to ground. In this case the total output impedance of the surge generator shall be in accordance with the basic standard IEC 61000-4-5 [28].\nThe test generator shall provide the 1,2/50 s pulse as defined in IEC 61000-4-5 [28].\nThe test level for AC power input ports shall be 2 kV line to ground, and 1 kV line to line, with the output impedance of the surge generator as given in IEC 61000-4-5 [28].\nIn telecommunication centres 1 kV line to ground and 0,5 kV line to line shall be used.\nThe test generator shall provide the 1,2/50 s pulse as defined in IEC 61000-4-5 [28].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.7.3\tPerformance criteria",
+                            "text_content": "Base station:\nThe performance criteria of subclause 6.2 shall apply.\nAncillary equipment:\nThe performance criteria of subclause 6.4 shall apply.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.1\tAssessment of BER at the output of a transmitter",
+            "description": "The BER at the output of the transmitter may be assessed using either of the techniques described below.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.1.1\tAssessment of BER using static layer 1 functions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The transmitter under test shall be operated according to the test case of TS 51.021 [10], subclause 6.1.2.\nThe bit sequence from the output of the transmitter shall be monitored by the test system according to the test case of TS 51.021 [10], subclause 7.1.2, and the BER of the class 2 bits for TCH/FS assessed. The BER shall not exceed the values specified in subclause 6.1 of the present document.\nIf the EUT does not support TCH/FS, the manufacturer shall declare the logical channel for which the performance shall be assessed, and the corresponding performance criteria.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.1.2\tAssessment of BER using RXQUAL",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The output of the transmitter shall be connected to an equipment which meets the requirements of TS 51.010-1 [33] for the assessment of RXQUAL. The level of the signal supplied to the equipment should be within the range for which the assessment of RXQUAL is not impaired. The RXQUAL shall be monitored during the test. The RXQUAL shall not exceed the values specified in subclause 6.1 of the present document.\nNOTE:\tThis equipment can be a GSM mobile station with suitable provision for the monitoring of RXQUAL.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.2\tAssessment of BER at the output of a receiver",
+            "description": "The BER at the output of the receiver may be assessed using either of the techniques described below.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.2.1\tAssessment of BER using RXQUAL",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The value of the RXQUAL reported by the BTS or BSS shall be monitored using suitable test equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.2\tAssessment of BER using reported BER",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The BER of the class 2 bits at the output of the receiver shall be assessed using suitable test equipment.\nIf the EUT does not support TCH/FS, the manufacturer shall declare the logical channel for which the performance shall be assessed, and the corresponding performance criteria.\nNOTE:\tThis can be performed by a \"test loopback\" which uses the transmitter of the BTS to return the data which has been decoded by the receiver back to the test equipment which generated the bit sequence. For immunity tests of signal ports, the \"test loopback\" includes an external connection between signal ports.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.1\tApplicability",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Simplified immunity testing applies, per operating band, only to the BS which satisfies both of the following conditions:\n-\tRadio unit employs common active RF components for supported RATs, as described in DEMC.2.\n-\tRadio digital unit employs common active components for supported RATs, as described in DEMC.4.\nNote:\tIf the above condition is not met, all applicable test configurations in clause 4.5 apply for testing.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2\tCapability Sets for simplified immunity testing",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The set of RATs which are considered sufficient for the immunity testing purposes depends on the BS hardware capabilities declared by the manufacturer in DEMC.2 and DEMC.4.\nThe following RAT combinations were identified as candidates for the immunity testing simplification:\n-\tFor MSR BS declared to support E-UTRA and UTRA, UTRA does not have to be configured.\n-\tFor MSR BS declared to support NR and UTRA, UTRA does not have to be configured.\n-\tFor MSR BS declared to support NB-IoT and GSM, GSM needs not to be configured.\nThe above RAT combinations were further translated into the Capability Sets in tables below.\nFor single-band multi-RAT capable MSR BS, the sufficient CSs in tables B.2-1 to B.2-4 may be followed, instead of the declared CSs in tables 4.5-1 to 4.5-1c, respectively.\nThe test configurations (TCx) are associated to the sufficient CSs according to tables 4.5-1, 4.5-1a, 4.5-1b and 4.5-1c.\nExample:\tA BS declared to support CS9 (corresponding to TC9 in table 4.5-1a) in table B.2-2, will be tested using TC8 (corresponding to CS8 in table 4.5-2).\nTable B.2-1: Declared and sufficient CSs for testing\n\nTable B.2-2: Declared and sufficient CSs for testing\n\nTable B.2-3: Declared and sufficient CSs for testing\n\nTable B.2-4: Declared and sufficient CSs for testing\n\nFor multi-band multi-RAT capable MSR BS, the rationale described above applies for each band.\n\n\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2-1: Declared and sufficient CSs for testing",
+                            "table number": 20,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table B.2-2: Declared and sufficient CSs for testing",
+                            "table number": 21,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table B.2-3: Declared and sufficient CSs for testing",
+                            "table number": 22,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table B.2-4: Declared and sufficient CSs for testing",
+                            "table number": 23,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 24,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 25,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 26,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

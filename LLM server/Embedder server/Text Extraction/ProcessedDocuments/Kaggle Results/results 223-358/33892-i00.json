@@ -1,0 +1,234 @@
+{
+    "document_name": "33892-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document analyses mechanisms to ensure the identity of a genuine application in order to apply the URSP rule accordingly, such that malicious applications cannot get access towards the operator regulated resources. The present document identifies key issues and develops solutions for enhancements that enables a URSP rule to securely identify the application for which the URSP rule should be applied.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.503: \"Policy and charging control framework for the 5G System (5GS); Stage 2\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tVoid",
+            "description": "\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tKey issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tKey issue #1: Determination of application identification",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tKey issue details",
+                            "text_content": "The application identity within the traffic descriptor component of an URSP rule is used in the UE to identify the traffic of an application and to map it to the data connection with specific data connection parameters. Since the application identity can be set during the development of the application, and is non-protected, it is not suitable to uniquely identify the traffic of the application, intended to be managed by the operator. The user may install an application on the UE with the same application identity in order to transmit the traffic based on the URSP rule, which was designed to be applied for the traffic of the genuine application.\nThe key issue studies mechanisms to help the UE to identify the genuine application for a correct traffic mapping according to the URSP rule.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tThreats",
+                            "text_content": "Applications may use the identity of the genuine operator managed application in order to transmit the traffic based on the URSP rule, which was designed to be applied for the traffic of the genuine application.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tPotential security requirements",
+                            "text_content": "The UE should have sufficient information to identify the genuine application.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tProposed solutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.0\tMapping of solutions to key issues",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 6.0-1: Mapping of solutions to key issues\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.0-1: Mapping of solutions to key issues",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.1\tSolution #1: Provide additional authentication information to enhance URSP policy enforcement",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tIntroduction",
+                            "text_content": "The solution provides a UE platform agnostic method to provide additional authentication information which can be used to enhance URSP policy enforcement in the UE.. The solution provides a method to add additional authentication information to a URSP policy and update the policy in the UE. The solution reuses existing methods to input the additional authentication information and update the policy. The content of the additional authentication information could as an example be token but is out of scope of the present document. The solution provides a mean for the UE to receive additional authentication information accompanying the application ID enabling the UE to enhance the policy enforcement.\nNOTE:\tThe additional authentication information is data accompanying the application ID solely used to improve the authentication of rules bound to that application ID. The content of the additional authentication information is out of scope of 3GPP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tSolution details",
+                            "text_content": "The figure depicts a simplified representation of a 5G network, highlighting the key components such as base stations (gNB), user equipment (UE), and scatterers. The diagram illustrates the signal propagation in a 5G network, with key components like the base station, user equipment, and scatterers. The figure also highlights beamforming techniques to mitigate interference.\nFigure 6.1.2-1\n1.\tUE application and backend application function negotiates authentication data. This can be a token, signature etc. The negotiation protocol is out of scope of the present document. The step can be omitted if data is already pre-provisioned or negotiation is unnecessary for the proprietary application verification method.\n2.\tThe AF sends the application authentication information to the NEF to be included in the URSP rule.\n3.\tNEF authorizes the AF to update the URSP rule with the additional authentication information.\n4.\tNEF provides the application ID together with additional authentication information. The interaction between NEF and PCF is described in 3GPP TS 23.503 [2], clause 5.3.10.\n5.\tThe PCF includes the application identifier and additional authentication information in the policy as described in 3GPP TS 23.503 [2], clause 6.2.1.2.\n6.\tThe PCF triggers a policy update using existing methods.\n7.\tApplication provides additional authentication information along application identifier. The interaction between URSP enforcement point and application is out of scope of the present document.\n8.\tThe policy enforcement point authenticates the application using the provided additional authentication information.\nEXAMPLE:\tThe content of the additional authentication information could be a seed for an OTP generator. When the rule is validated, the genuine application will fetch an OTP from the application function and provide it to the URSP policy enforcement point along with the application identifier. The seed in the URSP policy will enable policy enforcement point to verify the OTP from the application and hereby the application. This is an EXAMPLE of the potential content of the additional authentication information but not part of the solution.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tEvaluation",
+                            "text_content": "The solution proposes a UE platform independent exchange of additional authentication information which enables a scalable method which can be used across platforms. The solution extends the URSP policy with an additional field containing the additional authentication information and reused already existing methods to inject information into the policy and update the policy enforced in the UE. The solution leaves the enforcement of the policy and hereby the usage of the additional authentication information to the application function and UE platform.\nSystem impact:\n-\tAdditional field added to the URSP.\n-\tPCF: Injection of additional authentication data into the field.\n-\tUE: Parsing and collecting the additional authentication data from the URSP.\nNOTE:\tFurther evaluation is not addressed in the present document.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tSolution #2: Solution on enhancing the URSP rule with certificate fingerprint",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tIntroduction",
+                            "text_content": "This solution is addressing key issue #1 \"Determination of application identification\".\nEvery UE application is signed with a unique digital certificate, which typically contains a validity period, the publisher of the application, the public key of the publisher, etc. Before the application is published (e.g. to a mobile marketplace), it is cryptographically signed by using the private key of the publisher, which is a unique key only known by the publisher. An example of an application signing procedure is shown in the figure below. The generated digital signature and the digital certificate that can be used to validate the authenticity of the application, both are included in the application package, which can be published and distributed.\nFigure 6.2.1-1 illustrates an example of application signing, a crucial process in the secure communication of sensitive data. This figure demonstrates the process of digitally signing an application, which is essential for ensuring the integrity and authenticity of data transmitted over the network. The figure shows the application being signed by a trusted third party, typically a certificate authority, which verifies the identity of the signer and the content of the signature. This process is crucial for ensuring that only authorized parties can access sensitive data, reducing the risk of unauthorized access and data breaches.\nFigure 6.2.1-1: Example of application signing\nA non-genuine application with the same application ID as the genuine application would have a different certificate, since the developer of the non-genuine application does not have access to the private key of the genuine application publisher. Therefore the proposal is that the URSP rule is enhanced to include a fingerprint (hash) of the genuine publisher certificate so that the UE can easily compare it with the fingerprint of the certificate of the application which is installed on the UE.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tSolution details",
+                            "text_content": "As a precondition, the UE has installed an application with a specific application ID and it computed the fingerprint of the embedded certificate of the publisher of that application.\nThe figure depicts the delivery procedure of the Universal Resource Scheduler (URSP) rule in a network. The URSP rule is a key component of the 5G network, responsible for scheduling and distributing network resources. The figure illustrates the steps involved in the delivery of URSP rules, including the selection of the appropriate rule, its routing, and the final delivery to the network. The figure also highlights the importance of network slicing and network slicing policy in the delivery of URSP rules.\nFigure 6.2.2-1: URSP rule delivery procedure\n1.\tThe PCF is provisioned with the application ID and additionally with the fingerprint of the certificate of the genuine publisher from an AF.\n2.\tIf the UE should receive the application specific URSP rule, the PCF will send a URPS rule delivery message with the application ID, certificate fingerprint and routing information, etc., to the UE.\n3.\tIf the installed application in the UE wants to send data, the UE determines whether the application ID and the publisher certificate fingerprint of the installed application matches with the ones included in the URSP rule. If the match is successful, the UE applies the URSP rule accordingly.\nSince every application is signed with the certificate that is included in the application package, the UE will determine whether a certificate is from a genuine publisher or installed from a different developer, even if the application IDs are the same. A non-genuine application cannot include the genuine certificate since the developer of the non-genuine application does not have the private key of the genuine application to sign it. Thus if the genuine certificate would be included in the non-genuine application package and the signature would be computed with another key, the UE would not install the application because the signature, computed with the public key of the genuine certificate, does not match the one computed by the non-genuine application developer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tEvaluation",
+                            "text_content": "The PCF needs to be provisioned with the fingerprint of the certificate of the genuine application publisher additionally to the application ID, the URSP rule needs to be enhanced to carry the certificate fingerprint and the UE needs to take the certificate fingerprint into account, additionally to the application ID, when applying a URSP rule. For the same app installed in different UEs, the same fingerprint is used.\nThis solution does not mitigate the identified threats if an attacker compromises the UE and tampers with any stored app certificates or fingerprints of it.\nThe mechanism proposed in this solution can also be overcome if the attacker gets access to the execution environment(s) of the UE where the computation or comparison of the fingerprints are performed.\nNOTE:\tFurther evaluation is not addressed in the present document.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tSolution on prevention of URSP rule misuse by a non-genuine application using home network anchor",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tIntroduction",
+                            "text_content": "This solution proposes a method to address key issue #1 \"Determination of application identification\". The solution can be seen as an extension of Solutions 1 and 2 above. Solution 1 provisions \"authentication information\" that can be used to check whether an application is genuine. Solution 1 doesn't provide any specific example, while solution 2 is a subset of solution 1, which uses the fingerprint of application certificate signed by the application publisher. In both cases, PCF is provisioned with static materials for each application. The solution proposed below extends the above solution by providing guarantees that, even when a non-genuine application copies the \"fingerprint\" or \"authentication information\", UE will not map the data from the non-genuine application according to the URSP rule.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tSolution details",
+                            "text_content": "The PCF may decide to perform URSP Parameters Update anytime after the UE has been successfully authenticated and registered to the 5G system. The security procedure for the URSP rule delivery procedure is described below in figure 6.3.2.1-1.\nThe figure depicts a network security protocol called URSP (Universal Resource Scheduler) rule misuse prevention. It shows a network with multiple layers, including a base station (BTS), a user equipment (UE), and a network device (ND). The figure illustrates the use of a security policy to prevent unauthorized access to URSP rules. The policy is based on the concept of a \"guard,\" which is a security measure that can be activated or deactivated based on certain conditions. The guard is represented by a rectangle with a checkmark, indicating that the rule is valid. The figure also shows the network's topology, with the BTS at the top, the UE at the bottom, and the ND at the bottom right. The ND is a network device that can be used to monitor and control the network. The figure is a visual representation of the network's security architecture, highlighting the importance of security policies in preventing unauthorized access to URSP rules.\nFigure 6.3.2.1-1: Prevention of URSP rule misuse by non-genuine application\n1.\tThe PCF is provisioned with the application ID and the authentication information or token or certificate of the genuine publisher from an AF. The PCF decides to perform the URSP Parameters Update (URSP).\nNOTE 1:\tThe scope of what is being provisioned as authentication material should be outside the scope of 3GPP. Static authentication information may include the application's certificate or token shared between the application client and server or any other application-specific information.\n2-3\tThe PCF invokes Nausf_URSPProtection service operation message by including the 'authentication information or token or certificate to the AUSF to get URSPAUTH-MAC-IAUSF and CounterURSP.\n4-5\tThe PCF uses existing methods for URSP delivery procedure, which contains URSP Parameters Update Data, URSPAUTH-MAC-IAUSF, and CounterURSP.\n6.\tIf the installed application in the UE wants to send data, the UE calculates the URSPAUTH-MAC-IAUSF in the same way as the AUSF with the application id and other authentication material or token or certificate. If the match is successful, the UE applies the URSP rule accordingly.\nNOTE 2:\tIt is not addressed in the present document whether end-to-end protection is needed.\nWhen deriving a URSPAUTH-MAC-IAUSF from KAUSF, the following parameters shall be used to form the input S to the KDF:\n-\tFC = 0xPP.\n-\tP0 = Application ID + Authentication Information.\n-\tL0 = length of Application ID + Authentication Information.\n-\tP1 = CounterURSP.\n-\tL1 = length of CounterURSP.\nKey used: KAUSF.\nOutput: 128 least significant bits of the output of the KDF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.3\tEvaluation",
+                            "text_content": "The evaluation is not addressed in the present document.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tConclusions",
+            "description": "No agreement could be reached.\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 4,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

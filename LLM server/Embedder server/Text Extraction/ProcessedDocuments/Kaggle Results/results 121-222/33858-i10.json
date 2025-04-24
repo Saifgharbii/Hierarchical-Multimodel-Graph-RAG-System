@@ -1,0 +1,905 @@
+{
+    "document_name": "33858-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The aim of the present document is to study the security aspects for any potential enhancements to be developed based on the outcome of the study in TR 23.700-08 [2]. For each of the objectives in the scope of the study in TR 23.700-08 [2], potential security aspects that are to be covered in this study are as follows:\n-\tSupport for enhanced mobility by enabling support for idle and connected mode mobility between SNPNs without new network selection.\n-\tStudy if existing security mechanisms for mobility between PLMNs can be reused for SNPNs or if new security mechanisms are needed.\n-\tSupport for non-3GPP access for SNPN\n-\tStudy if existing security mechanisms for enabling non-3GPP access in a PLMN can be reused for enabling non-3GPP access in an SNPN or if new security mechanisms are needed.\n-\tAddress new requirements (e.g., TS 22.261 [3] requirements for Providing Access to Local Services) related to NPN\n-\tStudy the trust model for the resulting architecture for enabling Localized Services via a local hosting NPN.\n-\tStudy if existing mechanisms for a UE to access an NPN can be reused for enabling a UE to authenticate with and access the local hosting NPN and the localized services via the hosting NPN with proper authorization, or if new security mechanisms are needed.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TR 23.700-08: \"Study on enhanced support of Non-Public Networks; Phase 2\".\n[3]\t3GPP TS 22.261: \"Service requirements for the 5G system\".\n[4]\t3GPP TS 33.501: \"Security architecture and procedures for 5G system\".\n[5]\tIETF RFC 7296: \"Internet Key Exchange Protocol Version 2 (IKEv2)\".\n[6]\t3GPP TS 23.501: \"System architecture for the 5G System (5GS)\".\n[7]\t3GPP TS 23.502: \"Procedures for the 5G System (5GS)\".\n[8]\tNIST Special Publication 800-90A (2015): \"Recommendation for Random Number Generation Using Deterministic Random Bit Generators\".\n[9]\t3GPP TS 23.003: \"Numbering, addressing and identification\".\n[10]\t3GPP TR 33.926: \"Security Assurance Specification (SCAS) threats and critical assets in 3GPP network product classes\".\n[11]\tIETF RFC 2903: \"Generic AAA Architecture\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nLocal service, Localized service: Service, which is localized (i.e. provided at specific/limited area) and/or can be bounded in time. The service can be realized via applications (e.g. live or on-demand audio/video stream, electric game, IMS, etc), or connectivity (e.g. UE to UE, UE to Data Network, etc.) as defined in TR 23.700-08 [2].\nHosting network: A network providing access to Local/Localized services as defined in TR 23.700-08 [2].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "void\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "void\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tAssumptions",
+            "description": "void\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tKey issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tKey issue #1: Security of non-3GPP access for SNPN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tKey issue details",
+                            "text_content": "TR 23.700-08 [2] studies \"Key Issue #2: Support of Non-3GPP access for SNPN\". Clause 5.2.1 of TR 23.700-08 [2] states: \"Currently the 3GPP specifications do not support direct connection to SNPN via non-3GPP access networks\" and \"One objective of this key issue is to enable the 5GS to support direct connection of non-3GPP access networks to the SNPN's 5GC.\"\nThe intention of this key issue is to study if existing security mechanisms for enabling non-3GPP access in a PLMN can be reused for enabling non-3GPP access in an SNPN, or if new security mechanisms are needed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tThreats",
+                            "text_content": "If non-3GPP access in an SNPN does not provide mutual authentication between UE and SNPN, it is possible to impersonate the UE or SNPN.\nIf communication between UE and SNPN via non-3GPP access is not confidentiality, integrity or replay-protected, it is possible to disclose, tamper or replay the communication.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tPotential security requirements",
+                            "text_content": "The 5G system shall provide the means for UE and SNPN to mutually authenticate if non-3GPP access is used.\nThe 5G system shall provide the means to confidentiality, integrity and replay protect communication between UE and SNPN, if non-3GPP access is used.\nNOTE:\tThreats and requirements for devices that are not UEs (e.g. FN-RG or N5GC device behind RG) are not addressed in this document.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tKey issue #2: Authentication for UE access to hosting network",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tKey issue details",
+                            "text_content": "The terms \"localized service\" and \"hosting network\" are explained in clause 3.1 of the present document.\nTR 23.700-08 [2] studies \"Key Issue #3: Enabling NPN as hosting network for providing access to localized services\" and \"Key Issue #4: Enabling UE to discover, select and access NPN as hosting network and receive localized services\".\nThe intention of this key issue is to study authentication of UE access to a hosting network, if existing security mechanisms can be reused or new security mechanisms are needed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tThreats",
+                            "text_content": "If the UE is not authenticated towards the network, it is possible to impersonate the UE.\nIf the network is not authenticated towards the UE, it is possible to impersonate the network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tPotential security requirements",
+                            "text_content": "The UE and the hosting network shall support mutual authentication between the UE and the network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tProposed solutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.0\tMapping of solutions to key issues",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 6.0-1: Mapping of solutions to key issues\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.0-1: Mapping of solutions to key issues",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.1\tSolution #1: Authentication mechanism for untrusted non-3GPP Access in SNPN scenarios",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tIntroduction",
+                            "text_content": "This solution addresses key issue #1.\nTR 23.700-08 [2] studies \"Key Issue #2: Support of Non-3GPP access for SNPN\". Clause 5.2.1 of TR 23.700-08 [2] states: \"Currently the 3GPP specifications do not support direct connection to SNPN via non-3GPP access networks\" and \"One objective of this key issue is to enable the 5GS to support direct connection of non-3GPP access networks to the SNPN's 5GC.\"\nTo access to SNPN via no-3GPP access, on the one hand, the UE may need to handle the new identity (e.g., onboarding SUCI/onboarding SUPI) and the new Registration Type (i.e. SNPN Onboarding) to N3IWF. On the other hand, the UE may use anonymous value SUCI during the registration procedure, which will result in N3IWF failing to locate KN3IWF to authenticate the identity of UE.\nThis solution is proposed to address the aforementioned problem and enables the UE to access SNPN via an untrusted non-3GPP access network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tSolution details",
+                            "text_content": "This solution reuses the untrusted non-3GPP access authentication procedure in PLMN scenarios in clause 7.2.1 of TS 33.501 [4] with the following modifications:\n-\tIn SNPN scenarios, if the construction of SUCI as described in clause 6.12 of TS 33.501 [4] cannot be used and if the employed EAP method supports SUPI privacy, then the UE can send an anonymous value SUCI to N3IWF based on configuration. And SNPN identifier, which consists of PLMN ID and NID, should also be included in AN parameters, which are sent to the N3IWF. Moreover, to fulfil the onboarding requirements, the UE may also send onboarding SUCI to the N3IWF.\n-\tThe AMF can choose 5G AKA, EAP-AKA', or any other key-generating EAP authentication method to authenticate UE as described in clause 6.1.3 or clause I.2.2 of TS 33.501 [4].\n-\tIf EAP-AKA' or key-generating EAP authentication method is used for authentication as described in clause 6.1.3.1 and clause I.2.2 of TS 33.501 [4], the AUSF includes the EAP-Success in step 7.\nNOTE:\tThe need for including SUPI privacy is not addressed in the present document.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tSystem impact",
+                            "text_content": "This solution has impact on N3IWF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.4\tEvaluation",
+                            "text_content": "UE can send an anonymous value SUCI/onboarding SUCI to N3IWF based on configuration.\nSNPN identifier is sent to the N3IWF.\nThe AMF can choose 5G AKA, EAP-AKA', or any other key-generating EAP authentication method to authenticate UE.\nIf EAP-AKA' or key-generating EAP authentication method is used for authentication, the AUSF needs to be able to send an EAP-Success message to AMF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tSolution #2: Authentication mechanism for trusted non-3GPP Access in SNPN scenarios",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tIntroduction",
+                            "text_content": "This solution addresses key issue #1.\nSpecifically, in SNPN scenarios, the UE may register for onboarding, therefore the UE needs to send new registration type to TNAN. Moreover, TNGF may need to leverage IDi to identify KTNGF, which can authenticate the identity of the UE. And IDi can be set as the SUCI/onboarding SUCI. However, in some cases, the UE may send anonymous value SUCI to TNGF in the registration request, making TNGF not able to locally link the identity of the UE with the corresponding KTNGF. Without the mapping between UE identity and KTNGF, TNGF cannot authenticate the identity of the UE.\nTo access to SNPN, on the one hand, the UE may provide the new identity (e.g. onboarding SUCI/onboarding SUPI) and the new Registration Type (i.e. SNPN Onboarding) to TNAN. On the other hand, the UE may use anonymous value SUCI during the registration procedure, which results in the consequence that TNGF cannot locate KTNGF to authenticate the identity of UE.\nThis solution enables the UE to access SNPN via trusted non-3GPP access network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tSolution details",
+                            "text_content": "This solution reuses the authentication mechanism in clause 7A.2.1 of TS 33.501 [4] with the following modifications.\n-\tThe UE may send SUCI/onboarding SUCI to the TNAP/TNGF. If the construction of SUCI as described in clause 6.12 of TS 33.501 [4] cannot be used and if the employed EAP method supports SUPI privacy, then the UE can send an anonymous value SUCI to TNAP/TNGF. If the UE indents to access SNPN, AN parameters should also include SNPN identifier, which consists of PLMN ID and NID. The authentication mechanisms could be 5G AKA, EAP-AKA', and any other key-generating EAP authentication method as described in clause I.2 of TS 33.501 [4].\n-\tFor the IKE_AUTH exchange part in step 13a of clause 7.2.1 of TS 33.501 [4], names in the ID payloads should correspond to the keys used to generate the AUTH payload. In case the UE utilizes the anonymous value SUCI in step 5, the UE initiates an IKE_AUTH exchange and includes the hash of its SUPI in ID payloads rather than anonymous value SUCI. To help TNGF identify KTNGF, the AMF should send the newly generated KTNGF and the corresponding hash of the SUPI to the TNGF. The AMF may obtain the SUPI from the AUSF.\nNOTE: The UE can only provide SUCI/Onboarding SUCI in case it is configured with SUPI privacy parameters.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tSystem impact",
+                            "text_content": "This solution has impact on TNAP/TNGF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.4\tEvaluation",
+                            "text_content": "UE can send an anonymous value SUCI /onboarding SUCI to TNAP/TNGF.\nAN parameters including SNPN identifier should be sent to TNAP/TNGF.\nFor trusted non-3GPP Access in SNPN scenarios, the authentication mechanisms could be 5G AKA, EAP-AKA', and any other key-generating EAP authentication method as described in clause I.2 of TS 33.501 [4] should be supported\nUE and TNGF leverages the hash of the SUPI to identify KTNGF when anonymous SUCI is employed in the EAP procedure.\nThe KTNGF identification mechanism has impacts on UE, AMF, and the TNGF.\nIn specific, the UE should be able to generate the hash of the SUPI.\nThe AMF should be able to generate and deliver the hash of the SUPI for the TNGF.\nThe TNGF should be able to locate the KTNGF via the hash of the SUPI.\nThis solution allows the UE to be tracked as the same hash value is sent each time\nThis solution allows TNGF to track the UE as the hash of the SUPI remains the same across connections\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tSolution #3: Use of anonymous SUCI in trusted non-3GPP access for SNPN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tIntroduction",
+                            "text_content": "This solution solves Key issue #1 in the case of using anonymous SUCI in trusted non-3GPP access.\nWhen introducing non-3GPP access in SNPN it is assumed that most security procedures can be reused. However, the use of anonymous SUCI is only applicable to SNPNs so there are not yet any procedures specified for this case in relation to non-3GPP access.\nIn the current procedures for trusted non-3GPP access in clause 7A.2.1 of TS 33.501 [4], it is specified to use the SUCI/GUTI to map the user to the correct KTNGF in step 13. When using anonymous SUCI, this is not a good solution since an anonymous SUCI is not unique. Instead, another identifier is needed. This solution proposes to use a hash of the key KTNGF as identifier in case anonymous SUCI is used during the authentication towards the SNPN.\nThis solution defines adaptations of existing procedures needed to support the use of anonymous SUCI in trusted access for SNPN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tSolution details",
+                            "text_content": "Procedures in clause 7A.2.1 of TS 33.501 [4] are reused with the following exception:\n-\tIn step 13, if the construction of SUCI as described in clause 6.12 of TS 33.501 [4] cannot be used, then a new type of identifier is used. The new identifier is proposed to be a hash of the key KTNGF. (potentially using some additional input). It is proposed to send the new identifier using the IDi payload.\nIt is already specified in section 3.5 of RFC 7296 [5] that the ID payload used for transport of IDi can be used to transfer a key identifier by setting the ID Type to ID_KEY_ID. Support of this ID Type is mandatory. The RFC does not specify how such a key identifier is generated. The proposal here is thus to use a hash of the key KTNGF potentially using some additional input to create a key identifier.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.3\tSystem impact",
+                            "text_content": "This solution has impact on UE and TNGF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.4\tEvaluation",
+                            "text_content": "This solution solves Key issue #1 in the case of using anonymous SUCI in trusted non-3GPP access. If anonymous SUCI is not supported in trusted non-3GPP access, methods like EAP-TLS can only be used if the UE is also configured with a public key for SUCI concealment.\nThe solution requires that the TNGF decides that it is an anonymous SUCI and not a legacy SUCI or 5G-GUTI and generates a new KEY ID based on this decision\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tSolution #4: Authentication for devices that do not support 5GC NAS over WLAN access in SNPN scenarios",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tIntroduction",
+                            "text_content": "This solution addresses key issue #1.\nTR 23.700-08 [2] studies \"Key Issue #2: Support of Non-3GPP access for SNPN\". Clause 5.2.1 of TR 23.700-08 [2] states: \"Currently the 3GPP specifications do not support direct connection to SNPN via non-3GPP access networks\" and \"One objective of this key issue is to enable the 5GS to support direct connection of non-3GPP access networks to the SNPN's 5GC.\"\nDevices that do not support 5GC NAS signalling over WLAN access (referred to as \"Non-5G-Capable over WLAN\" devices, or N5CW devices for short) may access 5GC in a SNPN via a trusted WLAN Access Network that supports a Trusted WLAN Interworking Function (TWIF).\nThis solution enables N5CW to access SNPN via trusted non-3GPP WLAN Access Network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.2\tPotential solution details",
+                            "text_content": "For N5CW device in a PLMN, the authentication procedure only include EAP-AKA', which is defined in clause 6.1.3.1 of TS 33.501 [4]. However, in SNPN scenarios, N5CW supports key-generating EAP authentication methods.\nThis solution reuses the authentication procedure in clause 7A.2.4 of TS 33.501 [4] with the following modifications.\n-\tAs described in clause I.2 of TS 33.501 [4], the authentication mechanisms utilized in step 8 of clause 7A.2.4 of TS 33.501 [4] should include key-generating EAP authentication methods.\n-\tIn step 2, NAI includes identifier of SNPN (i.e. PLMN ID and the NID of the SNPN).\n-\tN5CW sends UE identity (e.g. SUCI/on boarding SUCI) and AN parameters to the TWAP/TWIF. And SNPN identifier, which consists of PLMN ID and NID, should be included in AN parameters. Moreover, in SNPN scenarios, if the construction of SUCI as described in clause 6.12 of TS 33.501[4] cannot be used and if the employed EAP method supports SUPI privacy, the UE can send an anonymous value SUCI based on configuration.\n-\tIf the UE is accessing 5GS for Onboarding, the AN parameters sent from UE to TWAP /TWIF needs to include Onboarding indication. And the Registration Type needs to be set as \"SNPN Onboarding\".\n-\tThe TWIF shall create a 5GC Registration Request message on behalf of the N5CW device. The TWIF needs to use UE identity, AN parameters, Registration Type that are received from N5CW.\nNOTE 1:\tWhether onboarding for N5CW devices is in scope is not addressed in the present document.\nNOTE 2:\tThe need for including SUPI privacy is not addressed in the present document.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.3\tSystem impact",
+                            "text_content": "This solution has impact on TWAP/TWIF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.4\tEvaluation",
+                            "text_content": "UE identity (e.g. SUCI/on boarding SUCI)/ anonymous value SUCI should be sent to the TWAP/TWIF.\nSNPN identifier should be sent to TWAP/TWIF.\nNAI sent to TWAP/TWIF should include the identifier of SNPN (i.e. PLMN ID and the NID of the SNPN).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.5\tSolution #5: Anonymous authentication during connection establishment in trusted non-3GPP network access.",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.5.1\tIntroduction",
+                            "text_content": "This is a solution to KI#1.\nWhen a UE access a trusted non-3gpp access network, it used either SUCI or 5G-GUTI for identification. In case of an NPN deployment, the UE might use an anonymous SUCI when the EAP method supports its, as specified in TS 33.501 [4] clause I.5. The anonymous SUCI will protect the identity of the UE and makes it impossible to differentiate between a group of UE's using the same realm. As the authentication and key derivation steps are independent of the IPsec establishment, the TNGF cannot link the authentication and derived key to an IKE_AUTH request – As the same identifier is used for multiple UE's.\nThis solution provides a method to fill the gap caused by introducing the anonymous SUCI which is already standardised in TS 33.501 [4] clause I.5. The solution proposes, that the TNGF creates a unique temporary identifier, shares it after authentication alongside other information necessary to establish the IPsec connection (e.g., TNGF address), to the UE. When the UE initiates the establishment of the IPSec channel, the UE uses the temporary identifier as identifier and thereby enables the TNGF to identify the correct key material (KTNGF) for the session.\nThe temporary identifier is only applicable when the anonymous identifier is used, therefore it is proposed as an optional parameter.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.5.2\tSolution details",
+                            "text_content": "Procedures in clause 7A.2.1 of TS 33.501 [4] are reused with the following exception:\n-\tIn step 9b, when an anonymous SUCI has been used in step 5, transfer a unique temporary identifier, allocated by the TNGF, to the UE alongside the TNGF address.\n-\tIn step 13b, use the unique temporary identifier provided in step 9b as IDi, in case an anonymous identifier was used in step 5.\nThe allocation of a temporary identifier by the TNGF, distributed to the UE, enables the TNGF to identify the KTNGF which is used in the IKE_AUTH procedure in step 13b and c.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.5.3\tSystem impact",
+                            "text_content": "This solution impacts TNGF and UE.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.5.4\tEvaluation",
+                            "text_content": "The solution fulfils the requirements for key issue #1 by extending the procedure in TS 33.501 [4] clause 7A.2.1 to encounter for the use of an anonymised SUCI/SUPI when concealment is not applicable. This gives a UE and SNPN the means to mutually authenticate and hereby confidentiality, integrity and replay protect the communication as stated in the requirements.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.6\tSolution #6: Trusted non-3GPP Access for SNPN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.6.1\tIntroduction",
+                            "text_content": "This solution addresses key issue #1.\nThe normal trusted access procedures are used, only if the UE sends an anonymous SUCI, then the TNGF and the UE use the assigned IP address, which is unique within the TNGF, as identifier in the IDi according to RFC 7296.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.6.2\tSolution details",
+                            "text_content": "This solution reuses the trusted non-3GPP access authentication procedure in PLMN scenarios in clause 7A.2.1 of TS 33.501 [4] with the following modifications:\nIf the UE sends an anonymous SUCI in step 5 of the procedure, then the TNGF will use the IP address, which the TNGF assigns to the UE as unique identifier to bind the security key. In step 13, the UE includes the ID_IPV4_ADDR or ID_IPV6_ADDR with the assigned IP address in the IDi. The TNGF uses the received IP address to locate the KTIPSe for the connection.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.6.3\tSystem impact",
+                            "text_content": "This solution impacts TNGF.\nThis solution may impact the protocol between TNGF and TNAP.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.6.4\tEvaluation",
+                            "text_content": "The assigned IP address is unique within an TNGF and can be used as identifier to locate the security key.\nThe TNGF has to identify an anonymous SUCI and uses in that case the IP address of the UE to locate the key. Another issue is, the TNGF may not be always involved to assign the IP address according to the TS 23.502[7], thus the solution may need the TNAP to send the IP address of the UE to the TNGF when the TNAP is used to assign the IP address. Thus, it may impact to protocol used between TNAP and TNGF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.7\tSolution #7: Untrusted non-3GPP Access for SNPN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.7.1\tIntroduction",
+                            "text_content": "This solution addresses key issue #1.\nThe normal untrusted access procedures are used, only if the UE sends an anonymous SUCI, then the N3IWF assigns a unique identifier and the UE uses the unique identifier in the IDi when sending the IKE_AUTH with AUTH.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.7.2\tSolution details",
+                            "text_content": "This solution reuses the untrusted non-3GPP access authentication procedure in PLMN scenarios in clause 7.2.1 of TS 33.501 [4] with the following modifications:\nIf the UE sends an anonymous SUCI in step 5 of the procedure, then the N3IWF assigns a unique identifier, which is unique within the N3IWF and used to bind the communication and the security key received in step 12. The N3IWF provides the assigned unique identifier to the UE in an IKE_AUTH_Response and the UE includes the unique identifier in the IDi when sending the IKE_AUTH with AUTH in step 14. The N3IWF uses the received unique identifier to locate the KN3IWF for the connection.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.7.3\tSystem impact",
+                            "text_content": "The N3IWF assigns a unique identifier to the UE when sending an anonymous SUCI, the UE sends the unique identifier with the IKE_AUTH with AUTH.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.7.4\tEvaluation",
+                            "text_content": "The identifier is unique within the N3IWF and used to bind the communication and the security key to the UE.\nThe IDi is the random number added by the UE to locate the KN3IWF in step3 of 7.2.1 of TS 33.501[2], thus, the existing procedure defined in clause 7.2.1 of TS 33.501 [2] can be reused.\nNOTE:\tFurther evaluation is not addressed in the present document.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.8\tSolution #8: Reusing Existing N3GPP Security for SNPN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.8.1\tIntroduction",
+                            "text_content": "This solution addresses key issue #1 on Security of non-3GPP access for SNPN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.8.2\tSolution details",
+                            "text_content": "For support of untrusted non-3GPP access for SNPN, it is proposed to reuse the security mechanisms defined in clause 7 in TS 33.501 [4].\nFor support of trusted non-3GPP access for SNPN, it is proposed to reuse the security mechanisms defined in clause 7A in TS 33.501 [4].\nFor support of wireline access for SNPN, it is proposed to reuse the security mechanisms defined in clause 7B in TS 33.501 [4].\nFor support of NSWO for SNPN, it is proposed to reuse the security mechanisms defined in Annex S in TS 33.501 [4].\nNOTE: \tThe solution does not address the case of anonymous SUCI.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.8.3\tEvaluation",
+                            "text_content": "This solution addresses the requirement of key issue #1.The solution is based on existing N3GPP Security mechanisms and procedures and hence has no additional standard impact.\nThis solution proposes to reuse trusted non-3GPP access defined in clause 7A in TS 33.501 [4] for SNPN. However, the existing solution defined in clause 7A in TS 33.501 [4] can only be used when SUPI or 5G-GUTI is used.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.9\tSolution #9: NSWO support in SNPN using any key-generating EAP-method",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.9.1\tIntroduction",
+                            "text_content": "This solution solves Key issue #1 in the case of NSWO using any key-generating EAP-method.\nCurrent procedures for NSWO are only defined to use EAP-AKA'. This solution extends the NSWO procedures to be able to use any key-generating EAP-method in SNPN.\nThe proposed procedure is based on the current procedures in Annex S.2.3 of TS 33.501 [4]. The procedures assume access to subscribed SNPN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.9.2\tSolution details",
+                            "text_content": "The figure depicts a simplified representation of the authentication procedure for NSWO in SNPN, which is a method used to verify the authenticity of a user's identity. The figure shows a series of steps, including the user's input, the verification process, and the output, which is a confirmation message. The figure is labeled with the figure name \"Figure 6. 9.2-1: Authentication procedure for NSWO in SNPN,\" indicating that it is a technical figure related to the authentication process in the SNPN protocol.\nFigure 6.9.2-1: Authentication procedure for NSWO in SNPN\nSteps 1-2 are performed as described in Annex S.3.2 of TS 33.501 [4].\nStep 3 is performed as described in Annex S.3.2 of TS 33.501 [4] with the following addition: If the EAP method supports privacy and the UE is configured to use anonymous SUCI, the UE may send an anonymous value SUCI based on configuration.\nSteps 4-6 are performed as described in Annex S.3.2 of TS 33.501 [4].\n7. Upon reception of the Nudm_UEAuthentication_Get Request, the UDM invokes SIDF to de-conceal SUCI to gain SUPI.\nBased on the subscription the UDM selects the appropriate EAP method to be used. The UDM includes an indicator of the selected EAP method and the SUPI to AUSF in a Nudm_UEAuthentication_Get Response message.\n8. Authentication is performed between the AUSF and UE using the selected EAP method. After a successful authentication the AUSF derives the MSK key. The decision to use MSK instead of EMSK is based on the NSWO indicator received in step 5.\nSteps 9-11 are performed as described in steps 16-18 of Annex S.3.2 of TS 33.501 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.9.3\tSystem impact",
+                            "text_content": "The solution has impact on UE and AUSF. No impact on WLAN AP, NSWOF or UDM.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.9.4\tEvaluation",
+                            "text_content": "This solution solves Key issue #1 in aspect of supporting NSWO in SNPN that has AUSF/UDM. It reuses the procedures of Annex S of TS 33.501 [4] as much as possible adding the possibility of using any key-generating EAP-method. This addition affects the following steps of the procedure:\n- \tStep 3: added possibility to use anonymous SUCI as described in clause 6.9.2\n- \tStep 7: UDM selects EAP method based on configuration as described in clause 6.9.2\n- \tStep 8: Authentication may be performed using any key generating EAP-method as described in clause 6.9.2\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.10\tSolution #10: Access to localized services using existing mechanisms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.10.1\tIntroduction",
+                            "text_content": "This solution addresses Key Issue #2 (Authentication for UE access to hosting network). The proposed solutions use existing mechanisms in 33.501 [4].\nAs per the conclusion in 23.700-08 [2], clause 8.4, when UE accesses the Hosting network using the subscription/credentials of its Home network, only two cases are considered:\n-\tIf the Home network is PLMN, the Hosting network can be PNI-NPN or SNPN.\n-\tIf the Home network is SNPN, the Hosting network can be only SNPN.\nIn both cases, solutions to these scenarios can be considered in the following categories\n-\tUE uses home network credentials to access the hosting network.\n-\tUE uses credentials obtained using the onboarding procedure as defined in 33.501[4] Annex I.9(\"Security of UE onboarding in SNPNs\" to access the hosting network.\nNote:\tOnboarding procedures only provide connectivity to obtain credentials. The credentials provisioning protocol is out of scope.\nFollowing clause details how UE can use existing mechanisms and methodologies to access localized services.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.10.2\tSolution details",
+                            "text_content": "To access the hosting network, the UE determines whether it can reuse home network credentials. As per 23.700-08 [2], the UE concludes that a home network credential can be utilized if the SNPN ID of the hosting network is contained in the SNPN priority lists connected with the home network subscription and the hosting network shows support for CH credentials. Existing 33.501 [4] primary authentication can be reused in this case. No normative work is needed from the SA3 WG perspective.\nFigure 6.10.2.2-1 shows a general overview of the access to localized services based on the onboarding mechanism. If UE uses credentials other home network credentials, then credentials obtained using the onboarding procedure as defined in 33.501 [4] Annex I.9 (\"Security of UE onboarding in SNPNs\" can be used to access the hosting network.\nThe figure depicts a simplified overview of the access to localized services based on the Onboarding Mechanism per Annex I.9.2 of TS 33.501, which is a standard for telecommunications services. The figure shows the various steps involved in the process, including the identification of the local service provider, the selection of the service, and the initiation of the service. The figure also includes a legend to help users understand the different symbols and colors used in the diagram.\nFigure 6.10.2.2-1: Overview of Access to localized services based on Onboarding Mechanism per Annex I.9.2 of TS 33.501 [4]\nFigure 6.10.2.2-2 shows the procedures for access to localized services.\nThe figure depicts a set of procedures to access localized services based on Onboarding, illustrating the steps involved in enabling and managing these services in a telecom network.\nFigure 6.10.2.2-2: Procedures to Access localized services based on Onboarding\n1.\tThe Localized Service Provider (LSP) establishes a service agreement with the operator of a Hosting Network. The LSP also establishes a service agreement with the UE to enable the UE to receive the information needed to discover/access Hosting Network and the localized service. The hosting network is configured based on the service agreement, e.g., DNN/S-NSSAI configuration for access to localized service, QoS, number of end-users, time, location, whether home network services can be accessed via the hosting network, etc. The configuration of the Hosting Network is performed by means that are outside of the 3GPP scope. The UE performs the procedures defined in TS 23.502 to get the 5GC network access.\nNOTE 1: In figure 6.10.2.2-2, the same network takes the role of the Onboarding network and then of the hosting network. Also, DCS can be involved in step 1c for primary authentication or as a part of step 2 (secondary authentication).\n2.\tLocalized service advertisements prompt UE's user using default credentials where UE authenticates with the DCS (e.g., per TS 33.501 [4] Annex I.9.2). The procedures are similar to the existing 23.501 [6] clause 5.30.2.10.2. e.g., After a successful onboarding procedure, the LSP sends a Security Profile corresponding to the UE and LSP certificate to the LSP access. The Security Profile associated with the LSP contains all the necessary data to establish a TLS tunnel between the LSP and UE.\nNOTE 2: Aspects related to information configuration, such as PVS IP address and PVS FQDN, depend on WG SA2's conclusions.\n3.\tAfter step 2, the UE needs to disconnect from the network (so far in the role of onboarding network) and reconnect again (now in the role of Hosting network). The user performs a selection of the Hosting Network. UE connects to the Hosting Network and is authenticated by the LSP in the role of Credential Holder (e.g., using a AAA server) using credentials downloaded in 2. UE requests a PDU Session and accesses the localized service of the LSP via the Hosting Network. Upon expiry of the time-restricted credentials, the LSP in the role of Credential Holder requests a release of the UE. When the localized service agreement is terminated, the Hosting Network removes the configured information by means that are outside of the 3GPP scope.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.10.3\tSystem Impact",
+                            "text_content": "For clause 6.10.2.1, there is not any system impact on existing security architecture per 33.501 [4].\nFor clause 6.10.2.2, the existing UE onboarding procedure cannot be used as is for access to localized services. As per 23.501 [6] clause 5.30.2.10.4.2 (Onboarding configuration for the UE), The PVS information, such as PVS IP address and PVS FQDN(s) provided by the onboarding network takes precedence over any such information stored in the UE. In contrast, the PVS information provided by the DCS takes precedence over the information stored in the onboarding network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.10.4\tEvaluation",
+                            "text_content": "For clause 6.10.2.1, With the proposed solutions above, there is not any system impact on the existing security architecture per 33.501 [4]. The solution addresses key issue 2 and fulfils the requirements of mutual authentication between UE and the Hosting Network.\nThe solution considers two scenarios for UE access to the hosting network using the subscription/credentials of the home network:\n- \tIf the home network is a PLMN, the hosting network can be a PNI-NPN or a stand-alone network providing non-3GPP access (SNPN).\n- \tIf the home network is an SNPN, the hosting network can only be an SNPN.\nIn both cases, the UE has two options for accessing the hosting network:\n- \tThe UE can use home network credentials to access the hosting network, in which case existing primary authentication methods in TS 33.501 [4] can be reused.\n- \tThe UE can use credentials obtained through an onboarding procedure defined in Annex I.9 of TS 33.501 [4], which provides connectivity to obtain credentials. The credentials provisioning protocol is outside the scope of this solution. The solution addresses both cases where if UE is preconfigured with PVS address information and the UE receives PVS address information from the SMF during the PDU Session Establishment Accept message; the UE can determine based on local configuration whether to apply or ignore the PVS address information provided by the SMF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.11\tSolution #11: High-level solution on authentication for UE access to hosting network",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.11.1\tIntroduction",
+                            "text_content": "This solution addresses Key Issue #2 \"Authentication for UE access to hosting network\". It provides a high-level exploration of the solution space, based on the analysis of the different possible use and business cases.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.11.2\tSolution details",
+                            "text_content": "The study in TR 23.700-08 [2] has considered different scenarios for UE access to hosting network. From an authentication point of view, the scenarios can be broadly classified into the following two cases:\n1)\tThere is a business relationship between hosting network and home network.\n2)\tThere is no business relationship between hosting network and home network.\nFor case 1), the business relationship between hosting network and home network can have different implications on the authentication architecture. At least the following cases are possible:\n1a) Home network (PLMN or SNPN) is Credentials Holder using AUSF/UDM, hosting network is SNPN.\n1b) Hosting network is PNI-NPN and home network is the underlying PLMN.\n1c) Hosting network is PNI-NPN and the underlying PLMN has a roaming relationship with the home network.\nFor case 1a), the authentication to the hosting network is already specified in Annex I.2.4 of TS 33.501 [4]. For case 1b), the authentication to the hosting network can be based on the PLMN-credentials of the home network. Additional secondary or slice-specific authentication to access the hosting network is also possible. For case 1c), the authentication to the hosting network can also be based on the PLMN-credentials of the home network. In addition to primary authentication, secondary authentication to access the hosting network (PNI-NPN deployed by the VPLMN) is possible with local breakout.\nFor case 2), the following cases need to be considered:\n2a) Hosting network is SNPN and does not have a business relationship with the home network.\n2b) Hosting network is PNI-NPN and the underlying PLMN does not have a roaming relationship (or other business relationship) with the home network: This case does not seem to be possible, since PLMNs usually have a roaming relationship.\nIn case 2a), the UE needs new credentials to authenticate to the hosting network. Hosting network credentials can be provisioned to UE using existing user plane mechanisms, over visited or home network connectivity or using onboarding as specified in TS 23.501 [6] clause 5.30.2.10, TS 23.502 [7] clause 4.2.2.2.4 and TS 33.501 [4] Annex I.9. Onboarding requires default UE credentials to be pre-configured on the UE.\nThis solution structures the possible scenarios in a different way than in the conclusions in TR 23.700-08, clause 8.4.1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.11.3\tSystem impact",
+                            "text_content": "The high-level solutions described in the solution details do not have normative specification impact.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.11.4\tEvaluation",
+                            "text_content": "This solution addresses the security requirements of Key Issue #2 \"Authentication for UE access to hosting network\". It does not require new normative work.\nNOTE:\tFurther evaluation is not addressed in the present document.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.12\tSolution #12: Localised service authentication through onboarding procedure and registration afterwards.",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.12.1\tIntroduction",
+                            "text_content": "This is a solution to KI#2.\nThe solution proposes to use the onboarding procedures defined in TS 33.501 [4] clause I.9 and TS 23.501 [6] clause 5.30.2.10 to provision the credentials, which afterwards are used to authenticate to the hosting network and hereby get access to the localised service.\nThe solutions assumes that the service provider and user have a service agreement and as part of that agreement the UE also have the default credentials provisioned. The license agreement and provisioning of default credentials is out of scope.\nThe onboarding of the UE is done towards the hosting network, which might host the DCS or the DCS can be located at the service provider. The hosting network enables the UE to get onboarded through the onboarding service provided, implying credentials to the hosting network/service is installed. In this solution the hosting network is not an PNI-NPN, as default credentials-based onboarding is not applicable because the UE already have a subscription for the HPLNM.\nTo access the localised service, the UE registers to the hosting network using the installed credentials.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.12.2\tSolution details",
+                            "text_content": "Procedures in this solution is based the procedures defined in TS 33.501 [4] clause I and TS 23.501 [6] clause 5.30.2.10 concerning UE onboarding.\nThe figure depicts a service provider and user contractual agreement, which outlines the terms and conditions for enabling the service. The agreement includes the provision of default UE credentials, which are not within the scope of the agreement.\n1)\tThe service provider and user contractual agrees to enable the service. This implies that the service provider, provides the UE with the default UE credentials. The provisioning of default UE credentials is out of scope.\n2)\tThe UE initiates an onboarding procedure towards the hosting network which in this case act like an onboarding network. The DCS may be hosted in the hosting network or by the service provider. The onboarding procedures follow the already standardised solution in TS 23 23.501 [6] clause 5.30.2.10 and TS 33.501 [4] clause I.9.\nNOTE: \tProvisioning of credentials is out of scope.\n3)\tThe UE registers to the hosting network and authenticates using credentials provisioned in step 2. After registration the UE has access to the localised service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.12.3\tSystem impact",
+                            "text_content": "No system impacts.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.12.4\tEvaluation",
+                            "text_content": "This solution fulfils the requirement in key issue #2 by utilising the onboarding procedure to provision credentials which then is used to mutual authenticate to the hosting network during registration to the hosting network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.13\tSolution #13: Home network primary authentication – secondary authentication towards localised service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.13.1\tIntroduction",
+                            "text_content": "This is a solution to KI#2.\nThis solution proposes to use home routed primary authentication towards the home network to establish the connection and secondary authentication towards the localised service provider to authenticate and get access to the service. The solution reuses already existing methods to authenticate the UE, namely home routed authentication, and local break out (break out from hosting network) secondary authentication towards the localised service provider.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.13.2\tSolution details",
+                            "text_content": "Procedures in this solution is based the procedures defined in TS 33.501 [4] clause 11 concerning secondary authentication.\nThe figure depicts a 3D representation of a communication network, specifically highlighting the 5G signal path. It illustrates the various components involved in signal propagation, including base stations (gNB), user equipment (UE), and scatterers. The diagram highlights the use of beamforming techniques to mitigate interference, and the network is designed to be redundant, with redundant paths for failover.\nFigure 6.13.2-1\n1)\tThe hosting network, home network and service provider agree on a service agreement.\n2)\tThe UE registers to the hosting network which “home routes” the authentication request to the home network which performs the primary authentication of the subscriber and establishes the key hierarchy as defined in TS 33.501 clause 6. The hosting network will act as a visited network and the home network as the home network.\n3)\tThe SMF in the hosting network will initiate the secondary authentication as described in TS 33.501 [4] clause 11, as defined for the local breakout configuration. The AAA can either be managed by the service provider or the hosting network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.13.3\tSystem impact",
+                            "text_content": "No system impacts.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.13.4\tEvaluation",
+                            "text_content": "This solution fulfils the requirement in key issue #2 by primary authenticate with the home network to mutual authenticate the UE and establishing the root of the key hierarchy for the hosting network and afterwards provide the hosting network the capability secondary authenticate according to TS 33.501 clause 11 configured as local break out.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.14\tSolution #14: NSWO support in SNPN using any key-generating EAP-method for SNPN using CH AUSF/UDM",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.14.1\tIntroduction",
+                            "text_content": "This solution solves Key issue #1 in the case of NSWO using any key-generating EAP-method in SNPN with CH AUSF/UDM.\nThe proposed procedure is based on the current procedures for roaming in Annex S.4 of TS 33.501 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.14.2\tSolution details",
+                            "text_content": "The description of NSWO for roaming defined in Annex S.4 of TS 33.501 [4] can be applied with the following adjustments:\n- \tThe procedures of Annex S.4 point to the roaming architecture options described in clause 4.2.15 in TS 23.501 [6].\n- \tThis roaming architecture is applicable by letting the Credential Holder taking the part of HPLMN. Figure 6.14.2-1 shows a modified version of Figure 4.2.15-3 of TS 23.501 [6], where HPLMN is replaced with CH and VPLMN is replaced by SNPN.\n- \tThe only impact on the SNPN is that it needs to deploy a AAA Proxy.\n- \tThe CH needs to deploy a NSWOF\n- \tTo be able to support all key-generating EAP-mechanisms, the procedures of Solution #9 of the present document can be applied on the proposed architecture.\nThe figure depicts a proposed roaming reference architecture for Non-seamless WLAN offload in a Software-Defined Networking (SDN) environment. It outlines the use of Authentication for Non-seamless WLAN Offload (AUSF/UDM) to support roaming in a network. The architecture includes reference architectures for different scenarios, such as roaming in a non-seamless WLAN environment, and the use of Authentication for Non-seamless WLAN Offload (AUSF/UDM) to support roaming.\nFigure 6.14.2-1: Proposed roaming reference architectures to support authentication for Non-seamless WLAN offload in SNPN with CH AUSF/UDM\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.14.3\tSystem impact",
+                            "text_content": "The solution has impact on UE (needs to support NSWO).SNPN needs to deploy AAA proxy and CH needs to deploy NSWOF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.14.4\tEvaluation",
+                            "text_content": "This solution solves Key issue #1 in aspect of supporting NSWO in SNPN that deploys CH AUSF/UDM. It reuses the procedures of Annex S of TS 33.501 [4] as much as possible adding the possibility of using any key-generating EAP-method.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.15\tSolution #15: NSWO using SNPN credentials from CH AAA",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.15.1\tIntroduction",
+                            "text_content": "This solution addresses Key issue #1 in the case of NSWO using SNPN credentials from Credentials Holder AAA.\nThe proposed procedure is based on the current procedures for NSWO in Annex S.4 of TS 33.501 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.15.2\tSolution details",
+                            "text_content": "In this solution, NSWO using SNPN credentials from CH AAA is achieved by reusing procedures defined in Solution 9 of the present document with following modifications:\n- \tThe WLAN AN can route the SWa messages directly to the CH AAA via AAA proxy instead of NSWOF/AUSF/UDM.\n- \tThe same key generating EAP method (including the SUPI/identifier privacy aspects) used by the SNPN over NG-RAN is reused over WLAN AN.\nThe figure depicts a reference architecture for supporting authentication for Non-seamless WLAN offload using SNPN credentials from CH AAA Server. It includes a reference server, a CH AAA Server, and a CH AAA Client, with SNPN credentials being stored in the CH AAA Server. The architecture supports authentication for Non-seamless WLAN offload, ensuring secure communication between the CH AAA Server and the CH AAA Client.\nFigure 6.15.2-1: Reference architecture to support authentication for Non-seamless WLAN offload using SNPN credentials from CH AAA Server\nNOTE:\tThe ability to differentiate the authentication of the UE between NSWO case and primary authentication case has not been addressed in the present document.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.15.3\tSystem impact",
+                            "text_content": "The solution has impact on UE (needs to support NSWO over WLAN). SNPN/CH needs to deploy AAA proxy.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.15.4\tEvaluation",
+                            "text_content": "This solution solves Key issue #1 in case of the SNPN wants to reuse the credentials from CH AAA for NSWO. To support this architecture, Rel-17 NSWO can be reused and there is no specification impact on the entities involved in the 3GPP network side. Therefore, no normative work is expected.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.16\tSolution #16: Localized Service related authentication and network access",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.16.1\tIntroduction",
+                            "text_content": "The solution address KI#2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.16.2\tSolution details",
+                            "text_content": "The solution covers the following different scenarios of authentication related to Providing Access to Localized Services (PALS) based on TR 23.700-08 [2].\nConsidering security aspects related to network access, the authentication scenarios can be broadly classified as two Cases based on the type of credentials used for the hosting network access authentication:\nCase 1. The UE hosting network access relies on home network credentials.\n1a: \tThe hosting network can be PNI-NPN or SNPN and the home network is PLMN.\n1b: \tThe hosting network can be SNPN and the home network is SNPN\nFor both scenarios listed above, the UE can determine to use home network credentials based on TR 23.700-08 [2] clause 8.4.5. The primary authentication for case 1 can be similar to TS 33.501 [4] Clause I.6 i.e., based on home network credentials. The primary authentication for case 1b can be based on TS 33.501[4] Clause I.2, the home network acts as credentials holder using AUSF/UDM. For the above two cases, as the UE uses home network credentials, the SUPI protection with SUCI can be achieved similar to TS 33.501 [4].\nCase 2. The UE hosting network access relies on other credentials (e.g., preconfigured/provisioned using application layer outside the scope of 3GPP similar to localized service information preconfiguration described in TR 23.700-08 [2] Clause 8.4.3). For the following cases, it can be possible that the credential holder can hold the provisioned UE credentials to support hosting network access, further it can be possible that in case 2a, the SUPI protection using SIDF functions cannot be achieved due to lack of SIDF support at the localized server provider side, but the localized service provider offers other means to ensure SUPI privacy (i.e., for the NAI). Similarly in case 2b, it can be possible that the provisioned credentials do not include hosting network public key and related information to support non-null scheme SUCI generation even if the hosting network supports UDM with SID functionality.\n2a: \tThe hosting network can be the Onboarding network and the external credential holder can belong to the localized service provider.\n2b: \tThe hosting network can be the Onboarding network and the credential holder can belong to the hosting network itself.\nFor cases 2a and 2b, it is very essential to consider two main security aspects listed below:\n1. \tThe procedure defined in TS 33.501 [4] Clause I.2.2.2, uses anonymous SUCI whereas per TS 23.003 [9] Clause 2.2B, the username set to either the \"anonymous\" string or to an empty string. Where the first option is a static string and the later one is skipping the username part. In both cases, the main threat is that an end user can launch DDoS over the network, and the network will be able to identify the UE only after executing multiple round-trips of authentication related message exchanges leading to DDoS with flooding over the network.\n2. \tAccording to TR 33.926 [10], Denial of service (DoS) attacks deny service to valid users, and it insists that, 'need to protect against certain types of DoS threats simply to improve system availability and reliability'. Further it states, 'A large number of compromised or misbehaving user equipments (UE) can cause a fault on the GNP with a consequent denial of service.'.\nSo, any security procedure including authentication procedure should take into account these finding to improve the security from the previous releases. Therefore, following aspects are proposed for cases 2a and 2b, if non-null schemes cannot be used for SUPI protection.\nFor Cases 2a and 2b if the SUPI privacy with non-null SUCI generation is not feasible, then it is proposed that, the credentials provisioned to the UE and the credential holder will contain an identifier (ID) which is associated to the actual SUPI related to the localized service subscription information. This ID do not leak any information about the UE/User (i.e., it can be anonymous or pseudonymous and it assignment is completely up to the localized service provider outside the scope of 3GPP). This ID is termed as digital identifier in general here in this solution. The UE while generating the null SUCI from the SUPI, the UE uses only the digital identifier as username part of the NAI to ensure SUPI privacy during primary authentication.\nFor NAI based SUPI, if the UE is provisioned with a digital identifier, then the UE can use the digital identifier as the username part of NAI for SUCI generation. The SUCI construction related to scheme Output can be same as described in TS 33.501 [4], but the SUPI type should be set as digital identifier based NAI type.\nFor case 2a, the AUSF/UDM can forward the SUPI, which is digital identifier username based NAI, further the external CH (e.g., AAA) can fetch associated subscription information and executes primary authentication as defined in TS 33.501 [4] Clause I.2.2.2.2.\nFor case 2b, the UDM on receiving the SUCI with SUPI type indicating 'digital identifier based NAI type', deconceals the SUCI as in TS 33.501 [4], fetches the SUPI (i.e., NAI SUPI) related to the digital identifier and continues with the existing authentication procedure defined in TS 33.501 [4].\n\"As clearly stated in RFC 7542, the purpose of the NAI is to allow a user to be associated with an account name, as well as to assist in the routing of the authentication request across multiple domains. In alignment the proposal in this solution allows the NAI to use a digital identifier (i.e., available as part of the default credentials related to PALS service) in the username part which allows the external CH to find the default credentials related to the UE and initiate a suitable authentication. Further the realm part of the NAI facilitates to route to the right external CH.\"\nNOTE: \tAs an option if required based on the configurations available in the default credentials, the NAI can be signed by the UE and the external CH can verify the sign., e.g., legacy AAA is already capable of doing this as covered in generic AAA architecture RFC 2903 [11].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.16.3\tSystem impact",
+                            "text_content": "For case 1, no impact as existing mechanism from TS 33.501 [4] is reused.\nFor case 2, the UE need to support an identifier which do not reveal any information about the UE to be used in username part of the NAI to access the network and to assist in identifying the credentials associated to the UE. The credential holder needs to fetch the actual subscription information/identifiers associated to the digital identifier to perform the authentication. As, this identifier needs to be routed via AMF and AUSF up to the external CH the related impact applies.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.16.4\tEvaluation",
+                            "text_content": "The solution proposes the usage of a pseudonymous SUCI for the case of onboarding. However, identifiers used during onboarding are generally only used once, since onboarding only happens once. Therefore, a pseudonymous SUCI is not needed in the case of onboarding.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.17\tSolution #17: Authentication for UE to access hosting network and receive localized services using existing mechanisms.",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.17.1\tIntroduction",
+                            "text_content": "This solution addresses KI #2: Authentication for UE access to hosting network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.17.2\tSolution details",
+                            "text_content": "As per the conclusions of the study in TR 23.700-08 [2], it is up to UE to discover, select the hosting network, and decided what credentials are used to access hosting network.\nFrom an authentication point of view, there are two types of cases for UE access to hosting network:\n1)\tThe UE accesses the Hosting network using the subscription/credentials of its Home network.\n2)\tThe UE accesses the Hosting network using the other credentials rather than the subscription/credentials from the UE Home network.\nFor case 1), The authentication method specified in in Annex I.2 of TS 33.501 [4] can be reused for UE access to SNPN as hosting network. Existing primary authentication can be reused for UE access to PNI-NPN as hosting network. In the case of PNI-NPN as hosting network using S-NSSAI, slice-specific authentication can also be used.\nNOTE 1: \tOnly UEs equipped with a USIM configured with PLMN credentials can access a hosting network which is a PNI-NPN. When the UE requests to access the hosting network, the home PLMN credential(s) are used during authentication procedure.\nFor case 2), The provisioning of Default credentials is out of scope, for example, it can be pre-configured on the UE. If the UE has Default credentials and the UE determines that new credentials for accessing hosting network are needed, the UE uses the Default credentials for the onboarding mechanism with the ON-SNPN acting as hosting network. The onboarding procedures are already specified in TS 23.501 [6] clause 5.30.2.10, TS 23.502 [7] clause 4.2.2.2.4 and TS 33.501 [4] Annex I.9 to provision the credentials.\nNOTE 2: \tIn case that the UE is preconfigured with PVS address information and the UE receives PVS address information from the SMF during the PDU Session Establishment Accept message, the UE may determine based on local configuration whether to apply or ignore the PVS address information provided by the SMF.\nAfter having the access to the hosting network, the UE can receive localized services based on the services agreements between the hosting network and localized service provider.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.17.3\tSystem impact",
+                            "text_content": "This solution does not have system impacts.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.17.4\tEvaluation",
+                            "text_content": "This solution addresses the security requirements of KI #2: Authentication for UE access to hosting network.\nIt uses existing mechanisms, and does not require normative work.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.18\tSolution #18: UE creates the identifier in trusted non-3GPP access",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.18.1\tIntroduction",
+                            "text_content": "This solution addresses key issue #1.\nWhen anonymous SUCI is used as IDi sent in the IKEv2 message, the TNGF cannot get the right Key KTGNF, because different UE may use the same anonymous SUCI. This solution proposes the UE creates a random number that is included in both AN parameter and IDi payload, and the N3IWF can use the existing logic to find the Key KTGNF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.18.2\tSolution details",
+                            "text_content": "This solution reuses the trusted non-3GPP access authentication procedure in clause 7.2A.1 of TS 33.501 [4] with the following modifications:\n-\tIn step 5, when anonymous SUCI is used, the UE sets any random number into the UE ID of the AN parameters part.\nNOTE 1: \tHow to include the random number is not addressed in this solution, because it is in the scope of CT1. For example, CT1 may agree with a solution either put the UE ID together with the anonymous SUCI, or define a new IE.\n-\tIn step 13b, the UE sets the ID type as ID_KEY-ID in this message and set its value equal to the random number as used in step 5.\nNOTE 2:\tThe random numbers assigned by different UEs may be the same, and the TNGF can mitigate this issue by implementation, for example by using a 64bit or 128bit random number which reduces the probability of collision.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.18.3\tSystem impact",
+                            "text_content": "The solution impacts on UE.\nThe solution may impact on TNGF due to the different potential designs of sending the UE ID.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.18.4\tEvaluation",
+                            "text_content": "This solution addresses KI#1 when the anonymous SUCI is used in trusted non-3GPP access by UE sets a random number in the AN parameter and IDi payload.\nHow to include the random number and whether it impacts on TNGF is stage3 work, thus this solution may or may not impact on the TNGF.\nThe random numbers assigned by different UEs may be the same, and the TNGF can mitigate this issue by implementation, for example, by using a 64bit or 128bit random number which reduces the probability of collision.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.19\tSolution #19: Supporting CH using AAA for N3GPP Security in SNPN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.19.1\tIntroduction",
+                            "text_content": "This solution addresses key issue #1 on Security of non-3GPP access for SNPN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.19.2\tSolution details",
+                            "text_content": "For untrusted non-3GPP access in SNPN, support for credential holder using AAA server for primary authentication between the UE and the AAA server, as specified in clause I.2.2.2 of TS 33.501 [4].\nFor trusted non-3GPP access in SNPN, support for credential holder using AAA server for primary authentication between the UE and the AAA server, as specified in clause I.2.2.2 of TS 33.501 [4].\nFor trusted WLAN access for N5CW devices in SNPN, support for credential holder using AAA server for primary authentication between the N5CW device and the AAA server, as specified in clause I.2.2.2 of TS 33.501 [4].\nFor NSWO in SNPN, support for credential holder using AAA server for primary authentication between the UE and the AAA server, can use the solution specified in clause 6.15 of the present document.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.19.3\tEvaluation",
+                            "text_content": "This solution addresses the requirement of key issue #1 by applying clause I.2.2.2 of TS 33.501 [4] for primary authentication to procedures in SNPN, including untrusted N3GPP procedure, trusted N3GPP procedure and trusted WLAN access procedure (N5CW devices).\nThis solution requires minimal normative work since it reuses existing specifications in TS 33.501 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.20\tSolution #20: NSWO using SNPN credentials from CH AAA via 5GC",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.20.1\tIntroduction",
+                            "text_content": "This solution addresses Key issue #1 in the case of NSWO using SNPN credentials from Credentials Holder AAA.\nThe proposed procedure is based on the current procedures for NSWO in Annex S.4 of TS 33.501 [4] and for Credential Holder using AAA server for primary authentication in clause I.2.2.2 of TS 33.501 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.20.2\tSolution details",
+                            "text_content": "The figure depicts a procedure for using SNPN credentials from the CH AAA Server via 5GC, which is a method to authenticate and authorize network services.\nFigure 6.20.2-1: Procedure for NSWO using SNPN credentials from CH AAA Server via 5GC\nSteps 1-5 are performed as described in Annex S.3.2 of TS 33.501 [4], with the following addition: If the EAP method supports privacy and the UE is configured to use anonymous SUCI, the UE may send an anonymous value SUCI based on configuration. If the construction of SUCI as described in clause 6.12 of TS 33.501 [4] cannot be used and if the employed EAP method supports SUPI privacy, then the UE can send an anonymous SUPI based on configuration.\nSteps 6-16 are replaced by steps 3-10 of clause I.2.2.2 of TS 33.501 [4], except in step 6 that an NSWO_indicator is also sent to the UDM by the AUSF.\nRemaining steps are performed as described in steps 16-18d of Annex S.3.2 of TS 33.501 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.20.3\tSystem impact",
+                            "text_content": "The solution has no new impact on UE, WLAN AN, or 5GC.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.20.4\tEvaluation",
+                            "text_content": "This solution solves Key issue #1 when the credentials from CH AAA are used for NSWO.\nIt reuses Annex S.3.2 and clause I.2.2.2 of TS 33.501 [4], thus require minimal normative specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tConclusions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tConclusions for KI#1 Security of non-3GPP access for SNPN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.1.1\tScope",
+                            "text_content": "TR 23.700-08 [2] has concluded in clause 8.2 that N3GPP access to SNPN includes the following types of access:\n- \tUntrusted/Trusted N3GPP access including support for onboarding\n- \tNSWO access to SNPN using SNPN credentials\nThe case of N5CW devices has not been addressed by TR 23.700-08 [2], but there are solutions for this case proposed in this study.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.2 \tConclusion for Untrusted N3GPP access to SNPN",
+                            "text_content": "Solution #1 is selected as basis for normative work for untrusted access to SNPN.\nThis means that the procedure specified in TS 33.501 [4] clause 7.2.1 will be reused for normative work with the following modifications:\n- \tSupport for all key generating EAP-methods: Extend the applicable authentication mechanism in steps 7 and 8 to key-generating EAP authentication methods\n- \tSupport for onboarding: Add possibility to send onboarding SUCI in step 5\n- \tSupport for usage of anonymous SUCI: Add possibility to send anonymous SUCI in step 5 (also affecting steps 6 and 7) if the construction of SUCI as described in clause 6.12 of TS 33.501 [4] cannot be used and if the employed EAP method supports privacy.\n-\tSupport for credential holder using AAA server for primary authentication, as specified in clause I.2.2.2 of TS 33.501 [4].\n-\tSupport for Credentials Holder using AUSF and UDM for primary authentication, as specified in clause I.2.4 of TS 33.501 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.3 \tConclusion for Trusted N3GPP access to SNPN",
+                            "text_content": "The following is agreed as basis for normative work with regards to the aspects:\n- \tSupport for all key generating EAP-methods\n-\tSupport for usage of anonymous SUCI\n- \tSupport for onboarding\nThis implies that the procedure specified in TS 33.501 [4] clause 7A.2.4 will be reused for normative work with the following modifications:\n- \tSupport for usage of anonymous SUCI:\n- \tAdd possibility to send anonymous SUCI in step 5 (affecting also following steps 5-8) if the construction of SUCI as described in clause 6.12 of TS 33.501 [4] cannot be used and if the employed EAP method supports privacy.\n-\tIf the construction of SUCI as described in clause 6.12 of TS 33.501 [4] cannot be used to identify the UE, the UE sends a 64-bit random number in step 5 and use this random number as key identifier in step 13. The random number generation by the UE should follow the recommendations given in SP 800-90A [13] or equivalent.\n-\tIf the TNGF cannot locate the UE (e.g., due to collision), the TNGF will reject the UE. The UE may retry with a new random number.\n- \tSupport for all key generating EAP-methods: Extension of applicable authentication mechanism in step 8 to key-generating EAP authentication methods.\n- \tSupport for onboarding: Add possibility to send onboarding SUCI in step 5\n-\tSupport for credential holder using AAA server for primary authentication, as specified in clause I.2.2.2 of TS 33.501 [4].\n-\tSupport for Credentials Holder using AUSF and UDM for primary authentication, as specified in clause I.2.4 of TS 33.501 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.4 \tConclusion for N5CW device access to SNPN",
+                            "text_content": "Solution #4 is selected as basis for normative work with regards to the aspects:\n- \tSupport for all key generating EAP-methods\n- \tSupport for usage of anonymous SUCI if the construction of SUCI as described in clause 6.12 of TS 33.501 [2] cannot be used and if the employed EAP method supports privacy.\n- \tSupport for SNPN Id (PLMN Id and NID) carried in NAI\n-\tSupport for credential holder using AAA server for primary authentication, as specified in clause I.2.2.2 of TS 33.501 [4].\n-\tSupport for Credentials Holder using AUSF and UDM for primary authentication, as specified in clause I.2.4 of TS 33.501 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.5 \tConclusion for NSWO support in SNPN",
+                            "text_content": "The solutions support usage of anonymous SUCI if the construction of SUCI as described in clause 6.12 of TS 33.501 [4] cannot be used and if the employed EAP method supports privacy.\nSolution #9 is selected as basis for normative work with respect to the aspects of supporting NSWO in SNPN that has AUSF/UDM.\nHow the UDM selects authentication method in case of anonymous SUCI is to be specified as part of normative work.\nSolution #14 is selected as basis for normative work with respect to the aspects of supporting NSWO in SNPN using a CH with AUSF/UDM.\nSolution #15 is selected as basis for normative work with respect to the aspects of supporting NSWO in SNPN using SNPN credentials from CH AAA.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.2 \tConclusions for KI#2 Authentication for UE access to hosting network",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Existing authentication procedures can be used for authentication for UE access to hosting network in the possible scenarios as concluded in TR 23.700-08 [2].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tOther conclusions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Security of UE Onboarding in SNPNs as described in Annex I.9 of TS 33.501 [4] does not require the usage of anonymous SUCI.\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

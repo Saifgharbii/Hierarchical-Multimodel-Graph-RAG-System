@@ -1,0 +1,670 @@
+{
+    "document_name": "36523-2-i30.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "To evaluate conformance of a particular implementation, it is necessary to have a statement of which capabilities and options have been implemented for a telecommunication specification. Such a statement is called an Implementation Conformance Statement (ICS).\nThe present document is part 2 of a multi-part conformance test specification for User Equipment (UE).\n3GPP TS 36.523-1 [19]: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Packet Core (EPC); User Equipment (UE) conformance specification; Part 1: Protocol conformance specification\".\n3GPP TS 36.523-2: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Packet Core (EPC); User Equipment (UE) conformance specification; Part 2: Implementation Conformance Statement (ICS) proforma specification\". (the present document)\n3GPP TS 36.523-3 [20]: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Packet Core (EPC); User Equipment (UE) conformance specification; Part 3: Abstract Test Suite (ATS)\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document provides the Implementation Conformance Statement (ICS) proforma for 3rd Generation User Equipment (UE), in compliance with the relevant EPS (E-UTRA/EPC) requirements, and in accordance with the relevant guidance given in ISO/IEC 9646-1 [24] and ISO/IEC 9646-7 [25].\nThe present document also specifies a recommended applicability statement for the test cases included in TS 36.523-1 [19]. These applicability statements are based on the features implemented in the UE.\nSpecial conformance testing functions can be found in TS 36.509 [6] and the common test environments are included in 3GPP TS 36.508 [18].\nThe present document is valid for UE complying with EPS (E-UTRA/EPC) and implemented according to 3GPP releases starting from Release 8 up to the Release indicated on the cover page of the present document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.003: \"Numbering, Addressing and Identification\".\n[3]\t3GPP TS 23.122: \"Non-Access-Stratum functions related to Mobile Station (MS) in idle mode\".\n[4]\t3GPP TS 24.008: \"Mobile Radio Interface Layer 3 specification; Core Network Protocols; Stage 3\".\n[5]\tVoid\n[6]\t3GPP TS 36.509: \"Special conformance testing functions for User Equipment \".\n[7]\tVoid\n[8]\t3GPP TS 34.123-2: \"User Equipment (UE) conformance specification; Part 2: Implementation Conformance Statement (ICS) proforma specification\".\n[9]\tVoid\n[10]\t3GPP TS 36.300: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Overall description; Stage 2\".\n[11]\t3GPP TS 36.302: \"Services provided by the physical layer for E-UTRA\".\n[12]\t3GPP TS 36.304: \"Evolved Universal Terrestrial Radio Access (E-UTRA) User Equipment (UE) Procedures in idle mode \".\n[13]\t3GPP TS 36.306: \"Evolved Universal Terrestrial Radio Access (E-UTRA) User Equipment (UE) Radio Access capabilities \".\n[14]\t3GPP TS 36.321: \"Evolved Universal Terrestrial Radio Access (E-UTRA) Medium Access Control (MAC) protocol specification\".\n[15]\t3GPP TS 36.322: \"Evolved Universal Terrestrial Radio Access (E-UTRA) Radio Link Control (RLC) protocol specification\".\n[16]\t3GPP TS 36.323: \"Evolved Universal Terrestrial Radio Access (E-UTRA) Packet Data Convergence Protocol (PDCP) specification\".\n[17]\t3GPP TS 36.331: \"Evolved Universal Terrestrial Radio Access (E-UTRA) Radio Resource Control (RRC) Protocol Specification\".\n[18]\t3GPP TS 36.508: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Packet Core (EPC); Common Test Environments for User Equipment (UE) Conformance Testing\".\n[19]\t3GPP TS 36.523-1: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Packet Core (EPC); User Equipment (UE) conformance specification; Part 1: Protocol conformance specification\".\n[20]\t3GPP TS 36.523-3: \" Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Packet Core (EPC); User Equipment (UE) conformance specification; Part 3: Abstract Test Suites (ATS)\".\n[21]\t3GPP TR 24.801: \"3GPP System Architecture Evolution; CT WG1 Aspects\".\n[22]\t3GPP TS 23.401: \"3GPP System Architecture Evolution; GPRS enhancements for E-UTRAN access\".\n[23]\t3GPP TS 51.010-1: \"Mobile Station (MS) conformance specification; Part 1: Conformance specification\".\n[24]\tISO/IEC 9646-1: \"Information technology - Open Systems Interconnection - Conformance testing methodology and framework - Part 1: General concepts\".\n[25]\tISO/IEC 9646-7: \"Information technology - Open systems interconnection - Conformance testing methodology and framework - Part 7: Implementation Conformance Statements\".\n[26]\t3GPP2 C.S0024-A-v3.0: \"cdma2000 High Rate Packet Data Air Interface Specification\".\n[27]\t3GPP2 C.S0002-A: \"Physical Layer Standard for cdma2000 Spread Spectrum Systems – Release A\".\n[28]\t3GPP TS 24.303: \"Mobility management based on Dual-Stack Mobile IPv6; Stage 3\".\n[29]\tIEEE Std 802.11 (1999): \"Standard for Information Technology - Telecommunications and information exchange between systems - Local and Metropolitan Area networks - Specific requirements - Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) specifications\".\n[30]\t3GPP TS 36.307: \"Requirements on User Equipments (UEs) Supporting a release-independent frequency band \".\n[33]\tGSMA PRD IR.92: \"IMS Profile for Voice and SMS\".\n[34]\t3GPP TS 22.101: \"Service aspects; Service principles”\n[35]\t3GPP TS 24.301: \"Non-Access-Stratum (NAS) protocol for Evolved Packet System (EPS); Stage 3\".\n[36]\t3GPP TS 25.306: \"UE Radio Access capabilities\".\n[37]\t3GPP TS 25.331: \"Radio Resource Control (RRC); Protocol specification\".\n[38]\t3GPP TS 23.216: \"Super-Charger technical realization; Stage 2\".\n[39]\t3GPP TS 23.272: \"Circuit Switched (CS) fallback in Evolved Packet System (EPS); Stage 2\".\n[40]\t3GPP TS 44.060: \"General Packet Radio Service (GPRS); Mobile Station (MS) - Base Station System (BSS) interface; Radio Link Control / Medium Access Control (RLC/MAC) protocol\".\n[41]\t3GPP TS 26.114: \"IP Multimedia Subsystem (IMS); Multimedia telephony; Media handling and interaction\".\n[42]\t3GPP TS 24.229: \"IP multimedia call control protocol based on Session Initiation Protocol (SIP) and Session Description Protocol (SDP); Stage 3\".\n[43]\t3GPP TS 24.173: \"IMS Multimedia telephony communication service and supplementary services; Stage 3\".\n[44]\t3GPP TR 21.904: \"User Equipment (UE) capability requirements\".\n[45]\t3GPP TS 34.229-2: \"Internet Protocol (IP) multimedia call control protocol based on Session Initiation Protocol (SIP) and Session Description Protocol (SDP);User Equipment (UE) conformance specification; Part 2: Implementation Conformance Statement (ICS) specification\".\n[46]\t3GPP TS 36.101: \"User Equipment (UE) radio transmission and reception\".\n[47]\t3GPP TS 24.368: \"Non-Access Stratum (NAS) configuration Management Object (MO)\".\n[48]\t3GPP TS 31.102: \"Characteristics of the Universal Subscriber Identity Module (USIM) application\".\n[49]\t3GPP TS 23.221: \"Architectural requirements\".\n[50]\t3GPP TS 45.008: \"GSM/EDGE Radio Access Network; Radio subsystem link control\".\n[51]\t3GPP TS 23.041: \"Technical realization of Cell Broadcast Service (CBS)\".\n[52]\t3GPP TS 24.334: \"Proximity-services (ProSe) User Equipment (UE) to Proximity-services (ProSe) Function Protocol aspects; Stage 3\".\n[53]\t3GPP TS 24.334: \"Proximity-services (ProSe) User Equipment (UE) to Proximity-services (ProSe) Function Protocol aspects; Stage 3\".\n[54]\tGSMA PRD IR.51: \"IMS Profile for Voice, Video and SMS over Wi-Fi\".\n[55]\tGSMA PRD NG.108: \"IMS Profile for Voice and SMS for UE category M1\".\n[56]\t3GPP TS 36.579-4: \"Mission Critical (MC) services over LTE conformance testing; Part 4: Test Applicability and Implementation Conformance Statement (ICS) proforma specification\" (the present document).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "For the purposes of the present document, the following terms, definitions, symbols and abbreviations apply:\n-\tsuch given in TR 21.905 [1]\n-\tsuch given in ISO/IEC 9646-1 [24] and ISO/IEC 9646-7 [25]\nNOTE:\tSome terms and abbreviations defined in [24] and [25] are explicitly included below with small modification to reflect the terminology used in 3GPP.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Implementation Conformance Statement (ICS): A statement made by the supplier of an implementation or system claimed to conform to a given specification, stating which capabilities have been implemented.\nICS proforma: A document, in the form of a questionnaire, which when completed for an implementation or system becomes an ICS.\nImplementation eXtra Information for Testing (IXIT): A statement made by a supplier or implementer of an UEUT which contains or references all of the information (in addition to that given in the ICS) related to the UEUT and its testing environment, which will enable the test laboratory to run an appropriate test suite against the UEUT.\nIXIT proforma: A document, in the form of a questionnaire, which when completed for an UEUT becomes an IXIT.\nProtocol Implementation Conformance Statement (PICS): An ICS for an implementation or system claimed to conform to a given protocol specification.\nProtocol Implementation eXtra Information for Testing (PIXIT): An IXIT related to testing for conformance to a given protocol specification.\nstatic conformance review: A review of the extent to which the static conformance requirements are claimed to be supported by the UEUT, by comparing the answers in the ICS(s) with the static conformance requirements expressed in the relevant specification(s).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "No specific symbols have been identified so far.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following abbreviations apply:\nENB\tEvolved Node B\nFFS\tFor Further Study\nICS\tImplementation Conformance Statement\nIXIT\tImplementation eXtra Information for Testing\nPICS\tProtocol Implementation Conformance Statement\nPIXIT\tProtocol Implementation eXtra Information for Testing\nSCS\tSystem Conformance Statement\nTC\tTest Case\nUEUT\tUser Equipment Under Test\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tRecommended Test Case Applicability",
+            "description": "The applicability of each individual test is identified in Table 4-1. This is just a recommendation based on the purpose for which the test case was written.\nThe applicability of every test is formally expressed by the use of Boolean expression that are based on parameters (ICS) included in annex A of the present document.\nAdditional information related to the Test Case (TC), e.g. affecting its dynamic behaviour or its execution may be provided as well.\nWhen a test case is to be executed against a category M1 UE and with IMS enabled, it is assumed that the UE is compliant to GSMA profile NG.108 [55].\nThe columns in Table 4-1 have the following meaning:\nClause\nThe clause column indicates the clause number in TS 36.523-1 [19] that contains the test body.\nTitle\nThe title column describes the name of the test and contains the clause title of the clause in TS 36.523-1 [19] that contains the test body.\nRelease\nThe release column indicates the earliest release from which the test case is applicable. In some specific cases it may indicate the release(s) for which the TC is only applicable.\nNote:\tSome exceptions to this interpretation may be indicated in Notes in column 'Release' e.g. see Note 3 Table 4-1.\nApplicability - Condition\nThe following notations are used for the applicability column:\nR\trecommended - the test case is recommended\nO\toptional – the test case is optional\nN/A\tnot applicable - in the given context, the test case is not recommended.\nCi\tconditional - the test is recommended (\"R\") or not (\"N/A\") depending on the support of other items. \"i\" is an integer identifying an unique conditional status expression which is defined immediately following the table. For nested conditional expressions, the syntax \"IF ... THEN (IF ... THEN ... ELSE...) ELSE ...\" is used to avoid ambiguities.\nNOTE 1:\tThe conditions are defined in Table 4-1a.\nApplicability - Comments\nThis column contains a verbal description of the condition.\nAdditional Information - Specific ICS\nThis column contains the mnemonics of ICS(s) affecting the dynamic behaviour of the TC.\nNOTE 1A:\tICS items specified in 3GPP TS 34.123-2 [8] and 3GPP TS 34.229-2 [45] can be referred, to avoid redundant definitions.\nNOTE 1B:\tThe ICS items pc_eFDD and pc_eFDD, as well as pc_NB_FDD and pc_NB_TDD, specified in the present document (Table A.4.1-1) are used to identify that a test case can be run in FDD or/and TDD branch. When none of them is provided it is assumed that the test case requires both FDD and TDD.\nAdditional Information - Specific IXIT\nThis column contains the mnemonics of IXIT(s) affecting the dynamic behaviour of the TC.\nAdditional Information - Number of TC Executions\nThis column contains, wherever applicable, the recommended for certification purposes number of TC executions. It may contain also other information e.g. exceptions to the release applicable to the test. Clarifying notes are listed in Table 4-1b.\nAdditional Information - Release other RAT\nIn regard to a particular test case, this column provides information on the release which is used by the simulated network in the other (i.e. non E-UTRA) RAT(s) where applicable. For each applicable RAT the release shall be indicated in the format 'Rel-X RAT'. When multiple RATs are applicable the entries per RAT shall be separated by a comma. When a value for a 3GPP RAT is not provided but the RAT is in the scope of the test case then for this RAT the release indicated in the Release column applies (per default), a Note extending the release applicability to an earlier version for E-UTRA in the ‘Release’ column is not applicable to the other RATs.\nEXAMPLES:\nRel-9 UTRA FDD, Rel-8 GERAN or simply as Rel-9 UTRA FDD\n(meaning that the UTRA FDD will simulate Rel-9 and the GERAN Rel-8 behaviours)\nRel-9 UTRA TDD\n(meaning that the UTRA LCR TDD network will simulate Rel-9 behaviours)\nNOTE 1C:\tSome exceptions to this interpretation may be indicated in Notes in column 'Release other RAT' e.g. see Note 7A Table 4-1.\n\nNOTE 2:\tTo meet the validation requirements from certification bodies then there is a need to uniquely reference the FDD and TDD branch of common FDD and TDD test cases. The FDD and TDD branches of common FDD and TDD test cases can be referenced by amending a \"FDD\" or \"TDD\" suffix to the test case clause number. For example for AM RLC test case 7.2.3.13 the FDD and TDD branches can be identified by \"7.2.3.13 FDD\" and \"7.2.3.13 TDD\".\nTable 4-1: Applicability of tests and additional rmation for testing\n\n\n\n\n\n\n\nTable 4-1a: Applicability of tests Conditions\n\nTable 4-1b: Number of TC Executions - Notes\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table 4-1: Applicability of tests and additional rmation for testing",
+                    "table number": 1,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 2,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 3,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 4,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 5,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 6,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 7,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table 4-1a: Applicability of tests Conditions",
+                    "table number": 8,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table 4-1b: Number of TC Executions - Notes",
+                    "table number": 9,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tProtocol conformance test cases applicability for Vertical UEs",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tProtocol conformance test cases applicability for NB-IoT NTN only UEs",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tNB-IoT NTN only UEs in GSO",
+                            "text_content": "Test cases applicable to NB-IoT NTN only UEs in GSO (A.4.4-1/240 AND A.4.4-1/234) are listed in Table 5.1.1-1. The Applicability Condition of each individual test is as identified in clause 4.\nTable 5.1.1-1: Protocol conformance test cases applicable to Rel-17 NB-IoT NTN only UEs in GSO\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.1-1: Protocol conformance test cases applicable to Rel-17 NB-IoT NTN only UEs in GSO",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.2\tNB-IoT NTN only UEs in NGSO",
+                            "text_content": "Test cases applicable to NB-IoT NTN only UEs in NGSO (A.4.4-1/240 AND A.4.4-1/237) are listed in Table 5.1.2-1. The Applicability Condition of each individual test is as identified in clause 4.\nTable 5.1.2-1: Protocol conformance test cases applicable to Rel-17 NB-IoT NTN only UEs in NGSO\n\n\nNotwithstanding the provisions of the copyright clause related to the text of the present document, The Organizational Partners of 3GPP grant that users of the present document may freely reproduce the ICS proforma in this annex so that it can be used for its intended purposes and may further publish the completed ICS.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.2-1: Protocol conformance test cases applicable to Rel-17 NB-IoT NTN only UEs in NGSO",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.1\tGuidance for completing the ICS proforma",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.1.1\tPurposes and structure",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The purpose of this ICS proforma is to provide a mechanism whereby a supplier of an implementation of the requirements defined in relevant specifications may provide information about the implementation in a standardised manner.\nThe ICS proforma is subdivided into clauses for the following categories of information:\n-\tinstructions for completing the ICS proforma;\n-\tidentification of the implementation;\n-\tidentification of the protocol;\n-\tICS proforma tables (for example: UE implementation types, Teleservices, etc).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.1.2\tAbbreviations and conventions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The ICS proforma contained in this annex is comprised of rmation in tabular form in accordance with the guidelines presented in ISO/IEC 9646-7 [25].\nItem column\nThe item column contains a number which identifies the item in the table.\nItem description column\nThe item description column describes in free text each respective item (e.g. parameters, timers, etc.). It implicitly means \"is <item description> supported by the implementation?\".\nReference column\nThe reference column gives reference to the relevant 3GPP core specifications.\nRelease column\nThe release column indicates the earliest release from which the capability or option is relevant.\nMnemonic column\nThe Mnemonic column contains mnemonic identifiers for each item.\nComments column\nThis column is left blank for particular use by the reader of the present document.\nReferences to items\nFor each possible item answer (answer in the support column) within the ICS proforma there exists a unique reference, used, for example, in the conditional expressions. It is defined as the table identifier, followed by a solidus character \"/\", followed by the item number in the table. If there is more than one support column in a table, the columns shall be discriminated by letters (a, b, etc.), respectively.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.1.3\tInstructions for completing the ICS proforma",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The supplier of the implementation may complete the ICS proforma in each of the spaces provided. More detailed instructions are given at the beginning of the different clauses of the ICS proforma.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.2\tIdentification of the User Equipment",
+            "description": "Identification of the User Equipment should be filled in so as to provide as much detail as possible regarding version numbers and configuration options.\nThe product supplier rmation and client rmation should both be filled in if they are different.\nA person who can answer queries regarding rmation supplied in the ICS should be named as the contact person.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.2.1\tDate of the statement",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.2\tUser Equipment Under Test (UEUT) identification",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "UEUT name:\n\n\nHardware configuration:\n\n\n\nSoftware configuration:\n\n\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.3\tProduct supplier",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Name:\n\nAddress:\n\n\n\nTelephone number:\n\nFacsimile number:\n\nE-mail address:\n\nAdditional rmation:\n\n\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.4\tClient",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Name:\n\nAddress:\n\n\n\nTelephone number:\n\nFacsimile number:\n\nE-mail address:\n\nAdditional rmation:\n\n\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.5\tICS contact person",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Name:\n\nTelephone number:\n\nFacsimile number:\n\nE-mail address:\n\nAdditional rmation:\n\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.3\tIdentification of the protocol",
+            "description": "This ICS proforma applies to the 3GPP standards listed in the normative references clause of the present document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.4\tICS proforma tables",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.4.1\tUE Implementation Types",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table A.4.1-1: UE Radio Technologies\n\nTable A.4.1-2: UE general functionality\n\n",
+                    "tables": [
+                        {
+                            "description": "Table A.4.1-1: UE Radio Technologies",
+                            "table number": 12,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table A.4.1-2: UE general functionality",
+                            "table number": 13,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.4.2\tUE Service Capabilities",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.4.2.1\t3GPP Standardised UE Service Capabilities",
+                            "text_content": "Table A.4.2.1.1-1: Definition of Bearer Services\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.4.2.1.1-1: Definition of Bearer Services",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "A.4.3\tBaseline Implementation Capabilities",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table A.4.3-1: Supported protocols\n\nTable A.4.3-2: Special Conformance Testing Functions\n\n",
+                    "tables": [
+                        {
+                            "description": "Table A.4.3-1: Supported protocols",
+                            "table number": 15,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table A.4.3-2: Special Conformance Testing Functions",
+                            "table number": 16,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.4.3.1\tRF Baseline Implementation Capabilities",
+                            "text_content": "NOTE:\tThe values indicated in column \"Release\" in tables A.4.3.1-1 and A.4.3.1-2 below are to be understood as the specifications release version in which a band was introduced and not as a mandate that a UE conforming to particular release shall support a particular band. For further guidance to release independent bands see TS 36.307 [30].\nTable A.4.3.1-1: FDD RF Baseline Implementation Capabilities\n\nTable A.4.3.1-2: TDD RF Baseline Implementation Capabilities\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.4.3.1-1: FDD RF Baseline Implementation Capabilities",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.1-2: TDD RF Baseline Implementation Capabilities",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.4.3.2\tPhysical Layer Baseline Implementation Capabilities",
+                            "text_content": "Table A.4.3.2-1: UE Category\n\nTable A.4.3.2-1A: Additional UE Category\n\nTable A.4.3.2-2: UE Downlink Category\n\nTable A.4.3.2-2A: Additional UE Downlink Category\n\nTable A.4.3.2-3: UE Uplink Category\n\nTable A.4.3.2-3A: Additional UE Uplink Category\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.4.3.2-1: UE Category",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.2-1A: Additional UE Category",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.2-2: UE Downlink Category",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.2-2A: Additional UE Downlink Category",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.2-3: UE Uplink Category",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.2-3A: Additional UE Uplink Category",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.4.3.3\tCA Physical Layer Baseline Implementation Capabilities",
+                            "text_content": "Table A.4.3.3-1: Downlink CA capabilities\n\nTable A.4.3.3-2: Uplink CA capabilities\n\nTable A.4.3.3.1-1: Downlink Intra-band contiguous CA Bandwidth Class capabilities\n\nTable A.4.3.3.1-2: Uplink Intra-band contiguous CA Bandwidth Class capabilities\n\nTable A.4.3.3.1-2A: Uplink Intra-band contiguous CA capability\n\nTable A.4.3.3.1-3: Supported CA configurations for Intra-band contiguous CA\n\nTable A.4.3.3.2-1: Downlink Intra-band non-contiguous CA Bandwidth Class capabilities\n\nTable A.4.3.3.2-2: Uplink Intra-band non-contiguous CA Bandwidth Class capabilities\n\nTable A.4.3.3.2-2A: Uplink Intra-band non-contiguous CA capability\n\nTable A.4.3.3.2-3: Supported CA configurations for Intra-band non-contiguous CA\n\nTable A.4.3.3.3-1: Downlink Inter-band CA Bandwidth Class Combination capabilities\n\nTable A.4.3.3.3-2: Uplink Inter-band CA Bandwidth Class Combination capabilities\n\nTable A.4.3.3.3-2A: Uplink Inter-band CA Bandwidth Class Capability\n\nTable A.4.3.3.3-3: Supported CA configurations for Inter-band CA (two bands)\n\n\nTable A.4.3.3.3-4: Supported CA configurations for Inter-band CA (three bands)\n\nTable A.4.3.3.3-5: Supported CA configurations for Inter-band CA (four bands)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.4.3.3-1: Downlink CA capabilities",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3-2: Uplink CA capabilities",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.1-1: Downlink Intra-band contiguous CA Bandwidth Class capabilities",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.1-2: Uplink Intra-band contiguous CA Bandwidth Class capabilities",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.1-2A: Uplink Intra-band contiguous CA capability",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.1-3: Supported CA configurations for Intra-band contiguous CA",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.2-1: Downlink Intra-band non-contiguous CA Bandwidth Class capabilities",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.2-2: Uplink Intra-band non-contiguous CA Bandwidth Class capabilities",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.2-2A: Uplink Intra-band non-contiguous CA capability",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.2-3: Supported CA configurations for Intra-band non-contiguous CA",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.3-1: Downlink Inter-band CA Bandwidth Class Combination capabilities",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.3-2: Uplink Inter-band CA Bandwidth Class Combination capabilities",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.3-2A: Uplink Inter-band CA Bandwidth Class Capability",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.3-3: Supported CA configurations for Inter-band CA (two bands)",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.3-4: Supported CA configurations for Inter-band CA (three bands)",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.4.3.3.3-5: Supported CA configurations for Inter-band CA (four bands)",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.4.3.4\tProSe Physical Layer Implementation Capabilities",
+                            "text_content": "Editor's Note:\tAt the moment the table below only indicates what needs to be specified and provides core spec references. How these exactly should be specified is FFS.\nTable A.4.3.4-1: ProSe Physical Layer Implementation Capabilities\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.4.3.4-1: ProSe Physical Layer Implementation Capabilities",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "A.4.4\tAdditional rmation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table A.4.4-1: Additional rmation\n\nTable A.4.4-1A: Additional UE radio access capabilities (Mandatory for Rel-11 and onward)\n\nTable A.4.4-1B: Additional UE radio access capabilities Conditions\n\nTable A.4.4-2: Definition of UE implementation capabilities\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table A.4.4-1: Additional rmation",
+                            "table number": 43,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table A.4.4-1A: Additional UE radio access capabilities (Mandatory for Rel-11 and onward)",
+                            "table number": 44,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table A.4.4-1B: Additional UE radio access capabilities Conditions",
+                            "table number": 45,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table A.4.4-2: Definition of UE implementation capabilities",
+                            "table number": 46,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.4.5\tFeature group indicators",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purpose of conformance testing, the definition of each Feature Group Indicator (FGI) is duplicated from Rel-8 for each possible E-UTRA mode, i.e. FDD (Tables A.4.5-1a, A.4.5-1d and A.4.5-3a) and TDD (Tables A.4.5-1b, A.4.5-1e and A.4.5-3b). For each FGI (applicable to the Release supported by the UE):\n-\tIf the UE supports E-UTRA FDD and TDD: both FDD and TDD support statuses shall be declared separately (see Note 2).\n-\tIf the UE supports single E-UTRA xDD mode: only the xDD-specific support status needs to be declared.\nNote 1:\tFrom Rel-11 onwards 3GPP TSG RAN has discontinued the usage of FGI bits. Instead it has introduced a different mechanism to accomplish the same purposes based on the principles described in TS 36.306 [13] clause 4. These new principles where applicable should be catered for elsewhere in the present document e.g. in section A.4.4.\nNote 2:\tFor Rel-8 UE, the separate declaration also applies to FGI 1-32.\nNote 3:\t'VoLTE' in the tables A.4.5-1a and A.4.5-1b corresponds to a UE which is IMS voice capable.\nTable A.4.5-1: Void\nTable A.4.5-1a: Feature group indicators 1-32 for FDD\n\nTable A.4.5-1b: Feature group indicators 1-32 for TDD\n\nTable A.4.5-1c: Void\nTable A.4.5-1d: Feature group indicators 33-64 for FDD\n\nTable A.4.5-1e: Feature group indicators 33-64 for TDD\n\nTable A.4.5-2: EUTRA Feature group indicators\n\nTable A.4.5-3: Void\nTable A.4.5-3a: Release 10 AS feature group indicators 101-132 for FDD\n\nTable A.4.5-3b: Release 10 AS feature group indicators 101-132 for TDD\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table A.4.5-1a: Feature group indicators 1-32 for FDD",
+                            "table number": 47,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table A.4.5-1b: Feature group indicators 1-32 for TDD",
+                            "table number": 48,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table A.4.5-1d: Feature group indicators 33-64 for FDD",
+                            "table number": 49,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table A.4.5-1e: Feature group indicators 33-64 for TDD",
+                            "table number": 50,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table A.4.5-2: EUTRA Feature group indicators",
+                            "table number": 51,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table A.4.5-3a: Release 10 AS feature group indicators 101-132 for FDD",
+                            "table number": 52,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table A.4.5-3b: Release 10 AS feature group indicators 101-132 for TDD",
+                            "table number": 53,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "B.1\tIntroduction",
+            "description": "Test Case dynamic behaviour consist of a sequence of actions taken e.g. by the UE or the SS. Depending e.g. on the UE capabilities, configuration or implementation different paths within this sequence may be executed or skipped. For the purpose of the present annex the existence of such pats is denoted as 'branching' and the paths as 'branches'.\nTest Cases consist of a Preamble, a Test body (procedure) and a Postamble. Each of these 3 distinctive parts may contain multiple test branches.\nPreambles will be the same for many (most) TCs. For example UE state Registered, Idle mode (state 2). Similarly Postambles will in their majority contain common actions. It should be noted that the basic Preambles and Postambles are part of the Test body (procedure) in a number of TCs\nThe UE capabilities/configuration options in general are identified by ICS/IXIT defined in TS 36.523-2 and 36.523-3 respectively. Many of these ICS/IXIT have then been used to determine which of a set of branches a TC may go during execution; some have been used to define TC Applicability, and, some have been used for both.\nTable 4-1 'Applicability of tests and additional rmation for testing' contains two columns dedicated to Specific ICS and IXIT which have impact on the TC dynamic behaviour branching and are used in the TC prose and the TTCN implementation. These columns are intended to cover ICS/IXIT which have impact only on the TC body where the TC verdict(s) are assigned and not on the Preamble/Postamble of the TC.\nWhereas most of the TC branches have one or more associated ICS/IXIT, in exceptional cases optional UE behaviour which is handled by the SS \"on the go\", i.e. if the UE does it then the SS will respond accordingly, does not have associated ICS/IXIT.\nNote:\tProviding information which makes the existence of optional behaviour branches more explicit and details on the ICS and IXIT which have impact on the branching of the Preambles/Postambles can be useful e.g. for certification organisations validation purposes.\nInformation on the Specific ICS and IXIT which have impact on the branching of the Preambles/Postambles is provided in B.3. Special ICS to identify optional branches are defined in section B.2.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.2\tSpecial ICS to identify optional branches",
+            "description": "Table B.2-1 provides a list of ICS definitions describing optional UE behaviour which is not associated with a ICS defined in Annex A.\nThe ICS specified in the present section are not used in TTCN or in TC prose specification. The provision of answer if the UE supports any of one these ICS is not a prerequisite for TC execution. Rather, the ICS are specified for the sole purpose of facilitating the work of any organisation, e.g. TC validation in Certification organisation, in identifying the optional test branches through which an UE has gone during test execution.\nTable B.2-1: UE optional behaviour\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.2-1: UE optional behaviour",
+                    "table number": 54,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.3\tTest Case Preambles and Postambles specific information",
+            "description": "The present section is dedicated for providing additional information on Preambles and Postambles used in the TCs specified in TS 36.523-1. The ICS included in column 'Specific ICS' are defined in Annex A and Annex B.2; the IXIT included in column 'Specific IXIT' are defined in 36.523-3 section 9; for ICS/IXIT specified in other documents, specific reference is provided.\nTable B.3-1: TC Preambles specific information\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.3-1: TC Preambles specific information",
+                    "table number": 55,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 56,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

@@ -1,0 +1,339 @@
+{
+    "document_name": "32282-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document is part of a series of documents that specify charging functionality and charging management in 3GPP networks. The 3GPP core network charging architecture and principles are specified in TS 32.240 [1].\nThe present document specifies the converged charging description for the time sensitive networking domain based on the functional stage 2 description in TS 23.501 [11], TS 23.502 [12] and TS 23.503 [13].\nThis charging description includes the converged charging architecture, principles, requirements and scenarios specific to the time sensitive networking, with focus on the following charging scenarios: .\n-\tthe TSN 5GS bridge configuration and management charging.\n-\tthe enabler for time sensitive communication and time synchronization charging.\n-\tthe time sensitive communication traffic charging.\nIt further specifies the structure and content of the CDRs and the charging events for converged charging.\nAll references, abbreviations, definitions, descriptions, principles and requirements, used in the present document, that are common across 3GPP TSs, are defined in TR 21.905 [8]. Those that are common across charging management in 3GPP networks/domains, services or subsystems are provided in the umbrella TS 32.240 [1] and are copied into clause 3 of the present document for ease of reading. Finally, those items that are specific to the present document are defined exclusively in the present document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TS 32.240: \"Telecommunication management; Charging management; Charging architecture and principles\".\n[2]\t3GPP TS 32.254: \"Telecommunication management; Charging management; Exposure function Northbound Application Program Interfaces (APIs) charging\".\n[3]\t3GPP TS 32.255: \"Telecommunication management; Charging management; 5G Data connectivity domain charging; stage 2\".\n[4]\t3GPP TS 32.290: \"Telecommunication management; Charging management; 5G system; Services, operations and procedures of charging using Service Based Interface (SBI)\".\n[5]\t3GPP TS 32.291: \"Telecommunication management; Charging management; 5G system; Charging service, stage 3\".\n[6]\t3GPP TS 32.297: \"Telecommunication management; Charging management; Charging Data Record (CDR) file format and transfer\".\n[7]\t3GPP TS 32.298: \"Telecommunication management; Charging management; Charging Data Record (CDR) parameter description\".\n[8]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[9]\t3GPP TS 22.104: \"Service requirements for cyber-physical control applications in vertical domains\".\n[10]\t3GPP TS 22.261: \"Service requirements for the 5G system; Stage 1\".\n[11]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[12]\t3GPP TS 23.502:\"Procedures for the 5G System\".\n[13]\t3GPP TS 23.503:\"Policy and Charging Control Framework for the 5G System; Stage 2\".\n[14]\t3GPP TS 24.519: \"5G System (5GS); Time-Sensitive Networking (TSN) Application Function (AF) to Device-Side TSN Translator (DS-TT) and Network-Side TSN Translator (NW-TT) protocol aspects; Stage 3.\"\n[15]\t3GPP TS 32.295: \"Telecommunication management; Charging management; Charging Data Record (CDR) transfer\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [8] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [8].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\nN104\tReference point between TSN AF and CHF\nN105\tReference point between TSCTSF and CHF\nN44\tReference point between the NEF and the CHF\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [8] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [8].\n5GS\t5G System\nASTI\tAccess Stratum TIme\nCNC\tCentralized Network Configuration\nDS-TT\tDevice-side TSN translator\nNW-TT\tNetwork-side TSN translator\nTS\tTime Synchronization\nTSC\tTime Sensitive Communications\nTSCTSF\tTime Sensitive Communication and Time Synchronization Function\nTSN\tTime Sensitive Networking\nTSN AF\tTime Sensitive Networking Application Function\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tArchitecture considerations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tHigh-level time sensitive networking architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The 5G system architecture references to support of integration with TSN and enablers for TSC and TS service are specified TS 23.501 [11] clause 5.27 and clause 5.28:\n-\t5GS acts as a Layer 2 Ethernet Bridge. When integrated with IEEE TSN network, 5GS functions acts as one or more TSN Bridges of the TSN network. The configuration of the 5GS Bridge can be provided by TSN AF and CNC.\n-\t5G System features that can be used independently or in combination to enable time-sensitive communication and time synchronization.\nFigure 4.1.1 describes the architecture for 5GS appearing as TSN bridge, specified in clause 4.4.8.2 in TS 23.501 [11]..\nThe figure depicts a system architecture view with 5G appearing as a TSN bridge, illustrating the interconnection of various components such as base stations (BSs), user equipment (UE), and scatterers. The diagram highlights the use of beamforming techniques to mitigate interference and the importance of redundancy paths to ensure failover reliability.\nFigure 4.1.1: System architecture view with 5GS appearing as TSN bridge\nFigure 4.1.2 describes the architecture for AF requested support of TSC and TS, specified in clause 4.4.8.3 in TS 23.501 [11].\nThe figure depicts a time-sensitive communication and time synchronization architecture, highlighting the use of time-sensitive routing (TSR) and time synchronization (TS) services. The architecture includes time-sensitive routing (TSR) nodes, which are responsible for routing time-sensitive traffic, and time synchronization (TS) nodes, which are responsible for synchronizing time signals. The figure also shows the use of time-sensitive routing protocols, such as Time Sensitive Routing Protocol (TSRP) and Time Synchronous Routing Protocol (TSRP), to ensure the efficient delivery of time-sensitive traffic.\nFigure 4.1.2: Architecture to enable Time Sensitive Communication and Time Synchronization services\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tTime sensitive networking converged charging architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Architectural options of Figure 4.2.1 apply to the TSN 5GS bridge configuration and management converged charging architectures.\nThe figure depicts a TSN 5GS bridge configuration and management converged charging architecture, illustrating the various components and their interconnections. The bridge is designed to support converged charging, with a focus on energy efficiency and cost-effectiveness. The architecture includes a charging station, a TSN 5GS gateway, and a converged charging controller, all interconnected through a converged charging network. The figure provides a visual representation of the complex network of components and their interconnections, highlighting the importance of network management and optimization in the context of converged charging.\nFigure 4.2.1: TSN 5GS bridge configuration and management converged charging architecture\nFigure 4.2.2 depicts the TSN 5GS bridge configuration and management converged charging architecture in reference point representation for non-roaming. The N104 reference point is defined for the interactions between TSN AF and CHF.\nThe figure depicts a TSN 5GS bridge configuration and management converged charging architecture non-roaming reference point representation, illustrating the various components and their interconnections.\nFigure 4.2.2: TSN 5GS bridge configuration and management converged charging architecture non-roaming reference point representation\nArchitectural options of Figure 4.2.3 apply to the enablers for TSC and TS converged charging architectures in this clause.\nThe figure depicts a converged charging architecture for TSC and TS, highlighting the use of enablers such as energy storage systems (ESS), battery management systems (BMS), and charging controllers. The architecture is designed to optimize energy efficiency and reduce charging times, making it suitable for electric vehicles (EVs) and other electric vehicles (EVs).\nFigure 4.2.3: Enablers for TSC and TS converged charging architecture\nFigure 4.2.4 depicts the enablers for TSC and TS converged charging architecture in reference point representation for non-roaming. The N105 reference point is defined for the interactions between TSCTSF and CHF.\nThe figure depicts a non-roaming reference point representation for TSC and TS converged charging architecture, highlighting the use of enablers such as the reference point, charging point, and charging station.\nFigure 4.2.4: Enablers for TSC and TS converged charging architecture non-roaming reference point representation\nEditor' Note: The SMF and NEF are FFS.\nGa is described in clause 5.2.4 and Btsn in clause 5.2.5 of the present document and Nchf is described in TS 32.290 [4].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tTime sensitive networking charging principles and scenarios",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tTime sensitive networking charging principles",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tGeneral",
+                            "text_content": "The charging functions specified for the TSN charging, are based on functionalities supported by TSN specified in TS 23.501 [11]:\n-\t5GS as TSN bridge, as specified in clause 5.28 in TS 23.501 [11].\n-\tEnablers of TSC and TS service, as specified in clause 5.27 in TS 23.501 [11].\nThe charging functions specified for the TSN charging are:\n-\tTSN 5GS bridge configuration and management charging.\n-\tTSC and TS service enabler charging.\n-\tTSC traffic charging.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tRequirements",
+                            "text_content": "The following are high-level charging requirements specific to TSN domain, derived from requirements in TS 22.261 [10], TS 22.104 [9], TS 23.501 [11], TS 23.502 [12] and TS 23.503 [13].\n-\tThe TSN AF shall support converged charging.\n-\tThe TSN AF shall collect and report charging information for TSN 5GS bridge configuration and management.\n-\tThe TSCTSF shall support converged charging.\n-\tThe TSCTSF shall collect and report charging information for TSC and TS service enabler.\nThe requirements for SMF and NEF to support TSN charging are specified in the respective specifications, i.e. TS 32.255 [3] and TS 32.254 [2].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tTSN charging information",
+                            "text_content": "The following is a non-exhaustive list related to one or more of the TSN information relevant to charging for TSN:\n-\t5GS bridge information as defined in clause 5.28 TS 23.501 [11].\n-\tTime synchronization information as defined in clause 5.27 TS 23.501 [11].\n-\tTime synchronization status information as defined in clause 5.27 TS 23.501 [11].\n-\tQoS and TSC assistance information as defined in in clause 5.27 TS 23.501 [11].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.4\tCHF selection",
+                            "text_content": "The CHF selection by the TSN AF may be based on the following and with this priority order (highest to lowest):\n-\tNRF based discovery.\n-\tTSN AF locally provisioned charging characteristics.\nThe CHF selection by the TSCTSF may be based on the following and with this priority order (highest to lowest):\n-\tNRF based discovery.\n-\tTSCTSF locally provisioned charging characteristics.\nThe priority order for CHF selection may be changed by operator.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tTime sensitive networking charging scenarios",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tBasic principles",
+                            "text_content": "5GS bridge configuration and management converged charging may be performed by TSN AF. The TSN AF shall be able to perform converged charging by interacting with CHF, for charging data related to 5GS bridge configuration and management, based on IEC, PEC or ECUR scenarios specified in TS 32.290 [4].\nService enablement of TSC and TS converged charging may be performed by TSCTSF. The TSCTSF shall be able to perform converged charging by interacting with CHF, for charging data related to TSC and TS service enabler, based on IEC, PEC or ECUR scenarios specified in TS 32.290 [4].\nThe contents and purpose of each charging event that triggers interaction with CHF, as well as the chargeable events that trigger them, are described in the following clauses.\nA detailed formal description of the converged charging parameters defined in the present document is to be found in TS 32.291 [5].\nA detailed formal description of the CDR parameters defined in the present document is to be found in TS 32.298 [7].\nTable 5.2.1.1.1 summarizes the set of default trigger conditions and their category which shall be supported by the TSN AF when charging is active for the corresponding 5GS bridge configuration and management (5GS BCM) functionality. For \"immediate report\" category, the table also provides the corresponding Charging Data Request message sent from TSN AF towards the CHF.\nTable 5.2.1.1.1: Default Trigger conditions in TSN AF\n\nTable 5.2.1.2.1 summarizes the set of default trigger conditions and their category which shall be supported by the TSCTSF when charging is active for the corresponding TSC and TS service enabler functionality. For \"immediate report\" category, the table also provides the corresponding Charging Data Request message sent from TSCTSF towards the CHF.\nTable 5.2.1.2.1: Default Trigger conditions in TSCTSF\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.1.1.1: Default Trigger conditions in TSN AF",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.1.2.1: Default Trigger conditions in TSCTSF",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.2\tMessage flows",
+                            "text_content": "The message flows in the present document specify the TSN charging functionality based on the TSN information from TSN AF and TSCTSF.\nThe message flows for SMF and NEF to support TSN charging functionality are specified in the respective specifications, i.e. TS 32.255 [3] and TS 32.254 [2].\nThis clause below describes the TSN 5GS bridge management and configuration charging from TSN AF.\nThe following figure 5.2.2.2.2-1 describes TSN 5GS bridge configuration and management charging from TSN AF in the IEC scenario.\nThe figure depicts a TSN 5GS bridge configuration and management charging from TSN AF, with a detailed explanation of the components and their functions.\nFigure 5.2.2.2.2-1: TSN 5GS bridge configuration and management charging from TSN AF --- IEC\n1.\tReceive 5GS BCM request from CNC: TSN AF receives the information for 5GS bridge configuration and management from CNC, e.g. traffic forwarding information, port management information.\n1ch-a.\tCharging Data Request [Event]: The TSN AF sends Charging Data Request [Event] to CHF, triggered by \"5GS BCM request received\".\n1ch-b.\tCreate CDR: The CHF creates a CDR for the 5GS bridge configuration and management charging.\n1ch-c.\tCharging Data Response [Event]: The CHF acknowledges by sending Charging Data Response [Event] to the TSN AF.\n2.\tForward the 5GS BCM request to PCF: Based on the information received from CNC, TSN AF determines the TSC Assistance Container and TSN QoS information and sends them to the PCF, specified in clause 6.2.32 TS 23.501 [11] and clause 6.1.3.23 TS 23.503 [13].\n3.\tReceive 5GS BCM response from PCF: TSN AF receives the event reporting from PCF with the 5GS bridge/router information that the PCF has received from the SMF, specified in clause 6.1.3.18 in TS 23.503 [13].\n4.\tForward 5GS BCM response to CNC: TSN AF constructs the above received information as 5GS bridge information and sends them to the CNC to register a new TSN bridge or update an existing TSN bridge.\nThe following figure 5.2.2.2.3-1 describes TSN 5GS bridge configuration and management charging from TSN AF in the PEC scenario.\nThe figure depicts a 5G-based TSN (Time-Sensitive Networking) 5GS bridge configuration and management charging from TSN AF (Access Point) using a PEC (Point-to-Point Communication) interface. The bridge is designed to support multiple TSN services, including TSN 5GS, TSN 5G-R, and TSN 5G-M, and is equipped with a PEC interface for charging and management purposes. The figure also includes a diagram illustrating the TSN 5GS bridge's architecture and the PEC interface's functionality.\nFigure 5.2.2.2.3-1: TSN 5GS bridge configuration and management charging from TSN AF --- PEC\n1.\tReceive 5GS BCM request from CNC: TSN AF receives the information for 5GS bridge configuration and management from CNC, e.g. traffic forwarding information, port management information.\n2.\tForward the 5GS BCM request to PCF: Based on the information received from CNC, TSN AF determines the TSC Assistance Container and TSN QoS information and sends them to the PCF, specified in clause 6.2.32 TS 23.501 [11] and clause 6.1.3.23 TS 23.503 [13].\n3.\tReceive 5GS BCM response from PCF: TSN AF receives the event reporting from PCF with the 5GS bridge/router information that the PCF has received from the SMF, specified in clause 6.1.3.18 in TS 23.503 [13].\n4.\tForward 5GS BCM response to CNC: TSN AF constructs the above received information as 5GS bridge information and sends them to the CNC to register a new TSN bridge or update an existing TSN bridge.\n4ch-a.\tCharging Data Request [Event]: The TSN AF sends Charging Data Request [Event] to CHF, triggered by \"5GS BCM response forwarded\".\n4ch-b.\tCreate CDR: The CHF creates a CDR for the 5GS bridge configuration and management charging.\n4ch-c.\tCharging Data Response [Event]: The CHF acknowledges by sending Charging Data Response [Event] to the TSN AF.\nThe following figure 5.2.2.2.4-1 describes TSN 5GS bridge configuration and management charging from TSN AF in the ECUR scenario.\nThe figure depicts a 4-1 TSN 5GS bridge configuration and management charging from TSN AF, with EC UR. The bridge is equipped with 16-port 1000BASE-T Ethernet ports, 1000BASE-TX SFP+ ports, and 1000BASE-T SFP+ ports. The management charging is facilitated by the TSN AF, which supports charging of the bridge's 1000BASE-T Ethernet ports and SFP+ ports. The EC UR is responsible for managing the charging process and ensuring the proper functioning of the bridge.\nFigure 5.2.2.2.4-1: TSN 5GS bridge configuration and management charging from TSN AF --- ECUR\n1.\tReceive 5GS BCM request from CNC: TSN AF receives the information for 5GS bridge configuration and management from CNC, e.g. traffic forwarding information, port management information.\n1ch-a.\tCharging Data Request [Initial]: The TSN AF sends Charging Data Request [Initial] to CHF, triggered by \"5GS BCM request received\".\n1ch-b.\tOpen CDR: The CHF opens a CDR for the 5GS bridge configuration and management charging.\n1ch-c.\tCharging Data Response [Initial]: The CHF acknowledges by sending Charging Data Response [Initial] to the TSN AF.\n2.\tForward the 5GS BCM request to PCF: Based on the information received from CNC, TSN AF determines the TSC Assistance Container and TSN QoS information and sends them to the PCF, specified in clause 6.2.32 TS 23.501 [11] and clause 6.1.3.23 TS 23.503 [13].\n3.\tReceive 5GS BCM response from PCF: TSN AF receives the event reporting from PCF with the 5GS bridge/router information that the PCF has received from the SMF, specified in clause 6.1.3.18 in TS 23.503 [13].\n4.\tForward 5GS BCM response to CNC: TSN AF constructs the above received information as 5GS bridge information and sends them to the CNC to register a new TSN bridge or update an existing TSN bridge.\n4ch-a.\tCharging Data Request [Termination]: The TSN AF sends Charging Data Request [Termination] to CHF, triggered by the \"5GS BCM response forwarded\".\n4ch-b.\tClose CDR: The CHF close the CDR.\n4ch-c.\tCharging Data Response [Termination]: The CHF acknowledges by sending Charging Data Response [Termination] to the TSN AF.\nThis clause below describes the message flow for TSC and TS service enabler charging from TSCTSF, when trusted AF interact with TSCTSF directly.\nThe following figure 5.2.2.3.2-1 describes time synchronization service charging from TSCTSF in the IEC scenario.\nThe figure depicts a time synchronization service charging mechanism from the TSCTSF, which is an important aspect of ensuring accurate time synchronization in telecommunication networks.\nFigure 5.2.2.3.2-1: Time synchronization service charging from TSCTSF --- IEC\n1.\tAF Request/Subscribe to TSCTSF service: The TSCTSF receives a service request/subscribe message from an AF with the parameters as required by the NF service, e.g. time synchronization service (un)subscription, (de)activation, modification, defined in TS 23.502 [12] clause 4.15.9.\n1ch-a.\tCharging Data Request [Event]: The TSCTSF sends Charging Data Request [Event] to CHF, triggered by \"AF request/subscribe received\".\n1ch-b.\tCreate CDR: The CHF creates a CDR for the request/subscribe of NF services provided by TSCTSF.\n1ch-c.\tCharging Data Response [Event]: The CHF acknowledges by sending Charging Data Response [Event] to the TSCTSF.\n2.\tTSCTSF service fulfilment procedure: TSCTSF performs the actions needed to fulfil the service request/subscribe, following the message flows for each scenario as specified in TS 23.502 [12].\n3.\tResponse to AF: TSCTSF sends the service response message to inform AF.\nThe following figure 5.2.2.3.2-1 describes time synchronization service charging from TSCTSF in the PEC scenario.\nThe figure depicts a time synchronization service charging mechanism from the TSCTSF, which is a key component in the 3-1 service. The charging process involves synchronizing the time of the service with the time of the charging service, ensuring that the service is delivered at the correct time. This is crucial for maintaining the integrity of the service and ensuring that users receive their desired time-sensitive content.\nFigure 5.2.2.3.3-1: Time synchronization service charging from TSCTSF --- PEC\n1.\tAF Request/Subscribe to TSCTSF service: The TSCTSF receives a service request/subscribe message from an AF with the parameters as required by the NF service, e.g. time synchronization service (un)subscription, (de)activation, modification, defined in TS 23.502 [12] clause 4.15.9.\n2.\tTSCTSF service fulfilment procedure: TSCTSF performs the actions needed to fulfil the service request/subscribe, following the message flows for each scenario as specified in TS 23.502 [12].\n3.\tResponse to AF: TSCTSF sends the service response message to inform AF.\n3ch-a.\tCharging Data Request [Event]: The TSCTSF sends Charging Data Request [Event] to CHF, triggered by \"Response to AF\".\n3ch-b.\tCreate CDR: The CHF creates a CDR for the request/subscribe of NF services provided by TSCTSF.\n3ch-c.\tCharging Data Response [Event]: The CHF acknowledges by sending Charging Data Response [Event] to the TSCTSF.\nThe following figure 5.2.2.3.2-1 describes time synchronization service charging from TSCTSF in the ECUR scenario.\nThe figure depicts a time synchronization service charging mechanism from the TSCTSF, which is an essential component of the 4-1 service. The ECUR (European Central Bank) is responsible for managing the service, ensuring that the charging process is smooth and efficient.\nFigure 5.2.2.3.4-1: Time synchronization service charging from TSCTSF --- ECUR\n1.\tAF Request/Subscribe to TSCTSF service: The TSCTSF receives a service request/subscribe message from an AF with the parameters as required by the NF service, e.g. time synchronization service (un)subscription, (de)activation, modification, defined in TS 23.502 [12] clause 4.15.9.\n1ch-a.\tCharging Data Request [Initial]: The TSCTSF sends Charging Data Request [Initial] to CHF with requested unit, triggered by \"AF request/subscribe received\".\n1ch-b.\tOpen CDR: The CHF opens a CDR for the request/subscribe of NF services provided by TSCTSF.\n1ch-c.\tCharging Data Response [Initial]: The CHF acknowledges by sending Charging Data Response [Initial] to the TSCTSF.\n2.\tTSCTSF service fulfilment procedure: TSCTSF performs the actions needed to fulfil the service request/subscribe, following the message flows for each scenario as specified in TS 23.502 [12].\n3.\tResponse to AF: TSCTSF sends the service response message to inform AF.\n4ch-a.\tCharging Data Request [Termination]: The TSCTSF sends Charging Data Request [Termination] to CHF, triggered by \"Response to AF\".\n4ch-b.\tClose CDR: The CHF close the CDR.\n4ch-c.\tCharging Data Response [Termination]: The CHF acknowledges by sending Charging Data Response [Termination] to the TSCTSF.\nThe following figure 5.2.2.3.5-1 describes QoS and TSC assistance service charging from TSCTSF in the IEC scenario.\nThe figure depicts a service charging mechanism for QoS and TSC assistance, which is a crucial aspect of the telecommunications industry. It illustrates the process of charging for these services, which are essential for ensuring the quality of service and the reliability of the network. The figure shows the various components involved in the charging process, such as the service provider, the network operator, and the end-user. It also highlights the importance of ensuring that the charging process is transparent and fair for all parties involved. Overall, the figure provides a clear and concise representation of the QoS and TSC assistance service charging mechanism in the telecommunications industry.\nFigure 5.2.2.3.5-1: QoS and TSC assistance service charging from TSCTSF --- IEC\n1.\tNtsctsf_QoSandTSCAssistance request: the TSCTSF receives a Ntsctsf_QoSandTSCAssistance service request/subscribe message from an AF with the parameters as required by the NF service, e.g. AF session with required QoS, defined in TS 23.502 [12] clause 4.15.6.6.\n1ch-a.\tCharging Data Request [Event]: The TSCTSF sends Charging Data Request [Event] to CHF, triggered by \"AF request/subscribe received\".\n1ch-b.\tCreate CDR: The CHF creates a CDR for the request/subscribe of NF services provided by TSCTSF.\n1ch-c.\tCharging Data Response [Event]: The CHF acknowledges by sending Charging Data Response [Event] to the TSCTSF.\n2.\tTSCTSF service fulfilment procedure: TSCTSF performs the actions needed to fulfil the service request/subscribe, following the message flows for each scenario as specified in clause 4.15.6.6/4.15.6.6a TS 23.502 [12].\n3.\tNtsctsf_QoSandTSCAssistance response: TSCTSF sends the Ntsctsf_QoSandTSCAssistance service response message to inform AF.\nThe following figure 5.2.2.3.6-1 describes QoS and TSC assistance service charging from TSCTSF in the PEC scenario.\nThe figure depicts a service charging mechanism for QoS and TSC assistance, with a focus on the charging process for the TSCTSF (Telecommunication Service Charging Task Force) service. The service is charged based on the quality of service (QoS) and time-sensitive communication (TSC) requirements. The charging process is managed by the TSCTSF, which ensures that the service is charged accurately and timely. The figure also includes a visual representation of the charging process, including the charging rate, the service level agreement (SLA), and the time frame for charging.\nFigure 5.2.2.3.6-1: QoS and TSC assistance service charging from TSCTSF --- PEC\n1.\tNtsctsf_QoSandTSCAssistance request: The TSCTSF receives a Ntsctsf_QoSandTSCAssistance service request/subscribe message from an AF with the parameters as required by the NF service, e.g. AF session with required QoS, defined in TS 23.502 [12] clause 4.15.6.6.\n2.\tTSCTSF service fulfilment procedure: TSCTSF performs the actions needed to fulfil the service request/subscribe, following the message flows for each scenario as specified in clause 4.15.6.6/4.15.6.6a TS 23.502 [12].\n3.\tNtsctsf_QoSandTSCAssistance response: TSCTSF sends the Ntsctsf_QoSandTSCAssistance service response message to inform AF.\n3ch-a.\tCharging Data Request [Event]: The TSCTSF sends Charging Data Request [Event] to CHF, triggered by \"Response to AF\".\n3ch-b.\tCreate CDR: The CHF creates a CDR for the request/subscribe of NF services provided by TSCTSF.\n3ch-c.\tCharging Data Response [Event]: The CHF acknowledges by sending Charging Data Response [Event] to the TSCTSF.\nThe following figure 5.2.2.3.7-1 describes QoS and TSC assistance service charging from TSCTSF in the ECUR scenario.\nThe figure depicts a service charging mechanism for QoS and TSC assistance, with a detailed explanation of the service charges and their corresponding TSC assistance.\nFigure 5.2.2.3.7-1: QoS and TSC assistance service charging from TSCTSF --- ECUR\n1.\tNtsctsf_QoSandTSCAssistance request: The TSCTSF receives a Ntsctsf_QoSandTSCAssistance service request/subscribe message from an AF with the parameters as required by the NF service, e.g. AF session with required QoS, defined in TS 23.502 [12] clause 4.15.6.6.\n1ch-a.\tCharging Data Request [Initial]: The TSCTSF sends Charging Data Request [Initial] to CHF with requested unit, triggered by \"AF request/subscribe received\".\n1ch-b.\tOpen CDR: The CHF opens a CDR for the request/subscribe of NF services provided by TSCTSF.\n1ch-c.\tCharging Data Response [Initial]: The CHF acknowledges by sending Charging Data Response [Initial] to the TSCTSF.\n2.\tTSCTSF service fulfilment procedure: TSCTSF performs the actions needed to fulfil the service request/subscribe, following the message flows for each scenario as specified in clause 4.15.6.6/4.15.6.6a TS 23.502 [12].\n3.\tNtsctsf_QoSandTSCAssistance response: TSCTSF sends the Ntsctsf_QoSandTSCAssistance service response message to inform AF.\n3ch-a.\tCharging Data Request [Termination]: The TSCTSF sends Charging Data Request [Termination] to CHF, triggered by \"Response to AF\".\n3ch-b.\tClose CDR: The CHF close the CDR.\n3ch-c.\tCharging Data Response [Termination]: The CHF acknowledges by sending Charging Data Response [Termination] to the TSCTSF.\nThe following figure 5.2.2.3.8-1 describes TSC and TS service notification charging from TSCTSF in the IEC scenario.\nThe figure depicts a schematic representation of the TSC and TS service notification charging process from the TSCTSF, which is an important aspect of the TSC and TS service. The process involves charging for TSC and TS services, and the figure provides a visual representation of the steps involved.\nFigure 5.2.2.3.8-1: TSC and TS service notification charging from TSCTSF --- IEC\n1.\tPolicy modification: The TSCTSF keeps notify of the policy modifications from PCF.\n1ch-a.\tCharging Data Request [Event]: The TSCTSF sends Charging Data Request [Event] to CHF, triggered by \"Notification to AF\".\n1ch-b.\tCreate CDR: The CHF creates a CDR for the notify message provided by TSCTSF.\n1ch-c.\tCharging Data Response [Event]: The CHF acknowledges by sending Charging Data Response [Event] to the TSCTSF.\n2.\tTSCTSF notify the change of event condition to AF: Upon the reception of a change in the NG-RAN and/or NW-TT timing synchronization status update, the TSCTSF shall determine if the UE is impacted for time synchronization service, if yes, the TSCTSF sends a notify message to the AF with the change of event condition.\nIn case of QoS and TSC assistance service, the change of event condition may be modification of the transmission resources corresponding to the QoS update succeeded or failed, an alternative service requirement is being applied, etc.\nIn case of time synchronization service, the change of event condition may be updated time synchronization capabilities based on the capability information received from the DS-TT(s) and NW-TT, UE moves in or out of the Area of Interest based on updated spatial validity condition, etc.\n3.\tAcknowledgement: the AF acknowledges the reception of the notification.\nThe following figure 5.2.2.3.9-1 describes TSC and TS service notification charging from TSCTSF in the PEC scenario.\nThe figure depicts a network topology with various components, including a base station (gNB), user equipment (UE), and scatterers. The diagram illustrates the signal propagation in a 5G network, highlighting the multi-path signal path and beamforming techniques to mitigate interference. The fiber-optic backbone architecture is shown, with core switches, optical line terminals (OLTs), and distributed nodes. Redundancy paths are depicted in dashed lines, ensuring failover reliability. The layered design aligns with SDN principles.\nFigure 5.2.2.3.9-1: TSC and TS service notification charging from TSCTSF --- PEC\n1.\tPolicy modification: The TSCTSF keeps notify of the policy modifications from PCF.\n2.\tTSCTSF notify the change of event condition to AF: Upon the reception of a change in the NG-RAN and/or NW-TT timing synchronization status update, the TSCTSF shall determine if the UE is impacted for time synchronization service, if yes, the TSCTSF sends a notify message to the AF with the change of event condition.\nIn case of QoS and TSC assistance service, the change of event condition may be modification of the transmission resources corresponding to the QoS update succeeded or failed, an alternative service requirement is being applied, etc.\nIn case of time synchronization service, the change of event condition may be updated time synchronization capabilities based on the capability information received from the DS-TT(s) and NW-TT, UE moves in or out of the Area of Interest based on updated spatial validity condition, etc.\n3.\tAcknowledgement: the AF acknowledges the reception of the notification.\n3ch-a.\tCharging Data Request [Event]: The TSCTSF sends Charging Data Request [Event] to CHF, triggered by \"Notification acknowledgement\".\n3ch-b.\tCreate CDR: The CHF creates a CDR for the notify message provided by TSCTSF.\n3ch-c.\tCharging Data Response [Event]: The CHF acknowledges by sending Charging Data Response [Event] to the TSCTSF.\nThe following figure 5.2.2.3.10-1 describes TSC and TS service notification charging from TSCTSF in the ECUR scenario.\nThe figure depicts a network topology with various components, including a base station (gNB), user equipment (UE), and scatterers. The diagram illustrates the signal propagation in a 5G network, highlighting the multi-path signal path and beamforming techniques to mitigate interference. The fiber-optic backbone architecture is shown, with core switches, optical line terminals (OLTs), and distributed nodes. Redundancy paths are depicted in dashed lines, ensuring failover reliability. The layered design aligns with SDN principles.\nFigure 5.2.2.3.9-1: TSC and TS service notification charging from TSCTSF --- ECUR\n1.\tPolicy modification: The TSCTSF keeps notify of the policy modifications from PCF.\n1ch-a.\tCharging Data Request [Initial]: The TSCTSF sends Charging Data Request [Initial] to CHF, triggered by \"Notification to AF\".\n1ch-b.\tOpen CDR: The CHF opens a CDR for the notify message provided by TSCTSF.\n1ch-c.\tCharging Data Response [Initial]: The CHF acknowledges by sending Charging Data Response [Initial] to the TSCTSF.\n2.\tTSCTSF notify the change of event condition to AF: Upon the reception of a change in the NG-RAN and/or NW-TT timing synchronization status update, the TSCTSF shall determine if the UE is impacted for time synchronization service, if yes, the TSCTSF sends a notify message to the AF with the change of event condition.\nIn case of QoS and TSC assistance service, the change of event condition may be modification of the transmission resources corresponding to the QoS update succeeded or failed, an alternative service requirement is being applied, etc.\nIn case of time synchronization service, the change of event condition may be updated time synchronization capabilities based on the capability information received from the DS-TT(s) and NW-TT, UE moves in or out of the Area of Interest based on updated spatial validity condition, etc.\n3.\tAcknowledgement: The AF acknowledges the reception of the notification.\n3ch-a.\tCharging Data Request [Termination]: The TSCTSF sends Charging Data Request [Termination] to CHF, triggered by \"Notification acknowledgement\".\n3ch-b.\tClose CDR: The CHF closes a CDR for the notify message provided by TSCTSF.\n3ch-c.\tCharging Data Response [Termination]: The CHF acknowledges by sending Charging Data Response [Termination] to the TSCTSF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tCDR generation",
+                            "text_content": "The CHF CDRs for TSN charging are generated by the CHF to collect charging information that they subsequently transfer to the Charging Gateway Function (CGF).\nThe CHF CDRs can be per individual subscriber or per TSN subscriber.\nThe following clauses describe in detail the conditions for generating the CHF CDR, which shall be supported by the CHF.\nA TSN charging CHF CDR is used to capture charging information related to TSN chargeable events for PEC, IEC and ECUR scenarios.\nA TSN charging CHF CDR is generated by the CHF for each received Charging Data Request [Event].\nA CHF CDR shall be opened when the CHF receives Charging Data Request [Initial] with charging information added.\nWhen the CHF receives Charging Data Request [Termination], the charging information shall be added in the CHF CDR and the CDR shall be closed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.4\tGa record transfer flows",
+                            "text_content": "Details of the Ga protocol application are specified in TS 32.295 [15].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.5\tBtsn CDR file transfer",
+                            "text_content": "Details of the Btsn protocol application are specified in TS 32.297 [6].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tDefinition of charging information",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tData description for time sensitive networking charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tMessage contents",
+                            "text_content": "The Charging Data Request and Charging Data Response are specified in subclause 5.1.2.2.1 of TS 32.290 [4].\nTable 6.1.1.1-1 describes the use of these messages for time sensitive networking charging.\nTable 6.1.1.1-1: Time sensitive networking charging messages reference table\n\nNote: \tThe SMF and NEF as source for TSN charging message is described in the respective specification.\nThe following clauses describe the different fields used in the Charging Data messages and the category in the tables is used according to the charging data configuration defined in clause 5.4 of TS 32.240 [1].\nTable 6.1.1.2-1 illustrates the basic structure of a Charging Data Request message from the TSN AF or TSCTSF as used for time sensitive networking charging.\nTable 6.1.1.2-1: Charging Data Request message contents\n\nTable 6.1.1.3-1 illustrates the basic structure of a Charging Data Response message from the CHF to the TSN AF or TSCTSF as used for time sensitive networking charging.\nTable 6.1.1.3-1: Charging Data Response message contents\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.1.1-1: Time sensitive networking charging messages reference table",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2-1: Charging Data Request message contents",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.3-1: Charging Data Response message contents",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.2\tGa message contents",
+                            "text_content": "Details of the Ga message contents are specified in TS 32.295 [15].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tCDR description on the Btsn interface",
+                            "text_content": "This clause describes the CDR content and format generated for time sensitive networking charging.\nThe following tables provide a brief description of each CDR parameter. The category in the tables is used according to the charging data configuration defined in clause 5.4 of TS 32.240 [1]. Full definitions of the CDR parameters, sorted by the name in alphabetical order, are provided in TS 32.298 [7].\nIf enabled, CHF CDRs for time sensitive networking charging shall be produced for each AF.\nThe fields of TSN charging CHF CDR are specified in table 6.1.3.2-1.\nTable 6.1.3.2-1: Time sensitive networking charging CHF record data\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.3.2-1: Time sensitive networking charging CHF record data",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tTime sensitive networking charging specific parameters",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tDefinition of time sensitive networking charging information",
+                            "text_content": "The Charging Information parameter used for time sensitive networking charging is provided in the following clauses.\nSpecific charging information for TSN charging is provided within the TSN Charging Information.\nThe detailed structure of the TSN Charging Information can be found in table 6.2.1.2-1.\nTable 6.2.1.2-1: Structure of TSN Charging Information\n\nThe detailed structure of the 5GS Bridge Information can be found in table 6.2.1.3-1.\nTable 6.2.1.3-1: Structure of 5GS Bridge Information\n\nThe detailed structure of TSN QoS Information can be found in table 6.2.1.4-1.\nTable 6.2.1.4-1: Structure of TSN QoS Information\n\nThe detailed structure of TSC Assistance Information can be found in table 6.2.1.4-1.\nTable 6.2.1.4-1: Structure of TSC Assistance Information\n\nThe detailed structure of the Time Synchronization Information can be found in table 6.2.1.6-1.\nTable 6.2.1.6-1: Structure of Time Synchronization Information\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.1.2-1: Structure of TSN Charging Information",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.1.3-1: Structure of 5GS Bridge Information",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.1.4-1: Structure of TSN QoS Information",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.1.4-1: Structure of TSC Assistance Information",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.1.6-1: Structure of Time Synchronization Information",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.2\tFormal time sensitive networking charging parameter description",
+                            "text_content": "The detailed definitions, abstract syntax and encoding of time sensitive networking CHF CDRs parameters are specified in TS 32.298 [7].\nThe detailed definitions of resources attributes used for time sensitive networking charging are specified in TS 32.291 [5].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tDetailed message format for converged charging",
+                            "text_content": "The following clause specifies per Operation Type the charging data that are sent by CEF for time sensitive networking converged charging.\nThe Operation Types are listed in the following order: I (Initial)/T (Termination)/E (Event). Therefore, when all Operation Types are possible it is marked as ITE. If only some Operation Types are allowed for a node, only the appropriate letters are used (i.e. IT or E) as indicated in the table heading. The omission of an Operation Type for a particular field is marked with \"-\" (i.e. I-E). Also, when an entire field is not allowed in a node the entire cell is marked as \"-\".\nTable 6.2.3-1 defines the basic structure of the supported fields in the Charging Data Request message for TSN AF or TSCTSF converged charging.\nTable 6.2.3-1: Supported fields in Charging Data Request message\n\nTable 6.2.3-2 defines the basic structure of the supported fields in the Charging Data Response message for TSN or TSCTSF converged charging.\nTable 6.2.3-2: Supported fields in Charging Data Response message\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.3-1: Supported fields in Charging Data Request message",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3-2: Supported fields in Charging Data Response message",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tBinding for time sensitive networking converged charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This mapping between the Information Elements, resource attributes and CHF CDR parameters for time sensitive networking converged charging is described in clause 7 of TS 32.291 [5].\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 16,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

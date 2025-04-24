@@ -1,0 +1,254 @@
+{
+    "document_name": "28841-i01.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document studies on management aspects of IoT NTN enhancements. It investigates specific IoT NTN related parameters which should be considered by O&M, investigates NRM enhancement, performance measurement and related new KPIs of IoT NTN. It studies the key issues associated with service and network management of IoT NTN enhancements (whether as NG-RAN or E-UTRAN) and potential solutions, and provides recommendations for the further normative work.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2] \t3GPP TS 36.300: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Overall description; Stage 2\".\n[3] \t3GPP TS 38.300: \"NR; NR and NG-RAN Overall description; Stage-2 \".\n[4] \t3GPP TR 28.808: \"Study on management and orchestration aspects of integrated satellite components in a 5G network\".\n[5]\t3GPP TS 23.401: \"General Packet Radio Service (GPRS) enhancements for Evolved Universal Terrestrial Radio Access Network (E-UTRAN) access\".\n[6]\t3GPP TS 36.331: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Resource Control (RRC); Protocol specification\".\n[7]\t3GPP TS 36.304: \"Evolved Universal Terrestrial Radio Access (E-UTRA); User Equipment (UE) procedures in idle mode\".\n[8]\t3GPP TS 23.501: \" System Architecture for the 5G System; Stage 2\".\n[9]\t3GPP TR 38.821: \"Solutions for NR to support non-terrestrial networks (NTN)\".\n[10]\t3GPP TS 28.313: \"Self-Organizing Networks (SON) for 5G networks\".\n[11]\t3GPP TS 28.552: \"Management and orchestration; 5G performance measurements\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nGeostationary (GEO) satellites: located precisely in the plane of the Equator at an altitude of 35,786 km, these satellites rotate at the same rate as the Earth's rotation.\nNOTE:\tA GEO satellite stands still with respect to Earth Thanks to this property, a single GEO satellite is sufficient to create a continuous coverage.\nHighly-Eccentric Orbiting (HEO) satellites: satellites with a range of operational altitudes between 7,000 km and more than 45,000 km.\nNOTE:\tThe inclination angle is selected so as to compensate, completely or partially, the relative motion of Earth with respect to the orbital plane, allowing the satellite to cover successively different parts of Northern land masses (e.g. Western Europe, North America, and Northern Asia).\nLow-Earth Orbiting (LEO) satellites: satellites typically deployed in constellations with altitude ranging from 500 km to 2,000 km.\nNOTE:\tThe inclination angle of the orbital plane is ranging from 0 to more than 90 degrees. These constellations are placed above the International Space Station and debris, and below the first Van Allen belt.\nMedium-Earth Orbiting (MEO) satellites: with altitude ranging from 8,000 to 20,000 km.\nNOTE:\tThe inclination angle of the orbital plane ranges from 0 to more than 90 degrees. These constellations are placed above the Van Allen belts.\nNon-Geostationary Orbiting (NGSO) satellites: These satellites do not stand still with respect to Earth.\nNOTE:\tShould service continuity be required over time, a number of satellites (a constellation) is required to meet this requirement; the lower the altitude the higher the number of satellites.\nSatellite coverage availability information: This refers to location and time information related to expected coverage availability of satellite/satellite constellation that provides discontinuous coverage.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nAN\tAccess Network\nBL\tBandwidth reduced Low complexity\n5GC\t5G Core Network\nCN\tCore Network\neMTC \tenhanced Machine-Type Communication\nGEO \tGeostationary satellite Orbit\ngNB\tgeneric Node B\ngNB-CU\tgNB-Central Unit\ngNB-DU\tgNB-Distributed Unit\nHARQ\tHybrid Automatic Repeat Request\nHEO\tHighly-Eccentric Orbiting satellites\nLEO \tLow-Earth Orbiting satellites\nIoT\tInternet of Things\nMEO \tMedium-Earth Orbiting satellites\nNCR\tNeighbour Cell Relationship\nNGSO\tNon-geostationary Satellite Orbit\nNOP\tNetwork Operator\nNS\tNetwork Slice\nNSI\tNetwork Slice Instance\nNSSI\tNetwork Slice Subnet Instance\nSON\tSelf-organized Network\nQoS\tQuality of Service\nRAN\tRadio Access Network\nRAT\tRadio Access Technology\nRU\tRadio Unit\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tConcepts and background",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tReference management architecture for integrated satellite components",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.1.1\tManagement architecture #1 for integrated satellite NBIoT/LTE-M RAT",
+                            "text_content": "The reference architecture (according to TS 36.300 [2] and TS 38.300 [3]) depicted in figure 4.1.1 below considers the case of a 3GPP RAN integrating a satellite NBIoT/LTE-M RAT, possibly together with a Terrestrial RAT. The NOP operates the 5G network interfacing through API's with Communication Service Customers or Verticals on the one hand and delivers services to UEs on the other hand. The 3GPP Management system manages the 3GPP RAN aspect.\nFigure 4.1.1 illustrates a reference architecture for the management of a satellite NB-IoT/LTE-M RAT, showcasing the integration of satellite communication with terrestrial networks. The figure depicts the various components involved, including the satellite, terrestrial base stations, and the network management system. The architecture emphasizes the seamless handover between satellite and terrestrial networks, ensuring uninterrupted connectivity for IoT devices. The figure highlights the importance of efficient resource allocation and coordination between different network entities to support the growing demand for IoT services in remote areas.\nFigure 4.1.1: Reference architecture #1 for the management of a satellite NBIoT/LTE-M RAT\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.2\tManagement architecture #2 for integrated satellite NBIoT/LTE-M -RAT and satellite NR-RAT",
+                            "text_content": "The reference architecture (according to TS 36.300 [2] and TS 38.300 [3]) depicted in figure 4.1.2 considers another case of a 3GPP RAN integrating a satellite NBIoT/LTE-M -RAT, possibly together with a Terrestrial RAT and a satellite NR-RAT. The NOP operates the 5G network interfacing through API's with Communication Service Customers or Verticals on the one hand and delivers services to UEs on the other hand. The 3GPP Management system manages the 3GPP RAN aspect.\nFigure 4.1.2 illustrates a reference architecture for the management of a satellite NB-IoT/LTE-M and satellite NR-RAT. The figure showcases the integration of satellite and terrestrial communication technologies, highlighting the key components such as the satellite ground station, terrestrial base stations, and the core network. The architecture emphasizes the seamless handover between satellite and terrestrial networks, ensuring reliable communication for IoT devices. The figure also highlights the importance of efficient resource management and coordination between different RATs (Radio Access Technologies) for optimal performance in a hybrid satellite-terrestrial network.\nFigure 4.1.2: Reference architecture #2 for the management of a satellite NBIoT/LTE-M -RAT and satellite NR-RAT\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.3\tManagement architecture #3 for integrated non-3GPP satellite RAN",
+                            "text_content": "The reference architecture depicted in figure 4.1.3 considers the case of a non-3GPP satellite RAN integrated in a EPS/5GS. The NOP operates the 5G network interfacing through API's with Communication Service Customers or Verticals on the one hand and delivers services to UEs on the other hand. The 3GPP management system manages the 3GPP RAN and the non-3GPP RAN.\nFigure 4.1.3 illustrates the reference architecture for the management of a non-3GPP satellite RAN, showcasing the various components involved in its operation. The figure depicts the satellite network, including the satellite, ground station, and terrestrial network interfaces, as well as the core network elements such as the Evolved Packet Core (EPC) and the Network Management System (NMS). The figure emphasizes the importance of seamless integration and efficient management of satellite and terrestrial networks, highlighting the role of the EPC in providing a unified service and session management platform. The NMS is shown as a crucial component for network monitoring, control, and assurance, ensuring the overall performance and reliability of the satellite RAN.\nFigure 4.1.3: Reference architecture for the management of a non-3GPP satellite RAN\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.2\tArchitecture Scenarios for integrated satellite components",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tscenario #1: A 3GPP network with access networks and terrestrial access networks",
+                            "text_content": "In this scenario, a 3GPP network is composed of a 3GPP core network, a satellite IoT 3GPP access network, a satellite NR 3GPP access network and a terrestrial 3GPP access network, where the satellite component is also integrated as a 3GPP access network. The satellite IoT network, satellite NR network and the terrestrial network share the same PLMN and access networks are managed by the same 3GPP management system. This architecture scenario follows the Satellite access class scenario in clause 4.2.2 from TR 28.808 [4].\nFigure 4.2.1 illustrates the architecture of a 3GPP network, which includes a satellite IoT 3GPP access network, a satellite NR 3GPP access network, and a satellite NR 3GPP access network. The figure showcases the various components and interfaces involved in the network, such as the terrestrial base stations, satellite base stations, and the interfaces between them. The figure also highlights the role of satellite networks in providing coverage to remote areas and the integration of IoT devices with the 3GPP network. This architecture is crucial for enabling seamless connectivity and communication services across different types of networks.\nFigure 4.2.1: Architecture of 3GPP network with a satellite IoT 3GPP access network, a satellite NR 3GPP access network and a satellite NR 3GPP access network\nNote: \tAll access networks are in the same management domain.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tscenario #2: Satellite enabled 3GPP network as a roaming network for terrestrial network operators",
+                            "text_content": "In this scenario, consider two separate 3GPP networks, one 3GPP network with a satellite IoT access network and satellite NR access network, another 3GPP network with a terrestrial access network. Both networks have their own PLMN ID and have a roaming agreement in place with each other. Roaming is used by the terrestrial operator to use the 3GPP network with a satellite access. Both the satellite and terrestrial networks have their own separate 3GPP management domain. This architecture scenario follows the Satellite access class scenario in clause 4.2.1 from TR 28.808 [4].\nFigure 4.2.2 illustrates the architecture of a satellite 3GPP network that serves as a roaming network to a terrestrial 3GPP network. The figure showcases the integration of satellite and terrestrial components, including satellite base stations, terrestrial base stations, and the core network. The satellite base stations are depicted in green, while the terrestrial base stations are shown in blue. The core network, which connects the satellite and terrestrial networks, is represented by the gray area. The figure emphasizes the seamless integration of satellite and terrestrial networks, enabling efficient communication and roaming services for mobile users.\nFigure 4.2.2: Architecture of satellite 3GPP network (green) \nas roaming network to a terrestrial 3GPP network (blue)\nNOTE: \tThe green and blue networks are separate management domain.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tUse cases and key issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tUse cases",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tUse case #1: Management of satellite components",
+                            "text_content": "A NOP operates a non-terrestrial network for BL UEs, UEs in enhanced coverage and NB-IoT UEs.\nThe NOP manages the NB-IoT/eMTC Non-Terrestrial Networks in accordance with the 5G specifications. The functionality is largely aligned with that of NR Non-Terrestrial Networks.\nThe NOP integrates a satellite component based on NGSO regenerative satellites. NGSO regenerative satellites embark eNBs.\nThe network management is implemented in such a way that moving eNBs can be managed.\nThe NOP operates a non-terrestrial network for BL UEs, UEs in enhanced coverage and NB-IoT UEs that manages the satellite component.\nA NOP operates a non-terrestrial network for BL UEs, UEs in enhanced coverage and NB-IoT UEs.\nThe NOP manages the NB-IoT/eMTC Non-Terrestrial Networks in accordance with the 5G specifications and wants to integrate one or multiple NGSO transparent satellites into a NB-IoT/eMTC Non-Terrestrial Networks.\nThe NOP integrates a satellite component based on NGSO transparent satellites. A SaT/BL UE/UE in enhanced coverage/NB-IoT UE will connect to an EPC/5GC via a NGSO transparent satellite component. A eNB may use a special remote radio unit to connect via one or multiple transparent satellite(s) to the NB-IoT/eMTC Non-Terrestrial Networks, as illustrated in clause B.\nThe network management is implemented in such a way that moving transparent satellite components could be managed.\nThe NOP operates a non-terrestrial network for BL UEs, UEs in enhanced coverage and NB-IoT UEs that manages a 5GS with transparent satellite component(s).\nSupport for IoT NTN discontinuous coverage was introduced in TS 23.401 [5]. The UE is assumed to know how the NTN coverage varies with time based on information defined in TS 36.331 [6] and TS 36.304 [7] (e.g. from the ephemeris data of a satellite access system that the UE is using).\nA NOP operates a non-terrestrial network for BL UEs, UEs in enhanced coverage and NB-IoT/ eMTC UEs.\nThe NOP manages the NB-IoT/eMTC Non-Terrestrial Networks providing discontinuous coverage for NTN MEO/LEO satellite or satellite constellation, which is considered as the satellite access in 5GS/EPS, wants to support modelling of mobility management enhancement related to discontinuous coverage for the power saving enhancement.\nThe NOP integrates a satellite component based on NGSO transparent satellites. For a UE using a Non-Terrestrial Network that provides discontinuous coverage (e.g. for satellite access with discontinuous coverage), the UE may be out of network coverage at a certain time. The UE may then deactivate its Access Stratum functions in order to optimize power consumption until coverage returns.\n3GPP management system can help to provide the satellite coverage availability information defined in TS 23.501 [8]to both the UE and AMF/MME.\nThe network management is implemented in such a way that mobility management enhancement and/or power saving could be supported.\nThe NOP operates a non-terrestrial network for BL UEs, UEs in enhanced coverage and NB-IoT UEs, modelling of mobility management enhancement related to discontinuous coverage and the power saving could be supported.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tUse case #2: Monitoring of satellite components",
+                            "text_content": "The goal is to allow the monitoring of the delay on the DL-Air Interface when a MEO or GEO satellite component for which the HARQ process has been modified with respect to a terrestrial RAN.\nA NOP operates a non-terrestrial networks for BL UEs, UEs in enhanced coverage and NB-IoT UEs.\nThe 5G network as operated by the NOP satellite RAN supporting NB-IoT/eMTC.\nTo cope with the effects of satellite delay and associated RTT, the HARQ operation is disabled or modified when compared to terrestrial RAN.\nThe management system of the NB-IoT/eMTC Non-Terrestrial Network is designed to provide a measured of the average delay on DL-Air Interface for MEO and GEO satellite components without an HARQ process.\nThe management system monitors the average delay on the DL-Air Interface for MEO and GEO satellite components.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tPotential requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tUse case #1 Management of satellite components",
+                            "text_content": "[REQ-FS_IoT_NTN_mgmt_NGSO_reg] In a NB-IoT/eMTC Non-Terrestrial Network integrating an NGSO regenerative satellite RAT, the 5G network shall have the capability of managing moving eNBs.\n[REQ-FS_IoT_NTN_NGSO_tra] In a NB-IoT/eMTC Non-Terrestrial Network integrating an NGSO transparent satellite RAT, the 5G network shall have the capability to manage one or multiple moving regenerative satellite component(s).\n[REQ-FS_IoT_NTN_MM_enh] In an NB-IoT/eMTC Non-Terrestrial Network integrating an NGSO transparent satellite RAT, the 3GPP management system shall have the capability to support mobility management enhancement and/or power-saving for discontinuous coverage.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tUse case #2 Monitoring of satellite components",
+                            "text_content": "[REQ-FS_IoT_NTN-mon] In a NB-IoT/eMTC Non-Terrestrial Network integrating a MEO or GEO satellite components, it shall be possible to monitor the average delay on the DL-Air Interface.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tPotential solutions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tUse case #1 potential solutions for the management of NGSO regenerative and transparent satellite components",
+                            "text_content": "Satellite RAN can be comprised out of either LEO, MEO, GEO satellites or a combination of these three. LEO and MEO satellites do not have a fixed position relative to the earth and travel at high speed in trajectories around the earth. The possible satellite beam coverage area may therefore change in a continuous fashion, as can also be seen in Figure 5.3.1.1. This is also described in more detail in clause A.2.\nA LEO, MEO or GEO satellite can either be working in transparent mode or in regenerative mode. When a satellite is configured in transparent mode, no data processing will be done locally in the satellite. The incoming signal will be received, amplified, and transmitted back to earth. A regenerative satellite may actually demodulate/decode and process the incoming signal before sending data back to earth. A regenerative satellite may therefore embark a eNB/gNB/gNB-DU/gNB-CU and use inter satellite links to communicate with other satellite eNB/gNBs. A transparent satellite may be coupled to an eNB/gNB which is located on earth, this eNB/gNB will use a satellite gateway to transmit to the satellite which reflects the signal back to earth.\nIn case of MEO and LEO satellites with moving beams the cell coverage may not be fixed to a specific location on earth, and since the possible coverage area of a satellite may even span multiple countries, it would be possible that the neighbouring (terrestrial) cells of the satellite eNB/gNB will change continuously. This may result in continuous NCR reconfigurations and PCI conflicts and/or PCI confusion since the NTN cell coverage may overlap with terrestrial RAN. This effect is also described in clause 8.5.3 from TR 38.821 [9].\nThe given telecommunication figure illustrates the concept of time division duplex (TDD) in a wireless communication system. It depicts the signal propagation from the base station (BS) to the user equipment (UE) through the time-division duplex (TDD) process. The figure shows the signal being transmitted in the uplink (UL) and downlink (DL) directions, with the uplink signal being received by the base station and the downlink signal being transmitted to the user equipment. The figure also includes a representation of the time-frequency division, which is a key aspect of TDD systems. The figure is a valuable resource for understanding the principles of TDD in wireless communication systems.\nNOTE: \tHere it is assumed that the TAC will be fixed on earth.\n\nFigure 5.3.1.1: Example of a MEO or LEO satellite flying over multiple geographical areas\nTo prevent these issues, it would be possible to use/extent the SON ANR and SON PCI re-configuration functions from TS 28.313 [10] and adapt these to support continuously moving cells. This way, the PCI re-configuration procedure may deconflict PCI's when an PCI conflict happens between an NTN cell and a terrestrial cell. The ANR could be used to automatically configure new neighbouring cells when the NTN cell coverage moves over the earth atmosphere. The SON ANR and SON PCI functions should be fast enough to keep up with the moving satellites which may have new neighbouring cells every 5 - 30 seconds.\nIn case of GEO satellites or MEO and LEO satellites with earth fixed beams, there is no need to adapt the SON ANR and SON PCI re-configuration functions since the coverage area of the satellite RAN will be fixed to a geographical area on earth's surface.\nNTN MEO/LEO satellite or satellite constellation that provides discontinuous coverage is considered as the satellite access in 5GS and EPS. Satellite assistance information (e.g. ephemeris information), can be used for the handling of coverage holes or discontinuous satellite coverage in a power efficient way. For a UE, it should be possible to predict discontinuous coverage based on the satellite assistance information.\nThe 3GPP management system should provide the following IoT-NTN satellite ephemeris parameters to the eNB providing non-terrestrial access as outlined in TS 38.300 [3], which the NR NTN agreements can be used as the baseline.\nThis solution uses the instances of following IOCs or attributes representing the Ephemeris information, for example, named as ephemerisInformation, and it contains the following attributes:\n-\tEphemeris information describing the orbital trajectory information or coordinates for the NTN vehicles. This information is provided on a regular basis or upon demand to the eNB/gNB;\n-\tTwo different sets of ephemeris formats are supported:\n- \t Set 1: Satellite position and velocity state vectors:\n- \tPosition;\n-\tVelocity.\n- \tSet 2: At least the following parameters in orbital parameter ephemeris format:\n- \tSemi-major axis;\n- \t Eccentricity;\n- \tArgument of periapsis;\n- \tLongitude of ascending node;\n-\tInclination;\n- \tMean anomaly at epoch time to.\n- \tThe explicit epoch time associated to ephemeris data;\n- \tThe location of the NTN-Gateways;\nNOTE: \tThe name of the IOCs and attributes are to be decided in the normative phase.\nBesides satellite ephemeris data, 3GPP management system can provide satellite coverage availability information to. The satellite coverage availability information provisioned to the AMF describes when and where satellite coverage is expected to be available in an area. The satellite coverage availability information is not UE specific and can be applied by the AMF for any UE in the affected area.\nThis solution uses the instances of following IOCs or attributes representing satellite coverage availability information to provide when and where satellite coverage is expected to be available in an area, , for example named as coverageInformation, and it contains the following attributes:\n- \tWait range, which is the location information and is based on network configuration (e.g. TA list);\n- \texpected coverage available time, which indicates the timing information related to expected coverage availability of satellite/satellite constellation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tUse case #2 potential solutions for the monitoring of satellite components",
+                            "text_content": "Solution #1: Adapt the Average delay DL air-interface measurement and Distribution of delay DL air-interface measurement to support cases where HARQ feedback is disabled.\nThe round-trip delay between a NB-IoT/eMTC UE and a MEO or GEO satellite can be very large when compared to a traditional terrestrial case. This effect requires changes to the HARQ process, so that it is able to cope with these high latencies. In TR 38.821 [9] it is proposed to optimise the HARQ process for MEO and GEO satellites by increasing the number of HARQ processes and to add an option to disable or enable HARQ feedback for the cases when the increased number of HARQ processes is still not sufficient.\nThe Average delay DL air-interface measurement (clause 5.1.1.1.1 of TS 28.552 [11]) and Distribution of delay DL air-interface measurement (clause 5.1.1.1.2 of TS 28.552 [11]) use the HARQ feedback ACK message to verify that the transmitted and timed RLC SDU packet was received successfully by the NB-IoT/eMTC UE. This HARQ ACK may not be transmitted when the HARQ feedback is disabled for MEO and GEO satellite links.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tConclusions and recommendations",
+            "description": "In conclusion, the following issues are identified in this study:\n-\tReference management architectures and scenarios for integrated satellite components;\n-\tUse cases and solutions related to the general management of satellite RAN with regenerative/transparent satellite components;\n-\tUse cases and solutions related to the monitoring of satellite RAN.\nIt is recommended to consider the following aspects for normative work:\n-\tSpecify/extend SON concepts to allow for moving non-terrestrial NBs.\n-\tAdapt the performance measurements which make use of the HARQ process, which may be unavailable when using satellite RAN.\n-\tIntroduce the NRM based on solutions to support handling of coverage holes or discontinuous satellite coverage in a power efficient way.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "This annex describes the main characteristics of satellite systems when considering their integration with the 5G system.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tClass of orbit",
+            "description": "On the one hand, our planet attracts as a main body the much smaller satellite, which motion is dictated as a consequence by the laws of Kepler. On the other hand, the environment of Earth can be also constraining: the higher density of the atmosphere, debris from launchers and former satellites in the lower altitudes, as well as higher energy particles trapped in the Van Allen belts between 2,000 and 8,000 km's altitudes are to be avoided. These two constraints contribute to defining several classes of orbits that are used for communication satellites:\n-\tGeostationary (GEO) satellites, located precisely in the plane of the Equator at an altitude of 35,786 km, these satellites rotate at the same rate as the Earth's rotation: a GEO satellite stands still with respect to Earth. Thanks to this property, a single GEO satellite is sufficient to create a continuous coverage.\n-\tNon-Geostationary Orbiting (NGSO) satellites: NGSO satellites do not stand still with respect to Earth. Should service continuity be required over time, a number of satellites (a constellation) is required to meet this requirement; the lower the altitude the higher the number of satellites.\nDifferent classes of NGSO satellites are listed below:\n-\tLow-Earth Orbiting (LEO) satellites, with altitude ranging from 500 km to 2,000 km, and with inclination angle of the orbital plane ranging from 0 to more than 90 degrees. These constellations are placed above the International Space Station and debris, and below the first Van Allen belt.\n-\tMedium-Earth Orbiting (MEO) satellites, with altitude ranging from 8,000 to 20,000 km. The inclination angle of the orbital plane ranges from 0 to more than 90 degrees. These constellations are placed above the Van Allen belts.\n-\tHighly-Eccentric Orbiting (HEO) satellites, with a range of operational altitudes (the orbit of such satellites being designed for the spacecraft to be exploited when the vehicle is closer to its apogee - the higher part of the orbit -) between 7,000 km and more than 45,000 km. The inclination angle is selected so as to compensate, completely or partially, the relative motion of Earth with respect to the orbital plane, allowing the satellite to cover successively different parts of Northern land masses (e.g. Western Europe, North America, and Northern Asia).\nFigure A.2-1 illustrates the various classes of orbits for satellites, showcasing the different paths and altitudes at which they operate. The diagram categorizes orbits based on their inclination and eccentricity, providing a comprehensive overview of the orbital mechanics that govern satellite communication and positioning. Key visual elements include the plane of the Earth's equator, the orbital plane, and the orbital elements such as the semi-major axis, eccentricity, and inclination. The figure emphasizes the strategic placement of satellites to maximize coverage and minimize latency, highlighting the complex dynamics of satellite networks.\nFigure A.2-1: Illustration of the classes of orbits of satellites\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.0\tGeneral",
+            "description": "This annex depicts a reference architecture for a direct access with a satellite enabled RAN.\nE-UTRAN supports radio access over non-terrestrial networks for BL UEs, UEs in enhanced coverage and NB-IoT UEs. Non-terrestrial networks encompassed platforms that provide radio access through satellites in Geosynchronous Orbits (GSOs) as well as Non-Geosynchronous Orbiting (NGSO), which includes Low-Earth Orbiting (LEO) and Medium Earth Orbiting (MEO).\nKnowing the possible nature of satellite payloads (transparent or re-generative), the instantiation of this architecture can have several forms.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.1\tCIoT EPS with transparent satellite enabled RAN",
+            "description": "In this implementation, the satellite is transparent, the signals are generated from eNB's from a satellite enabled RAN that are located on ground. The satellite is equivalent to a Radio Frequency (RF) Remote Unit, and is full transparent to the IoT protocols, including the physical layer (see below). This implementation uses CIoT-Uu interface to transport signals between UEs and eNBs, and uses SGi between 5GC/EPC and CIoT services.\nFigure B.1 illustrates the Centralized Integrated Information and Communication Technology (CIoT) Evolved Packet System (EPS) architecture with transparent satellite enabled Radio Access Network (RAN). The figure showcases the integration of satellite communication into the existing terrestrial network, enabling seamless connectivity and improved coverage. Key components include the Evolved Packet Core (EPC), Satellite Gateway, and Satellite Network Unit (SNU). The transparent satellite integration ensures that the satellite communication appears as a local network to the user equipment (UE), maintaining the efficiency and performance of the existing network infrastructure.\nFigure B.1: CIoT EPS with transparent satellite enabled RAN\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.2\tCIoT EPS with regenerative satellite enabled RAN and on-board eNB",
+            "description": "In this implementation, the satellite is regenerative. The satellite payload implements a full eNB supporting a satellite enabled RAN. A Satellite Radio Interface (SRI) transports the S1 interface between the on-ground EPC/5GC and the on-board eNB (see below). This implementation uses SGi between 5GC/EPC and CIoT services.\nFigure B.2 illustrates the Centralized Integrated Internet of Things (CIoT) Evolved Packet System (EPS) architecture, featuring a regenerative satellite-enabled Radio Access Network (RAN) and an on-board eNB. The figure showcases the integration of satellite communication with terrestrial networks, enabling seamless connectivity in remote areas. Key components include the satellite, ground terminals, and the on-board eNB for local processing. The diagram highlights the role of regenerative satellites in extending network reach and improving overall system performance.\nFigure B.2: CIoT EPS with regenerative satellite enabled RAN and on-board eNB\nOne can note that with a regenerative implementation a CIoT EPS can have a global coverage, providing a single EPC/5GC with global or regional (continental or sub-continental) coverage as well. This is valid for GEO or LEO.\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 3,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

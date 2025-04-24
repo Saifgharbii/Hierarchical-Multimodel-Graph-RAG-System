@@ -1,0 +1,676 @@
+{
+    "document_name": "38918-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document contains the findings of the Study on 5G NR UE full stack testing of network slicing and the proposed test procedures.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 38.323: \"NR; Packet Data Convergence Protocol (PDCP) specification\".\n[3]\t3GPP TS 38.321: \"NR; Medium Access Control (MAC) protocol specification\".\n[4]\t3GPP TS 38.322: \"NR; Radio Link Control (RLC) protocol specification\".\n[5]\t3GPP TS 38.331: \"NR; Radio Resource Control (RRC); Protocol Specification\".\n[6]\t3GPP TS 38.508-1: \"5GS;User Equipment (UE) conformance specification; Part 1: Common test environment\".\n[7]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[8]\t3GPP TS 23.503: \"Policy and Charging Control Framework for the 5G System; Stage 2\".\n[9]\t3GPP TS 24.501: \"Non-Access-Stratum (NAS) protocol for 5G System (5GS); stage 3\".\n[10]\t3GPP TS 24.526: \"UE policies for 5G System (5GS); Stage 3\".\n[11]\t3GPP TS 23.003: \"Numbering, addressing and identification\".\n[12]\t3GPP TS 38.521-4: \"NR; User Equipment (UE) conformance specification; Radio transmission and reception; Part 4: Performance requirements\".\n[13]\t3GPP TS 38.521-1: \"NR; User Equipment (UE) conformance specification; Radio transmission and reception; Part 1: Range 1 Standalone\".\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tBackground",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "5G Network Slicing is one of the most distinctive features provided by 5G NR and is key to meet diversified services requirements in 5G era. With the introduction of 5G network slicing technology, operators will be able to provide network capabilities with different functional characteristics, which will provide e.g. \"exclusive\" network for users with different KPI requirements to ensure a high-quality of service and meet differentiated scenario requirements. 5G network slicing can also help to achieve the goal of improving the efficiency of network resource utilization, optimizing the network construction investment of operators, and building a flexible and agile 5G network.\nThe user experience resulting from the use of 5G network slicing is critical for commercial success, and therefore testing the operation of 5G network slicing is necessary to ensure consistent predictable behaviour. To enable testing the 5G UEs supporting network slicing as they are used in the field the application layer at the device side needs to be included in the testing, as URSP based network slice selection and traffic routing procedures are based on traffic descriptor components (see TS 24.526) passed on by the application layer to the UE protocol stack. The traffic descriptor components that are passed onto the UE protocol stack to be used as a base for the network slice selection when a specific application requests a PDU session are configured within the device. There is a strong industry demand to define the test methods and test procedures that include the full related UE application layer in the testing of the network slice selection functionality for 5G UE supporting network slicing.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tStudy Item Objective",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The technical objectives of this study item are:\n-\tTo study how to define test procedures that will allow the full protocol stack testing of a 5G NR UE supporting network slicing. The test procedures for full protocol stack testing of the network slicing functionality, e.g. how the UE uses configurations matching UE application to traffic descriptor components to select S-NSSAI, will be provided.\n-\tTo study how to define test procedures that will allow the service performance testing of a 5G NR UE supporting network slicing. The test procedures for performance testing of the network slicing service, e.g. application layer throughput and latency, will be provided.\nNOTE 1: \tThe Study Item should take into account industry recommendation from relevant organizations such as GSMA, NGMN and GTI pending on RAN5's decision on a case by case basis.\nNOTE 2: \tThe Study Item should take into account the User Privacy and/or implementation confidentiality.\nNOTE 3:\tThe Study Item will not define the specific traffic descriptor or related mapping mechanism.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tStudy on 5G NR UE Full Stack Testing for Network Slicing",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tDefinition of 5G NR UE Full Stack Testing for Network Slicing",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tDefinition of Full Stack",
+                            "text_content": "The test procedures defined will allow the full stack testing of a 5G NR UE supporting network slicing. The term \"full stack\" means multilayer combined performance of the following layers:\n1\tUE's Radio link protocol data processing performance (PHY, MAC, RLC, PDCP)\n2\tUE's Radio link protocol signalling processing capability (RRC, NAS)\n3\tUE's TCP/IP processing performance\n4\tUE's Internet Application processing performance\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tTest Configurations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tUE Full Stack Network Slicing Test Equipment",
+                            "text_content": "The test equipment utilized for 5G NR UE Full Stack Testing for Network Slicing should consist of the following items:\n-\tSystem Simulator(s) is used to simulate the 5G network for network slicing testing. System simulator(s) could receive network slice configuration scheme from main controller and send network slicing related configuration to UE via signalling. System simulator(s) could receive application data from UE and send application data to application server simulator(s).\n-\tApplication Server Simulator(s) is used to simulate the service in application layer for receiving application data from UE via system simulator(s) and handling the received application data. Application Server Simulator(s) could be either implemented in Main Controller or implemented as an independent unit.\n-\tMain Controller is used to get and configure the type of traffic descriptor to be tested to Application Client Simulator, generate network slice configuration scheme and configure the network slice configuration scheme to System Simulator(s).\n-\tApplication Client Simulator(s) suitable for generating Traffic Descriptor of application(s) and corresponding application data on UE side.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tUE Full Stack Network Slicing Test Equipment Connection Diagrams",
+                            "text_content": "The UE Full Stack Network Slicing Test Equipment connection diagram is shown in Figure 5.2.2-1.\nThe figure depicts a UE (User Equipment) full stack network slicing test equipment connection diagram, illustrating the various components and connections involved in a network slicing test setup.\nFigure 5.2.2-1: UE Full Stack Network Slicing Test Equipment Connection Diagram\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tNetwork Slicing Configurations",
+                            "text_content": "Unless otherwise stated, following application information and corresponding S-NSSAI will be used as default network slicing configurations.\nTable 5.2.3-1: Network Slicing Configurations\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.3-1: Network Slicing Configurations",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.4\tMessage and Information Elements Contents",
+                            "text_content": "The common message and information elements contents are defined in TS 38.508-1 [6] clause 4. In addition, the following message and information elements contents apply:\nMANAGE UE POLICY COMMAND\nTable 5.2.4-1: MANAGE UE POLICY COMMAND\n\nUE policy section management list\nTable 5.2.4-2: UE policy section management list\n\nUE policy part\nTable 5.2.4-3: UE policy part with UE policy part type = {URSP}\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.4-1: MANAGE UE POLICY COMMAND",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.4-2: UE policy section management list",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.4-3: UE policy part with UE policy part type = {URSP}",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.5\tUE Specific Items",
+                            "text_content": "The following parameters are recommended to be provided by UE or application supplier to indicate the information of application using network slicing during test.\nTable 5.2.5-1: UE specific Items\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.5-1: UE specific Items",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tApplication Simulation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tApplication Client Simulator",
+                            "text_content": "To enable testing an Application Client Simulator on device is used to simulate the application which configured with network slicing. The following functionality is recommended for the Application Client Simulator to support.\n-\tThe Application Client Simulator is installed on device.\n-\tThe Application Client Simulator may start automatically on device power-up or manually be started by the operator at the beginning of the test campaign.\n-\tThe Application Client Simulator could receive the type of traffic descriptor to be tested and generate the corresponding traffic descriptor which conform to Network Slicing Configurations defined in clause 5.2.3.\n-\tThe Application Client Simulator could generate data packets matching the traffic descriptor in Network Slicing Configurations and transfer data packets to operating system and communication unit on device.\n-\tThe Application Client Simulator could directly send the generated data packets to application server simulator via cable connection.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tTest Models",
+                            "text_content": "There is no specific Test Models identified at this time.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tStatistical Analysis",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tOverview of Mapping Application to Network Slicing",
+                            "text_content": "When the mapping of applications to network slicing is tested, the fundamental goal is to verify the procedure of associating applications to PDU sessions based on URSP rules. URSP rules contain Traffic Descriptors determining which URSP rule is applicable for the specific application and a list of Route Selection Descriptors determining the corresponding PDU session.\nWith this knowledge, the following aspects are recommended to be checked to verify the procedure of mapping application to Network Slicing:\n-\tThe selection of applicable URSP rule according to the Traffic descriptors in UE Route Selection Policy Rule within URSP rules and information from the specific application.\n-\tThe selection of existing PDU session or establishment of new PDU session for specific application based on the selected Route Selection Descriptors within the applicable URSP rule.\nThe way to trigger URSP rule selection is UE implementation specific and driven by application. To enable testing then the UE is recommended to be equipped with the application simulation client defined in clause 5.3.1 to trigger the required selection procedures\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tOverview of Application Layer Throughput With Network Slicing",
+                            "text_content": "In general, the application layer throughput is impacted by variations mainly at the physical layer and MAC layer. Thus, a variety of test points should be picked across different physical layer conditions (doppler, signal-to-noise ratio, antenna configurations, etc.).\nThere can be multiple usages of network slicing with different needs such as mission critical ultra-reliable low latency slice, massive machine to machine type communication slice, extreme high throughput mobile broadband slice. Depending on the use case, channel requirements will be different and accordingly the application layer performance will also be benchmarked.\nDuring the application layer throughput measurement, ACK, NACK and DTX can also be recorded in order to calculate the L1 payload bit throughput, although this is not the main target of the test procedure. The measured throughput and its comparison to an expected throughput value can be evaluated. However, the parameters for this measurement are not as controlled as in the case of L1 throughput.\nFor fixed reference channel testing, the UE is compared against a predefined limit at the physical layer. Therefore, statistics can be derived to determine the minimum number of samples for a given confidence level for the pass/fail decision. While the application layer data throughput is of a statistical nature, in case of fixed reference channel testing, it is possible to set a lower bound for the achievable throughput by computing the overhead due to upper layer payload headers.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.3\tOverview of Application Layer Latency With Network Slicing",
+                            "text_content": "In order to measure the application layer latency for a Standardized Slice Type (SST) or a non-standardized slice type, some important factors which needs to be considered may involve network node delay in time, jitter experienced based on channel bandwidth and network propagation conditions. Each such conditions can be evaluated against the QoS requirements and delay sensitivity of the data being transmitted. The end goal here is to optimize the utilization of the allocation of network resources and the quality of service metrics.\nFor fixed or variable reference channel and an SST, the UE latency for each data traffic session per slice needs to be captured and evaluated against the required maximum delay in reception of the desired data packet. Based on the measured packet delay and jitter experienced e2e evaluation of the layer latency can be derived and benchmarked. Important aspect here to consider would be to adjust the tolerance +/- of the latency and jitter in percentage terms to define a final evaluation criterion as per testing needs and network traffic type usage.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.5\tTest System Uncertainty and Test Tolerance",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.5.1\tTest System Uncertainty and Test Tolerance for FR1 testing",
+                            "text_content": "For service performance test procedure in Annex A, the test system should fulfil the 3GPP test system uncertainty values specified in Annex F of TS 38.521-4 [12]. If a test system cannot fulfil the 3GPP test system uncertainty requirements, then the test system vendor shall declare its test system uncertainty values.\nSince there are no absolute minimum requirements nor PASS/FAIL requirements in tests specified in the present TR the test tolerances are not defined which should be understood as the applicable test tolerance being set to zero in all tests. If PASS/FAIL requirements are recommended, appropriate analysis of test tolerance shall be considered.\nTest system uncertainties play a big role in application layer throughput results. The tighter the uncertainty requirements are the more re-producible and comparable the results are.\nIn TS 38.521-4 [12] applicable test system uncertainty has been specified. Test System Uncertainty is a measure how accurately tester can setup the certain parameter/signal level to the specified level. In5G NR UE Full Stack Testing for Network Slicing, for service performance test procedure the most meaningful test system uncertainties are listed in Annex F of 38.521-4[12].\nThese specified test system uncertainties are very tight requirements for test systems. Typically the specified uncertainty values are the best that test system vendors can achieve when their test systems are fully calibrated. Full calibration means that each individual device, signal route and cable has to be calibrated. Hence the calibration costs take quite a big share of total costs of 3GPP compliant test systems.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tConclusions",
+            "description": "The UE full stack testing for network slicing study item was initiated by RAN5 to include UE full stack network slicing capability. The following aspects were included as part of the present document:\nDefinition of UE Full Stack Testing for Network Slicing\nTest configurations\nApplication Simulation\nStatistical analysis\nTest uncertainty and test tolerance\nThe following items have been identified at the conclusion of the study item:\nDefinition of UE Full Stack Testing for Network Slicing and identification\nIdentification of the test configuration to include test equipment, test equipment connection diagrams, network slicing configurations, message and information elements and UE specific items\nIdentification of the application client simulator\nCompletion of the analysis for mapping between application to network slicing, application throughput and application latency with network slicing\nConsideration about the impact of test system uncertainty on test results and confirmation of the Test System Uncertainty Recommendations\nIdentification of the test procedures for URSP Configuration and application mapping to network slicing\nIdentification of the test procedure for service performance testing with network slicing\nThe present document includes a set of recommended test procedures for UE supporting network slicing that is in-line with the study item objectives identified in clause 4.\nThe test procedures are contained in Annex A.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.1\tPurpose of annex",
+            "description": "This annex specifies the test procedures for 5G NR UE Full Stack Testing for Network Slicing. The test procedures are the result of the study item and are the recommended test procedures to be used when evaluating UE capability of supporting network slicing. The use of \"shall\" in the test procedures listed herein is only used to indicate that the test purpose, procedure, and/or result may not be as expected if the specified \"shall\" or \"must\" item is not used or followed. As the Technical Report is informative in nature, the use of \"shall\" or \"must\" in the test procedures is not meant to imply a specific requirement. Their use is meant to indicate instances where the test objectives of the recommended test procedures may not be achieved.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\t5G NR /URSP Configuration and Application Mapping",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.2.1\t5G NR /URSP Configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.2.1.1\t5G NR / URSP Configuration / Signalling",
+                            "text_content": "The provisioning of URSP rules from network to UE is one of the fundamental functional requirements for network slicing.\nTo verify that UE could support the provisioning of URSP rules from network to UE over NAS messages.\nVoid.\nSystem Simulator:\n-\tNGC Cell A is configured according to Table 6.3.2.2-1 and Table 6.3.2.2-3 in TS 38.508-1 [6].\nUE:\n-\tEmpty URSP Configuration\nPreamble:\n-\tThe UE is in state Switched OFF (state 0N-B) according to TS 38.508-1 [6].\n1.\tUE is switched on.\n2.\tSteps 2 to 13 of the generic procedure for NR RRC_IDLE specified in TS 38.508-1 subclause 4.5.2 are performed.\n3.\tThe SS transmits a REGISTRATION ACCEPT message including Allowed NSSAI and Configured NSSAI.\n4.\tThe UE transmits an ULInformationTransfer message and a REGISTRATION COMPLETE message.\n5.\tThe SS transmits a DL NAS TRANSPORT message including UE Policy Container and MANAGE UE POLICY COMMAND message to configure URSP rules.\n6.\tThe UE transmits an UL NAS TRANSPORT message including UE Policy Container and a MANAGE UE POLICY COMPLETE message is included.\n7.\tThe SS transmits an RRC Release message.\nTable A.2.1.1.4.2-1: REGISTRATION ACCEPT (step 3)\n\nTable A.2.1.1.4.2-2: DL NAS TRANSPORT (step 5)\n\nTable A.2.1.1.4.2-3: MANAGE UE POLICY COMMAND (step 5)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.2.1.1.4.2-1: REGISTRATION ACCEPT (step 3)",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.1.1.4.2-2: DL NAS TRANSPORT (step 5)",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.1.1.4.2-3: MANAGE UE POLICY COMMAND (step 5)",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "A.2.2\t5G NR / Mapping Application to Network Slicing",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.2.2.1\t5G NR / Mapping Application to Network Slicing / DNN",
+                            "text_content": "The UE procedure for associating applications to PDU sessions based on URSP rules is one of the fundamental functional requirements for network slicing.\nTo verify that UE could support the mapping of applications to URSP rules and the establishment of PDU sessions based on the Traffic Descriptor of DNN.\nUnless otherwise stated, refer to the test frequency and common test parameters for signalling conformance testing defined in TS 38.508-1 [6].\nSystem Simulator:\n-\tNGC Cell A is configured according to Table 6.3.2.2-1 and Table 6.3.2.2-3 in TS 38.508-1 [6].\nUE:\n-\tEmpty URSP Configuration\nPreamble:\n-\tThe UE is in state Switched OFF (state 0N-B) according to TS 38.508-1 [6].\n1.\tSteps 1 to 6 of the test procedure specified in subclause A.2.1.1.4.2 are performed, except the MANAGE UE POLICY COMMAND message is defined in Table A.2.2.1.4.2-1.\n2.\tUsing the Application Client Simulator, generate traffic matching DNN value in Traffic descriptor in URSP rule provisioned to the UE in step 1.\n3.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI and DNN value are selected.\n4.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n5.\tUsing the Application Client Simulator, begin uplink data transfer from UE to the Application Server Simulator.\n6.\tObserve that the data received in Application Server Simulator via PDU session is consistent with the data generated by Application Client Simulator.\nTable A.2.2.1.4.2-1: MANAGE UE POLICY COMMAND (step 1)\n\nTable A.2.2.1.4.2-2: UL NAS Transport (step 3)\n\nTable A.2.2.1.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.2.2.1.4.2-1: MANAGE UE POLICY COMMAND (step 1)",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.1.4.2-2: UL NAS Transport (step 3)",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.1.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4)",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.2\t5G NR / Mapping Application to Network Slicing / APP ID",
+                            "text_content": "The UE procedure for associating applications to PDU sessions based on URSP rules is one of the fundamental functional requirements for network slicing.\nTo verify that UE could support the mapping of applications to URSP rules and the establishment of PDU sessions based on the Traffic Descriptor of OS App Id.\nUnless otherwise stated, refer to the test frequency and common test parameters for signalling conformance testing defined in TS 38.508-1 [6].\nSystem Simulator:\n-\tNGC Cell A is configured according to Table 6.3.2.2-1 and Table 6.3.2.2-3 in TS 38.508-1 [6].\nUE:\n-\tEmpty URSP Configuration\nPreamble:\n-\tThe UE is in state Switched OFF (state 0N-B) according to TS 38.508-1 [6].\n1.\tSteps 1 to 6 of the test procedure specified in subclause A.2.1.1.4.2 are performed, except the MANAGE UE POLICY COMMAND message is defined in Table A.2.2.2.4.2-1.\n2.\tUsing the Application Client Simulator, generate traffic matching OS App Id value in Traffic descriptor in URSP rule provisioned to the UE in step 1.\n3.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI is selected.\n4.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n5.\tUsing the Application Client Simulator, begin uplink data transfer from UE to the Application Server Simulator.\n6.\tObserve that the data received in Application Server Simulator via PDU session is consistent with the data generated by Application Client Simulator.\nTable A.2.2.2.4.2-1: MANAGE UE POLICY COMMAND (step 1)\n\nTable A.2.2.2.4.2-2: UL NAS Transport (step 3)\n\nTable A.2.2.2.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.2.2.2.4.2-1: MANAGE UE POLICY COMMAND (step 1)",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.2.4.2-2: UL NAS Transport (step 3)",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.2.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4)",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.3\t5G NR / Mapping Application to Network Slicing / FQDN",
+                            "text_content": "The UE procedure for associating applications to PDU sessions based on URSP rules is one of the fundamental functional requirements for network slicing.\nTo verify that UE could support the mapping of applications to URSP rules and the establishment of PDU sessions based on the Traffic Descriptor of destination FQDN.\nUnless otherwise stated, refer to the test frequency and common test parameters for signalling conformance testing defined in TS 38.508-1 [6].\nSystem Simulator:\n-\tNGC Cell A is configured according to Table 6.3.2.2-1 and Table 6.3.2.2-3 in TS 38.508-1 [6].\nUE:\n-\tEmpty URSP Configuration.\nPreamble:\n-\tThe UE is in state Switched OFF (state 0N-B) according to TS 38.508-1 [6].\n1.\tSteps 1 to 6 of the test procedure specified in subclause A.2.1.1.4.2 are performed, except the MANAGE UE POLICY COMMAND message is defined in Table A.2.2.3.4.2-1.\n2.\tUsing the Application Client Simulator, generate traffic matching destination FQDN value in Traffic descriptor in URSP rule provisioned to the UE in step 1.\n3.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI is selected.\n4.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n5.\tUsing the Application Client Simulator, begin uplink data transfer from UE to the Application Server Simulator.\n6.\tObserve that the data received in Application Server Simulator via PDU session is consistent with the data generated by Application Client Simulator.\nTable A.2.2.3.4.2-1: MANAGE UE POLICY COMMAND (step 1)\n\nTable A.2.2.3.4.2-2: UL NAS Transport (step 3)\n\nTable A.2.2.3.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.2.2.3.4.2-1: MANAGE UE POLICY COMMAND (step 1)",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.3.4.2-2: UL NAS Transport (step 3)",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.3.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4)",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.4\t5G NR / Mapping Application to Network Slicing / IP 3 Tuples",
+                            "text_content": "The UE procedure for associating applications to PDU sessions based on URSP rules is one of the fundamental functional requirements for network slicing.\nTo verify that UE could support the mapping of applications to URSP rules and the establishment of PDU sessions based on the Traffic Descriptor of IP 3 Tuples.\nUnless otherwise stated, refer to the test frequency and common test parameters for signalling conformance testing defined in TS 38.508-1 [6].\nSystem Simulator:\n-\tNGC Cell A is configured according to Table 6.3.2.2-1 and Table 6.3.2.2-3 in TS 38.508-1 [6].\nUE:\n-\tEmpty URSP Configuration\nPreamble:\n-\tThe UE is in state Switched OFF (state 0N-B) according to TS 38.508-1 [6].\n1.\tSteps 1 to 6 of the test procedure specified in subclause A.2.1.1.4.2 are performed, except the MANAGE UE POLICY COMMAND message is defined in Table A.2.2.4.4.2-1.\n2.\tUsing the Application Client Simulator, generate traffic matching IP 3 tuples value in Traffic descriptor in URSP rule provisioned to the UE in step 1.\n3.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI is selected.\n4.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n5.\tUsing the Application Client Simulator, begin uplink data transfer from UE to the Application Server Simulator.\n6.\tObserve that the data received in Application Server Simulator via PDU session is consistent with the data generated by Application Client Simulator.\nTable A.2.2.4.4.2-1: MANAGE UE POLICY COMMAND (step 1)\n\nTable A.2.2.4.4.2-2: UL NAS Transport (step 3)\n\nTable A.2.2.4.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.2.2.4.4.2-1: MANAGE UE POLICY COMMAND (step 1)",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.4.4.2-2: UL NAS Transport (step 3)",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.4.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4)",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.5\t5G NR / Mapping Application to Network Slicing / Connection Capabilities",
+                            "text_content": "The UE procedure for associating applications to PDU sessions based on URSP rules is one of the fundamental functional requirements for network slicing.\nTo verify that UE could support the mapping of applications to URSP rules and the establishment of PDU sessions based on the Traffic Descriptor of Connection Capabilities.\nUnless otherwise stated, refer to the test frequency and common test parameters for signalling conformance testing defined in TS 38.508-1 [6].\nSystem Simulator:\n-\tNGC Cell A is configured according to Table 6.3.2.2-1 and Table 6.3.2.2-3 in TS 38.508-1 [6].\nUE:\n-\tEmpty URSP Configuration\nPreamble:\n-\tThe UE is in state Switched OFF (state 0N-B) according to TS 38.508-1 [6].\n1.\tSteps 1 to 6 of the test procedure specified in subclause A.2.1.1.4.2 are performed, except the MANAGE UE POLICY COMMAND message is defined in Table A.2.2.5.4.2-1.\n2.\tUsing the Application Client Simulator, generate data traffic.\n3.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI is selected.\n4.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n5.\tUsing the Application Client Simulator, begin uplink data transfer from UE to the Application Server Simulator.\n6.\tObserve that the data received in Application Server Simulator via PDU session is consistent with the data generated by Application Client Simulator.\nTable A.2.2.5.4.2-1: MANAGE UE POLICY COMMAND (step 1)\n\nTable A.2.2.5.4.2-2: UL NAS Transport (step 3)\n\nTable A.2.2.5.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.2.2.5.4.2-1: MANAGE UE POLICY COMMAND (step 1)",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.5.4.2-2: UL NAS Transport (step 3)",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.5.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4)",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.2.2.6\t5G NR / Mapping Application to Network Slicing / URSP Update",
+                            "text_content": "The UE procedure for receiving and utilizing updated URSP rules is one of the fundamental functional requirements for network slicing.\nTo verify that UE could support the update of URSP rules and the mapping of applications to right network slicing based on the updated URSP rules.\nUnless otherwise stated, refer to the test frequency and common test parameters for signalling conformance testing defined in TS 38.508-1 [6].\nSystem Simulator:\n-\tNGC Cell A is configured according to Table 6.3.2.2-1 and Table 6.3.2.2-3 in TS 38.508-1 [6].\nUE:\n-\tEmpty URSP Configuration.\nPreamble:\n-\tThe UE is in state Switched OFF (state 0N-B) according to TS 38.508-1 [6].\n1.\tSteps 1 to 6 of the test procedure specified in subclause A.2.1.1.4.2 are performed, except the MANAGE UE POLICY COMMAND message is defined in Table A.2.2.1.4.2-1.\n2.\tUsing the Application Client Simulator, generate traffic matching DNN value in Traffic descriptor in URSP rule provisioned to the UE in step 1.\n3.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI and DNN value are selected.\n4.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n5.\tUsing the Application Client Simulator, begin uplink data transfer from UE to the Application Server Simulator.\n6.\tObserve that the data received in Application Server Simulator via PDU session is consistent with the data generated by Application Client Simulator.\n7.\tThe SS transmits a DL NAS TRANSPORT message including UE Policy Container and MANAGE UE POLICY COMMAND message to update URSP rules.\n8.\tThe UE transmits an UL NAS TRANSPORT message including a MANAGE UE POLICY COMPLETE message.\n9.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI and DNN value are selected.\n10.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n11.\tObserve that the data received in Application Server Simulator via PDU session is consistent with the data generated by Application Client Simulator.\nTable A.2.2.6.4.2-1: UL NAS Transport (step 3)\n\nTable A.2.2.6.4.2-2: PDU SESSION ESTABLISHMENT ACCEPT (step 4, step 10)\n\nTable A.2.2.6.4.2-3: MANAGE UE POLICY COMMAND (step 7)\n\nTable A.2.2.6.4.2-4: UL NAS Transport (step 9)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.2.2.6.4.2-1: UL NAS Transport (step 3)",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.6.4.2-2: PDU SESSION ESTABLISHMENT ACCEPT (step 4, step 10)",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.6.4.2-3: MANAGE UE POLICY COMMAND (step 7)",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.2.2.6.4.2-4: UL NAS Transport (step 9)",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.3\t5G NR / Service Performance Testing with Network Slicing",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.3.1\t5G NR / Service Performance / Single Network Slicing",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.3.1.1\t5G NR / Service Performance / Single Application with Single Network Slicing",
+                            "text_content": "The service performance of 5G NR UE with network slicing is determined by the UE operating system and communication unit.\nTo measure the performance of single service in application layer of the 5G NR UE with single network slicing.\nThe common test parameters are defined in TS 38.521-4 [12] Table 5.5.1.3-1. The parameters specified in TS 38.521-4 [12] Table 5.5.1.3-2 are applicable for tests on FDD bands and parameters specified in TS 38.521-4 [12] Table 5.5.1.3-3 are applicable for tests on TDD bands.\nConfigurations of PUSCH and PUCCH are specified in TS 38.521-1 [13] Annex G. Configure the TBsize, UL RMC, PDCP size from TS 38.521-4 [12] Annex A.2 for UL.\nFrequencies to be tested: Mid Range, as defined in TS 38.508-1 [6] clause 4.3.1.1.\nSystem Simulator:\n-\tNGC Cell A is configured according to Table 6.3.2.2-1 and Table 6.3.2.2-3 in TS 38.508-1 [6].\nUE:\n-\tEmpty URSP Configuration.\nPreamble:\n-\tThe UE is in state Switched OFF (state 0N-B) according to TS 38.508-1 [6].\n1.\tUE is switched on.\n2.\tSteps 2 to 15 of the generic procedure for NR RRC_IDLE specified in TS 38.508-1 subclause 4.5.2 are performed.\n3.\tUsing the Application Client Simulator, begin uplink data transfer. Wait for 15 seconds and then start to measure the throughput result and latency in [transport layer]. (This is iteration 1) Continue data transfer for 1 minutes.\n4.\tRepeat step 3 for 3 iterations within the same call as the first iteration. Wait for at least 5 seconds between each iteration of the data transfer.\n5.\tCalculate and record the average application layer data throughput and latency across three iterations.\n6.\tSwitch off procedure in RRC_IDLE specified in TS 38.508-1 subclause 4.9.6.1 is performed.\n7.\tUE is brought back to operation.\n8.\tSteps 1 to 6 of the test procedure specified in subclause A.2.1.1.4.2 are performed except the MANAGE UE POLICY COMMAND message is defined in Table A.3.1.1.4.2-1.\n9.\tUsing the Application Client Simulator, generate traffic matching DNN value in Traffic descriptor in URSP rule provisioned to the UE in step 8.\n10.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI and DNN value are selected.\n11.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n12.\tUsing the Application Client Simulator, begin uplink data transfer from UE to the Application Server Simulator.\n13.\tWait for 15 seconds and then start to measure the throughput result and latency in [transport layer] in parallel (This is iteration 1). Continue data transfer for 1 minute.\n14.\tRepeat step 3 for 3 iterations within the same call as the first iteration. Wait for at least 5 seconds between each iteration of the data transfer.\n15. \tCalculate and record the average application layer data throughput and latency across three iterations.\n16.\tObserve that the throughput in step 15 is not lower than the throughput benchmark in step 5 and the latency in step 15 is not higher than the latency benchmark in step 5.\nTable A.3.1.1.4.2-1: MANAGE UE POLICY COMMAND (step 8)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.3.1.1.4.2-1: MANAGE UE POLICY COMMAND (step 8)",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.3.1.2\t5G NR / Service Performance / Multiple Applications with Single Network Slicing",
+                            "text_content": "The service performance of 5G NR UE with network slicing is determined by the UE operating system and communication unit.\nTo measure the performance of multiple services in application layer of the 5G NR UE with single network slicing.\nThe common test parameters are defined in TS 38.521-4 [12] Table 5.5.1.3-1. The parameters specified in TS 38.521-4 [12] Table 5.5.1.3-2 are applicable for tests on FDD bands and parameters specified in TS 38.521-4 [12] Table 5.5.1.3-3 are applicable for tests on TDD bands.\nConfigurations of PUSCH and PUCCH are specified in TS 38.521-1 [13] Annex G. For single APP A at step 5-8 configure the TBsize, UL RMC, PDCP size from TS 38.521-4 [12] Annex A.2 with the exception of using half of the allocated resource block. For APP A and APP B running simultaneously at step 9-11 configure the TBsize, UL RMC, PDCP size from TS 38.521-4 [12] Annex A.2.\nFrequencies to be tested: Mid Range, as defined in TS 38.508-1 [6] clause 4.3.1.1.\nSystem Simulator:\n-\tNGC Cell A is configured according to Table 6.3.2.2-1 and Table 6.3.2.2-3 in TS 38.508-1 [6].\nUE:\n-\tEmpty URSP Configuration\nPreamble:\n-\tThe UE is in state Switched OFF (state 0N-B) according to TS 38.508-1 [6].\n1.\tSteps 1 to 6 of the test procedure specified in subclause A.2.1.1.4.2 are performed except the  MANAGE UE POLICY COMMAND message is defined in Table A.3.2.1.4.2-2.\n2.\tUsing the Application Client Simulator to simulate APP A, generate traffic matching DNN value in Traffic descriptor in URSP rule 1 provisioned to the UE in step 1.\n3.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI is selected.\n4.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n5.\tUsing the simulated APP A, begin uplink data transfer from UE to the Application Server Simulator.\n6.\tWait for 15 seconds and then start to measure the throughput result in application layer(This is iteration 1). Continue data transfer for 1 minute.\n7.\tRepeat step 6 for 3 iterations within the same call as the first iteration. Wait for at least 5 seconds between each iteration of the data transfer.\n8.\tCalculate and record the average application layer data throughput across three iterations.\n9.\tUsing the Application Client Simulator to simulate APP B, generate traffic matching OS App Id value in Traffic descriptor in URSP rule 2 provisioned to the UE in step 1.\n10.\tUsing the simulated APP B, begin uplink data transfer from UE to the Application Server Simulator.\n11.\tRepeat steps 6-8 to get the average application layer data throughput of the data traffic of simulated APP A.\n12.\tObserve that the throughput in step 11 is not lower than the throughput benchmark in step 8.\nTable A.3.1.2.4.2-1: MANAGE UE POLICY COMMAND (step 1)\n\nTable A.3.1.2.4.2-2: UL NAS Transport (step 3)\n\nTable A.3.1.2.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.3.1.2.4.2-1: MANAGE UE POLICY COMMAND (step 1)",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.1.2.4.2-2: UL NAS Transport (step 3)",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.1.2.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4)",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "A.3.2\t5G NR / Service Performance / Multiple Network Slicing",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.3.2.1\t5G NR / Service Performance / Multiple Applications with Multiple Network Slicing",
+                            "text_content": "The service performance of 5G NR UE with network slicing is determined by the UE operating system and communication unit.\nTo measure the performance of multiple services in application layer of the 5G NR UE with multiple network slicing.\nThe common test parameters are defined in TS 38.521-4 [12] Table 5.5.1.3-1. The parameters specified in TS 38.521-4 [12] Table 5.5.1.3-2 are applicable for tests on FDD bands and parameters specified in TS 38.521-4 [12] Table 5.5.1.3-3 are applicable for tests on TDD bands.\nConfigurations of PUSCH and PUCCH are specified in TS 38.521-1 [13] Annex G. For single APP A or APP B at step 8-15 configure the TBsize, UL RMC, PDCP size from TS 38.521-4 [12] Annex A.2 with the exception of using half of the allocated resource block. For APP A and APP B running simultaneously at step 16-19 configure the TBsize, UL RMC, PDCP size from TS 38.521-4 [12] Annex A.2.\nFrequencies to be tested: Mid Range, as defined in TS 38.508-1 [6] clause 4.3.1.1.\nSystem Simulator:\n-\tNGC Cell A is configured according to Table 6.3.2.2-1 and Table 6.3.2.2-3 in TS 38.508-1 [6].\nUE:\n-\tEmpty URSP Configuration\nPreamble:\n-\tThe UE is in state Switched OFF (state 0N-B) according to TS 38.508-1 [6].\n1.\tSteps 1 to 6 of the test procedure specified in subclause A.2.1.1.4.2 are performed except the  REGISTRATION ACCEPT message is defined in Table A.3.2.1.4.2-1 and MANAGE UE POLICY COMMAND message is defined in Table A.3.2.1.4.2-2.\n2.\tUsing the Application Client Simulator to simulate APP A, generate traffic matching DNN value in Traffic descriptor in URSP rule 1 provisioned to the UE in step 1.\n3.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI and DNN value are selected.\n4.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n5.\tUsing the Application Client Simulator to simulate APP B, generate traffic matching DNN value in Traffic descriptor in URSP rule 2 provisioned to the UE in step 1.\n6.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI and DNN value are selected.\n7.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n8.\tUsing the simulated APP A, begin uplink data transfer from UE to the Application Server Simulator.\n9.\tWait for 15 seconds and then start to measure the throughput result in application layer (This is iteration 1). Continue data transfer for 1 minute.\n10.\tRepeat step 9 for 3 iterations within the same call as the first iteration. Wait for at least 5 seconds between each iteration of the data transfer.\n11.\tCalculate and record the average application layer data throughput across three iterations.\n12.\tStop the data transfer with simulated APP A.\n13.\tUsing the simulated APP B, begin uplink data transfer from UE to the Application Server Simulator.\n14.\tWait for 15 seconds and then start to measure the latency in application layer (This is iteration 1). Continue data transfer for 1 minute.\n15.\tRepeat step 14 for 3 iterations within the same call as the first iteration. Wait for at least 5 seconds between each iteration of the data transfer.\n16.\tCalculate and record the average application layer latency across three iterations.\n17.\tRestart the data traffic of APP A. APP A and APP B generate data traffic simultaneously.\n18.\tRepeat steps 9 to 11 to get the average application layer data throughput of the data traffic of simulated APP A\n19.\tRepeat steps 14 to 16 to get the average application layer latency of the data traffic of simulated APP B in parallel with step 18.\n20.\tObserve that the throughput in step 18 is not lower than the throughput benchmark in step 11 and the latency in step 19 is not higher than the latency benchmark in step 16.\nTable A.3.2.1.4.2-1: REGISTRATION ACCEPT (step 1)\n\nTable A.3.2.1.4.2-2: MANAGE UE POLICY COMMAND (step 1)\n\nTable A.3.2.1.4.2-3: UL NAS Transport (step 3)\n\nTable A.3.2.1.4.2-4: PDU SESSION ESTABLISHMENT ACCEPT (step 4)\n\nTable A.3.2.1.4.2-5: UL NAS Transport (step 6)\n\nTable A.3.2.1.4.2-6: PDU SESSION ESTABLISHMENT ACCEPT (step 7)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.3.2.1.4.2-1: REGISTRATION ACCEPT (step 1)",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.2.1.4.2-2: MANAGE UE POLICY COMMAND (step 1)",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.2.1.4.2-3: UL NAS Transport (step 3)",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.2.1.4.2-4: PDU SESSION ESTABLISHMENT ACCEPT (step 4)",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.2.1.4.2-5: UL NAS Transport (step 6)",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.2.1.4.2-6: PDU SESSION ESTABLISHMENT ACCEPT (step 7)",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "A.3.3\t5G NR / Service Performance / URSP Update",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.3.3.1\t5G NR / Service Performance / Single Network Slicing / URSP update",
+                            "text_content": "The UE procedure for receiving and utilizing updated URSP rules is one of the fundamental functional requirements for network slicing.\nTo measure the performance of single services in application layer of the 5G NR UE with the change of network slicing.\nThe common test parameters are defined in TS 38.521-4 [12] Table 5.5.1.3-1. The parameters specified in TS 38.521-4 [12] Table 5.5.1.3-2 are applicable for tests on FDD bands and parameters specified in TS 38.521-4 [12] Table 5.5.1.3-3 are applicable for tests on TDD bands.\nConfigurations of PUSCH and PUCCH are specified in TS 38.521-1 [13] Annex G. Configure the TBsize, UL RMC, PDCP size from TS 38.521-4 [12] Annex A.2 with the exception of using half of the allocated resource block for step 5-7. For APP A and APP B running simultaneously at step 16-19 configure the TBsize, UL RMC, PDCP size from TS 38.521-4 [12] Annex A.2 for step 12-13.\nFrequencies to be tested: Mid Range, as defined in TS 38.508-1 [6] clause 4.3.1.1.\nSystem Simulator:\n-\tNGC Cell A is configured according to Table 6.3.2.2-1 and Table 6.3.2.2-3 in TS 38.508-1 [6].\nUE:\n-\tEmpty URSP Configuration.\nPreamble:\n-\tThe UE is in state Switched OFF (state 0N-B) according to TS 38.508-1 [6].\n1.\tSteps 1 to 6 of the test procedure specified in subclause A.2.1.1.4.2 are performed, except the MANAGE UE POLICY COMMAND message is defined in Table A.2.2.2.4.2-1.\n2.\tUsing the Application Client Simulator, generate traffic matching OS App Id in Traffic descriptor in URSP rule provisioned to the UE in step 1.\n3.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI value is selected.\n4.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n5.\tUsing the Application Client Simulator, begin uplink data transfer from UE to the Application Server Simulator.\n6.\tWait for 15 seconds and then start to measure the throughput result in transport layer (This is iteration 1). Continue data transfer for 1 minute.\n7.\tRepeat step 6 for 3 iterations within the same call as the first iteration. Wait for at least 5 seconds between each iteration of the data transfer.\n8.\tCalculate and record the average application layer data throughput across three iterations.\n9.\tThe SS transmits a DL NAS TRANSPORT message including UE Policy Container and MANAGE UE POLICY COMMAND message to update URSP rules.\n10.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI is selected.\n11.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n12.\tUsing the Application Client Simulator, begin uplink data transfer from UE to the Application Server Simulator.\n13.\tRepeat steps 6-8 to get the average application layer data throughput of the data traffic of simulated APP A.\n14.\tObserve that the throughput in step 13 is not lower than the throughput benchmark in step 8.\nTable A.3.3.1.4.2-1: UL NAS Transport (step 3, 10)\n\nTable A.3.3.1.4.2-2: PDU SESSION ESTABLISHMENT ACCEPT (step 4, step 11)\n\nTable A.3.3.1.4.2-3: MANAGE UE POLICY COMMAND (step 9)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.3.3.1.4.2-1: UL NAS Transport (step 3, 10)",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.3.1.4.2-2: PDU SESSION ESTABLISHMENT ACCEPT (step 4, step 11)",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.3.1.4.2-3: MANAGE UE POLICY COMMAND (step 9)",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "A.3.3.2\t5G NR / Service Performance / Multiple Network Slicing / URSP update",
+                            "text_content": "The UE procedure for receiving and utilizing updated URSP rules is one of the fundamental functional requirements for network slicing.\nTo measure the performance of multiple services in application layer of the 5G NR UE with the change of network slicing.\nThe common test parameters are defined in TS 38.521-4 [12] Table 5.5.1.3-1. The parameters specified in TS 38.521-4 [12] Table 5.5.1.3-2 are applicable for tests on FDD bands and parameters specified in TS 38.521-4 [12] Table 5.5.1.3-3 are applicable for tests on TDD bands.\nConfigurations of PUSCH and PUCCH are specified in TS 38.521-1 [13] Annex G. Configure the TBsize, UL RMC, PDCP size from TS 38.521-4 [12] Annex A.2 for UL.\nFrequencies to be tested: Mid Range, as defined in TS 38.508-1 [6] clause 4.3.1.1.\nSystem Simulator:\n-\tNGC Cell A is configured according to Table 6.3.2.2-1 and Table 6.3.2.2-3 in TS 38.508-1 [6].\nUE:\n-\tEmpty URSP Configuration.\nPreamble:\n-\tThe UE is in state Switched OFF (state 0N-B) according to TS 38.508-1 [6].\n1.\tSteps 1 to 6 of the test procedure specified in subclause A.2.1.1.4.2 are performed except the  REGISTRATION ACCEPT message is defined in Table A.3.2.1.4.2-1 and MANAGE UE POLICY COMMAND message is defined in Table A.3.2.2.4.2-1.\n2.\tUsing the Application Client Simulator to simulate APP A, generate traffic matching OS App Id value in Traffic descriptor in URSP rule 1 provisioned to the UE in step 1.\n3.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI value are selected.\n4.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n5.\tUsing the Application Client Simulator to simulate APP B, generate traffic matching OS App Id value in Traffic descriptor in URSP rule 2 provisioned to the UE in step 1.\n6.\tThe UE transmits an UL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT REQUEST message. Observe the right S-NSSAI value are selected.\n7.\tThe SS transmits a DL NAS TRANSPORT message and PDU SESSION ESTABLISHMENT ACCEPT message.\n8.\tUsing the simulated APP A and APP B, begin uplink data transfer from UE to the Application Server Simulator.\n9.\tWait for 15 seconds and then start to measure the throughput result of simulated APP A and latency result of simulated APP B in application layer (This is iteration 1). Continue data transfer for 1 minute.\n10.\tRepeat step 6 for 3 iterations within the same call as the first iteration. Wait for at least 5 seconds between each iteration of the data transfer.\n11.\tCalculate and record the average application layer data throughput of simulated APP A and latency  of simulated APP B across three iterations.\n12.\tThe SS transmits a DL NAS TRANSPORT message including UE Policy Container and MANAGE UE POLICY COMMAND message to update URSP rules.\n13.\tRepeat step 2-4 with the message exception defined in Table A.3.2.2.4.2-5 and A.3.2.2.4.2-6\n14.\tRepeat step 5-7 with the message exception defined in Table A.3.2.2.4.2-5 and A.3.2.2.4.2-6\n15.\tRepeat step 8-11 to get the average application layer data throughput of simulated APP A and latency of simulated APP B in parahell.\n16.\tObserve that the throughput in step 15 is not lower than the throughput benchmark in step 11 and the latency in step 15 is not higher than the latency benchmark in step 11.\nTable A.3.2.2.4.2-1: MANAGE UE POLICY COMMAND (step 1)\n\nTable A.3.2.2.4.2-2: UL NAS Transport (step 3, step 6)\n\nTable A.3.2.2.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4, step 7)\n\nTable A.3.2.2.4.2-4: MANAGE UE POLICY COMMAND (step 12)\n\nTable A.3.2.2.4.2-5: UL NAS Transport (step 13, step 14)\n\nTable A.3.2.2.4.2-6: PDU SESSION ESTABLISHMENT ACCEPT (step 13, step 14)\n\nVoid\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.3.2.2.4.2-1: MANAGE UE POLICY COMMAND (step 1)",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.2.2.4.2-2: UL NAS Transport (step 3, step 6)",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.2.2.4.2-3: PDU SESSION ESTABLISHMENT ACCEPT (step 4, step 7)",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.2.2.4.2-4: MANAGE UE POLICY COMMAND (step 12)",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.2.2.4.2-5: UL NAS Transport (step 13, step 14)",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.2.2.4.2-6: PDU SESSION ESTABLISHMENT ACCEPT (step 13, step 14)",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

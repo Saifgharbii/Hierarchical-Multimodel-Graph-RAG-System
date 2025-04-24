@@ -1,0 +1,305 @@
+{
+    "document_name": "29511-i20.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document describes the stage 3 protocol and data model for the N5g-eir Service Based Interface between the 5G-EIR and its consumers over which the service to check the equipment identity as described in 3GPP TS 23.501 [2] is performed. It provides the stage 3 protocol definitions and message flows, and specifies the API for each service offered by the 5G-EIR.\nThe 5G System stage 2 architecture and procedures are specified in 3GPP TS 23.501 [2] and 3GPP TS 23.502 [3].\nThe Technical Realization of the Service Based Architecture and the Principles and Guidelines for Services Definition are specified in 3GPP TS 29.500 [4] and 3GPP TS 29.501 [5].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[3]\t3GPP TS 23.502: \"Procedures for the 5G System; Stage 2\".\n[4]\t3GPP TS 29.500: \"5G System; Technical Realization of Service Based Architecture; Stage 3\".\n[5]\t3GPP TS 29.501: \"5G System; Principles and Guidelines for Services Definition; Stage 3\".\n[6]\t3GPP TS 29.571: \"5G System; Common Data Types for Service Based Interfaces; Stage 3\".\n[7]\tIETF RFC 9113: \"HTTP/2\".\n[8]\tOpenAPI Initiative, \"OpenAPI Specification Version 3.0.0\", .[9]\tIETF RFC 8259: \"The JavaScript Object Notation (JSON) Data Interchange Format\".\n[10]\tIETF RFC 9457: \"Problem Details for HTTP APIs\".\n[11]\t3GPP TS 33.501: \"Security Architecture and Procedures for 5G System\".\n[12]\tIETF RFC 6749: \"The OAuth 2.0 Authorization Framework\".\n[13]\t3GPP TS 29.510: \"5G System; Network Function Repository Services; Stage 3\".\n[14]\t3GPP TR 21.900: \"Technical Specification Group working methods\".\n[15]\t3GPP TS 29.524: \"5G System; Cause codes mapping between 5GC interfaces; Stage 3\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nN5g-eir:\tService-based interface exhibited by 5G-EIR\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\n5G-EIR\t5G-Equipment Identity Register\nEIR\tEquipment Identity Register\nPEI\tPermanent Equipment Identifier\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tOverview",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "N5g-eir is a Service-based interface exhibited by 5G-EIR (5G-Equipment Identity Register) which is an optional network function that supports the following functionality:\n-\tCheck the status of Equipment's identity (e.g. to check that it has not been prohibited listed).\nThe reference point N17 (see Fig 4-1 below) shows the interaction between the 5G-Equipment Identity Register 5G-EIR and the AMF (Access and Mobility Management Function) enabling the check of the status of the mobile equipment identity.\nThe figure depicts a reference model for the 5G eir network, illustrating the various components and their interconnections. It includes base stations (gNB), user equipment (UE), and scatterers, as well as key elements such as beamforming techniques and redundancy paths. The figure highlights the importance of SDN principles in ensuring network reliability and failover capabilities.\nFigure 4-1: Reference Model – N5g-eir\nDuring any procedure establishing a signalling connection with the UE the network may optionally perform an ME identity check with 5G-EIR via the N5g-eir_Equipment Identity Check Service exhibited by 5G-EIR.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tServices offered by the 5G-EIR NF",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following NF service is offered by the N5g-eir to check the ME whether it is prohibited listed or not:\n-\tN5g-eir_EquipmentIdentityCheck\nTable 5.1-1: NF Services provided by 5G-EIR\n\nThe N5g-eir_Equipment Identity Check service is specified in 3GPP TS 23.502 [3], clause 4.2.2.2.2\nTable 5.1-2 summarizes the corresponding APIs defined for this specification.\nTable 5.1-2: API Descriptions\n\n\nThe N5g-eir_Equipment Identity Check service is specified in 3GPP TS 23.502 [3], clause 4.2.2.2.2\n",
+                    "tables": [
+                        {
+                            "description": "Table 5.1-1: NF Services provided by 5G-EIR",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 5.1-2: API Descriptions",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tN5g-eir_EquipmentIdentityCheck Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tService Description",
+                            "text_content": "The N5g-eir_Equipment Identity Check service is provided by the 5G-EIR to check the Permanent Equipment Identifier (PEI) whether it is in the prohibited list or not. The service can be consumed by AMF which initiates ME identity check by invoking the N5g-eirEquipmentIdentityCheckGet service operation (see clause 5.2.4.2. of 3GPP TS 23.502 [3]).\nDuring the initial registration the Permanent Equipment Identifier is obtained from the UE. The AMF operator may check the PEI with an EIR.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tService Operations",
+                            "text_content": "The CheckEquipmentIdentity operation shall be used to check the PEI and determine whether the subscriber is allowed to use the equipment, in the following procedures:\n-\tME Identity check procedure (see clause 4.7 of 3GPP TS 23.502 [3]);\nThe NF Service Consumer (e.g. AMF) shall check the PEI by using the HTTP GET method as shown in Figure 5.2.2.2.2-1.\n\nThe figure depicts a PEI status check by the NF Service Consumer, showing the status of the PEI (Physical Ethernet Interface) in a network. The status is represented by a series of check boxes, with the status of each box indicating whether the PEI is active or not. The status check is performed to ensure that the NF Service Consumer is receiving the necessary data packets from the network.\nFigure 5.2.2.2.2-1: PEI status check by the NF Service Consumer\n1.\tThe NF Service Consumer (e.g. AMF) sends a GET request to the resource representing the PEI equipment Status. It shall include the PEI as a query parameter and, optionally, the SUPI and/or GPSI may also be included.\n2a.\tOn success, \"200 OK\" with the message body containing the equipment status of the PEI.\n2b.\tIf the PEI is not known, \"404 Not Found\" with the message body containing a ProblemDetails object, with the \"details\" attribute set to \"ERROR_EQUIPMENT_UNKNOWN\". When receiving the response from the 5G-EIR, the NF Service Consumer (e.g. AMF) shall check the equipment Status and the detailed problem. Dependent upon the result, the NF Service Consume will decide its subsequent actions (e.g. sending a Registration Reject if the 5G-EIR indicates that the PEI is unknown or prohibited listed).\nThe definition of the equipment-status resource is specified in clause 6.1.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tAPI Definitions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tN5g-eir_EquipmentIdentityCheck Service API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tAPI URI",
+                            "text_content": "The N5g-eir_EquipmentIdentityCheck Service shall use the N5g-eir_EquipmentIdentityCheck API.\nThe API URI of the N5g-eir_EquipmentIdentityCheck API shall be:\n{apiRoot}/<apiName>/<apiVersion>\nThe request URI used in HTTP request from the NF service consumer towards the NF service producer shall have the structure defined in subclause 4.4.1 of 3GPP TS 29.501 [5], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [5].\n-\tThe <apiName> shall be \"n5g-eir-eic\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in subclause 6.1.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tUsage of HTTP",
+                            "text_content": "HTTP/2, as defined in IETF RFC 9113 [7], shall be used as specified in clause 5 of 3GPP TS 29.500 [4].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [4].\nHTTP messages and bodies for the N5g-eir_EquipmentIdentityCheck Service shall comply with the OpenAPI [8] specification contained in Annex A.\nThe usage of HTTP standard headers shall be supported as specified in clause 5.2.2 of 3GPP TS 29.500 [4].\nThe following content types shall be supported:\n-\tJSON, as defined in IETF RFC 8259 [9]. The use of the JSON format shall be signalled by the content type \"application/json\". See also clause 5.4 of 3GPP TS 29.500 [4].\n-\tThe Problem Details JSON Object (IETF RFC 9457 [10]. The use of the Problem Details JSON object in a HTTP response body shall be signalled by the content type \"application/problem+json\".\nIn this release of this specification, no custom headers specific to the N5g-eir_EquipmentIdentityCheck Service are defined. For 3GPP specific HTTP custom headers used across all service based interfaces, see clause 5.2.3 of 3GPP TS 29.500 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tResources",
+                            "text_content": "The figure depicts the structure of the n 5g-eir -eic API, which is a crucial component of the 5G e-Infrastructure. It includes a Resource URI structure, which is a key element in the API's architecture. This structure allows for the efficient management and access to resources within the 5G network.\nFigure 6.1.3.1-1: Resource URI structure of the n5g-eir-eic API\nTable 6.1.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 6.1.3.1-1: Resources and methods overview\n\nThis resource represents the equipmentStatus for a PEI.\nResource URI: {apiRoot}/n5g-eir-eic/<apiVersion>/equipment-status\nThis resource shall support the resource URI variables defined in table 6.1.3.2.2-1.\nTable 6.1.3.2.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 6.1.3.2.3.1-1.\nTable 6.1.3.2.3.1-1: URI query parameters supported by the GET method on this resource\n\nThis method shall support the request data structures specified in table 6.1.3.2.3.1-2 and the response data structures and response codes specified in table 6.1.3.2.3.1-3.\nTable 6.1.3.2.3.1-2: Data structures supported by the GET Request Body on this resource\n\nTable 6.1.3.2.3.1-3: Data structures supported by the GET Response Body on this resource\n\nTable 6.1.3.2.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.1.3.2.3.1-5: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.3.1-1: Resources and methods overview",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.2-1: Resource URI variables for this resource",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-1: URI query parameters supported by the GET method on this resource",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-2: Data structures supported by the GET Request Body on this resource",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-3: Data structures supported by the GET Response Body on this resource",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.4\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API.\nTable 6.1.4.1-1 specifies the data types defined for the n5g-eir-eic service based interface protocol.\nTable 6.1.4.1-1: n5g-eir-eic specific Data Types\n\nTable 6.1.6.1-2 specifies data types re-used by the N<NF> service based interface protocol from other specifications, including a reference to their respective specifications and when needed, a short description of their use within the N<NF> service based interface.\nTable 6.1.4.1-2: 5g-eir-eic  re-used Data Types\n\nThis clause defines the structures to be used in resource representations.\nTable 6.1.4.2.2-1: Definition of type EirResponseData\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nThe simple data types defined in table 6.1.4.3.2-1 shall be supported.\nTable 6.1.4.3.2-1: Simple data types\n\nTable 6.1.4.3.3-1: Enumeration EquipmentStatus\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.4.1-1: n5g-eir-eic specific Data Types",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.4.1-2: 5g-eir-eic  re-used Data Types",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.4.2.2-1: Definition of type EirResponseData",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.4.3.2-1: Simple data types",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.4.3.3-1: Enumeration EquipmentStatus",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.5\tError Handling",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 5.2.4 of 3GPP TS 29.500 [4].\nThe Cause codes mapping performed by AMF between the following HTTP responses returned by the EIR services to the AMF and the 5GMM related values is specified in clause 4.5.2 of 3GPP TS 29.524 [15].\nProtocol Error Handling shall be supported as specified in clause 5.2.7 of 3GPP TS 29.500 [4].\nThe common application errors defined in the Table 5.2.7.2-1 in 3GPP TS 29.500 [4] may also be used for the N5g-eir_EquipmentIdentityCheck service, and the following application errors listed in Table 6.1.5.3-1 are specific for the N5g-eir_EquipmentIdentityCheck service.\nTable 6.1.5.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.5.3-1: Application errors",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.6\tFeature Negotiation",
+                            "text_content": "The optional features in table 6.1.6-1 are defined for the N5g-eir_EquipmentIdentityCheck API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [4].\nTable 6.1.6-1: Supported Features\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.6-1: Supported Features",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.7\tSecurity",
+                            "text_content": "The security mechanisms for service based interfaces are specified in clause 13 of 3GPP TS 33.501 [11] and in clause 6.7.3 of 3GPP TS 29.500 [4]. The access to the N5g-eir_EquipmentIdentityCheck API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [12]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [13]) plays the role of the authorization server.\nThe N5g-eir_EquipmentIdentityCheck API defines scopes for OAuth2 authorization as specified in 3GPP TS 33.501 [11]; it defines a single scope consisting on the name of the service (i.e., \"n5g-eir-eic\"), and it does not define any additional scopes at resource or operation level.\nSecurity Protection Edge Proxy (SEPP), as specified in 3GPP TS 33.501 [11], shall be used between service based interfaces across PLMNs. The NFs in a PLMN shall use the SEPP as a HTTP/2 proxy for the HTTP/2 messages that carry \":authority\" pseudo header with a uri-host formatted as specified in clause 6.1.4.3 of 3GPP TS 29.500 [4]\nAs specified in clause 13.1 of 3GPP TS 33.501 [11], TLS shall be used for the security protection of messages at the transport layer for the N5g-eir service based interface if network security is not provided by other means.\nThe protocol stack for the N5g-eir service based interface is shown on Figure 6.1.7.2-1.\n\nThe figure depicts the SBI (Service-Based Interworking) protocol stack, which is a key component of the 5G network. It illustrates the various layers and components involved in the SBI protocol, including the SBC (Service-Based Communication), SBC-B (Service-Based Communication Backbone), and SBC-C (Service-Based Communication Core). The figure also includes a diagram of the network topology, showing the interconnection between the SBCs and the SBC-C. The SBI protocol stack is designed to enable seamless communication between different network services, such as voice, video, and data, and is an essential part of the 5G network architecture.\nFigure 6.1.7.2-1: SBI Protocol Stack\nThe N5g-eir service based interface uses HTTP/2 protocol (see clause 5.2) with JSON (see clause 5.4) as the application layer serialization protocol. For the security protection at the transport layer, 5G-EIR NF shall support TLS and TLS shall be used within a PLMN if network security is not provided by other means, as specified in 3GPP TS 33.501 [11].\nAs specified in clause 13.4.1 of 3GPP TS 33.501 [11] OAuth 2.0 (see IETF RFC 6749 [12]) may be used for authorization of N5g-eir_EquipmentIdentityCheck service access. The 5G-EIR NF and the NRF (as defined in 3GPP TS 29.510 [13]) shall support the OAuth 2.0 authorization framework with \"Client Credentials\" grant type as specified in clause 4.4 of IETF RFC 6749 [12]. The NRF shall act as the Authorization Server providing the access tokens to the NF service consumers to access the service provided by the 5G-EIR. If the 5G-EIR NF receives an OAuth 2.0 authorization token in the \"Authorization\" HTTP request header field, the N5g-eir_EquipmentIdentityCheck service shall validate the access token, its expiry and its access scope before allowing access to the requested resource, as specified in clause 7 of IETF RFC 6749 [12].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.8\tHTTP redirection",
+                            "text_content": "An HTTP request may be redirected to a different 5G-EIR service instance, within the same 5G-EIR or a different 5G-EIR of an 5G-EIR set, e.g. when an 5G-EIR service instance is part of an 5G-EIR (service) set or when using indirect communications (see 3GPP TS 29.500 [4]). See also the ES3XX feature in clause 6.1.6.\nAn SCP that reselects a different 5G-EIR producer instance will return the NF Instance ID of the new 5G-EIR producer instance in the 3gpp-Sbi-Producer-Id header, as specified in clause 6.10.3.4 of 3GPP TS 29.500 [4].\nIf an 5G-EIR within an 5G-EIR set redirects a service request to a different 5G-EIR of the set using an 307 Temporary Redirect or 308 Permanent Redirect status code, the identity of the new 5G-EIR towards which the service request is redirected shall be indicated in the 3gpp-Sbi-Target-Nf-Id header of the 307 Temporary Redirect or 308 Permanent Redirect response as specified in clause 6.10.9.1 of 3GPP TS 29.500 [4].\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "This Annex specifies the formal definition of the N5g-eir_EquipmentIdentityCheck Service API. It consists of an OpenAPI 3.0.0 specification, in YAML format.\nThis Annex takes precedence when being discrepant to other parts of the specification with respect to the encoding of information elements and methods within the API(s).\nNOTE :\tThe semantics and procedures, as well as conditions, e.g. for the applicability and allowed combinations of attributes or values, not expressed in the OpenAPI definitions but defined in other parts of the specification also apply.\nInformative copies of the OpenAPI specification files contained in this 3GPP Technical Specification are available on a Git-based repository that uses the GitLab software version control system (see 3GPP TS 29.501 [5] clause 5.3.1 and 3GPP TR 21.900 [14] clause 5B).\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tN5g-eir_EquipmentIdentityCheck Service API",
+            "description": "openapi: 3.0.0\n\ninfo:\nversion: '1.3.0-alpha.1'\ntitle: '5G-EIR Equipment Identity Check'\ndescription: |\n5G-EIR Equipment Identity Check Service.\n© 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: 3GPP TS 29.511 V18.0.0; 5G System; Equipment Identity Register Services; Stage 3\nurl: 'https://www.3gpp.org/ftp/Specs/archive/29_series/29.511/'\n\nservers:\n- url: '{apiRoot}/n5g-eir-eic/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- n5g-eir-eic\n\npaths:\n/equipment-status:\nget:\nsummary: Retrieves the status of the UE\noperationId: GetEquipmentStatus\ntags:\n- Equipment Status (Document)\nparameters:\n- name: pei\nin: query\ndescription: PEI of the UE\nrequired: true\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Pei'\n- name: supi\nin: query\ndescription: SUPI of the UE\nrequired: false\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'\n- name: gpsi\nin: query\ndescription: GPSI of the UE\nrequired: false\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Gpsi'\n- name: supported-features\nin: query\ndescription: supported features of the NF consumer\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'\nresponses:\n'200':\ndescription: Expected response to a valid request\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/EirResponseData'\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\ndescription: PEI Not Found\ncontent:\napplication/problem+json:\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'\n'406':\n$ref: 'TS29571_CommonData.yaml#/components/responses/406'\n'414':\n$ref: 'TS29571_CommonData.yaml#/components/responses/414'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{nrfApiRoot}/oauth2/token'\nscopes:\nn5g-eir-eic: Access to the N5g-eir_EquipmentIdentityCheck API\nschemas:\nEirResponseData:\ndescription: Represents equipment status data provided in an EIR response message.\ntype: object\nrequired:\n- status\nproperties:\nstatus:\n$ref: '#/components/schemas/EquipmentStatus'\nEquipmentStatus:\ndescription: Represents equipment status of the PEI. This data type is a string.\ntype: string\nenum:\n- WHITELISTED  # PERMITTED\n- BLACKLISTED  # PROHIBITED\n- GREYLISTED   # TRACKING\n\n\n\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 19,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

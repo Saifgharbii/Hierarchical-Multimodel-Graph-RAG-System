@@ -1,0 +1,670 @@
+{
+    "document_name": "36124-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document establishes the essential EMC requirements for \"3rd generation\" digital cellular mobile terminal equipment and ancillary accessories in combination with a 3GPP E-UTRA user equipment (UE).\nThe equipment conforming to the requirements laid out in the present document and used in its intended electromagnetic environment in accordance with the manufacturers instructions\n-\tshall not generate electromagnetic disturbances at a level which may interfere with the intended operation of other equipment;\n-\thas an adequate level of intrinsic immunity to electromagnetic disturbances to operate as intended;\nThe present document specifies the applicable EMC tests, the methods of measurement, the frequency range, the limits and the minimum performance criteria for all types of E-UTRA UE´s and their accessories. E-UTRA base station equipment operating within network infrastructure is outside the scope of the present document. However, the present document does cover mobile and portable equipment that is intended to be operated in a fixed location while connected to the AC mains. E-UTRA base stations in the radio access network are covered by the technical specification TS36.113 [2].\nRequirements for the radiated emission from the enclosure port of integral antenna equipment and ancillaries have been included. Technical specifications for conducted emissions from the antenna connector are found in the 3GPP specifications for the radio interface, e.g. TS36.521 [3], for the effective use of the radio spectrum.\nThe immunity requirements have been selected to ensure an adequate level of compatibility for apparatus in residential, commercial, light industrial and vehicular environments. The levels however, do not cover extreme cases, which may occur in any location but with low probability of occurrence.\nThe environment classification used in the present document refers to the environment classification used in the Generic Standards IEC 61000-6-1 [4], IEC 61000-6-3 [5], except the vehicular environment class which refers to ISO 7637 Part 1 [6] and Part 2 [7].\nCompliance of radio equipment to the requirements of the present document does not signify compliance to any requirement related to the use of the equipment (i.e. licensing requirements).\nCompliance to the requirements of the present document does not signify compliance to any safety requirement. However, any temporary or permanent unsafe condition caused by EMC is considered as non-compliance.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions, which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific;\n-\tfor a specific reference, subsequent revisions do not apply;\n-\tfor a non-specific reference, subsequent revisions do apply. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 25.990: \"Vocabulary for UTRAN\". \n3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 36.113: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Base station and repeater electromagnetic compatibility (EMC)\".\n[3]\t3GPP TS 36.521: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); User Equipment (UE) conformance specification Radio transmission and reception\".\n[4]\tIEC 61000-6-1 (1997): \"Electromagnetic compatibility (EMC) - Part 6: Generic standards - Section 1: Immunity standard for residential, commercial and light-industrial environments\".\n[5]\tIEC 61000-6-3 (1996): \"Electromagnetic compatibility (EMC) - Part 6: Generic standards - Section 3: Emission standard for residential, commercial and light-industrial environments.\n[6]\tISO 7637-1 (1990): \"Road vehicles - Electrical disturbance by conduction and coupling - Part 1: Passenger cars and light commercial vehicles with nominal 12 V supply voltage - Electrical transient conduction along supply lines only\".\n[7]\tISO 7637-2 (1990): \"Road vehicles - Electrical disturbance by conduction and coupling - Part 2: Commercial vehicles with nominal 24 V supply voltage - Electrical transient conduction along supply lines only\".\n[8]\tIEC 60050(161): \"International Electrotechnical Vocabulary - Chapter 161: Electromagnetic compatibility\".\n[9]\tITU-R Recommendation SM.329: \"Unwanted emissions in the spurious domain\".\n[10]\tIEC CISPR publication 22: \"Information technology equipment; Radio disturbance characteristics - Limits and methods of measurement\".\n[11]\t3GPP TS 36.101: \"Evolved Universal Terrestrial Radio Access (E-UTRA); User Equipment (UE) radio transmission and reception (FDD)\".\n[12]\t3GPP TS 36.508: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Common test environments for User Equipment (UE) conformance testing\".\n[13]\t3GPP TS 36.523: \" Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); User Equipment (UE) conformance specification\".\n[14]\tIEC CISPR publication 16-1: \"Specification for radio disturbance and immunity measuring apparatus and methods\".\n[15]\tIEC 61000-3-2; (2000): \"Electromagnetic compatibility; Part 3 - Limits; section 2 - Limits for harmonic current emissions (equipment input current  16 A per phase)\"; Am.1 (1997-09)\".\n[16]\tIEC 61000-3-3; (19952): \"Electromagnetic compatibility; Part 3 - Limits; section 2 - Limitation of voltage fluctuations and flicker in low-voltage supply systems for equipment with rated current  16 A\"\n[17]\tIEC 61000-4-3: \"Electromagnetic compatibility (EMC) - Part 4: Testing and measurement techniques - section 3: Radiated, radio-frequency electromagnetic field immunity test\".\n[18]\tIEC 61000-4-2: \"Electromagnetic compatibility (EMC) - Part 4: Testing and measurement techniques - section 2: Electrostatic discharge immunity test - Basic EMC publication\".\n[19]\tIEC 61000-4-4: \"Electromagnetic compatibility (EMC) - Part 4: Testing and measurement techniques - section 4: Electrical fast transient/burst immunity test - Basic EMC publication\".\n[20]\tIEC 61000-4-6: \"Electromagnetic compatibility (EMC) - Part 4: Testing and measurement techniques - section 6: immunity to conducted disturbances induced by radio frequency fields\".\n[21]\tIEC 61000-4-11: \"Electromagnetic compatibility (EMC) - Part 4: Testing and measurement techniques - section 11: Voltage dips, short interruptions, and voltage variations immunity test\".\n[22]\tIEC 61000-4-5: \"Electromagnetic compatibility (EMC) - Part 4: Testing and measurement techniques - section 5: Surge immunity test\".\n[23]\tITU-R Recommendation SM.1539 (2001): \"Variation of the boundary between the out-of-band and spurious domains required for the application of Recommendations ITU-R SM.1541 and ITU-R SM.329\".\n[24]\t3GPP TS 36.509: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Terminal logical test interface; Special conformance testing functions\".\n[25]\tETSI ETR 027 (1991): \"Radio Equipment and Systems (RES); Methods of measurement for private mobile radio equipment\".\n[26]\tITU-T Recommendation P.64: \"Telephone transmission quality, Telephone installations, Local line networks, Objective electro-acoustical measurements. Determination of sensitivity/frequency characteristics of local telephone systems\".\n[27]\tITU-T Recommendation P.76: \"Telephone transmission quality, Measurements related to speech loudness, Determination of loudness ratings; Fundamental principles, Annex A\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following terms and definitions apply.\nAncillary equipment: Equipment (apparatus), used in connection with a user equipment (UE) is considered as an ancillary equipment (apparatus) if:\n-\tthe equipment is intended for use in conjunction with a UE to provide additional operational and/or control features to the UE, (e.g. to extend control to another position or location); and\n-\tthe equipment cannot be used on a stand alone basis to provide user functions independently of a UE; and\n-\tthe UE to which it is connected, is capable of providing some intended operation such as transmitting and/or receiving without the ancillary equipment (i.e. it is not a sub-unit of the main equipment essential to the main equipment basic functions).\nAverage power: The average transmitter output power obtained over any specified time interval, including periods with no transmission, when the transmit time slots are at the maximum power setting.\nCamped on a cell: The UE is in idle mode and has completed the cell selection/reselection process and has chosen a cell. The UE monitors system information and (in most cases) paging information. Note that the services may be limited, and that the PLMN may not be aware of the existence of the UE within the chosen cell.\nChannel bandwidth: The RF bandwidth supporting a single E-UTRA RF carrier with the transmission bandwidth configured in the uplink or downlink of a cell. The channel bandwidth is measured in MHz and is used as a reference for transmitter and receiver RF requirements.\nContinuous phenomena (continuous disturbance): Electromagnetic disturbance, the effects of which on a particular device or equipment cannot be resolved into a succession of distinct effects (IEC 60050-161 [8]).\nData application ancillary: Ancillary which provides send and/or receive data access to UMTS services via UE.\nEnclosure port: Physical boundary of the apparatus through which electromagnetic fields may radiate or impinge. In the case of integral antenna equipment, this port is inseparable from the antenna port.\nEnd- User data: Manufacturer defined data patterns for data transfer testing. Represents EUT´s typical user application (e.g. photo, video, text file, message) in its characteristics.\nIdle mode: Idle mode is the state of User Equipment (UE) when switched on but with no Radio Resource Control (RRC) connection.\nIntegral antenna: Antenna designed to be connected directly to the equipment with or without the use of an external connector and considered to be part of the equipment. An integral antenna may be fitted internally or externally to the equipment.\nMaximum throughput: The maximum achievable throughput for a reference measurement channel.\nNecessary bandwidth: For a given class of emission, the width of the frequency band which is just sufficient to ensure the transmission of information at the rate and with the quality required under specified conditions.\nOut of band emissions: Emission on a frequency or frequencies immediately outside the necessary bandwidth, which results from, the modulation process, but excluding spurious emissions.\nNOTE:\tAny unwanted emission which falls at frequencies separated from the centre frequency of the emission by less than 250% of the necessary bandwidth of the emission will generally be considered out-of-band emission.\nPort: particular interface, of the specified equipment (apparatus), with the electromagnetic environment. For example, any connection point on an equipment intended for connection of cables to or from that equipment is considered as a port (see figure 1).\n\nSpurious emission from ITU-R SM 329 [9]: Emission on a frequency, or frequencies, which are outside the necessary bandwidth and the level of which may be reduced without affecting the corresponding transmission of information. Spurious emissions include harmonic emissions, parasitic emissions, intermodulation products and frequency conversion products but exclude out-of-band emissions.\nTelecommunication port: Ports which are intended to be connected to telecommunication networks (e.g. public switched telecommunication networks, integrated services digital networks), local area networks (e.g. Ethernet, Token Ring) and similar networks (see CISPR 22 [10]).\nThroughput: The number of payload bits successfully received per second for a reference measurement channel in a specified reference condition.\nTransient phenomena: Pertaining to or designating a phenomena or a quantity which varies between two consecutive steady states during a time interval short compared with the time-scale of interest (IEC 60050-161 [8])\nTraffic mode: Is the state of User Equipment (UE) when switched on and with Radio Resource Control (RRC) connection established.\nUniversal mobile telecommunications system (UMTS): The telecommunications system, incorporating mobile cellular and other functionality, that is the subject of specifications produced by 3GPP\nUser equipment (UE): is a \"Mobile Station\" (MS) which is an entity capable of accessing a set of UMTS services via one or more radio interfaces. This entity may be stationary or in motion within the UMTS service area while accessing the UMTS services, and may simultaneously serve one or more users.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\nBWChannel\tChannel bandwidth\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following abbreviations apply:\nAC\tAlternating Current\nBCCH\tBroadcast Control Channel *)\nBS\tBase Station\nBSS\tBase Station System\nBTS\tBase Transceiver Station\nCCCH\tCommon Control Channel *)\nCW\tContinuous Wave (unmodulated carrier wave)\nDC\tDirect Current\nDL\tDown Link (From BTS to UE)\nDTX\tDiscontinuous Transmission *)\nEMC\tElectromagnetic Compatibility\nEPC\tEvolved Packet Core\nESD\tElectroStatic Discharge\nEUT\tEquipment Under Test (UE or UE with ancillaries)\nFDD\tFrequency Division Duplex\nFRC\tFixed Reference Channel\nLISN\tLine Impedance Stabilizing Network\nMRP\tMouth Reference Point (artificial head)\nPCCPCH\tPrimary Common Control Physical Channel\nRF\tRadio Frequency\nrms\troot mean square\nRRC\tRadio Resource Control\nSPL\tSound Pressure Level\nTCH\tTraffic channel\nTDD\tTime Division Duplex\nUARFCN\tUTRA Absolute Radio Frequency Channel Number *)\nUE\tUser Equipment\nUL\tUp Link (From UE to BTS)\nUMTS\tUniversal Mobile Telecommunication System\nUTRA\tUniversal Terrestrial Radio Access network\n*) refer to Terminology specifications TS 21.905 and TS 25.990 [1] for further details.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tTest conditions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The equipment shall be tested under normal test conditions according to the relevant product and basic standards (See Annex E of TS 36.101 [11] for environmental conditions). If these conditions are not specified then the manufacturers declared range of humidity, temperature and supply voltage shall be used. The test conditions shall be recorded in the test report.\nWhenever the Equipment under test (EUT) is provided with a detachable antenna, the EUT shall be tested with the antenna fitted in a manner typical of normal intended use, unless specified otherwise.\nWhere the equipment incorporates an external 50  RF antenna connector that is normally connected via a coaxial cable, then the wanted signal to establish a communication link also uses a coaxial cable.\nWhere the equipment has an external 50  RF antenna connector that is not normally connected via a coaxial cable or where the equipment has no external 50  RF connector (i.e., integral antenna equipment), then the wanted signal, to establish a communication link, shall be delivered from the equipment to an antenna located within the test environment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tArrangements for establishing a communication link",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The wanted RF input signal nominal frequency shall be selected by setting the E-UTRA Absolute Radio Frequency Channel Number (EARFCN) to an appropriate number.\nA communication link shall be set up with a suitable base station simulator (hereafter called \"the test system\"). The test system shall be located outside of the test environment\nWhen the EUT is required to be in the traffic mode, a call is set up according to the Generic call set-up procedure and the following conditions shall be met:\nSee TS 36.508 [12] and TS 36.509 [24] for details regarding generic call set-up procedure and throughput test loop scenarios.\n-\tSet and send continuously positive TPC commands to the UE;\n-\tthe DTX shall be disabled;\n-\tuplink power control shall be enabled;\n-\ttransmitting and/or receiving (UL/DL) bit rate for reference test channel shall be the reference measurement channel as specified in Annex C in TS 36.101 [11] with parameters specified in Table 7.3.1-1 and Table 7.3.1-2 in TS 36.101 [11];\n-\tadequate measures shall be taken to avoid the effect of the unwanted signal on the measuring equipment;\n-\tfor immunity testing, the wanted input signal level shall be set to 40 dB above the reference sensitivity level to provide a stable communication link. The reference sensitivity level is defined in TS 36.101 [11];\n-\tfor emission testing, the wanted input signal level shall be no more than 15 dB above the reference sensitivity level, such that the performance of the measuring receiver is not limited by strong signal effects.\nWhen the EUT is required to be in the idle mode, the following conditions shall be met:\n-\tUE shall be camped on a cell\n-\tUE shall perform Location Registration (LR) before the test, but not during the test;\n-\tUE´s neighbour cell list shall be empty;\n-\tPaging repetition period and DRX cycle shall be set to minimum (shortest possible time interval);\nFor immunity tests subclause 4.3, shall apply and the conditions shall be as follows:\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tNarrow band responses on receivers",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Responses on receivers or duplex transceivers occurring during the test at discrete frequencies, which are narrow band responses (spurious responses), are identified by the following method:\n-\tIf during an immunity test the quantity being monitored goes outside the specified tolerances, it is necessary to establish whether the deviation is due to an unwanted effect on the receiver of the UE or on the test system (narrow band response) or to a wide band (EMC) phenomenon. Therefore, the test shall be repeated with the unwanted signal frequency increased or decreased by BWChannel MHz, where BWChannel is the channel bandwidth as defined in TS 36.101 [11];\n-\tif the deviation does not disappear, the procedure is repeated the unwanted signal frequency increased or decreased by 2 x BWChannel MHz, where BWChannel is the channel bandwidth as defined in TS 36.101 [11];\n-\tif the deviation does not disappear with the increased and/or decreased frequency, the phenomenon is considered wide band and therefore an EMC problem and the equipment fails the test.\nNarrow band responses are disregarded.\nThe procedure above does not apply to conducted immunity tests in the frequency range 150 kHz to 80 MHz.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tReceiver exclusion band",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The receiver exclusion band for terminals extends from the lower frequency of the allocated receiver band minus 85 MHz to the upper frequency of the allocated receiver band plus 85 MHz. The receiver exclusion band for UE is the frequency range over which no tests of radiated immunity of a receiver are made. The exclusions bands are as set out below:\nFDL,low – 85 < f < FDL,high + 85 (MHz)\nWhere values of FDL,low and FDL,high are defined for each operating band in TS 36.101 [11], clause 5.5.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tPerformance assessment",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The manufacturer shall at the time of submission of the equipment for test, supply the following information to be recorded in the test report:\n-\tthe primary functions of the radio equipment to be tested during and after the EMC testing;\n-\tif applicable, the method to be used to verify that a communications link is established and maintained;\n-\tthe intended functions of the radio equipment which shall be in accordance with the documentation accompanying the equipment;\n-\tthe user-control functions and stored data that are required for normal operation and the method to be used to assess whether these have been lost after EMC stress;\n-\tthe ancillary equipment to be combined with the radio equipment for testing (where applicable);\n-\tinformation about ancillary equipment intended to be used with the radio equipment;\n-\tan exhaustive list of ports, classified as either power or signal/control. Power ports shall further be classified as AC or DC power;\n-\tthe humidity range, temperature, and supply voltage for all equipment submitted for testing.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tEquipment which can provide a continuous communication link",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The test arrangement and signals, given in clause 4, apply to radio equipment or a combination of radio equipment and ancillary equipment that permits the establishment of a communication link. The assessment of equipment performance shall be based on speech call and data transfer according to the criteria in clause 6.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tEquipment which can only provide a discontinuous communication link (packet data/transmission)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "If the equipment does not permit or allow for a communications link to be established and maintained during the EMC tests (as in subclause 5.2), the manufacturer shall define the performance assessment. The manufacturer shall provide the method of observing the degradation of performance of the equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tEquipment which does not provide a communication link",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "If the equipment is of a specialised nature which does not permit a communication link to be established, the manufacturer shall define the method of test to determine the acceptable level of performance or degradation of performance during and/or after the test. The manufacturer shall provide the method of observing the degradation of performance of the equipment.\nThe performance assessment carried out shall be simple, but at the same time give adequate proof that the primary functions of the equipment are operational.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tConformance of ancillary equipment",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Ancillary equipment shall be tested with it connected to a UE in which case compliance shall be demonstrated to the appropriate clauses of the present document.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.6\tEquipment classification",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Equipment is classified according to the source of power.\n-\tif power is derived from a fixed AC or DC supply network installation the equipment is classified \"for fixed use\";\n-\tif power is derived from a vehicular power supply (car battery + alternator) the equipment is classified \"for vehicular use\";\n-\tif power is derived from an integral battery the equipment is classified \"for portable use\".\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tPerformance criteria",
+            "description": "The maintenance of a communications link shall be assessed by using an indicator, which may be part of the test system or the equipment under test.\nSpecifically the equipment shall meet the minimum performance criteria as specified in the following subclauses as appropriate.\nPortable equipment intended for use whilst powered by the main battery of a vehicle shall additionally fulfil the applicable requirements set out by the present document for mobile equipment for vehicular use.\nPortable equipment intended for use whilst powered by AC mains shall additionally fulfil the applicable requirements set out by the present document for equipment for fixed use.\nIf an equipment is of such nature, that the performance criteria described in the following subclauses are not appropriate, then the manufacturer shall declare, for inclusion in the test report, his own specification for an acceptable level of performance or degradation of performance during and/or after testing, as required by the present document.\nThe performance criteria specified by the manufacturer shall give the same degree of immunity protection as called for in the following subclauses.\nIn addition, the test shall also be performed in idle mode to ensure the transmitter does not unintentionally operate.\nThe requirements apply to all types of E-UTRA for the UE.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tPerformance criteria for continuous phenomena",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "A communication link shall be established at the start of the test, and maintained during the test, subclauses 4.1 and 4.2.\nIn the data transfer mode, the performance criteria shall be that the throughput shall be ≥ 95% of the maximum throughput of the reference measurement channel as specified in Annex C in TS 36.101 [11] with parameters specified in Table 7.3.1-1 and Table 7.3.1-2 in TS 36.101 [11] during the test sequence.\nIn the speech mode, the performance criteria shall be that the uplink and downlink speech output levels shall be at least 35 dB less than the recorded reference levels, when measured through an audio band pass filter of width 200 Hz, centred on 1 kHz (Annex A).\nNOTE:\tWhen there is a high level background noise present, the filter bandwidth can be reduced down to a minimum of 40 Hz.\nAt the conclusion of the test, the EUT shall operate as intended with no loss of user control functions or stored data, and the communication link shall have been maintained.\nIn addition to confirming the above performance in traffic mode, the test shall be performed in idle mode, and the transmitter shall not unintentionally operate.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tPerformance criteria for Transient phenomena",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "A communications link shall be established at the start of the test, subclauses 4.1 and 4.2.\nAt the conclusion of each exposure the EUT shall operate with no user noticeable loss of the communication link.\nAt the conclusion of the total test comprising the series of individual exposures, the EUT shall operate as intended with no loss of user control functions or stored data, as declared by the manufacturer, and the communication link shall have been maintained.\nIn addition to confirming the above performance in traffic mode, the test shall also be performed in idle mode, and the transmitter shall not unintentionally operate.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tApplicability overview tables",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tEmission",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 7.1-1: Emission applicability\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.1-1: Emission applicability",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tImmunity",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 7.2-1: Immunity applicability\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.2-1: Immunity applicability",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tMethods of measurement and limits for EMC emissions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tTest configurations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This subclause defines the configurations for emission tests as follows:\n-\tthe equipment shall be tested under normal test conditions;\n-\tthe test configuration shall be as close to normal intended use as possible;\n-\tif the equipment is part of a system, or can be connected to ancillary equipment, then it shall be acceptable to test the equipment while connected to the minimum configuration of ancillary equipment necessary to exercise the ports;\n-\tif the equipment has a large number of ports, then a sufficient number shall be selected to simulate actual operation conditions and to ensure that all the different types of termination are tested;\n-\tthe test conditions, test configuration and mode of operation shall be recorded in the test report;\n-\tports which in normal operation are connected shall be connected to an ancillary equipment or to a representative piece of cable correctly terminated to simulate the input/output characteristics of the ancillary equipment, Radio Frequency (RF) input/output ports shall be correctly terminated;\n-\tports that are not connected to cables during normal operation, e.g. service connectors, programming connectors; temporary connectors etc. shall not be connected to any cables for the purpose of EMC testing. Where cables have to be connected to these ports, or interconnecting cables have to be extended in length in order to exercise the EUT, precautions shall be taken to ensure that the evaluation of the EUT is not affected by the addition or extension of these cables;\n-\temission tests shall be performed in two modes of operation:\n-\twith a communication link established (traffic mode); and\n-\tin the idle mode.\n-\tFor UE supporting multiple CA or DC band combinations, only one band combination with the largest frequency span (i.e. lowest frequency to highest frequency for the supported band combination) is selected for testing for emission tests, besides radiated emission.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.2\tRadiated Emission",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This test is applicable to radio communications equipment and ancillary equipment.\nThis test shall be performed on the radio equipment and/or a representative configuration of the ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.2.1\tDefinition",
+                            "text_content": "This test assesses the ability of radio equipment and ancillary equipment to limit unwanted emissions from the enclosure port.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.2.2\tTest method",
+                            "text_content": "Whenever possible the site shall be a fully anechoic chamber (FAC) simulating the free-space conditions. EUT shall be placed on a non-conducting support. Mean power of any spurious components shall be detected by the test antenna and measuring receiver (e.g. a spectrum analyser).\nAt each frequency at which a component is detected, the EUT shall be rotated to obtain maximum response, and the effective radiated power (e.r.p.) of that component determined by a substitution measurement, which shall be the reference method. The measurement shall be repeated with the test antenna in the orthogonal polarization plane.\nNOTE:\tEffective radiated power e.r.p. refers to the radiation of a half wave tuned dipole instead of an isotropic antenna. There is a constant difference of 2.15 dB between e.i.r.p. and e.r.p.\ne.r.p. (dBm)  e.i.r.p. (dBm)  2.15\tRef. ITU-R SM. 329 ANNEX 1 [9]\nMeasurements are made with a tuned dipole antenna or a reference antenna with a known gain referenced to an isotropic antenna. Unless otherwise stated, all measurements are done as mean power (RMS).\nIf a different test site or method is used, this shall be stated in the test report. The results shall be converted to the reference method values and the validity of the conversion shall be demonstrated.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.2.3\tLimits",
+                            "text_content": "The references for these requirements are ITU-R SM 329 [9], SM.1539 [23] and TS 36.101 subclauses 6.6.3.1 and 7.9.1 [11].\nThe frequency boundary and reference bandwidths for the detailed transitions of the limits between the requirements for out of band emissions and spurious emissions are based on ITU-R SM 329 [9].\nThese requirements are only applicable for frequencies in the spurious domain.\nTable 8.2.3-1: Radiated spurious emissions requirements\n\nNOTE:\tfc is the centre frequency of the TCH. The frequency range fc  2.5 x BWChannel MHz are covered by the \"Out of Band\" emission requirements of TS 36.521[3].\nBWChannel: Channel bandwidth as defined in TS 36.101 [11].\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.2.3-1: Radiated spurious emissions requirements",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.2.4\tInterpretation of the measurement results",
+                            "text_content": "The interpretation of the results recorded in a test report for the radiated emission measurements described in the present document shall be as follows:\n-\tthe measured value related to the corresponding limit will be used to decide whether an equipment meets the requirements of the present document;\n-\tthe value of the measurement uncertainty for the measurement of each parameter shall be included in the test report;\n-\tthe recorded value of the measurement uncertainty shall be, for each measurement, equal to or lower than the figure in table 8.2.4-1.\nTable 4 specifies the Maximum measurement uncertainty of the Test System. The Test System shall enable the equipment under test to be measured with an uncertainty not exceeding the specified values. All tolerances and uncertainties are absolute values, and are valid for a confidence level of 95 %, unless otherwise stated.\nA confidence level of 95% is the measurement uncertainty tolerance interval for a specific measurement that contains 95% of the performance of a population of test equipment.\nTable 8.2.4-1: Maximum measurement uncertainty\n\nNOTE:\tIf the Test System for a test is known to have a measurement uncertainty greater than that specified in 8.2.4-1, this equipment can still be used, provided that an adjustment is made follows:\nAny additional uncertainty in the Test System over and above that specified in table 8.2.4-1 is used to tighten the Test Requirements - making the test harder to pass. This procedure will ensure that a Test System not compliant with table 8.2.4-1does not increase the probability of passing an EUT that would otherwise have failed a test if a Test System compliant with table 8.2.4-1 had been used.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.2.4-1: Maximum measurement uncertainty",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "8.3\tConducted emission DC power input/output port",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This test is applicable to all equipment, which may have DC cables longer than 3 m.\nIf the DC power cable of the UE and/or the ancillary equipment is intended to be less than 3 m in length, and intended only for direct connection to a dedicated AC to DC power supply, then the measurement shall be performed only on the AC power input of that power supply as specified in subclause 8.4.\nThis test shall be performed on a representative configuration of the radio equipment or a representative configuration of the combination of radio and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.3.1\tDefinition",
+                            "text_content": "This test assesses the ability of radio equipment and ancillary equipment to limit internal noise from the DC power input/output ports.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.3.2\tTest method",
+                            "text_content": "The test method shall be in accordance with CISPR 22 [10], and the Line Impedance Stabilising Networks (LISN) shall be connected to a DC power source.\nIn the case of DC output ports, the ports shall be connected via a LISN to a load drawing the rated current of the source.\nA measuring receiver shall be connected to each LISN measurement port in turn and the conducted emission recorded. The LISN measurement ports not being used for measurement shall be terminated with a 50 Ω load.\nThe equipment shall be installed with a ground plane as defined in CISPR 22 [10], The reference earth point of the LISNs shall be connected to the reference ground plane with a conductor as short as possible.\nThe measurement receiver shall be in accordance with the requirements of section one of CISPR 16-1 [14].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.3.3\tLimits",
+                            "text_content": "The equipment shall meet the limits defined in table 8.3.3-1 (including the average limit and the quasi-peak limit) when using, respectively, an average detector receiver and a quasi-peak detector receiver and measured in accordance with the method described in subclause 8.2.2 above. If the average limit is met when using a quasi-peak detector, the equipment shall be deemed to meet both limits and measurement with the average detector receiver is not necessary.\nTable 8.3.3-1: Limits\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.3.3-1: Limits",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "8.4\tConducted emissions, AC mains power input/output port",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This test is applicable to equipment powered by the AC mains.\nThis test is not applicable to AC output ports, which are connected directly (or via a switch or circuit breaker) to the AC input port.\nThis test shall be performed on a representative configuration of the radio equipment or a representative configuration of the combination of radio and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.4.1\tDefinition",
+                            "text_content": "This test assesses the ability of radio equipment and ancillary equipment to limit internal noise from the AC mains power input/output ports.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.4.2\tTest method",
+                            "text_content": "The test method shall be in accordance with CISPR 22 [10].\nMains connected ancillary equipment which is not part of the EUT shall be connected to the mains via a separate LISN. According to subclause 11.9 of CISPR 16-1 [14], the Protective Earth (PE) wire shall also be terminated by a 50 Ω//50 µH common mode RF impedance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.4.3\tLimits",
+                            "text_content": "The equipment shall meet the limits defined in table 8.4.3-1 (including the average limit and the quasi-peak limit) when using, respectively, an average detector receiver and a quasi-peak detector receiver and measured in accordance with the method described in subclause 8.3.2 above. If the average limit is met when using a quasi-peak detector, the equipment shall be deemed to meet both limits and measurement with the average detector receiver is not necessary.\nTable 8.4.3-1: Limits for conducted emissions\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.4.3-1: Limits for conducted emissions",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "8.5\tHarmonic current emissions (AC mains input port)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements of IEC 61000-3-2 [15] for harmonic current emission apply for equipment covered by the scope of the present document.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.6\tVoltage fluctuations and flicker (AC mains input port)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements of IEC 61000-3-3 [16] for voltage fluctuations and flicker apply for equipment covered by the scope of the present document.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "9\tTest methods and levels for immunity tests",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "9.1\tTest configurations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This clause defines the configurations for immunity tests as follows:\n-\tthe equipment shall be tested under normal test conditions as specified in the core specification, e.g., TS 36.508 [12];\n-\tthe test configuration shall be as close to normal intended use as possible;\n-\tif the equipment is part of a system, or can be connected to ancillary equipment, then it shall be acceptable to test the equipment while connected to the minimum configuration of ancillary equipment necessary to exercise the ports;\n-\tif the equipment has a large number of ports, then a sufficient number shall be selected to simulate actual operation conditions and to ensure that all the different types of termination are tested;\n-\tthe test conditions, test configuration and mode of operation shall be recorded in the test report;\n-\tports which in normal operation are connected shall be connected to an ancillary equipment or to a representative piece of cable correctly terminated to simulate the input/output characteristics of the ancillary equipment, Radio Frequency (RF) input/output ports shall be correctly terminated;\n-\tports, which are not, connected to cables during normal operation, e.g. service connectors, programming connectors, temporary connectors etc. shall not be connected to any cables for the purpose of EMC testing. Where cables have to be connected to these ports, or interconnecting cables have to be extended in length in order to exercise the EUT, precautions shall be taken to ensure that the evaluation of the EUT is not affected by the addition or extension of these cables;\n-\tthe test arrangements for transmitter and receiver sections of the transceiver are described separately for the sake of clarity. However, where possible the test of the transmitter section and receiver section of the EUT may be carried out simultaneously to reduce test time;\n-\timmunity tests shall be performed in two modes of operation:\n-\twith a communication link established (traffic mode); and\n-\tin the idle mode.\n-\tFor UE supporting multiple CA or DC band combinations, only one band combination with the largest frequency span (i.e. lowest frequency to highest frequency for the supported band combination) is selected for testing for immunity tests, besides RF electromagnetic field and Electrostatic discharge.\nSee clauses 6.1 and 6.2.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "9.2\tRF electromagnetic field (80 MHz - 6000 MHz)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The test shall be performed on a representative configuration of the equipment or a representative configuration of the combination of UE and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.2.1\tDefinition",
+                            "text_content": "This test assesses the ability of UE and ancillary equipment to operate as intended in the presence of a radio frequency electromagnetic field disturbance at the enclosure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.2.2\tTest method and level",
+                            "text_content": "The test method shall be in accordance with IEC 61000-4-3 [17]\n-\tfor UE and ancillary equipment the following requirements shall apply;\n-\tthe test level shall be 3 V/m amplitude modulated to a depth of 80 % by a sinusoidal audio signal of 1 kHz;\n-\tthe stepped frequency increments shall be 1 % of the momentary frequency;\n-\twhen using the max hold detector method (see ANNEX A) at each test frequency step initially an unmodulated test signal shall be applied. Then the test modulation shall be applied;\n-\tthe test shall be performed over the frequency range 80 MHz to 6000 MHz;\n-\tresponses in stand alone receivers or receivers which are part of transceivers occurring at discrete frequencies which are narrow band responses, shall be disregarded, see subclause 4.3;\n-\tthe frequencies selected during the test shall be recorded in the test report.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.2.3\tPerformance criteria",
+                            "text_content": "The performance criteria of subclause 6.1 shall apply.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.3\tElectrostatic discharge",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The test shall be performed on a representative configuration of the equipment or a representative configuration of the combination of UE and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.3.1\tDefinition",
+                            "text_content": "This test assesses the ability of UE and ancillary equipment to operate as intended in the event of an electrostatic discharge.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.3.2\tTest method and level",
+                            "text_content": "The test method shall be in accordance with IEC 61000-4-2 [18]:\n-\tfor contact discharge, the equipment shall pass at ±2 kV and ±4 kV;\n-\tfor air discharge the equipment shall pass at ±2 kV, ±4 kV and ±8 kV (only for non-conducting surfaces, see IEC 61000-4-2 [18]).\nNOTE:\tThe EUT shall be fully discharged between each ESD exposure by connecting its ground point (where applicable) to the HCP by a resistive wire with a 470 k. resistor in either end.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.3.3\tPerformance criteria",
+                            "text_content": "The performance criteria of subclause 6.2 shall apply.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.4\tFast transients common mode",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The test shall be performed on AC mains power input ports.\nThis test shall be performed on signal ports, control ports and DC power input/output ports if the cables may be longer than 3 m.\nWhere this test is not carried out on a port or any other ports because the manufacturer declares that it is not intended to be used with cables longer than 3 m, a list of ports which were not tested for this reason shall be included in the test report.\nThis test shall be performed on a representative configuration of the equipment or a representative configuration of the combination of UE and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.4.1\tDefinition",
+                            "text_content": "This test assesses the ability of UE and ancillary equipment to operate as intended in the event of fast transients present on one of the input/output ports.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.4.2\tTest method and level",
+                            "text_content": "The test method shall be in accordance with IEC 61000-4-4 [19]\n-\tthe test level for signal and control ports shall be 0,5 kV open circuit voltage as given in IEC 61000-4-4 [19];\n-\tthe test level for DC power input/output ports shall be 0,5 kV open circuit voltage as given in IEC 61000-4-4 [19];\n-\tthe test level for AC mains power input ports shall be 1 kV open circuit voltage as given in IEC 61000-4-4 [19].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.4.3\tPerformance criteria",
+                            "text_content": "The performance criteria of subclause 6.2 shall apply.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.5\tRF common mode (0.15 MHz to 80 MHz)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This test is applicable for UE for fixed, mobile, and portable use and for ancillary equipment.\nThis test shall be performed on signal, control and DC power input/output ports, which may have cables longer than 3 m.\nThis test shall be performed on AC mains power input/output ports of UE for fixed use and for fixed ancillary equipment. Where this test is not carried out on a port or any other ports because the manufacturer declares that it is not intended to be used with cables longer than stated above, a list of ports which were not tested shall be included in the test report.\nThis test shall be performed on a representative configuration of the UE or a representative configuration of the combination of UE and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.5.1\tDefinition",
+                            "text_content": "This test assesses the ability of equipment and ancillary equipment to operate as intended in the presence of a radio frequency electromagnetic disturbance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.5.2\tTest method and level",
+                            "text_content": "The test method shall be in accordance with IEC 61000-4-6 [20].\n-\tthe test signal shall be amplitude modulated to a depth of 80 % by a sinusoidal audio signal of 1 kHz;\n-\tthe stepped frequency increments shall be either 50 kHz or 1 % frequency increment of the momentary frequency in the frequency range 150 kHz - 5 MHz and 1 % frequency increment of the momentary frequency in the frequency range 5 MHz - 80 MHz;\n-\twhen using the max hold detector method (see ANNEX A) at each test frequency step initially an unmodulated test signal shall be applied. Then the test modulation shall be applied;\n-\tthe test level shall be severity level 2 as given in IEC 61000-4-6 [20] corresponding to 3 V rms, at a transfer impedance of 150 Ω;\n-\tthe test shall be performed over the frequency range 150 kHz - 80 MHz;\n-\tresponses of stand alone receivers or receivers which are part of transceivers occurring at discrete frequencies which are narrow band responses, shall be disregarded, see subclause 4.3;\n-\tthe frequencies selected during the test and the test method used shall be recorded in the test report.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.5.3\tPerformance criteria",
+                            "text_content": "The performance criteria of subclause 6.1 shall apply.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.6\tTransients and surges, vehicular environment",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The tests are applicable to UE intended for use in a vehicular environment.\nThese tests shall be performed on 12 V and 24 V DC power input.\nThese tests shall be performed on a representative configuration of the equipment or a representative configuration of the combination of UE and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.6.1\tDefinition",
+                            "text_content": "These tests assess the ability of UE and ancillary equipment to operate as intended in the event of transients and surges present on the DC power input ports in a vehicular environment.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.6.2\tTest method and level",
+                            "text_content": "The test method shall be in accordance with ISO 7637-1 [6] for nominal 12 V DC powered equipment and ISO 7637-2 [7] for nominal 24 V DC powered equipment. The requirements are detailed as follows:\nWhere the manufacturer in his installation documentation requires the EUT to have a direct connection to the 12 V main vehicle battery the following requirements in accordance with ISO 7637-1 [6] shall apply:\n-\tpulse 3a and 3b, level II (50 V), with the test time reduced to 5 minutes for each; \nSupply voltage VA = 13,5  0,5 V DC\n-\tpulse 4, level II, 5 pulses, with the characteristics as follows:\nVs = -5 V, \tVa = -2,5 V,\tt6 = 25 ms,\tt8 = 5 s,\ttf = 5 ms.\nSupply voltage VB = 12,0  0,2 V DC\nWhere the manufacturer does not require the EUT to have a direct connection to the 12 V main vehicle battery, the following pulses apply in addition:\n-\tpulse 1, level II (-50 V),\tt1 = 2,5 s,\t10 pulses; Supply voltage VA = 13,5  0,5 V DC;\n-\tpulse 2, level II (+50 V),\tt1 = 2,5 s,\t10 pulses. Supply voltage VA = 13,5  0,5 V DC.\nWhere the manufacturer declares that the EUT requires a direct connection to the vehicle battery, and the corresponding tests are not carried out, this shall be stated in the test report.\nWhere the manufacturer in his installation documentation requires the EUT to have a direct connection to the 24 V main vehicle battery the following requirements in accordance with ISO 7637-2 [7] shall apply:\n-\tpulse 3a and 3b, level II (70 V), with the test time reduced to 5 minutes for each;\nSupply voltage VA = 27  1 V DC\n-\tpulse 4, level II, 5 pulses, with the characteristics as follows:\nVs = -10 V, \tVa = -5 V,\tt6 = 25 ms,\tt8 = 5 s,\ttf = 5 ms.\nSupply voltage VB = 24  0,4 V DC\nWhere the manufacturer does not require the EUT to have a direct connection to the 24 V main vehicle battery, the following pulses apply in addition:\n-\tpulse 1, level II (-100 V),\tt1 = 2,5 s,\t10 pulses; Supply voltage VA = 27  1 V DC;\n-\tpulse 1b, level II (-550 V),\tt1 = 2,5 s,\t10 pulses\tRi = 100 ;\nSupply voltage VA = 27  1 V DC;\n-\tpulse 2, level II (+50 V),\t\tt1 = 2,5 s,\t10 pulses. Supply voltage VA = 27  1 V DC.\nWhere the manufacturer declares that the EUT requires a direct connection to the vehicle battery, and the corresponding tests are not carried out, this shall be stated in the test report.\nFor UE and ancillary equipment designed to operate at both DC voltages and where no manual adjustments are required, the requirement 9.6.2.2 and pulse 4 from 9.6.2.1 shall apply.\nFor UE designed to operate at 12 V DC power supply, but operating from a 24 V DC power adapter ancillary, then the UE shall comply with the requirements in 9.6.2.1 and the configuration of the UE and the power adapter shall comply with the requirements of 9.6.2.2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.6.3\tPerformance criteria",
+                            "text_content": "The performance criteria of subclause 6.2 shall apply. However, where the equipment is powered without the use of a parallel battery back-up, for pulses 1, 1a, 1b, 2 and 4 the communications link need not be maintained and may have to be re-established and volatile user data may have been lost.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.7\tVoltage dips and interruptions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The tests shall be performed on AC mains power input ports.\nThese tests shall be performed on a representative configuration of the UE or a representative configuration of the combination of UE and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.7.1\tDefinition",
+                            "text_content": "These tests assess the ability of UE and ancillary equipment to operate as intended in the event of voltage dips and interruptions present on the AC mains power input ports.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.7.2\tTest method and level",
+                            "text_content": "The following requirements shall apply.\nThe test method shall be in accordance with IEC 61000-4-11 [21].\nThe test levels shall be:\n-\ta voltage dip corresponding to a reduction of the supply voltage of 60 % for 5 periods;\n-\ta voltage interruption corresponding to a reduction of the supply voltage of > 95 % for 250 periods.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.7.3\tPerformance criteria",
+                            "text_content": "The performance criteria of subclause 6.2 shall apply. However, in the case where the equipment is powered solely from the AC mains supply (without the use of a parallel battery back-up) the communications link need not be maintained and may have to be re-established and volatile user data may have been lost. In the event of loss of the communications link or in the event of loss of user data, this fact shall be recorded in the test report, the product description and the user documentation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "9.8\tSurges, common and differential mode",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The tests shall be performed on AC mains power input ports.\nThese tests shall be performed on a representative configuration of the UE or a representative configuration of the combination of UE and ancillary equipment.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.8.1\tDefinition",
+                            "text_content": "These tests assess the ability of UE and ancillary equipment to operate as intended in the event of surges being present at the AC mains power input ports.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.8.2\tTest method and level",
+                            "text_content": "The test method shall be in accordance with IEC 61000-4-5 [22].\nThe following requirements and evaluation of test results shall apply:\n-\tthe test level for ac mains power input ports shall be 1 kV line to ground and 0,5 kV line to line with the output impedance of the surge generator as given in the IEC 61000-4-5 [22];\n-\tthe test generator shall provide the 1,2/50 µsec pulse as defined in IEC 61000-4-5 [22].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.8.3\tPerformance criteria",
+                            "text_content": "The performance criteria of sub-clause 6.2 shall apply.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.1\tCalibration of audio levels",
+            "description": "For the portable the audio calibration is performed as follows:\nSet the EUT volume to provide the nominal audio level if specified by the manufacturer. If no such level is specified, the centre volume step shall be used.\nPrior to the test sequence, the reference level of the speech output signal on both the downlink and uplink shall be recorded on the test instrumentation, as shown in figure A.1. The reference level shall be equivalent to the SPL of 0 dBPa at 1 kHz at the input of the acoustical coupler described in ETR 027 [25], for the downlink, and -5dBPs at 1 kHz at the mouth reference point (MRP) defined in ITU_T recommendation P.64 [26] for the uplink.\nNOTE 1:\tThe MRP is defined with respect to an artificial head defined in ITU-T P 76 [27. The handset shall be mounted on the artificial head such that the ear piece is centred at the artificial ear.\nNOTE 2:\tIf the equipment does not include acoustical transducers (e.g. a microphone or loudspeaker) the manufacturer shall specify the equivalent electrical reference levels.\nThe voice processor may often apply noise and echo cancellation algorithms, which attempt to eliminate or reduce steady state audio signals as e.g., the 1 kHz calibration signals. These algorithms may be disabled during the calibration procedure. Specialised test software may be required. If the algorithms can not be disabled then the reference level shall be measured using a max-hold detection on the audio level meter in order to determine the level before the noise and echo cancellation algorithms become effective.\nIn handsfree applications an external loudspeaker is used. The SPL from the external loudspeaker is normally much higher than from the earpiece of the portable in order overcome a high ambient noise level. The downlink reference level shall be increased in order to compensate for the difference. Alternatively, the distance between the loudspeaker and the measuring microphone shall be adjusted during the measurement procedure in accordance with the manufacturers specification. It is important that the dynamic range of the test instrumentation is not exceeded.\nNormally no corrections are made to the uplink reference level. In case it is not possible to perform the above calibration (e.g., a PC card with headset) the manufacturer shall specify the distance between the MRP and the microphone.\nFigure A.1 -1 illustrates the calibration set-up for portable audio equipment, focusing on the measurement and breakthrough of sound waves. The image showcases a comprehensive arrangement of equipment, including a microphone, sound source, and various sensors, designed to assess the performance of portable audio devices. The calibration process is essential for ensuring accurate sound reproduction and quality control in real-world applications.\nFigure A.1-1: Audio breakthrough measurement, calibration set-up for portable equipment\nNOTE:\tThe EUT is in position during calibration of the uplink, but not during calibration of the downlink where the EUT is replaced by the 1 kHz test audio source. During calibration of the uplink the mouthpiece shall be placed with respect to the MRP in a way representing intended use.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tMeasurement of audio levels",
+            "description": "When the audio levels are measured during testing the EUT software shall be configured for voice applications. If the algorithms for noise and echo cancellation are not disabled, then the level shall be measured using a max-hold detection on the audio level meter in order to determine the level before the noise and echo cancellation algorithms become effective.\nThe level of the output signal from the downlink speech channel of the EUT at the mobile or portable's ear piece shall be assessed by measuring the Sound Pressure Level (SPL) as shown in figure A.2-1. When an external loudspeaker is used the acoustical coupler shall be fixed to the loudspeaker in the position used during the calibration. The level of the decoded output signal from the uplink speech channel of the EUT at the analogue output of the test system shall be measured. Pick up of extraneous background noise by the microphone of the EUT shall be minimised.\nNOTE:\tIf the equipment is designed for use with external transducers, they shall be included in the test configuration. If the equipment does not include acoustical transducers the line voltage developed across specified termination impedance may be measured\nFigure A.2 -1 illustrates the test set-up for portable equipment used in measuring audio breakthrough. The setup includes a portable sound source, a microphone array, and a signal analyzer. The arrangement captures sound waves from various directions and analyzes the audio signals to determine the breakthrough level. Key components include the sound source, microphone array, and signal analyzer, which work together to measure audio transmission through different materials.\nFigure A.2-1: Audio breakthrough measurement, test set-up for portable equipment\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.1\tCalibration of data transfer",
+            "description": "For the EUT, calibration of the data transfer may be performed by assessing the throughput percentage before applying the RF immunity test signal (defined in clauses 9.2 and 9.5).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.2\tDerivation of Throughput Percentages",
+            "description": "Known data patterns shall be transferred bi-directionally from end-to-end (the whole of the UL and DL will be exercised). Performance assessment shall be made at each frequency step. Comparison between maximum throughput and achieved throughput shall result in the throughput percentage.\nThe data patterns used should be of sufficient length to give valid results and should be equivalent to the used channel bit rate.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.3\tEUT without data application ancillary",
+            "description": "Data monitoring Devices are here considered as part of the Test System. Arrangements should be made by the manufacturer, if needed, to couple the Data monitoring Device by a method which does not affect the radiated electromagnetic field (e.g. ultra sonic or optical).\nFigure B. 3- 1 illustrates the throughput assessment of a test setup for a European Union Telecom (EUT) without any data application ancillary. The figure depicts the network infrastructure, including the base station, user equipment, and various test equipment. The setup assesses the performance of the network under different conditions, providing valuable insights for network optimization and troubleshooting.\nFigure B.3-1: Throughput assessment, test set-up for EUT without data application ancillary.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.4\tEUT with data application ancillary",
+            "description": "The Data monitoring Device is here considered as a part of the Test System. The Data application ancillary should be part of the data transfer (UL and DL) loop and is included in the EUT configuration.\nFigure B. 4-1 illustrates the throughput assessment and test set-up for a European Union Telecom (EUT) network, focusing on data application ancillary. The figure showcases the network infrastructure, including the base station, user equipment, and various test equipment. The setup assesses the performance of the network under different conditions, evaluating factors such as signal strength, latency, and data transfer rates. The results from these tests contribute to the optimization of network resources and the enhancement of overall service quality for data applications.\nFigure B.4-1: Throughput assessment, test set-up for EUT with data application ancillary.\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 9,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 10,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

@@ -1,0 +1,517 @@
+{
+    "document_name": "28105-i20.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the Artificial Intelligence / Machine Learning (AI/ML) management capabilities and services for 5GS where AI/ML is used, including management and orchestration (e.g. MDA, see 3GPP TS 28.104 [2]) and 5G networks (e.g. NWDAF, see 3GPP TS 23.288 [3]).\nThe present document also describes the functionality and service framework for AI/ML management.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 28.104: \"Management and orchestration; Management Data Analytics\".\n[3]\t3GPP TS 23.288: \"Architecture enhancements for 5G System (5GS) to support network data analytics services\".\n[4]\t3GPP TS 28.552: \"Management and orchestration; 5G performance measurements\".\n[5]\t3GPP TS 32.425: \"Telecommunication management; Performance Management (PM); Performance measurements Evolved Universal Terrestrial Radio Access Network (E-UTRAN)\".\n[6]\t3GPP TS 28.554: \"Management and orchestration; 5G end to end Key Performance Indicators (KPI)\".\n[7]\t3GPP TS 32.422: \"Telecommunication management; Subscriber and equipment trace; Trace control and configuration management\".\n[8]\t3GPP TS 32.423: \"Telecommunication management; Subscriber and equipment trace; Trace data definition and management\".\n[9]\t3GPP TS 28.405: \"Telecommunication management; Quality of Experience (QoE) measurement collection; Control and configuration\".\n[10]\t3GPP TS 28.406: \"Telecommunication management; Quality of Experience (QoE) measurement collection; Information definition and transport\".\n[11]\t3GPP TS 28.532: \"Management and orchestration; Generic management services\".\n[12]\t3GPP TS 28.622: \"Telecommunication management; Generic Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\".\n[13]\t3GPP TS 32.156: \"Telecommunication management; Fixed Mobile Convergence (FMC) Model repertoire\".\n[14]\t3GPP TS 32.160: \"Management and orchestration; Management service template\".\n[15]\t3GPP TS 28.533: \"Management and orchestration; Architecture framework\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nML entity: an entity that is either an ML model or contains an ML model and ML model related metadata, it can be managed as a single composite entity.\nNOTE 1: Metadata may include e.g. the applicable runtime context for the ML model.\nML model: mathematical algorithm that can be \"trained\" by data and human expert input as examples to replicate a decision an expert would make when provided that same information.\nNOTE 2: The ML models are proprietary and not in scope for standardization.\nML model training: capabilities of an ML training function to take data, run it through an ML model, derive the associated loss and adjust the parameterization of that ML model based on the computed loss.\nML training: capabilities and associated end-to-end processes to enable an ML training function to perform ML model training (as defined above).\nNOTE3: ML training capabilities may include interaction with other parties to collect and format the data required for ML model training.\nML training function: a function with ML training capabilities; it is also referred to as MLT function.\nAI/ML inference function: a function that employs an ML model to conduct inference.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in  TR 21.905 [1] and TS 28.533 [15]. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in  TR 21.905 [1] and TS 28.533 [15].\nAI\tArtificial Intelligence\nML\tMachine Learning\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tConcepts and overview",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tOverview",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The AI/ML techniques and relevant applications are being increasingly adopted by the wider industries and proved to be successful. These are now being applied to telecommunication industry including mobile networks.\nAlthough AI/ML techniques in general are quite mature nowadays, some of the relevant aspects of the technology are still evolving while new complementary techniques are frequently emerging.\nThe AI/ML techniques can be generally characterized from different perspectives including the followings:\n-\tLearning methods\nThe learning methods include supervised learning, semi-supervised learning, unsupervised learning and reinforcement learning. Each learning method fits one or more specific category of inference (e.g. prediction), and requires specific type of training data. A brief comparison of these learning methods is provided in table 4.1-1.\nTable 4.1-1: Comparison of Learning methods\n\n-\tLearning complexity:\n-\tAs per the learning complexity, there are Machine Learning (i.e. basic learning) and Deep Learning.\n-\tLearning architecture\n-\tBased on the topology and location where the learning tasks take place, the AI/ML can be categorized to centralized learning, distributed learning and federated learning.\n-\tLearning continuity\n-\tFrom learning continuity perspective, the AI/ML can be offline learning or continual learning.\nArtificial Intelligence/Machine Learning (AI/ML) capabilities are used in various domains in 5GS, including management and orchestration (e.g. MDA, see 3GPP TS 28.104 [2]) and 5G networks (e.g. NWDAF, see 3GPP TS 23.288 [3]).\nThe AI/ML-inference function in the 5GS uses the ML model for inference.\nEach AI/ML technique, depending on the adopted specific characteristics as mentioned above, may be suitable for supporting certain type/category of use case(s) in 5GS.\nTo enable and facilitate the AI/ML capabilities with the suitable AI/ML techniques in 5GS, the ML model and AI/ML inference function need to be managed.\nThe present document specifies the AI/ML management related capabilities and services, which include the followings:\n-\tML training.\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.1-1: Comparison of Learning methods",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4A\tAI/ML management functionality and service framework",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4A.1\tFunctionality and service framework for ML training",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "An ML training Function playing the role of ML training MnS producer, may consume various data for ML training purpose.\nAs illustrated in Figure 4A.1-1 the ML training capability is provided via ML training MnS in the context of SBMA to the authorized consumer(s) by ML training MnS producer.\nThe figure depicts a functional overview and service framework for machine learning (ML) training, illustrating the various components and their interactions. It includes a service framework, which outlines the steps and processes involved in training ML models, and a functional overview, which provides a high-level overview of the system's architecture and components. The figure is a visual representation of the system's design and functionality, making it easier to understand and interpret.\nFigure 4A.1-1: Functional overview and service framework for ML training\nThe internal business logic of ML training leverages the current and historical relevant data, including those listed below to monitor the networks and/or services where relevant to the ML model, prepare the data, trigger and conduct the training:\n-\tPerformance Measurements (PM) as per 3GPP TS 28.552 [4], 3GPP TS 32.425 [5] and Key Performance Indicators (KPIs) as per 3GPP TS 28.554 [6].\n-\tTrace/MDT/RLF/RCEF data, as per 3GPP TS 32.422 [7] and 3GPP TS 32.423 [8].\n-\tQoE and service experience data as per 3GPP TS 28.405 [9] and 3GPP TS 28.406 [10].\n-\tAnalytics data offered by NWDAF as per 3GPP TS 23.288 [3].\n-\tAlarm information and notifications as per 3GPP TS 28.532 [11].\n-\tCM information and notifications.\n-\tMDA reports from MDA MnS producers as per 3GPP TS 28.104 [2].\n-\tManagement data from non-3GPP systems.\n-\tOther data that can be used for training.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tVoid",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "6\tAI/ML management use cases and requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The use cases and requirements for AI/ML management are specified in the following clauses.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tML training",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tDescription",
+                            "text_content": "In operational environment before the ML entity  is deployed to conduct inference, the ML model associated with the ML entity needs to be trained (e.g. by ML training function which may be a separate or an external entity to the AI/ML inference function).\nNOTE: In the present document, ML entity training refers to ML model training associated with an ML entity.\nThe ML Entity is trained by the ML training (MLT) MnS producer, and the training can be triggered by request(s) from one or more MLT MnS consumer(s), or initiated by the MLT MnS producer (e.g. as result of model evaluation).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tUse cases",
+                            "text_content": "The ML training capabilities are provided by an MLT MnS producer to one or more consumer(s).\nThe figure depicts a network scenario where a consumer of a ML training service (MLT MnS) requests a request for Machine Learning (ML) training. The figure shows the network topology, including the consumer's device, the ML training service provider (MLT MnS), and the network infrastructure. The figure also includes the request for training, the network's response, and the status of the request.\nFigure 6.2.2.1-1: ML training requested by MLT MnS consumer\nThe ML training may be triggered by the request(s) from one or more MLT MnS consumer(s). The consumer may be for example a network function, a management function, an operator, or another functional differentiation To trigger an ML training, the MLT MnS consumer requests the MLT MnS producer to train the ML model. In the ML training request, the consumer should specify the inference type which indicates the function or purpose of the ML entity, e.g. CoverageProblemAnalysis. The MLT MnS producer can perform the training according to the designated inference type. The consumer may provide the data source(s) that contain(s) the training data which are considered as inputs candidates for training. To obtain the valid training outcomes, consumers may also designate their requirements for model performance (e.g. accuracy, etc) in the training request.\nThe MLT MnS producer provides a response to the consumer indicating whether the request was accepted.\nIf the request is accepted, the MLT MnS producer decides when to start the ML training with consideration of the request(s) from the consumer(s). Once the training is decided, the producer performs the followings:\n-\tselects the training data, with consideration of the consumer provided candidate training data. Since the training data directly influences the algorithm and performance of the trained ML Entity, the MLT MnS producer may examine the consumer's provided training data and decide to select none, some or all of them. In addition, the MLT MnS producer may select some other training data that are available;\n-\ttrains the ML entity using the selected training data;\n-\tprovides the training results  to the MLT MnS consumer(s).\nThe ML training may be initiated by the MLT MnS producer, for instance as a result of performance evaluation of the ML model, based on feedback or new training data received from the consumer, or when new training data which are not from the consumer describing the new network status/events become available.\nWhen the MLT MnS producer decides to start the ML training, the producer performs the followings:\n-\tselects the training data;\n-\ttrains the ML entity using the selected training data;\n-\tprovides the training results  to the MLT MnS consumer(s) who have subscribed to receive the ML training results.\nFor a given machine learning-based use case, different entities that apply the respective ML model or AI/ML inference function may have different inference requirements and capabilities. For example, one consumer with specific responsibility and wish to have an AI/ML inference function supported by an ML model or  entity trained for city central business district where mobile users move at speeds not exceeding 30 km/hr. On the other hand, another consumer, for the same use case may support a rural environment and as such wishes to have an ML model and AI/ML inference function fitting that type of environment. The different consumers need to know the available versions of ML entities, with the variants of trained ML models or entities and to select the appropriate one for their respective conditions.\nBesides, there is no guarantee that the available ML models/entities have been trained according to the characteristics that the consumers expect. As such the consumers need to know the conditions for which the ML models or ML entities have been trained to then enable them to select the models that are best fit to their conditions and needs.\nThe models that have been trained may differ in terms of complexity and performance. For example, a generic comprehensive and complex model may have been trained in a cloud-like environment but such a model cannot be used in the gNB and instead, a less complex model, trained as a derivative of this generic model, could be a better candidate. Moreover, multiple less complex models could be trained with different levels of complexity and performance which would then allow different relevant models to be delivered to different consumers depending on operating conditions and performance requirements. The consumers need to know the alternative models available and interactively request and replace them when needed and depending on the observed inference-related constraints and performance requirements.\nThis machine learning capability relates to means for managing and controlling ML model/entity training processes.\nTo achieve the desired outcomes of any machine learning relevant use-case, the ML model applied for such analytics and decision making, needs to be trained with the appropriate data. The training may be undertaken in a managed function or in a management function.\nIn either case, the network management system not only needs to have the required training capabilities but needs to also have the means to manage the training of the ML models/entities. The consumers need to be able to interact with the training process, e.g. , to suspend or restart the process; and also need to manage and control the requests related to any such training process.\nTraditionally, the ML models/entities (e.g. , ML entity1 and ML entity2 in figure 6.2.2.5-1) are trained on good quality data, i.e. , data that were collected correctly and reflected the real network status to represent the expected context in which the ML entity is meant to operate. Good quality data is void of errors, such as:\n-\tImprecise measurements, with added noise (such as RSRP, SINR, or QoE estimations).\n-\tMissing values or entire records, e.g. , because of communication link failures.\n-\tRecords which are communicated with a significant delay (in case of online measurements).\nWithout errors, an ML entity can depend on a few precise inputs, and does not need to exploit the redundancy present in the training data. However, during inference, the ML entity is very likely to come across these inconsistencies. When this happens, the ML entity shows high error in the inference outputs, even if redundant and uncorrupted data are available from other sources.\nThe figure depicts the propagation of erroneous information in a communication network, illustrating how misinformation can affect the quality of communication.\nFigure 6.2.2.5-1: The propagation of erroneous information\nAs such the system needs to account for errors and inconsistencies in the input data and the consumers should deal with decisions that are made based on such erroneous and inconsistent data. The system should:\n1)\tenable functions to undertake the training in a way that prepares the ML entities to deal with the errors in the training data, i.e. , to identify the errors in the data during training;\n2)\tenable the MLT MnS consumers to be aware of the possibility of erroneous input data that are used by the ML entity.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tRequirements for ML training",
+                            "text_content": "Table 6.2.3-1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.3-1",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tInformation model definitions for AI/ML management",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tImported and associated information entities",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.1.1\tImported information entities and local labels",
+                            "text_content": "Table 7.1.1-1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.1.1-1",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "7.2a\tCommon information model definitions for AI/ML management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.2a.1\tClass diagram",
+                            "text_content": "None.\nThe figure depicts a hierarchical model for common information models for AI/ML management, illustrating the inheritance hierarchy from the top to the bottom. The model includes various components such as AI/ML models, AI/ML management, AI/ML management tools, AI/ML management platforms, AI/ML management services, AI/ML management tools, AI/ML management platforms, AI/ML management services, AI/ML management tools, AI/ML management platforms, AI/ML management services, AI/ML management tools, AI/ML management platforms, AI/ML management services, AI/ML management tools, AI/ML management platforms, AI/ML management services, AI/ML management tools, AI/ML management platforms, AI/ML management services, AI/ML management tools, AI/ML management platforms, AI/ML management services, AI/ML management tools, AI/ML management platforms, AI/ML management services, AI/ML management tools, AI/ML management platforms, AI/ML management services, AI/ML management tools, AI/ML management platforms, AI/ML management services, AI/ML management tools, AI/ML management platforms, AI/ML management services, AI/ML management tools, AI/ML management platforms, AI/\nFigure 7.2a.1.2-1: Inheritance Hierarchy for common information models for AI/ML management\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2a.2\tClass definitions",
+                            "text_content": "This IOC represents the ML entity. ML model or ML entity are not subjects for standardization.\nThe MLEntity may contain 3 types of contexts - TrainingContext which is the context under which the MLEntity has been trained, the ExpectedRunTimeContext which is the context where an MLEntity is expected to be applied or/and the RunTimeContext which is the context where the ML entity is being applied.\nTable 7.2a.2.1.2 -1\n\nTable 7.2a.2.2.3-1\n\nThe common notifications defined in clause 7.e are valid for this IOC, without exceptions or additions.\nThe IOC MLEntityRepository represents the repository that contains the ML entities .\nThe MLEntityRepository MOI may contain one or more MLEntity(s).\nTable 7.a.2.2.2 -1\n\nNone.\nThe common notifications defined in clause 7.6 are valid for this IOC, without exceptions or additions.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.2a.2.1.2 -1",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.2a.2.2.3-1",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.a.2.2.2 -1",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "7.3a\tInformation model definitions for AI/ML operational phases",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.3a.1\tInformation model definitions for ML Training",
+                            "text_content": "This clause depicts the set of classes (e.g. IOCs) that encapsulates the information relevant to ML model training. For the UML semantics, see  TS 32.156 [13].\nThe figure depicts a 3D NRM fragment for ML training, with a focus on the 1.1.1 layer. This layer is crucial for the training process, as it contains the input data and the model parameters. The figure shows the 1.1.1 layer with a clear representation of the input data, the model parameters, and the output data. The figure also includes a legend to help understand the different layers and their respective functions. Overall, the figure provides a comprehensive view of the 3D NRM fragment for ML training, highlighting its importance in the training process.\nFigure 7.3a.1.1.1-1: NRM fragment for ML training\nThe figure depicts a hierarchical structure of ML training-related NRMs, illustrating the inheritance relationships between different models and their respective responsibilities. The hierarchy includes various models such as Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs), and Transformers, each with its own set of parameters and training algorithms. The figure also includes a legend to help understand the different models and their respective responsibilities.\nFigure 7.3a.1.1.2-1: Inheritance Hierarchy for ML training related NRMs\nThe IOC MLTrainingFunction represents the entity that undertakes ML training and is also the container of the MLTrainingRequest IOC(s).\nThe entity represented by MLTrainingFunction MOI supports training of one or more MLEntity(s).\nTable 7.3a.1.2.1.2-1\n\nNone.\nThe common notifications defined in clause 7.6 are valid for this IOC, without exceptions or additions.\nThe IOC MLTrainingRequest represents the ML model training request that is created by the ML training MnS consumer.\nThe MLTrainingRequest MOI is contained under one MLTrainingFunction MOI. Each MLTrainingRequest is associated to at least one MLEntity.\nThe MLTrainingRequest may have a source to identify where it is coming from, and which may be used to prioritize the training resources for different sources. The sources may be for example the network functions, operator roles, or other functional differentiations.\nEach MLTrainingRequest may indicate the expectedRunTimeContext that describes the specific conditions for which the MLEntity should be trained.\nIn case the request is accepted, the ML training MnS producer decides when to start the ML training. Once the MnS producer decides to start the training based on the request, the ML training MnS producer instantiates one or more MLTrainingProcess MOI(s) that are responsible to perform the followings:\n-\tcollects (more) data for training, if the training data are not available or the data are available but not sufficient for the training;\n-\tprepares and selects the required training data, with consideration of the consumer’s request provided candidate training data if any. The ML training MnS producer may examine the consumer's provided candidate training data and select none, some or all of them for training. In addition, the ML training MnS producer may select some other training data that are available in order to meet the consumer’s requirements for the MLentity training;\n-\ttrains the MLEntity using the selected and prepared training data.\nThe MLTrainingRequest may have a requestStatus field to represent the status of the specific MLTrainingRequest:\n-\tThe attribute values are \"NOT_STARTED\", \"TRAINING_IN_PROGRESS\", \"SUSPENDED\", \"FINISHED\", and \"CANCELLED\".\n-\tWhen value turns to \"TRAINING_IN_PROGRESS\", the ML training MnS producer instantiates one or more MLTrainingProcess MOI(s) representing the training process(es) being performed per the request and notifies the MLT MnS consumer(s) who subscribed to the notification.\nWhen all of the training process associated to this request are completed, the value turns to \"FINISHED\".\nTable 7.3a.1.2.2.1-1\n\nTable 7.3a.1.2.2.3-1\n\nThe common notifications defined in clause 7.e are valid for this IOC, without exceptions or additions.\nThe IOC MLTrainingReport represents the ML model training report that is provided by the training MnS producer.\nThe MLTrainingReport MOI is contained under one MLTrainingFunction MOI.\nTable 7.3a.1.2.3.2-1\n\nTable 7.3a.1.2.3.3-1\n\nThe common notifications defined in clause 7.e are valid for this IOC, without exceptions or additions.\nThe IOC MLTrainingProcess represents the ML training process.\nOne MLTrainingProcess MOI may be instantiated for each MLTrainingRequest MOI or a set of MLTrainingRequest MOIs.\nFor each MLEntity under training, a MLTrainingProcess is instantiated, i.e. an MLTrainingProcess is associated with exactly one MLEntity. The MLTrainingProcess may be associated with one or more MLTrainingRequest MOI.\nThe MLTrainingProcess does not have to correspond to a specific MLTrainingRequest, i.e. a MLTrainingRequest does not have to be associated to a specific MLTrainingProcess. The MLTrainingProcess may be managed separately from the MLTrainingRequest MOIs, e.g. the MLTrainingRequest MOI may come from consumers which are network functions while the operator may wish to manage the MLTrainingProcess that is instantiated following the requests. Thus, the MLTrainingProcess may be associated to either one or more MLTrainingRequest MOI.\nEach MLTrainingProcess instance needs to be managed differently from the related MLEntity, although the MLTrainingProcess may be associated to only one MLEntity. For example, the MLTrainingProcess may be triggered to start with a specific version of the MLEntity and multiple MLTrainingProcess instances may be triggered for different versions of the MLEntity. In either case the MLTrainingProcess instances are still associated with the same MLEntity but are managed separately from the MLEntity.\nEach MLTrainingProcess has a priority that may be used to prioritize the execution of different MLTrainingProcess instances. By default, the priority of the MLTrainingProcess may be related in a 1:1 manner with the priority of the MLTrainingRequest for which the MLTrainingProcess is instantiated.\nEach MLTrainingProcess may have one or more termination conditions used to define the points at which the MLTrainingProcess may terminate.\nThe \"progressStatus\" attribute represents the status of the ML model training and includes information the ML training MnS consumer can use to monitor the progress and results. The data type of this attribute is \"ProcessMonitor\" (see 3GPP TS 28.622 [12]). The following specializations are provided for this data type for the ML training process:\n-\tThe \"status\" attribute values are \"RUNNING\", \"CANCELLING\", \"SUSPENDED\", \"FINISHED\", and \"CANCELLED\". The other values are not used.\n-\tThe \"timer\" attribute is not used.\n-\tWhen the \"status\" is equal to \"RUNNING\" the \"progressStateInfo\" attribute shall indicate one of the following states: \"COLLECTING_DATA\", \"PREPARING_TRAINING_DATA\", \"TRAINING\".\n-\tNo specifications are provided for the \"resultStateInfo\" attribute. Vendor specific information may be provided though.\nWhen the training is completed with \"status\" equal to \"FINISHED\", the MLT MnS producer provides the training report, by creating an MLTrainingReport MOI, to the MLT MnS consumer.\nTable 7.3a.1.2.4.2-1\n\nTable 7.3a.1.2.4.3-1\n\nThe common notifications defined in clause 7.e are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3a.1.2.1.2-1",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3a.1.2.2.1-1",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3a.1.2.2.3-1",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3a.1.2.3.2-1",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3a.1.2.3.3-1",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3a.1.2.4.2-1",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3a.1.2.4.3-1",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "7.2\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.4\tData type definitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.4.1\tModelPerformance <<dataType>>",
+                            "text_content": "This data type specifies the performance of an ML entity when performing inference. The performance score is provided for each inference output.\nTable 7.4.1.2-1\n\nNone.\nThe notifications specified for the IOC using this <<dataType>> for its attribute(s), shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.4.1.2-1",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.4.2\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.4.3\tMLContext <<dataType>>",
+                            "text_content": "The MLContext represents the status and conditions related to the MLEntity. Specially it may be one of three types of context - the ExpectedRunTimeContext, the TrainingContext and  the RunTimeContext.\nTable 7.4.3.2-1\n\nTable 7.4.3.3-1\n\nThe notifications specified for the IOC using this <<dataType>> for its attribute(s), shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.4.3.2-1",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.4.3.3-1",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "7.5\tAttribute definitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.5.1\tAttribute properties",
+                            "text_content": "Table 7.5.1-1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.5.1-1",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.5.2\tConstraints",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.6\tCommon notifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.6.1\tConfiguration notifications",
+                            "text_content": "This clause presents a list of notifications, defined in 3GPP TS 28.532 [11], that an MnS consumer may receive. The notification header attribute objectClass/objectInstance shall capture the DN of an instance of a class defined in the present document.\nTable 7.6.1-1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.6.1-1",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "8\tService components",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tService components for ML model training MnS",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The components for ML model training MnS are listed in table 8.1-1.\nTable 8.1-1: Components for ML model training MnS\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 8.1-1: Components for ML model training MnS",
+                            "table number": 21,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "9\tSolution Set (SS)",
+            "description": "The present document defines the following NRM Solution Set definitions for ML management:\n-\tYAML based Solution Set (Annex B).\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "This annex contains the PlantUML source code for the NRM diagrams defined in clause 7.2 of the present document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tPlantUML code for Figure 7.3a.1.1.1-1: NRM fragment for ML model training",
+            "description": "@startuml\nskinparam ClassStereotypeFontStyle normal\nskinparam ClassBackgroundColor White\nskinparam shadowing false\nskinparam monochrome true\nhide members\nhide circle\n'skinparam maxMessageSize 250\nskinparam nodesep 60\n\nclass ManagedEntity <<ProxyClass>>\nclass MLEntity <<InformationObjectClass>>\nclass MLTrainingFunction <<InformationObjectClass>>\nclass MLTrainingRequest <<InformationObjectClass>>\nclass MLTrainingReport <<InformationObjectClass>>\nclass MLTrainingProcess <<InformationObjectClass>>\nclass MLEntityRepository <<InformationObjectClass>>\nclass SubNetwork <<InformationObjectClass>>\n\nSubNetwork \"1\" *-- \"1\" MLEntityRepository: <<names>>\nManagedEntity \"1\" *-- \"*\" MLTrainingFunction: <<names>>\nMLEntityRepository \"1\" *-- \"*\" MLEntity: <<names>>\nMLTrainingFunction \"*\" -l-> \"1\" MLEntityRepository\nMLTrainingFunction \"1\" *-- \"*\" MLTrainingProcess: <<names>>\nMLTrainingFunction \"1\" *-- \"*\" MLTrainingRequest: <<names>>\nMLTrainingFunction \"1\" *-- \"*\" MLTrainingReport: <<names>>\n\nMLTrainingProcess \"1\" <-r-> \"1\" MLTrainingReport\nMLTrainingProcess \"1\" --r-> \"1\" MLEntity\nMLTrainingReport \"1\" --> \"1\" MLTrainingReport\nMLTrainingRequest \"*\" -l-> \"1\" MLEntity\nMLTrainingRequest \"1..*\" <-r-> \"*\" MLTrainingProcess\nMLTrainingReport \"*\" -l-> \"1\" MLEntity\n\nnote right of ManagedEntity\nThis represents the following IOCs:\nSubNetwork or\nManagedFunction or\nManagedElement\nend note\n\n\n@enduml\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.3\tPlantUML code for Figure 7.3a.1.1.2-1: Inheritance Hierarchy for ML model training related NRMs",
+            "description": "@startuml\n\nskinparam ClassStereotypeFontStyle normal\nskinparam ClassBackgroundColor White\nskinparam shadowing false\nskinparam monochrome true\nhide members\nhide circle\n'skinparam maxMessageSize 250\n\nclass Top <<InformationObjectClass>>\nclass ManagedFunction <<InformationObjectClass>>\nclass MLTrainingFunction <<InformationObjectClass>>\nclass MLTrainingRequest <<InformationObjectClass>>\nclass MLTrainingProcess <<InformationObjectClass>>\nclass MLTrainingReport <<InformationObjectClass>>\n\nManagedFunction <|-- MLTrainingFunction\nTop <|-- MLTrainingRequest\nTop <|-- MLTrainingProcess\nTop <|-- MLTrainingReport\n\n@enduml\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.4\tPlantUML code for Figure 7.2a.1.2-1: Inheritance Hierarchy for common information models for AI/ML management",
+            "description": "@startuml\n\nskinparam ClassStereotypeFontStyle normal\nskinparam ClassBackgroundColor White\nskinparam shadowing false\nskinparam monochrome true\nhide members\nhide circle\n'skinparam maxMessageSize 250\n\nclass Top <<InformationObjectClass>>\nclass MLEntity <<InformationObjectClass>>\nclass MLEntityRepository <<InformationObjectClass>>\n\nTop <|-- MLEntityRepository\nTop <|-- MLEntity\n\n@enduml\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.1\tGeneral",
+            "description": "This annex contains the OpenAPI definition of the AI/ML NRM in YAML format.\nThe information models of the AI/ML NRM are defined in clause 7.\nMapping rules to produce the OpenAPI definition based on the information model are defined in 3GPP TS 32.160 [14].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.2\tSolution Set (SS) definitions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "B.2.1\tOpenAPI document \"TS28105_AiMlNrm.yaml\"",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "openapi: 3.0.1\ninfo:\ntitle: AI/ML NRM\nversion: 18.2.0\ndescription: >-\nOAS 3.0.1 specification of the AI/ML NRM\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\nexternalDocs:\ndescription: 3GPP TS 28.105; AI/ML Management\nurl: http://www.3gpp.org/ftp/Specs/archive/28_series/28.105/\npaths: {}\ncomponents:\nschemas:\n\n#-------- Definition of types-----------------------------------------------------\n\nMLContext:\ntype: object\nproperties:\ninferenceEntityRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DnList'\ndataProviderRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DnList'\n\nRequestStatus:\ntype: string\nenum:\n- NOT_STARTED\n- TRAINING_IN_PROGRESS\n- SUSPENDED\n- FINISHED\n- CANCELLED\n\nPerformanceRequirements:\ntype: array\nitems:\n$ref: '#/components/schemas/ModelPerformance'\n\nModelPerformance:\ntype: object\nproperties:\ninferenceOutputName:\ntype: string\nperformanceMetric:\ntype: string\nperformanceScore:\ntype: number\nformat: float\ndecisionConfidenceScore:\ntype: number\nformat: float\n\nTrainingProcessMonitor:\ndescription: >-\nThis data type is the \"ProcessMonitor\" data type defined in “genericNrm.yaml” with specialisations for usage in the \"MLTrainingProcess\".\ntype: object\nproperties:\nmLTrainingProcessId:\ntype: string\nstatus:\ntype: string\nenum:\n- RUNNING\n- CANCELLING\n- CANCELLED\n- SUSPENDED\n- FINSHED\nprogressPercentage:\ntype: integer\nminimum: 0\nmaximum: 100\nprogressStateInfo:\ntype: string\nenum:\n- COLLECTING_DATA\n- PREPARING_TRAINING_DATA\n- TRAINING\nresultStateInfo:\ntype: string\n\n#-------- Definition of abstract IOCs --------------------------------------------\n\n\n\n#-------- Definition of concrete IOCs --------------------------------------------\n\nSubNetwork-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nattributes:\n$ref: 'TS28623_GenericNrm.yaml#/components/schemas/SubNetwork-Attr'\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/SubNetwork-ncO'\n- type: object\nproperties:\nSubNetwork:\n$ref: '#/components/schemas/SubNetwork-Multiple'\nManagedElement:\n$ref: '#/components/schemas/ManagedElement-Multiple'\nMLTrainingFunction:\n$ref: '#/components/schemas/MLTrainingFunction-Multiple'\nMLEntityRepository:\n$ref: '#/components/schemas/MLEntityRepository-Multiple'\n\nManagedElement-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nattributes:\n$ref: 'TS28623_GenericNrm.yaml#/components/schemas/ManagedElement-Attr'\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/ManagedElement-ncO'\n- type: object\nproperties:\nMLTrainingFunction:\n$ref: '#/components/schemas/MLTrainingFunction-Multiple'\nMLEntityRepository:\n$ref: '#/components/schemas/MLEntityRepository-Multiple'\n\nMLTrainingFunction-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nattributes:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/ManagedFunction-Attr'\n- type: object\nproperties:\nmLEntityRepositoryRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DnList'\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/ManagedFunction-ncO'\n- type: object\nproperties:\nMLTrainingRequest:\n$ref: '#/components/schemas/MLTrainingRequest-Multiple'\nMLTrainingProcess:\n$ref: '#/components/schemas/MLTrainingProcess-Multiple'\nMLTrainingReport:\n$ref: '#/components/schemas/MLTrainingReport-Multiple'\n\nMLTrainingRequest-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nattributes:\nallOf:\n- type: object\nproperties:\nmLEntityId:\ntype: string\ninferenceType:\ntype: string\ncandidateTrainingDataSource:\ntype: array\nitems:\ntype: string\ntrainingDataQualityScore:\ntype: number\nformat: float\ntrainingRequestSource:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/Dn'\nrequestStatus:\n$ref: '#/components/schemas/RequestStatus'\nexpectedRuntimeContext:\n$ref: '#/components/schemas/MLContext'\nperformanceRequirements:\n$ref: '#/components/schemas/PerformanceRequirements'\ncancelRequest:\ntype: boolean\nsuspendRequest:\ntype: boolean\nmLEntityToTrainRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/Dn'\n\nMLTrainingProcess-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nattributes:\nallOf:\n- type: object\nproperties:\nmLTrainingProcessId:\ntype: string\npriority:\ntype: integer\nterminationConditions:\ntype: string\nprogressStatus:\n$ref: '#/components/schemas/TrainingProcessMonitor'\ncancelProcess:\ntype: boolean\nsuspendProcess:\ntype: boolean\ntrainingRequestRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DnList'\ntrainingReportRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/Dn'\nmLEntityGeneratedRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/Dn'\n\n\n\nMLTrainingReport-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nattributes:\nallOf:\n- type: object\nproperties:\nmLEntityId:\ntype: string\nareConsumerTrainingDataUsed:\ntype: boolean\nusedConsumerTrainingData:\ntype: array\nitems:\ntype: string\nmodelConfidenceIndication:\ntype: integer\nmodelPerformanceTraining:\ntype: array\nitems:\n$ref: '#/components/schemas/ModelPerformance'\nareNewTrainingDataUsed:\ntype: boolean\ntrainingRequestRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/DnList'\ntrainingProcessRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/Dn'\ntrainingReportRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/Dn'\nlastTrainingRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/Dn'\nmLEnityGeneratedRef:\n$ref: 'TS28623_ComDefs.yaml#/components/schemas/Dn'\n\nMLEntity-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nattributes:\ntype: object\nproperties:\nmLEntityId:\ntype: string\ninferenceType:\ntype: string\nmLEntityVersion:\ntype: string\nexpectedRunTimeContext:\n$ref: '#/components/schemas/MLContext'\ntrainingContext:\n$ref: '#/components/schemas/MLContext'\nrunTimeContext:\n$ref: '#/components/schemas/MLContext'\n\nMLEntityRepository-Single:\nallOf:\n- $ref: 'TS28623_GenericNrm.yaml#/components/schemas/Top'\n- type: object\nproperties:\nattributes:\ntype: object\nproperties:\nmLRepositoryId:\ntype: string\nMLEntity:\n$ref: '#/components/schemas/MLEntity-Multiple'\n\n#-------- Definition of JSON arrays for name-contained IOCs ----------------------\n\nSubNetwork-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/SubNetwork-Single'\nManagedElement-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/ManagedElement-Single'\nMLTrainingFunction-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/MLTrainingFunction-Single'\nMLTrainingRequest-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/MLTrainingRequest-Single'\nMLTrainingProcess-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/MLTrainingProcess-Single'\nMLTrainingReport-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/MLTrainingReport-Single'\nMLEntity-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/MLEntity-Single'\nMLEntityRepository-Multiple:\ntype: array\nitems:\n$ref: '#/components/schemas/MLEntityRepository-Single'\n\n#-------- Definitions in TS 28.104 for TS 28.532 ---------------------------------\n\nresources-AiMlNrm:\noneOf:\n- $ref: '#/components/schemas/SubNetwork-Single'\n- $ref: '#/components/schemas/ManagedElement-Single'\n\n- $ref: '#/components/schemas/MLTrainingFunction-Single'\n- $ref: '#/components/schemas/MLTrainingRequest-Single'\n- $ref: '#/components/schemas/MLTrainingProcess-Single'\n- $ref: '#/components/schemas/MLTrainingReport-Single'\n- $ref: '#/components/schemas/MLEntity-Single'\n- $ref: '#/components/schemas/MLEntityRepository-Single'\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 22,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,296 @@
+{
+    "document_name": "24482-i01.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "This document specifies the identity management and authentication protocols needed to support Mission Critical Services (MCSs). Identity management applies only to on-network operation.\nMCSs are services that require preferential handling compared to normal telecommunication services, e.g. in support of police or fire brigade.\nMCSs can be used for public safety applications and also for general commercial applications (e.g., utility companies and railways).\nThis document is applicable to User Equipment (UE) supporting the identity management client functionality, and to application servers supporting the identity management server functionality.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\tVoid.\n[3]\t3GPP TS 22.179: \"Mission Critical Push To Talk (MCPTT) over LTE\".\n[4]\tVoid.\n[5]\tIETF RFC 6749: \"The OAuth 2.0 Authorization Framework\".\n[6]\t\"OpenID Connect Core 1.0 incorporating errata set 1\".\n[7]\tW3C.REC-html401-19991224: \"HTML 4.01 Specification\".\n[8]\t3GPP TS 23.379: \"Functional architecture and information flows to support mission critical communication services\".\n[9]\tVoid.\n[10]\tIETF RFC 2818: \"HTTP Over TLS\".\n[11]\t3GPP TS 24.483: \"Mission Critical Services (MCS) Management Object (MO)\".\n[12]\t3GPP TS 24.379: \"Mission Critical Push To Talk (MCPTT) call control Protocol specification\".\n[13]\t3GPP TS 23.228: \"IP Multimedia Subsystem (IMS); Stage 2\".\n[14]\tIETF RFC 6750: \"The OAuth 2.0 Authorization Framework: Bearer Token Usage\".\n[15]\t3GPP TS 24.109: \"Bootstrapping interface (Ub) and network application function interface (Ua); Protocol details\".\n[16]\t3GPP TS 23.280: \"Common functional architecture to support mission critical services; Stage 2\".\n[17]\t3GPP TS 33.180: \"Security of the Mission Critical Service\".\n[18]\tIETF RFC 8693: \"OAuth 2.0 Token Exchange\".\n[19]\tIETF RFC 7523: \"JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants\".\n[20]\tIETF RFC 7159: \"The JavaScript Object Notation (JSON) Data Interchange Format\".\n[21]\t3GPP TS 24.281: \"Mission Critical Video (MCVideo) signalling control; Protocol specification\".\n[22]\t3GPP TS 23.282: \"Mission Critical Data (MCData) signalling control; Protocol specification\".\n[23]\tIETF RFC 7230: \"Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing\".\n[24]\tIETF RFC 7231: \"Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content\".\n[25]\t3GPP TS 24.484: \"Mission Critical Services (MCS) configuration management; Protocol specification\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nIdM client id: The client_id as specified in 3GPP TS 33.180 [17] which is used to identify the IdM client to the IdM server.\nAuthorisation endpoint: An identity management server protocol endpoint used by the identity management client to obtain an authorisation grant, as specified in IETF RFC 6749 [5].\nToken endpoint: An identity management server protocol endpoint used by the identity management client to exchange an authorisation grant for an access token, as specified in IETF RFC 6749 [5].\nMC UE: A UE that is used to host one or more MC service clients.\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 22.179 [3] apply:\nMCPTT UE\n\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 23.379 [8] apply:\nMCPTT group ID\nMCPTT ID\n\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 23.228 [13] apply:\nPublic service identity\n\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 23.280 [16] apply:\nMC service\nMC service client\nMC service group\nMC service ID\nMC service user\nMC user\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nHTTP\tHypertext Transfer Protocol\nIdM\tIdentity Management\nLTE\tLong Term Evolution\nMCData\tMission Critical Data\nMC ID\tMission Critical User Identity\nMCPTT\tMission Critical Push To Talk\nMCVideo\tMission Critical Video\nOIDC\tOpenID Connect\nTLS\tTransport Layer Security\nUE\tUser Equipment\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tIdentity management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Identity Management functional model for MC services is shown in figure 4.1-1 below and consists of the identity management server located in the common services core and the identity management client located in the MC UE. The IdM server and the IdM client in the MC UE establish the foundation for MC services user authentication and user authorisation.\nThe figure depicts a functional model for MC services identity management, illustrating the various components and their interactions. It includes a user interface (UI), a service catalog (SC), a service catalog server (SCS), a service catalog database (SCDB), and a service catalog repository (SCR). The SC and SCR are responsible for managing the identity of MC services, while the SCDB stores and retrieves the service catalog data. The UI provides a user-friendly interface for managing MC services, while the SCS ensures that the service catalog is up-to-date and accurate. The SCDB ensures that the service catalog is secure and can be accessed by authorized users. Overall, the figure provides a comprehensive overview of the identity management process for MC services.\nFigure 4.1-1: Functional model for MC services identity management\nThe CSC-1 reference point, between the IdM client in the UE and the Identity Management server, provides the interface for user authentication. CSC-1 supports OpenID Connect Core 1.0 [6] and IETF RFC 6749 [5].\nThe OpenID Connect profile for MC services is implemented as described in 3GPP TS 33.180 [17]. The MC services user authentication, the MC services user authorisation, the OpenID Connect Core 1.0 [6] and the OpenID Connect profile described in 3GPP TS 33.180 [17] for MC services forms the basis of the MC services identity management architecture.\nSubclause 6.2.1 and subclause 6.3.1 describes the procedures for the MC services user authentication. OIDC is flexible with respect to the user authentication mechanism used. As 3GPP TS 33.180 [17] has indicated that username and password authentication is mandatory to support, that mechanism is included in subclause 6.2.1 and subclause 6.3.1, although other mechanisms are possible.\nWhen the MC services user is authenticated, the procedure will provide an id token, an access token and a refresh token, which are all described in 3GPP TS 33.180 [17]. The access token is scoped to the services the MC services user is authorised for, e.g., group management services, key management services and MC services. The access token will be utilized for MCPTT service authorisation, MCData service authorisation and MCVideo service authorisation as documented in 3GPP TS 24.379 [12], 3GPP TS 24.282 [22] and 3GPP TS 24.281 [21] respectively.\nAfter an MC service user has obtained an access token from their home IdM server, they can acquire a security token from their home IdM server by means of the procedures of subclause 6.2.2, subclause 6.3.2. The security token can be used to acquire an access token from the IdM server of a partner system to allow access to resources in the partner system's domain by means of the procedures of subclause 6.2.3 and subclause 6.3.3.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tEntities",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tIdentity management client",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The identity management client acts as the application user agent for MC ID transactions. It interacts with the identity management server. The identity management client:\n-\tshall support identity management registration to the identity management server;\n-\tshall support the MC services user authentication framework as specified in 3GPP TS 33.180 [17];\n-\tshall support a username and password method of authentication as specified in 3GPP TS 33.180 [17]; and\n-\tmay support additional methods of authentication.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tIdentity management server",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The identity management server is a functional entity that is capable of authenticating the MC ID. It contains the knowledge and means to do authentication by verifying the credentials supplied by the user. The identity management server:\n-\tshall support identity management registration of the identity management client;\n-\tshall support the MC services user authentication framework as specified in 3GPP TS 33.180 [17];\n-\tshall support a username and password method of authentication as specified in 3GPP TS 33.180 [17]; and\n-\tmay support additional methods of authentication.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tMC service client",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The MC service client shall interact with the IdM client as specified in subclause 6.2:\n-\tto trigger initiation of the user authentication procedure; and\n-\tto receive the credentials obtained from the IdM server.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tHTTP proxy",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The HTTP proxy acts as the proxy for all hypertext transactions between the HTTP client and the HTTP server. The HTTP proxy terminates the TLS session with the HTTP client of the MC UE in order to allow the HTTP client to establish a single TLS session for hypertext transactions with multiple HTTP servers as specified in 3GPP TS 23.280 [16].\nNOTE:\tThe HTTP proxy is in the same trust domain as the HTTP servers that are located within a MC service provider's network.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tAuthentication procedures",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tIdentity management client procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tUser authentication",
+                            "text_content": "Upon an indication from the MC service client to initiate MC service user authentication, the IdM client shall perform the user authentication procedure according to 3GPP TS 33.180 [17] with the following clarifications:\n1)\tshall establish a TLS tunnel to the authorisation endpoint of the IdM server as specified in 3GPP TS 33.180 [17] using the configured URL of the authorisation endpoint of the IdM server as specified in the \"/<x>/OnNetwork/AppServerInfo/IDMSAuthEndpoint\" leaf node defined in 3GPP TS 24.483 [11] and the clarifications in annex A;\n2)\tshall generate an OIDC Authentication Request message as specified in the OpenID Connect 1.0 [6] and IETF RFC 6749 [5] with the following clarifications:\na)\tshall generate an HTTP GET request method according to IETF RFC 7231 [24];\nb)\tshall include the configured parameter IdM client id as the client_id parameter specified in 3GPP TS 33.180 [17] in the query component of the authorization endpoint's URI using the \"application/x-www-form-urlencoded\" format as specified in W3C.REC-html401-19991224 [7]; and\nNOTE 1:\tThe configuration of client_id is specified in 3GPP TS 24.483 [11].\nc)\tshall include the remaining required parameters as specified in 3GPP TS 33.180 [17] in the query component of the authorization endpoint's URI using the \"application/x-www-form-urlencoded\" format as specified in W3C.REC-html401-19991224 [7]; and\n3)\tshall send the HTTP GET request method towards the IdM server.\nNOTE 2:\tThe OpenID Connect 1.0 [6] specification allows for an alternative mechanism for sending the OIDC Authentication request message using an HTTP POST request method which can be used in place of steps 1, 2, and 3 above.\nUpon receipt of an HTTP 200 (OK) response from the IdM server, the IdM client:\n1)\tshall prompt the MC service user for their username and password;\nNOTE 3:\tOther types of authentication are supported and are not defined by the OIDC specifications. 3GPP TS 33.180 [17] has defined username and password as a mandatory authentication method to be supported, hence a procedure to realize that method is included here.\n2)\tshall generate an HTTP POST request method containing the MC service user's username and password; and\n3)\tshall send the HTTP POST request method towards the IdM server.\nUpon receipt of an OIDC Authentication Response message, the IdM client:\n1)\tshall establish a TLS tunnel to the token endpoint of the IdM server as specified in 3GPP TS 33.180 [17] using the configured URL of the token endpoint of the IdM server as specified in the \"/<x>/OnNetwork/AppServerInfo/IDMSTokenEndpoint\" leaf node defined in 3GPP TS 24.483 [11] and the clarifications in annex A;\n2)\tshall generate an OIDC Token Request message as specified in OpenID Connect 1.0 [6] and IETF RFC 6749 [5] with the following clarifications:\na)\tshall generate an HTTP POST request method according to IETF RFC 7231 [24]; and\nb)\tshall include the grant_type parameter set to a value of \"authorization_code\" and the other required parameters in the entity body of the HTTP POST request method using the using the \"application/x-www-form-urlencoded\" format as specified in 3GPP TS 33.180 [17]; and\n3)\tshall send the HTTP POST request method towards the IdM server.\nUpon receipt of an OIDC Token Response message, the IdM client:\n1)\tshall validate the id_token, access_token and refresh token in the received OIDC Token Response message as specified in the OpenID Connect 1.0 [6] specification; and\n2)\tshall provide the id_token and access_token in the received OIDC Token Response message to the MC service client.\nNOTE 4:\tThe method in which the IdM client provides the id_token and access_token to the MC service client is implementation specific.\nThe MC UE may repeat the entire procedure in this subclause as needed to obtain the necessary authorisation tokens for the MC service clients, depending on the scope parameter in the Authentication Request message as specified in 3GPP TS 33.180 [17].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tToken exchange procedure",
+                            "text_content": "Upon an indication from the MC service client to acquire a security token for authentication of the MC service user with a partner IdM server, the IdM client:\n1)\tshall establish a TLS tunnel to the token endpoint of the home IdM server as specified in 3GPP TS 33.180 [17] using the configured URL of the token endpoint of the IdM server as specified in the \"/<x>/OnNetwork/AppServerInfo/IDMSTokenEndpoint\" leaf node of the MCS UE initial configuration MO defined in 3GPP TS 24.483 [11] and the clarifications in annex A;\n2)\tshall generate a Token Exchange Request message as specified in 3GPP TS 33.180 [17] and IETF RFC 8693 [18] with the following clarifications:\na)\tshall generate an HTTP POST request method according to IETF RFC 7231 [24];\nb)\tshall include the following parameters in the in the entity body of the HTTP POST request method using the \"application/x-www-form-urlencoded\" format as specified in W3C.REC-html401-19991224 [7]:\ni)\tthe grant_type parameter set to a value of \"urn:ietf:params:oauth:grant-type:token-exchange\" as specified in subclause B.7.2 of 3GPP TS 33.180 [17]; and\nii)\tthe other required parameters as specified in subclause B.7.2 of 3GPP TS 33.180 [17]; and\n3)\tshall send the HTTP POST request method towards the IdM server.\nUpon receipt of a Token Exchange Response message as specified in 3GPP TS 33.180 [17] and IETF RFC 8693 [18], the IdM client:\n1)\tshall extract the security token contained in the access_token parameter of the received Token Exchange Response message; and\n2)\tshall temporarily store the extracted security token.\nNOTE 1:\tThe security token can be used by the procedures of subclause 6.2.3 to obtain access tokens from the partner systems indicated by the resource parameter included in the Token Exchange Request message for access to the resources of that partner system.\nNOTE 2:\tThe security token only needs to be stored until it's lifetime has expired or until it is replaced by a newly acquired security token.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tToken request to a partner system IdM server",
+                            "text_content": "Upon an indication from the MC service client to acquire an access token from a partner IdM server to authorise the MC service user to access the resources of a partner system, the IdM client:\n1)\tshall obtain a valid security token appropriate for inclusion in a Token Request message to be sent to the targeted partner IdM server by the procedures specified in subclause 6.2.2 if the IdM client has not already done so; and\n2)\tshall generate a Token Request message as specified in the OpenID Connect 1.0 [6] and IETF RFC 6749 [5] with the following clarifications:\na)\tIf the IdM client is attempting to acquire an access token from a partner IdM server not for the purpose of migration, the IdM client shall establish a TLS tunnel to the configured URL of the token endpoint of the partner system IdM server as specified in the MC service user profile MO with the following clarifications:\ni)\tfor MCPTT, use the token endpoint defined in the \"/<x>/<x>/OnNetwork/GroupServerInfo/IDMSTokenEndpointList/<x>/Entry/IDMSTokenID\" leaf node as defined in the MCPTT service user profile MO 3GPP TS 24.483 [11];\nii)\tfor MCData, use the token endpoint defined in the \"/<x>/<x>/OnNetwork/MCDataGroupList/<x>/Entry/IdMSTokenEndPointList/<x>/IdMSTokenEndPoint\" leaf node as defined in the MCData service user profile MO 3GPP TS 24.483 [11]; and\niii)\tfor MCVideo, use the token endpoint defined in the \"/<x>/<x>/OnNetwork/MCVideoGroupList/<x>/Entry/IdMSTokenEndPointList/<x>/IdMSTokenEndPoint\" leaf node as defined in the MCVideo service user profile MO 3GPP TS 24.483 [11].\nNOTE 1:\tThe specific IDM token endpoint can be found by finding the server information for a particular MC service group.\nNOTE 2:\tThe specific IDM token endpoint can also be found in the respective MC service user profile document (see 3GPP TS 24.483 [11]) in the parameters corresponding to those identified in steps i), ii) and iii) above.\nIf the IdM client is attempting to acquire an access token from a partner IdM server for the purpose of migration, the IdM client shall establish a TLS tunnel to the configured URL of the token endpoint of the partner system IdM server as specified in the MC service user profile configuration document with the following clarifications:\ni)\tfor MCPTT, use the token endpoint defined in the <idms-token-endpoint> element in the <App-Server-Info> element in the <on-network> element in the <mcptt-UE- initial-configuration> in the <AccessInformationForPartnerMCPTTSystem> element in the <MigratablePartnerMCPTTSystemInfo> element in the <anyExt> element in the <OnNetwork> element in the <mcptt-user-profile> document as defined in 3GPP TS 24.484 [25];\nii)\tfor MCData, use the token endpoint defined in the <idms-token-endpoint> element in the <App-Server-Info> element in the <on-network> element in the <mcptt-UE- initial-configuration> in the <AccessInformationForPartnerMCDataSystem> element in the <MigratablePartnerMCDataSystemInfo> element in the <anyExt> element in the <OnNetwork> element in the <mcdata-user-profile> document as defined in 3GPP TS 24.484 [25]; and\niii)\tfor MCVideo, use the token endpoint defined in the <idms-token-endpoint> element in the <App-Server-Info> element in the <on-network> element in the <mcptt-UE- initial-configuration> in the <AccessInformationForPartnerMCVideoSystem> element in the <MigratablePartnerMCVideoSystemInfo> element in the <anyExt> element in the <OnNetwork> element in the <mcvideo-user-profile> document as defined in 3GPP TS 24.484 [25].\nb)\tThe IdM client shall generate an HTTP POST request method according to IETF RFC 7231 [24] including in the entity body the following parameters using the \"application/x-www-form-urlencoded\" format as specified in W3C.REC-html401-19991224 [7]:\ni)\tthe grant_type parameter set to value of \"urn:ietf:params:oauth:grant-type:jwt-bearer\" as specified in subclause B.7.4 of 3GPP TS 33.180 [17] and IETF RFC 7253 [19]; and\nii)\tall other required parameters specified in subclause B.7.4 of 3GPP TS 33.180 [17]; and\nc)\tThe IdM client shall send the HTTP POST request method towards the token endpoint of the partner system IdM server.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tIdentity management server procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tUser authentication",
+                            "text_content": "Upon receipt of an OIDC Authentication Request message as specified in the OpenID Connect 1.0 [6] and IETF RFC 6749 [5] via a secure TLS tunnel between the identity management client and the authorisation endpoint of the IdM server, the IdM server:\n1)\tshall validate the received OIDC Authentication Request message as specified in the OpenID Connect 1.0 [6] and IETF RFC 6749 [5];\n2)\tshall generate an HTTP 200 (OK) response according to IETF RFC 7231 [24] including form data to prompt the MC service user for their username and password credentials; and\nNOTE 1:\tThe username will be the MC service user's MC ID.\n3)\tshall send the HTTP 200 (OK) response towards the IdM client.\nUpon receipt of an HTTP POST request method from the IdM client containing the MC service user's username and password, the IdM server authenticates the MC service user and:\nNOTE 2:\tOther methods of authentication can be used by the MC service provider and are not defined by the OIDC specifications. 3GPP TS 33.180 [17] has defined username and password as a mandatory authentication method to be supported for MC services, hence a procedure to realize that method is included here.\n1)\tshall generate an OIDC Authentication Response message as specified in OpenID Connect 1.0 [6] and IETF RFC 6749 [5] with the following clarifications:\na)\tshall generate an HTTP 302 (FOUND) response according to IETF RFC 7231 [24]; and\nb)\tshall include the required parameters including the authorization_code as specified in 3GPP TS 33.180 [17] in the query component of the redirection URI contained in the Location header field of the HTTP FOUND request method using the \"application/x-www-form-urlencoded\" format as specified in W3C.REC-html401-19991224 [7]; and\n2)\tshall send the HTTP 302 (FOUND) response towards the IdM client.\nUpon receipt of an OIDC Token Request message via a secure TLS tunnel established between the identity management client and the token endpoint of the IdM server, the IdM server:\n1)\tshall validate the OIDC Token Request message and if valid shall generate an OIDC Token Response message as specified in OpenID Connect 1.0 [6] and IETF RFC 6749 [5] with the following clarifications:\na)\tshall generate an HTTP 200 (OK) response according to IETF RFC 7231 [24];\nb)\tshall based on the received MC ID obtained from the received user authentication credentials, determine the MC service ID of the MC service user;\nc)\tshall include an id_token, access_token and refresh_token and MC service ID as specified in 3GPP TS 33.180 [17]; and\nd)\tshall include the other required parameters as specified in OpenID Connect 1.0 [6] and IETF RFC 6749 [5]; and\n2)\tshall send the HTTP 200 (OK) response towards the IdM client.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tToken exchange procedure",
+                            "text_content": "Upon receipt of a Token Exchange Request message as specified in IETF RFC 8693 [18] via a secure TLS tunnel between the identity management client and the token endpoint of the IdM server, the IdM server:\n1)\tshall validate the received Token Exchange Request message as specified in IETF RFC 8693 [18];\n2)\tshall generate a Token Exchange Response message as specified in IETF RFC 8693 [18] and IETF RFC 6749 [5] with the following clarifications:\na)\tshall generate an HTTP 200 (OK) response to the received Token Exchange Request message according to IETF RFC 7231 [24]; and\nb)\tinclude the parameters specified in subclause B.7.3 of 3GPP TS 33.180 [17] serialized into a JavaScript Object Notation (JSON) structure as specified in IETF RFC 8693 [18] and IETF RFC 7159 [20] with the following clarification:\ni)\tinclude the parameters specified in subclause B.8 of 3GPP TS 33.180 [17] in the security token included in the access_token parameter specified in subclause B.7.3 of 3GPP TS 33.180 [17]; and\n3)\tshall send the HTTP 200 (OK) response towards the IdM client.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.3\tToken request from an IdM client to a partner system",
+                            "text_content": "Upon receipt of an OIDC Token Request message via a secure TLS tunnel established between the identity management client and the token endpoint of the IdM server, the IdM server:\n1)\tshall validate the Token Request message and the included security token as specified in subclause B.11.3 of 3GPP TS 33.180 [17] and if valid shall generate a Token Response message as specified in OpenID Connect 1.0 [6] and IETF RFC 6749 [5] with the following clarifications:\nNOTE:\tThe access token referred to in step 1) is the security token provided by the home IdM server by the procedures of subclause 6.3.2.\na)\tshall generate an HTTP 200 (OK) response according to IETF RFC 7231 [24];\nb)\tshall include an id_token, access_token and refresh_token and MCPTT ID as specified in 3GPP TS 33.180 [17]; and\nc)\tshall include the other required parameters as specified in OpenID Connect 1.0 [6] and IETF RFC 6749 [5]; and\n2)\tshall send the HTTP 200 (OK) response towards the IdM client.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tInter/intra domain interface security",
+            "description": "Inter/intra domain interface security shall be provided as specified in 3GPP TS 33.180 [17];\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.1\tScope",
+            "description": "This annex describes the functionality expected from the HTTP entities (i.e., the HTTP client, the HTTP proxy and the HTTP server) defined by 3GPP TS 23.280 [16] and 3GPP TS 33.180 [17].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tProcedures",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.2.1\tHTTP client",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.2.1.1\tGeneral",
+                            "text_content": "The HTTP client in the UE shall support the client role defined in IETF RFC 7230 [23].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "A.2.1.2\tHTTP client in UE",
+                            "text_content": "The HTTP client in the UE shall support the client role defined in IETF RFC 2818 [10].\nThe HTTP client in the UE shall support transport layer security (TLS) as specified in 3GPP TS 33.180 [17].\nThe HTTP client in the UE is configured with the following parameters:\n1)\ta home HTTP proxy FQDN;\n2)\ta home HTTP proxy port;\n3)\ta TLS tunnel authentication method. The TLS tunnel authentication method parameter is set to one of the following:\na)\tone-way authentication of the HTTP proxy based on the server certificate;\nb)\tmutual authentication based on certificates; and\nc)\tmutual authentication based on pre-shared key;\nas specified in 3GPP TS 33.180 [17];\n4)\tif the TLS tunnel authentication method is the mutual authentication based on certificates:\na)\tTLS tunnel authentication X.509 certificate; and\n5)\tif the TLS tunnel authentication method is the mutual authentication based on pre-shared key;\na)\tTLS tunnel authentication pre-shared key.\nThe HTTP client in the UE shall establish a TCP connection towards the home HTTP proxy FQDN and the home HTTP proxy port, unless the specific TCP connection is to be used for the IdM client to IdM server procedures described in subclause 6.2 and subclause 6.3 in the present document, in which case the HTTP client shall establish a TCP connection towards the IdM server.\nThe HTTP client in the UE shall establish a TLS tunnel via the TCP connection as specified in 3GPP TS 33.180 [17]. When establishing the TLS tunnel, the HTTP client in the UE shall act as a TLS client and the UE shall perform the TLS tunnel authentication using the TLS authentication method indicated by the TLS tunnel authentication method parameter according to 3GPP TS 33.180 [17]. The UE shall use the configured TLS tunnel authentication X.509 certificate and the configured TLS tunnel authentication pre-shared key when applicable for the used TLS authentication method. In order to prevent man-in-the-middle attacks, the HTTP client in the UE shall check the home HTTP proxy FQDN against the server's identity as presented in the received server's certificate message if the TCP connection terminates on the HTTP proxy. The HTTP client in the UE shall not check the portion of dereferenced HTTP URL against the server's identity as presented in the received server's certificate message if the TCP connection terminates on the HTTP proxy, but shall do so if the TCP connection terminates on the IdM server.\nNOTE:\tThe TLS tunnel can be terminated in the HTTP proxy (rather than in the HTTP server providing the dereferenced HTTP URL).\nThe HTTP client in the UE shall send and receive all HTTP messages via the TLS tunnel.\nIf the HTTP client in the UE has an access token of the \"bearer\" token type as specified in IETF RFC 6750 [14], the HTTP client in the UE shall include an Authorization header field with the \"Bearer\" authentication scheme as specified in IETF RFC 6750 [14] in HTTP requests.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "A.2.1.3\tHTTP client in network entity",
+                            "text_content": "The HTTP client in the network entity is configured with the following parameters:\n1)\ta home HTTP proxy FQDN; and\n2)\ta home HTTP proxy port.\nThe HTTP client in the network entity shall send and receive all HTTP messages via the home HTTP proxy.\nThe HTTP client in the network entity shall insert an X-3GPP-Asserted-Identity header field as specified in 3GPP TS 24.109 [15] in the HTTP request and shall set X-3GPP-Asserted-Identity header field to the identity of the HTTP client in the network entity. The identity of the HTTP client in the network entity can be a public service identity, an MC service group ID, or an MC service ID.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "A.2.2\tHTTP proxy",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.2.2.1\tGeneral",
+                            "text_content": "The HTTP proxy shall support proxy role of IETF RFC 7230 [23].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "A.2.2.2\tHTTP request method from HTTP client in UE",
+                            "text_content": "The HTTP proxy shall support the server role of IETF RFC 7230 [23], and IETF RFC 2818 [10].\nThe HTTP proxy shall support transport layer security (TLS) as specified in 3GPP TS 33.180 [17].\nThe HTTP proxy is configured with the following HTTP proxy parameters:\n1)\tan FQDN of an HTTP proxy for UEs; and\n2)\ta TCP port of an HTTP proxy for UEs.\nThe HTTP proxy shall support establishing TCP connections on the FQDN of HTTP proxy for UEs and the TCP port of HTTP proxy for UEs. The HTTP proxy shall support establishing a TLS tunnel via each such TCP connection as specified in 3GPP TS 33.180 [17]. When establishing the TLS tunnel, the HTTP proxy shall act as TLS server.\nUpon reception of an HTTP request method via a TLS tunnel:\n1)\tif the HTTP request method contains an X-3GPP-Asserted-Identity header field as specified in 3GPP TS 24.109 [15], the HTTP proxy shall reject the HTTP request method with an HTTP 403 (Forbidden) response and do not continue with rest of the steps;\n2)\tif the HTTP request method contains a Request-URI identifying a resource in a partner's MC service provider, the HTTP proxy shall forward the HTTP request method according to the Request-URI; and\n3)\tif an HTTP request method contains a Request-URI identifying a resource in own MC service provider, the HTTP proxy shall act as reverse proxy for the HTTP request method and shall forward the HTTP request method according to the MCPTT provider policy.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "A.2.2.3\tHTTP request method from HTTP client in network entity within trust domain",
+                            "text_content": "The HTTP proxy is configured with the following parameters:\n1)\ta FQDN of an HTTP proxy for trusted entities; and\n2)\ta TCP port of an HTTP proxy for trusted entities.\nUpon receiving an HTTP request method via a TCP connection established on the FQDN of HTTP proxy for UEs and the TCP port of HTTP proxy for UEs, if the TCP connection is between network elements within trusted domain as specified in 3GPP TS 33.180 [17]:\n1)\tif the HTTP request method contains a Request-URI identifying a resource in a partner's MC service provider, the HTTP proxy shall forward the HTTP request method according to the Request-URI; and\n2)\tif an HTTP request method contains Request-URI identifying a resource in own MC service provider, the HTTP proxy shall act as reverse proxy for the HTTP request method and shall forward the HTTP request method according to MC service provider policy.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "A.2.3\tHTTP server",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The HTTP server shall support the server role of IETF RFC 7230 [23].\nUpon reception of an HTTP request:\n1)\tif the received HTTP request does not contain an Authorization header field with the \"Bearer\" authentication scheme and a bearer access token as specified in IETF RFC 6750 [14] and the received HTTP request does not contain an X-3GPP-Asserted-Identity header field as specified in 3GPP TS 24.109 [15], the HTTP server shall reject the request with HTTP 403 (Forbidden) response;\n2)\tif the received HTTP request contains an Authorization header field with the \"Bearer\" authentication scheme and a bearer access token as specified in IETF RFC 6750 [14];\na)\tthe HTTP server shall validate the bearer access token as specified in IETF RFC 6750 [14]; and\nb)\tthe HTTP server shall consider the MC service ID derived from the bearer access token as the identity of the sender of the HTTP request; and\n3)\tif the received HTTP request does not contain an Authorization header field with the \"Bearer\" authentication scheme and a bearer access token as specified in IETF RFC 6750 [14] and the received HTTP request contains an X-3GPP-Asserted-Identity header field as specified in 3GPP TS 24.109 [15], the HTTP server shall consider the URI in the X-3GPP-Asserted-Identity header field as the identity of the sender of the HTTP request.\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 1,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 2,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

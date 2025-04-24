@@ -1,0 +1,1555 @@
+{
+    "document_name": "29538-i40.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specified the Application Programming Interface (API) for enabling the MSGin5G Service over MSGin5G-2/3/4/7/8 interfaces. The application layer architecture, functional requirements, procedures and information flows necessary for MSGin5G Service are contained in 3GPP TS 23.554 [2]. The requirements for MSGin5G are specified in 3GPP TS 22.262 [3].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.554: \"Application architecture for MSGin5G Service\".\n[3]\t3GPP TS 22.262: \"Message Service within the 5G System\".\n[4]\t3GPP TS 29.500: \"5G System; Technical Realization of Service Based Architecture; Stage 3\".\n[5]\t3GPP TS 29.571: \"5G System; Common Data Types for Service Based Interfaces Stage 3\".\n[6]\tOpenAPI: \"OpenAPI Specification Version 3.0.0\", .\n[7]\t3GPP TS 23.222: \"Functional architecture and information flows to support Common API Framework for 3GPP Northbound APIs; Stage 2\".\n[8]\t3GPP TS 29.222: \"Common API Framework for 3GPP Northbound APIs; Stage 3\".\n[9]\t3GPP TS 29.501: \"5G System; Principles and Guidelines for Services Definition; Stage 3\".\n[10]\tIETF RFC 9112: \"HTTP/1.1\".\n[11]\tIETF RFC 9110: \"HTTP Semantics\"\n[12]\tVoid.\n[13]\tVoid.\n[14]\tIETF RFC 9111: Caching\".\n[15]\tVoid\n[16]\tIETF RFC 9113: HTTP/2\".\n[17]\tIETF RFC 8259: \"The JavaScript Object Notation (JSON) Data Interchange Format\".\n[18]\t3GPP TR 21.900: \"Technical Specification Group working methods\".\n[19]\t3GPP TR 33.862: \"Study on security aspects of the Message Service for MIoT over the 5G System (MSGin5G)\".\n[20]\t3GPP TS 33.501: \"Security architecture and procedures for 5G system\".\n[21]\tIETF RFC 6749: \"The OAuth 2.0 Authorization Framework\".\n[22]\t3GPP TS 33.122: \"Security Aspects of Common API Framework for 3GPP Northbound APIs\".\n[23]\t3GPP TS 29.522: \"5G System; Network Exposure Function Northbound APIs; Stage 3\".\n[24]\t3GPP TS 29.122: \"T8 reference point for northbound APIs\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nFor the purposes of the present document, the following terms and its definitions given in 3GPP TS 23.554 [2] shall apply:\nMSGin5G Service\nMSGin5G message\nMSGin5G UE\nMSGin5G Group\nMSGin5G Client\nMSGin5G Server\nLegacy 3GPP Message Gateway\nNon-3GPP Message Gateway\nBroadcast Message Gateway\nLegacy 3GPP UE\nNon-3GPP UE\nPoint-to-Point messaging\nPoint-to-Application messaging\nApplication-to-Point messaging\nGroup messaging\nBroadcast messaging\nMessaging Topic\nMessage Gateway\nBroadcast Area\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\n<symbol>\t<Explanation>\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nAS\tApplication Server\nBC\tBroadcast\nBMG\tBroadcast Message Gateway\nCAPIF\tCommon API Framework\nL3G\tLegacy 3GPP Message Gateway\nN3G\tNon-3GPP Message Gateway\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tOverview",
+            "description": "The MSGin5G Service is designed and optimized for massive IoT device communication including thing-to-thing communication and person-to-thing communication and provides messaging capability in 5GS with messaging communication models including Point-to-Point, Application-to-Point/Point-to-Application, Group and Broadcast messaging.\n3GPP TS 23.554 [2] has specified the application layer architecture, architectural requirements, procedures, information flows and some APIs, in order to support the MSGin5G Service. Various features are defined to ensure the efficient use and deployment of MSGin5G Service, including configuration, registration, message delivery, message aggregation, segmentation and reassembly, topic messaging.\nThe present document specifies MSGin5G Services offered by MSGin5G Servers and MSGin5G Gateway, and APIs in detail, needed over MSGin5G-2/3/4/7/8 interfaces for interworking between MSGin5G Server and Legacy 3GPP UE, Non-3GPP UE, Broadcast Message Gateway or Application Server, with following functionalities need to be supported:\n1.\tServer-side functionality with the sending and receiving of messages to/from Application Servers and/or other MSGin5G Service endpoints on other UEs, provided by MSGin5G Server.\n2.\tInterconnecting two different messaging delivery mechanisms and assure the message integrity between different message delivery mechanisms, provided by Message Gateway.\nAnd the definition of APIs specified in TS 23.554 [2] clause 9 is introduced in present document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tServices offered by the MSGin5G Servers",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Table 5.1-1 lists the services provided by the MSGin5G Server and corresponding service operations. A service description clause for each API gives a general description of the related API.\nTable 5.1-1 List of services provided by the MSGin5G Servers\n\nTable 5.1-2 summarizes the corresponding APIs defined in this specification.\nTable 5.1-2: API Descriptions\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 5.1-1 List of services provided by the MSGin5G Servers",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 5.1-2: API Descriptions",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tMSGS_ASRegistration Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tService Description",
+                            "text_content": "The MSGS_ASRegistration API, as defined in 3GPP TS 23.554 [2], allows an AS via Mm5s interface to register, and deregister at a given MSGin5G Server.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tService Operations",
+                            "text_content": "The service operation defined for MSGS_ASRegistration API is shown in the Table 5.2.2.1-1.\nTable 5.2.2.1-1: Operations of the MSGS_ASRegistration API\n\nThis service operation is used by the AS to register itself to MSGin5G Server.\nThe figure depicts the process of an AS (Access Server) registering to the MSGin5G Server, which is a crucial step in the development of 5G networks. The AS is responsible for managing the network's traffic and ensuring that it is efficiently distributed among the various nodes. The figure illustrates the AS's interaction with the MSGin5G Server, including the process of registering, obtaining the necessary information, and verifying the registration. This process is essential for ensuring the smooth operation of the 5G network and its ability to handle high-speed data transmission.\nFigure 5.2.2.2.2-1: AS Registering to MSGin5G Server\nTo register itself at the MSGin5G Server, the AS shall send an HTTP POST message to the MSGin5G Server on the \"AS Registrations\" collection resource. The body of the HTTP POST message shall include ASRegistration data structure that shall include:\n-\tthe Application Server Identifier within the \"asSvcId\" attribute; and\nmay include:\n-\tthe Application Identifier within the \"appId\" attribute;\n-\tthe notification target URI within the \"targetUri\" attribute; and\n-\tthe Application Server Profile Information within the \"asProf\" attribute, that may include:\n-\tthe Application Server name within the \"appName\" attribute;\n-\tthe list of Application Providers name within the \"appProviders\" attribute;\n-\tthe list of Application scenarios within the \"appScenarios\" attribute;\n-\tthe list of Application Server category within the \"appCategory\" attribute; and\n-\tthe list of Application Server status within the \"asStatus\" attribute.\nUpon receiving the HTTP POST message from the AS, the MSGin5G Server shall:\n1.\tprocess the AS registration request information;\n2.\tverify the identity of the AS and check if the AS is authorized to register itself at MSGin5G Server; and\n3.\tif the AS is authorized to register to MSGin5G Server, then the MSGin5G Server shall:\na.\tstore the AS registration information and create a new resource with the AS registration information as specified in clause 8.1.2.1; and\nb.\tIf the registration is successful, the MSGin5G Server shall respond to the AS with an HTTP \"201 Created\" status code, including an HTTP Location header field containing the URI of the created \"AS Registration\" resource and the response body containing ASRegistrationAck data structure that shall contain:\n-\tthe Application Server Identifier within the \"asSvcId\" attribute; and\n-\tthe registration result within the \"result\" attribute.\nIf errors occur when processing the HTTP POST request, the MSGin5G Server shall apply error handling procedures as specified in clause 8.1.6.\nThis service operation is used by the AS to deregister itself from a MSGin5G Server.\nThe figure depicts the process of AS Deregistering from the MSGin5G Server, which is a crucial step in the 5G network architecture. The figure shows the AS (Access Server) and the MSGin5G Server, with the AS Deregistering process taking place in the middle of the network. This step is essential for ensuring the proper functioning of the 5G network and preventing potential issues.\nFigure 5.2.2.3.2-1: AS Deregistering from MSGin5G Server\nTo deregister itself from the MSGin5G Server, the AS shall send HTTP DELETE message to the MSGin5G Server on the \"AS DeRegistration\" collection resource, as specified in clause 8.1.2.3.3.2.\nUpon receiving the HTTP DELETE request, the MSGin5G Server shall:\n1.\tverify the identity of the AS and check if the AS is authorized to deregister the AS registration information;\n2.\tif the AS is authorized to deregister the AS registration information, then the MSGin5G Server shall deregister the AS profile from the MSGin5G Server and delete the resource representing AS registration information; and\n3.\treturn the HTTP \"200 OK\" status code to the AS, indicating the successful deregistration of the AS information and shall include ASRegistrationAck data structure within the response body or HTTP \"204 No Content\" status code to the AS.\nIf errors occur when processing the HTTP DELETE request, the MSGin5G Server shall apply error handling procedures as specified in clause 8.1.6.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.2.1-1: Operations of the MSGS_ASRegistration API",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tMSGS_MSGDelivery Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tService Description",
+                            "text_content": "The MSGS_MSGDelivery Service corresponding to Mm5s as defined in 3GPP TS 23.554 [2], is provided by the MSGin5G Server.\nThis service:\n-\tallows AS invokes services provided by MSGin5G Server to send MSGin5G Messages and MSGin5G message delivery status reports to MSGin5G Server; and\n-\tallows L3G/N3G invokes services provided by MSGin5G Server to send MSGin5G Messages and MSGin5G message delivery status reports to MSGin5G Server on behalf of Legacy 3GPP UE or Non-3GPP UE.\n-\tallows BMG invokes services provided by MSGin5G Server to send MSGin5G message delivery status reports to MSGin5G Server.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tService Operations",
+                            "text_content": "The service operation defined for MSGS_MSGDelivery Service is shown in the Table 5.3.2.1-1.\nTable 5.3.2.1-1: Operations of the MSGS_MSGDelivery Service\n\nThis service operation corresponding to clause 9.1.1.1.2 as defined in 3GPP TS 23.554 [2], is used by AS to deliver MSGin5G message to the MSGin5G Server.\nThe figure depicts the AS Originating MSGin5G Message Delivery process in a 5G network, illustrating the various steps involved in delivering a message from the sender to the receiver. The figure includes the AS (Access Server), the MSG (Message Queue), and the MSGin5G (Message Originating from 5G) process. The AS initiates the message delivery process by sending a request to the MSG, which then initiates the MSGin5G process. The figure also shows the steps of the MSGin5G process, including the routing of the message to the appropriate nodes, the use of redundancy paths, and the failover mechanism. Overall, the figure provides a clear and concise representation of the AS Originating MSGin5G Message Delivery process in a 5G network.\nFigure 5.3.2.2.2-1: AS Originating MSGin5G Message Delivery\nWhen the AS needs to send the message to the MSGin5G Server, the AS shall send the HTTP POST method as step 1 of the Figure 5.3.2.2.2-1.\nThe AS shall include ASMessageDelivery data structure in the content of the HTTP POST request.\nThe ASMessageDelivery data structure shall include:\n-\tthe AS Service ID within the \"oriAddr\" attribute;\n-\tthe Recipient Address within the \"destAddr\" attribute;\n-\tthe Message ID within the \"msgId\" attribute;\n-\tthe store and forward flag within the \"stoAndFwInd\" attribute; and\nmay include:\n-\tthe Application ID within the \"appId\" attribute;\n-\tthe indication whether the message delivery status report is required within the \"delivStReqInd\" attribute;\n-\tthe Payload within the \"payload\" attribute;\n-\tthe priority type within the \"priority\" attribute;\n-\tthe message segment flag within the \"segInd\" attribute;\n-\tthe message segment parameters within the \"segParams\" attribute, this attribute may include:\n-\tthe segmentation set identifier within the \"segId\" attribute;\n-\tthe total number of message segments within the \"totalSegCount\" attribute;\n-\tthe message segment number within the \"segNumb\" attribute; and\n-\tthe last segment flag within the \"lastSegFlag\" attribute;\n-\tthe store and forward parameters within the \"stoAndFwParams\" attribute, this attribute may include:\n-\tthe message expiration time within the \"exprTime\" attribute;\n-\tThe latency within the \"latency\" attribute.\nWhen the MSGin5G Server receives the HTTP POST request from the AS, the MSGin5G Server shall make an authorization based on the information received from the AS. If the authorization is successful, the MSGin5G Server shall respond to the AS with a 200 OK message.\nIf errors occur when processing the HTTP POST request, the MSGin5G Server shall apply error handling procedures as specified in clause 8.2.6.\nThis service operation corresponds to clause 9.1.1.3.2 as defined in 3GPP TS 23.554 [2], is used by AS to deliver the delivery status report to the MSGin5G Server.\nThe figure depicts a 5G delivery report for an AS Originating MSGin5G, highlighting the various components involved in the delivery process, such as the sender, receiver, and the network infrastructure.\nFigure 5.3.2.3.2-1: AS Originating MSGin5G Delivery Report\nWhen the AS needs to send the delivery report to the MSGin5G Server, the AS shall send the HTTP POST method as step 1 of the Figure 5.3.2.3.2-1.\nThe AS shall include DeliveryStatusReport data structure in the content of the HTTP POST request.\nThe DeliveryStatusReport data structure shall include:\n-\tthe AS Service ID within the \"oriAddr\" attribute;\n-\tthe Recipient Address within the \"destAddr\" attribute;\n-\tthe Message ID within the \"msgId\" attribute;\n-\tthe delivery status within the \"delivSt\" attribute; and\nmay include:\n-\tthe failure cause within the \"failureCause\" attribute;\nWhen the MSGin5G Server receives the HTTP POST request from the AS, the MSGin5G Server shall make an authorization based on the information received from the AS. If the authorization is successful, the MSGin5G Server shall respond to the AS with a 200 OK message.\nIf errors occur when processing the HTTP POST request, the MSGin5G Server shall apply error handling procedures as specified in clause 8.2.6.\nThis service operation corresponds to clause 9.1.1.2.2 as defined in 3GPP TS 23.554 [2], is used by Legacy 3GPP Message Gateway or Non-3GPP Message Gateway (on behalf of Legacy 3GPP UE or Non-3GPP UE) to deliver MSGin5G message to the MSGin5G Server.\nThe figure depicts a 3GPP UE or Non-3GPP UE originating MSGin5G Message Delivery, illustrating the various components and functionalities involved in the delivery of 5G messages. The figure includes a 3GPP UE, a Non-3GPP UE, and a MSGin5G Message Delivery, highlighting the role of each component in the 5G network. The figure also shows the various functionalities such as the 3GPP UE's ability to receive and transmit messages, the Non-3GPP UE's role in receiving and transmitting messages, and the MSGin5G Message Delivery's role in delivering the messages. Overall, the figure provides a comprehensive overview of the 5G network's architecture and its components.\nFigure 5.3.2.4.2-1: Legacy 3GPP UE or Non-3GPP UE Originating MSGin5G Message Delivery\nWhen the Legacy 3GPP Message Gateway or Non-3GPP Message Gateway (on behalf of Legacy 3GPP UE or Non-3GPP UE) needs to send the message to the MSGin5G Server, the Legacy 3GPP Message Gateway or Non-3GPP Message Gateway shall send the HTTP POST method as step 1of the Figure 5.3.2.4.2-1.\nThe Legacy 3GPP Message Gateway or Non-3GPP Message Gateway shall include UEMessageDelivery data structure in the content of the HTTP POST request.\nThe UEMessageDelivery data structure shall include:\n-\tthe Originating UE Service ID within the \"oriAddr\" attribute;\n-\tthe Recipient Address within the \"destAddr\" attribute;\n-\tthe Message ID within the \"msgId\" attribute; and\n-\tthe store and forward flag within the \"stoAndFwInd\" attribute;\nand may include:\n-\tthe Application ID within the \"appId\" attribute;\n-\tthe Payload within the \"payload\" attribute;\n-\tthe indication whether the message delivery status report is required within the \"delivStReqInd\" attribute; and\n-\tthe message segment flag within the \"segInd\" attribute;\n-\tthe message segment parameters within the \"segParams\" attribute, this attribute may include:\n-\tthe segmentation set identifier within the \"segId\" attribute;\n-\tthe total number of message segments within the \"totalSegCount\" attribute;\n-\tthe message segment number within the \"segNumb\" attribute;\n-\tthe last segment flag within the \"lastSegFlag\" attribute;\n-\tthe store and forward parameters within the \"stoAndFwParams\" attribute, this attribute may include:\n-\tthe message expiration time within the \"exprTime\" attribute;\nWhen the MSGin5G Server receives the HTTP POST request from the Legacy 3GPP Message Gateway or Non-3GPP Message Gateway, the MSGin5G Server shall make an authorization based on the information received from the Legacy 3GPP Message Gateway or Non-3GPP Message Gateway. If the authorization is successful, the MSGin5G Server shall respond to the Legacy 3GPP Message Gateway or Non-3GPP Message Gateway with a 200 OK message.\nIf errors occur when processing the HTTP POST request, the MSGin5G Server shall apply error handling procedures as specified in clause 8.2.6.\nThis service operation corresponds to clause 9.1.1.4.2 as defined in 3GPP TS 23.554 [2], is used by Message Gateway (on behalf Legacy 3GPP UE or Non-3GPP UE) to deliver the delivery status report to the MSGin5G Server.\nThe figure depicts a 3GPP UE or Non-3GPP UE Originating MSGin5G Delivery Report, illustrating the various components and functionalities of the 5G network. It highlights the role of the UE in delivering MSGin5G, the use of the 3GPP protocol, and the importance of the UE Originating report in ensuring the proper functioning of the 5G network.\nFigure 5.3.2.5.2-1: Legacy 3GPP UE or Non-3GPP UE Originating MSGin5G Delivery Report\nWhen the Message Gateway (on behalf of Legacy 3GPP UE or Non-3GPP UE) needs to send the delivery report to the MSGin5G Server, the Message Gateway shall send the HTTP POST method as step 1 of the Figure 5.3.2.5.2-1.\nThe Message Gateway shall include DeliveryStatusReport data structure in the content of the HTTP POST request.\nThe DeliveryStatusReport data structure shall include:\n-\tthe Originating UE Service ID within the \"oriAddr\" attribute;\n-\tthe Recipient Address within the \"destAddr\" attribute;\n-\tthe Message ID within the \"msgId\" attribute; and\n-\tthe delivery status within the \"delivSt\" attribute;\nand may include:\n-\tThe failure cause within the \"failureCause\" attribute;\nWhen the MSGin5G Server receives the HTTP POST request from the Message Gateway, the MSGin5G Server shall make an authorization based on the information received from the Message Gateway. If the authorization is successful, the MSGin5G Server shall respond to the Message Gateway with a 200 OK message.\nIf errors occur when processing the HTTP POST request, the MSGin5G Server shall apply error handling procedures as specified in clause 8.2.6.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.2.1-1: Operations of the MSGS_MSGDelivery Service",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tMSGS_TopiclistEvent",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tService Description",
+                            "text_content": "The MSGS_TopiclistEvent API Service corresponding to Mm5s as defined in 3GPP TS 23.554 [2], is provided by the MSGin5G Server.\nThis service:\n-\tallows another MSGin5G Server invokes services provided by MSGin5G Server to subscribe or unsubscribe to MSGin5G Messaging Topic;\n-\tallows another MSGin5G Server invokes services provided by MSGin5G Server to subscribe or unsubscribe to MSGin5G Messaging Topic list;\n-\tallows another MSGin5G Server invokes services provided by MSGin5G Server to notify changes of MSGin5G Messaging Topic list;\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tService Operations",
+                            "text_content": "The service operation defined for MSGS_TopiclistEvent service is shown in the Table 5.4.2.1-1, corresponds to clause 9.1.1.6 as defined in 3GPP TS 23.554 [2].\nTable 5.4.2.1-1: Operations of the MSGS_TopiclistEvent Service\n\nThis service operation is used by MSGin5G Server to subscribe to Messaging Topic list on another MSGin5G Server, corresponds to clause 9.1.1.6.2 as defined in 3GPP TS 23.554 [2].\nThe figure depicts a server subscribing to a messaging topic list in a 5G network. The server is connected to the network through a 4G/5G core switch, which is part of the optical backbone architecture. The figure shows the network's architecture with key components such as the core switch, optical line terminals (OLTs), and distributed nodes. The layered design aligns with SDN principles, allowing for efficient network management and failover.\nFigure 5.4.2.2.2-1: MSGin5G Server Subscribing to Messaging Topic List\nTo subscribe MSGin5G Messaging Topic list on another MSGin5G Server 2, the MSGin5G Server 1 shall send an HTTP POST message to the MSGin5G Server 2 on the \"Topic List Subscription\" collection resource. The body of the HTTP POST message shall include TopicListSubscription data structure that shall include:\n-\tthe Originating MSGin5G Server ID within the \"oriAddr\" attribute;\n-\tthe Recipient MSGin5G Server ID within the \"destAddr\" attribute;\n-\ta notification target address within the \"notificationURI\" attribute;\n-\ta supported features attribute if at least one feature defined is supported;and\nmay include:\n-\tthe Expiration within the \"exprTime\" attribute;\n-\tthe security credentials within the \"secCred\" attribute.\nUpon receiving the HTTP POST message from the MSGin5G Server 1, the MSGin5G Server 2 shall:\n1.\tmake an authorization based on the information received from from MSGin5G Server 1;\n2.\tchecks the locally stored Messaging Topic list subscription(s):\na.\tIf the MSGin5G Server 1's subscription has already been created, the MSGin5G Server 2 updates the validity time of this subscription;\nb.\tIf the MSGin5G Server 1's subscription has not been created, the MSGin5G Server 2 creates new subscription; and\nIf the subscription request is successfully processed, the MSGin5G Server 2 shall respond to the MSGin5G Server 1 with an HTTP \"201 Created\" status code, including an HTTP Location header field containing the URI of the created \"Topic List Subscription\" resource and the response body containing TopicListSubscriptionAck data structure that shall contain:\n-\tthe Subscriptoin Status within the \"subStat\" attribute;\n-\ta supported features attribute if at least one feature defined is supported; and may contain\n-\tthe Expireation within the \"exprTime\" attribute.\nIf errors occur when processing the HTTP POST request, the MSGin5G Server 2 shall apply error handling procedures as specified in clause 8.3.6.\n\n\nThis service operation is used by MSGin5G Server to subscribe to Messaging Topic list on another MSGin5G Server, corresponds to clause 9.1.1.6.2 as defined in 3GPP TS 23.554 [2].\nThe figure depicts a server in a 5G network that is unsubscribing from a messaging topic list. This is a crucial step in the network's operation, as it ensures that the server is not sending unnecessary messages to the topic list. The figure shows the server's interface, with various buttons and sliders for controlling the unsubscription process. The server is connected to a network of other servers, which are also shown in the figure. The figure also includes a diagram of the network topology, showing the connections between the servers and the network.\nFigure 5.4.2.3.2-1: MSGin5G Server Unsubscribing to Messaging Topic List\nAs shown in Figure 5.4.2.3.2-1, to unsubscribe MSGin5G Messaging Topic list on the MSGin5G Server 2, the MSGin5G Server 1 shall send HTTP POST message to the MSGin5G Server 2 on the \"Individual Topic List Subscription\" collection resource, where \"{subscriptionId}\" is the identifier of the existing Messaging Topic list subscription that is to be deleted. The body of the HTTP POST message shall include TopicListUnsubscription data structure that shall include:\n-\tthe Originating MSGin5G Server ID within the \"oriAddr\" attribute;\n-\tthe Recipient MSGin5G Server ID within the \"destAddr\" attribute;and\nmay include:\n-\tthe security credentials within the \"secCred\" attribute.\nUpon receiving the HTTP POST message from the MSGin5G Server 1, the MSGin5G Server 2 shall make an authorization based on the information received. If the authorization is successful, the MSGin5G Server 2 shall remove the corresponding subscription. If the unsubscription request is successfully processed, the MSGin5G Server 2 shall respond to the MSGin5G Server 1 with an HTTP \"204 No Content\" status code. If the subscription is not successfully deleted, the MSGin5G Server 2 shall respond to the MSGin5G Server 1 with an HTTP \"200 OK\" status code, and the response body containing TopicListUnsubscriptionAck data structure that shall contain:\n-\tthe Unsubscriptoin Status within the \"subStat\" attribute.\nIf errors occur when processing the HTTP POST request, the MSGin5G Server 2 shall apply error handling procedures as specified in clause 8.3.6.\nThis service operation is used by MSGin5G Server 1 to notify another MSGin5G Server 2 about changes of Messaging Topic list, corresponds to clause 9.1.1.6.3 as defined in 3GPP TS 23.554 [2].\nThe figure depicts a server notification system in a 5G network, specifically for messaging topics. It includes a list of messaging topics, their respective statuses, and a notification system for each topic. The system uses a 4.2.2 protocol to send notifications to the server.\nFigure 5.4.2.4.2-1:MSGin5G Server Notification about Messaging Topic List\nAs shown in Figure 5.4.2.4.2-1, the MSGin5G Server 1 shall invoke the MSGS_TopiclistEvent_NotifyMSGTopiclist service operation to notify about subscribed Messaging Topic list events. The MSGin5G Server 1 shall send HTTP POST request to the MSGin5G Server 2 with \"{notificationURI}\" previously received in the subscription. The TopicListNotification data structure provided in the request body shall include:\n-\tThe Messaging Topic list exists in MSGin5G Server 1within the \"msgTopicList\" attribute, this attribute may include:\n-\tthe unique topic identifier within the \"msgTopics\" attribute;\n-\tthe topic update status indicating if such topic is newly created or deleted within the \"updateStat\" attribute; and\nmay include:\n-\tthe Expiration within the \"exprTime\" attribute;\nUpon receiving the HTTP POST message from the MSGin5G Server 1, the MSGin5G Server 2 shall make an authorization based on the information received. If the authorization is successful, the MSGin5G Server 2 shall update locally stored Messaging Topic list, and respond to the MSGin5G Server 1 with an HTTP \"204 No Content\" status code.\nIf errors occur when processing the HTTP POST request, the MSGin5G Server 2 shall apply error handling procedures as specified in clause 8.3.6.\nThis service operation is used by MSGin5G Server 1 to subscribe to Messaging Topic on another MSGin5G Server 2, corresponding to clause 9.1.1.6.4 as defined in 3GPP TS 23.554 [2].\nThe figure depicts a messaging topic list subscription process in a messaging system. It shows the user interface for selecting a topic list, the system's response to the user's selection, and the system's ability to subscribe to the selected topic list. The figure illustrates the user's interaction with the system, highlighting the steps involved in subscribing to a topic list.\nFigure 5.4.2.5.2-1:Subscribing to Messaging Topic List\nAs shown in Figure 5.4.2.5.2-1, to subscribe MSGin5G Messaging Topic on the MSGin5G Server 2, the MSGin5G Server 1 shall send the HTTP POST method. The body of the HTTP POST message shall include TopicSubscription data structure that shall include:\n-\tthe originating UE Service ID/AS Service ID if the MSGin5G Server forwards the request, or the Service ID of MSGin5G Server subscribing topic on behalf of all MSGin5G Clients and Application Servers served by it within the \"oriAddr\" attribute\n-\tthe requested list of Messaging Topic(s) within the \"msgTopics\" attribute;\n-\tthe security credentials within the \"secCred\" attribute; and\nmay include:\n-\tthe Expiration within the \"exprTime\" attribute;\nUpon receiving the HTTP POST message, the MSGin5G Server 2 shall:\n1.\t make an authorization based on the information received;\n2.\tchecks the locally stored Messaging Topic subscription(s):\na.\tIf the requested subscription has already been created, the MSGin5G Server 2 updates the validity time of this subscription;\nb.\tIf the requested subscription has not been created, the MSGin5G Server 2 creates new subscription; and\nIf the subscription request is successfully processed, the MSGin5G Server 2 shall respond with an HTTP \"200 OK\" status code. The response body containing TopicSubscriptionAck data structure that shall contain:\n-\tthe Subscriptoin Status within the \"subStat\" attribute; and may contain\n-\tthe Expireation within the \"exprTime\" attribute.\nIf errors occur when processing the HTTP POST request, the MSGin5G Server 2 shall apply error handling procedures as specified in clause 8.3.6.\nThis service operation is used by MSGin5G Server to unsubscribe to Messaging Topic(s) on another MSGin5G Server, corresponding to clause 9.1.1.6.4 as defined in 3GPP TS 23.554 [2].\nThe figure depicts a user interface for unsubscribing from messaging topics in a messaging application. The interface includes a list of unsubscribed topics, a button to confirm the action, and a confirmation message. The figure is designed to be user-friendly and intuitive, making it easy for users to unsubscribe from unwanted messages.\nFigure 5.4.2.6.2-1:Unsubscribing to Messaging Topic(s)\nAs shown in Figure 5.4.2.6.2-1, to unsubscribe one or more MSGin5G Messaging Topic(s) on the MSGin5G Server 2, the MSGin5G Server 1 shall send HTTP POST message to the MSGin5G Server 2. The body of the HTTP POST message shall include TopicUnsubscription data structure that shall include:\n-\tthe originating UE Service ID/AS Service ID if the MSGin5G Server forwards the request, or the Service ID of MSGin5G Server unsubscribing topic on behalf of all MSGin5G Clients and Appliation Servers served by it within the \"oriAddr\" attribute;\n-\tthe requested list of Messaging Topic(s) within the \"msgTopics\" attribute;\n-\tthe security credentials within the \"secCred\" attribute; and\nmay include:\n-\tthe Expiration within the \"exprTime\" attribute;\nUpon receiving the HTTP POST  message, the MSGin5G Server 2 shall make an authorization based on the information received.  If the authorization is successful, the MSGin5G Server 2 shall remove the corresponding subscription and respond with an HTTP \"204 No Content\" status code.\nIf errors occur when processing the HTTP POST request, the MSGin5G Server 2 shall apply error handling procedures as specified in clause 8.3.6.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.4.2.1-1: Operations of the MSGS_TopiclistEvent Service",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tServices offered by the Message Gateway",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Table 6.1-1 lists the services provided by the MSGin5G Message Gateway and corresponding service operations. A service description clause for each API gives a general description of the related API.\nTable 6.1-1 List of services provided by the MSGin5G Message Gateway\n\nTable 6.1-2 summarizes the corresponding APIs defined in this specification.\nTable 6.1-2: API Descriptions\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.1-1 List of services provided by the MSGin5G Message Gateway",
+                            "table number": 8,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 6.1-2: API Descriptions",
+                            "table number": 9,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tMSGG_L3GDelivery Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tService Description",
+                            "text_content": "The MSGG_L3GDelivery Service corresponding to Ml3g as defined in 3GPP TS 23.554 [2], is provided by the Legacy 3GPP Message Gateway.\nThis service:\n-\tallows MSGin5G Server invokes services provided by Legacy 3GPP Message Gateway to send MSGin5G Messages to Legacy 3GPP Message Gateway.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tService Operations",
+                            "text_content": "The service operation defined for MSGG_L3GDelivery Service is shown in the table 6.2.2.1-1.\nTable 6.2.2.1-1: Operations of the MSGG_L3GDelivery Service\n\nThis service operation corresponds to clause 9.2.1.1.2 as defined in 3GPP TS 23.554 [2], is used by MSGin5G Server to deliver MSGin5G message to the Legacy 3GPP Message Gateway.\nThe figure depicts a legacy 3GPP Message Gateway Terminating Message Delivery, illustrating the process of message delivery in a 3GPP network. The diagram shows the message gateway, which is responsible for terminating the message, and the message delivery process, which involves the transmission of the message from the sender to the receiver. The figure also includes the message gateway's interface, which is used to control the message delivery process.\nFigure 6.2.2.2.2-1: Legacy 3GPP Message Gateway Terminating Message Delivery\nWhen the MSGin5G Server needs to send the message to the Legacy 3GPP Message Gateway, the MSGin5G Server shall send the HTTP POST request towards the \"deliver-message\" resource as shown in Figure 6.2.2.2.2-1.\nThe MSGin5G Server shall send a POST request to the resource with an L3gMessageDelivery object in the request body.\nThe L3gMessageDelivery data type shall include:\n-\tthe Originating UE Service ID/AS Service ID within the \"oriAddr\" attribute;\n-\tthe Recipient UE Service ID within the \"destAddr\" attribute;\n-\tthe Message ID within the \"msgId\" attribute; and\nmay include:\n-\tthe Application ID within the \"appId\" attribute;\n-\tthe indication whether the message delivery status report is required within the \"delivStReqInd\" attribute;\n-\tthe Payload within the \"payload\" attribute;\n-\tthe Message is segmented within the \"segInd\" attribute; and\n-\tthe message segment parameters within the \"segParams\" attribute, this attribute may include:\n-\tthe segmentation set identifier within the \"segId\" attribute;\n-\tthe total number of message segments within the \"totalSegCount\" attribute;\n-\tthe message segment number within the \"segNumb\" attribute; and\n-\tthe last segment flag within the \"lastSegFlag\" attribute.\nWhen the Legacy 3GPP Message Gateway receives the HTTP POST request from the MSGin5G Server, the Legacy 3GPP Message Gateway shall respond to the MSGin5G Server with a 204 No Content message.\nIf errors occur when processing the HTTP POST request, the Legacy 3GPP Message Gateway shall apply error handling procedures as specified in clause 9.1.6.\nThis service operation corresponds to clause 9.2.1.3.2 as defined in 3GPP TS 23.554 [2], is used by MSGin5G Server to deliver the delivery status report to the Legacy 3GPP Message Gateway.\nThe figure depicts a message gateway terminating delivery status report for a legacy 3GPP network. It shows the status of the message gateway, including the number of successful and failed delivery attempts, as well as the number of successful and failed delivery attempts for each type of message. The report is used to monitor the performance of the message gateway and identify any issues that may need to be addressed.\nFigure 6.2.2.3.2-1: Legacy 3GPP Message Gateway Terminating Delivery Status Report\nWhen the MSGin5G Server needs to send the delivery status report to the Legacy 3GPP Message Gateway, the MSGin5G Server shall send the HTTP POST request towards the \"deliver-report\" resource as shown in Figure 6.2.2.3.2-1.\nThe MSGin5G Server shall send a POST request to the resource with a DeliveryStatusReport object in the request body.\nThe DeliveryStatusReport data type shall include:\n-\tthe Originating UE Service ID/AS Service ID within the \"oriAddr\" attribute;\n-\tthe Recipient UE Service ID within the \"destAddr\" attribute;\n-\tthe Message ID within the \"msgId\" attribute;\n-\tthe delivery status within the \"delivSt\" attribute; and\nmay include:\n-\tthe failure cause within the \"failureCause\" attribute.\nWhen the Legacy 3GPP Message Gateway receives the HTTP POST request from the MSGin5G Server, the Legacy 3GPP Message Gateway shall respond to the MSGin5G Server with a 204 No Content message.\nIf errors occur when processing the HTTP POST request, the Legacy 3GPP Message Gateway shall apply error handling procedures as specified in clause 9.1.6.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.2.1-1: Operations of the MSGG_L3GDelivery Service",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tMSGG_N3GDelivery Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tService Description",
+                            "text_content": "The MSGG_N3GDelivery Service corresponding to Mn3g as defined in 3GPP TS 23.554 [2], is provided by the Non-3GPP Message Gateway.\nThis service:\n-\tallows MSGin5G Server invokes services provided by Non-3GPP Message Gateway to send MSGin5G Messages to Non-3GPP Message Gateway.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tService Operations",
+                            "text_content": "The service operation defined for MSGG_N3GDelivery Service is shown in the table 6.3.2.1-1.\nTable 6.3.2.1-1: Operations of the MSGG_N3GDelivery Service\n\nThis service operation corresponds to clause 9.2.2.1.2 as defined in 3GPP TS 23.554 [2], is used by MSGin5G Server to deliver MSGin5G message to the Non-3GPP Message Gateway.\nThe figure depicts a non-3GPP Message Gateway Terminating Message Delivery, which is a crucial component in the 3GPP architecture. It is used to deliver non-3GPP messages, such as those from the 3GPP Core Network, to the 3GPP Core Network. The figure shows the various components involved in the message delivery process, including the message gateway, termination point, and the 3GPP Core Network. This figure is essential for ensuring the smooth functioning of the 3GPP Core Network and is a key component in the overall 3GPP architecture.\nFigure 6.3.2.2.2-1: Non-3GPP Message Gateway Terminating Message Delivery\nWhen the MSGin5G Server needs to send the message to the Non-3GPP Message Gateway, the MSGin5G Server shall send the HTTP POST request towards the \"deliver-message\" resource as shown in figure 6.3.2.2.2-1.\nThe MSGin5G Server shall send a POST request to the resource with an N3gMessageDelivery object in the request body.\nThe N3gMessageDelivery data type shall include:\n-\tthe Originating UE Service ID/AS Service ID within the \"oriAddr\" attribute;\n-\tthe Recipient UE Service ID within the \"destAddr\" attribute;\n-\tthe Message ID within the \"msgId\" attribute; and\nmay include:\n-\tthe Application ID within the \"appId\" attribute;\n-\tthe indication whether the message delivery status report is required within the \"delivStReqInd\" attribute;\n-\tthe Payload within the \"payload\" attribute;\n-\tthe Message is segmented within the \"segInd\" attribute; and\n-\tthe message segment parameters within the \"segParams\" attribute, this attribute may include:\n-\tthe segmentation set identifier within the \"segId\" attribute;\n-\tthe total number of message segments within the \"totalSegCount\" attribute;\n-\tthe message segment number within the \"segNumb\" attribute; and\n-\tthe last segment flag within the \"lastSegFlag\" attribute.\nWhen the Non-3GPP Message Gateway receives the HTTP POST request from the MSGin5G Server, the Non-3GPP Message Gateway shall respond to the MSGin5G Server with a 204 No Content message.\nIf errors occur when processing the HTTP POST request, the Non-3GPP Message Gateway shall apply error handling procedures as specified in clause 9.2.6.\nThis service operation corresponds to clause 9.2.2.2.2 as defined in 3GPP TS 23.554 [2], is used by MSGin5G Server to deliver the delivery status report to the Non-3GPP Message Gateway.\nThe figure depicts a non-3GPP Message Gateway Terminating Delivery Status Report, which is a crucial component of the 3GPP RAN architecture. It shows the status of the Message Gateway Terminating Delivery (MGTD) and the associated signaling messages. The report is essential for ensuring the proper functioning of the network and for troubleshooting any issues that may arise.\nFigure 6.3.2.3.2-1: Non-3GPP Message Gateway Terminating Delivery Status Report\nWhen the MSGin5G Server needs to send the delivery status report to the Non-3GPP Message Gateway, the MSGin5G Server shall send the HTTP POST request towards the \"deliver-report\" resource as shown in figure 6.3.2.3.2-1.\nThe MSGin5G Server shall send a POST request to the resource with a DeliveryStatusReport object in the request body.\nThe DeliveryStatusReport data type shall include:\n-\tthe Originating UE Service ID/AS Service ID within the \"oriAddr\" attribute;\n-\tthe Recipient UE Service ID within the \"destAddr\" attribute;\n-\tthe Message ID within the \"msgId\" attribute;\n-\tthe delivery status within the \"delivSt\" attribute; and\nmay include:\n-\tthe failure cause within the \"failureCause\" attribute.\nWhen the Non-3GPP Message Gateway receives the HTTP POST request from the MSGin5G Server, the Non-3GPP Message Gateway shall respond to the MSGin5G Server with a 204 No Content message.\nIf errors occur when processing the HTTP POST request, the Non-3GPP Message Gateway shall apply error handling procedures as specified in clause 9.2.6.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.2.1-1: Operations of the MSGG_N3GDelivery Service",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tMSGG_BGDelivery Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tService Description",
+                            "text_content": "The MSGG_BGDelivery Service corresponding to Mbg as defined in 3GPP TS 23.554 [2], is provided by the Broadcast Message Gateway.\nThis service:\n-\tallows MSGin5G Server invokes services provided by Broadcast Message Gateway to deliver MSGin5G messages to Broadcast Message Gateway.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.2\tService Operations",
+                            "text_content": "The service operation defined for MSGG_BGDelivery Service is shown in the table 6.4.2.1-1.\nTable 6.4.2.1-1: Operations of the MSGG_BGDelivery Service\n\nThis service operation corresponds to clause 9.2.3.1.2 as defined in 3GPP TS 23.554 [2], is used by MSGin5G Server to deliver MSGin5G message to the Broadcast Message Gateway.\nThe figure depicts a broadcast message gateway terminating message delivery, illustrating the flow of data from the source to the destination. The message is transmitted over a broadcast channel, and the gateway is responsible for terminating the message and delivering it to the intended recipient. The figure shows the various components involved in the message delivery process, including the broadcast channel, the message gateway, and the terminating message.\nFigure 6.4.2.2.2-1: Broadcast Message Gateway Terminating Message Delivery\nWhen the MSGin5G Server needs to send the message to the Broadcast Message Gateway, the MSGin5G Server shall send the HTTP POST request towards the \"deliver-message\" resource as shown in Figure 6.4.2.2.2-1.\nThe MSGin5G Server shall send a POST request to the resource with an BGMessageDelivery object in the request body.\nThe BGMessageDelivery data type shall include:\n-\tthe Originating UE Service ID/AS Service ID within the \"oriAddr\" attribute;\n-\tthe Recipient ID within the \"destAddr\" attribute;\n-\tthe Message ID within the \"msgId\" attribute;\nmay include:\n-\tthe Payload within the \"payload\" attribute; and\n-\tthe Application ID within the \"appId\" attribute; and\n-\tthe indication whether the message delivery status report is required within the \"delivStReqInd\" attribute;\n-\tthe priority type within the \"priority\" attribute;\n-\tthe message segment flag within the \"segInd\" attribute; and\n-\tthe message segment parameters within the \"segParams\" attribute, this attribute may include:\n-\tthe segmentation set identifier within the \"segId\" attribute;\n-\tthe total number of message segments within the \"totalSegCount\" attribute;\n-\tthe message segment number within the \"segNumb\" attribute; and\n-\tthe last segment flag within the \"lastSegFlag\" attribute;\nWhen the Broadcast Message Gateway receives the HTTP POST request from the MSGin5G Server, the Broadcast Message Gateway shall respond to the MSGin5G Server with a 204 No Content message.\nIf errors occur when processing the HTTP POST request, the Broadcast Message Gateway shall apply error handling procedures as specified in clause 9.3.6.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.4.2.1-1: Operations of the MSGG_BGDelivery Service",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tCommon information applicable to several APIs",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "MSGin5G APIs allow secure access to the capabilities provided by the MSGin5G.\nThis document specifies the procedures triggered at different functional entities as a result of API invocation requests and event notifications. The stage-2 level requirements and signalling flows are defined in 3GPP TS 23.554 [2].\nSeveral design aspects, as mentioned in the following clauses, are specified in 3GPP TS 29.500 [4] and referenced by this specification.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tData Types",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.2.1\tGeneral",
+                            "text_content": "This clause defines structured data types, simple data types and enumerations that are applicable to several APIs defined in the present specification and can be referenced from data structures defined in the subsequent clauses.\nIn addition, data types that are defined in OpenAPI Specification [6] can also be referenced from data structures defined in the subsequent clauses.\nNOTE:\tAs a convention, data types in the present specification are written with an upper-case letter in the beginning. Parameters are written with a lower-case letter in the beginning. As an exception, data types that are also defined in OpenAPI Specification [6] can use a lower-case case letter in the beginning for consistency.\nTable 7.2.1-1 specifies data types re-used by the MSGin5G from other specifications, including a reference to their respective specifications and when needed, a short description of their use within the APIs of this specification.\nTable 7.2.1-1: Re-used Data Types\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.2.1-1: Re-used Data Types",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.2.2\tReferenced structured data types",
+                            "text_content": "Table 7.2.2-1 lists structured data types defined in this specification referenced by multiple services.\nTable 7.2.2-1: Referenced Structured Data Types\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.2.2-1: Referenced Structured Data Types",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.2.3\tReferenced Simple data types and enumerations",
+                            "text_content": "Following simple data types defined in Table 7.2.3.1-1 are applicable to several APIs in this document:\nTable 7.2.3.1-1: Simple data types applicable to several APIs\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.2.3.1-1: Simple data types applicable to several APIs",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "7.3\tUsage of HTTP",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For MSGin5G APIs, support of HTTP/1.1 (IETF RFC 9110 [11], IETF RFC 9111 [14] and IETF RFC 9912 [10]) over TLS is mandatory and support of HTTP/2 (IETF RFC 9113 [16]) over TLS is recommended.\nA functional entity desiring to use HTTP/2 shall use the HTTP upgrade mechanism to negotiate applicable HTTP version as described in IETF RFC 9113 [16].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.4\tContent type",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "JSON, IETF RFC 8259 [17], shall be used as content type of the HTTP bodies specified in the present specification as specified in clause 5.4 of 3GPP TS 29.500 [4]. The use of the JSON format shall be signalled by the content type \"application/json\".\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.5\tURI structure",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.5.1\tResource URI structure",
+                            "text_content": "The resource URI structure of all the APIs specified in this document shall be as specified in clause 5.2.4 of 3GPP TS 29.501 [9].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.5.2\tCustom operations URI structure",
+                            "text_content": "The custom operation definition is in Annex C of 3GPP TS 29.501 [9].\nThe URI of a custom operation which is associated with a resource shall have the following structure:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>/<custOpName>\nCustom operations can also be associated with the service instead of a resource. The URI of a custom operation which is not associated with a resource shall have the following structure:\n{apiRoot}/<apiName>/<apiVersion>/<custOpName>\nIn the above URI structures, \"apiRoot\", \"apiName\", \"apiVersion\" and \"apiSpecificResourceUriPart\" are as defined in clause 7.5.1 and \"custOpName\" represents the name of the custom operation as defined in clause 5.1.3.2 of 3GPP TS 29.501 [9].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.6\tNotifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "None.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.7\tError Handling",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "HTTP error handling shall be supported as specified in clause 5.2.4 of 3GPP TS 29.500 [4].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.8\tFeature negotiation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The procedures in clause 6.6.2 of 3GPP TS 29.500 [4] shall be applicable for the APIs defined in the present specification. For each of the APIs defined, the applicable list of features is contained in the related API definition.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.9\tHTTP headers",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The MSGin5G API shall support mandatory HTTP custom header fields specified in clause 5.2.3.2 of 3GPP TS 29.500 [4] and may support HTTP custom header fields specified in clause 5.2.3.3 of 3GPP TS 29.500 [4]. No specific custom headers are defined for the MSGin5G API in the present specification.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.10\tConventions for Open API specification files",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The conventions for Open API specification files as specified in clause 5.3 of 3GPP TS 29.501 [9] shall be applicable for all APIs in this document.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tMessage Server API definition",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tMSGS_ASRegistration API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.1.1\tAPI URI",
+                            "text_content": "The MSGS_ASRegistration service shall use the MSGS_ASRegistration API.\nThe request URIs used in HTTP requests from the AS towards the MSGin5G Server shall have the Resource URI structure as defined in clause 7.5 with the following clarifications:\n-\tThe <apiName> shall be \"msgs-asregistration\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 8.1.2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.1.2\tResources",
+                            "text_content": "The figure depicts the resource URI structure of the MSGS_ASRegistration API, which is used to register an MSGS_AS resource. The structure includes the resource identifier, resource type, and resource name. The figure provides a visual representation of the API's structure, making it easier to understand and interpret.\nFigure 8.1.2.1-1: Resource URI structure of the MSGS_ASRegistration API\nTable 8.1.2.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 8.1.2.1-1: Resources and methods overview\n\nThis resource represents all the Application Servers that are registered at a given MSGin5G Server.\nResource URI: {apiRoot}/msgs-asregistration/<apiVersion>/registrations\nThis resource shall support the resource URI variables defined in the table 8.1.2.2.2-1.\nTable 8.1.2.2.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 8.1.2.2.3.1-1.\nTable 8.1.2.2.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 8.1.2.2.3.1-2 and the response data structures and response codes specified in table 8.1.2.2.3.1-3.\nTable 8.1.2.2.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 8.1.2.2.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 8.1.2.2.3.1-4: Headers supported by the POST method on this resource\n\nTable 8.1.2.2.3.1-5: Headers supported by the 201 response code on this resource\n\nTable 8.1.2.2.3.1-6: Links supported by the 200 Response Code on this endpoint\n\nThis resource represents all the Application Servers that are deregistered at a given MSGin5G Server.\nResource URI: {apiRoot}/msgs-asregistration/<apiVersion>/registrations/{registrationId}\nThis resource shall support the resource URI variables defined in the table 8.1.2.3.2-1.\nTable 8.1.2.3.2-1: Resource URI variables for this resource\n\nThis method deregisters an AS registration from the MSGin5G Server. This method shall support the URI query parameters specified in the table 8.1.2.3.3.1-1.\nTable 8.1.2.3.3.1-1: URI query parameters supported by the DELETE method on this resource\n\nThis method shall support the request data structures specified in table 8.1.2.3.3.1-2 and the response data structures and response codes specified in table 8.1.2.3.3.1-3.\nTable 8.1.2.3.3.1-2: Data structures supported by the DELETE Request Body on this resource\n\nTable 8.1.2.3.3.1-3: Data structures supported by the DELETE Response Body on this resource\n\nTable 8.1.2.3.3.1-4: Headers supported by the DELETE method on this resource\n\nTable 8.1.2.3.3.1-5: Headers supported by the 204 response code on this resource\n\nTable 8.1.2.3.3.1-6: Links supported by the 200 Response Code on this endpoint\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.1.2.1-1: Resources and methods overview",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.2.2-1: Resource URI variables for this resource",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.2.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.2.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.2.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.2.3.1-4: Headers supported by the POST method on this resource",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.2.3.1-5: Headers supported by the 201 response code on this resource",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.2.3.1-6: Links supported by the 200 Response Code on this endpoint",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.3.2-1: Resource URI variables for this resource",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.3.3.1-1: URI query parameters supported by the DELETE method on this resource",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.3.3.1-2: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.3.3.1-3: Data structures supported by the DELETE Response Body on this resource",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.3.3.1-4: Headers supported by the DELETE method on this resource",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.3.3.1-5: Headers supported by the 204 response code on this resource",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.2.3.3.1-6: Links supported by the 200 Response Code on this endpoint",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.1.3\tCustom Operations without associated resources",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.1.4\tNotifications",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.1.5\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API. Data types listed in clause 7.2 apply to this API Table 8.1.5.1-1 specifies the data types defined specifically for the MSGS_ASRegistration API service.\nTable 8.1.5.1-1: MSGS_ASRegistration API specific Data Types\n\nTable 8.1.5.1-2 specifies data types re-used by the MSGS_ASRegistration API service.\nTable 8.1.5.1-2: Re-used Data Types\n\nTable 8.1.5.2.2-1: Definition of type ASRegistration\n\nTable 8.1.5.2.3-1: Definition of type ASRegistrationAck\n\nTable 8.1.5.2.4-1: Definition of type ASProfile\n\nNone.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.1.5.1-1: MSGS_ASRegistration API specific Data Types",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.5.1-2: Re-used Data Types",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.5.2.2-1: Definition of type ASRegistration",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.5.2.3-1: Definition of type ASRegistrationAck",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.1.5.2.4-1: Definition of type ASProfile",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.1.6\tError Handling",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 7.7.\nIn addition, the requirements in the following clauses shall apply.\nIn this Release of the specification, there are no additional protocol errors applicable for the MSGS_ASRegistration API.\nThe application errors defined for the MSGS_ASRegistration API are listed in table 8.1.6.3-1.\nTable 8.1.6.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.1.6.3-1: Application errors",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.1.7\tFeature negotiation",
+                            "text_content": "General feature negotiation procedures are defined in clause 7.8. Table 8.1.7-1 lists the supported features for AS_Registration API.\nTable 8.1.7-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.1.7-1: Supported Features",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "8.2\tMSGS_MSGDelivery API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.2.1\tAPI URI",
+                            "text_content": "The MSGS_MSGDelivery service shall use the MSGS_MSGDelivery API, The MSGS_MSGDelivery API corresponding to Mm5s APIs as defined in in 3GPP TS 23.554 [2].\nThe request URIs used in HTTP requests from the Message Gateway (on behalf of Legacy 3GPP UE or Non-3GPP UE) or the Application Server towards the MSGin5G Server shall have the Resource URI structure as defined in clause 7.5 with the following clarifications:\n-\tThe <apiName> shall be \"msgs-msgdelivery\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 8.2.2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.2.2\tResources",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.2.3\tCustom Operations without associated resources",
+                            "text_content": "The structure of the custom operation URIs of the MSGS_MSGDelivery service is shown in Figure 8.2.3.1-1.\nThe figure depicts a custom operation URI structure of the MSGS_MSGDelivery API, which is used to deliver messages to the MSGS_MSGDelivery service. The structure includes a URI for the message, a URI for the service, and a URI for the message delivery method. The figure provides a visual representation of the API's structure, making it easier to understand and use.\nFigure 8.2.3.1-1: Custom operation URI structure of the MSGS_MSGDelivery API\nTable 8.2.3.1-1 provides an overview of the custom operations and applicable HTTP methods.\nTable 8.2.3.1-1: Custom operations without associated resources\n\nThis operation is used by the Application Server to deliver message to a given MSGin5G Server.\nThis operation shall support the response data structures and response codes specified in Table 8.2.3.2.2-1 and Table 8.2.3.2.2-2.\nTable 8.2.3.2.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 8.2.3.2.2-2: Data structures supported by the POST Response Body on this resource\n\nThis operation is used by the Message Gateway (on behalf of Legacy 3GPP UE or Non-3GPP UE) to deliver message to a given MSGin5G Server.\nThis operation shall support the response data structures and response codes specified in Table 8.2.3.3.2-1 and Table 8.2.3.3.2-2.\nTable 8.2.3.3.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 8.2.3.3.2-2: Data structures supported by the POST Response Body on this resource\n\nThis operation is used by the Message Gateway (on behalf of Legacy 3GPP UE or Non-3GPP UE) or the Application Server to deliver status report to a given MSGin5G Server.\nThis operation shall support the response data structures and response codes specified in Table 8.2.3.4.2-1 and Table 8.2.3.4.2-2.\nTable 8.2.3.4.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 8.2.3.4.2-2: Data structures supported by the POST Response Body on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.2.3.1-1: Custom operations without associated resources",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.3.2.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.3.2.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.3.3.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.3.3.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.3.4.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.3.4.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.2.4\tNotifications",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.2.5\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API. Data types listed in clause 7.2 apply to this API. Table 8.2.5.1-1 specifies the data types defined specifically for the MSGS_MSGDelivery API service.\nTable 8.2.5.1-1: API specific Data Types\n\nTable 8.2.5.1-2 specifies data types re-used by the MSGS_MSGDelivery API service.\nTable 8.2.5.1-2: Re-used Data Types\n\nTable 8.2.5.2.2-1: Definition of type ASMessageDelivery\n\nTable 8.2.5.2.3-1: Definition of type UEMessageDelivery\n\nTable 8.2.5.2.4-1: Definition of type MessageDeliveryAck\n\nTable 8.2.5.2.5-1: Definition of type MessageSegmentParameters\n\nTable 8.2.5.2.6-1: Definition of type StoreAndForwardParameters\n\nTable 8.2.5.2.7-1: Definition of type DeliveryStatusReport\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nNone.\nTable 8.2.5.3.3-1: Enumeration DeliveryStatus\n\nTable 8.2.5.3.4-1: Enumeration ReportDeliveryStatus\n\nTable 8.2.5.3.5-1: Enumeration Priority\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.2.5.1-1: API specific Data Types",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.5.1-2: Re-used Data Types",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.5.2.2-1: Definition of type ASMessageDelivery",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.5.2.3-1: Definition of type UEMessageDelivery",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.5.2.4-1: Definition of type MessageDeliveryAck",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.5.2.5-1: Definition of type MessageSegmentParameters",
+                                    "table number": 50,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.5.2.6-1: Definition of type StoreAndForwardParameters",
+                                    "table number": 51,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.5.2.7-1: Definition of type DeliveryStatusReport",
+                                    "table number": 52,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.5.3.3-1: Enumeration DeliveryStatus",
+                                    "table number": 53,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.5.3.4-1: Enumeration ReportDeliveryStatus",
+                                    "table number": 54,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.5.3.5-1: Enumeration Priority",
+                                    "table number": 55,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.2.6\tError Handling",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 7.7.\nIn addition, the requirements in the following clauses shall apply.\nIn this Release of the specification, there are no additional protocol errors applicable for the MSGS_MSGDelivery API.\nThe application errors defined for the MSGS_MSGDelivery API are listed in table 8.2.6.3-1.\nTable 8.2.6.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.2.6.3-1: Application errors",
+                                    "table number": 56,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.2.7\tFeature negotiation",
+                            "text_content": "General feature negotiation procedures are defined in clause 7.8. Table 8.2.7-1 lists the supported features for MSGS_MSGDelivery API.\nTable 8.2.7-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.2.7-1: Supported Features",
+                                    "table number": 57,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "8.3\tMSGS_TopiclistEvent API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.3.1\tAPI URI",
+                            "text_content": "The MSGS_TopiclistEvent service shall use the MSGS_TopiclistEvent API.\nThe request URIs used in HTTP requests from the MSGin5G Server 1 towards the MSGin5G Server 2 shall have the Resource URI structure as defined in clause 7.5 with the following clarifications:\n-\tThe <apiName> shall be \"msgs-topiclistevent\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 8.3.2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.3.2\tResources",
+                            "text_content": "The figure depicts the structure of the MSGS_TopiclistEvent API resource URI, which is used to access the MSGS_TopiclistEvent resource. The API is used to retrieve a list of events related to a specific topic. The structure includes the resource URI, which is a URL, and the parameters that are used to access the resource. The figure provides a visual representation of the API's structure, making it easier to understand and use.\nFigure 8.3.2.1-1: Resource URI structure of the MSGS_TopiclistEvent API\nTable 8.3.2.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 8.3.2.1-1: Resources and methods overview\n\nThis resource represents all the MSGin5G Servers that are subscribed at a given Messaging Topic on a MSGin5G Server.\nResource URI: {apiRoot}/msgs-topiclistevent/<apiVersion>/topiclist-subscriptions\nThis resource shall support the resource URI variables defined in the table 8.3.2.2.2-1.\nTable 8.3.2.2.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 8.3.2.2.3.1-1.\nTable 8.3.2.2.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 8.3.2.2.3.1-2 and the response data structures and response codes specified in table 8.3.2.2.3.1-3.\nTable 8.3.2.2.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 8.3.2.2.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 8.3.2.2.3.1-4: Headers supported by the POST method on this resource\n\nTable 8.3.2.2.3.1-5: Headers supported by the 201 response code on this resource\n\nThe Individual Topic List Subscription resource represents single Messaging Topic list subscription at a given MSGin5G Server. The resource allows an MSGin5G Server to delete Individual Topic List Subscription resource.\nResource URI: {apiRoot}/msgs-topiclistevent/<apiVersion>/topiclist-subscriptions/{subscriptionId}\nThis resource shall support the resource URI variables defined in the table 8.3.2.3.2-1.\nTable 8.3.2.3.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 8.3.2.3.3.1-1.\nTable 8.3.2.3.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 8.3.2.3.3.1-2 and the response data structures and response codes specified in table 8.3.2.3.3.1-3.\nTable 8.3.2.3.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 8.3.2.3.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 8.3.2.3.3.1-4: Headers supported by the POST method on this resource\n\nTable 8.3.2.3.3.1-5: Headers supported by the 204 response code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.3.2.1-1: Resources and methods overview",
+                                    "table number": 58,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.2.2.2-1: Resource URI variables for this resource",
+                                    "table number": 59,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.2.2.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 60,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.2.2.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 61,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.2.2.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 62,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.2.2.3.1-4: Headers supported by the POST method on this resource",
+                                    "table number": 63,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.2.2.3.1-5: Headers supported by the 201 response code on this resource",
+                                    "table number": 64,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.2.3.2-1: Resource URI variables for this resource",
+                                    "table number": 65,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.2.3.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 66,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.2.3.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 67,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.2.3.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 68,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.2.3.3.1-4: Headers supported by the POST method on this resource",
+                                    "table number": 69,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.2.3.3.1-5: Headers supported by the 204 response code on this resource",
+                                    "table number": 70,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.3.3\tCustom Operations without associated resources",
+                            "text_content": "The structure of the custom operation URIs of the MSGS_MSGTopiclistEvent service is shown in Figure 8.3.3.1-1.\nThe figure depicts a custom operation URI structure of the MSGS_TopiclistEvent API, which is used to manage the topic list events in a message queue system. The structure includes a list of event types, their corresponding event IDs, and the corresponding event handlers. This allows for efficient management of event processing and ensures that the system can handle a large number of events without causing performance issues.\nFigure 8.3.3.1-1: Custom operation URI structure of the MSGS_TopiclistEvent API\nTable 8.3.3.1-1 provides an overview of the custom operations and applicable HTTP methods.\nTable 8.3.3.1-1: Custom operations without associated resources\n\nThe operation is used by the MSGin5G Server to request the other MSGin5G Server to create a subscription for one or more Messaging Topic(s).\nThis operation shall support the request data structures shown in Table 8.3.3.2.2-1 and the response data structures and error codes specified in Tables 8.3.3.2.2-2.\nTable 8.3.3.2.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 8.3.3.2.2-2: Data structures supported by the POST Response Body on this resource\n\nThe operation is used by the MSGin5G Server to request the other MSGin5G Server to remove a subscription for one or more Messaging Topic(s).\nThis operation shall support the request data structures shown in Table 8.3.3.3.2-1 and the response data structures and error codes specified in Tables 8.3.3.3.2-2.\nTable 8.3.3.3.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 8.3.3.3.2-2: Data structures supported by the POST Response Body on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.3.3.1-1: Custom operations without associated resources",
+                                    "table number": 71,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.3.2.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 72,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.3.2.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 73,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.3.3.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 74,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.3.3.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 75,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.3.4\tNotifications",
+                            "text_content": "Notifications shall comply to clause 6.2 of 3GPP TS 29.500 [4] and clause 4.6.2.3 of 3GPP TS 29.501 [5].\nTable 8.3.4.1-1: Notifications overview\n\nThe Topiclist Notification is used by the MSGin5G Server to notify Messaging Topic list change events to another MSGin5G Server that has subscribed to such Messaging Topic list.\nThe Callback URI \"{notificationURI}\" shall be used with the callback URI variables defined in table 8.3.4.2.2-1.\nTable 8.3.4.2.2-1: Callback URI variables\n\nThis method shall support the request data structures specified in table 8.3.4.2.3.1-1 and the response data structures and response codes specified in table 8.3.4.2.3.1-2.\nTable 8.3.4.2.3.1-1: Data structures supported by the POST Request Body\n\nTable 8.3.4.2.3.1-2: Data structures supported by the POST Response Body\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.3.4.1-1: Notifications overview",
+                                    "table number": 76,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.4.2.2-1: Callback URI variables",
+                                    "table number": 77,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.4.2.3.1-1: Data structures supported by the POST Request Body",
+                                    "table number": 78,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.4.2.3.1-2: Data structures supported by the POST Response Body",
+                                    "table number": 79,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.3.5\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API. Data types listed in clause 7.2 apply to this API Table 8.3.5.1-1 specifies the data types defined specifically for the MSGS_TopiclistEvent API service.\nTable 8.3.5.1-1: TopiclistEvent API specific Data Types\n\nTable 8.3.5.1-2 specifies data types re-used by the MSGS_TopiclistEvent API service.\nTable 8.3.5.1-2: Re-used Data Types\n\nTable 8.3.5.2.2-1: Definition of type TopicListSubscription\n\nTable 8.3.5.2.3-1: Definition of type TopicListSubscription\n\nTable 8.3.5.2.4-1: Definition of type TopicListSubscriptionAck\n\nTable 8.3.5.2.5-1: Definition of type TopicListSubscriptionAck\n\nTable 8.3.5.2.6-1: Definition of type TopicSubscription\n\nTable 8.3.5.2.7-1: Definition of type TopicSubscriptionAck\n\nTable 8.3.5.2.8-1: Definition of type TopicUnsubscription\n\nTable 8.3.5.2.9-1: Definition of type TopicListNotification\n\nTable 8.3.5.2.10-1: Definition of type MessagingTopic\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nTable 8.3.5.3.2-1: Enumeration UpdateStatus\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.3.5.1-1: TopiclistEvent API specific Data Types",
+                                    "table number": 80,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.5.1-2: Re-used Data Types",
+                                    "table number": 81,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.5.2.2-1: Definition of type TopicListSubscription",
+                                    "table number": 82,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.5.2.3-1: Definition of type TopicListSubscription",
+                                    "table number": 83,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.5.2.4-1: Definition of type TopicListSubscriptionAck",
+                                    "table number": 84,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.5.2.5-1: Definition of type TopicListSubscriptionAck",
+                                    "table number": 85,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.5.2.6-1: Definition of type TopicSubscription",
+                                    "table number": 86,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.5.2.7-1: Definition of type TopicSubscriptionAck",
+                                    "table number": 87,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.5.2.8-1: Definition of type TopicUnsubscription",
+                                    "table number": 88,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.5.2.9-1: Definition of type TopicListNotification",
+                                    "table number": 89,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.5.2.10-1: Definition of type MessagingTopic",
+                                    "table number": 90,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.3.5.3.2-1: Enumeration UpdateStatus",
+                                    "table number": 91,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.3.6\tError Handling",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 7.7.\nIn addition, the requirements in the following clauses shall apply.\nIn this Release of the specification, there are no additional protocol errors applicable for the MSGS_TopiclistEvent API.\nThe application errors defined for the MSGS_TopiclistEvent API are listed in table 8.3.6.3-1.\nTable 8.3.6.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.3.6.3-1: Application errors",
+                                    "table number": 92,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "8.3.7\tFeature negotiation",
+                            "text_content": "General feature negotiation procedures are defined in clause 7.8. Table 8.3.7-1 lists the supported features for MSGS_TopiclistEvent API.\nTable 8.3.7-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.3.7-1: Supported Features",
+                                    "table number": 93,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "9\tMessage Gateway API definition",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "9.1\tMSGG_L3GDelivery API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.1.1\tAPI URI",
+                            "text_content": "The MSGG_L3GDelivery service shall use the MSGG_L3GDelivery API, The MSGG_L3GDelivery API corresponding to Ml3g APIs as defined in in 3GPP TS 23.554 [2].\nThe request URIs used in HTTP requests from the MSGin5G Server towards the Legacy 3GPP Message Gateway shall have the Resource URI structure as defined in clause 7.5 with the following clarifications:\n-\tThe <apiName> shall be \"msgg-l3gdelivery\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 9.1.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.1.2\tResources",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.1.3\tCustom Operations without associated resources",
+                            "text_content": "The structure of the custom operation URIs of the MSGG_L3GDelivery service is shown in Figure 9.1.3.1-1.\nThe figure depicts a custom operation URI structure of the MSGG_L3GDelivery API, which is used to manage the delivery of L3G (Layer 3 Generic) messages. The structure includes a set of parameters and a method to retrieve the response. The figure provides a visual representation of the structure, allowing for easy understanding of the API's functionality.\nFigure 9.1.3.1-1: Custom operation URI structure of the MSGG_L3GDelivery API\nTable 9.1.3.1-1 provides an overview of the custom operations and applicable HTTP methods.\nTable 9.1.3.1-1: Custom operations without associated resources\n\nThis operation is used by the MSGin5G Server to deliver message to a given Legacy 3GPP Message Gateway.\nThis operation shall support the response data structures and response codes specified in table 9.1.3.2.2-1 and table 9.1.3.2.2-2.\nTable 9.1.3.2.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 9.1.3.2.2-2: Data structures supported by the POST Response Body on this resource\n\nThis operation is used by the MSGin5G Server to deliver status report to a given Legacy 3GPP Message Gateway.\nThis operation shall support the response data structures and response codes specified in Table 9.1.3.3.2-1 and Table 9.1.3.3.2-2.\nTable 9.1.3.3.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 9.1.3.3.2-2: Data structures supported by the POST Response Body on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.1.3.1-1: Custom operations without associated resources",
+                                    "table number": 94,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.3.2.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 95,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.3.2.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 96,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.3.3.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 97,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.3.3.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 98,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "9.1.4\tNotifications",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.1.5\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API. Data types listed in clause 7.2 apply to this API. Table 9.1.5.1-1 specifies the data types defined specifically for the MSGG_L3GDelivery API service.\nTable 9.1.5.1-1: MSGG_L3GDelivery API specific Data Types\n\nTable 9.1.5.1-2 specifies data types re-used by the MSGG_L3GDelivery API service.\nTable 9.1.5.1-2: Re-used Data Types\n\nTable 9.1.5.2.2-1: Definition of type L3gMessageDelivery\n\nTable 9.1.5.2.3-1: Definition of type Address\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nTable 9.1.5.3.2-1: Enumeration AddressType\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.1.5.1-1: MSGG_L3GDelivery API specific Data Types",
+                                    "table number": 99,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.5.1-2: Re-used Data Types",
+                                    "table number": 100,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.5.2.2-1: Definition of type L3gMessageDelivery",
+                                    "table number": 101,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.5.2.3-1: Definition of type Address",
+                                    "table number": 102,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.5.3.2-1: Enumeration AddressType",
+                                    "table number": 103,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "9.1.6\tError Handling",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 7.7.\nIn addition, the requirements in the following clauses shall apply.\nIn this Release of the specification, there are no additional protocol errors applicable for the MSGG_L3GDelivery API.\nThe application errors defined for the MSGG_L3GDelivery API are listed in table 9.1.6.3-1.\nTable 9.1.6.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.1.6.3-1: Application errors",
+                                    "table number": 104,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "9.1.7\tFeature negotiation",
+                            "text_content": "General feature negotiation procedures are defined in clause 7.8. Table 9.1.7-1 lists the supported features for MSGG_L3GDelivery API.\nTable 9.1.7-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.1.7-1: Supported Features",
+                                    "table number": 105,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "9.2\tMSGG_N3GDelivery API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.2.1\tAPI URI",
+                            "text_content": "The MSGG_N3GDelivery service shall use the MSGG_N3GDelivery API, The MSGG_N3GDelivery API corresponding to Mn3g APIs as defined in in 3GPP TS 23.554 [2].\nThe request URIs used in HTTP requests from the MSGin5G Server towards the Non-3GPP Message Gateway shall have the Resource URI structure as defined in clause 7.5 with the following clarifications:\n-\tThe <apiName> shall be \"msgg-n3gdelivery\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 9.2.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.2.2\tResources",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.2.3\tCustom Operations without associated resources",
+                            "text_content": "The structure of the custom operation URIs of the MSGG_N3GDelivery service is shown in Figure 9.2.3.1-1.\nThe figure depicts a custom operation URI structure of the MSGG_N3GDelivery API, which is used to manage the delivery of 3G and 4G services. The structure includes a set of parameters and a set of methods, allowing for the creation, modification, and deletion of custom operations. The figure also includes a visual representation of the structure, with each parameter and method clearly labeled.\nFigure 9.2.3.1-1: Custom operation URI structure of the MSGG_N3GDelivery API\nTable 9.2.3.1-1 provides an overview of the custom operations and applicable HTTP methods.\nTable 9.2.3.1-1: Custom operations without associated resources\n\nThis operation is used by the MSGin5G Server to deliver message to a given Non-3GPP Message Gateway.\nThis operation shall support the response data structures and response codes specified in table 9.2.3.2.2-1 and table 9.2.3.2.2-2.\nTable 9.2.3.2.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 9.2.3.2.2-2: Data structures supported by the POST Response Body on this resource\n\nThis operation is used by the MSGin5G Server to deliver status report to a given Non-3GPP Message Gateway.\nThis operation shall support the response data structures and response codes specified in table 9.2.3.3.2-1 and table 9.2.3.3.2-2.\nTable 9.2.3.3.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 9.2.3.3.2-2: Data structures supported by the POST Response Body on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.2.3.1-1: Custom operations without associated resources",
+                                    "table number": 106,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.3.2.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 107,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.3.2.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 108,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.3.3.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 109,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.3.3.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 110,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "9.2.4\tNotifications",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.2.5\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API. Data types listed in clause 7.2 apply to this API. Table 9.2.5.1-1 specifies the data types defined specifically for the MSGG_N3GDelivery API service.\nTable 9.2.5.1-1: MSGG_N3GDelivery API specific Data Types\n\nTable 9.2.5.1-2 specifies data types re-used by the MSGG_N3GDelivery API service.\nTable 9.2.5.1-2: Re-used Data Types\n\nTable 9.2.5.2.2-1: Definition of type N3gMessageDelivery\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.2.5.1-1: MSGG_N3GDelivery API specific Data Types",
+                                    "table number": 111,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.5.1-2: Re-used Data Types",
+                                    "table number": 112,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.5.2.2-1: Definition of type N3gMessageDelivery",
+                                    "table number": 113,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "9.2.6\tError Handling",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 7.7.\nIn addition, the requirements in the following clauses shall apply.\nIn this Release of the specification, there are no additional protocol errors applicable for the MSGG_N3GDelivery API.\nThe application errors defined for the MSGG_N3GDelivery API are listed in table 9.2.6.3-1.\nTable 9.2.6.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.2.6.3-1: Application errors",
+                                    "table number": 114,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "9.2.7\tFeature negotiation",
+                            "text_content": "General feature negotiation procedures are defined in clause 7.8. Table 9.2.7-1 lists the supported features for MSGG_N3GDelivery API.\nTable 9.2.7-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.2.7-1: Supported Features",
+                                    "table number": 115,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "9.3\tMSGG_BGDelivery API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.3.1\tAPI URI",
+                            "text_content": "The MSGG_BGDelivery service shall use the MSGG_BGDelivery API, The MSGG_BGDelivery API corresponding to Mbg APIs as defined in in 3GPP TS 23.554 [2].\nThe request URIs used in HTTP requests from the MSGin5G Server towards the Broadcast Message Gateway shall have the Resource URI structure as defined in clause 7.5 with the following clarifications:\n-\tThe <apiName> shall be \"msgg-bgdelivery\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 9.3.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.3.2\tResources",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.3.3\tCustom Operations without associated resources",
+                            "text_content": "The structure of the custom operation URIs of the MSGG_BGDelivery service is shown in Figure 9.3.3.1-1.\nThe figure depicts a custom operation URI structure of the MSGG_BGDelivery API, which is used to manage BGDelivery operations. The structure includes a base URI, a path, and a method, allowing for the creation, modification, and deletion of BGDelivery operations. The figure also includes a list of operation URIs, providing a reference for the user to navigate through the API.\nFigure 9.3.3.1-1: Custom operation URI structure of the MSGG_BGDelivery API\nTable 9.3.3.1-1 provides an overview of the custom operations and applicable HTTP methods.\nTable 9.3.3.1-1: Custom operations without associated resources\n\nThis operation is used by the MSGin5G Server to deliver message to a given Broadcast Message Gateway.\nThis operation shall support the response data structures and response codes specified in table 9.3.3.2.2-1 and table 9.3.3.2.2-2.\nTable 9.3.3.2.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 9.3.3.2.2-2: Data structures supported by the POST Response Body on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.3.3.1-1: Custom operations without associated resources",
+                                    "table number": 116,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.3.3.2.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 117,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.3.3.2.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 118,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "9.3.4\tNotifications",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "9.3.5\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API. Data types listed in clause 7.2 apply to this API. Table 9.3.5.1-1 specifies the data types defined specifically for the MSGG_BGDelivery API service.\nTable 9.3.5.1-1: MSGG_BGDelivery API specific Data Types\n\nTable 9.3.5.1-2 specifies data types re-used by the MSGG_BGDelivery API service.\nTable 9.3.5.1-2: Re-used Data Types\n\nTable 9.3.5.2.2-1: Definition of type BgMessageDelivery\n\nEditor's Note: Definition of all the attributes in BgMessageDelivery data type as defined in 3GPP TS 23.554 [2] clause 8.3.3 is FFS.\n\nNone.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.3.5.1-1: MSGG_BGDelivery API specific Data Types",
+                                    "table number": 119,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.3.5.1-2: Re-used Data Types",
+                                    "table number": 120,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.3.5.2.2-1: Definition of type BgMessageDelivery",
+                                    "table number": 121,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "9.3.6\tError Handling",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 7.7.\nIn addition, the requirements in the following clauses shall apply.\nIn this Release of the specification, there are no additional protocol errors applicable for the MSGG_BGDelivery API.\nThe application errors defined for the MSGG_BGDelivery API are listed in table 9.3.6.3-1.\nTable 9.3.6.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.3.6.3-1: Application errors",
+                                    "table number": 122,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "9.3.7\tFeature negotiation",
+                            "text_content": "General feature negotiation procedures are defined in clause 7.8. Table 9.3.7-1 lists the supported features for MSGG_BGDelivery API.\nTable 9.3.7-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.3.7-1: Supported Features",
+                                    "table number": 123,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "10\tSecurity",
+            "description": "TLS shall be used to support the security communication between the MSGin5G Server and the Application Server over MSGin5G-3 interface, and also between MSGin5G Server and the Message Gateway over MSGin5G-2 or MSGin5G-4 interface as specified in 3GPP TS 33.862 [19] and 3GPP TS 33.501 [20]. The access to the MSGin5G Service APIs shall be authorized by means of OAuth2 protocol (see IETF RFC 6749 [21]), based on local configuration, using the \"Client Credentials\" authorization grant. If OAuth2 is used, a client, prior to consuming services offered by the MSGin5G Service APIs, shall obtain a \"token\" from the authorization server.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "11\tUsing Common API Framework",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "11.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "When CAPIF is used with a MSGin5G service, the MSGin5G Server shall support the following as defined in 3GPP TS 29.222 [8]:\n-\tthe API exposing function and related APIs over CAPIF-2/2e and CAPIF-3/3e reference points;\n-\tthe API publishing function and related APIs over CAPIF-4/4e reference point;\n-\tthe API management function and related APIs over CAPIF-5/5e reference point; and\n-\tat least one of the security methods for authentication and authorization, and related security mechanisms.\nIn a centralized deployment as defined in 3GPP TS 23.222 [7], where the CAPIF core function and API provider domain functions are co-located, the interactions between the CAPIF core function and API provider domain functions may be independent of CAPIF-3/3e, CAPIF-4/4e and CAPIF-5/5e reference points.\nWhen CAPIF is used with a MSGin5G service, the MSGin5G Server shall register all the features for northbound APIs in the CAPIF Core Function.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "11.2\tSecurity",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "When CAPIF is used for external exposure, before invoking the API exposed by the MSGin5G Server, the NF service consumer (e.g. the Application Server) as API invoker shall negotiate the security method (PKI, TLS-PSK or OAUTH2) with CAPIF core function and ensure the MSGin5G Server has enough credential to authenticate the NF service consumer (e.g. the Application Server), see 3GPP TS 29.222 [8], clause 5.6.2.2 and clause 6.2.2.2.\nIf PKI or TLS-PSK is used as the selected security method between the NF service consumer (e.g. the Application Server) and the MSGin5G Server, upon API invocation, the MSGin5G Server shall retrieve the authorization information from the CAPIF core function as described in 3GPP TS 29.222 [8], clause 5.6.2.4.\nAs indicated in 3GPP TS 33.122 [22], the access to the MSGin5G APIs may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [21]), using the \"Client Credentials\" authorization grant, where the CAPIF core function (see 3GPP TS 29.222 [8]) plays the role of the authorization server.\nNOTE 1:\tIn this release, only \"Client Credentials\" authorization grant is supported.\nIf OAuth2 is used as the selected security method between the NF service consumer (e.g. the Application Server) and the MSGin5G Server, the the NF service consumer (e.g. the Application Server), prior to consuming services offered by the MSGin5G APIs, shall obtain a \"token\" from the authorization server, by invoking the Obtain_Authorization service, as described in 3GPP TS 29.222 [8], clause 5.6.2.3.2.\nThe MSGin5G APIs do not define any scopes for OAuth2 authorization. It is the MSGin5G Server responsibility to check whether the NF service consumer (e.g. the Application Server) is authorized to use an API based on the \"token\". Once the MSGin5G Server verifies the \"token\", it shall check whether the MSGin5G Server identifier in the \"token\" matches its own published identifier, and whether the API name in the \"token\" matches its own published API name. If those checks are passed, the NF service consumer (e.g. the Application Server) has full authority to access any resource or operation for the invoked API.\nNOTE 2:\tFor aforementioned security methods, the MSGin5G Server needs to apply admission control according to access control policies after performing the authorization checks.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "12\tUsage of Network Capabilities",
+            "description": "As specified in 3GPP TS 23.554 [2], MSGin5G Server may perform procedures of UE reachability monitoring and device triggering by consuming the 3GPP core network capabilities from SCEF/NEF as specified in 3GPP TS 29.522 [23], with description of the AF applies to the MSGin5G Server. With usage of network capabilities, the following procedure for UE reachability monitoring and device triggering procedure could be supported. Upon the MSGin5G Server receiving a request to send MSGin5G message to a MSGin5G UE, the MSGin5G Server may determine whether the recipient MSGin5G Client is not reachable:\n-\tby using the recipient's information received when performing the procedures specified in clause 8.9.2.2 of 3GPP TS 23.554 [2]; or\n-\tby using the recipient's availability information provided by MSGin5G Client at registration as specified in clause 8.2.1 of 3GPP TS 23.554 [2].\nIf the recipient MSGin5G Client is not reachable, the MSGin5G Server may send a request for device triggering to SCEF/NEF as specified in clause 4.4.3 of 3GPP TS 29.522 [23]. The request uses the information provided by the MSGin5G Client at registration in the MSGin5G Client Triggering Information IE. And the MSGin5G Server may use the MSGin5G Client communication availability and/or pre-configured information to determine the timing of the device triggering request, e.g. the trigger request may be sent to ensure that the target UE is reachable prior to resuming MSGin5G communications.\nAs specified in clause 4.4.6 of 3GPP TS 29.122 [24], upon the MSGin5G Server receiving an HTTP POST request from SCEF/NEF indicating the result of the triggering delivery, the MSGin5G Server shall respond with an HTTP 200 OK or 204 No Content response.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "This Annex is based on the OpenAPI Specification [6] and provides corresponding representations of all APIs defined in the present specification.\nNOTE 1:\tAn OpenAPIs representation embeds JSON Schema representations of HTTP message bodies.\nThis Annex shall take precedence when being discrepant to other parts of the specification with respect to the encoding of information elements and methods within the API(s).\nNOTE 2:\tThe semantics and procedures, as well as conditions, e.g. for the applicability and allowed combinations of attributes or values, not expressed in the OpenAPI definitions but defined in other parts of the specification also apply.\nInformative copies of the OpenAPI specification files contained in this 3GPP Technical Specification are available on a Git-based repository, that uses the GitLab software version control system (see clause 5B of the 3GPP TR 21.900 [18] and clause 5.3.1 of the 3GPP TS 29.501 [9] for further information).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tMSGS_ASRegistration API",
+            "description": "openapi: 3.0.0\ninfo:\ntitle: MSGS_ASRegistration\nversion: 1.1.0-alpha.2\ndescription: |\nAPI for MSGS AS Registration Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: >\n3GPP TS 29.538 V18.4.0; Enabling MSGin5G Service; Application Programming Interfaces (API)\nspecification; Stage 3\nurl: https://www.3gpp.org/ftp/Specs/archive/29_series/29.538/\n\nservers:\n- url: '{apiRoot}/msgs-asregistration/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials: []\n\npaths:\n/registrations:\npost:\nsummary: Registers a new AS at a MSGin5G Server\ntags:\n- AS registration\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/ASRegistration'\nresponses:\n'201':\ndescription: AS information is registered successfully at MSGin5G Server\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/ASRegistrationAck'\nheaders:\nLocation:\ndescription: 'Contains the URI of the newly created resource'\nrequired: true\nschema:\ntype: string\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n/registrations/{registrationId}:\ndelete:\nsummary: Delete an existing AS registration at MSGin5G Server\ntags:\n- AS DeRegistration\nparameters:\n- name: registrationId\nin: path\ndescription: AS registration Id\nrequired: true\nschema:\ntype: string\nresponses:\n'200':\ndescription: The individual AS registration is deleted successfully.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/ASRegistrationAck'\n'204':\ndescription: >\nNo Content. The individual AS registration resource is deleted successfully.\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{tokenUrl}'\nscopes: {}\n\n\nschemas:\n#\n# STRUCTURED DATA TYPES\n#\nASRegistration:\ndescription: AS registration data\ntype: object\nrequired:\n- asSvcId\nproperties:\nasSvcId:\ntype: string\nappId:\ntype: string\ntargetUri:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nasProf:\n$ref: '#/components/schemas/ASProfile'\n\nASRegistrationAck:\ndescription: AS registration response data\ntype: object\nrequired:\n- asSvcId\n- result\nproperties:\nasSvcId:\ntype: string\nresult:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'\n\n\nASProfile:\ndescription: AS profile information\ntype: object\nproperties:\nappName:\ntype: string\nappProviders:\ntype: array\nitems:\ntype: string\nminItems: 1\ndescription: The provider of the AS.\nappSenarios:\ntype: array\nitems:\ntype: string\nminItems: 1\ndescription: The application scenario.\nappCategory:\ntype: string\nasStatus:\ntype: string\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.3\tMSGS_MSGDelivery API",
+            "description": "openapi: 3.0.0\ninfo:\ntitle: MSGS_MSGDelivery\nversion: 1.1.0-alpha.3\ndescription: |\nAPI for MSGG MSGin5G Server Message Delivery Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: >\n3GPP TS 29.538 V18.4.0; Enabling MSGin5G Service; Application Programming Interfaces (API)\nspecification; Stage 3\nurl: https://www.3gpp.org/ftp/Specs/archive/29_series/29.538/\n\nservers:\n- url: '{apiRoot}/msgs-msgdelivery/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials: []\n\n\npaths:\n/deliver-as-message:\npost:\nsummary: AS deliver message to MSGin5G Server\ntags:\n- AS Message delivery\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/ASMessageDelivery'\nresponses:\n'200':\ndescription: OK, AS Message delivery successful\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MessageDeliveryAck'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n/deliver-ue-message:\npost:\nsummary: UE deliver message to MSGin5G Server\ntags:\n- UE Message delivery\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/UEMessageDelivery'\nresponses:\n'200':\ndescription: OK, UE Message delivery successful\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MessageDeliveryAck'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n/deliver-report:\npost:\nsummary: AS or UE deliver status report to MSGin5G Server\ntags:\n- AS/UE status report delivery\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/DeliveryStatusReport'\nresponses:\n'200':\ndescription: OK, status report delivery successfully\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MessageDeliveryAck'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{tokenUrl}'\nscopes: {}\n\n\nschemas:\n#\n# STRUCTURED DATA TYPES\n#\nASMessageDelivery:\ndescription: Contains the AS message delivery data\ntype: object\nrequired:\n- oriAddr\n- destAddr\n- msgId\n- stoAndFwInd\nproperties:\noriAddr:\n$ref: 'TS29538_MSGG_L3GDelivery.yaml#/components/schemas/Address'\ndestAddr:\n$ref: 'TS29538_MSGG_L3GDelivery.yaml#/components/schemas/Address'\nappId:\ntype: string\nmsgId:\ntype: string\ndelivStReqInd:\ntype: boolean\npayload:\ntype: string\npriority:\n$ref: '#/components/schemas/Priority'\nsegInd:\ntype: boolean\nsegParams:\n$ref: '#/components/schemas/MessageSegmentParameters'\nstoAndFwInd:\ntype: boolean\nstoAndFwParams:\n$ref: '#/components/schemas/StoreAndForwardParameters'\nlatency:\ntype: integer\n\nUEMessageDelivery:\ndescription: Contains the UE message delivery data\ntype: object\nrequired:\n- oriAddr\n- destAddr\n- msgId\n- stoAndFwInd\nproperties:\noriAddr:\n$ref: 'TS29538_MSGG_L3GDelivery.yaml#/components/schemas/Address'\ndestAddr:\n$ref: 'TS29538_MSGG_L3GDelivery.yaml#/components/schemas/Address'\nappId:\ntype: string\nmsgId:\ntype: string\ndelivStReqInd:\ntype: boolean\npayload:\ntype: string\nsegInd:\ntype: boolean\nsegParams:\n$ref: '#/components/schemas/MessageSegmentParameters'\nstoAndFwInd:\ntype: boolean\nstoAndFwParams:\n$ref: '#/components/schemas/StoreAndForwardParameters'\n\nMessageDeliveryAck:\ndescription: Contains the message delivery ack data\ntype: object\nrequired:\n- oriAddr\n- msgId\nproperties:\noriAddr:\n$ref: 'TS29538_MSGG_L3GDelivery.yaml#/components/schemas/Address'\nmsgId:\ntype: string\nstatus:\n$ref: '#/components/schemas/DeliveryStatus'\nfailureCause:\ntype: string\n\nMessageSegmentParameters:\ndescription: Contains the message segment parameters data\ntype: object\nproperties:\nsegId:\ntype: string\ntotalSegCount:\ntype: integer\nsegNumb:\ntype: integer\nlastSegFlag:\ntype: boolean\n\nStoreAndForwardParameters:\ndescription: Contains the store and forward parameters data\ntype: object\nproperties:\nexprTime:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\n\nDeliveryStatusReport:\ndescription: Contains the delivery status report data\ntype: object\nrequired:\n- oriAddr\n- destAddr\n- msgId\n- delivSt\nproperties:\noriAddr:\n$ref: 'TS29538_MSGG_L3GDelivery.yaml#/components/schemas/Address'\ndestAddr:\n$ref: 'TS29538_MSGG_L3GDelivery.yaml#/components/schemas/Address'\nmsgId:\ntype: string\nfailureCause:\ntype: string\ndelivSt:\n$ref: '#/components/schemas/ReportDeliveryStatus'\n\n#\n# SIMPLE DATA TYPES\n#\n\n#\n# ENUMERATIONS\n#\n\nDeliveryStatus:\nanyOf:\n- type: string\nenum:\n- DELY_FAILED\n- DELY_STORED\n- type: string\ndescription: >\nThis string provides forward-compatibility with future\nextensions to the enumeration but is not used to encode\ncontent defined in the present version of this API.\ndescription: |\nIndicates if delivery is a failure, or if the message is stored for deferred delivery.\nPossible values are:\n- DELY_FAILED: Indicates that the message delivery is failed.\n- DELY_STORED: Indicates that the message is stored for deferred delivery.\n\nReportDeliveryStatus:\nanyOf:\n- type: string\nenum:\n- REPT_DELY_SUCCESS\n- REPT_DELY_FAILED\n- type: string\ndescription: >\nThis string provides forward-compatibility with future\nextensions to the enumeration but is not used to encode\ncontent defined in the present version of this API.\ndescription: |\nThe delivery status description, including success or failure in delivery.\nPossible values are:\n- REPT_DELY_SUCCESS: Indicates that the report delivery is successful.\n- REPT_DELY_FAILED: Indicates that the report delivery is failed.\n\nPriority:\nanyOf:\n- type: string\nenum:\n- HIGH\n- MIDDLE\n- LOW\n- type: string\ndescription: >\nThis string provides forward-compatibility with future\nextensions to the enumeration but is not used to encode\ncontent defined in the present version of this API.\ndescription: |\nApplication priority level requested for this message.\nPossible values are:\n- HIGH: Indicates the messages should be sent in high priority.\n- MIDDLE: Indicates the messages should be sent in middle priority.\n- LOW: Indicates the messages should be sent in low priority.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.4\tMSGG_L3GDelivery API",
+            "description": "openapi: 3.0.0\ninfo:\ntitle: MSGG_L3GDelivery\nversion: 1.1.0-alpha.2\ndescription: |\nAPI for MSGG L3G Message Delivery Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: >\n3GPP TS 29.538 V18.4.0; Enabling MSGin5G Service; Application Programming Interfaces (API)\nspecification; Stage 3\nurl: https://www.3gpp.org/ftp/Specs/archive/29_series/29.538/\n\nservers:\n- url: '{apiRoot}/msgg-l3gdelivery/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials: []\n\n\npaths:\n/deliver-message:\npost:\nsummary: deliver message to Legacy 3GPP Message Gateway\ntags:\n- L3G Message delivery\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/L3gMessageDelivery'\nresponses:\n'204':\ndescription: No Content, Message delivery successful\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n/deliver-report:\npost:\nsummary: deliver status report to Legacy 3GPP Message Gateway\ntags:\n- L3G status report delivery\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: 'TS29538_MSGS_MSGDelivery.yaml#/components/schemas/DeliveryStatusReport'\nresponses:\n'204':\ndescription: No Content, status report delivery successfully\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{tokenUrl}'\nscopes: {}\n\n\n\nschemas:\n#\n# STRUCTURED DATA TYPES\n#\nL3gMessageDelivery:\ndescription: Contains the L3G message delivery data\ntype: object\nrequired:\n- oriAddr\n- destAddr\n- msgId\nproperties:\noriAddr:\n$ref: '#/components/schemas/Address'\ndestAddr:\n$ref: '#/components/schemas/Address'\nappId:\ntype: string\nmsgId:\ntype: string\ndelivStReqInd:\ntype: boolean\npayload:\ntype: string\nsegInd:\ntype: boolean\nsegParams:\n$ref: 'TS29538_MSGS_MSGDelivery.yaml#/components/schemas/MessageSegmentParameters'\n\n\nAddress:\ndescription: Contains the Message type data\ntype: object\nrequired:\n- addrType\n- addr\nproperties:\naddrType:\n$ref: '#/components/schemas/AddressType'\naddr:\ntype: string\n\n\n#\n# SIMPLE DATA TYPES\n#\n\n#\n# ENUMERATIONS\n#\n\nAddressType:\nanyOf:\n- type: string\nenum:\n- UE\n- AS\n- GROUP\n- BC\n- TOPIC\n- type: string\ndescription: >\nThis string provides forward-compatibility with future\nextensions to the enumeration but is not used to encode\ncontent defined in the present version of this API.\ndescription: |\nRepresent the type of message request.\nPossible values are:\n- UE: The address type is UE.\n- AS: The address type is AS.\n- GROUP: The address type is GROUP.\n- BC: The address type is BC.\n- TOPIC: The address type is TOPIC.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.5\tMSGG_N3GDelivery API",
+            "description": "openapi: 3.0.0\ninfo:\ntitle: MSGG_N3GDelivery\nversion: 1.1.0-alpha.1\ndescription: |\nAPI for MSGG N3G Message Delivery Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: >\n3GPP TS 29.538 V18.4.0; Enabling MSGin5G Service; Application Programming Interfaces (API)\nspecification; Stage 3\nurl: https://www.3gpp.org/ftp/Specs/archive/29_series/29.538/\n\nservers:\n- url: '{apiRoot}/msgg-n3gdelivery/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials: []\n\npaths:\n/deliver-message:\npost:\nsummary: deliver message to NON-3GPP Message Gateway\ntags:\n- N3G Message delivery\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/N3gMessageDelivery'\nresponses:\n'204':\ndescription: No Content,Message delivery successful\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n/deliver-report:\npost:\nsummary: deliver status report to NON-3GPP Message Gateway\ntags:\n- N3G status report delivery\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: 'TS29538_MSGS_MSGDelivery.yaml#/components/schemas/DeliveryStatusReport'\nresponses:\n'204':\ndescription: No Content, status report delivery successfully\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{tokenUrl}'\nscopes: {}\n\n\n\nschemas:\n#\n# STRUCTURED DATA TYPES\n#\nN3gMessageDelivery:\ndescription: N3G message delivery data\ntype: object\nrequired:\n- oriAddr\n- destAddr\n- msgId\nproperties:\noriAddr:\n$ref: 'TS29538_MSGG_L3GDelivery.yaml#/components/schemas/Address'\ndestAddr:\n$ref: 'TS29538_MSGG_L3GDelivery.yaml#/components/schemas/Address'\nappId:\ntype: string\nmsgId:\ntype: string\ndelivStReqInd:\ntype: boolean\npayload:\ntype: string\nsegInd:\ntype: boolean\nsegParams:\n$ref: 'TS29538_MSGS_MSGDelivery.yaml#/components/schemas/MessageSegmentParameters'\n\nA.6\tMSGG_BGDelivery API\nopenapi: 3.0.0\n\ninfo:\ntitle: MSGG_BGDelivery\nversion: 1.0.0-alpha.2\ndescription: |\nAPI for Broadcast Message Delivery Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: >\n3GPP TS 29.538 V18.4.0; Enabling MSGin5G Service; Application Programming Interfaces (API)\nspecification; Stage 3\nurl: https://www.3gpp.org/ftp/Specs/archive/29_series/29.538/\n\nservers:\n- url: '{apiRoot}/msgg-bgdelivery/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials: []\n\npaths:\n/deliver-message:\npost:\nsummary: deliver message to Broadcast Message Gateway\ntags:\n- Broadcast Message delivery\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/BgMessageDelivery'\nresponses:\n'204':\ndescription: No Content, Message delivery successful\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{tokenUrl}'\nscopes: {}\n\n\nschemas:\n#\n# STRUCTURED DATA TYPES\n#\nBgMessageDelivery:\ndescription: Broadcast message delivery data\ntype: object\nrequired:\n- oriAddr\n- destAddr\n- msgId\nproperties:\noriAddr:\n$ref: 'TS29538_MSGG_L3GDelivery.yaml#/components/schemas/Address'\ndestAddr:\n$ref: 'TS29538_MSGG_L3GDelivery.yaml#/components/schemas/Address'\nappId:\ntype: string\nmsgId:\ntype: string\ndelivStReqInd:\ntype: boolean\npayload:\ntype: string\nsegInd:\ntype: boolean\nsegParams:\n$ref: 'TS29538_MSGS_MSGDelivery.yaml#/components/schemas/MessageSegmentParameters'\npriority:\n$ref: 'TS29538_MSGS_MSGDelivery.yaml#/components/schemas/Priority'\n\n\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 124,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

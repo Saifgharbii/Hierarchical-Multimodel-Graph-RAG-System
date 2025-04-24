@@ -1,0 +1,294 @@
+{
+    "document_name": "33886-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document identifies key security issues, potential security and privacy requirements and solutions with respect to network slicing Phase 3 work. Specifically,\n-\tIt studies potential security impact/requirements/solutions (e.g. Steering of Roaming) to support the HPLMN to provide a roaming UE the VPLMN slice information in a secure manner\n-\tIt studies potential security impact/requirements/solutions to support temporary slices, slice service areas mismatched with Tracking Area (TA) boundaries, and slices where Network Slice Selection Assistance Information (NSSAI) are not available in some TAs of a Registration Areas (RA).\n-\tIt studies potential security impact/requirements/solutions to support secured Network Slice Admission Control (NSAC) procedures in the cases of NSAC for multiple service areas and network controlled UE behaviours.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2] \t3GPP TS 22.261: \"Service requirements for next generation new services and markets; Stage 1\".\n[3]\t3GPP TR 23.700-41: \"Study on enhancement of network slicing; Phase 3\".\n[4]\t3GPP TS 33.501: \"Security architecture and procedures for 5G system\".\n[5]\t3GPP TS 23.502: \"Procedures for the 5G System (5GS)\".\n[6]\t3GPP TS 23.501: \"Security architecture and procedures for 5G system\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nThe following definitions are adopted from TS 23.501 [6] and TS 33.501 [4]:\nAccess and Mobility Management Function (AMF)\nAvailability check and update (ACU)\nData Network (DN)\nNetwork Function (NF)\nNetwork Slice Admission Control (NSAC)\nNetwork Slice Admission Control Function (NSACF)\nNetwork Slice Selection Assistance Information (NSSAI)\nNew Radio (NR) Node B (gNB)\nOperations, Administration, and Maintenance (OAM)\nRegistration Area (RA)\nSession Management Function (SMF)\nSingle Network Slice Selection Assistance Information (S-NSSAI)\nUnified Data Management (UDM)\nUnified Data Repository (UDR)\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nDDoS\tDistributed DoS\nDoS\tDenial of Service\nhNSACF\tHPLMN NSACF\nvNSACF\tVPLMN NSACF\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tKey issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tKey Issue #1: providing VPLMN slice information to roaming UE",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.1.1\tKey issue details",
+                            "text_content": "The following requirement for a 5G network is specified in TS 22.261 [2] in order to support a roaming UE activating network slice services:\n\"For a roaming UE activating a service/application requiring a network slice not offered by the serving network but available in the area from other network(s), the HPLMN shall be able to provide the UE with prioritization information of the VPLMNs with which the UE may register for the network slice\".\nA related key issue is also being studied in TR 23.700-41 [3] for possible procedure changes to automatic PLMN selection for a roaming UE requiring a network slice not offered by the serving network but available in the area from other network(s). It is expected that the corresponding security procedure will be affected (e.g. Steering of Roaming in TS 33.501 [4]) in order to support the HPLMN to provide a roaming UE the VPLMN slice information.\nIn this key issue, the following aspects will be studied:\n-\tWould security procedures be impacted? If so which security procedures are impacted in support of HPLMN proving a roaming UE with information about prioritization information of the VPLMNs with which the UE may register for the network slice?\n- \tHow to secure the procedures impacted.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.2\tSecurity threats",
+                            "text_content": "Void.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.3\tPotential security requirements",
+                            "text_content": "Void.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.2\tKey Issue #2: temporary slice authorization and slice service area authorization",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tKey issue details",
+                            "text_content": "Temporary slices are being studied in TR 23.700-41 [3]. The objective is to support gracefully terminate a network slice and avoid abrupt PDU Session release.\nTemporary slices are expected to be made known to UE during configuration or other network slicing procedures impacting Configured NSSAI or Allowed NSSAI.\nThis Key Issue will study security aspects to support temporary slices.\nAnother sub-issue is slice service area authorization. The current granularity in terms service area authorization is Registration Area (RA), which covers multiple Tracking Areas (TA). The key issue needs also to investigate any impacts to security procedures enabling a different service area than per TA.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tSecurity threats",
+                            "text_content": "A UE may get access to the network resources even when a network slice is terminated or the UE may not get access to the network slices if lifetime information is not conveyed to UE properly or not aligned amongst UE, PLMN and DN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.3\tPotential security requirements",
+                            "text_content": "The 5G system shall secure procedures with respect to temporary slices.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tKey Issue #3: network slice admission control (NSAC)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.1\tKey issue details",
+                            "text_content": "The network slice admission control (NSAC) issues were studied in Rel-17. It has been agreed in Rel-18 to enhance NSAC features with the following features:\n- \timproved network control of the UE behaviour;\n- \tsupport deploying multiple NSACF.\nIn both cases, better UE admission control is aimed to match the allocated quota. However, potential issues of Denial of service (DoS) attacks to legitimate UEs when the additional features are added to the access control mechanism. The information of actual UE/PDU session usage by a slice, or misinformation provided by malicious UEs or mischievous NFs may not be reflected based on current solutions. For example, a NSACF in a VPLMN updating the number of registered UEs or PDU sessions independently may not provide trusted information to the home NSACF. Another example is when a UE not using a network slice is still counted against quota usage of S-NSSAIs where it is registered. It is notable that an attacker can use legitimate UEs to launch such attacks.\nIn the TR 23.700-41 [3], the issue of how to support network slice admission control (NSAC) involving multiple service areas is being studied, together with multiple solutions accepted. The general assumption is that multiple NSACFs are required, either centralized or distributed. In a roaming scenario, it is assumed that the NSAC may be controlled by an NSACF in the VPLMN or an NSACF in the HPLMN.\nHowever, in a roaming scenario, the information reported by the NSACF in the VPLMN is not verified when it is reported to the HPLMN, i.e. there is no proper home control and a misinformation provided by VPLMN may have negative impact to the slices in other service areas, either in HPLMN or other VPLMN.\nThe security control in different serving areas/PLMNs could be different. For example. the security measure in some service areas is not as strict as what in other areas, attack surface in PLMN of one region may be higher than other regions, etc. The compromised/malicious NSACFs (for solution#13 in TR 23.700-41 [3]) in some high risky serving areas/networks may trigger DoS or other attacks on the home network, e.g., the compromised/malicious (local/distributed) NSACFs in a risky service area may fake the case that the number of registration UEs/PDU sessions is reaching the maximum number, and send Nnsacf_NSAC_NumberUpdate_Request to the Primary NSACF for new quota. The Primary NSACF may allocate more quota to the NSACF in compromised serving area/network while decrease the quota of other \"lower load\" area. Finally, the service of other serving areas/networks could be impacted as the global maximum number may be exhausted by the compromised/malicious NSACFs. As the attack complexity is relatively low while the availability impact could be high, the risk on the system could be high.\nIn 5G network, network functions in serving network are not always trusted by HPLMN, and home control was enhanced in 5G security architecture. For example, linking home control to subsequent procedures during/after primary authentication procedures to prevent certain types of fraud from serving network (see clause 6.1.4 of TS 33.501). If AMF/SMF is compromised, only the service of the attacked area would be impacted. In 3GPP protocol point of view, it can hardly damage the HPLMN and impact service of other areas without involving huge number of \"legal\" UEs due to better home network control for UE access. However, home control for NSAC procedure is not defined in existing specification. In addition, there's almost no cost/complexity for the compromised/malicious NSACF to launch (D)DoS attack to HPLMN, while it could cause potential wider service impact.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.2\tSecurity threats",
+                            "text_content": "The malicious/compromised NSACF(s) in specific area(s) of a PLMN with low security protection may continuously send fake message primary NSACF to indicate the number of registration UEs/PDU sessions is reaching the maximum number, that may cause the primary NSACF to re-distribute the quotas of maximum number of registration UEs/PDU sessions to NSACFs in serving areas, finally impact the service of other benign serving areas.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.3\tPotential security requirements",
+                            "text_content": "The 5G System shall provide a means for preventing the quota of maximum of registration UEs/PDU sessions of a network slice being exhausted by malicious/compromised NSACF(s).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tSolutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tSolution #1: Verification by Primary NSACF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tIntroduction",
+                            "text_content": "This solution addresses the key issue #3.\nIn this solution, it is proposed that the Primary NSACF at HPLMN should verify UE registration information or PDU session information in the requests from the VPLMN NSACF (vNSACF). The proposed solution supports NSAC procedure with security enhancement linking increased home control.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tSolution details",
+                            "text_content": "In a roaming scenario, multiple and hierarchical NSACFs can be deployed over different PLMNs to support NSAC in multiple areas. And the primary NSACF can be deployed in the HPLMN whereas local/distributed NSACFs can be deployed in the VPLMN.\nWith reference to figure 5.1.2-1, the steps of the solution are described as follows:\n1-2) The AMF or SMF triggers the availability check and update (ACU) procedure and sends the update request to vNSACF as described in TS 23.502 [5].\n3) vNSACF performs the ACU procedure against its local quota.\n4) Based on the local configuration, vNSACF may send an update request to the home NSACF (hNSACF) for verification or availability check and update.\n5) The primary NSACF should verify the validity of the information carried in the update request before performing the availability check and update procedure. If the update request carries UE registration information or PDU session information for an S-NSSAI, the Primary NSACF can verify through UDM/UDR whether the UE has registered in the vPLMN or whether the UE is a legitimate subscriber of the S-NSSAI. The ACU procedure will proceed after the verification is successful.\nNOTE:\tThe UDM stores authentication results of UEs after authentication as described in TS 33.501 [4]. The primary NSACF can distinguish a message is from the local/distributed NSACF in visited network based on the serving network name. The primary NSACF can request to fetch UE authentication results to the UDM in HPLMN.\n6) The primary NSACF responses to the vNSACF. It may provide an updated quota if needed.\n7) In case quota information is updated, vNSACF should perform ACU again and update its records accordingly.\n8) The vNSACF sends the update response as in TS 23.502 [5].\nThe figure depicts a step-by-step procedure for verifying the Network Security Control (NSACF) in a home network. It includes a checklist for each step, ensuring a thorough and accurate verification process.\nFigure 5.1.2-1: Procedure for Home NSACF verification\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tEvaluation",
+                            "text_content": "This solution addresses the KI#3 through Primary NSACF verification of the quota information provided by vNSACF.\nThe procedure is in line with the NSACF procedure specified in TS 23.502 [5].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tSolution #2: Protect NSAC procedure in multiple NSACFs deployment scenario",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tIntroduction",
+                            "text_content": "The solution addresses KI#3 network slice admission control (NSAC), in which malicious/compromised NSACF(s) in specific area(s) of a PLMN or in a VPLMN may launch DoS attack towards the Primary NSACF. The solution suggests the primary NSACF to validate the number of UEs or PDU sessions for a S-NSSAI when received the numbers from a NSACF.\nWhen received NSAC number update request from a NSACF in a serving area/VPLMN, based on pre-configured policy the Primary NSACF may cross check with UDM to confirm the number reported by the NSACF is matched to actual number recorded in UDM for a network slice.\nIf the numbers are not matched, the primary NSACF may stop normal NSAC procedure with the identified NSACF and may send event to management system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tSolution details",
+                            "text_content": "The figure depicts a workflow for validating the number reported by the National Science Foundation's (NSACF) National Science and Technology Infrastructure Program (NSTIP) in the context of the National Science Foundation's (NSF) National Science and Technology Infrastructure Program (NSTIP) in the context of the National Science Foundation's (NSF) National Science and Technology Infrastructure Program (NSTIP) in the context of the National Science Foundation's (NSF) National Science and Technology Infrastructure Program (NSTIP) in the context of the National Science Foundation's (NSF) National Science and Technology Infrastructure Program (NSTIP) in the context of the National Science Foundation's (NSF) National Science and Technology Infrastructure Program (NSTIP) in the context of the National Science Foundation's (NSF) National Science and Technology Infrastructure Program (NSTIP) in the context of the National Science Foundation's (NSF) National Science and Technology Infrastructure Program (NSTIP) in the context of the National Science Foundation's (NSF) National Science and Technology Infrastructure Program (NSTIP) in the context of the National Science Foundation's (NSF) National Science and Technology Infrastructure Program (NST\nFigure 5.2.2-1 workflow to validate number reported by NSACF\nPrecondition:\n-\tPolicies, which related to whether trigger cross check with UDM after received number update request from a NSACF, are pre-configured in a primary NSACF. The policies may be defined according to threat surface, security control and security posture of the VPLMN or specific serving area the NSACF located, or other criteria.\n-\tAssume S-NSSAI information of registered UEs/PDU sessions is available in UDM.\nProcedure:\n0a. After received UE registration request and completed primary authentication and authorization for the UE, the AMF sends Nudm_UECM_Registration request to UDM. Once Nudm_UECM_Registration is completed and AMF decides on allowed slice, the AMF sends registration update message or Ack message to UDM to inform about the allowed slices list. The S-NSSAI in this list is the HPLMN mapping of the S-NSSAI in allowed NSSAI of the registration.\n0b. After creating PDU session for a UE on a slice, the SMF sends Nudm_UECM_Registration request to UDM to register the PDU session with parameters including a S-NSSAI.\n1. A NSACF in a VPLMN or specific serving area sends Nnsacf_NSAC_NumberOfUEsUpdate_Request or Nnsacf_NSAC_NumberOfPDUsUpdate_Request to the Primary NSACF. That implies the local maximum or upper threshold number of UEs/PDUs is reached.\n2. The primary NSACF check the local policies pre-configured as described in precondition. If cross check with UDM is not needed according to the policies, the primary NSACF go to step 10a directly to perform NSAC for the S-NSSAI and update quota for the NSACF if needed.\n3. If cross check with UDM is needed according to the policies, the primary NSACF either scans all possible UDMs of the HPLMN or probably discover UDMs based on pre-configured rules.\n4. The primary NSACF sends request to each UDM to get number of registered UEs/PDU sessions in specific VPLMNs or AMFs/SMFs for the S-NSSAI.\n5. The UDM generates report for number of registered UEs /number of PDU sessions in a VPLMN/AMF/SMF List for the S-NSSAI.\n6. The UDM returns the report to the primary NSACF.\n7. The primary NSACF consolidates the numbers collected from all impacted UDMs, and gets the total number of registered UEs/PDU sessions in specific VPLMN/serving area for the S-NSSAI.\n8. The primary NSACF compares the total number of registered UEs/PDU sessions based on UDM reports and the maximum number in the Nnsacf_NSAC_NumberOfUEsUpdate_Request (or may be stored locally in primary NSACF).\n9a. If the two numbers are matched or deviation is not crossing the configured threshold, the primary NSACF performs NSAC for the S-NSSAI and update quota for the NSACF if needed.\n9b. If the two numbers do not match or deviation is crossing the configured threshold, the primary NSACF stop NSAC procedure with the potential malicious NSACF, and may adjust the quota for the NSACF, and report the anomaly to OAM.\n10. The primary NSACF sends update response to the NSACF, with success or failure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tEvaluation",
+                            "text_content": "The solution addresses KI#3 network slice admission control (NSAC) to mitigate the risk that malicious/compromised NSACF(s) in specific area(s) of a PLMN or in a VPLMN may launch DoS attack towards the Primary NSACF. The solution proposed that the primary NSACF validates the number of UEs/PDU sessions for a S-NSSAI when received NSAC_NumberOfUE/PDUsUpdate_Request from a NSACF. The primary NSACF validates the number by comparing the number from the (distributed) NSACF and numbers from UDM.\nThis solution does not prevent the AMF/SMF providing incorrect information to both the UDM and vNSCAF to provide incorrect information on slice usage. However, with home control proposed in the solution, the issue caused by the AMF/SMF providing incorrect information to the vNSCAF can be partially mitigated,\nFor example, a malicious SMF may provide incorrect information on slice usage to UDM, that may impact the accuracy of PDU session numbers of a slice reported by UDM in some extent. However, with security feature introduced in 5G for linking home control to subsequent procedures during/after primary authentication procedures (see clause 6.1.4 of TS 33.501 [4]), and authorization on slice usage for a UE, as well as feature for limiting number of PDU sessions for a registered UE, the contribution of malicious AMF/SMF to the DoS attack in NSAC case can be limited, and its influence on the decision of primary NSACF can be restricted but not fully prevented.\nImpacts on existing entities and interfaces:\nPrimary NSACF:\n-\t be capable to get the number of registered UEs/PDU sessions for a network slice in specific VPLMN or AMF/SMF from the UDM and validate the number from (distributed) NSACF with numbers from UDM.\nNOTE 1: \tHow does the Primary NSACF validate the numbers from (distributed) NSACF with numbers from the UDM, and handle the abnormal scenario are implementation dependant.\nUDM:\n-\tsupport a new service to report number of registered UEs/PDU sessions for a network slice in specific VPLMN or AMF/SMF.\nNOTE 2: \tHow does UDM acquire the number of registered UEs for a S-NSSAI is not addressed in the present document.\ngNB: None\nUE: None\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tSolution #3: Home control mechanism for hierarchical NSAC architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tIntroduction",
+                            "text_content": "This solution addresses KI#3.\nIn this solution, before updating the quota of a specific NSACF, the primary NSACF will check whether the quota of the NSACF is reached.\nTo enable the primary NSACF to verify the reach of quota of a specific NSACF, the primary NSACF should be able to be informed by the AMF/SMF served by the NSACF of the actual allowed NSSAI/the established PDU session ID and the corresponding UE IDs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tSolution details",
+                            "text_content": "0). \tThe AMF/SMF served by the NSACF sends the allowed NSSAI/the established PDU session ID and the corresponding UE IDs to the primary NSACF.\nOnce the AMF stores the allowed NSSAI about a specific UE after the network slice access control is successfully performed by a specific NSACF, the AMF sends its NF ID, NSACF ID, the increase indicator, the UE-ID and the corresponding allowed NSSAI to the primary NSACF, among which the S-NSSAI indicates the network slice in which the number of UEs is increased.\nOnce the AMF deletes the allowed NSSAI about a specific UE (either the UE is deregistered or the UE is handed over to another AMF) after the network slice access control is successfully performed by a specific NSACF, the AMF sends its NF ID, NSACF ID, the decrease indicator, the UE-ID and the corresponding allowed NSSAI to the primary NSACF, among which the S-NSSAI indicates the network slice in which the number of UEs is decreased.\nAfter a new PDU session was established for a UE, the related SMF sends its NF ID, the increase indicator, NSACF ID, the UE-ID, the PDU session ID, and S-NSSAI to the primary NSACF, among which the S-NSSAI indicates the network slice for which the number of PDU Sessions is increased.\nAfter an established PDU session was released for a UE, the related SMF sends its NF ID, the decrease indicator, NSACF ID, the UE-ID, the PDU session ID, and S-NSSAI to the primary NSACF, among which the S-NSSAI indicates the network slice for which the number of PDU Sessions is decreased.\n1-2) The AMF or SMF triggers the availability check and update (ACU) procedure and sends the update request to the NSACF as described in TS 23.502 [5].\n3) \tThe NSACF performs the ACU procedure against its local quota.\n4) \tBased on the local configuration, the NSACF may send an update request to the primary NSACF for availability check and update.\n5) \tThe Primary NSACF should check if the quota allocated to the NSACF is reached.\nIn specifics, if the NSACF requests to increase the quota for the number of UEs in a specific S-NSSAI, the primary NSACF should check if the total number of UEs belonging to the specific S-NSSAI has reached the quota. The total number of UEs belonging to the specific S-NSSAI can be calculated using allowed NSSAI and UE-IDs provided by the AMF controlled by the requesting NSACF (per NSACF ID provided by the AMF). If the verification of the reach of quota is successful, the primary NSACF performs NSAC for the S-NSSAI or update the quota of the UE for the requesting NSACF if needed. Otherwise, the primary NSACF terminates the procedure.\nIf the NSACF requests to increase quota for the number of PDU sessions in a specific S-NSSAI, the Primary NSACF should check if the total number of PDU sessions belonging to the specific S-NSSAI has reached the quota. The total number of PDU sessions belonging to the specific S-NSSAI can be calculated using PDU session IDs provided by the SMF controlled by the requesting NSACF (per NSACF provided by the SMF). If the verification of the reach of quota is successful, the primary NSACF performs NSAC for the S-NSSAI or update the quota of PDU session for the requesting NSACF if needed. Otherwise, the primary NSACF terminates the procedure.\n6) \tThe primary NSACF responds to the NSACF. It may provide an updated quota if needed.\n7) \tIn case that the quota information is updated, the NSACF should perform ACU again and update its records accordingly.\n8) \tThe NSACF sends the update response as in TS 23.502 [5].\nThe figure depicts a hierarchical network security architecture, specifically a Home Control mechanism for a NSAC (Network Security Architecture) system. The architecture is designed to provide a secure and efficient network control system for homes, with a focus on user-friendly and intuitive interface. The system includes a central control unit (CCU) that manages the network, a home gateway (HG), and a user interface (UI) that allows users to control and monitor the network. The figure illustrates the various components and their interconnections, highlighting the importance of network security and user experience in this system.\nFigure 5.3.2-1: Home control mechanism for hierarchical NSAC architecture\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.3\tEvaluation",
+                            "text_content": "This solution has no impact on the UDM. The Primary NSACF can check the number of UEs and the number of PDU sessions per S-NSSAI via interactions between the AMF and the SMF.\nThe solution has the following drawbacks:\nThe AMF/SMF may send fake information to the primary NSACF.\nThe impacts of this solution are given as follows.\nThe AMF needs to report the number of UEs per S-NSSAI to the primary NSACF.\nThe SMF needs to report the number of PDU sessions per S-NSSAI to the primary NSACF.\nThe Primary NSACF should be able to compare the information provided by the NSACF with the one provided by the AMF/SMF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tConclusions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tConclusions to Key Issue #1",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Existing SoR mechanism defined in TS 33.501[4] is used for protecting the enhanced slice-aware SoR information, which includes preferred PLMNs for specific S-NSSAIs in the UE subscription.\nWhen calculating SoR-MAC-IAUSF, the parameter P2 includes the slice-aware SoR information.\nNOTE: \tWhether normative work is needed to update the parameter P2 is subject to the work in stage 3.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tConclusions to Key Issue #2",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following conclusions are made on Key Issue #2 \"Temporary slice authorization and slice service area authorization\":\n-\tIt is concluded that no normative work is required for the Key Issue #2.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.3\tConclusions to Key Issue #3",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For protection of the NSAC procedure in a multiple NSACF scenario, the following principle is recommended:\n-\tWhen performing the NSAC procedure in a multiple NSACF scenario and hierarchical architecture, the primary NSACF needs to verify the number of UEs and the number of PDU sessions for an S-NSSAI received from other NSACFs\nNOTE: \tWhether a normative work is required it will be decided in the normative phase.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

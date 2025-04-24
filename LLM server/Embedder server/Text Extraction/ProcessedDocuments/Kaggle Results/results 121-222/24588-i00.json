@@ -1,0 +1,1103 @@
+{
+    "document_name": "24588-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, certain modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nNOTE 1:\tThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nNOTE 2:\tThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nNOTE 3:\tThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nNOTE 4:\tThe constructions \"can\" and \"cannot\" shall not to be used as substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nNOTE 5:\tThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document defines User Equipment (UE) policies that are used to configure the UE for Vehicle-to-Everything (V2X) services in 5G System (5GS) based on the architectural requirements defined in 3GPP TS 23.287 [2].\nThe protocol aspects for V2X services in 5G System (5GS) are described in 3GPP TS 24.587 [3].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.287: \"Architecture enhancements for 5G System (5GS) to support Vehicle-to-Everything (V2X) services\".\n[3]\t3GPP TS 24.587: \"Vehicle-to-Everything (V2X) services in 5G System (5GS); Stage 3\".\n[4]\t3GPP TS 24.501: \"Non-Access-Stratum (NAS) protocol for 5G System (5GS); Stage 3\".\n[5]\tISO TS 17419 ITS-AID AssignedNumbers :\n[6]\tITU-T Recommendation E.212: \"The international identification plan for public networks and subscriptions\", 2016-09-23.\n[7]\t3GPP TS 23.032: \"Universal Geographical Area Description (GAD)\".\n[8]\tIEEE 1609.3 2016: \"IEEE Standard for Wireless Access in Vehicular Environments (WAVE) -- Networking Services\".\n[9]\tISO 29281-1 2013: \"Intelligent transport systems -- Communication access for land mobiles (CALM) -- Non-IP networking -- Part 1: Fast networking & transport layer protocol (FNTP)\".\n[10]\tETSI EN 302 636-3 v1.2.1: \"Intelligent Transport Systems (ITS); Vehicular Communications; GeoNetworking; Part 3: Network Architecture\".\n[11]\t3GPP TS 24.526: \"UE policies for 5G System (5GS); Stage 3\".\n[12]\t3GPP TS 38.331: \"NR; Radio Resource Control (RRC) protocol specification\".\n[13]\t3GPP TS 36.101: \"Evolved Universal Terrestrial Radio Access (E-UTRA); User Equipment (UE) radio transmission and reception\".\n[14]\t3GPP TS 38.101-1: \"NR; User Equipment (UE) radio transmission and reception; Part 1: Range 1 Standalone\".\n[15]\t3GPP TS 38.101-2: \"NR; User Equipment (UE) radio transmission and reception; Part 2: Range 2 Standalone\".\n[16]\t3GPP TS 36.331: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Resource Control (RRC) protocol specification\".\n[17]\t3GPP TS 23.003: \"Numbering, addressing and identification\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nexample: text used to clarify abstract rules by applying them literally.\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 24.587 [3] apply:\nE-UTRA-PC5\nNR-PC5\nV2X service identifier\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nV2X\tVehicle-to-Everything\nV2XP\tV2X Policy\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tDescriptions of UE policies for V2X",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tOverview",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The V2XP in 5GS include:\n-\tUE policies for V2X communication over PC5 (see clause 4.2); and\n-\tUE policies for V2X communication over Uu (see clause 4.3).\nThe V2XP can be delivered from the PCF to the UE. The UE policy delivery procedure is specified in 3GPP TS 24.501 [4].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tUE policies for V2X communication over PC5",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The UE policies for V2X communication over PC5 are defined in clause 5.2.3 of 3GPP TS 24.587 [3].\nNOTE:\tThe generic description of the UE policies for V2X communication over PC5 are specified in 3GPP TS 23.287 [2].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tUE policies for V2X communication over Uu",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The UE policies for V2X communication over Uu are defined in clause 5.2.4 of 3GPP TS 24.587 [3].\nNOTE:\tThe generic description of the UE policies for V2X communication over Uu are specified in 3GPP TS 23.287 [2].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tEncoding of UE policies for V2X",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tOverview",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The UE policies for V2X are provided to the UE in a V2X policy (V2XP) UE policy part using the UE policy delivery service as specified in 3GPP TS 24.501 [4] annex D.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tEncoding of V2X policy (V2XP) UE policy part",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tGeneral",
+                            "text_content": "The purpose of the V2XP is to indicate UE policies for V2X communication over PC5 and UE policies for V2X communication over Uu.\nThe V2XP is encoded as shown in figures 5.2.1.1 to 5.2.1.3 and table 5.2.1.1 according to the UE policy part top level format (see annex D of 3GPP TS 24.501 [4]).\n\nFigure 5.2.1.1: UE policy part when UE policy part type = {V2XP}\n\nFigure 5.2.1.2: V2XP contents\n\nFigure 5.2.1.3: V2XP info\nTable 5.2.1.1: V2XP information format\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.1.1: V2XP information format",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tEncoding of UE policies for V2X communication over PC5",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tGeneral",
+                            "text_content": "The UE policies for V2X communication over PC5 are coded as shown in figures 5.3.1.1 and table 5.3.1.1.\n\n\nNOTE:\tThe field is placed immediately after the last present preceding field.\n\nFigure 5.3.1.1: V2XP Info = {UE policies for V2X communication over PC5}\nTable 5.3.1.1: V2XP Info = {UE policies for V2X communication over PC5}\n\nFigure 5.3.1.2: Served by E-UTRA or served by NR\nTable 5.3.1.2: Served by E-UTRA or served by NR\n\n\nFigure 5.3.1.3: Authorized PLMN and RATs combinations\nTable 5.3.1.3: Authorized PLMN and RATs combinations\n\nFigure 5.3.1.4: Authorized PLMN and RATs combination\nTable 5.3.1.4: Authorized PLMN and RATs combination\n\nFigure 5.3.1.5: PLMN ID\nTable 5.3.1.5: PLMN ID\n\n\n\nNOTE:\tThe field is placed immediately after the last present preceding field.\n\nFigure 5.3.1.6: Not served by E-UTRA and not served by NR\nTable 5.3.1.6: Not served by E-UTRA and not served by NR\n\nFigure 5.3.1.7: Radio parameters per geographical area list\nTable 5.3.1.7: Radio parameters per geographical area list\n\nFigure 5.3.1.8: Radio parameters per geographical area info\nTable 5.3.1.8: Radio parameters per geographical area info\n\nFigure 5.3.1.9: Geographical area\nTable 5.3.1.9: Geographical area\n\n\nFigure 5.3.1.10: Coordinate area\nTable 5.3.1.10: Coordinate area\n\nFigure 5.3.1.11: Radio parameters\nTable 5.3.1.11: Radio parameters\n\nFigure 5.3.1.12: V2X service identifier to PC5 RAT(s) and Tx profiles mapping rules\nTable 5.3.1.12: V2X service identifier to PC5 RAT(s) and Tx profiles mapping rules\n\n\nNOTE:\tThe field is placed immediately after the last present preceding field.\n\nFigure 5.3.1.13: V2X service identifier to PC5 RAT(s) and Tx profiles mapping rule\nTable 5.3.1.13: V2X service identifier to PC5 RAT(s) and Tx profiles mapping rule\n\n\nFigure 5.3.1.14: V2X service identifiers\nTable 5.3.1.14: V2X service identifiers\n\n\nFigure 5.3.1.15: Privacy config\nTable 5.3.1.15: Privacy config\n\nFigure 5.3.1.16: V2X services requiring privacy\nTable 5.3.1.16: V2X services requiring privacy\n\nFigure 5.3.1.17: V2X service requiring privacy\nTable 5.3.1.17: V2X service requiring privacy\n\nFigure 5.3.1.18: Geographical areas\nTable 5.3.1.18: Geographical areas\n\n\nNOTE:\tThe field is placed immediately after the last present preceding field.\n\nFigure 5.3.1.19: V2X communication over PC5 in E-UTRA-PC5\nTable 5.3.1.19: V2X communication over PC5 in E-UTRA-PC5\n\nFigure 5.3.1.20: V2X service identifier to destination layer-2 ID mapping rules\nTable 5.3.1.20: V2X service identifier to destination layer-2 ID mapping rules\n\n\nFigure 5.3.1.21: V2X service identifier to destination layer-2 ID mapping rule\nTable 5.3.1.21: V2X service identifier to destination layer-2 ID mapping rule\n\nFigure 5.3.1.22: PPPP to PDB mapping rules\nTable 5.3.1.22: PPPP to PDB mapping rules\n\nFigure 5.3.1.23: PPPP to PDB mapping rule\nTable 5.3.1.23: PPPP to PDB mapping rule\n\nFigure 5.3.1.24: V2X service identifier to V2X E-UTRA frequency mapping rules\nTable 5.3.1.24: V2X service identifier to V2X E-UTRA frequency mapping rules\n\nFigure 5.3.1.25: V2X service identifier to V2X E-UTRA frequency mapping rule\nTable 5.3.1.25: V2X service identifier to V2X E-UTRA frequency mapping rule\n\nFigure 5.3.1.26: V2X E-UTRA frequencies with geographical areas list\nTable 5.3.1.26: V2X E-UTRA frequencies with geographical areas list\n\nFigure 5.3.1.27: V2X E-UTRA frequencies with geographical areas info\nTable 5.3.1.27: V2X E-UTRA frequencies with geographical areas info\n\n\nFigure 5.3.1.28: V2X E-UTRA frequencies\nTable 5.3.1.28: V2X E-UTRA frequencies\n\nFigure 5.3.1.29: V2X services authorized for PPPR\nTable 5.3.1.29: V2X services authorized for PPPR\n\nFigure 5.3.1.30: V2X service authorized for PPPR\nTable 5.3.1.30: V2X service authorized for PPPR\n\n\nNOTE:\tThe field is placed immediately after the last present preceding field.\nFigure 5.3.1.31: V2X communication over PC5 in NR-PC5\nTable 5.3.1.31: V2X communication over PC5 in NR-PC5\n\nFigure 5.3.1.32: V2X service identifier to V2X NR frequency mapping rules\nTable 5.3.1.32: V2X service identifier to V2X NR frequency mapping rules\n\nFigure 5.3.1.33: V2X service identifier to V2X NR frequency mapping rule\nTable 5.3.1.33: V2X service identifier to V2X NR frequency mapping rule\n\nFigure 5.3.1.34: V2X NR frequencies with geographical areas list\nTable 5.3.1.34: V2X NR frequencies with geographical areas list\n\nFigure 5.3.1.35: V2X NR frequencies with geographical areas info\nTable 5.3.1.35: V2X NR frequencies with geographical areas info\n\nFigure 5.3.1.36: V2X NR frequencies\nTable 5.3.1.36: V2X NR frequencies\n\nFigure 5.3.1.37: V2X service identifier to destination layer-2 ID for broadcast mapping rules\nTable 5.3.1.37: V2X service identifier to destination layer-2 ID for broadcast mapping rules\n\nFigure 5.3.1.38: V2X service identifier to destination layer-2 ID for broadcast mapping rule\nTable 5.3.1.38: V2X service identifier to destination layer-2 ID for broadcast mapping rule\n\nFigure 5.3.1.39: V2X service identifier to destination layer-2 ID for groupcast mapping rules\nTable 5.3.1.39: V2X service identifier to destination layer-2 ID for groupcast mapping rules\n\nFigure 5.3.1.40: V2X service identifier to destination layer-2 ID for groupcast mapping rule\nTable 5.3.1.40: V2X service identifier to destination layer-2 ID for groupcast mapping rule\n\nFigure 5.3.1.41: V2X service identifier to destination layer-2 ID for unicast initial signalling mapping rules\nTable 5.3.1.41: V2X service identifier to destination layer-2 ID for unicast initial signalling mapping rules\n\nFigure 5.3.1.42: V2X service identifier to destination layer-2 ID for unicast initial signalling mapping rule\nTable 5.3.1.42: V2X service identifier to destination layer-2 ID for unicast initial signalling mapping rule\n\nFigure 5.3.1.43: V2X service identifier to PC5 QoS parameters mapping rules\nTable 5.3.1.43: V2X service identifier to PC5 QoS parameters mapping rules\n\nFigure 5.3.1.44: void\nTable 5.3.1.44: void\n\nFigure 5.3.1.45: void\nTable 5.3.1.45: void\n\n\nNOTE:\tThe field is placed immediately after the last present preceding field.\n\nFigure 5.3.1.46: V2X service identifier to PC5 QoS parameters mapping rule\nTable 5.3.1.46: V2X service identifier to PC5 QoS parameters mapping rule\n\nFigure 5.3.1.46a: AS configuration\nTable 5.3.1.46a: AS configuration\n\nFigure 5.3.1.47: SLRB mapping rules\nTable 5.3.1.47: SLRB mapping rules\n\nFigure 5.3.1.48: SLRB mapping rule\nTable 5.3.1.48: SLRB mapping rule\n\n\nNOTE:\tThe field is placed immediately after the last present preceding field.\n\nFigure 5.3.1.49:PC5 QoS profile\nTable 5.3.1.49:PC5 QoS profile\n\nFigure 5.3.1.50: NR-PC5 unicast security policies\nTable 5.3.1.50: NR-PC5 unicast security policies\n\nFigure 5.3.1.51: NR-PC5 unicast security policy\nTable 5.3.1.51: NR-PC5 unicast security policy\n\nFigure 5.3.1.52: Security policy\nTable 5.3.1.52: Security policy\n\nFigure 5.3.1.53: V2X service identifier to default mode of communication mapping rules\nTable 5.3.1.53: V2X service identifier to default mode of communication mapping rules\n\nFigure 5.3.1.54: V2X service identifier to default mode of communication mapping rule\nTable 5.3.1.54: V2X service identifier to default mode of communication mapping rule\n\nFigure 5.3.1.55: PC5 DRX configuration for broadcast, groupcast and unicast initial signalling\nTable 5.3.1.55: PC5 DRX configuration for broadcast, groupcast and unicast initial signalling\n\nFigure 5.3.1.56: PC5 QoS profile to PC5 DRX cycle mapping rules\nTable 5.3.1.56: PC5 QoS profile to PC5 DRX cycle mapping rules\n\nFigure 5.3.1.57: PC5 QoS profile to PC5 DRX cycle mapping rule\nTable 5.3.1.57: PC5 QoS profile to PC5 DRX cycle mapping rule\n\nFigure 5.3.1.58: Default PC5 DRX configuration\nTable 5.3.1.58: Default PC5 DRX configuration\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.1: V2XP Info = {UE policies for V2X communication over PC5}",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.2: Served by E-UTRA or served by NR",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.3: Authorized PLMN and RATs combinations",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.4: Authorized PLMN and RATs combination",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.5: PLMN ID",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.6: Not served by E-UTRA and not served by NR",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.7: Radio parameters per geographical area list",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.8: Radio parameters per geographical area info",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.9: Geographical area",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.10: Coordinate area",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.11: Radio parameters",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.12: V2X service identifier to PC5 RAT(s) and Tx profiles mapping rules",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.13: V2X service identifier to PC5 RAT(s) and Tx profiles mapping rule",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.14: V2X service identifiers",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.15: Privacy config",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.16: V2X services requiring privacy",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.17: V2X service requiring privacy",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.18: Geographical areas",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.19: V2X communication over PC5 in E-UTRA-PC5",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.20: V2X service identifier to destination layer-2 ID mapping rules",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.21: V2X service identifier to destination layer-2 ID mapping rule",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.22: PPPP to PDB mapping rules",
+                                    "table number": 50,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 51,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.23: PPPP to PDB mapping rule",
+                                    "table number": 52,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 53,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.24: V2X service identifier to V2X E-UTRA frequency mapping rules",
+                                    "table number": 54,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 55,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.25: V2X service identifier to V2X E-UTRA frequency mapping rule",
+                                    "table number": 56,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 57,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.26: V2X E-UTRA frequencies with geographical areas list",
+                                    "table number": 58,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 59,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.27: V2X E-UTRA frequencies with geographical areas info",
+                                    "table number": 60,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 61,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.28: V2X E-UTRA frequencies",
+                                    "table number": 62,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 63,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.29: V2X services authorized for PPPR",
+                                    "table number": 64,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 65,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.30: V2X service authorized for PPPR",
+                                    "table number": 66,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 67,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.31: V2X communication over PC5 in NR-PC5",
+                                    "table number": 68,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 69,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.32: V2X service identifier to V2X NR frequency mapping rules",
+                                    "table number": 70,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 71,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.33: V2X service identifier to V2X NR frequency mapping rule",
+                                    "table number": 72,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 73,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.34: V2X NR frequencies with geographical areas list",
+                                    "table number": 74,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 75,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.35: V2X NR frequencies with geographical areas info",
+                                    "table number": 76,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 77,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.36: V2X NR frequencies",
+                                    "table number": 78,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 79,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.37: V2X service identifier to destination layer-2 ID for broadcast mapping rules",
+                                    "table number": 80,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 81,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.38: V2X service identifier to destination layer-2 ID for broadcast mapping rule",
+                                    "table number": 82,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 83,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.39: V2X service identifier to destination layer-2 ID for groupcast mapping rules",
+                                    "table number": 84,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 85,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.40: V2X service identifier to destination layer-2 ID for groupcast mapping rule",
+                                    "table number": 86,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 87,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.41: V2X service identifier to destination layer-2 ID for unicast initial signalling mapping rules",
+                                    "table number": 88,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 89,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.42: V2X service identifier to destination layer-2 ID for unicast initial signalling mapping rule",
+                                    "table number": 90,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 91,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.43: V2X service identifier to PC5 QoS parameters mapping rules",
+                                    "table number": 92,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 93,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.46: V2X service identifier to PC5 QoS parameters mapping rule",
+                                    "table number": 94,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 95,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.46a: AS configuration",
+                                    "table number": 96,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 97,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.47: SLRB mapping rules",
+                                    "table number": 98,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 99,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.48: SLRB mapping rule",
+                                    "table number": 100,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 101,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.49:PC5 QoS profile",
+                                    "table number": 102,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 103,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.50: NR-PC5 unicast security policies",
+                                    "table number": 104,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 105,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.51: NR-PC5 unicast security policy",
+                                    "table number": 106,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 107,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.52: Security policy",
+                                    "table number": 108,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 109,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.53: V2X service identifier to default mode of communication mapping rules",
+                                    "table number": 110,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 111,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.54: V2X service identifier to default mode of communication mapping rule",
+                                    "table number": 112,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 113,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.55: PC5 DRX configuration for broadcast, groupcast and unicast initial signalling",
+                                    "table number": 114,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 115,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.56: PC5 QoS profile to PC5 DRX cycle mapping rules",
+                                    "table number": 116,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 117,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.57: PC5 QoS profile to PC5 DRX cycle mapping rule",
+                                    "table number": 118,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 119,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.58: Default PC5 DRX configuration",
+                                    "table number": 120,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tEncoding of UE policies for V2X communication over Uu",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tGeneral",
+                            "text_content": "The UE policies for V2X communication over Uu are coded as shown in figures 5.4.1.1 and table 5.4.1.1.\n\nNOTE:\tThe field is placed immediately after the last present preceding field.\n\nFigure 5.4.1.1: V2XP Info = {UE policies for V2X communication over Uu}\nTable 5.4.1.1: V2XP Info = {UE policies for V2X communication over Uu}\n\nFigure 5.4.1.2: PLMN infos\nTable 5.4.1.2: PLMN infos\n\n\nNOTE:\tThe field is placed immediately after the last present preceding field.\n\nFigure 5.4.1.3: PLMN info\nTable 5.4.1.3: PLMN info\n\nFigure 5.4.1.4: PLMN IDs\nTable 5.4.1.4: PLMN IDs\n\nFigure 5.4.1.5: PLMN ID\nTable 5.4.1.5: PLMN ID\n\nFigure 5.4.1.6: V2X service identifier unrelated info\nTable 5.4.1.6: V2X service identifier unrelated info\n\nFigure 5.4.1.7: V2X AS addresses\nTable 5.4.1.7: V2X AS addresses\n\n\nNOTE:\tThe field is placed immediately after the last present preceding field.\n\nFigure 5.4.1.8: V2X AS address\nTable 5.4.1.8: V2X AS address\n\n\nNOTE:\tThe field is placed immediately after the last present preceding field.\n\nFigure 5.4.1.9: V2X service identifier related info\nTable 5.4.1.9: V2X service identifier related info\n\nFigure 5.4.1.10: V2X service infos\nTable 5.4.1.10: V2X service infos\n\nFigure 5.4.1.11: V2X service info\nTable 5.4.1.11: V2X service info\n\nFigure 5.4.1.12: V2X service identifiers\nTable 5.4.1.12: V2X service identifiers\n\nFigure 5.4.1.13: Default V2X AS address infos\nTable 5.4.1.13: Default V2X AS address infos\n\n\nNOTE:\tThe field is placed immediately after the last present preceding field.\n\nFigure 5.4.1.14: Default V2X AS address info\nTable 5.4.1.14: Default V2X AS address info\n\nFigure 5.4.1.15: Geographical area\nTable 5.4.1.15: Geographical area\n\nFigure 5.4.1.16: Coordinate area\nTable 5.4.1.16: Coordinate area\n\nFigure 5.4.1.17: V2X service identifier to PDU session parameters mapping rules\nTable 5.4.1.17: V2X service identifier to PDU session parameters mapping rules\n\nFigure 5.4.1.18: V2X service identifier to PDU session parameters mapping rule\nFigure 5.4.1.19: Route selection descriptor list\nFigure 5.4.1.20: Route selection descriptor\nTable 5.4.1.18: V2X service identifier to PDU session parameters mapping rule\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The UE policies for V2X communication over Uu are coded as shown in figures 5.4.1.1 and table 5.4.1.1.",
+                                    "table number": 121,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.1: V2XP Info = {UE policies for V2X communication over Uu}",
+                                    "table number": 122,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 123,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.2: PLMN infos",
+                                    "table number": 124,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 125,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.3: PLMN info",
+                                    "table number": 126,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 127,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.4: PLMN IDs",
+                                    "table number": 128,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 129,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.5: PLMN ID",
+                                    "table number": 130,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 131,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.6: V2X service identifier unrelated info",
+                                    "table number": 132,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 133,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.7: V2X AS addresses",
+                                    "table number": 134,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 135,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.8: V2X AS address",
+                                    "table number": 136,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 137,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.9: V2X service identifier related info",
+                                    "table number": 138,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 139,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.10: V2X service infos",
+                                    "table number": 140,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 141,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.11: V2X service info",
+                                    "table number": 142,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 143,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.12: V2X service identifiers",
+                                    "table number": 144,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 145,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.13: Default V2X AS address infos",
+                                    "table number": 146,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 147,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.14: Default V2X AS address info",
+                                    "table number": 148,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 149,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.15: Geographical area",
+                                    "table number": 150,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 151,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.16: Coordinate area",
+                                    "table number": 152,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 153,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.17: V2X service identifier to PDU session parameters mapping rules",
+                                    "table number": 154,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 155,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.4.1.18: V2X service identifier to PDU session parameters mapping rule",
+                                    "table number": 156,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.4.1.19: Route selection descriptor list",
+                                    "table number": 157,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.1.18: V2X service identifier to PDU session parameters mapping rule",
+                                    "table number": 158,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 159,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1194 @@
+{
+    "document_name": "22839-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document is the outcome of the study on use cases and potential new requirements for 5GS support of mobile base station relays mounted on vehicles, using 5G NR over the radio links toward UEs and macro RAN (connected to 5GC). This study covers aspects related to:\nVehicle base station relays providing service to UEs inside the vehicle or in the vicinity of the vehicle;\nEnd-to-end service continuity during mobility scenarios (including mobility of the relays);\nProvisioning, policies and control, e.g. for\nProvisioning of spectrum used by the relays, geographic area restrictions;\nControl of relay operation, UEs access and connectivity via relays.\nAspects related to roaming of relays, security, regulatory requirements (e.g. for emergency services), charging, spectrum interference.\nGap analysis between the identified requirements and existing 5GS requirements or functionalities.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TR 38.821: “Solutions for NR to support non-terrestrial networks (NTN)”\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nexample: text used to clarify abstract rules by applying them literally.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\n<ACRONYM>\t<Explanation>\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tOverview",
+            "description": "Demand for improved 5G cellular coverage and connectivity continues to increase, which may be challenging in many outdoor and mobility scenarios. In some outdoor environments, the availability of vehicles equipped with mobile base station relays, either following a certain known/predictable itinerary (e.g. buses, trams, etc), or situated in convenient locations (e.g. outside stadiums, hot-spot areas, or emergency sites), could provide very opportunistic boost to cellular coverage and capacity when/where needed. Those relays, using 5G wireless backhaul toward the macro network, could indeed offer better 5G coverage and connectivity to neighbouring UEs. Vehicle relays are obviously very suitable also for improving connectivity for users or devices inside the vehicle itself, in different environments, e.g. for passengers in buses, car/taxi, or trains, ad-hoc/professional personnel or equipment. Yet other target scenarios are where vehicle relays can be used for reaching users or devices that would otherwise have no or very poor macro coverage, e.g. in case of first responders dislocated in indoor buildings/areas, using 5G relays placed on their nearby/outside vehicles to get required 5G coverage and connectivity.\nThe technical benefits of using vehicle relays include, among others, the ability of the BS relay to get better macro coverage than a nearby UE, e.g exploiting better RF/antenna and power capabilities. Besides the value for network operators and end users, worthy incentives could be found for other parties as well, e.g. for vehicles manufacturers, vehicle/fleet owners or providers, to install and operate relays in their vehicles.\nIn the context of this TR, from a high-level 5G system point of view, the target scenarios include moving vehicles equipped with small on board base station (BS) relays providing 5G coverage and communication to UEs (inside the vehicle and/or in its vicinity), and connected wirelessly to the 5G network via RAN (donor) nodes.\nFigure 4-1 illustrates the high-level concept of a mobile base station relay, showcasing the various components involved in its operation. The figure depicts the base station relay (BSR) as the central hub, connected to multiple antennas and radio frequency (RF) chains. These RF chains are responsible for transmitting and receiving signals, while the antennas facilitate directional communication. The BSR is also linked to a power supply unit (PSU) for energy management and a cooling system to maintain optimal operating temperatures. Additionally, the figure includes a graphical representation of signal strength, indicating the distribution of coverage across the relay's operational area. This visual aids in understanding the relay's role in extending network coverage and improving connectivity in remote or challenging environments.\nFigure 4-1. Mobile base station relay - High level concept\nAs shown in the figure above, the main connectivity assumptions are:\n5G NR is used for the radio link between mobile BS relay and donor RAN node, as well as the radio link between BS relay and UE.\nThe mobile BS relay connects, via donor RAN node, to the 5G Core network (5GC).\nSingle-hop relay is the main/baseline scenario (multi-hop can be a possible option)\nThe study intends to cover use cases of BS relays mounted on ground/land type of mobile vehicles; nevertheless, some potential requirements may be general (for a “mobile base station relay”), i.e. could apply to BS relays mounted on different types of moving vehicles or devices.\nNOTE 1: the above (logical) diagram and assumptions do not intend to limit nor preclude specific RAN and relay architecture, or topology options.\nNOTE 2: While the identified new service requirements target potential 5G system (UE and/or NW) enhancements, this should not prevent support (also) for legacy UEs.\nIn the paragraphs that follow, next section (sec. 5) captures several identified use cases and new potential requirements, covering (among others): basic operation of vehicle relays, relay configuration, UE access control, optimized connectivity and mobility, load balancing, support of location services, QoS and charging, service continuity during mobility (between relay and macro, or among relays or when macro node changes), multi-connectivity, ad-hoc coverage and topologies (e.g. for public safety), RAN/relay sharing, satellite backhauling.\nIn addition to those, section 6 covers further aspects and requirements, e.g. about support of roaming, regulatory requirements, emergency services, security, priority services.\nThe two concluding sections (sec. 7 and 8) contain the list of consolidated new potential requirements, from all use cases, and the final TR recommendations.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tUse cases",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tBasic support, configuration and control of mobile relays",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tDescription",
+                            "text_content": "It’s almost summertime, and a series of outdoor festivals and events are planned in town, for the next weeks/months. This is known to attract many people and tourists, using public/private transportation (bus, taxi) to travel from/to airport and move around the city, as well as attending various shows and events scheduled in different city parks, stadiums and other outdoor areas. 5G traffic demand will be very high and challenging.\nThe city administration and few partner companies provide transportation services with various buses/taxis inside the city, as well as shuttles between the airport (located outside the city area) and hotels. In addition, one of the partner companies provides small vehicles/carts used to display marketing/advertisement messages/banners, that can be deployed to drive/transit inside parks, around stadiums or recreational/tourist areas.\nThose vehicles are (or can be) equipped with 5G mobile BS relays for inside/outside users and, upon request and/or specific commercial agreements, can be used and configurable by MNOs to interconnect and operate as part of their 5G RAN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tPre-conditions",
+                            "text_content": "Operator A, with existing 5G macro coverage in/around the city, decides to acquire the service offered by the transport administration and use some of those vehicle relays, in particular:\n- advertisement carts, to extend challenging macro 5G coverage and capacity for outdoor users in hot-spot locations where city’s events or high-density gatherings are expected.\n- buses and taxis, to provide a better 5G in-vehicle experience to its subscribers (or inbound roamers), as well as improving the overall RAN capacity in certain challenging macro areas, e.g. along the highway to the airport, and/or macro cells serving popular bus/taxi locations/routes in the city.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tService Flows",
+                            "text_content": "Operator A enables the vehicle relays to operate and interconnect with its 5G macro RAN and network.\nOperator A configures initial relays operating parameters and conditions, e.g. in terms of radio spectrum, vehicles location/itinerary, time of the day, transit/stop in target areas, vehicle speed, etc.\nOn a certain day, prior to the events season, Operator A activates the relays.\n5G traffic starts flowing through all activated vehicle relays. Operator A can re-configure some of the relay operating parameters (e,g, spectrum, time/location of operation) based on observed 5G traffic and RAN performance.\nToward the end of the summer, based on lower 5G traffic demand, Operator A decides to deactivate relay operation (on its network) for the advertisement carts and few of the city taxis. Service on city buses and shuttles from/to airport is continued.\nNote: in some of the actions above, there may also be involvement of a 3rd party entity (e.g. vehicle or relay manufacturer/owner, or relay O&M company), to allow or help the operator A to (de)activate and/or configure certain relay settings.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.4\tPost-conditions",
+                            "text_content": "The operator A is very happy about the improved performance of its 5G network during the busy city summer, and the better service provided to its 5G customers.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.1-1] The 5G system shall support efficient operation of mobile base station relays, e.g. on board of mobile vehicles, connected wirelessly to the NG-RAN and serving nearby 5G NR UEs (inside and/or outside the vehicle).\n[PR 5.1-2] The 5G system shall support means, for a mobile network operator, to configure, provision and control the operation of a mobile base station relay, including\nactivation and/or deactivation of mobile relay operation;\nconfiguration of 5G spectrum (licensed or unlicensed) used by the mobile relay, over the radio links toward UE and RAN;\nconfiguration of relay operating conditions e.g. based on geographic areas or locations, specific time period(s), vehicle’s speed, itinerary, etc.\nNote: besides the MNO, a 3rd party entity could also be enabled to provision and control some of the mobile base station relay operation, e.g. (de)activation, location restrictions, or other operating conditions.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tAuthorization and configuration for mobile base station relay",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tDescription",
+                            "text_content": "In the urban environment, temporary needs are raised up for extra cellular coverage and connectivity during various social events (e.g., music festival, sport race, etc.) at a designated area, where pertinent QoS cannot be fulfilled for a large amount of users. In this case, vehicles installed with on board base stations may act as relay and help to offer convenient and efficient service to UEs. They can be situated in specific locations (e.g. outside stadiums), and provide 5G coverage to neighbouring UEs outside the vehicles.\nFigure 5.2-1 illustrates the authorization and configuration process for a mobile base station relay, showcasing the various stages of network setup and management. The figure highlights the role of the mobile network operator (MNO) and the service provider (SP) in granting access and configuring the relay node. Key components include the MNO, SP, and the mobile base station relay (MBSR). The figure emphasizes the importance of secure and efficient communication between these entities to ensure seamless network operation.\nFigure 5.2-1: Authorization and configuration for mobile base station relay\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tPre-conditions",
+                            "text_content": "To enable this use, following pre-conditions should be met:\n-\tA car shall be equipped with on-board base station.\n-\tThe mobile base station relay is capable of providing 5G connectivity to UEs in the vicinity of the car.\n-  The mobile base station relay is able to connect the NG-RAN and 5G Core network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tService Flows",
+                            "text_content": "When the car starts the engine, the mobile base station relay registers to the 5G network and obtains the necessary configuration information (e.g., operating frequency bands). After getting authorized, the mobile base station relay is able to provide 5G access.\nThe car drives into the permitted area, where the mobile base station relay is able to provide 5G access to neighbouring UEs in the vicinity of the cars.\nUE A is connected to the mobile base station relay when it moves into the permitted area.\nAs the car moves out of the permitted area, the mobile base station relay cannot work anymore and UE A is disconnected.\nWhen the car drives into another permitted area, the mobile base station relay works again and UE B is connected.\nWhen the car reaches the destination, its engine is turned off and the mobile base station relay stops working automatically.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.4\tPost-conditions",
+                            "text_content": "The authorized UEs in the vicinity of the car are provided with extended 5G connectivity by the mobile base station relay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.2-1] The 5G system shall support the use of mobile base station relays (e.g. mounted on vehicles), which can provide 5G access toits authorized UEs in the vicinity.\n[PR 5.2-2] The 5G system shall enable the authorization of the mobile base station relays (e.g. mounted on vehicles) to work in a permitted area. When the mobile base station relay moves out of this area, it is not allowed to work as a base station.\n[PR 5.2-3] The 5G network can dynamically configure the operation parameters of a mobile base station relay, such as frequency band, permitted geographical area, etc.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tMultiple working modes of vehicle mounted base station",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tDescription",
+                            "text_content": "In order to fulfil the high demand of extra cellular coverage and capacity in large cities with a dense population, either buses or cars with on board base stations, are expected to act as relay and help provide convenient and efficient data delivery service to the city residents.\nGenerally speaking, car is privately owned and the base station mounted on it usually supports a private working mode, i.e., it only allows individual access to the car owner’s UEs, e.g., his/her family members, friends, etc.\nOn the contrary, base station mounted on a bus usually works in a public manner. All the passengers in the bus or in the vicinity can access to the base station on the bus along its predictable itinerary regarding their extra 5G cellular access requirements.\nFigure 5.3-1 illustrates a vehicle-mounted base station, which is a mobile solution for deploying a base station in areas with limited infrastructure. The figure shows the base station mounted on a vehicle, with various antennas and communication equipment. The vehicle is equipped with a power supply and computing resources to support the base station's operations. This type of base station is particularly useful for emergency situations, disaster recovery, or temporary deployments in regions where traditional infrastructure is not available or is damaged. The vehicle-mounted base station can provide connectivity to mobile devices in the vicinity, enabling communication even in remote or challenging environments.\nFigure 5.3-1: Vehicle mounted base station\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tPre-conditions",
+                            "text_content": "To enable this use, following pre-conditions should be met:\nAlice wants to join a music festival and share the live show to her friend Bob.\nAlice’s car is installed with an on-board base station.\nThe bus that Bob takes is also equipped with on board base station along its itinerary.\nIn the area around the spot of the music festival, the base station mounted on the vehicle is allowed to provide 5G coverage to neighbouring UEs outside the vehicles.\nEither the base station on a car or bus is able to connect the NG-RAN and 5G Core network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.3\tService Flows",
+                            "text_content": "Alice drives by her own car to the spot of the music festival with her family. Alice as well as her family’s UEs is connected to the base station on her car, which has been set to provide private access only. Alice pickup her friend Mary at Mary’s home when she drives her car to the fesitval, and Mary’s UE is connected to the base station on Alice’s car since Alice grant Mary to access, e.g. by giving Mary an Token. Mary uses her UE and the Token to access the Internet via the base station on the car during Alice drives.\nAlice parks her car in a parking lot near the spot of the music festival. John is a stranger in the nearby. His UE tries to connect to the base station on Alice’s car, but it fails without be granted authentication from Alice.\nAt the same time, Bob takes a bus back home, with a base station mounted on it. Bob’s UE is connected to the base station on the bus, which provides public access to all the passengers on the bus.\nAlice starts sharing video with Bob the live video during the concert festival.\nAt the festival, Alice meets three of her friends. Since long time no see, they decide to go back to Alice’ home for further drinks and chatting. Then Alice set the base station on her car to provide open access. With this setting, all friends on the car can access the Internet via the base station on the car.\nWhen Alice arrived at home, she parked her car and turn off the base station on the car. All her friends and Alice then not able to access the base stations on the car.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.4\tPost-conditions",
+                            "text_content": "Alice shares the live video of the music festival to Bob via 5G access from the base station on her car.\nBob is happy to watch a live show via 5G access from the base station on bus.\nMary is happy to access the Internet via the base station on the Alice car during Alice drives.\nAll friends of Alice are happy to access the Internet via the base station on the Alice car.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "The mobility management of the vehicle mounted base station shall be taken into account.\nMulti-network connectivity and service delivery across operators will be used to assist this use case. The 5G system shall be able to maintain service continuity with minimum service interruption when the serving network is changed to a different serving network operated by a different operator.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.3-1] The 5G system shall support the use of vehicle mounted mobile base station relays, which provide 5G access to UEs in the vicinity.\n[PR 5.3-2] Subject to operator policy, the 5G system shall support means to configure and enable a vehicle mounted mobile base station relays to allow access to all UEs, or to only allow access to certain authorized UEs e.g., vehicle owner’s family members, friends, etc.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tControl of UEs access via mobile relays",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tDescription",
+                            "text_content": "As part of a nationwide campaign to stimulate and increase use of public transportation, a mobile operator (“Green”) and cities administrations launch a “premium 5G connection” service to be offered to Green subscribers, and tourists from partner roamers, when travelling on public buses, trams, trains and underground in the main cities of the country. \nThe improved 5G connectivity would be provided by using 5G mobile base station relays installed on board of public transport vehicles, which inter-connect (wirelessly) to the 5G macro network as part of Green 5G network.\nGreen decides to offer free and prioritized access to in-vehicle 5G relays to some of their executive customers, while for other Green subscribers (and roamers), access via relays would require and depend on a per-user permission, associated to a certain public transport ticket or membership. The user permission to access the relays may be specific per transport vehicles, and per geographic location/area. In addition, Green can configure other policies and parameters, as part of the RAN and/or relay settings, which may also depend on some macro RAN or other network constraints and conditions, for example it may limit/prioritize access to mobile relays based on time of the day, relay load, speed etc..\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tPre-conditions",
+                            "text_content": "In the service flow below, as an example, the following public transport “city pass” options are assumed to be available, and corresponding relay access permission policies to be set and provisioned by Green:\nNote: a city pass can have different time duration/validity (1 - 12 months) and includes free ticket/ride for all public transportation (bus, tram, metro, trains) in all areas, plus other benefits like entrance to city museums, parks etc..\n1-month city pass: Access to mobile relays on all buses, city centre area only, during non-peak hours\n6-month city pass: Access to mobile relays on all buses and trams, inside & outside city centre, non-peak hours\n1-year city pass: Access to mobile relays on all public vehicles (including metro & trains), all city, any time\n“Executive” pass (for Green executives only): Full/unrestricted permission to access mobile 5G relays, nationwide\nFor executive users, further higher priority access could be configured in case of specific relay or RAN operating/capability conditions, e.g. related to relay load or mobility factors. As example, normal priority UEs may connect via relays on buses only if less than 5 users are active (via the relay) and/or at bus speed is in a certain range, while executive UEs would have unrestricted access/connection in the same conditions.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.3\tService Flows",
+                            "text_content": "Three users, Alice, Bob and Charlie (Green customers) have the following city pass/status\nAlice: Executive;\nBob: 1-month pass;\nCharlie: 6-months pass\nThey work for the same company (Green) and same office building, located outside the main city area, and live in the same city centre neighbourhood.\nEvery day they share same itinerary and public transport vehicles to commute between home to work, i.e.\nAround 6am (non-peak hour), one bus from home to the tram station (city centre area), then a tram to the office (from inside to outside city centre).\nAround 6pm (peak hour), opposite itinerary to return home\nDuring their commuting, they typically use their smartphone almost all the time (active 5G connection), to browse internet and/or various social media communication. Based on their city pass/membership and other policies assumed above, they will experience the following 5G access/connectivity situations:\nAlice:\nHome to office: connected via relay on the bus and the tram\nOffice to home: same as above, high priority access\nBob:\nHome to office: connected via relay on the bus\nOffice to home: no access via relay\nCharlie:\nHome to office: connected via relay on the bus and part of the tram itinerary (till city centre limit)\nOffice to home: partially connected via relay on the bus and the tram (inside city centre);\nDuring peak hour, given normal priority rights, sometimes connection via relay on the bus is not possible, e.g. if/when other 5 Green passengers are on the bus and already actively connected via the relay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.4\tPost-conditions",
+                            "text_content": "All three users enjoy the premium 5G service from Green during their daily commuting to/from office, and are happy about their membership to the 5G-friendly public transport system!\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.4-1] The 5G system shall support provisioning and configuration mechanisms to control UEs’ access to the 5G network via a mobile base station relay, based on\nUser/UE subscription and/or permission (can be specific to each preferred relay);\nUser/UE or relay geographical location, time of the day, load, speed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.5\tControl of UEs access via mobile relays using application-based subscription",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.5.1\tDescription",
+                            "text_content": "A mobile operator (“Blue”) partners with the public transit organization of ConnectedTown to offer 5G connectivity to passengers of public city buses and trams. The 5G connectivity will be provided using 5G base station relays installed on board of those vehicles, connected to the Blue 5G RAN network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.2\tPre-conditions",
+                            "text_content": "Blue decides to give its own subscribers free access to 5G connectivity in city buses and trams, and to offer subcribers of other operators the possibility to subscribe to the service for a fee, with the following tariff plans available:\n20 min access in any bus or tram;\none day access in any bus or tram;\none month access in any bus or tram.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.3\tService Flows",
+                            "text_content": "Three users, Jack, Jill and Francois are about to enter a bus equipped with a Blue 5G on board relay\nJack is a Blue subscriber\nJill is a Purple subscriber\nFrancois is from France and visiting ConnectedTown during his vacation. He is a Rouge (French operator) subscriber\nWhen on the bus\nJack’s UE automatically connects to the vehicle relay\nJill and Francois get a notification on the UI of their UE informing them about the availability of in-bus 5G service and listing the corresponding app available for download.\nJill, who is commuting to work, recalls that Purple’s coverage on the bus route is usually spotty. Since she rides the bus every weekday to go to work, she downloads the app and decides to sign up for the one month plan. Francois also downloads the app. He is only in town for a day and from the information provided by the app, he determines that the rate offered by Blue is cheaper than what he gets from the preferred VPLMN with which Rouge has a roaming agreement in ConnectedTown, so he signs up for the one day plan. Jill and Francois’ UEs connect to the vehicle relay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.4\tPost-conditions",
+                            "text_content": "All three users enjoy the 5G connectivity from Blue, and – when leaving the bus - give positive feedback to the driver about the efficient and high-tech public buses.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.5-1] The 5G system shall support mechanisms to control UEs selection of mobile base station relays and UEs access to the 5G network via a mobile base station relay, based on\nuser/UE subscription and/or permission (can be specific to each preferred relay);\nuser preference, for manual selection of a specific relay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.6\tKeep connectivity via mobile base station relay",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.6.1\tDescription",
+                            "text_content": "In the urban environment, especially during the rush hour, a high density of passengers is waiting at the bus stop, which puts forwards a high demand for 5G area traffic capacity. A fleet of buses with on board base stations act as relays, which are expected to provide an efficient content delivery to these passengers. The buses typically move at a low speed and usually follow a certain predictable itinerary, along which the extra cellular capacity requirements are fulfilled.\nFigure 5.6-1 illustrates the process of connectivity maintenance via mobile base station relay, showcasing the role of a mobile base station in extending network coverage to areas with poor signal strength. The figure depicts a user device connected to a mobile base station, which in turn relays the signal to a fixed base station. This setup enables seamless connectivity and improved network performance, particularly in regions with limited infrastructure or challenging terrain. Key components include the mobile base station, user device, and fixed base station, all working in tandem to ensure uninterrupted communication.\nFigure 5.6-1: Connectivity maintenance via mobile base station relay\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.2\tPre-conditions",
+                            "text_content": "To enable this use, following pre-conditions should be met:\n-\tA bus shall be equipped with a mobile base station relay.\n-\tThe mobile base station relay is capable of providing 5G connectivity to UEs in the bus along the bus itinerary.\n-  The mobile base station relay is able to connect the NG-RAN and 5G Core network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.3\tService Flows",
+                            "text_content": "At a bus stop, there are two bus lines and passengers are either waiting for bus A or bus B.\nBefore the bus is arriving, 5 people are waiting at the bus stop, namely #1, #2, #3, #4, #5. All of their UEs are connected to the terrestrial base stations.\nWhen bus A arrives, # 1 and #2 get on bus and their UEs access to the mobile base station relay A. Meanwhile, UEs of #3, #4 and #5 are still connected to the terrestrial base station.\nBus A leaves the bus stop.\nDuring the driving process of bus A, UE #1 and UE #2 remain connected through mobile base station relay A.\nWhen bus A arrives at the next bus stop, # 1 gets off the bus A and UE #1 connects to the terrestrial base station. #2 is still on the bus, and UE #2 remains connected through mobile base station relay A.\nBus A arrives at the destination, # 2 gets off the bus and connects to other base stations.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.4\tPost-conditions",
+                            "text_content": "UEs in the bus are provided with enhanced 5G area traffic capacity by the mobile base station.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.6-1] The 5G system shall support the use of mobile base station relay, which provides 5G access to UEs in the vehicle along the vehicle itinerary.\n[PR 5.6-2] The 5G system shall provide means to ensure that UEs inside a vehicle, once provided with 5G access and connectivity via a mobile base station relay (e.g. mounted on the vehicle), remain connected via the mobile base station relay (e.g. mounted on the vehicle).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.7\tOptimizing mobility for UEs",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.7.1\tDescription",
+                            "text_content": "When served by mobile base station relays which are, in nature, mobile (moving around), UEs may experience a large number of unnecessary mobility related burdens, such as unnecessary handovers, selection of a mobile base station relay to connect, and cell reselection.\nThis use case addresses a scenario that UEs and their nearby mobile base station relay are from the same PLMN in general.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.2\tPre-conditions",
+                            "text_content": "MNO1 operates mobile base station relays R1a and R1b.\nUE1a and UE1b are subscribed to MNO1.\nR1a resides in Zone 1 whereas R1b in Zone 2 (refer to Figure below).\nNOTE 1:\tA Zone is not necessarily the area covered by a gNB but denotes a virtual zone for illustration purposes.\nUE1a is on R1a whereas UE1b is on R1b.\nUE1a does not have active data communication with R1a in Zone 1.\nIn Zone 2, there is a gNB.\nNOTE 2:\tThis means that mobile base station relays residing in Zone 2 are closer to this gNB than any other relays residing outside Zone 2.\nFigure 5 illustrates the pre-conditions for a successful communication process, focusing on the initial stages before data transmission. The figure showcases the various components involved, including the transmitter, receiver, and the medium through which the signal is transmitted, which is the electromagnetic spectrum. The transmitter sends out a signal, which is then received by the receiver. The medium plays a crucial role in determining the speed and efficiency of the communication process. The figure also highlights the importance of signal strength and the potential interference that may affect the signal's quality. Overall, the figure provides a comprehensive overview of the pre-conditions necessary for a successful communication process.\nFig. 5.7-1: Pre-conditions\nR1a (with UE1a as passenger) moves from Zone 1 into Zone 2 (and stays there from time t1 through time t2) whereas R1b (with UE1b) stays in Zone 2 (from time t1 through time t2+α) before moving to another destinations (e.g., somewhere in zone 3).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.3\tService Flows",
+                            "text_content": "R1a moves from Zone 1 into Zone 2 whereas R1b stays on in Zone 2, and R1a stays in the proximity of R1b.\nUE1a wants to initiate data communication and performs smart selection of mobile base station relay/cell to which it can attempt for a connection.\nUE1a has estimated that R1a was probably with UE1a for a certain period of time (e.g., by seeing that R1a has been close to UE1a itself for a certain time interval (t0, t1) as shown in the figure).\nUE1a tries to initiate a connection with R1a first and gets connected to R1a (Red in the figure, meaning active communication) if available.\nLikewise, UE1b attempts to R1b to initiate a connection (Red in the figure, meaning active communication).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.4\tPost-conditions",
+                            "text_content": "There is no need to make a handover for UE1a to other mobile base station relays or to other gNB as long as the connectivity provided by R1a is good enough.\nUE1a and UE1b continue their travels to the next destination (somewhere out of zone 2, e.g., zone 3) with R1a and R1b, respectively, enjoying their connections with no extra handovers.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.7-1] The 5G system shall be able to provide a means to optimize cell selection and minimize unnecessary cell reselection (between mobile base station relays or between mobile base station relays and fixed gNB,) in the presence of mobile base station relays.\nNOTE:\tThis requirement is intended to provide the capability for the 5G system (UEs/ mobile base station relays) to be able to optimize selection of a mobile base station relay, e.g., in a vehicle where the UE is on board (or that moved together so far or that is expected to move together).\n[PR 5.7-2] The 5G system shall be able to provide a means to minimize unnecessary handover (between mobile base station relays, or between mobile base station relays and a fixed gNB and between) for a UE while served via an mobile base station relay, e.g., based on UE and relay relative mobility or speed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.8\tLoad balancing for mobile base station relays",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.8.1\tDescription",
+                            "text_content": "When serving a group of UE’s (mostly passengers of a vehicle) via mobile base station relays, the traffic load (simply workload) of a relay can often be different from the others’. In an ordinary moving state of a mobile base station relays, a typical mechanism to make rearrangement of the load (often called load-balancing) is to find whether a macro node (gNB) is available and, if so, to perform necessary handover to that node.\nHowever, in the other states such as temporary stop at a bus stop or at a traffic signal, it is expected that several or more mobile base station relays are around, some of which are more overloaded than the others and therefore are suitable for accepting more UEs, if temporary.\nThis use case addresses a scenario that some UEs being served by a mobile base station relays can get temporarily rearranged/relocated to anther mobile base station relays (or to macro node, gNB) where they are all from the same PLMN in general.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.2\tPre-conditions",
+                            "text_content": "MNO1 operates mobile base station relays R1a and R1b.\nNOTE 1:\tIt is still possible that a third party authorised by an MNO operates mobile base station relays but in this use case it is simply regarded/described that the MNO operates them unless specifically needed to distinguish.\nUE(1), UE(2), …, UE(n) are subscribed to MNO1.`\nR1a resides in Zone 1 whereas R1b in Zone 2 (refer to Figure below).\nNOTE 2:\tA Zone is not necessarily the area covered by a gNB but denotes a virtual zone for illustration purposes.\nUE(1), UE(2), …, UE(n) are on R1a and have active communications in Zone 1 whereas no UEs on R1b have any active communications in Zone 2.\nR1a is fairly overloaded/congested due to many UE’s competing for network resources.\nIn Zone 2, there is a gNB.\nNOTE 3:\tThis means that mobile base station relays residing in Zone 2 are closer to this gNB than any other relays residing outside Zone 2.\nFigure 5 illustrates the pre-conditions for a successful communication link, focusing on the signal transmission process before reaching the receiver. The figure showcases the initial stages of signal generation, modulation, and encoding at the transmitter, as well as the signal's propagation through various mediums, including air and fiber optic cables. Key elements include the transmitter, receiver, and signal path, with the figure emphasizing the importance of signal quality, power, and signal-to-noise ratio for successful communication.\nFig. 5.8-1: Pre-conditions\nR1a (with UE(1), …, UE(n) as passengers having active communications) moves from Zone 1 into Zone 2 whereas R1b (with no UEs with active communications) stays in Zone 2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.3\tService Flows",
+                            "text_content": "R1a moves from Zone 1 into Zone 2 whereas R1b stays on in Zone 2, and R1a stays in the proximity of R1b.\nSome UE’s, say UE(n-1) and UE(n), out of those being served by R1a are relocated to R1b.\nR1a has the burden a little bit alleviated and therefore those UE’s, UE(1) through UE(n-2), can enjoy better communication performance during a certain length of time.\nR1a has now begun to move to next destination and those UE’s (i.e., UE(n-1) and UE(n)) which had temporarily been deported from the steady friend R1a, are getting back to the steady friend.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.4\tPost-conditions",
+                            "text_content": "On average UE’s using mobile base station relays can get better communication experience.\nIt was fortunate that the (n-2) UE’s can get better communication experience during that time period in Zone 2. They expect that this type of load balance will happen again whenever possible.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.8-1] The 5G system shall be able to provide a means to perform load balancing among mobile base station relays.\nNOTE:\tThis requirement is intended to provide the capability for the 5G system (UEs/ mobile base station relays) to be able to optimize the load of network resources whenever possible.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.9\tProvide location service to a UE attached to the relay mounted in the vehicle",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.9.1\tDescription",
+                            "text_content": "In certain urban environments, tall buildings and other infrastructure sites make GNSS signal too weak for normal UEs, e.g., mobile phones. It is even harder to get GNSS signal when a user is navigating with a mobile phone in a vehicle in urban area.\nSome kinds of public vehicles (e.g., bus, light rail train) can take many passengers with a number of UEs. When any of them is using location service or is a target UE in a location service and when UE based location is not possible, e.g. GNSS signals are very weak, the network based location service is used to make sure that the UE can still be located.\nIn another scenario, the target UE of a location service is in a poor 3GPP coverage area, and it then uses relay mounted in the vehicle to access to the network and to be located.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.9.2\tPre-conditions",
+                            "text_content": "A bus takes some passengers who get internet service over the 3GPP access through the bus-mounted relay.\nThe bus-mounted relay gets its location information through GNSS or 3GPP network based location services.\nThe UEs of some passengers are in low battery.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.9.3\tService Flows",
+                            "text_content": "Case 1: The passengers move into an area of poor GNSS coverage when GNSS based location service is used\n1. A passenger uses an application which need location service. GNSS based location service is used.\n2. The passengers move into an area of poor GNSS coverage\n3. The UE or an external AF sends location requests with the requested granularity (e.g. 5 meters) to the 5GS to trigger the network based location service.\n4. The 5GS responds the location information to the UE or the external AF.\nCase 2: The passengers move into an area of poor 3GPP coverage when 3GPP network based location service is used\n1. A passenger uses an application which need location service. 3GPP network based location service is used.\n2. The passengers move into an area of poor 3GPP coverage.\n3. The passengers uses relay mounted in the vehicle to access to the 3GPP network.\n4. The UE or an external AF sends location requests to the 5GS with the requested granularity (e.g. 5 meters) to trigger the network based location service.\n5. The 5GS responds the location information to the UE or the external AF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.9.4\tPost-conditions",
+                            "text_content": "All passengers who need location service can still get the location information even when they move into an area of poor GNSS coverage or poor 3GPP coverage.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.9.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.9.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.9-1]: The 5G system shall support providing location service for the UEs accessing to the 5GS network via a mobile base station relay (e.g. mounted on a vehicle).\n[PR 5.9-2]: The 5G system shall support providing location information to a requesting UE or other location entity, for UEs accessing the 5GS network via a mobile base station relay (e.g. mounted on a vehicle), considering e.g. specific location granularity, and efficient UE power consumption.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.10\tIncentives and charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.10.1\tDescription",
+                            "text_content": "This use case describes the scenario of a transportation company (“Alfa”), owning different fleets of vehicles and transport services in the major cities of the country. Vehicles are for persons or goods transport, e.g taxis, shuttles, buses, vans, and can be equipped (installed or upgraded by the manufacturer) with on board mobile base station relays. The relays can be configured to provide better 5G coverage/connectivity to passengers inside the vehicle (e.g. as premium in-vehicle service), and/or outside users (for localized coverage/capacity boost)\nAlfa makes a nationwide commercial agreement with one MNO (“Beta”) offering the possibility to use, control and operate the relays on their vehicles. The agreement with Beta includes some direct payment to Alfa, and other arrangements, e.g. free or discounted service for 5G traffic used by Alfa employees or drivers (MNO subscribers) via the vehicle relays. \nOn the other hand, Beta can offer and apply special subscription tariffs to some of their clients, e.g. enterprises or individual customers for premium in-vehicle 5G experience. \nIn both cases, it is assumed that the commercial agreements and/or customer tariffs would depend on the amount of data exchanged over the relays, quality of service, and other conditions (maybe specific to certain geographical areas, days/time, users, etc).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.10.2\tPre-conditions",
+                            "text_content": "The MNO Beta decides to use a certain type and amount of Alfa transport vehicles with relay capabilities, in particular for\nTaxis and shuttles, used by Beta subscribers and/or client enterprises\nOther transport vehicles, used by Beta for outdoor hot spot coverage/capacity boost, according to specific vehicles itineraries, routes (e.g. dense-urban streets), or transit/stop locations (e.g. bus/train stations, stadiums, airports).\nRelay operation is managed by and under the control of Beta, which will perform all proper provisioning, configuration and the necessary interconnection/integration with the Beta RAN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.10.3\tService Flows",
+                            "text_content": "Relays are activated by Beta.\nBeta’s network and relays collect and report charging data (online and offline) for the 5G traffic exchanged via the vehicle relays managed by Beta, i.e.\nData exchanged by individual passengers, and experienced QoS, using 5G connectivity via in-vehicle relays\nOverall 5G traffic increase via vehicle relays in specific hot spot areas, days/times.\nEvery billing period, Beta generates related billing records for\nBeta customers and/or client enterprises, paying for in-vehicle premium 5G service as part of their MNO membership/plan.\nVehicles’ drivers and other Alfa employees, eligible for discounted tariffs when using 5G relays (as per deal with Alfa).\nBeta will compensate Alfa for the extra 5G traffic/capacity enabled by the relays, based on the amount of traffic exchanged via the relays, experienced QoS, specific location and time etc., as per their commercial contract and service conditions.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.10.4\tPost-conditions",
+                            "text_content": "Alfa and Beta meet their business goals. Beta customers are very pleased by their in-vehicle 5G experience.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.10.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.10.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.10-1] The 5G system shall be able to configure and provision specific required QoS for traffic relayed via a mobile base station relay, e.g. may be based on user’s subscription, geographical area, day/time of operation. relay type, itinerary/mobility, etc.\nNOTE: QoS is intended as end-to-end QoS, i.e. covering both UE access and relay backhaul QoS.\n[PR 5.10-2] The 5G system shall be able to identify and differentiate the traffic relayed via a mobile base station relay, e.g. to apply specific charging policies.\n[PR 5.10-3] Online and offline charging shall be supported for UEs connected via a mobile base station relay.\n[PR 5.10-4] The 5G system shall be able to provide and collect charging information for UEs using a mobile base station relay, including e.g.:\nIdentification of UEs/users involved;\nInitiation/termination time of relay communication;\nDuration and amount of data transmitted and received;\nType of service, QoS, other allocated resources (e.g. spectrum);\nGeographic location(s) served by the relay\nOther relay mobility information (e.g. itinerary, speed)\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.11\tUse cases on Service continuity",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.11.1\tMobility between macro and relay",
+                            "text_content": "When users/UEs enter or leave vehicles with on board relays, handover between macro and vehicle relays can happen, if an active connection is ongoing.\nThe scenario described in this use case refers to a user, Alice, engaged in a phone call while going to her office via tram.\nAlice is at a tram station, waiting for her usual 8am tram to get to her office, located several miles away.\nThe tram happens to be equipped with an on board base station relay, offering 5G connectivity from the same HPLMN as Alice is subscribed to.\nBefore the tram arrives, Alice calls her secretary to discuss the busy meetings schedule of the day, using available radio coverage from her HPLMN macro network.\nAlice is at the tram station, with an ongoing call using macro 5G network (from her HPLMN)\nThe tram arrives, and Alice enters the vehicle. Given the very good 5G relay coverage inside, much better than the macro NW, the call is handed over via the relay, without any discontinuity.\nThe tram arrives at Alice’s office location, and the call is still ongoing, via the tram relay.\nAlice leaves the tram; while exiting, the 5G connection switches back from the tram relay directly to the macro network, and the call continues seamlessly.\nFigure 5.11.1 -1 presents a detailed network topology diagram, illustrating the interconnected nodes and pathways of a complex telecommunications system. The figure showcases multiple layers of communication infrastructure, including the core network, access network, and various service provider networks. The core network is depicted at the center, with its high-speed links connecting to the access network, which in turn interfaces with the service provider networks. The figure also highlights the use of optical fiber and microwave links for high-speed data transmission. The various nodes, represented by different shapes and colors, indicate different functions such as routers, switches, and gateways. The pathways between these nodes represent the flow of data, with some paths marked as \"up\" and others as \"down,\" indicating the direction of data transmission. The figure provides a comprehensive view of the network's architecture, emphasizing the interdependence and complexity of modern telecommunications systems.\nFigure 5.11.1-1\nWhile walking to the office building, Alice thanks her secretary for the helpful de-brief and hangs up; she feels very well prepared for the busy working day ahead.\nCurrent requirements (e.g. related to wireless self-backhaul, see 22.261, sec 6.12) or existing functionalities (e.g. IAB), cover scenarios of autonomous configuration/adaptation of network topologies, but do not assume or fully address physical relay mobility.\n[PR 5.11.1-1] The 5G system shall be able to support efficient handover when a UE active communication changes from the macro network to a mobile base station relay (e.g. mounted on a vehicle) and vice versa, ensuring end-to-end service continuity during mobility of the UE (e.g. entering or leaving the vehicle) and/or the relay.\nWhen moving to an area where coverage from mobile base station relay(s) is available, the UE can be handed over from the macro network to a suitable mobile base station relay. Conversely, when the UE served by a mobile base station relay is heading out of the area where coverage from mobile base station relay(s) is available, the UE can be handed over from the relay to the macro network. In both cases, ensuring that there is no interruption in the ongoing services at the UE will yield an improved user experience.\nAnna lives in a residential area within walking distance of the city center. She gets good 5G service from the macro network around her house thanks to the lack of tall buildings and the fact that the area is not densely populated. Anna works in the city center and likes to go to the office on foot. Often, to save time, she takes conference calls on her way to work.\nFigure 5.11.1-2 presents a detailed network topology diagram, illustrating the interconnectedness of various network components. The figure showcases a hierarchical structure, starting from the core network, extending to the edge, and finally reaching the access layer. Key elements include the core network nodes, edge routers, and access points, all interconnected through a series of high-speed links. The figure emphasizes the importance of efficient network design and management, with a focus on optimizing performance, reliability, and security across different network layers.\nFigure 5.11.1-2\nIt’s 7:55 am and Anna gets out of her house to walk to work. She has a conference call at 8 am so she starts the conferencing app on her phone and connects her headset.\nAt 8:25 am, Anna arrives in the city center. Anna’s boss asks her to give an update on the project she is working on. Anna starts giving her presentation.\nDue to the high-rise buildings in the center, the macro coverage gets spotty, and due to the high number of UEs, the data rate allocated to Anna’s phone starts going down. Anna’s boss starts asking her questions on the updates she has presented.\nTraffic in the center is very packed and there are buses equipped with mobile station relays on the avenue where Anna is walking. The macro network determines that Anna’s phone can get better coverage from a relay than from the macro and hands over Anna’s phone to the relay in the bus closest to Anna. All ongoing services in the phone, including the conference call, are transferred without service interruption.\nFigure 5.11.1-3 illustrates a complex telecommunication network, showcasing various nodes and connections that facilitate data transmission. The figure displays multiple layers of network infrastructure, including the core network, access network, and transport network. The core network is depicted at the center, with interconnected nodes and links that represent the backbone of the system. The access network is shown on the left, with various access points and interfaces that allow for connectivity to end-users. The transport network is shown on the right, with a series of transport nodes and links that ensure the efficient transmission of data. The figure also includes a variety of security measures, such as firewalls and intrusion detection systems, that protect the network from external threats. Overall, the figure provides a comprehensive overview of the complex architecture and components that make up a modern telecommunication network.\nFigure 5.11.1-3\nAnna’s phone regains good coverage and maximum data rate, enabling Anna to not miss any of her boss’s questions and to provide answers. Anna’s boss congratulates her for the good progress on her project.\nAnna’s conference call continues and her colleagues give updates on their own project. Anna arrives in front of her office building and enters the building, while the bus in which the relay is installed continue alongside the avenue\nThe network determines that the serving relay and Anna’s phone are moving in diverging directions and hands over Anna’s phone the macro cell serving Anna’s office building. All ongoing services in the phone, including the video call, are transferred without service interruption.\nFigure 5.11.1-4 illustrates a complex network infrastructure, showcasing multiple layers of communication technology. The figure depicts a hierarchical structure, starting with the core network, followed by the access network, and finally the user network. The core network is represented by the central hub, with various interconnected nodes and links, symbolizing the high-speed data transmission and routing capabilities. The access network, depicted by the outer ring, includes local area networks (LANs) and metropolitan area networks (MANs), illustrating the connection between the core network and the end-users. The user network, shown at the outer edge, represents the individual devices and their connections to the broader network. The figure emphasizes the importance of efficient network design and management, ensuring seamless communication and optimal resource allocation across different levels of the network.\nFigure 5.11.1-4\nAnna finishes her conference call, and goes to her office.\nAnna’s conference call was transferred seamlessly from the macro network to the mobile base station relay and then back to the macro network.\nAnna is very pleased that she was able to participate in the call without service outage, which enabled her to complete her presentation, answer all questions, and listen to her colleagues’ updates.\nCurrent requirements (e.g. related to wireless self-backhaul, see 22.261, sec 6.12) or existing functionalities (e.g. IAB), cover scenarios of autonomous configuration/adaptation of network topologies, but do not assume or fully address physical relay mobility.\n[PR 5.11.1-2] The 5G system shall be able to support efficient handover when a UE active communication changes from the macro network to a mobile base station relay (e.g. mounted on a vehicle) and vice versa, ensuring end-to-end service continuity during mobility of the UE (e.g. moving outside the vehicle) and/or the relay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.11.2\tMobility of relay between macro nodes",
+                            "text_content": "While the UE is served by a mobile base station relay, as the vehicle is moving, it is possible for the relay to be handed over to a different macro node. Ensuring that there is no interruption to the ongoing services at the UE will yield an improved user experience.\nJim is going on a business trip that was scheduled on very short notice. To prepare for the trip, he has set up a conference call with this team that will take place during his commute to the airport using his favorite ride-sharing service, whose vehicles happen to be equipped with mobile station relays.\nJim settles into his ride and opens his laptop which has with a 5G modem. The modem in the laptop registers with the mobile base station relay mounted on the vehicle. Jim starts his conference call and shares the slides he has prepared.\nFigure 5.11.2-1 presents a detailed network topology diagram, illustrating the interconnected nodes and pathways of a complex telecommunications system. The figure showcases multiple layers of network infrastructure, including the core network, access network, and transport network. The core network is depicted at the center, with various nodes and links connecting to it. The access network is shown on the left, with multiple access points and links extending outward. The transport network is shown on the right, with a series of routers and switches connecting different parts of the network. The figure also includes a variety of labels and annotations, such as IP addresses, port numbers, and network protocols, providing a comprehensive overview of the system's architecture and functionality. Overall, the figure provides a valuable visual representation of a telecommunications network's structure and operation.\nFigure 5.11.2-1\nJim’s ride goes onto the highway and heads for the airport. As the vehicle moves away from the city, coverage from the serving macro node to the relay becomes weaker.\nThe macro network determines that the relay can be better served by another macro node, and hands over the relay to that macro node. All ongoing services on Jim’s laptop, including the conference call with slide sharing, are transferred without service interruption.\nJim arrives to the airport, thanks his team and ends the conference call.\nJim’s conference call and slide sharing were transferred seamlessly during handover of the relay serving Jim’s laptop from one macro node to another. Jim is very pleased that he was able to make the most of the ride time and go through the entire slide deck without any interruption in connectivity.\nFigure 5.11.2-2 illustrates a detailed network topology diagram, showcasing the interconnected nodes and their relationships. The figure represents a complex network infrastructure, with various components such as routers, switches, and servers, all interconnected through a series of lines and arrows. The layout emphasizes the hierarchical structure of the network, with core and edge devices clearly distinguished. The figure also highlights the use of virtual LANs (VLANs) for segmenting traffic and improving network performance. The presence of multiple network protocols, such as Ethernet and IP, underscores the interoperability and flexibility of the network. Overall, the diagram provides a comprehensive view of a modern network architecture, emphasizing the importance of efficient design and management for optimal performance.\nFigure 5.11.2-2\nNote: the use case does not assume a particular vehicle’s speed, and may apply also to users and relays inside high-speed trains (up to 500kmph).\nCurrent requirements (e.g. related to wireless self-backhaul, see 22.261, sec 6.12) or existing functionalities (e.g. IAB), cover scenarios of autonomous configuration/adaptation of network topologies, but do not assume or fully address physical relay mobility.\n[PR 5.11.2-1] The 5G system shall be able to support efficient handover of a UE active communication when a mobile base station relay (e.g. serving a UE inside a vehicle) changes between macro network nodes, ensuring end-to-end service continuity during mobility of the relay.\nIn certain scenarios, a mobile base station relay mounted on a vehicle may serve UEs outside, and while the vehicle is moving the relay connection to the macro network can change, i.e. can be handed over to a different macro donor node. In such cases, the system should ensure seamless mobility and service continuity.\nThe example scenario described here refers to an outdoor sport event (bike or pedestrian race), with motorbikes’ camera transmitting real-time video via relays mounted on alongside vehicles, e.g. provided by the event organizer or TV broadcaster. During the race, the vehicle relay changes macro cell coverage, i.e. relay connection is handed over between two macro donor nodes.\nBefore the race starts, cameras on motorbikes get configured and connected to a surrounding vehicle relay, providing 5G wireless backhauling connectivity toward a certain PLMN network.\nReal-time video transmission starts, and the vehicle relay is connected to macro cell (donor node) #1.\nFigure 5.11.2-3 illustrates a complex network infrastructure, showcasing multiple layers of communication technology. The figure depicts a hierarchical structure, starting with the core network, followed by the access network, and finally the user network. The core network is represented by the central hub, with various interconnected nodes and links, symbolizing the high-speed backbone that supports the transmission of data. The access network is shown as a series of smaller nodes, indicating the point of connection for end-users. The user network is represented by the individual devices, such as smartphones and computers, that are connected to the network. The figure also includes various types of network elements, such as routers, switches, and servers, which are essential for routing and processing data. The figure provides a clear visual representation of the complex network architecture and its components, highlighting the interconnectedness and interdependence of these elements.\nFigure 5.11.2-3\nThe sport race starts; motorbikes with cameras and cars equipped with relays follow, on the side, the race group/platoon.\nWhile moving along the race itinerary, the relay coverage and connection quality from macro cell#1 gets weaker, and macro cell#2 becomes a stronger/better cell to connect to.\nBased on NW decision, at a certain point the relay backhaul connection is handed over from cell#1 to cell#2, while UEs (cameras) remain connected to the same relay.\nThe vehicle relay is connected to macro cell#2, and no service disruption occurred to the ongoing video transmission.\nFigure 5.11.2-4 illustrates a complex network infrastructure, showcasing multiple layers of communication technology. The figure depicts a hierarchical structure, starting with the core network, followed by the access network, and finally the user network. The core network is represented by the central hub, with various interconnected nodes and links, symbolizing the high-speed data transmission and processing capabilities. The access network, depicted by the outer ring, includes the aggregation network and the distribution network, highlighting the transition from high-capacity core networks to lower-speed access networks for end-users. The user network, shown at the outer edge, represents the final point of connection for individual users, emphasizing the importance of efficient and reliable connectivity. The figure also includes various communication protocols and technologies, such as Ethernet, Wi-Fi, and satellite, indicating the diverse range of communication methods employed in modern networks. Overall, the figure provides a comprehensive overview of the complex and interconnected nature of modern telecommunication networks.\nFigure 5.11.2-4\nCurrent requirements (e.g. related to wireless self-backhaul, see 22.261, sec 6.12) or existing functionalities (e.g. IAB), cover scenarios of autonomous configuration/adaptation of network topologies, but do not assume or fully address physical relay mobility.\n[PR 5.11.2-2] The 5G system shall be able to support efficient handover of a UE active communication when a mobile base station relay (e.g. serving a UE outside a vehicle) changes between macro network nodes, ensuring end-to-end service continuity during mobility of the relay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.11.3\tMobility between relays",
+                            "text_content": "Some big size vehicles, e.g. trains or trams, can require multiple 5G base station relays to provide good coverage to users/UEs located in different parts of the vehicle. In such cases, if active users/UEs move around the vehicle their connection can switch between different relays.\nIn the example described hereafter, Tom is travelling on a high-speed train that provides 5G on board coverage (from his HLMN) by using relays installed 2-3 wagons apart, connected via wireless backhaul to the wide-area 5G macro RAN.\nTom is seating on the train and his smartphone is camped on a local (HPLMN) 5G relay inside/nearby his wagon. It’s almost lunch time, and he’s thinking to go and eat something at the small restaurant/bar available on the train, located few wagons away. Meanwhile, Tom receives a video-chat call from his wife.\nFigure 5.11.3-1 illustrates the network architecture of a modern telecommunications system, showcasing the integration of various components such as the core network, access network, and transport network. The core network, represented by the central hub, serves as the backbone for data transmission, while the access network, depicted by the outer ring, facilitates connectivity to end-users. The transport network, shown by the outer-most layer, ensures the efficient delivery of data over long distances. The figure also highlights the role of network elements like routers, switches, and firewalls in managing network traffic and maintaining security.\nFigure 5.11.3-1\nTom has started a call, using 5G connectivity from the close-by 5G relay (e.g. inside his wagon)\nDuring the call, Tom moves to the restaurant wagon, which is covered by another 5G relay.\nWhile moving between wagons, connectivity quality/strength of the first relay decreases, while coverage from the relay in the restaurant wagon becomes available and stronger.\nWhen Tom gets closer to restaurant wagon, the call is handed over from the first relay to the second relay, using the same donor macro node.\nTom arrives at the restaurant without perceiving any disruption to the ongoing call and can continue enjoying his phone conversation while seating at the bar.\nFigure 5.11.3-2 illustrates a wireless communication system, showcasing the various components involved in the transmission and reception of signals. The figure depicts a base station, or gNB, which serves as the central hub for signal transmission and reception. From the gNB, signals are transmitted through multiple antennas, which are strategically placed to cover a wide area and ensure optimal signal strength.\n\nIn addition to the base station, the figure also includes user equipment (UE), which are the devices that receive and transmit signals within the network. The UE is connected to the gNB through a variety of interfaces, such as Wi-Fi or cellular connections, depending on the specific communication technology being used.\n\nThe figure also highlights the role of the air interface, which is the physical medium through which signals are transmitted between the gNB and the UE. This air interface can be either a licensed or unlicensed frequency band, and it is designed to provide high-speed, low-latency communication.\n\nFurthermore, the figure illustrates the importance of signal processing and modulation techniques in wireless communication. These techniques are used to convert the analog signals into digital form, which can then be transmitted over the air interface. The figure also shows the use of multiple antennas at the g\nFigure 5.11.3-2\nNote: the use case does not assume a specific vehicle’s speed, and may apply also to high-speed trains (up to 500kmph).\nCurrent requirements (e.g. related to wireless self-backhaul, see 22.261, sec 6.12) or existing functionalities (e.g. IAB), cover scenarios of autonomous configuration/adaptation of network topologies, but do not assume or fully address physical relay mobility.\n[PR 5.11.3-1] The 5G system shall be able to support efficient handover when a UE active communication changes between mobile base stations relays (e.g. mounted on a vehicle), ensuring end-to-end service continuity during mobility of the UE (e.g. moving inside the vehicle).\nWhile a user is located in an area where coverage from mobile base station relay(s) is available, the user’s UE can be handed between mobile base station relays due to mobility of the relays. Ensuring that that there is no interruption in the ongoing services at the UE during such handover will yield an improved user experience.\nTom has made plans to have lunch with friends at a sushi restaurant downtown. The food there is very good, plus the restaurant is conveniently located across from the downtown bus transit hub/station, which enables Tom to reach the restaurant easily by public transportation. All buses in Tom’s city are equipped with mobile base station relays.\nTom arrives early at the restaurant and sits down at a table. His phone registers with the mobile base station relay mounted on a bus across the street awaiting departure. Tom starts streaming his favorite TV show on his phone while waiting for his friends.\nFigure 5.11.3-3 illustrates a wireless communication system, showcasing the various components involved in the transmission and reception of signals. The figure depicts a base station, or gNB, which serves as the central hub for signal transmission and reception. From the gNB, signals are transmitted to multiple user equipment (UEs), which are distributed across the coverage area. The figure also includes a representation of the environment, with buildings and other obstacles that can affect signal propagation. The presence of these obstacles highlights the importance of efficient signal routing and beamforming techniques to ensure reliable communication. Additionally, the figure shows the use of multiple antennas at the gNB and UEs, which are essential for achieving high data rates and improving overall system performance.\nFigure 5.11.3-3\nThe driver of the bus equipped with the mobile base station relay serving Tom’s phone gets in the bus and prepare to depart. The driver turns on the engine, closes the doors, and starts driving the bus toward the exit of the bus transit hub, then makes a left into the avenue.\nThe network determines that the serving relay is moving away from Tom’s phone and hands over Tom’s phone to a relay located in another bus awaiting departure at the bus transit hub. All ongoing services in the phone, including the streaming of the TV show, are transferred without service interruption.\nTom’s friends arrive at the restaurant, and they order lunch.\nTom’s streaming video was transferred seamlessly from the mobile base station relay mounted on the first bus, to a mobile base station relay mounted the second bus. Tom is very pleased that he was able to watch his TV show without interruption while he was waiting for his friends.\nFigure 5.11.3-4 presents a detailed network topology diagram, illustrating the interconnected nodes and pathways of a complex communication network. The figure showcases multiple layers of routers, switches, and other network devices, each represented by distinct shapes and colors. The arrangement of these components suggests a high level of organization and efficiency, with each device strategically placed to optimize data flow and minimize latency. The use of multiple pathways and redundant connections indicates a robust design capable of handling high volumes of traffic and providing reliable service. The figure serves as a valuable tool for network administrators and engineers to visualize and understand the structure and performance of their network infrastructure.\nFigure 5.11.3-4\nCurrent requirements (e.g. related to wireless self-backhaul, see 22.261, sec 6.12) or existing functionalities (e.g. IAB), cover scenarios of autonomous configuration/adaptation of network topologies, but do not assume or fully address physical relay mobility.\n[PR 5.11.3-2] The 5G system shall be able to support efficient handover when a UE active communication changes between mobile base stations relays (e.g. mounted on a vehicle), ensuring end-to-end service continuity during mobility of the UE (e.g. moving outside the vehicle) and/or the relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.11.4\tGroup UEs’ service continuity",
+                            "text_content": "After a bus is installed of mobile BS relay, the passengers in the bus can be served by the relay. When the bus is moving, it is possible for the relay to be handed over to a different macro node. Thus, no interruption to the ongoing services at the UEs in the bus will yield an improved user experience.\nThe city bus company has assigned contract with operator AA to install mobile BS relay on the city buses. All the passengers in the buses can be served by the relay.\nPassenger Anna, Jim are in the city bus RED. Anna opens her tablet and registers with the mobile base station relay mounted on the bus. She begins to play online game through her tablet. Jim opens his smartphone to register with the relay mounted on the bus then begins to view online video.\nFigure 5.11.4 depicts a scene of Anna and Jim in a city bus, with Anna sitting in the RED seat and Jim in the BLUE seat. The image provides a visual representation of their seating arrangement within the bus, illustrating the spatial relationship between them. The figure is significant as it helps in understanding the context of their conversation or interaction, which is mentioned in the text.\nFigure 5.11.4-1: Anna and Jim in the city bus RED\nRED bus moves along its route and the mobile base station relay mounted on the bus connecting with the serving macro node provides communication service for its passengers.\nWhen it is moving, the radio signal which the relay received becomes weak.\nThe 5G system identifies that the relay can be better served by another macro node, and hands over the relay to that macro node.\nAll ongoing traffic of the passengers in the bus e.g. Jim’s video, Anna’s game etc. are transferred without service interruption.\nAnna’s online gaming can go well during she is in the bus.\nJim’s video can be viewed well either during he is in the bus.\nNote: the use case does not assume a particular vehicle’s or speed, and may apply also to users and relays inside high-speed trains (up to 500kmph). And the number of active passengers in a vehicle can be large (e.g. up to 100 in a train).\nCurrent requirements (e.g. related to wireless self-backhaul, see 22.261, sec 6.12) or existing functionalities (e.g. IAB), cover scenarios of autonomous configuration/adaptation of network topologies, but do not assume or fully address physical relay mobility.\n[PR 5.11.4-1] The 5G system shall be able to support efficient handover of a group of UEs’ active communications when a mobile base station relay serving a group of in vehicle UEs moves between donor gNBs, ensuring end-to-end service continuity during mobility of the relay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.12\tOptimizing UE mobility from planned or predicted mobility information",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.12.1\tDescription",
+                            "text_content": "Urban buses of a city are equipped with a mobile base station relay i.e. Vehicle-mounted Relays (VMRs).\nThe city provides also autonomous cars rental for moving in the centre or in the suburb of the city. Autonomous cars of the city may follow the same corridors as the city buses.\nEach autonomous car is equipped with a built-in UE and a roof antenna.\nBob is going to work. Bob hires one autonomous car and configures the path to go to his work office in the car.\nAlong the path to the work office, the autonomous car’s UE can connect to different fixed base stations or mobile base station relays providing a better signal quality for a short period, thereby triggering a large number of handovers. This can be inefficient, since it is preferred that his car’s UE selects a fixed base station or a mobile base station relay that provides good connectivity for a longer duration.\nTo minimize the number of handovers and to provide a service continuity, the 5G system can predict the usual itinerary of a UE as well as that of neighbouring VMRs to select the best fixed base station or mobile base station relay for the UE alongside a given usual travel itinerary.\nIn the provided use-case, the car’s UE connects to the VMR of Bus 2 that follow the car’s UE itinerary for an important portion of the itinerary. Should the bus stop and the car continue, then the received Bus 2 VMR signal level will drop and a new handover decision will be necessary. In this case, both signal level and the mobility information will be used as before to select another fixed base station or a mobile base station relay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.12.2\tPre-conditions",
+                            "text_content": "The following pre-conditions and assumptions apply to this use case:\nMNO 1 operates car’s UE, VMR 1 (Bus 1), VMR 2 (Bus 2), BS 1 (Base Station).\nBob is going to work and hire an autonomous car embedding a car’s UE.\nBob configures the path in the autonomous car with the itinerary to work.\nCar’s UE is currently connected to a Base station (BS 1).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.12.3\tService Flows",
+                            "text_content": "1.\tThe car (car’s UE) is following two buses, Bus 1 (VMR 1) and Bus 2 (VMR 2).\n2.\tThe network signal conditions become better from the mobile base station relays (VMRs) than from the fixed base station (BS 1).\n3.\tBus 2 will be turning left at the next corner while Bus 1 will continue to follow the same direction as Bob’s car.\n4.\tThe 5G system finds that Car’s UE itinerary has a high probability of following the direction of Bus 1 (VMR 1) and a low probability of following the direction of Bus 2 (VMR 2).\n5.\tCar’s UE connects to VMR 1.\nFigure 5 illustrates the service flow or use case for a telecommunication system, showcasing the various stages from the user's perspective. The figure begins with the user initiating a call or data request, which is then directed to the network core. The core processes the request and routes it to the appropriate service provider. The service provider processes the request and delivers it to the user, completing the service flow. Key components include the user equipment (UE), the network core, and the service provider. The figure highlights the importance of efficient service flow in ensuring a smooth user experience.\nFigure 5.12-1: Illustration of service flow / use case\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.12.4\tPost-conditions",
+                            "text_content": "Bob continues to attend to his conference call with his UE while being in his car.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.12.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "3GPP TS 22.261 [2] clause 6.2.2: The 5G network shall allow operators to optimize network behaviour (e.g. mobility management support) based on the mobility patterns (e.g. stationary, nomadic, spatially restricted mobility, full mobility) of a UE or group of UEs.\n3GPP TS 22.261 [2] clause 6.2.2: The 5G system shall enable operators to specify and modify the types of mobility support provided for a UE or group of UEs.\n3GPP TS 22.261 [2] clause 6.2.2: The 5G system shall support inter- and/or intra- access technology mobility procedures within 5GS with minimum impact to the user experience (e.g. QoS, QoE).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.12.6\tPotential New Requirement needed to support the use case",
+                            "text_content": "[PR.5.12.6-001] The 5G system shall provide means for a UE to select a suitable mobile base station relay (e.g., a mobile base station relay that has a similar trajectory as the UE).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.13\tUse of mobile relay as secondary node",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.13.1\tDescription",
+                            "text_content": "A user served by a macro cell can enter an area where vehicles equipped with mobile base station relays are parked or running a low speed. In this case, it can be beneficial to use a suitable candidate relay to provide a simultaneous access link for the UE, e.g. enabling to increase user data rates and/or improve coverage during the time the relay is in the vicinity of the user. Keeping the simultaneous link to the macro cell can ensure that there is no interruption of service, e.g. in case the user and/or the relay move away from each other too quickly (e.g. when a parked/stationary vehicle with a mobile base station relay drives off).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.13.2\tPre-conditions",
+                            "text_content": "Tom lives in a residential area within walking distance of the city center. He gets good 5G service from the macro network around his house. Tom works in the city center and likes to go to the office on foot. Often, he takes conference calls from his smartphone on his way to work.\nIt is assumed that\nPrimary RAN connectivity should be provided via a macro RAN link (i.e. non relayed link, as opposed to a link via a mobile BS relay). This may increase connection quality and availability, e.g. in case macro RAN connectivity uses lower frequency bands than BS relays, or in areas where vehicles (with mobile BS relays) are moving quickly and/or may provide only temporary connectivity.\nThe RAN cell (re)selection settings are such that Tom’s UE tries to camp/reselect to a macro RAN node (preferred versus a mobile base station relay), if macro RF quality is suitable. This will increase the possibility to set up a 5G connection via the macro RAN as primary link.\nThe simultaneous UE access links to the RAN (via the macro link and mobile BS relay) could be connected to the same or different RAN node(s).\nFigure 5.13 illustrates the simultaneous connection of a User Equipment (UE) to the Radio Access Network (RAN) through two distinct paths: a macro link and a mobile relay link. The macro link, represented by the large antenna, is a direct connection to the base station, while the mobile relay link, depicted by the smaller antenna, involves a secondary device that enhances signal reception in areas with poor coverage. This figure highlights the versatility of RAN connectivity solutions in meeting diverse coverage requirements.\nFigure 5.13 Simultaneous UE connection to RAN (via macro link and mobile relay link)\nIn the service flow below, the figures show the case of same (or co-located) RAN nodes, for simplicity.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.13.3\tService Flows",
+                            "text_content": "It’s 7:55 am and Tom gets out of his house to walk to work. His phone camps on a macro cell on frequency f1. Tom has a conference call at 8 am so he starts the conferencing app on his phone and connects his headset.\n\nFigure 5.13-1\nAt 8:25 am, Tom arrives in the city center. Tom’s boss asks him to urgently email him documents related to the project Tom is working on, in preparation for a briefing with executives.\nDue to the high-rise buildings in the center, the macro coverage gets spotty, and due to the high number of UEs, the data rate allocated to Tom’s phone starts going down. Tom starts emailing the documents to his boss but the upload speed is very slow.\nTom arrives next to the bus transit hub, where a bus equipped with a mobile base station relay operating on frequency f2 is parked. The macro network determines that Tom’s phone can get supplemental throughput from the relay in the bus and adds the relay as secondary node.\nTom’s phone regains good data rate performance, and all his documents are uploaded successfully.\nFigure 5.13 -2 illustrates the signal flow in a satellite communication system, showcasing the interaction between the Earth's atmosphere and the satellite. The figure depicts the signal's path from the ground station, through the satellite, and back to the ground station. Key components include the parabolic antenna, which captures the signal, and the satellite, which relays the signal to other ground stations. The figure also illustrates the use of multiple frequency bands to enhance communication capacity and the importance of signal modulation techniques for data transmission.\nFigure 5.13-2\nThe driver of the bus turns on the ignition and drives out of the bus transit hub on his scheduled bus route.\nThe network determines that the relay in the bus is moving away from Tom’s phone, and removes the relay as secondary node, while the link to the macro cell is kept as primary node.\nFigure 5.13 -3 illustrates the signal flow in a wireless communication system, specifically focusing on the modulation and demodulation processes. The diagram showcases the transmitter, which modulates the signal, and the receiver, which demodulates the signal to extract the original data. The signal is transmitted through various channels, including the air interface, and is subject to potential interference. The figure highlights the importance of efficient modulation and demodulation techniques in ensuring reliable communication.\nFigure 5.13-3\nTom ends his conference call.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.13.4\tPost-conditions",
+                            "text_content": "Tom is very pleased that he was able to upload all his documents in time, while participating in the conference call without service interruption throughout his commute to work.\nUpon call release, based on RAN settings (as described in the pre-conditions), Tom’s phone camps on the macro cell, rather than surrounding mobile base station relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.13.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current requirements (e.g. related to wireless self-backhaul, see 22.261, sec 6.12) or existing functionalities (e.g. IAB plus CA/DC), cover some scenarios of simultaneous connectivity between relay and macro nodes, and do not assume or fully address physical relay mobility.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.13.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR.5.13.6-001] The 5G system shall be able to efficiently control UE idle mode mobility when mobile base station relays are used, e.g. to facilitate UEs connecting to the macro RAN (as opposed to a vehicle relay).\n[PR.5.13.6-002] The 5G system shall be able to support simultaneous UE connectivity to RAN, using a direct UE access link to the macro RAN together with an access link via a mobile base station relay (e.g. mounted on a vehicle).\nNOTE 1:\tthe above requirement covers the scenarios were the UE access links (to the macro RAN and via the mobile BS relay) could be connected to the same or different RAN node(s).\nNOTE 2:\tthe above requirement includes supporting efficient addition and removal of a simultaneous access link, e.g. adding and removing a UE access link via a mobile base station relay while the UE is connected to the macro RAN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.14\tOptimized relay for in-vehicle devices",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.14.1\tDescription",
+                            "text_content": "There are scenarios where it is possible to improve performance of 5G UEs inside a vehicle, camped or connected via the vehicle relay to the 5G network, in particular when the UE is known to be located inside the vehicle. Some examples are:\nMedical devices in an ambulance (pre-installed, or portable)\nIOT/tracking devices used for goods delivery/transport, vehicle/asset monitoring, etc\nCameras or other multi-media devices mounted on vehicles following an outdoor sport event\nUsers’ UEs that “check-in” their presence in the vehicle\nIn some cases, e.g. for devices in ambulances, or vehicles used for multimedia applications, where UEs could be pre-installed or have fixed location, the exact position inside the vehicle, relative to the BS relay, can also be identifiable.\nFigure 5.14-1 presents three distinct scenarios illustrating the application of telecommunication technologies in various real-world contexts. The first scenario showcases the use of satellite communication for remote areas, where signals are transmitted from a ground station to a satellite and then back to the receiver. The second scenario illustrates the deployment of fiber-optic cables for high-speed data transmission, with signals traveling through a network of underground cables. The third scenario depicts the integration of wireless and wired technologies, where a combination of satellite and fiber-optic systems is used to provide comprehensive coverage and high-speed connectivity. The figure emphasizes the versatility and adaptability of telecommunication systems in meeting diverse geographical, environmental, and technological requirements.\nFigure 5.14-1: Example scenarios\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.14.2\tPre-conditions",
+                            "text_content": "Vehicle is equipped with a mobile BS station relay.\nUEs can be pre-installed in the vehicle (permanently or semi-static), or can be portable and move in and out of the vehicle.\nThe UEs inside the vehicle, authorized to access the 5GS via the in-vehicle 5G mobile BS relay, are set to camp and connect (only or preferably) via the vehicle relay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.14.3\tService Flows",
+                            "text_content": "Pre-installed UEs are configured to access via the vehicle relay.\nPortable IOT devices/wearables and/or UEs can “check-in” their presence/location in the vehicle, manually (e.g. user onboard, using UE’s scan or app-based check-in), or based on some form of device-relay pairing (e.g. using 3GPP direct discovery/ranging, or other mechanisms).\nThe RAN/relay can optimize mobility configuration (e.g. minimizing/disabling reselections and handovers) and/or UE battery life (e.g. minimizing/avoiding UE measurements, etc.).\nRadio signal and RF power settings could also be tuned to provide best link and connectivity quality for each device, if relative position between UE and relay is known.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.14.4\tPost-conditions",
+                            "text_content": "UEs inside the vehicle remain camped and connected all the time via the vehicle relay, with no unnecessary reselection/handover ping-pongs (to/from macro), experiencing very good performance and/or saving battery life.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.14.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.14.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR.5.14.6-001] The 5G system shall be able to support mechanisms to optimize mobility (e.g. re-selection, handover) and energy efficiency for a UE camped or connected via a vehicle mobile BS relay (e.g. for UEs located inside a vehicle, equipped with a BS relay).\n5.15\tTransient Coverage Extension\n5.15.1\tDescription\nMobile wireless communications apply to outdoor scenarios. In remote areas, satellite access or self-backhaul provide a clear solution for extending the range of / complementing a mobile network.\nFor indoor scenarios, beyond the point where outdoor access penetrates, currently 3GPP offers two possibilities.\nOne is for the indoor premises to deploy non-3GPP access. Through this, a terminal can access a mobile network to get telecommunication services (or access Internet services directly.) This possibility is enabled since Release 7 (IWLAN interworking) by this and later 3GPP standards.\nA second possibility is to offer coverage extension, indoors – either through wireless repeaters or a fixed infrastructure in the indoors premises. This is discussed in TR 22.867, Annex A.\nA new possibility is presented in this use case – to make use of a number of vehicles to create a transient wireless topology of multiple vehicular relays capable of supporting indoor coverage where it would otherwise not be feasible.\nA similar scenario was considered in FS_REFEC (TR 22.866, clause 6.7) as a Traffic Scenario for Public Safety. A number of firefighters penetrate a building without indoor macro cellular coverage and deploy a set of portable (UE) relays in strategic places, e.g. the top and bottom of stairwells, as they access portions of the build with poor or no coverage otherwise.\nIn this use case, there is a large underground parking structure with no coverage nor is there an incentive or possibility (e.g. due to safety issues) to create fixed coverage extension. Other examples of this could be waste disposal sites, inactive mines, abandoned properties, search and rescue operations in challenging terrain in remote areas (e.g. caves), through underground intrastructure (e.g. sewers, water supply, transit tunnels) or building complexes where investment in coverage extension does not occur.\nFigure 5 illustrates the complex network infrastructure of an underground parking garage, showcasing a transient network extension. The figure depicts the various access points, routers, and switches that facilitate connectivity within the garage. It also highlights the wireless access points and fiber optic cables that extend the network beyond the physical boundaries of the garage. The layout emphasizes the strategic placement of network equipment to ensure seamless coverage and optimal performance for users within the parking facility.\nFigure 5.15.1-1: Underground Parking Garage with Transient Network Extension\nUnlike the case studied in REFEC, this scenario involves vehicular mobile relays providing 5G coverage extension from outdoor to indoor.\n5.15.2\tPre-conditions\nThe following are assumed to be available for this use case:\n- \t5G macro cellular coverage to the exterior of the facility into which transient coverage is required, e.g. to connect users, sensors or other IoT devices in the facility. In Figure 5.x.1-1, this is the vehicle parked across the entrance of the garage;\n- \ta set of vehicles equipped with relays, configured to work together to provide a network topology. These vehicles could proceed autonomously, controlled remotely or be driven by personnel. In Figure 5.x.1-1, these are the mobile vehicle relay nodes.\n- \ta topography consisting of regions that are accessible to vehicles, portions of which need coverage, even if temporarily or ad hoc coverage. In Figure 5.x.1-1, this is the concrete (and steel) underground parking complex shown only schematically.\n5.15.3\tService Flows\nThe mobile relays proceed into the vicinity of the facility that lacks coverage, in this case the garage. Where necessary, vehicles remain in positions that advance the coverage into the topology. Other vehicles continue, to bring coverage specifically to portions of the facility that need it. The mobile relays topology may change depending on dynamic coverage demand, e.g the vehicle relays can move or reconfigure to provide access to different areas or moving users, when and where indoor coverage is required.\n5.15.4\tPost-conditions\nSensors and other IoT devices in the facility (for example air quality meters in the parking garage), as well as users who need only periodic connectivity (e.g. to upload and download data opportunistically), will receive connectivity from the transient coverage extension. This will enable data collection from a range of otherwise isolated devices and other communication on a periodic basis, or as needed (e.g. during a disaster response).\nThe service that is provided to the end systems is 3GPP service (not ProSe UE to network.)\n5.15.5\tExisting features partly or fully covering the use case functionality\nNR Rel-16 introduces a relaying architecture enabling routing across a backhaul network of relay nodes which uses NR-Uu interface to interconet relay nodes, enabling data transfer from network access node to the end-user, and back: IAB. In Rel-17, IAB is currently being enhanced, although relay (IAB-node) mobility is not being taken into account.\n5.15.6\tPotential New Requirements needed to support the use case\n[PR.5.15.6-001] The 5G System shall be able to support dynamic deployment and configuration of one or more mobile base station relays (e.g. mounted on vehicles) for providing ad-hoc indoor coverage extension in specific locations.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.16\tNon-terrestrial coverage for Mobile Vehicular Relays",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.16.1\tDescription",
+                            "text_content": "Wireless self-backhauling relays considered in 3GPP generally assume a terrestrial (fixed) base station providing wireless access to the relay nodes. In this use case, access to a very remote mobile relay is supported by means of a non-terrestrial platform.\nThis introduces two complicating factors:\n- \tThe latency for signalling across the network (between the relay nodes and the node providing access to the relay) will be much higher than in terrestrial networks.\n- \tThe non-terrestrial platform providing relay connectivity itself may be mobile (in all cases except a GEO NTN access node.)\nThis could be needed – for example, to support vehicular relays that are out of coverage of terrestrial networks, e.g. in remote areas. Even where terrestrial coverage exists, the vehicular relay may use satellite coverage.\nWhere satellite access is described in this use case, both the transparent and regenerative NG-RAN architectures could apply. [y]\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.16.2\tPre-conditions",
+                            "text_content": "The following are assumed to be available for this use case:\n- \t5G access is provided in a certain area by a non-terrestrial platform (e.g. a LEO, MEO satellite);\n- \ta set of vehicles equipped with 5G mobile BS relays, configured to obtain access from a non-terrestrial platform;\n-\tvehicle relays provide 5G access to UEs inside the vehicle (e.g. those UEs could be normal smartphones, without satellite capabilities.)\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.16.3\tService Flows",
+                            "text_content": "Two vehicles drive across a remote landscape, 100s of km from any settlement. There is no terrestrial coverage. Some vehicles are equipped to support satellite access and provide passengers of the vehicle with coverage by way of mobile vehicular relay.\nIn Figure 1, the two vehicles are roughly 1 km apart, driving in the same direction. The satellite platform is also in motion (see the displacement during T1 to T2 – which is not drawn to scale.) Satellite access is available for both vehicles. Even as the satellite moves, the vehicles continue to be in coverage and serve their passengers with relayed coverage.\nFigure 5 illustrates the concept of vehicle relays supported by a non-stationary satellite platform, showcasing the communication process between vehicles and the satellite. The figure depicts the relay vehicle, which acts as a temporary communication hub, and the satellite that provides the necessary connectivity. The diagram highlights the role of the satellite in providing coverage to the relay vehicle, which in turn enables communication with other vehicles or ground stations. The figure emphasizes the importance of such relay systems in extending communication range and improving network reliability in areas with limited terrestrial infrastructure.\nFigure 5.16-1: Vehicle Relays supported by a non-stationary satellite platform\nAt T3, the black satellite will no longer be able to provide coverage to the vehicles. A separate satellite platform (shown in gray) that is part of the same satellite network follows. Even as the first platform cannot offer coverage, the second takes its place. There is thus continuity of service by means of a sequence of transitions to make use of different satellite platforms offering access to the vehicular mobile relays.\nThis use case does not differentiate (at the service level) between the situation where the satellites are transparent (in which case the donor RAN is terrestrial), or whether the satellite is regenerative (in which case the donor RAN is the satellite platform itself.)\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.16.4\tPost-conditions",
+                            "text_content": "The vehicles and their passengers are able to access telecommunication services using the satellite relay platform to connect to the remote 5G network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.16.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "NR Rel-16 introduces a relaying architecture enabling routing across a backhaul network of relay nodes which uses NR-Uu interface to interconet relay nodes, enabling data transfer from network access node to the end-user, and back: IAB. In Rel-17, IAB is currently being enhanced, although relay (IAB-node) mobility is not being taken into account.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.16.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR5.16.6-1] The 5G System shall be able to support mobile vehicle relays using NR satellite access to connect to a remote donor RAN node via a satellite link.\n[PR5.x.6-2] The 5G System shall be able to support a mobile vehicle relay using NR satellite access with service continuity in the scenario where there is a transition from one serving satellite to another serving satellite.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.17\tVehicle Relay sharing",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.17.1\tDescription",
+                            "text_content": "A nationwide company, 5G-travels, provides long-distance bus transport service and has recently installed 5G mobile BS relays on their bus fleet, for enhanced 5G connectivity to their passengers. Two national cellular MNOs, PLMN-A and PLMN-B, already using RAN sharing in several areas of the country, make commercial arrangements with the bus company and among themselves, for sharing the use of the bus relays, such that their customers can have access to their respective HPLMN, without roaming.\nFigure 5.17 illustrates the multi-PLMN sharing of donor RAN and vehicle relays, showcasing the interworking of different Public Land Mobile Network (PLMN) domains. The figure depicts the sharing of a donor Radio Access Network (RAN) and vehicle relays to support seamless connectivity across various networks. Key components include the donor RAN, vehicle relays, and the interworking nodes that facilitate communication between the domains. The figure highlights the importance of efficient resource management and inter-domain coordination for maintaining high-quality service across multiple PLMNs.\nFigure 5.17-1: Multi-PLMN sharing of donor RAN and vehicle relays\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.17.2\tPre-conditions",
+                            "text_content": "The following aspects and options are assumed in this use case:\n- Each PLMN operator has his own 5G core network; both core networks are connected to a certain number of shared donor RAN nodes, deployed along the bus routes, which provide wireless connectivity to the vehicle relays on the buses.\n- Spectrum and RAN resources used for UEs and wireless relays access could be managed by either PLMN A or B, or by a hosting operator different from operator A or B\n- The vehicle relays will broadcast both PLMN-IDs of the sharing operators, appearing to their users/UEs like their home PLMN network.\n- Based on user subscription/UE identity, the shared RAN can route traffic of PLMN-A and PLMN-B customers to/from their corresponding PLMN core network.\n- It is assumed that other passengers, without subscription or roaming agreement with either PLMN-A nor B, will not get access via the bus relays. If roaming agreement is in place, in-bound roamers would also be allowed to access the vehicle relay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.17.3\tService Flows",
+                            "text_content": "Two users, from South-ville, are taking an inter-regional bus, for visiting their parents living up in North-ville, over the weekend:\nMs Red, who is a PLMN-A subscriber\nMr. Blue, who is a PLMN-B subscriber\nBefore entering the bus, their UEs are connected to the fixed macro-RAN (which may or may not be shared between PLMN-A and PLMN-B), and their UEs will display “PLMN-A” and “PLMN-B”, respectively.\nUpon entering the bus, their UE’s display shows “PLMN-A_BUS” and “PLMN-B_BUS”, respectively, and both users receive a short message announcing the new “enhanced 5G-bus service” offered by their respective HPLMN operator, which they can use without additional charge.\nDuring the few hours trip, both Ms Red and Mr Blue use their smartphones to keep entertained, make few calls, check emails, social media etc.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.17.4\tPost-conditions",
+                            "text_content": "Mr Blue and Ms Red enjoy the very good 5G connectivity and service quality during the whole trip, much better than last month’s trip, when the enhance 5G-Bus service was not available.\nAt the arrival, when leaving the bus, their UEs will re-select and/or connect from the relay to the macro-RAN (which may or may not be shared between PLMN-A and PLMN-B)\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.17.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Basic support of RAN sharing is defined for 5G NG-RAN (since Rel-15), including service requirements (e.g. in 22.101) and stage-2/3 capabilities (e.g. 23.501, 38.331); nevertheless, they do not cover or assume specific consideration for the case of shared wireless access via mobile base stations.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.17.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR-5.17-1] The 5G system shall be able to support RAN sharing between multiple PLMNs for UEs connected to 5G network via mobile base station relays (e.g. mounted on vehicles)\nNOTE 1: the above requirement assumes that the mobile base station relays broadcast all PLMN-IDs of the sharing PLMN operators.\nNOTE 2: the above requirement assumes both relay and donor RAN resources, including UE access link and relay backhaul link, are shared among operators.\n[PR-5.17-2] The 3GPP System shall support end-to-end service continuity for a UE active connection to RAN via a mobile base station relay (e.g. mounted on a vehicle) when there is a change between a shared RAN (e.g. inside the vehicle) and a non-shared RAN (e.g. outside a vehicle), or when RAN sharing changes (for the same mobile relay) between different sharing PLMNs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.18\tMonitoring of vehicle-mounted relays",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.18.1\tDescription",
+                            "text_content": "A transportation company CityBus owning a fleet of public buses equipped with mobile base station relays wants to identify the most in-demand/out-of-demand itineraries, peak/off-peak hours, areas with poor 5G connectivity.\nThe 5G network constantly logs some statistics data related to mobile base station relays on the buses for example, number of UEs connected at the moment, amount of traffic relayed, current location, etc. This kind of data can be helpful for CityBus to improve and optimize its transportation system e.g., add new routes or change existing routes, ask the serving MNO to deploy additional terrestrial base stations along the itineraries for better 5G connectivity/coverage.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.18.2\tPre-conditions",
+                            "text_content": "To enable this use, following pre-conditions should be met:\n-\tBuses of CityBus are equipped with 5G mobile base stations relays.\n-\tThe 5G network is capable to monitor mobile base station relays and periodically generate monitoring data. The features to capture in the monitoring data and the periodicity of generating them are configured by CityBus.\n-\tCityBus is authorized to collect monitoring data for the mobile base station relays. The monitoring data can be collected in real-time as soon as a new monitoring record is generated or for a specified period of time.\n-\tCityBus has a commercial agreement with a serving MNO to monitor mobile base station relays and collect monitoring data via its network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.18.3\tService Flows",
+                            "text_content": "The 5G network monitors all mobile base station relays installed on CityBus’s buses as configured by CityBus.\nCityBus retrieves the monitoring data from the 5G network.\nCityBus analyses the retrieved data and identifies that some routes are more in-demand and require buses to run more frequently. Additionally, some areas along some itineraries with poor 5G connectivity are identified.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.18.4\tPost-conditions",
+                            "text_content": "CityBus deploys more buses for identified on-demand routes and the serving MNO deploys additional base stations in identified areas with poor 5G connectivity. Passengers of CityBus are happy that buses are less crowded and enjoy improved 5G experience now.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.18.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "The 5G system shall provide a mechanism for supporting real time E2E QoS monitoring within a system.\nThe 5G system shall be able to provide real time QoS parameters and events information to an authorized application / network entity.\nBased on operator policy, the 5G network shall provide suitable APIs to allow a trusted third-party application to request appropriate QoE from the network.\nBased on operator policy, the 5G network shall expose a suitable API to an authorized third-party to provide the information regarding the availability status of a geographic location that is associated with that third-party.\nBased on operator policy, the 5G network shall expose a suitable API to allow an authorized third-party to monitor the resource utilisation of the network service (radio access point and the transport network (front, backhaul)) that are associated with the third-party.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.18.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.18-1] The 5G system shall support means to expose monitoring information of a mobile base station relay (e.g. number of UEs connected, QoS, geographical location, time of data monitoring/collection, etc.) to an authorized third-party based on monitoring parameters configured by the authorized third-party (e.g. data to monitor/collect, periodicity/schedule of monitoring, etc.).\nEditor's note: The requirement will be considered during consolidation phase, taking into account the existing mechanism of network capability exposure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.19\tSimultaneous connectivity via multiple mobile BS relays",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.19.1\tDescription",
+                            "text_content": "In certain scenarios, where the UE is in the proximity of multiple mobile BS relays, it maybe convenient to use simultaneous connectivity to the macro RAN via more than one BS relay, e.g. to improve data rate, latency and/or increase communication reliability or robustness.\nOne example, already described in other use case (sec 5.11.2.2), is the outdoor sport race/event, where 5G UEs (e.g. cameras), mounted on motorbikes’ following the race, transmit real-time video via relays mounted on alongside vehicles, e.g. provided by the event organizer or TV broadcaster.\nFigure 5 illustrates a single radio link established via a mobile base station (BS) relay, which serves as a relay node to extend the communication range. The figure depicts the signal path from the source transmitter, through the relay, and finally to the destination receiver. The relay plays a crucial role in enhancing signal coverage and capacity in areas with limited infrastructure. Key components include the mobile base station, the relay node, and the receiver. The figure highlights the importance of mobile relay technology in improving communication networks, particularly in rural or hard-to-reach areas.\nFig. 5.19-1 Single radio link via mobile BS relay\nIn this scenario, depending on the radio conditions, required QoS, and available itinerary information, e.g. on number of vehicles with onboard relays planned to follow the race (maybe different in different parts of the itinerary), the network can decide to exploit simultaneous UE connectivity via two nearby mobile relays, if/when suitable.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.19.2\tPre-conditions",
+                            "text_content": "5G UEs/cameras, and mobile BS relays mounted on vehicles, are provided by a local TV broadcaster, all pre-provisioned and configured to connect to a certain 5G PLMN network, with a sufficient RAN coverage for the mobile BS relays via dedicated donor RAN nodes covering the sport race itinerary. It is assumed that both relays and donor RAN nodes are part of the same PLMN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.19.3\tService Flows",
+                            "text_content": "1. The race is ongoing, and a certain UE (camera) is connected via one mobile BS relay mounted on a surrounding vehicle (from the TV broadcaster), as shown in figure 1.\n2. After a while, e.g. when the road size get larger, a second vehicle, equipped with a mobile BS relay from the TV broadcaster, approaches the peloton and the UE. \nRAN, based on RF measurements, mobility configuration, or other available information (e,g, the identified additional vehicle will be within a close distance from the UE for a certain amount of time/itinerary), decides to add a simultaneous radio link, for that UE, via the second vehicle’s mobile relay .\nThe two simultaneous mobile relay links could be connected to the same or different donor RAN node, as illustrated below.\nFigure 5 illustrates the concept of simultaneous radio link establishment via multiple mobile base station relays. The figure depicts a scenario where two radio links are established simultaneously, with one link using a direct connection between the transmitter and receiver, and the other link utilizing a relay system involving multiple mobile base stations. The figure highlights the role of mobile base stations in enhancing network capacity and reliability by retransmitting signals from the original transmitter to the receiver, thereby improving coverage and reducing latency. The use of multiple relays in the relay system demonstrates the network's ability to handle increased traffic and provide seamless connectivity, even in areas with poor signal strength. The figure also emphasizes the importance of efficient resource allocation and coordination among base stations to ensure optimal performance and avoid interference.\nFig. 5.19-2 Simultaneous radio links via multiple mobile BS relays\n3. Later on, e.g. when the road gets narrower and/or one of the vehicles moves away from the UE, the RAN may remove the corresponding mobile BS relay link.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.19.4\tPost-conditions",
+                            "text_content": "UE connectivity and performance can exploit more robust and better performance using simultaneous mobile BS relay links, when multiple nearby vehicles are available.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.19.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Maybe partly covered by existing IAB, and related DC/CA functionalities, which do not assume full mobility of the relay nodes.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.19.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.19-1] The 5G system shall be able to support simultaneous UE connectivity to RAN using multiple access links provided via different mobile base station relays (e.g. mounted on different vehicles).\nNOTE 1:\tThe above requirement covers scenarios were the UE access links (via the mobile BS relays) could be connected to the same or different RAN node(s), assuming both relay and donor RAN node(s) belong to the same PLMN,\nNOTE 2:\tThe above requirement includes supporting efficient addition and removal of a simultaneous access link via a mobile base station relay, while the UE is connected to the RAN via another mobile base station relay.\n[PR 5.19-2] The 5G system shall be able to support, for a UE simultaneously connected to RAN via different mobile base station relays (e.g. mounted on vehicles), service continuity during various mobility events, e.g. when the connected mobile BS relays and/or the macro donor node(s) change.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.20\tUsing a partner 5G network to transport vehicle relay traffic",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.20.1\tDescription",
+                            "text_content": "This use case covers certain deployment scenarios where traffic exchanged via vehicle relays for users of one MNO or service provider is carried over a transport 5G network managed by a second MNO. An example is illustrated in fig.1, where the MNO2 provides wireless access and transport between vehicle relays and the MNO1 5G network, allowing E2E connectivity to MNO1 users.\nFigure 5 illustrates the process of mobile relays traffic from MNO-1 being transported over MNO-2's network, demonstrating the inter-operator traffic offloading and network load balancing techniques. The figure showcases the cooperation between MNO-1 and MNO-2, with mobile relays acting as intermediaries to facilitate data transfer between the two networks. The diagram highlights the importance of this collaboration in improving network efficiency and optimizing resource utilization.\nFig 5.20-1: Example of mobile relays traffic from MNO-1 transported over MNO-2’s network.\nSuch scenarios can be based on business agreements among the two parties, specific NW deployment/operational constraints, coverage requirements, etc. For example, it could be used for:\nA 5G mobile operator (MNO1), with limited macro-RAN deployment and coverage footprint, willing to exploit their spectrum to offer 5G access and services to their subscribers (travelling in vehicles, or located in specific hotspot areas). MNO1 could decide to leverage the better/ubiquitous 5G wireless (and transport) connectivity provided by a second operator (MNO2) to tunnel the MNO1 traffic to/from the vehicle relays.\nPublic Safety providers or other service/fleet operators, who could manage specific vehicles with on-board relays, together with ad-hoc 5G subscriptions and connectivity services for certain user categories, e.g. for first-responders, delivery personnel, public passengers etc. They may not necessarily own 5G spectrum, or RAN/network infrastructure, thus using MNO2’s mobile network to reach connectivity to their relays (and users).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.20.2\tPre-conditions",
+                            "text_content": "For this use case, the following options are assumed:\nThe access link between MNO1 UEs and the vehicle relay uses MNO1 spectrum; the relay can connect to the MNO2 RAN using MNO2 spectrum.\nThe MNO2 transport connection, between the vehicle relay and the MNO1 network, is used to carry relay traffic between the vehicle relay and MNO1 5GC.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.20.3\tService Flows",
+                            "text_content": "1. Vehicle relays are provisioned and configured to register to the MNO2 network and establish necessary PDU session(s), with certain quality of service and policies (as negotiated for MNO1 traffic and subscribers).\n2. Vehicle relays are provisioned and configured to connect to the donor MNO1 network for communication between MNO1 users and MNO1 network.\n3. MNO1 subscribers/UEs inside the vehicle camp on the mobile relays, which will broadcast MNO1 PLMN-ID, and are able to register and connect to the MNO1 network.\n4. All traffic generated via vehicle relays by MNO1 UEs is tunnelled through the established relays’ MNO2 5G connectivity.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.20.4\tPost-conditions",
+                            "text_content": "MNO1 users can exploit their 5G service and the good in-vehicle 5G coverage/connectivity provided by the vehicle relays, fully transparently.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.20.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "TS23.501 (Annex D) describes the concept of overlay network connection on top of underlay network connection, which does not fully cover the target use case and requirements, intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.20.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.20-1] The 5G system shall be able to support communication from/to users of one MNO (MNO-A) via mobile vehicle base station relays, where the relayed traffic is transported to/from the MNO-A network using 5G connectivity (RAN and 5GC) provided by a different MNO (MNO-B).\nNOTE 1:\tthe above requirement includes support of necessary policies and provisioning for end-to-end user’s QoS, e.g. based on MNO-A user/UE’s subscription.\nNOTE 2:\tthe 5G transport and connectivity provided by the different MNO (MNO-B) assumes a generic wireless BS backhaul, independent from the BS relay functionalities.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.21\tImproved connectivity based on the relay mobility pattern",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.21.1\tDescription",
+                            "text_content": "Vehicles with onboard base stations, so called vehicle-mounted relays (VMR), are expected to act as relay and help provide efficient data delivery. This use case addresses the needs of users who are not moving with the vehicle-mounted relay but that can benefit from its offered connectivity when users and vehicle-mounted relays are close.\nIn particular, this use case addresses the needs of those UEs that either have limited connectivity (e.g., when connected to a macro cell) or that have too demanding bandwidth needs.\nOur first use case is about a user, Tom, an emergency physician who just arrived at a car accident. Tom is attending several injured persons. Tom is having a call with other clinicians at a close-by hospital discussing the health state of the patients and to which hospital the patients should be transferred. Tom would also like to retrieve the Electronic Health Record (EHR) of the patients to do a better assessment. However, the network connectivity at his current location – the accident area -- is insufficient, in particular, to download some bulky files in the EHR of the patients. In this situation, it is beneficial if the 5G system can schedule the transfer of the EHR content requested by Tom so that the EHR is transferred by means of a relay mounted on one of the ambulances approaching the accident area. This example is shown in Figure x-1 where the ambulance is denoted AMR, i.e., Ambulance-Mounted Relay. In Figure x-1 Tom’s UE is denoted UE. At location L0 and time T0 the EHR data transfer is requested by the UE. The data is then transferred when the AMR is at location L2 since at this location the communication link between donor gNB and AMR and between AMR and UE offer the best end-to-end performance. The location is chosen by using, known or predicted, the AMR mobility pattern to optimize the network behaviour. In some cases, the AMR could receive the EHR data from the donor gNB at location L1 and time T1 and when the AMR is at location L3 at time T3, the AMR could rapidly deliver the requested EHR data to Tom’s UE. In this alternative approach, the locations L1 and L3 are chosen to optimize the individual link performance between donor gNB and AMR and between AMR and UE. The choice of these locations is also based on the known or predicted AMR mobility pattern.\nFigure 5.2 presents an example scenario in a telecommunication network, illustrating the interaction between various network elements. The figure showcases a network with multiple nodes, including a central node, edge nodes, and a cloud-based data center. The nodes are interconnected through a series of links, which are represented by lines of varying thicknesses to denote different types of connections, such as high-speed fiber-optic cables or wireless links. The figure also includes a graphical representation of data packets moving through the network, emphasizing the flow of information and the importance of efficient routing and processing. The layout of the network and the flow of data packets provide insights into the network's performance and capacity, highlighting the need for optimized resource allocation and management.\nFigure 5.21-1. Example scenario\nOther relevant and related use cases include:\nIoT devices requiring the delivery of a software update. Some IoT devices might lack a good connection but be able to retrieve the software update from a vehicle-mounted relay, when it is close by.\nUsers requiring access to bulky resources, e.g., a movie, but with insufficient connectivity at their current location. Users might retrieve the files from an approaching vehicle-mounted relay selected based on the mobility pattern of the VMR.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.21.2\tPre-conditions",
+                            "text_content": "An MNO operates AMRs and macro cells in a city.\nThe user, Tom, has a UE and is subscribed to the MNO.\nThe user, Tom, is connected to a macro base station and Tom needs to retrieve certain files.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.21.3\tService Flows",
+                            "text_content": "Tom is connected to the 5G macro network.\nTom performs a call and tries to retrieve the EHR files of the patients.\nThe 5G macro network is capable of delivering Tom’s normal communication needs, in particular, low bandwidth communication needs. The 5G macro network offers limited capacity for the download of large amounts of data due to spotty coverage and a high number of UEs at Tom’s location.\nThe MNO operates AMRs that offer extra additional capacity. The mobile network determines that the download needs of our user Tom can be fulfilled by an AMR, an ambulance, approaching Tom’s location.\nThe 5G system delivers the downlink traffic required by Tom to the ambulance that is approaching Tom’s location. The transfer of this EHR content to the ambulance and from the ambulance to Tom’s UE is done very fast since this is done where and when the communication links between macro gNB, AMR, and UE are expected to offer the best performance based on the known or predicted mobility pattern of the AMR.\nWhen the ambulance moves away, Tom’s UE releases its connection with the AMR.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.21.4\tPost-conditions",
+                            "text_content": "Tom was able to retrieve the required EHR files in an efficient way so that he can attend the patients properly.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.21.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "From Section 6.2.2 of TS 22.261: “The 5G network shall allow operators to optimize network behaviour (e.g. mobility management support) based on the mobility patterns (e.g. stationary, nomadic, spatially restricted mobility, full mobility) of a UE or group of UEs.” However, this requirement is not based on mobility information of vehicle-mounted relays.\nSection 6.6 (Efficient content delivery) of TS 22.261 includes various requirements on efficient content delivery. However, these requirements are not based on mobility information of vehicle-mounted relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.21.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.21-1] The 5G system shall be able to provide a means to optimize network behaviour to efficiently deliver data based on the mobility information (e.g., itinerary), known or predicted, of the vehicle-mounted relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.22\tMobility between Non-terrestrial coverage and terrestrial coverage for Mobile Vehicular Relays",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.22.1\tDescription",
+                            "text_content": "In section 5.16, use case for Non-terrestrial coverage for Mobile Vehicular Relays has been specified.\nIn acutal 5G deployment, some areas could be covered by both non-terrestrial coverage and terrestrial coverage, and some area areas are only covered by either the non-terrestrial coverage and terrestrial coverage.\nIt could be good to support mobility of mobile vehicular relays between non-terrestrial coverage and terrestrial coverage\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.22.2\tPre-conditions",
+                            "text_content": "The following are assumed to be available for this use case:\n- \t5G non-terrestrial access is provided in a area A by a non-terrestrial platform (e.g. a LEO, MEO satellite) of one PLMN named O;\n- \t5G terrestrial access is provided in a area B by a terrestrial (fixed) base station of same PLMN O;\n- \t5G non-terrestrial and terrestrial access is provided in an area C, with is the overlapped area of A and B, by a terrestrial access of one PLMN;\n- \tOne vehicle named V equipped with 5G mobile BS relays, is able to obtain access from a non-terrestrial platform and a terrestrial access of one PLMN;\n-\tThe vehicle relays provide 5G access to UEs inside the vehicle and UEs nearby the vehicle (e.g. those UEs could be normal smartphones, without satellite capabilities.)\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.22.3\tService Flows",
+                            "text_content": "The vehicle V equipped with 5G mobile BS relays locates within area A, and connect via non-terrestrial access to PLMN O, and provide the 5G access to UEs inside the vehicle.\nThe vehicle V drive within area A but heading to area B, then it moves into area C where both 5G non-terrestrial access and terrestrial access are available.\nSince vehicle V equipped with 5G mobile BS relays detected there is both 5G non-terrestrial access and terrestrial access, and based on some criteria the 5G mobile BS relays decides to using terrestrial access to connect to 5GC. The criteria includes operator policy, signal strength of the access and etc.\nFigure 5 illustrates the process of vehicle relays transitioning from a non-terrestrial access area to a terrestrial access area, highlighting the role of satellite communication in bridging gaps between terrestrial networks. The figure depicts the movement of data packets through multiple relays, emphasizing the importance of satellite-terrestrial connectivity for seamless communication in remote locations. Key components include the satellite, terrestrial base stations, and the relay nodes that facilitate the transition between the two access areas. The figure also highlights the potential for increased network capacity and coverage through the strategic placement of relays.\nFigure 5.22-1: Vehicle Relays move from a non-terrestrial access area to terrestrial access area\nDuring the “relay switch”, that is a period that 5G mobile BS relays switch from using the 5G non-terrestrial access to using the 5G terrestrial access to connect to 5GC, the 5G mobile BS relays continuing provide the 5G access to UEs inside the vehicle.\nAfter this “relay switch”, the vehicle V equipped 5G mobile BS relays drives in area B and provide the 5G access to UEs inside the vehicle.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.22.4\tPost-conditions",
+                            "text_content": "The vehicle V equipped with 5G mobile BS relays using 5G terrestrial access connect to 5GC, and provide the 5G access to UEs inside the vehicle.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.22.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.22.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.22.6-1] The 5G System shall be able to support mobile base station relays using NR satellite access and using NR terrestrial access to connect to 5GC.\n[PR 5.22.6-2] The 5G System shall be able to support a mobile base station relay capable using both NR satellite access and NR terrestrial access with service continuity in the scenario when this mobile base station relay switch from using NR satellite access to using NR terrestrial access, and vice versa.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.23\tMobile Vehicular Relays using Non-terrestrial and terrestrial access simultaneously",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.23.1\tDescription",
+                            "text_content": "In section 5.16, use case for Non-terrestrial coverage for Mobile Vehicular Relays has been specified.\nIn actual 5G deployment, some areas could be covered by both non-terrestrial coverage and terrestrial coverage.\nIt could be good to support of mobile vehicular relays using non-terrestrial access and terrestrial access simultaneously to connect to 5GC.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.23.2\tPre-conditions",
+                            "text_content": "The following are assumed to be available for this use case:\n- \t5G non-terrestrial access is provided in an area A by a non-terrestrial platform (e.g. a LEO, MEO satellite) of one PLMN named O;\n- \t5G terrestrial access is provided in an area B by a terrestrial (fixed) base station of same PLMN O;\n- \tArea A and area B are largely overlapped;\n- \tOne vehicle named X equipped with 5G mobile BS relays, is able to using access from a non-terrestrial platform and a terrestrial access at same time;\n-\tThe vehicle relays provide 5G access to UEs inside the vehicle and UEs nearby the vehicle (e.g. those UEs could be normal smartphones, without satellite capabilities.)\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.23.3\tService Flows",
+                            "text_content": "The vehicle X equipped with 5G mobile BS relay locates within area A, it detects the access could be used to 5GC. Then it decides to connect via terrestrial access to PLMN O. Once successes, it then provide the 5G access to UEs inside the vehicle.\nDue to some reasons, e.g. UE amounts accesses increase, huge demand of bandwidth, the vehicle X find that total bandwidth of current relay link could not meet above demands, and then vehicle X decides to use the non-terrestrial access as relay link.\nThe vehicle X then detect whether there is non-terrestrial access coverage. If yes, the vehicle X equipped with 5G mobile BS relay connect to the PLMN O. If it is authorised to provide 5G access to UEs, then more UEs and more bandwidths requirements could be meet. That is, more and more UE could access the network via this vehicle X equipped with 5G mobile BS.\nThe vehicle X equipped with 5G mobile BS monitors the usage of the relay link, and once the service demand decrease, it then decides to dis-connect one relay link, e.g. it dis-connect the terrestrial access link.\nThe vehicle X also monitors the radio coverage. For example, if there is no terrestrial access available, or the radio conditions of terrestrial access deteriorates, the vehicle X has no choice but to dis-connect the terrestrial access link\nFigure 5 illustrates the concept of vehicle relays utilizing both non-terrestrial access and terrestrial access simultaneously. The figure depicts a network setup where vehicles equipped with relay devices can act as intermediate nodes, facilitating communication between terrestrial and non-terrestrial networks. This approach enables seamless connectivity and improved network performance, particularly in areas with limited terrestrial infrastructure. The figure showcases the integration of satellite and terrestrial systems, highlighting the potential for enhanced coverage and data transfer rates.\nFigure 5.23-1: Vehicle Relays using non-terrestrial access and terrestrial access simultaneously\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.23.4\tPost-conditions",
+                            "text_content": "The vehicle X equipped with 5G mobile BS relays using both 5G terrestrial access and non-terrestrial access connect to 5GC, and provide the 5G access to UEs inside the vehicle and UEs nearby the vehicle (e.g. those UEs could be normal smartphones, without satellite capabilities).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.23.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "Current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.23.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.23.6-1] The 5G System shall be able to support mobile base station relays capable of connecting via both NR satellite access and NR terrestrial access, to select one access as a relay link between the mobile base station relays and the 5GC.\n[PR 5.23.6-2] The 5G System shall be able to support mobile base station relays capable of connecting simultaneously via NR satellite access and NR terrestrial access as relay link to connect via both to 5GC at the same time.\n[PR 5.23.6-3] The 5G System shall be able to support mobile base station relays capable of connecting in parallel via NR satellite and NR terrestrial access to add a second relay link to allow more UEs to access the network and e.g. to adapt to increased bandwidths demand for access via this mobile base station relay.\n[PR 5.23.6-4] The 5G System shall be able to support mobile base station relays connected via both NR satellite and NR terrestrial access to remove one of two relay links to adapt to decreased bandwidths demand of UEs accessing via this mobile base station relay.\n[PR 5.23.6-5] The 5G System shall be able to support mobile relay traffic load balancing across satellite and terrestrial access links, for mobile base station relays that use both NR satellite access and NR terrestrial access as relay link at the same time.\nNote 1:\tThe simultaneous satellite and terrestrial access links (from the relay) are assumed to carry traffic pertaining to different UEs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tOther considerations",
+            "description": "This section includes other aspects of mobile vehicle relays deployments and potential service requirements, not specifically covered by the use cases and requirements described in the section 5, particularly related to:\nThe possibility for a relay to have a HPLMN subscription, and roam into other networks, together with the need to have proper control from both home and visited PLMNs;\nThe need to potentially support regulatory requirements, including emergency services;\nThe ability to support priority services, such as MPS;\nThe expected support of end-to-end security;\nThe ability to avoid or overcome challenges related to radio interference.\nCorresponding new potential service requirements are captured below.\n[PR 6-1a] The 5G System shall support means for a mobile base station relay to have a subscription with a HPLMN, used to get access and connectivity to the HPLMN 5GC (via a donor RAN).\n[PR 6-1b] The 5G System shall support the ability of a base station relay to roam from its HPLMN into a VPLMN.\n[PR 6-1c] The 5G system shall support mechanisms, for the HPLMN controlling a mobile base station relay, to enable/disable mobile relay operation if/when the relay (e.g. on a mobile vehicle) is roaming in a VPLMN.\n[PR 6-1d] The 5G system shall support mechanisms to disable mobile relay operation by VPLMN where a mobile base station relay is roaming to.\n[PR 6-2] The 5G system shall be able to fulfil necessary regulatory requirements (e.g. for support of emergency services) when UEs access the 3GPP network via a mobile base station relay.\n[PR 6-3] The 5G system shall be able to support priority services (e.g. MPS) when UEs access the 3GPP network via a mobile base station relay.\n[PR 6-4] The 5G system shall ensure that end-to-end 5G security between the UE and 3GPP network is supported when the UE accesses the 3GPP network via a mobile base station relay.\n[PR 6-5] The 5G system shall be able to minimize radio interference possibly caused by mobile base station relays (e.g. when mounted on moving vehicles).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "7\tPotential Consolidated Requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.0 \tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The requirements below refer to a “mobile base station relay” (or mobile BS relay), which is a mobile base station acting as a relay between a UE and the 5G network, i.e. providing a NR access link to UEs and connected wirelessly (using NR) through a donor NG-RAN to the 5G Core. Such mobile BS relay is assumed to be mounted on a moving vehicle and serve UEs that can be located inside or outside the vehicle (or entering/leaving the vehicle).\nNOTE: the radio link used between a mobile BS relay and served UEs, as well as between mobile BS relay and donor RAN, is assumed to be NR-Uu; in that regard, it should be clear that a mobile BS relay is different than a UE relay (which uses instead a PC5-based link to provide indirect connection to remote UEs).\nFew main underlying assumptions and notes (from the TR overview and gap analysis) are:\n- use cases and requirements cover single-hop relay scenarios as baseline (multi-hop is not precluded);\n- legacy UEs are supported;\n- current stage-1 requirements (e.g. on wireless self-backhaul, in TS 22.261), as well as existing stage-2/3 functionalities and architecture options (e.g. IAB) do not assume or address full relay mobility (e.g. BS relays on board of moving vehicles), thus may not cover the identified new potential requirements, which are intended to be specific to mobile BS relays;\n- The identified requirements do not intend to imply or exclude specific network/relay architectures and topology solutions (e.g. could be IAB based, or others).\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.1\tGeneral requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 7.1-1 – General Consolidated Requirements\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.1-1 – General Consolidated Requirements",
+                            "table number": 1,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tMulti-link connectivity",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 7.2-1 – Multi-link connectivity Consolidated Requirements\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.2-1 – Multi-link connectivity Consolidated Requirements",
+                            "table number": 2,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tMobility",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 7.3-1 – Mobility Consolidated Requirements\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.3-1 – Mobility Consolidated Requirements",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.4\tCharging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 7.4-1 – Charging Consolidated Requirements\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.4-1 – Charging Consolidated Requirements",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.5\tOther aspects",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 7.5-1 – Other Consolidated Requirements\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.5-1 – Other Consolidated Requirements",
+                            "table number": 5,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tConclusions and Recommendations",
+            "description": "This technical report identifies several use cases and potential new requirements for 5GS support of mobile base station relays. The resulting service requirements have been consolidated in clause 7.\nIt is recommended to consider the consolidated requirements identified in this TR as the baseline for subsequent normative work.\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 6,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

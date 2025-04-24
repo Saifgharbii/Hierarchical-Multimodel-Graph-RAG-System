@@ -1,0 +1,598 @@
+{
+    "document_name": "22847-i20.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "This present document provides stage 1 use cases and potential 5G requirements on supporting tactile and multi-modal communication services. In the context of the present document, the aspects addressed include:\nStudy new scenarios and identify use cases and potential requirements for immersive real time experience involving tactile and multi-modal interactions, including:\nNetwork assistance for coordinated transmission of multiple modal representations associated with the same session,\naspects of charging, security and privacy, and\nKPIs (including network reliability and availability).\nGap analysis with existing requirements and functionalities on supporting tactile and multi-modal communication services.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\tITU-T, \"Technology Watch Report: The Tactile Internet\", August 2014.\n[3]\tO. Holland et al., \"The IEEE 1918.1 \"Tactile Internet\" Standards Working Group and its Standards,\" Proceedings of the IEEE, vol. 107, no. 2, Feb. 2019.\n[4]\t3GPP TS 22.263: \"Service requirements for Video, Imaging and Audio for Professional Applications\".\n[5]\tS. K. Sharma, I. Woungang, A. Anpalagan and S. Chatzinotas, \"Toward Tactile Internet in Beyond 5G Era: Recent Advances, Current Issues, and Future Directions,\" in IEEE Access, vol. 8, pp. 56948-56991, 2020\n[6]\t3GPP TS 22.261: \"Service requirements for the 5G system\".\n[7]\tKwang Soon Kim, et al., \"Ultrareliable and Low-Latency Communication Techniques for Tactile Internet Services\", PROCEEDINGS OF THE IEEE, Vol. 107, No. 2, February 2019\n[8]\tSAE Manoeuver Sharing and Coordinating Service Task Force, https://www.sae.org/servlets/works/committeeHome.do?comtID=TEVCSC3A.\n[9]\tSAE Sensor-Sharing Task Force, https://www.sae.org/servlets/works/committeeHome.do?comtID=TEVCSC3B.\n[10]\tM. During and K. Lemmer, \"Cooperative manoeuver planning for cooperative driving,\" IEEE Intell. Transp. Syst. Mag., vol. 8, no. 3, pp. 8–22, Jul. 2016.\n[11]\tD. Soldani, Y. Guo, B. Barani, P. Mogensen, I. Chih-Lin, S. Das, \"5G for ultra-reliable low-latency communications\". IEEE Network. 2018 Apr 2; 32(2):6-7.\n[12]\tVoid.\n[13]\tIEEE SA, \"P1918.1 - Tactile Internet: Application Scenarios, Definitions and Terminology, Architecture, Functions, and Technical Assumptions\", https://standards.ieee.org/project/1918_1.html\n[14]\tM. Eid, J. Cha, and A. El Saddik, \"Admux: An adaptive multiplexer for haptic-audio-visual data communication\", IEEE Tran. Instrument. and Measurement, vol. 60, pp. 21–31, Jan 2011.\n[15]\tK. Iwata, Y. Ishibashi, N. Fukushima, and S. Sugawara, \"QoE assessment in haptic media, sound, and video transmission: Effect of playout buffering control\", Comput. Entertain., vol. 8, pp. 12:1–12:14, Dec 2010.\n[16]\tN. Suzuki and S. Katsura, \"Evaluation of QoS in haptic communication based on bilateral control\", in IEEE Int. Conf. on Mechatronics (ICM), Feb 2013, pp. 886–891.\n[17]\tE. Isomura, S. Tasaka, and T. Nunome, \"A multidimensional QoE monitoring system for audiovisual and haptic interactive IP communications\", in IEEE Consumer Communications and Networking Conference (CCNC), Jan 2013, pp. 196–202.\n[18]\tA. Hamam and A. El Saddik, \"Toward a mathematical model for quality of experience evaluation of haptic applications\", IEEE Tran. Instrument. and Measurement, vol. 62, pp. 3315–3322, Dec 2013.\n[19]\tM. Back et al., \"The virtual factory: Exploring 3D worlds as industrial collaboration and control environments,\" 2010 IEEE Virtual Reality Conference (VR), 2010, pp. 257-258\n[20]\tS. Schulte, D. Schuller, R. Steinmetz and S. Abels, \"Plug-and-Play Virtual Factories,\" in IEEE Internet Computing, vol. 16, no. 5, pp. 78-82, Sept.-Oct. 2012\n[21]\t3GPP TS 22.104: \"Service requirements for cyber-physical control applications in vertical domains\"\n[22]\tAltinsoy, M. E., Blauert, J., & Treier, C., \"Inter-Modal Effects of Non-Simultaneous Stimulus Presentation,\" A. Alippi (Ed.), Proceedings of the 7th International Congress on Acoustics, Rome, Italy, 2001.\n[23]\tHirsh I.J., and Sherrrick C.E, 1961. J. Exp. Psychol 62, 423-432\n[24]\tAltinsoy, M.E. (2012). \"The Quality of Auditory-Tactile Virtual Environments,\" Journal of the Audio Engineering Society, Vol. 60, No. 1/2, pp. 38-46, Jan.-Feb. 2012.\n[25]\tM. Di Luca and A. Mahnan, \"Perceptual Limits of Visual-Haptic Simultaneity in Virtual Reality Interactions,\" 2019 IEEE World Haptics Conference (WHC), 2019, pp. 67-72, doi: 10.1109/WHC.2019.8816173.\n[26]\tArnon, Shlomi, et al. \"A comparative study of wireless communication network configurations for medical applications.\" IEEE Wireless Communications 10.1 (2003): page 56-61.\n[27]\tK. Antonakoglou et al., \"Toward Haptic Communications Over the 5G Tactile Internet\", IEEE Communications Surveys & Tutorials, 20 (4), 2018.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nend-to-end latency: the time that takes to transfer a given piece of information from a source to a destination, measured at the communication interface, from the moment it is transmitted by the source to the moment it is successfully received at the destination.\nNOTE 1:\tThis definition was taken from TS 22.261 [6].\nMulti-modal Data: Multi-modal Data is defined to describe the input data from different kinds of devices/sensors or the output data to different kinds of destinations (e.g. one or more UEs) required for the same task or application. Multi-modal Data consists of more than one Single-modal Data, and there is strong dependency among each Single-modal Data. Single-modal Data can be seen as one type of data.\nreliability: in the context of network layer packet transmissions, percentage value of the amount of sent network layer packets successfully delivered to a given system entity within the time constraint required by the targeted service, divided by the total number of sent network layer packets.\nNOTE 2:\tThis definition was taken from TS 22.261 [6].\nservice area: geographic region where a 3GPP communication service is accessible.\nNOTE 3:\tThe service area can be indoors.\nNOTE 4:\tFor some deployments, e.g., in process industry, the vertical dimension of the service area can be considerable.\nNOTE 5:\tThis definition was taken from TS 22.261 [6].\nsynchronisation threshold: A multi-modal synchronisation threshold can be defined as the maximum tolerable temporal separation of the onset of two stimuli, one of which is presented to one sense and the other to another sense, such that the accompanying sensory objects are perceived as being synchronous.\nNOTE 6:\tThis definition is based on [22].\nTactile Internet: A network (or network of networks) for remotely accessing, perceiving, manipulating, or controlling real or virtual objects or processes in perceived real time by humans or machines.\nNOTE 7:\tThis definition is based on IEEE P1918.1 [3].\nuser experienced data rate: the minimum data rate required to achieve a sufficient quality experience, with the exception of scenario for broadcast like services where the given value is the maximum that is needed.\nNOTE 8:\tThis definition was taken from TS 22.261 [6].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nDoF\tDegrees of Freedom\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tOverview",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tMulti-modal service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Tactile and multi-modal communication services enable multiof -modal interactions, combining ultra-low latency with extremely high availability, reliability and security. Tactile Internet can be applied in multiple fields, including: industry, r.obotics and telepresence, virtual reality, augmented reality, healthcare, road traffic, serious gaming, education and culture, smart grid, etc. [2]. Multiple modalities can be used in combination in a service to provide complementary methods that may convey redundant information but can convey information more effectively. With the benefit of combining input from more than one source and/or output to more than one destination, interpretation in communication services will be more accurate and faster, response can also be quicker, and the communication service will be smoother and more natural.\nFor a typical tactile and multi-modal communication service/application, there can be different modalities affecting the user experience, e.g.:\nVideo/Audio media;\nInformation perceived by sensors about the environment, e.g. brightness, temperature, humidity, etc.;\nHaptic data: can be feelings when touching a surface (e.g., pressure, texture, vibration, temperature), or kinaesthetic senses (e.g. gravity, pull forces, sense of position awareness).\nThe ambient information may be further processed to generate IoT control instructions as the feedback. The haptic data, according to the physiological perception, has specific characteristics, e.g. frequency and latency, and may require adequate periodic, deterministic and reliable communication path. For example, the sampling rate of the haptic device for teleoperation systems may reach 1000 times per second and samples are typically transmitted individually hence 1000 packets per second, while the video is 60/90 frames per second. The high frequency transmission of small packets over a long distance would be a great challenge for 5G system.\nMultiple modalities can be transmitted at the same time to multiple application servers for further processing in a coordinated manner, in terms of QoS coordination, traffic synchronization, power saving, etc.\nMultiple outcomes may be generated as the feedback. In the scenario of real time remote virtual reality service, a VR user may use a plurality of independent devices to separately collect video, audio, ambient and haptic data from the person and to receive video, audio, ambient and haptic feedback from one or multiple application servers for a same VR application. In this case, an end user could wear VR glasses to receive images and sounds, and a touch glove to receive a touch sensation, a camera to collect video inputs, a microphone to collect audio inputs, multiple wearable sensors to provide haptic information and environmental information associated to the user. The real time remote virtual reality service can also be conducted between two users.\nMultiple outcomes may need to reach the distributed UEs at the very same time. In the scenario of sound field reappearing, different channels of sounds are sent to the distributed sound boxes to simulate the sound from a particular direction. A small time difference may cause big direction error to impact user experience. In some cases, time difference of 1ms may cause more than 30° angle error.\nMulti-modal applications may involve a big number of UEs at a long distance. In the scenario of multi-modal telepresence, tens of UEs may need synchronization for time, control signal and visual signal.\nIn another scenario, the devices associated to the same tactile and multi-modal communication service may be triggered to wake up by the discovery of a tactile and multi-modality capable user/UE in proximity. And a different group of tactile and multi-modality capable devices can serve the user as he moves.\nOther scenarios that can be investigated are industrial manufacturing and drones real-time applications, which require synchronous control of visual-haptic feedback.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tMulti-modal interactive system",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The figure depicts a multi-modal interactive system, showcasing various components such as the user interface, sensors, and actuators. The system is designed to provide a seamless user experience, with the user interface being the central element, allowing for easy navigation and interaction. The sensors and actuators are essential for collecting data and performing tasks, while the actuators are responsible for executing the user's commands. The system's modular design allows for easy integration and customization, making it suitable for a wide range of applications.\nFigure 4.2-1. Multi-modal interactive system\nAs shown in figure 4.2-1, multi-modal outputs are generated based on the inputs from multiple sources. In the multi-modal interactive system, modality is a type or representation of information in a specific interactive system. Multi-modal interaction is the process during which information of multiple modalities are exchanged. Modal types consists of motion, sentiment, gesture, etc. Modal representations consists of video, audio, tactition (vibrations or other movements which provide haptic or tactile feelings to a person), etc.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tUse case",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tImmersive multi-modal Virtual Reality (VR) application",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tDescription",
+                            "text_content": "Immersive multi-modal VR application describes the case of a human interacting with virtual entities in a remote environment such that the perception of interaction with a real physical world is achieved. Users are supposed to perceive multiple senses (vision, sound, touch) for full immersion in the virtual environment.  The degree of immersion achieved indicates how real the created virtual environment is. Even a tiny error in the preparation of the remote environment might be noticed, as humans are quite sensitive when using immersive multi-modal VR applications. Therefore, a high-field virtual environment (high-resolution images and 3-D stereo audio) is essential to achieve an ultimately immersive experience.\nOne of the major objectives of VR designers and researchers is to obtain more realistic and compelling virtual environments. As the asynchrony between different modalities increases, users’ sense of presence and realism will decrease. There have been efforts (since 1960s or even earlier) in multi-modal-interaction research regarding the detection of synchronisation thresholds. The obtained results vary, depending on the kind of stimuli and the psychometric methods employed. Hirsh and Sherrick measured the synchronisation thresholds regarding visual, auditory and tactile modalities [23].\nThe figure depicts the synchronisation thresholds for visual, auditory, and tactile modalities measured by Hirsh and Sherrick. The visual, auditory, and tactile modalities are shown to be in sync with each other, indicating a high level of synchronisation.\nFigure 5.1.1-1 The synchronisation thresholds regarding visual, auditory and tactile modalities measured by Hirsh and Sherrick\nM.E. Altinsoy and co. believe the audio-tactile synchronization has to be at least within an accuracy of ±40 ms [22]. More results have been reported based on extensive theoretical and experimental efforts. [24] further indicated the perceptual threshold values were 50 ms for the audio lag and the 25 ms for audio lead.\nAs to the visual-tactile synchronisation threshold, Massimiliano Di Luca and Arash Mahnan provided test results in [25] that indicate that none of the participants could reliably detect the asynchrony if haptic feedback was presented less than 50ms after the view of the contact with an object. The asynchrony tolerated for haptic before visual feedback was instead only 15ms.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tPre-conditions",
+                            "text_content": "The devices for immersive multi-modal VR application may include multiple types of devices such as VR glass type device, the gloves and other potential devices that support haptic and/or kinaesthetic modal. These devices which are 5G UEs are connected to the immersive multi-modal VR application server via the 5G network without any UE relays, see Figure 5.1.2-1.\nNOTE: The devices that are connected to VR application via the 5G network are assumed to be 3GPP UEs.\nBased on the service agreement between MNO and immersive multi-modal VR application operator, the application operator may in advance provide the 5G network with the application information including the application traffic characteristics and the service requirement for network connection. For example, the packet size for haptic data is related to the Degrees Of Freedom (DoF) that the haptic devices supports, and packet size for one DoF is 2-8 Bytes [3] and the haptic device generates and sends 500 haptic packets within one second.\nThe figure depicts an immersive multi-modal VR application with multiple 5G UEs directly connected to a 5G network. The application utilizes 5G technology to provide a seamless and immersive user experience, allowing users to interact with virtual environments in a realistic and interactive manner.\nFigure 5.1.2-1. Immersive multi-modal VR application with multiple 5G UEs directly connected to 5G network\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tService Flows",
+                            "text_content": "1. \tThe application user utilizes the devices to experience immersive multi-modal VR application. The user powers on the devices to connect to the application server, then the user starts the gaming application.\n2. \tDuring the gaming running period, the devices periodically send the sensing information to the application server, including: haptic and/or kinesthetic feedback signal information which is generated by haptic device, and the sensing information such as positioning and view information which is generated by the VR glasses.\nNOTE 1:\tThe devices may send the haptic data and the sensing data with different periodic time. As an example, the device may send one packet containing haptic information to the application server every 2ms, and send the packets related to sensing information to application server every 4ms. Thus the haptic data and sensing data may be transferred in 5G network via two separate flows. The amount of haptic packets that are generated and transferred within one second may be 1K - 4K packets (without haptic compression encoding), or 100-500 packets (with haptic compression encoding). As indicated in IEEE 1918.1 [3], the size of each haptic packet is related to the DoF capacity that haptic device supports, the data size for one DoF is 2-8 Byte.\n3. \tAccording to the uplink data from the devices, the application server performs necessary process operations on immersive game reality including rendering and coding the video, the audio and haptic model data, then application server periodically sends the downlink data to the devices, with different time periods respectively, via 5G network.\nNOTE 2:\tThe application server may also send the haptic data and the video/audio data with different periodic time. For example, the application server sends one packet containing haptic information to the device every 2ms, and it sends the packets related to one video/audio frame to the device every 16.7ms in case 60 Frame Per Second which forms one burst traffic that goes on 3ms. Thus the haptic data and audio/video data may be transferred via two separate service data flows of a single session.\n4. \tThe devices, respectively, receive the data from the application server and present the related sensing including video, audio and haptic to the user.\nNOTE 3:\tTo obtain more realistic and compelling virtual environments, network assistance may be needed to ensure synchronisation thresholds between different modal data thus improve the end users’ sense of presence and realism.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.4\tPost-conditions",
+                            "text_content": "The user experiences the immersive game reality application enabled by 5G network, and the 5G system address the service requirements of the application.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "3GPP TS 22.261 [6] specifies KPIs for high data rate and low latency interactive services including Cloud/Edge/Split Rendering, Gaming or Interactive Data Exchanging, Consumption of VR content via tethered VR headset, and audio-video synchronization thresholds.\nSupport of audio-video synchronisation thresholds has been captured in TS 22.261:\nDue to the separate handling of the audio and video component, the 5G system will have to cater for the VR audio-video synchronisation in order to avoid having a negative impact on the user experience (i.e. viewers detecting lack of synchronization). To support VR environments, the 5G system shall support audio-video synchronisation thresholds:\n-\tin the range of [125 ms to 5 ms] for audio delayed and\n-\tin the range of [45 ms to 5 ms] for audio advanced.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.1.6-1] The 5G System shall provide the network connection to address the KPIs for immersive multi-modal VR applications, see table 5.1.6-1.\nTable 5.1.6-1 – Potential key performance requirements for immersive multi-modal VR applications\n\n[PR 5.1.6-2] Due to the separate handling of the multiple media components, synchronization between different media components is critical in order to avoid having a negative impact on the user experience (i.e. viewers detecting lack of synchronization). Applying synchronization thresholds in the 5G system may be helpful in support of immersive multi-modal VR applications when the synchronization threshold between two or more modalities is less than the latency KPI for the application. Typical synchronization thresholds (see [22], [23], [24] and [25]) are summarised in table 5.1.6-2.\nTable 5.1.6-2: Typical synchronization thresholds for immersive multi-modal VR applications\n\n[PR 5.1.6-3] The 5G network shall support a mechanism to allow an authorized 3rd party to provide QoS policy for multiple flows (e.g., haptic, audio and video) of multiple UEs associated with a multi-modal application. The policy may contain e.g. coordination information.\n[PR 5.1.6-4] The 5G system shall support a mechanism to apply 3rd party provided policy for flows associated with an application. The policy may contain e.g. coordination information.\nNOTE:\tThe policy can be used by a 3rd party application for coordination of the transmission of multiple UEs’ flows (e.g., haptic, audio and video) of a multi-modal communication session.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.6-1 – Potential key performance requirements for immersive multi-modal VR applications",
+                                    "table number": 1,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6-2: Typical synchronization thresholds for immersive multi-modal VR applications",
+                                    "table number": 2,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tRemote control robot",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tDescription",
+                            "text_content": "Human can use Remote control robot to operate some actions which they are not able to be on the spot. With real-time and synchronous visual, audio and haptic feedback, remote robot operator will perform reactions suitable for the situation, and remote control robot can follow operator’s action to do the exact work. This can be used in many different scenarios. It can be applied to remote care for elderly, remote detonation, remote operation, remote maintenance of facility, remote firefighting, etc.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tPre-conditions",
+                            "text_content": "Alice is the operator of a remote robot for maintaining underground pipe. She has a sticker which has the same DoF and structure with the maintain tool on the remote robot. Both Alice and robot is connected to a 5G network with the ability to transfer video, audio and haptic information.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tService Flows",
+                            "text_content": "Remote robot is at the spot of a damaged underground pipe, using integrated camera and sensor to send back video, audio and haptic information.\nAlice hold the control stick and can receive the haptic information, and receive the video, audio information synchronous on the screen and from the sound.\nAfter analysing these information, Alice perform the next move on the operator sticker.\nThe haptic information including force and DoF transfer to remote robot, and the robot performs the same action.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.4\tPost-conditions",
+                            "text_content": "Alice can remotely control the robot to finish the maintaining work.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "In 3GPP TS 22.263 [4], there are requirements for supporting video, imaging and audio for professional applications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.2.6-1] The 5G system shall be able to support tactile and multi-modal communication service with following KPIs.\nTable 5.2.6-2: Potential Key performance requirements for remote control robot [3]\n\n[PR 5.2.6-2] The 5G system shall support a mechanism to allow an authorized 3rd party to provide QoS policy for flows of multiple UEs associated with an application. The policy may contain e.g. the expected 5GS handling and the associated triggering event.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.6-2: Potential Key performance requirements for remote control robot [3]",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tImmersive VR games",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tDescription",
+                            "text_content": "This use case is about supporting immersive VR games with tactile and multi-modal communication services. VR games have provided a better experience comparing to traditional games. As customers ask for more immersive game experience, haptic information has been taken into account including force and DOF. Traditional VR games provide video and audio information for players to create the real game scenarios. For better immersive VR games, haptic feedback is introduced and which provides the reality of touching things in games as well as the interaction of team players.\nTo play the VR game, players buy VR games and related equipment like VR glasses, hand shank, analogue steering wheel and haptic gloves, which may be produced by different manufactures. In multi-player VR games, they act as different UEs and need to corporate to complete the mission. On application level, the VR gaming application will be able to distinguish these UEs and share the information with network that these UEs and data flows are grouping under this VR gaming service, and network need to provide corresponding QoS accordingly.\nFor smooth experience in VR, the motion-to-photon latency should be less than 20ms [7], which indicates that the latency between player do one movement and the corresponding new pixels show in VR sights should be less than 20ms. The uplink dataflow in this loop is motion or haptic information, while the downlink in this loop is the video data. The QoS requirements for these two types of data flows are different, which includes latency requirements. But for the service level, it requires the joint latency consist both uplink and downlink. [5]\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tPre-conditions",
+                            "text_content": "Alice and Bob are playing a VR game together. They need to cover each other’s back, find weapons and fight with zombies. The VR gaming equipment they wear are all connected to 5G network. The VR game application interacted with 5G network about the UE and dataflow information, and network provides the pre-agreed policy between application and operator on QoS requirements of each kind of modal data flow.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.3\tService Flows",
+                            "text_content": "Alice and Bob both joined this VR games, and they can see each other’s character in the view.\nAlice found two stones on the ground, she picks up both the stones. The delay between the real pick-up action and the virtual hand pick-up video is ignorable.\nBob has nothing to arm himself. So he asks Alice to throw him a stone.\nAlice heard Bob and throws one of the stone to Bob.\nBob catches the stone can feel the weight of the stone.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.4\tPost-conditions",
+                            "text_content": "Alice and Bob can feel the things in the game as they are in the real world. The experience of this VR games is very realistic and smooth.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "In TS 22.261 [6], there are performance requirements for supporting VR services.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.3.6-1] The 5G system shall be able to support tactile and multi-modal communication service with following KPIs.\nTable 5.3.6-1: Potential Key performance requirements for immersive VR games\n\n[PR 5.3.6-2] The 5G system shall support a mechanism to allow an authorized 3rd party to provide QoS policy for coordination between flows of multiple UEs associated with an application. The policy may contain e.g. the set of UEs and data flows, the expected 5GS QoS handling(s) and associated triggering events, expected coordination assistance provided by 5G system between those multiple flows for different traffic types (e.g., haptic, audio and video).\n[PR 5.3.6-3] The 5G system shall enable means to meet a synchronization threshold for flows of multiple UEs associated with an application based on input received from an authorized 3rd party.\n[PR 5.3.6-4] Due to the separate handling of the multiple media components, synchronization between different media components is critical in order to avoid having a negative impact on the user experience (i.e. viewers detecting lack of synchronization). Applying synchronization thresholds in the 5G system may be helpful in support of immersive multi-modal VR applications when the synchronization threshold between two or more modalities is less than the latency KPI for the application. Typical synchronization thresholds (see [22], [23], [24] and [25]) are summarised in table 5.3.6-2.\n\nTable 5.3.6-2: Typical synchronization thresholds for immersive VR games\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.6-1: Potential Key performance requirements for immersive VR games",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.6-2: Typical synchronization thresholds for immersive VR games",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tSupport of skillset sharing for cooperative perception and manoeuvring of robots",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tDescription",
+                            "text_content": "Today, most automated driving vehicles rely on a single controller, which is the vehicle itself: sensing and controlling features of its own [3]. Since 3GPP Rel-14, LTE-based support for V2V features have been developed and tested through collaborative participation from automotive and communication industry. However, it is still challenging to use automated driving functionalities in general unstructured settings, if the controlling features are based on a single controller, having no idea on how neighbouring vehicles will behave.\nThis consequently requires that the automated driving system should allocate an extra safety margin into the planned trajectory which in turn causes traffic flow to be reduced and causes inefficiency to happen in a large scale network of vehicle networks where non-V2X vehicles and V2X-enabled vehicles possibly coexist. This is not even a problem for such an automated driving of road vehicles – the same applies to the operations of “automated manoeuvring robots” in unstructured settings. Without cooperation, the field of perception of a vehicle/robots is limited to the local coverage of the onboard sensors – not only for the relative distance, relative angle.\nAs a technology enabler solution against such problems of guaranteeing safety and traffic efficiency, it is being studied to share the sensor information [9] and manoeuver sharing [8] in SAE. Tactile Internet for V2N (potentially with assistance from edge cloud instead of general cloud servers) or V2V can enable an ultra-fast and reliable exchange of highly detailed sensor data sets between nearby vehicles, along with haptic information on trajectory [3]. Also, it would be one of the key factors for so-called “cooperative perception and manoeuvring” functionalities [10]: planning cooperative manoeuvers among multiple automated driving vehicle (or robots), such as plan creation, target point generation and target point risk assessment. It is by the Tactile Internet connectivity that vehicles can perform a cooperative perception of the driving environment based on fast fusion of high definition local and remote maps collected by the onboard sensors of the surrounding vehicles (e.g., video streaming from camera, radar, or lidar). This allows to augment the sensing range of each vehicle and to extend the time horizon for situation prediction, with huge benefits for safety [3]. The onboard sensors in today automated driving vehicles generate data flows up to 8 Gitb/s [3]. All these requirements call for new network architectures interconnecting vehicles and infrastructure utilizing ultralow-latency networks based on the Tactile Internet for cooperative driving services [3].\nThis use case is related to the support of (1) cooperative perception and manoeuvring and (2) extension of sensing range for cooperative automated driving scenarios using Tactile Internet, with some examples of moving robots (e.g., local delivery robots). Manoeuvring and perception obtained via haptic and multi-modal communications (also known as skillset sharing) are very timely shared between the controller and controlee.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tPre-conditions",
+                            "text_content": "Four robots S1, S2, C1 and C2 are working on delivery tasks from a geographic point to another, respectively.\nRobots UEs S1 and S2 are automated driving robots with a standalone steer/control, manoeuvring in a crowded village.\nRobots UEs C1 and C2 are automated driving robots with steer/control and manoeuver/skillset sharing functionalities, manoeuvring in another crowded village.\nThe roads that robots are using in these villages are not structured road (i.e., no lane separator, no lane marks, etc.) and they are under the same conditions for robots to move.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.3\tService Flows",
+                            "text_content": "S1 is moving at speed of X and is getting close to S2.\nS1 does not know exactly what trajectory S2 is planning to move along. Therefore, S1 reduces the current moving speed to (0.5 * X).\nDuring the operation at this reduced speed, S1 still does not know the detailed trajectory of S2. Therefore, S1 reserves a distance of Y1 meters relative to S2 and gets ready to further reduce the speed or to make a full stop, monitoring the movement of S2.\nS1 and S2 pass each other and continue their trip to the destinations, respectively.\nC1 is moving at speed of X and is getting close to C2.\nC1 knows exactly what trajectory C2 is planning to move along as they share the manoeuvers. Therefore, C1 reduces the current moving speed to (0.9 * X).\nDuring the operation at this reduced speed, C1 still knows the detailed trajectory of C2 through manoeuver sharing. Therefore, C1 reserves a distance of Y2 (Y2 << Y1) meters relative to C2 and gets ready to further reduce the speed to avoid any change of collision but there is very little chance that both should make a full stop as both are sharing the steer/control: one can yield the space for the other only when necessary.\nC1 and C2 pass each other and continue their trip to the destinations, respectively.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.4\tPost-conditions",
+                            "text_content": "The total time that S1 and S2 should spend is much greater than the total time that C1 and C2 should spend.\nThe total energy consumption (e.g., to accelerate from a low speed level to X) for S1 and S2 is greater than that for C1 and C2.\nFig. 5.4.4-1 provides a simplified explanation on the behaviours of speed changes for examples without (left section) and with (right section) real-time multi-modal communication for interactive haptic control and feedback (skillset sharing).\nThe figure depicts a simplified example of the stochastic behaviors of the speed change in a robot-vehicle interaction scenario, highlighting the minimum margin to set between robots or vehicle-styled robots for interactive haptic control and feedback. The road is assumed to be in a general unstructured setting without lane separators or marks.\nFig. 5.4.4-1. Simplified examples on the stochastic behaviours of the speed change (and the minimum margin to set between robots (or vehicle-styled robots)) without (left section) and with (right section) real-time multi-modal communication for interactive haptic control and feedback (skillset sharing). The road is assumed to be in general unstructured setting, e.g., no lane separator or marks.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "V2X performance requirements found in TS 22.185, TS 22.186. (e)CAV requirements in TS 22.104 [21]. VIAPA requirements in TS 22.263 [4]\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.4.6-1] 5G system shall be able to support real-time multi-modal communication for interactive haptic control and feedback with KPIs as summarized in Table 5.4.6-1.\nTable 5.4.6-1: Multi-modal communication service performance requirements.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.4.6-1: Multi-modal communication service performance requirements.",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.5\tHaptic feedback for a personal exclusion zone in dangerous remote environments",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.5.1\tDescription",
+                            "text_content": "With the assistance of 5G networks, many industries including mining, operate unmanned and automated. In mining scenarios, drilling safety and precise control for automated rigs and sending effective alarms when needed to the onsite crew is vital for their safety. When crew move heavy lifting equipment wearing personal protection equipment (PPE) for their safety or work in a noisy/poor visibility environment, audio/light alarm systems coverage may not be detected for immediate reaction therefore use of wearables (belts, shoe sole, arm/shoulder tactile equipment) can improve the reliability of alarm system.\nFurthermore, the nature of human brain response time to light and audio makes the use of haptic feedback to alert faster and more reliable. Human brain response to the sense of touch in range of 1 ms where the response to audio and video is in 100s of milliseconds. Therefore, the alarm system can be enriched with additional haptic information and multi-modal session can be relayed to the on-site crew over to accelerate human response time and improve the system reliability.\nWhile haptic alarm can be actuated on an extended PPE haptic device (e.g., belt) to improve alerting the on-site crew, the audio siren and light evacuation signals (where possible) need to be sent, as an alert to ambient actuators requiring a multi-modal information transfer via separate service data flows, to the proximity devices during an emergency for directing them to a safe location. Furthermore, affective wearables feedback and affective or biometric data collected from workers can adjust the navigation process to the workers’ temperament in order to effectively guide them away from the hazard locations.\nAs an exmple, in a large mining environment, a hazard scenario is detected by the remote control unit to notif and navigate on-site workers by a multi-modal alarm system to avoid exclusion zones. The multi-modal alarm system monitors the environment using surveillance cameras fixed in the local site, on drones, or on workers helmets as well as haptic information relayed by the workers. Ambient sensory information (smoke, temperature, audio/video) can be relayed to a remote central monitoring and control unit to predict/detect hazard scenarios.\nThe personal exclusion zone needs to be defined to prohibit the entry of the on-site workers which can change over time. The detected exclusion zone information from remote control unit will actuate devices (e.g., siren and light) fixed in the local site or in drones as well PPE haptic belt actuator to navigate the workers.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.2\tPre-conditions",
+                            "text_content": "Multi-modal UEs, with sensor, haptic and audio/visual capabilities, are interconnected, through the 5G Network provided by the MNO, both locally, or remotly over the MNO 5G Network.\nThe MNO provides service data flows for multi-modal information delivered over one common session to different UEs. E.g., a single user may receive haptic information be sent to her/his haptic glove and belt and audio to be sent to her/his headset to help navigate the worker through the exclusion zone.\nThe figure depicts a personal exclusion zone (PEZ) in a 5G network, illustrating the various elements and their interactions. The PEZ is a crucial component in ensuring network security and preventing unauthorized access. The figure includes the base station (gNB), user equipment (UE), and scatterers, all of which play a role in the PEZ's operation. The diagram highlights the importance of beamforming techniques to mitigate interference and ensure a secure communication environment.\nFigure 5.5.2-1. Example of a personal exclusion zone\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.3\tService Flows",
+                            "text_content": "1.\tA Worker using PPE connected to a monitoring and control unit walks through a mining site where multiple exclusion zones are defined to protect her/him from hazardous occurrences. As the worker gets closer to the exclusion zone, her/his PPE establishes a session to enable transmission of alarms to the monitoring and control unit, e.g., noise levels, visibility levels and user location.\n2.\tIf a hazard situation is detected, on-site workers need to be alerted immediately and defined personal exclusion zone(s) should be communicated with the on-site miners according to their proximity to the exclusion zone. Thus, the monitoring system determines that the user must be alerted, through haptic and audio alerts, since the monitoring and control unit determined that those are the modal types the user can utilized safely in the dangerous environment.\n3.\tThe monitoring and control system, navigates workers using both a trained haptic language instruction (single buzz on the right side: move right, single buzz on the left side: move left, etc.) set and audio/visual mechanism to enable the user to safely leave the hazard area.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.4\tPost-conditions",
+                            "text_content": "The site worker is safely navigated away from the dangerous exclusion zone as the 5G network enables the PPE to alert the monitoring and control unit of dangerous situations which triggers the monitor and control unit to use the 5G network to transmit multi-modal commands to steer away site workers from dangerous exclusion zones.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "In 3GPP TS 22.263 [4], there are requirements for supporting video, imaging, and audio for professional applications.\nIn 3GPP TS 22.261 [6] there are requirements to support the following:\nClause 6.3 Multiple Access Technologies\n“The 5G system shall support a set of identities for a single user in order to provide a consistent set of policies and a single set of services across 3GPP and non-3GPP access type”\nClause 6.26.2.5 Traffic Types\n“The 5G system shall support traffic scenarios typically found in a home setting (from sensors to video streaming, relatively low amount of UEs per group, many devices are used only occasionally) for 5G LAN-type service”\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR. 5.5.6-1] The 5G network shall support a mechanism to allow an authorized 3rd party to provide QoS policy for flows of multiple UEs associated with an application. The policy may contain e.g. the expected 5GS handling and the associated triggering event.\n[PR. 5.5.6-2] The 5G system shall support a mechanism to apply QoS policy for flows of multiple UEs associated with an application received from an authorized 3rd party.\n[PR 5.5.6-3] The 5G system shall provide a network connection to address the KPIs for immersive multi-modal navigation applications, see Table 5.5.6-1.\nTable 5.5.6-1: Potential Key performance requirements for a personal exclusion zone in dangerous remote environments.\n\n[PR 5.5.6-4] The 5G system shall support the following synchronization thresholds to support immersive multi-modal navigation applications, see Table 5.5.6-2.\nTable 5.5.6-2: Potential Key performance requirements for synchronization thresholds for a personal exclusion zone in dangerous remote environments.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.5.6-1: Potential Key performance requirements for a personal exclusion zone in dangerous remote environments.",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.5.6-2: Potential Key performance requirements for synchronization thresholds for a personal exclusion zone in dangerous remote environments.",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.6\tLive Event Selective Immersion",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.6.1\tDescription",
+                            "text_content": "To provide immersive experience of a live football game to the audience not at the scene, multiple AI cameras are deployed in the stadium collecting data of the video and audio from different angles for the generation of footages at the Application Server. The footages are provided to the audience for selection.\n\nThe AI camera predictively follows the live action, depending on the objects to follow e.g. ball or player. The Application Server predicts the potential actions of the object based on the data collected from the cameras and instructs the camera on what object to follow and how to follow. The AI camera acts based on the instructor from the Application Server.\n\nThis use case shows an example of multi-modal service as defined in clause 4.1 and 4.2, in which the application server requires inputs from multiple UEs to generate the outputs.  The service flows and potential new requirements of this use case also apply to other multi-modal interactive system use case scenarios.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.2\tPre-conditions",
+                            "text_content": "The figure depicts a live event selective immersion system, which is a technology used in telecommunications to enhance the quality of video and audio signals. The system uses a combination of optical fibers and digital signal processing to create a virtual reality experience for the user. The figure shows the various components involved in the system, such as the optical fibers, digital signal processing equipment, and the user interface. The system is designed to provide a high-quality immersive experience, allowing users to experience events in a more realistic and engaging way.\nFigure 5.6.2-1. Live Event Selective Immersion\nEach AI camera interacts with the Application Server over 5GS network as a UE.\nAlice is watching the football game, and the footages for selection are transmitted to her UE over 5GS network.\nFootages and motion prediction are generated at the Application Server based on the video and audio data collected by the AI camera.\nEach AI camera has its own responsibilities:\nCamera#1: data collection for motion prediction and footage generation, the primary camera placed in a location owning the best view\nCamera#2: data collection for motion prediction, placed in the best location for capturing the motion\nCamera#3: data collection for motion prediction and footage generation\nCamera#4: data collection for footage generation\nCamera#5: data collection for motion prediction\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.3\tService Flows",
+                            "text_content": "The football game starts. Camera#1, Camera#2, Camera#3, Camera#4 and Camera#5, as the UEs, are switched on and registered to the 5GS network to collect video and audio data to conduct Live Event Selective Immersion service.\nThe Application Server informs 5GS that UEs corresponding to Camera#1, Camera#2, Camera#3, Camera#4 and Camera#5 are subject to the service application, and provides QoS requirements of these UEs and the coordination policies for this multi-modal service for assistance from 5GS.\nThe QoS requirements and the coordination policy are applied at 5GS. Camera#1, Camera#2, Camera#3, Camera#4 and Camera#5 transmit the collected data over 5GS to the Application Server at the target QoS.\nThe Application Server makes motion prediction based on data received from Camera#1, Camera#2, Camera#3 and Camera#5, and generates footages based on data received from Camera#1, Camera#3 and Camera#4.\nThe Application Server transmits motion prediction of the object(s) over 5GS to Camera#1, Camera#2, Camera#3 and Camera#5 and transmits footages over 5GS to Alice’s UE.\nSome people are gathering at the gate of the stadium for the celebration of winning scores, then network congestion happens from time to time. Based on the coordination policy of the multi-modal service, when the target QoS of Camera#1 can’t be guaranteed, 5GS reduces QoS of Camera#4 to make sure QoS of Camera#1 is guaranteed; when the congestion is relieved, 5GS increases QoS of Camera#4 while target QoS of Camera#1 is still guaranteed.\nThe network congestion gets more serious, and target QoS of Camera#2 can’t be guaranteed. Since the motion data collected by Camera#2 is mandatory for motion prediction without which the motion prediction can’t be made, 5GS releases resources of Camera#2 and Camera#5 based on the coordination policy of the multi-modal service.\nNOTE: \tWhen motion prediction doesn’t work, the Application Server may request the 5GS network to only guarantee QoS of Camera#1 or to release resources of all the cameras.  This is beyond what 5GS can coordinate.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.4\tPost-conditions",
+                            "text_content": "Alice receives multiple footages and selects one of them to enjoy the immersive experience.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "TS 22.261 clause 6.7.2 and clause 6.8 defined the following policy control requirements that can be reused to this use case:\nThe 5G system shall be able to provide the required QoS (e.g. reliability, end-to-end latency, and bandwidth) for a service and support prioritization of resources when necessary for that service.\nThe 5G system shall be able to support QoS for applications in a Service Hosting Environment.\nThe 5G system shall support the creation and enforcement of prioritisation policy for users and traffic, during connection setup and when connected.\nBased on operator policy, the 5G system shall support a real-time, dynamic, secure and efficient means for authorized entities (e.g. users, context aware network functionality) to modify the QoS and policy framework. Such modifications may have a variable duration.\n3GPP TS 22.261 [6] clause 6.23.2 defines the following requirements enabling 5GS to notify an authorized entity of the communication events:\nThe 5G system shall be able to provide notification of communication events to authorized entities per pre-defined patterns (e.g. every time the bandwidth drops below a pre-defined threshold for QoS parameters the authorized entity is notified, and the event is logged).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.6.6-1] The 5G system shall support a mechanism to allow an authorized 3rd party to provide QoS policy for flows of multiple UEs associated with an application. The policy may contain e.g. the expected 5GS handling and the associated triggering event.\n[PR 5.6.6-2] The 5G system shall support a mechanism to apply QoS policy for flows of multiple UEs associated with an application received from an authorized 3rd party.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.7\tSupport for IEEE P1918.1 architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "5.7.1\tDescription\nThe on-going IEEE project P1918.1 “Tactile Internet: Application Scenarios, Definitions and Terminology, Architecture, Functions, and Technical Assumptions” [13] facilitates the rapid realization of the Tactile Internet as a 5G and beyond application, across a range of different user groups. The standard defines a framework for the Tactile Internet, including descriptions of various application scenarios, definitions and terminology, functions, and technical assumptions. This framework prominently also includes a reference model and architecture, which defines common architectural entities, interfaces between those entities, and the mapping of functions to those entities. The Tactile Internet encompasses low latency high reliability applications (e.g., manufacturing, transportation, healthcare and mobility), as well as non-critical applications (e.g., edutainment and events).\nTactile Internet provides a medium for remote physical interaction, including the exchange of haptic information. This interaction are among humans and / or machines (e.g., robots, networked functions, software, or any other connected entity). There are two broad categories of haptic information, namely, tactile or kinaesthetic. Tactile information refers to the perception of information by the various mechanoreceptors of the human skin, such as surface texture, friction, and temperature. Kinaesthetic information refers to the information perceived by the skeleton, muscles, and tendons of the human body, such as force, torque, position, and velocity. The goal of Tactile Internet in human-in-the-loop scenarios is that humans should not be able to distinguish between locally executing a manipulative task compared to remotely performing the same task across the Tactile Internet.\nFigure 5.8.1-1 illustrates the functional architecture for the Tactile Internet proposed by IEEE P1918.1 [3]. Each tactile edge consists of one or multiple tactile devices (TD), where TDs in tactile edge A communicate tactile / haptic information with TDs in tactile edge B through a network domain, to meet the requirements of a given Tactile Internet use case. The gateway node (GN) is an entity with enhanced networking capabilities that resides at the interface between the tactile edge and the network domain and is mainly responsible for user plane data forwarding. The GN is accompanied by a network controller (NC) that is responsible for control plane processing including intelligence for admission and congestion control, service provisioning, resource management and optimization, and connection management in order to achieve the required QoS for the Tactile Internet session. The network domain is shown to be composed of a radio access point or base station connected logically to control plane entities (CPEs) and user plane entities in the network core. 5G radio access and core network can be a network domain to meet the quality requirements of tactile use cases.\n\nFigure 5.7.1-1. IEEE P1918.1 [3] architecture with the GN and the NC residing as part of the network domain\nThe tactile service manager (TSM) plays a critical role in defining the characteristics and requirements of the service between the two tactile edges and in disseminating this information to key nodes in the tactile edge and network domain. The control information between the TSM and the GNC is carried over Service (S) Interface. SE, a computing and storage entity, provides both computing and storage resources for improving the performance of the tactile edges and meeting the delay and reliability requirements of the E2E communications. Open (O) Interface is used to carry information exchange between any architectural entity and the SE.\nWe demonstrate how 5G network is used as the “network domain” in the IEEE P1918.1 [3] architecture to support a typical multi-modal use case -- teleoperation.\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 9,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.7.2\tPre-conditions",
+                            "text_content": "Teleoperation allows human users to immerse into an inaccessible environment to perform complex tasks. A typical teleoperation system includes a controller (i.e., the user) and a device (i.e., the tele-manipulator), which exchange haptic signals (forces, torques, position, velocity, vibration, etc.), video signals, and audio signals over a communication network. In particular, the communication of haptic information imposes strong demands on the communication network as it closes a global control loop between the user and the tele-operator. Four communication streams are involved in a typical multi-modal use case -- teleoperation:\nHaptic Control stream. It carries command queries from the user to the remote haptic equipment.\nHaptic Feedback stream. It carries sensor data and response queries from the remote haptic equipment back to the user.\nVideo stream. It carries an encoded video stream from the remote environment back to the user. Depending on the resolution of the video, this stream usually occupies the highest percentage of the bandwidth of the communicational channel.\nAudio stream. It carries audio data from the remote environment back to the user.\nNote that multiple devices may be involved at both or either side of the multi-modal communication, and a single multi-modal communication session may comprise multiple streams between multiple devices. It is assumed that all the above streams are carried over the 5G network as the “network domain” as defined in IEEE P1918.1 functional architecture.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.3\tService Flows",
+                            "text_content": "1. \tBoth the controller (“Tactile Edge A”) and the tele-manipulator (“Tactile Edge B”) are equipped with multiple devices to capture, transmit and receive audio, video and haptic information.\n2. \tWhen a session starts, multiple streams are established over the 5G network (“Network Domain” in the IEEE P1918.1 architecture) between the corresponding devices at the controller and the tele-manipulator that carry multiple modalities data. Table 5.7.3-1 depicts the typical QoS requirements that have to be fulfilled in order for the users’ QoE to be satisfactory.\nTable 5.7.3-1 Typical QoS requirements for multi-modal streams [14] [15] [16] [17] [18]\n\n3. \tThe controller starts to capture the first Media Units (MUs) of haptic information, video and voice at the same time. In this case, the three MUs have the same timestamp, which represents the generation time. Assuming that the sampling interval for haptics, video and audio are 1 ms, 30 ms and 20 ms. The source transmits the first haptic MU about 20-30 ms earlier than the MUs of audio and video, which may result in more 20 ms difference between the arrival time of the MUs of different modalities. If the destination outputs the MUs at the same time, it has to delay the output of the haptic MU until the voice and video MUs arrive at the destination.\n4. \tA Synchronization Unit is assumed to preserve the time relation of the original signal as steady as possible and synchronize the three media streams with each other. This unit can be part of TSM or can be located in the Tactile Edge. Synchronization becomes increasingly challenging with the increasing demand from the application itself, for example immersive XR experience, as well as the inevitable jitter/delay issues (especially due to the nature of the wireless communication) in the network domain. Necessary information is exchanged between the TSM (including the synchronization unit) and the 5G network for the assistance of the synchronization between different streams of a multi-modal communication session. Audio, video and haptic MUs arrive at the Synchronization Unit and are re-synchronized before getting to the destination.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.7.3-1 Typical QoS requirements for multi-modal streams [14] [15] [16] [17] [18]",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.7.4\tPost-conditions",
+                            "text_content": "The user enjoys the good experiences in teleoperation enabled by 5G network and Tactile Internet, where human users are not being able to distinguish between locally executing a manipulative task compared to remotely performing the same task across the Tactile Internet.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "TS 22.261 [6], TS 22.263 [4] and TS 22.104 [21] have captured the KPIs for high data rate and low latency interactive services including Cloud/Edge/Split Rendering, Gaming or Interactive Data Exchanging, Consumption of VR content via tethered VR headset, and audio-video synchronization thresholds.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.7.6-1] The 5G system shall support a mechanism to ensure users’ QoE of the multi-modal communication service involving one or multiple devices at either end of the communication. QoE refers to the difference of the physical interaction across the 5G network and the same manipulation carried out locally.\n[PR 5.7.6-2] The 5G system shall support a mechanism for a 3rd party application server to provide real-time feedback on the traffic characteristics and service requirements of the multiple streams of a multi-modal communication session.\n[PR 5.7.6-3] The 5G system shall support a mechanism to assist the synchronisation between the multiple streams (e.g., haptic, audio and video) of a multi-modal communication session in order to avoid the negative impact on the user experience.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.8\tVirtual factory",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.8.1\tDescription",
+                            "text_content": "Virtual factory is an important feature in industry 4.0, which provides people on remote site easy access to factory. Virtual factory could support immersive monitor of real scene, simulation and analysis on production line planning and practical production adjustment.\nThe given telecommunication figure depicts a virtual factory and a photo of the real factory floor under construction. The figure illustrates the concept of a virtual factory, which is a concept in the field of manufacturing and supply chain management. It shows the process of manufacturing goods in a virtual environment, where the factory floor is constructed digitally. The photo of the real factory floor under construction provides a visual representation of the physical location where the goods are being produced. This figure is used to illustrate the concept of a virtual factory and its potential benefits in terms of cost savings, efficiency, and reduced environmental impact.\nFigure 5.8.1-1. Virtual Factory and a photo of the real factory floor under construction [19].\nAlso it can provide an approach in managing distributed realistic factory when considering establishing a complex production line which need to combine the capability of several factories.\nThe figure depicts an 8-node service-oriented virtual factory, with each node representing a different service. The nodes are interconnected through a network of virtual links, forming a virtual factory network. The figure illustrates the concept of service-oriented architecture (SOA), where services are provided as a set of interconnected components, each with its own set of capabilities and interfaces. The figure also shows the use of virtual links to connect the nodes, allowing for the seamless exchange of data and services.\nFigure 5.8.1-2. A service-oriented virtual factory [20]\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.2\tPre-conditions",
+                            "text_content": "Factory is covered by 5G signals. An industrial robot and a monitoring camera are connected to 5G network.\nThe remote site where the virtual factory will be displayed is also covered by 5G signals.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.3\tService Flows",
+                            "text_content": "The factory first tells 5G network that the data flows of motion information collector of robot and monitor video need coordination.\nThe motion information of the robot is collected and transferred through dataflow 1. A monitor camera captures the real movement of the industrial robot and transmit video signal through dataflow 2. Network will mark these two data flows according to the information factory provided.\nData flow1 which carries the motion information signal will be transferred to the VR server and produce VR video according to the motion information. Dataflow 2 will be transferred directly to a screen in the remote site.\nOn the remote site, there’s a VR glasses which will receive the video data from the VR server. Alongside the VR glasses there’s the monitor screen of the real robot motion.\nAs the processing from motion information to VR video need time, dataflow 2 should be hold by network for a certain period. The dataflow of VR and monitor video will arrive at the remote site within a certain time window, so that users will not feel the delay between these two flows.\nThe figure depicts a flow diagram of service flow in an 8-3-1 virtual factory, illustrating the various stages of production and service delivery. Key components include the production line, service line, and the customer service center. The flow diagram highlights the importance of communication and collaboration between different teams to ensure smooth operations and customer satisfaction.\nFigure 5.8.3-1. Figure of service flow on virtual factory\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.4\tPost-conditions",
+                            "text_content": "Due to the coordination processing network has done, users can see the virtual factory through VR glasses and the real scene in factory on screen without feeling any delay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.5\tExisting features partly or fully covering the use case functionality",
+                            "text_content": "none\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.6\tPotential New Requirements needed to support the use case",
+                            "text_content": "[PR 5.8.6-1] 5G system shall be able to support the interaction with applications on UEs or data flows grouping information within one tactile and multi-modal communication service.\n[PR 5.8.6-2] The 5G system shall support a means to apply 3rd party provided policy(ies) for flows associated with an application. The policy may contain e.g. the set of UEs and data flows, the expected QoS handling and associated triggering events, other coordination information.\nNOTE:\tThe policy can be used by a 3rd party application for coordination of the transmission of multiple UEs’ flows (e.g., haptic, audio and video) of a multi-modal communication session.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tConsolidated requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tConsolidated potential requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table 6.1-1: Consolidated Requirements\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.1-1: Consolidated Requirements",
+                            "table number": 11,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tConsolidated potential KPIs",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The 5G system shall support tactile and multi-modal communication services with the following KPIs.\nTable 6.2-1: Multi-modal communication service performance requirements\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.2-1: Multi-modal communication service performance requirements",
+                            "table number": 12,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 13,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 14,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tConclusions and recommendations",
+            "description": "This TR provides a number of use cases for tactile and multi-modality communication services such as immersive multi-modal virtual reality (VR) application, remote controlled robots, support of skillset sharing for robots, haptic feedback for dangerous environments, live event selective immersion, virtual factory, and others.\nThe potential new requirements for each use cases are compiled into a set of potential consolidated requirements, including functional requirements and performance requirements, wherein a set of KPIs are defined, such as max allowed end-to-end latency, service bit rate, user-experienced data rate, reliability, message size, service area.\nThe resulting consolidated potential requirements and KPIs identified in this TR can be considered for the development of normative requirements.\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 15,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

@@ -1,0 +1,600 @@
+{
+    "document_name": "28658-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "The present document is part of a TS-family covering the 3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Telecommunication management; as identified below:\nTS 28.657\t\tEvolved Universal Terrestrial Radio Access Network (E-UTRAN) Network Resource Model (NRM) Integration Reference Point (IRP); Requirements\nTS 28.658\t\tEvolved Universal Terrestrial Radio Access Network (E-UTRAN) Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\nTS 28.659\t\tEvolved Universal Terrestrial Radio Access Network (E-UTRAN) Network Resource Model (NRM) Integration Reference Point (IRP); Solution Set (SS) definitions\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the E-UTRAN network resource information that can be communicated between an IRPAgent and an IRPManager for telecommunication network management purposes, including management of converged networks.\nThis document specifies the semantics and behaviour of information object class attributes and relations visible across the reference point in a protocol and technology neutral way. It does not define their syntax and encoding.\nThe E-UTRAN NRM IRP comprises a set of specifications defining Requirements, a protocol neutral Information Service and one or more Solution Set(s).\nThe present document specifies the protocol neutral E-UTRAN NRM IRP: Information Service (IS). It reuses relevant parts of the Generic NRM IRP: IS in 3GPP TS 28.622 [6], either by direct reuse or sub-classing, and in addition to that defines E-UTRAN specific Information Object Classes.\nIn order to access the information defined by this NRM, an Interface IRP such as the \"Basic CM IRP\" is needed (3GPP TS 32.602 [7]). However, which Interface IRP is applicable is outside the scope of the present document.\nThe present document also specifies the ng-eNB network resource information that can be communicated among NG-RAN management system, including management of MR-DC operations which ng-eNB is involved in.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TS 32.101: \"Telecommunication management; Principles and high level requirements\".\n[2]\t3GPP TS 32.102: \"Telecommunication management; Architecture\".\n[3]\t3GPP TS 23.003: \"Numbering, addressing and identification\".\n[4]\t3GPP TS 32.300: \"Telecommunication management; Configuration Management (CM); Name convention for Managed Objects\".\n[5]\t3GPP TS 28.628: \"Self-Organizing Networks (SON) Policy Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS) \".\n[6]\t3GPP TS 28.622: \"Telecommunication management; Generic Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\".\n[7]\t3GPP TS 32.602: \"Telecommunication management; Configuration Management (CM); Basic CM Integration Reference Point (IRP) Information Service (IS)\".\n[8]\t 3GPP TS 36.321: \"Universal Terrestrial Access Network (UTRAN); Medium Access Control (MAC) protocol specification\".\n[9]\t3GPP TS 23.401: \"General Packet Radio Service (GPRS) enhancements for Evolved Universal Terrestrial Radio Access Network (E-UTRAN) access\".\n[10]\t3GPP TS 36.331: \"Evolved Universal Terrestrial Radio Access (E-UTRA) Radio Resource Control (RRC); Protocol specification\".\n[11]\t3GPP TS 36.300: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Overall description; Stage 2\".\n[12]\t3GPP TS 36.211: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Physical Channels and Modulation\"\n[13]\t3GPP TS 36.101: \"Evolved Universal Terrestrial Radio Access (E-UTRA); User Equipment (UE) radio transmission and reception\"\n[14]\t3GPP TS 36.104: \"Evolved Universal Terrestrial Radio Access (E_UTRA); Base Station (BS) radio transmission and reception\"\n[15]\t3GPP TS 32.500: \"Telecommunication Management; Self-Organizing Networks (SON); Concepts and requirements\"\n[16]\t3GPP TS 32.150: \"Telecommunication management; Integration Reference Point (IRP) Concept and definitions\"\n[17]\t3GPP TS 21.905: \"Vocabulary for 3GPP Specifications\"\n[18]\t3GPP TS 32.111-2: \"Telecommunication management; Fault Management; Part 2: Alarm Integration Reference Point (IRP): Information Service (IS)\"\n[19]\t3GPP TS 23.002: \"Network Architecture\"\n[20]\t3GPP TS 32.652: \"Telecommunication management; Configuration Management (CM); GERAN network resources Integration Reference Point (IRP); Network Resource Model (NRM)\"\n[21]\t3GPP TS 28.652: \"Telecommunication management; Universal Terrestrial Radio Access Network (UTRAN) Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\"\n[22]\t3GPP2 S.S0028-D \"OAM&P for cdma2000 (Overview, 3GPP R7 Delta Specification, 3GPP2 Network Resource Model IRP)\"\n[23]\t3GPP TS 28.708: \"Telecommunication management; Evolved Packet Core (EPC) Network Resource Model (NRM) Integration Reference Point (IRP): Information Service (IS)\"\n[24]\t3GPP TS 36.423: \"Evolved Universal Terrestrial Radio Access Network (E-UTRAN); X2 application protocol (X2AP)\".\n[25]\t3GPP TS 36.213: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Physical layer procedures\".\n[26]\t3GPP TS 28.625: \"Telecommunication management; State Management Data Definition Integration Reference Point (IRP); Information Service (IS)\".\n[27]\t3GPP TS 36.413: \"Evolved Universal Terrestrial Access Network (E-UTRAN); S1 Application Protocol (S1AP)\".\n[28]\t3GPP TS 36.443: \"Evolved Universal Terrestrial Access Network (E-UTRAN); M2 Application Protocol (M2AP)\".\n[29]\t3GPP TS 22.011: \"Service accessibility\".\n[30]\t3GPP TS 32.422: \"Telecommunication management; Subscriber and equipment trace; Trace control and configuration management\".\n[31]\t3GPP TS 28.662: \"Telecommunication management; Generic Radio Access Network (RAN) Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\".\n[32]\t3GPP TS 32.662: \"Telecommunication management; Configuration Management (CM); Kernel CM; Information service (IS)\".\n[33]\t3GPP TS 23.203: \"Policy and charging control architecture\".\n[34]\t3GPP TS 23.207: \"End-to-end Quality of Service (QoS) concept and architecture\".\n[35]\tRFC 2474: \"Definition of the Differentiated Services Field (DS Field) in the IPv4 and IPv6 Headers\".\n[36]\t3GPP TS 45.008: \"Technical Specification Group GSM/EDGE Radio Access Network; Radio subsystem link control\".\n[37]\t3GPP TS 32.302: \"Telecommunication management; Configuration Management (CM); Notification Integration Reference Point (IRP): Information Service (IS)\".\n[38]\t3GPP TS 36.133: \"Universal Terrestrial Access Network (UTRAN); Requirements for support of radio resource management\".\n[39]\t3GPP TS 28.657: \"Evolved Universal Terrestrial Radio Access Network (E-UTRAN) Network Resource Model (NRM) Integration Reference Point (IRP); Requirements\".\n[40]\t3GPP TS 28.541: \"Management and orchestration of 5G networks Network Resource Model (NRM); Stage 2 and stage 3\".\n[41]\t3GPP TS 38.300: \"NR; Overall description; Stage-2\".\n[42]\t3GPP TS 23.501: \"System Architecture for the 5G System\".\n[43]\t3GPP TS 36.463: \"Evolved Universal Terrestrial Radio Access Network (E-UTRAN) and Wireless LAN (WLAN); Xw application protocol (XwAP)\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TS 32.150 [16], TS 32.101 [1], TS 32.102 [2] and TS 21.905 [17] and the following apply.\nAssociation: See definition in TS 28.622 [6].\nNetwork Resource Model (NRM): See definition in TS 28.622 [6].\neNodeB: A logical node responsible for radio transmission/reception in one or more cells to/from the User Equipment. \nIt terminates the S1 interface towards the EPC.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TS 32.150 [16], TS 32.101 [1], TS 32.102 [2] and TS 21.905 [17] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TS 28.657 [39], TS 32.150 [16], TS 32.101 [1], TS 32.102 [2] and TS 21.905 [17], in that order.\nDeNB\tDonor eNodeB\nDN\tDistinguished Name (see 3GPP TS 32.300 [4])\nE-UTRA\tEvolved Universal Terrestrial Radio Access\nE-UTRAN\tEvolved Universal Terrestrial Radio Access Network\nMBSFN\tMultimedia Broadcast multicast service Single Frequency Network\nNCR\tNeighbour Cell Relation\nPM\tPerformance Management\nRDN\tRelative Distinguished Name (see 3GPP TS 32.300 [4])\nRN\tRelay Node\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tModel",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tImported and associated information",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.1.1\tImported information entities and local labels",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 1,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.1.2\tAssociated information entities and local labels",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 2,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "4.2\tClass diagram",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tRelationships",
+                            "text_content": "This clause depicts the set of classes (e.g. IOCs) that encapsulates the information relevant for this IRP. This clause provides the overview of the relationships of relevant classes in UML. Subsequent clauses provide more detailed specification of various aspects of these classes.\n\nFigure 4.2.1 - 1 presents a cell relation view, illustrating the interconnection of various cells within a cellular network. The figure showcases the hierarchical structure of the network, with macro cells, picocells, and femtocells positioned to optimize coverage and capacity. The figure also highlights the role of base stations (BSs) and their coordination with mobile stations (MSs) to ensure seamless communication. The visual representation emphasizes the importance of efficient resource allocation and handover management in maintaining high-quality service across the network.Figure 4.2.1-1 provides a detailed view of the interconnection of different cells within a cellular network, illustrating the hierarchical structure of the network. The figure showcases the positioning of macro cells, picocells, and femtocells to optimize coverage and capacity. It also highlights the role of base stations (BSs) and their coordination with mobile stations (MSs) to ensure seamless communication. The visual representation emphasizes the importance of efficient resource allocation and handover management in maintaining high-quality service across the network.\nFigure 4.2.1-1: Cell relation view\nFigure 4.2.1.1-1a presents a detailed view of the relationship between cells and frequencies in a telecommunication network. The figure illustrates how different frequency bands are allocated to various cells, with each cell represented by a distinct shape. The horizontal axis represents the frequency range, while the vertical axis denotes the number of cells. The overlapping cells indicate that multiple frequency bands are shared among them. This visual representation helps in understanding the efficient utilization of spectrum resources and the potential interference between adjacent cells. The figure emphasizes the importance of proper frequency planning and coordination in modern cellular networks.\nFigure 4.2.1.1-1a: Cell and frequency relation view\nNOTE A:\tThe above NRM fragment uses SubNetwork to hold both NR and LTE external entities and frequencies.\nFigure 4.2.1.1-1b presents a detailed view of the relationship between cells and frequencies in a telecommunication network. The figure illustrates how different frequency bands are allocated to various cells, with each cell represented by a distinct shape. The horizontal axis represents the frequency range, while the vertical axis denotes the number of cells. The overlapping cells indicate that multiple frequency bands are shared among them. This visual representation helps in understanding the efficient utilization of spectrum resources and the potential interference between adjacent cells. The figure emphasizes the importance of proper frequency planning and coordination in modern cellular networks.\nFigure 4.2.1.1-1b: Cell and frequency relation view\nNOTE B:\tThe above NRM fragment uses NRNetwork to hold NR external entities and frequency and using EUtraNetwork to hold LTE external entities and frequency. The NRNetwork and EUtraNetwork are subclasses of SubNetwork (defined in TS 28.622[6]) with no additional attributes. The reason using NRNetwork and EUtraNetwork is for a clean separation of NR external entities and frequency and LTE external entities and frequency.\n\nThe given telecommunication figure illustrates the relationship between different entities within a network, specifically focusing on the association between ENBFunctions and RNFunctions, as well as the management of these functions by IRPAgent instances. The figure emphasizes the presence of two types of associations: ServesRN and ServesExtRN, which dictate whether the ENBFunction and RNFunction instances are managed by the same or different IRPAgents. This diagram is crucial for understanding the network's organization and the roles of various components in managing and coordinating network functions.\nNOTE 1:\tIf an instance of the ServesRN association is present, then a corresponding instance of ServedByEGC must be present. In this case, the ENBFunction and RNFunction instances are under the management scope of the same IRPAgent. \nIf an instance of the ServesExtRN association is present, then a corresponding instance of ServedByExtEGC must be present. In this case, the ENBFunction and RNFunction instances are under the management scope of two different IRPAgents.\nNOTE 2:\tThe modelling of the DeNB capability as a separate IOC or as attributes of ENBFunction is FFS\nFigure 4.2.1-2: E-UTRAN relaying view of E-UTRAN and ng-eNB NRM\n\n\nFigure 4.2.1-3 provides a detailed transport view of E-UTRAN and ng-eNB NRM, illustrating the various components involved in the communication process. The figure showcases the physical and logical layers, including the eNB, gNB, and the transport network. It also highlights the role of the RRC protocol stack, PDCP, and the MAC layer in facilitating efficient data transmission. The figure emphasizes the importance of synchronization and timing in maintaining the integrity of the communication system. Overall, this diagram offers a comprehensive overview of the transport view of E-UTRAN and ng-eNB NRM, emphasizing the complexity and precision required in modern telecommunications networks.\nFigure 4.2.1-3: Transport view of E-UTRAN and ng-eNB NRM\n\nFigure 4.2.1 -4: MBMS view of E-UTRAN NRM 1\n\nThis telecommunication figure illustrates the Multimedia Broadcast Multicast Service (MBMS) view of Evolved Universal Terrestrial Radio Access Network (E-UTRAN) Network Resource Management (NRM) 1. The figure provides a detailed overview of the MBMS system in the context of E-UTRAN NRM 1, showcasing the various components and their interactions.\n\nThe figure is divided into two main sections: the MBMS system and the E-UTRAN NRM 1. The MBMS system is depicted on the left side of the figure, while the E-UTRAN NRM 1 is shown on the right side. The MBMS system includes the MBMS network, the MBMS network elements, and the MBMS network interfaces. The E-UTRAN NRM 1 includes the E-UTRAN NRM 1 system, the E-UTRAN NRM 1 network elements, and the E-UTRAN NRM 1 network interfaces.\n\nThe figure also includes a legend that explains the symbols used in the figure, such as the MBMS network\nFigure 4.2.1-4: MBMS view of E-UTRAN NRM 1\nNOTE 1: This is E-UTRAN NRM containment/relationship Figure form view of MBMS when MCE and ENB belong to one Network Element.\nFigure 4.2.1 -5: MBMS view of E-UTRAN NRM 2\n\nThis telecommunication figure illustrates the Multimedia Broadcast Multicast Service (MBMS) view of Evolved Universal Terrestrial Radio Access Network (E-UTRAN) Network Resource Management (NRM) 2. The figure provides a detailed overview of the MBMS signaling process within the E-UTRAN network, showcasing the various stages and interactions between different network entities.\n\nThe figure is divided into multiple sections, each representing a different aspect of the MBMS signaling process. The top section shows the MBMS signaling flow, which includes the MBMS signaling from the eNB (evolved Node B) to the Serving Gateway (SGW) and the Home Location Register (HLR). The middle section illustrates the MBMS signaling from the SGW to the Gateway G (GWG) and the Serving Gateway (GWG). The bottom section depicts the MBMS signaling from the GWG to the Home Location Register (HLR) and the Serving Gateway (SGW).\n\nThe figure also includes various network entities such as the eNB, SGW, GWG, and HLR, which are essential for the proper functioning of the\nFigure 4.2.1-5: MBMS view of E-UTRAN NRM 2\nNOTE 2: This is E-UTRAN NRM containment/relationship Figure form view of MBMS when MCE and ENB belong to different Network Elements.\nFigure 4.2.1-6: SON related Attributes NRM IOCs (Containment Relationship)\n\nFigure 4.2.1-8 illustrates the WLAN Mobility Set NRM for LWA and LWIP, showcasing the dynamic movement of wireless devices within a Local Area Network (LAN) and how these movements are managed to ensure seamless connectivity. The figure highlights the role of the Mobility Management Entity (MME) and the Serving Gateway (SGW) in controlling the handover process, which is crucial for maintaining stable connections during device movement. The figure also emphasizes the importance of Quality of Service (QoS) management and the use of Licensed Assisted Access (LWA) and Licensed-Wired Interoperability Protocol (LWIP) for efficient resource allocation and optimal performance.Figure 4.2.1-7: Non-collocated LWA NRM\nFigure 4.2.1-8: WLAN Mobility Set NRM for LWA and LWIP\nFigure 4.2.1-9 presents an IoT-related attribute NRM IOCs, illustrating the network's infrastructure and communication protocols. The figure showcases the interconnection of various network elements, including gateways, routers, and access points, which facilitate seamless data transmission and communication between IoT devices and the network. The figure emphasizes the importance of security measures, such as firewalls and intrusion detection systems, in protecting the network from potential threats. Additionally, the figure highlights the role of Quality of Service (QoS) in ensuring that critical IoT applications receive the necessary resources for optimal performance. Overall, the figure provides a comprehensive overview of the network's architecture and its key components, emphasizing the need for robust security and efficient resource allocation to support the growing number of IoT devices.\nFigure 4.2.1-9: IoT-NTN related Attributes NRM IOCs\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tInheritance",
+                            "text_content": "\n\n\n\n\nFigure 4.2.2-1: E-UTRAN NRM Inheritance Hierarchy illustrates the hierarchical structure of E-UTRAN Network Reliability Management (NRM) in a telecommunications system. The figure shows the various levels of NRM, from the network level down to the UE level, highlighting the interdependencies and responsibilities of each entity in ensuring network reliability. The figure emphasizes the importance of coordination and communication among network elements to maintain seamless service delivery and user experience.\nFigure 4.2.2-1: E-UTRAN NRM Inheritance Hierarchy\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tClass definitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.1\tENBFunction",
+                            "text_content": "This IOC represents eNB functionality defined in TS 36.300 [11] or ng-eNB defined in TS 38.300 [41]. For more information about the eNB, see 3GPP TS 23.002 [19]. For more information about the ng-eNB, see 3GPP TS 38.300 [41].\n\n\n\n\nNOTE 1:\tThe above mentioned SON or MDT related conditions do not apply to ng-eNB.\n\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.2\tExternalENBFunction",
+                            "text_content": "This IOC represents an external eNB functionality. For more information about the eNB, see 3GPP TS 23.002 [19].\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.3\tEUtranGenericCell",
+                            "text_content": "This abstract IOC represents the common properties of an E-UTRAN generic cell provided by eNB function or an NG-RAN generic cell provided by ng-eNB function. For more information about E-UTRAN cells, see 3GPP TS 23.401 [9]. For more information about NG-RAN cells, see 3GPP TS 38.300 [41].\nNote 1:\tNo state propagation is implied.\nNote 2: \tThe attribute value change is conveyed by the notifyStateChange notification.\nNote 3:\tFor NB-IoT, as indicated in the relevant subclauses in TS 36.300 [12], a number of E-UTRA protocol functions supported by all UEs are not used for NB-IoT and need not be supported by eNBs and UEs only using NB-IoT. The attributes cellLocalId, tac, pci, maximumTransmissionPower are Mandatory for NB-IoT cell, Whether other attributes are needed for NB-IoT cell are out of scope of this document.\nNote 4:\tThe attribute PCI is writable when the NM-Centralized PCI assignment (see TS 32.500 [15] clause 6.1.6) is supported.\nNote 5:\tThe attribute maximumTransmissionPower is writable when IOC SectorEquipmentFunction is not used.\n\nThe common notifications defined in subclause 4.5 are valid for this IOC. In addition, the following set of notification, defined in 3GPP TS 32.662 [32], is also valid.\n.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The common notifications defined in subclause 4.5 are valid for this IOC. In addition, the following set of notification, defined in 3GPP TS 32.662 [32], is also valid.",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.4\tExternalEUtranGenericCell",
+                            "text_content": "This abstract IOC represents the properties of an E-UTRAN generic cell controlled by another IRPAgent. This IOC contains necessary attributes for inter-system and intra-system handover. It also contains a subset of the attributes of related IOCs controlled by another IRPAgent. The way to maintain consistency between the attribute values of these IOCs is outside the scope of the present document.\n\n\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.5\tEUtranCellFDD",
+                            "text_content": "This IOC represents the properties of E-UTRAN FDD cell provided by eNB or NG-RAN FDD cell provided by ng-eNB..\n\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.6\tExternalEUtranCellFDD",
+                            "text_content": "This IOC represents the common properties of external E-UTRAN FDD cell provided by eNB or NG-RAN FDD cell provided by ng-eNB.\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.7\tEUtranCellTDD",
+                            "text_content": "This IOC represents the properties of E-UTRAN cell TDD provided by eNB or NG-RAN TDD cell provided by ng-eNB.\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.8\tExternalEUtranCellTDD",
+                            "text_content": "This IOC represents the common properties of external E-UTRAN cell TDD provided by eNB or NG-RAN TDD cell provided by ng-eNB.\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "This IOC represents the common properties of external E-UTRAN cell TDD provided by eNB or NG-RAN TDD cell provided by ng-eNB.",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.9\tEUtranRelation",
+                            "text_content": "This IOC represents a NCR from a source cell to a target cell, where the target cell is a EUtranGenericCell or ExternalEUtranGenericCell instance.\nThe source cell can be an EUtranGenericCell instance. This is the case for an Intra-E-UTRAN NCR.\nThe source cell can be a UtranGenericCell instance. This is the case for Inter-RAT NCR from UTRAN to E-UTRAN. See 3GPP TS 28.652 [21].\nThe source cell can be a GsmCell instance. This is the case for Inter-RAT NCR from GERAN to E-UTRAN. See 3GPP TS 32.652 [20].\nNCRs are unidirectional.\n\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.10\tLink_ENB_ENB",
+                            "text_content": "This IOC represents the link between two ENBFunction.\nNone.\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.11\tCdma2000Relation",
+                            "text_content": "This IOC represents a NCR from one EUtranGenericCell to a CDMA2000 sector. NCRs are directional.\nSee 3GPP2 TS S.S0028 [22]\n\n\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.12\t MCEFunction",
+                            "text_content": "This IOC represents MCE functionality. For more information about the MCE, see 3GPP TS 36.300 [11].\nNone.\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.13\t MBSFNArea",
+                            "text_content": "This IOC represents MBSFN Area. For more information about MBSFN Area, see 3GPP TS 36.300 [11].\nNone.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.14 \tLink_MCE_ENB",
+                            "text_content": "This IOC models the M2 reference point as defined in TS 36.300 [11].\nNone.\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.15 \tLink_MCE_MME",
+                            "text_content": "This IOC models the M3 reference point as defined in TS 36.300 [11].\nNone.\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.16 \tRNFunction",
+                            "text_content": "This IOC represents Relay Node (RN) functionality. For more information about RN, see 3GPP TS 36.300 [11].\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.17\t ExternalRNFunction",
+                            "text_content": "This IOC represents the properties of a Relay Node (RN) controlled by another IRPAgent. For more information about RN, see 3GPP TS 36.300 [11].\nNone.\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.18\tDeNBCapability",
+                            "text_content": "This IOC represents the capability for an eNodeB to act as a Donor eNodeB (DeNB) functionality. For more information about the DeNB, see 3GPP TS 36.300 [11].\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.19\tCellOutageCompensationInformation",
+                            "text_content": "This IOC represents information relevant in case of a Cell Outage Compensation taking place.\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, with the addition that notifyAttributeValueChange shall be supported (Support Qualifier M).\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.20\t QciDscpMapping",
+                            "text_content": "This IOC represents a set of mapping between QCI and DSCP.\nN one.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.21 \tEUtranCellNMCentralizedSON",
+                            "text_content": "This abstract IOC represents the properties of an E-UTRAN generic cell which relate to SON functions. Its purpose is to enable configuration and tuning of the cell behaviour by the operator for SON functions which are not (yet) implemented in the eNodeB. NMS level SON should consider when configuring and tuning the cell the correlation of different attributes to optimise the eNodeB and network performance. For more information about cells, see 3GPP TS 23.401 [9].\n\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.22\tWTFunction",
+                            "text_content": "This IOC represents WT functionality defined in TS 36.300 [11].\n\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.23\tEP_Xw",
+                            "text_content": "This IOC represents the end point of Xw reference point defined in TS 36.300 [11].\nNo additional attributes to the ones inherited from the IOC EP_RP defined in TS 28.622 [6].\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.24\tWLANMobilitySet",
+                            "text_content": "This IOC represents the managed WLAN mobility set for LWA and LWIP. For more information about the WLAN mobility set, see 3GPP TS 36.300 [11].\n\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.25\tMemberWLAN <<datatype>>",
+                            "text_content": "This <<datatype>> represents the information about a member WLAN of a WLAN mobility set.\n\nNone.\nThe subclause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.26\tPLMNId <<dataType>>",
+                            "text_content": "This <<dataType>> represents the information of a PLMN identification.\n\nNone.\nThe subclause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.27\tEUtranFreqRelation",
+                            "text_content": "This IOC, together with the target EUtranFrequency, represents the frequency properties applicable to the referencing cell relation.\n\n\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.28\tEUtranFrequency",
+                            "text_content": "This IOC represents certain E-UTRAN frequency properties.\n\nNone.\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "4.4\tAttribute definitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.4.1\tAttribute properties",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.4.2\tConstraints",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.5\tCommon notifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.5.1\tAlarm notifications",
+                            "text_content": "This subclause presents a list of notifications, defined in [18], that IRPManager can receive. The notification header attribute objectClass/objectInstance, defined in [37], would capture the DN of an instance of an IOC defined in this IRP specification.\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.5.2\tConfiguration notifications",
+                            "text_content": "This subclause presents a list of notifications, defined in [32], that IRPManager can receive. The notification header attribute objectClass/objectInstance, defined in [37], would capture the DN of an instance of an IOC defined in this IRP specification.\n\nThe following sequence diagrams and table show an example how notifications of IOC CellOutageCompensationInformation and other notifications are used to inform an IRPManager about the COC activities.\nThe sequence diagrams show the basic event flow, the table gives more details on selected, most relevant, content of the notifications.\n\nFigure A-1: Sequence diagram of COC, part 1\n\n\nFigure A-2: Sequence diagram of COC, part 2\nLegend for the table: \nNotifications in italic font are not directly triggered by COC activities, but help to give a full picture.:\nNotification content in bold font indicates a changed attribute value.\n*) Remarks:\nThere may be some content of the correlatedNotifications and/or additionalInformation field, which is not related to COC. This additional content is not shown for better readability and must be kept unchanged by COC.\nNotificationId’s are only examples.\n\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Legend for the table: \nNotifications in italic font are not directly triggered by COC activities, but help to give a full picture.:\nNotification content in bold font indicates a changed attribute value.",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1148 @@
+{
+    "document_name": "28622-i50.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "The present document is part of a TS-family covering the 3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Telecommunication management; as identified below:\n28.621\tGeneric Network Resource Model (NRM) Integration Reference Point (IRP); Requirements;\n28.622\tGeneric Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS) ;\n28.623\tGeneric Network Resource Model (NRM) Integration Reference Point (IRP); Solution Set (SS) definitions.\nThe interface Itf-N, defined in 3GPP TS 32.102 [2], is built up by a number of Integration Reference Points (IRPs) and a related Name Convention, which realise the functional capabilities over this interface. The basic structure of the IRPs is defined in 3GPP TS 32.150 [4].\nThe present document is part of a set that has been developed for converged management solutions.\nThe present document is part of a set that is used for management and orchestration of 5G networks and network slicing.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the Generic network resource information that can be communicated between an MnS producer and MnS consumer for telecommunication network management purposes, including management of converged networks and networks that include virtualized network functions.\nThis document specifies the semantics of information object class attributes and relations visible across the reference point in a protocol and technology neutral way.  It does not define their syntax and encoding.\nThis document supports the Federated Network Information Model (FNIM) concept described in [8] in that the relevant Information Object Class (IOC)s defined in this specification are directly or indirectly inherited from those specified in the Umbrella Information Model (UIM) of [9].\nNote that the present document is applicable to deployment scenarios using the Service Based Management Architecture (SBMA) as defined in TS 28.533 [32].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies.  In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TS 32.101: \"Telecommunication management; Principles and high level requirements\".\n[2]\t3GPP TS 32.102: \"Telecommunication management; Architecture\".\n[3]\t3GPP TS 32.302: \"Telecommunication management; Configuration Management (CM); Notification Integration Reference Point (IRP): Information Service (IS)\".\n[4]\t3GPP TS 32.150: \"Telecommunication management; Integration Reference Point (IRP) Concept and Definitions\".\n[5]\t3GPP TS 23.003: \"Technical Specification Group Core Network and Terminals; Numbering, addressing and identification\"\n[6]\t Void\n[7]\tITU-T Recommendation X.710 (1991): \"Common Management Information Service Definition for CCITT Applications\".\n[8]\tTS 32.107: \"Telecommunication management; Fixed Mobile Convergence (FMC) Federated Network Information Model (FNIM)\"\n[9]\tTS 28.620: \"Telecommunication management; Fixed Mobile Convergence (FMC) Federated Network Information Model (FNIM) Umbrella Information Model (UIM)\"\n[10]\tTS 32.156: \"Telecommunication management; Fixed Mobile Convergence (FMC) Model Repertoire\"\n[11]\t Void\n[12]\t Void\n[13]\t3GPP TS 32.300: \"Telecommunication management; Configuration Management (CM); Name convention for Managed Objects\".\n[14]\t3GPP TS 32.600: \"Telecommunication management; Configuration Management (CM); Concept and high-level requirements\".\n[15]\tETSI GS NFV 003 V1.1.1: \"Network Functions Virtualisation (NFV); Terminology for Main Concepts in NFV\".\n[16] \tETSI GS NFV-IFA 008 v2.1.1: \"Network Functions Virtualisation (NFV); Management and Orchestration; Ve-Vnfm reference point - Interface and Information Model Specification\".\n[17]\tETSI GS NFV-IFA 015 v2.1.2: \"Network Functions Virtualisation (NFV); Management and Orchestration; Report on NFV Information Model\".\n[18]\tETSI ES 202 336-12 V1.1.1: \"Environmental Engineering (EE); Monitoring and control interface for infrastructure equipment (power, cooling and building environment systems used in telecommunication networks); Part 12: ICT equipment power, energy and environmental parameters monitoring information model\".\n[19]\tITU-T Recommendation X.731: \"Information technology - Open Systems Interconnection - Systems Management: State management function\".\n[20]\t3GPP TS 28.552: \"Management and orchestration; 5G performance measurements\".\n[21]\t3GPP TS 28.625: \"State Management Data Definition Integration Reference Point (IRP); Information Service (IS) \".\n[22]\t3GPP TS 23.501: \"System Architecture for the 5G System\".\n[23]\t3GPP TS 23.502: \"Procedures for the 5G System; Stage 2\".\n[24]\tIETF RFC 791: \"Internet Protocol\".\n[25]\tIETF RFC 2373: \"IP Version 6 Addressing Architecture\".\n[26]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[27]\t3GPP TS 28.532: \"Management and orchestration; Generic management services\".\n[28]\t3GPP TS 28.554: \"Management and orchestration; 5G end to end Key Performance Indicators (KPI)\".\n[29]\t3GPP TS 32.421: \"Telecommunication management; Subscriber and equipment trace; Trace concepts and requirements\".\n[30]\t3GPP TS 32.422: \"Telecommunication management; Subscriber and equipment trace; Trace control and configuration management\".\n[31]\tITU-T Recommendation X.733 (02/92): \"Information technology - Open Systems Interconnection - Systems Management: Alarm reporting function\".\n[32]\t3GPP TS 28.533: \"Management and orchestration; Architecture framework\".\n[33]\t3GPP TS 38.300: \"NR; NR and NG-RAN Overall Description; Stage 2\".\n[34]\t3GPP TS 38.413: \"NG-RAN; NG Application Protocol (NGAP)\".\n[35]\t3GPP TS 38.104: \"NR; Base Station (BS) radio transmission and reception\".\n[36]\t3GPP TS 38.321: \"NR; Medium Access Control (MAC) protocol specification\".\n[37]\t3GPP TS 36.321: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Medium Access Control (MAC) protocol specification\".\n[38]\t3GPP TS 38.331: \"NR; Radio Resource Control (RRC); Protocol specification\".\n[39]\t3GPP TS 36.331: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Resource Control (RRC); Protocol specification\".\n[40]\t3GPP TS 25.321: \"Medium Access Control (MAC) protocol specification\".\n[41]\t3GPP TS 25.331: \"Radio Resource Control (RRC); Protocol specification\".\n[42]\t3GPP TS 38.304: \"NR; User Equipment (UE) procedures in Idle mode and RRC Inactive state\".\n[43]\t3GPP TS 37.320: \"Universal Terrestrial Radio Access (UTRA) and Evolved Universal Terrestrial Radio Access (E-UTRA); Radio measurement collection for Minimization of Drive Tests (MDT); Overall description; Stage 2\".\n[44]\t3GPP TS 28.705: \"Telecommunication management; IP Multimedia Subsystem (IMS) Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\".\n[45]\t3GPP TS 28.702: \"Telecommunication management; Core Network (CN) Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\".\n[46]\t3GPP TS 28.652: \"Telecommunication management; Universal Terrestrial Radio Access Network (UTRAN) Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\".\n[47]\t3GPP TS 28.708: \"Telecommunication management; Evolved Packet Core (EPC) Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\".\n[48]\t3GPP TS 28.541: \" Management and orchestration; 5G Network Resource Model (NRM); Stage 2 and stage 3\".\n[49]\tIETF RFC 8089: \"The \"file\" URI Scheme\".\n[50]\t3GPP TS 28.405: \"Telecommunication management; Quality of Experience (QoE) measurement collection; Control and configuration\".\n[51]\t3GPP TS 26.247: \"Transparent end-to-end Packet-switched Streaming Service (PSS); Progressive Download and Dynamic Adaptive Streaming over HTTP (3GP-DASH)\".\n[52]\t3GPP TS 26.114: \"IP Multimedia Subsystem (IMS); Multimedia Telephony; Media handling and interaction\".\n[53]\t3GPP TS 26.118: \"Virtual Reality (VR) profiles for streaming applications\".\n[54]\tIETF RFC 3339: \"Date and Time on the Internet: Timestamps\".\n[55]\tIETF RFC 6991: \"Common YANG Data Types\".\n[56]\t3GPP TS 28.658: \"Telecommunication management; Evolved Universal Terrestrial Radio Access Network (E-UTRAN) Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following terms and definitions apply. For terms and definitions not found here, please refer to 3GPP TS 32.101 [1], 3GPP TS 32.102 [2], 3GPP TS 32.150 [4] and 3GPP TS 32.600 [14].\nAssociation: In general, it is used to model relationships between Managed Objects. Associations can be implemented in several ways, such as:\n1)\tname bindings,\n2)\treference attributes, and\n3)\tassociation objects.\nThis IRP stipulates that name containment associations shall be expressed through name bindings, but it does not stipulate the implementation for other types of associations as a general rule. These are specified as separate entities in the object models (UML diagrams). Currently however, all (non-containment) associations are modelled by means of reference attributes of the participating MOs.\nInformation Object Class (IOC): An IOC represents the management aspect of a network resource. It describes the information that can be passed/used in management interfaces. Their representations are technology agnostic software objects. IOC has attributes that represents the various properties of the class of objects. See the term \"attribute\" defined in [10]. Furthermore, IOC can support operations providing network management services invocable on demand for that class of objects. An IOC may support notifications that report event occurrences relevant for that class of objects. It is modelled using the stereotype \"Class\" in the UML meta-model. See TS 32.156 [10] for additional information on IOC.\nManaged Object (MO): A MO is an instance of a Managed Object Class (MOC) representing the management aspects of a network resource. Its representation is a technology specific software object. It is sometimes called MO instance (MOI). The MOC is a class of such technology specific software objects. An MOC is the same as an IOC except that the former is defined in technology specific terms and the latter is defined in technology agnostic terms. MOCs are used/defined in SS level specifications. IOCs are used/defined in IS level specifications.\nManagement Information Base (MIB): A MIB is an instance of an NRM and has some values on the defined attributes and associations specific for that instance. In the context of the present document, an MIB consists of:\n1)\ta Name space (describing the MO containment hierarchy in the MIB through Distinguished Names),\n2)\ta number of Managed Objects with their attributes and\n3)\ta number of Associations between these MOs. Also note that TMN (ITU-T Recommendation X.710 [7]) defines a concept of a Management Information Tree (also known as a Naming Tree) that corresponds to the name space (containment hierarchy) portion of this MIB definition. Figure 3.1 depicts the relationships between a Name space and a number of participating MOs (the shown association is of a non-containment type)\nFigure 3.1 illustrates the relationships between a Name space and a number of participating MOs (Managed Organizations) in a telecommunication network. The diagram showcases the hierarchical structure of the network, with Name spaces acting as containers for multiple MOs. The relationships between Name spaces and MOs are depicted through various lines, indicating the flow of authority and responsibility. The figure emphasizes the importance of clear demarcation and delegation within the network, ensuring efficient management and control of resources.\nFigure 3.1: Relationships between a Name space and a number of participating MOs\nName space: A name space is a collection of names. The IRP name convention (see 3GPP TS 32.300 [13]) restricts the name space to a hierarchical containment structure, including its simplest form - the one-level, flat name space. \nAll Managed Objects in a MIB are included in the corresponding name space and the MIB/name space shall only support a strict hierarchical containment structure (with one root object). A Managed Object that contains another is said to be the superior (parent); the contained Managed Object is referred to as the subordinate (child). The parent of all MOs in a single name space is called a Local Root. The ultimate parent of all MOs of all managed systems is called the Global Root.\nNetwork resource:  discrete entity represented by an Information Object Class (IOC) for the purpose of network and service management.\nNOTE:\tA network resource may represent intelligence, information, hardware and software of a telecommunication network.\nNetwork Resource Model (NRM): A collection of IOCs, inclusive of their associations, attributes and operations, representing a set of network resources under management.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [26] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [26].\nCAG\tClosed Access Group\nDN\tDistinguished Name (see 3GPP TS 32.300 [13])\nIOC \tInformation Object Class\nMO\tManaged Object\nMOC\tManaged Object Class\nMOI\tManaged Object Instance\nNID\tNetwork ID\nNFVI\tNetwork Functions Virtualisation Infrastructure (NFVI): Defined in ETSI GS NFV 003 [15].\nNPN\tNon-Public Network\nPNI-NPN\tPublic Network Integrated Non-Public Network\nRDN\tRelative Distinguished Name (see 3GPP TS 32.300 [13])\nSNPN\tStandalone Non-Public Network\nSS\tSolution Set\nVNF\tVirtualised Network Function\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tModel",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tImported information entities and local labels",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 2,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tClass diagrams",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tRelationships",
+                            "text_content": "This clause depicts the set of classes (e.g. IOCs) that encapsulates the information relevant for this IRP. This clause provides the overview of the relationships of relevant classes in UML. Subsequent clauses provide more detailed specification of various aspects of these classes.\nThe following figure shows the containment/naming hierarchy and the associations of the classes defined in the present document. See Annex A of a class diagram that combines this figure with Figure 1 of [2], the class diagram of UIM.\n\"Figure 1 illustrates the hierarchical structure of a managed element within a network, showcasing its containment relationships. The figure includes various components such as network devices, services, and policies, each with its own level of management. The diagram emphasizes the interconnected nature of network elements and the importance of clear containment hierarchies for efficient management and control.\"\nNOTE 1:\tManagedElement may be contained either\n-\tin a SubNetwork (since SubNetwork inherits from Domain_ and ManagedElement inherits from ManagedElement_ and Domain_ name-contained ManagedElement_ as observed in the figure of Annex A) or\n-\tin a MeContext instance as observed by the above figure or in the figure of Annex A.\nThis either-or relation cannot be shown by using an {xor} constraint in the above figure.\nManagedElement may also have no parent instance at all.\nNOTE 2:\tVoid\nNOTE 3:\tIf the configuration contains several instances of SubNetwork, exactly one SubNetwork instance shall directly or indirectly contain all the other SubNetwork instances.\nNOTE 4:\tThe SubNetwork instance not contained in any other instance of SubNetwork is referred to as \"the root SubNetwork instance\".\nNOTE 5:\tManagementNode shall be contained in the root SubNetwork instance.\nNOTE 6:\tIf contained in a SubNetwork instance, MnsAgent shall be contained in the root SubNetwork instance.\nNOTE 7:\tVoid\nNOTE 8:\tVoid\n\nFigure 4.2.1-1: NRM fragment\nEach Managed Object is identified with a Distinguished Name (DN) according to 3GPP TS 32.300 [13] that expresses its containment hierarchy. As an example, the DN of a ManagedElement instance could have a format like:\nSubNetwork=Sweden,MeContext=MEC-Gbg-1,ManagedElement=RNC-Gbg-1.\n\n\"Figure 8 illustrates a void in a telecommunication network, indicated by the absence of signal or data flow. This could be due to a damaged cable, a dead zone, or intentional network segmentation. The figure highlights the impact of the void on network performance, as well as potential solutions such as signal boosting or rerouting.\"\nNOTE 8:\tVoid\nNOTE 9:\tVoid\nFigure 4.2.1-2: Vendor specific data container NRM fragment\n\n\n\nFigure 4.2.1-3: PM control NRM fragment\n\n\n\nFigure 4.2.1-4: Threshold monitoring control NRM fragment\n\n\n\nFigure 4.2.1-5: Notification subscription and heartbeat notification control NRM fragment\n\n\n\nFigure 4.2.1-6: FM control NRM fragment\n\nFigure 4.2.1-7 illustrates the trace control Non-Returnable Material (NRM) fragment, which is a crucial component in telecommunication systems. The figure depicts the various stages of signal transmission, including the transmitter, the optical fiber, and the receiver. The NRM fragment is responsible for ensuring that the signal does not return to the transmitter, which is essential for maintaining signal integrity and preventing interference. The figure also shows the use of wavelength division multiplexing (WDM) to transmit multiple signals over the same fiber, which is a common technique in modern telecommunications networks. Overall, this figure provides a detailed overview of the trace control NRM fragment and its role in maintaining signal quality and efficiency in telecommunication systems.\nFigure 4.2.1-7: Trace control NRM fragment\nFigure 4.2.1-8 presents a detailed snapshot of the MnS Registry NRM fragment, showcasing the organization and categorization of various network resources. The figure illustrates a hierarchical structure, with different levels representing distinct network entities such as nodes, links, and domains. Each entity is color-coded and labeled, providing a clear visual representation of the network's layout and connectivity. The figure emphasizes the importance of efficient resource management and highlights the interdependencies between different network components.\nFigure 4.2.1-8: MnS Registry NRM fragment\nFigure 4.2.1-9 illustrates a file retrieval process within a Network Resource Manager (NRM) fragment, showcasing the interaction between the client, the NRM, and the file server. The figure depicts the client initiating a request, which is then managed by the NRM for efficient resource allocation. The NRM communicates with the file server to retrieve the requested file, ensuring a seamless and secure data transfer. The visual representation emphasizes the importance of the NRM in orchestrating network resources and enhancing overall system performance.\nFigure 4.2.1-9: File retrieval NRM fragment\nFigure 4.2.1-10 illustrates a file download process within a Network Resource Manager (NRM) framework. The figure showcases the interaction between the client, the NRM, and the network elements involved in the download. The client initiates the request, which is then managed by the NRM. The NRM coordinates with various network components, such as the Access and Mobility Management Entity (AMME), the Mobility Management Entity (MME), and the Serving Gateway (SGW), to ensure the successful transfer of the file. The figure emphasizes the importance of efficient resource allocation and management in modern communication networks.\nFigure 4.2.1-10: File download NRM fragment\n\nFigure 4.2.1-11 illustrates a management data collection NRM fragment, which is a crucial component in telecommunication networks. The figure shows the various data collection points and their corresponding data collection methods, highlighting the importance of efficient data management in maintaining network performance and reliability. The figure also emphasizes the need for secure data transmission, as indicated by the use of encryption and authentication protocols. Overall, the figure provides a comprehensive overview of the management data collection process in telecommunication networks.\nFigure 4.2.1-11: Management data collection NRM fragment\nFigure 4.2.1-12 illustrates the process of Quality of Experience (QoE) measurement collection within a Network Resource Management (NRM) framework. The figure depicts various components involved in the QoE measurement process, including the user equipment (UE), network elements, and the NRM system. The UE sends requests to the network, which are then processed by network elements such as access and transport nodes. The NRM system collects and analyzes the data to determine the QoE, which is then used to optimize network performance. The figure highlights the importance of a well-designed NRM system in ensuring a high-quality user experience.\nFigure 4.2.1-12: QoE Measurement Collection NRM fragment\nFigure 4.2.1-13 presents a detailed overview of the SupportedNotifications NRM fragment, illustrating the various notifications that can be sent and received within a network management system. The figure showcases a complex network of communication channels, with different types of notifications represented by various symbols and lines. The central node serves as the source of these notifications, with multiple paths indicating the different routes that these messages can take. The figure emphasizes the importance of efficient notification management in maintaining the smooth operation of network systems.\nFigure 4.2.1-13: SupportedNotifications NRM fragment\n\nFigure 4.2.1-14 illustrates a specific fragment of the scheduler Non-Real-Time (NRM) in a telecommunication system. The figure shows a block diagram of the scheduler, which is a crucial component in managing the flow of data packets in a network. The scheduler is responsible for determining the order in which network resources are allocated to different tasks or applications, ensuring that the network operates efficiently and effectively.\n\nThe figure depicts the scheduler as a central processing unit (CPU) that receives requests from various network elements, such as network interface controllers (NICs) and network processors (NPUs). These elements are represented as input and output buffers, which are used to store and transmit data packets. The scheduler then processes these requests based on predefined policies and algorithms, such as round-robin scheduling, priority scheduling, or time-slicing.\n\nThe figure also shows the relationship between the scheduler and other components of the network, such as the network interface controllers (NICs) and network processors (NPUs). These components are connected to the scheduler through a series of input and output buffers, which allow them to send and receive data packets. The scheduler then processes these packets according to the policies and algorithms defined by the network\nFigure 4.2.1-14: Scheduler NRM fragment\nFigure 4.2.1-15 presents a detailed condition monitor NRM (Non-Destructive Evaluation) fragment, illustrating the process of monitoring and analyzing the structural integrity of a telecommunication system. The figure showcases various sensors and probes strategically placed to capture data on temperature, strain, and other vital parameters. The collected data is then transmitted to a central processing unit, which analyzes the information to detect any anomalies or potential issues. This real-time monitoring ensures the optimal performance and longevity of the telecommunication system, enabling proactive maintenance and reducing unexpected downtime.\nFigure 4.2.1-15: Condition monitor NRM fragment\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tInheritance",
+                            "text_content": "This clause depicts the inheritance relationships.\n\n\nFigure 4.2.2-1 illustrates a specific fragment of the National Radio Map (NRM), which is a comprehensive database of radio frequency (RF) propagation characteristics across the United States. This particular fragment focuses on a region in the Midwest, showcasing various terrain types, such as urban, suburban, and rural areas, as well as different types of buildings and structures. The NRM fragment is essential for radio frequency engineers and technicians to optimize signal strength and coverage, ensuring seamless communication across the country. The map highlights the importance of understanding the complex interplay between RF signals and the physical environment, which is crucial for the development of advanced communication systems.\nFigure 4.2.2-1: NRM fragment\n\nFigure 4.2.2-2 illustrates a control network management (CNM) fragment, which is a crucial component in telecommunication systems. The figure depicts a hierarchical structure, with the top-level nodes representing the overall network management, and the lower-level nodes handling specific tasks. The nodes are interconnected with lines, indicating the flow of information and commands. The use of rectangles and diamonds represents different types of nodes, with rectangles symbolizing CNM nodes and diamonds representing network elements. The figure emphasizes the importance of efficient network management, as the CNM fragment plays a vital role in controlling and monitoring the network's performance.\nFigure 4.2.2-2: PM control NRM fragment\n\nFigure 4.2.2-3 illustrates the threshold monitoring control in a Network Resource Management (NRM) system, focusing on fragment control. The figure depicts the system's ability to monitor and control network resources, ensuring efficient and reliable communication. Key components include the threshold monitoring control unit, which sets the limits for resource usage, and the NRM fragment, which represents the network's resources. The figure demonstrates how the system can dynamically adjust resource allocation based on real-time network conditions, optimizing performance and minimizing congestion.\nFigure 4.2.2-3: Threshold monitoring control NRM fragment\n\nFigure 4.2.2-4 illustrates the notification subscription and heartbeat notification control within the NRM framework. The figure depicts the interaction between the notification server and the NRM, highlighting the process of subscribing to notifications and managing heartbeat intervals. Key components include the notification server, NRM, and various notification types such as system status, service status, and heartbeat notifications. The figure emphasizes the importance of real-time communication and coordination between these components for efficient and reliable operation.\nFigure 4.2.2-4: Notification subscription and heartbeat notification control NRM fragment\n\nFigure 4.2.2-5 illustrates a fragment of the Frequency Modulation (FM) control Normalized Random Model (NRM) used in telecommunication systems. The figure shows the relationship between the carrier frequency, noise power spectral density, and the modulation index, which are crucial parameters for determining the performance of the communication system. The Normalized Random Model is a statistical model that helps in predicting the performance of the system under different channel conditions. The figure demonstrates how the system's performance varies with changes in these parameters, providing valuable insights for system designers and engineers.\nFigure 4.2.2-5: FM control NRM fragment\n\nFigure 4.2.2-6 illustrates a trace control Non-Returnable Material (NRM) fragment, which is a crucial component in telecommunication networks. The figure depicts a network interface card (NIC) connected to a network, with a trace control NRM fragment in the middle. This fragment is responsible for managing the flow of data between the NIC and the network, ensuring that data is transmitted and received efficiently. The figure also shows the use of a buffer, which is used to store data temporarily before it is transmitted or received. The buffer helps to manage the flow of data and prevent congestion in the network. Overall, this figure provides a detailed view of how trace control NRM fragments and buffers are used in telecommunication networks to ensure efficient data transmission and reception.\nFigure 4.2.2-6: Trace control NRM fragment\nFigure 4.2.2-7 illustrates a specific fragment of the MnS Registry NRM, focusing on the communication between different nodes within a network. The figure showcases the interaction between a source node (S) and a destination node (D), highlighting the process of packet transmission and routing. The various nodes are represented by different shapes and colors, with lines indicating the flow of data packets. The figure emphasizes the importance of efficient network design and management for smooth data transmission and routing.\nFigure 4.2.2-7: MnS Registry NRM fragment\nFigure 4.2.2-8 illustrates a specific process within a file retrieval Non-Volatile Memory (NRM) system. The figure depicts the various stages of data transfer, from the initial request to the final delivery. Key components include the client, server, and NRM, which stores the data temporarily for quick access. The figure emphasizes the importance of efficient data management and highlights the role of the NRM in improving overall system performance.\nFigure 4.2.2-8: File retrieval NRM fragment\nFigure 4.2.2 - 9 illustrates a file download process in a non-real-time mode (NRM) fragment, showing the transfer of data packets between a client and a server. The figure depicts the communication process, including the client initiating the download, the server sending the data packets, and the client receiving and processing them. Key visual elements include the data flow, packet size, and the timestamp, providing a comprehensive view of the file transfer process.\nFigure 4.2.2-9: File download NRM fragment\n\nFigure 4.2.2-10 illustrates a specific management data collection NRM (Network Management) fragment, focusing on the collection of performance metrics from network elements. The figure shows a hierarchy of network elements, including the network management station (NMS), network element manager (NEM), and network element (NE). The NMS is responsible for collecting performance data from the NEM, which in turn collects data from the NE. This data is then used to monitor and manage the network's performance, ensuring that it operates efficiently and reliably. The figure also highlights the importance of real-time data collection and analysis in today's dynamic and complex network environments.\nFigure 4.2.2-10: Management data collection NRM fragment\nFigure 4.2.2-11 illustrates the process of Quality of Experience (QoE) measurement collection within a Network Resource Management (NRM) framework. The figure depicts the various components involved in the QoE measurement process, including the user equipment (UE), network elements, and the NRM system. The UE sends requests to the network, which are then processed by network elements such as access and transport nodes. The NRM system collects and analyzes the data to determine the QoE, which is then used to optimize network performance. The figure highlights the importance of a well-designed NRM system in ensuring a high-quality user experience.\nFigure 4.2.2-11: QoE Measurement Collection NRM fragment\nFigure 4.2.2-12 presents a detailed overview of the SupportedNotifications NRM fragment, illustrating the various notifications that can be sent and received within a network management system. The figure showcases a complex network of communication channels, with different types of notifications represented by distinct symbols and arrows. This visual representation emphasizes the intricate nature of network communication and the importance of efficient notification handling for maintaining the smooth operation of network systems.\nFigure 4.2.2-12: SupportedNotifications NRM fragment\nFigure 4.2.2-13 illustrates a control NRM fragment from the ConditionMonitor system, which is used for monitoring and controlling telecommunication systems. The figure shows a detailed flowchart of the control process, with various input and output points, as well as decision-making nodes. The flowchart is designed to ensure that the system can respond effectively to different conditions and maintain the stability and reliability of the telecommunication network. The use of flowcharts in this context is a common practice in the design and implementation of telecommunication systems, as they provide a visual representation of the control processes and allow for easier debugging and maintenance.\nFigure 4.2.2-13: ConditionMonitor control NRM fragment\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tClass definitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.1\tAny",
+                            "text_content": "This class represents the classes (e.g. IOC) that are not defined in this specification but are or will be defined in other IRP specification(s).\nNone\nNone\nThis class does not support any notification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.2\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.2a\tMnsAgent",
+                            "text_content": "The MnsAgent represents the MnS producers, incl. the supporting hardware and software, available for a certain management scope that is related to the object name-containing the MnS Agent.\nThe MnSAgent can be name-contained under an IOC as follows:\n1)\tManagementNode;\n2)\tSubNetwork, if the SubNetwork does not contain a ManagementNode;\n3)\tManagedElement, if it is the root element.\nIn case the MnsAgent is name-contained under a ManagementNode, the management scope is the complete management scope of the ManagementNode or a subset thereof.\nIn case the MnsAgent is name-contained under a SubNetwork, the management scope is the complete SubNetwork or a subset thereof.\nIn case the MnsAgent is name-contained under a ManagedElement, the management scope is the complete ManagedElement or a subset thereof.\nThe MnsAgent shall be used only in deployments using the Service Based Management Architecture (SBMA) as defined in TS 28.533 [32].\nThe MnSAgent IOC includes the attributes inherited from Top_ IOC (defined in TS 28.620 [9]), attributes inherited from Top IOC (defined in clause 4.3.8) and the following attributes:\n\nNone.\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The MnSAgent IOC includes the attributes inherited from Top_ IOC (defined in TS 28.620 [9]), attributes inherited from Top IOC (defined in clause 4.3.8) and the following attributes:",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.3\tManagedElement",
+                            "text_content": "This IOC represents telecommunications equipment or TMN entities within the telecommunications network providing support and/or service to the subscriber. \nA ManagedElement IOC is used to represent a Network Element defined in TS 32.101[1] including virtualization or non-virtualization scenario. ManagementElement instance is used for communicating with a manager (directly or indirectly) over one or more management interfaces for the purpose of being monitored and/or controlled. ManagedElement may or may not additionally perform element management functionality. A ManagedElement contains equipment that may or may not be geographically distributed.\nA telecommunication equipment has software and hardware components. The ManagedElement IOC described above represents the following two cases:\n-\tIn the case when the software component is designed to run on dedicated hardware component, the ManagedElement IOC description includes both software and hardware component.\n-\tIn the case when the software is designed to run on ETSI NFV defined NFVI [15], the ManagedElement IOC description would exclude the NFVI component supporting the above mentioned subject software.\nA ManagedElement may be contained in either a SubNetwork or in a MeContext instance. A  ManagedElement may also exist stand-alone with no parent at all.\nThe relation of ManagedElement IOC and ManagedFunction IOC can be described as following:\n-\tA ManagedElement instance may have 1..1 containment relationship to a ManagedFunction instance. In this case, the ManagedElement IOC may be used to represent a NE with single ManagedFunction functionality. For example, a ManagedElement is used to represent the 3GPP defined RNC node.\n-\tA ManagedElement instances may have 1..N containment relationship to multiple ManagedFunction IOC instances. In this case, the ManagedElement IOC may be used to represent a NE with combined ManagedFunction functionality (as indicated by the managedElementType attribute and the contained instances of different ManagedFunction IOCs). For example, a ManagedElement is used to represent the combined functionality of 3GPP defined gNBCUCPFunction, gNBCUUPFunction and gNBDUFunction.\nNOTE:\tFor some specific functional IOCs a 1..N containment relationship is permitted.  The specific functional entities are identified in the NRMs that define subclasses of ManagedFunction.\nThe ManagedElement IOC includes the attributes inherited from ManagedElement_ IOC (defined in TS 28.620 [9]), attributes inherited from TopX IOC (defined in clause 4.3.8) and the following attributes:\n\nAttribute constrains for dnPrefix: The attribute dnPrefix shall be supported if an instance of ManagedElement is the local root instance of the MIB. Otherwise the attribute shall be absent or carry no information.\nThe common notifications defined in clause 4.5 are valid for this IOC. In addition, the following set of notifications is also valid.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The ManagedElement IOC includes the attributes inherited from ManagedElement_ IOC (defined in TS 28.620 [9]), attributes inherited from TopX IOC (defined in clause 4.3.8) and the following attributes:",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The common notifications defined in clause 4.5 are valid for this IOC. In addition, the following set of notifications is also valid.",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.4\tManagedFunction",
+                            "text_content": "This IOC is provided for sub-classing only. It provides attribute(s) that are common to functional IOCs. Note that a ManagedElement may contain several managed functions, a managed function may contain other managed functions as specified for the specific subclass.. The ManagedFunction may be extended in the future if more common characteristics to functional objects are identified.\nThis IOC can represent a telecommunication function either realized by software running on dedicated hardware or realized by software running on NFVI. Each ManagedFunction instance communicates with a manager (directly or indirectly) over one or more management interfaces exposed via its containing ME instance.\nThe ManagedFunction IOC includes the attributes inherited from Function_ IOC (defined in TS 28.620 [9]), attributes inherited from TopX IOC (defined in clause 4.3.8) and the following attributes:\n\n\nThere is no notification defined.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The ManagedFunction IOC includes the attributes inherited from Function_ IOC (defined in TS 28.620 [9]), attributes inherited from TopX IOC (defined in clause 4.3.8) and the following attributes:",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.5\tManagementNode",
+                            "text_content": "This IOC represents a telecommunications management system (EM) within the TMN that contains functionality for managing a number of ManagedElements (MEs). The management system communicates with the MEs directly or indirectly over one or more interfaces for the purpose of monitoring and/or controlling these MEs.\nThis class has similar characteristics as the ManagedElement. The main difference between these two classes is that the ManagementNode has a special association to the managed elements that it is responsible for managing.\nThe ManagementNode IOC includes the attributes inherited from ManagementSystem_ IOC (defined in TS 28.620 [9]), attributes inherited from TopX IOC (defined in clause 4.3.8) and the following attributes:\n\nNone\nThe common notifications defined in clause 4.5 are valid for this IOC. In addition, the following set of notifications is also valid.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The ManagementNode IOC includes the attributes inherited from ManagementSystem_ IOC (defined in TS 28.620 [9]), attributes inherited from TopX IOC (defined in clause 4.3.8) and the following attributes:",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The common notifications defined in clause 4.5 are valid for this IOC. In addition, the following set of notifications is also valid.",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.6\tMeContext",
+                            "text_content": "This IOC is introduced for naming purposes. It may support creation of unique DNs in scenarios when some MEs have the same RDNs due to the fact that they have been manufacturer pre-configured. \nIf some MEs have the same RDNs (for the above mentioned reason) and they are contained in the same SubNetwork instance, some measure shall be taken in order to assure the global uniqueness of DNs for all IOC instances under those MEs. One way could be to set different dnPrefix for those NEs, but that would require either that:\na)\tall LDNs or DNs are locally modified using the new dnPrefix for the upper portion of the DNs, or\nb)\ta mapping (translation) of the old LDNs or DNs to the new DNs every time they are used externally, e.g. in alarm notifications.\nAs both the two alternatives above may involve unacceptable drawbacks (as the old RDNs for the MEs then would have to be changed or mapped to new values), using MeContext offers a new alternative to resolve the DN creation. Using MeContext as part of the naming tree (and thus the DN) means that the dnPrefix, including a unique MeContext for each ME, may be directly concatenated with the LDNs, without any need to change or map the existing ME RDNs to new values.\nMeContext have 0..N instances. It may exist even if no SubNetwork exists. Every instance of MeContext contains exactly one ManagedElement during steady-state operations.\nThe MeContext IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\n\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The MeContext IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.7\tSubNetwork",
+                            "text_content": "This IOC represents a set of managed entities. There may be zero or more instances of a SubNetwork. It shall be present if either a ManagementNode or multiple ManagedElements are present (i.e. ManagementNode and multiple ManagedElement instances shall have SubNetwork as parent).\nThe SubNetwork instance not contained in any other instance of SubNetwork is referred to as the \"root\" SubNetwork instance.\nThe SubNetwork IOC includes the attributes inherited from Domain_ IOC (defined in TS 28.620 [9]), attributes inherited from TopX IOC (defined in clause 4.3.8) and the following attributes:\n\n\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions or additions\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The SubNetwork IOC includes the attributes inherited from Domain_ IOC (defined in TS 28.620 [9]), attributes inherited from TopX IOC (defined in clause 4.3.8) and the following attributes:",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.8\tTopX",
+                            "text_content": "This IOC is provided for sub-classing only. All information object classes defined in all TS that claim to be conformant to 32.102 [2] shall inherit from TopX.\n\nNone\nThere is no notification defined.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.9\tVsDataContainer",
+                            "text_content": "The VsDataContainer is a container for vendor specific data. The VsDataContainer is contained by Top and hence optionally name-contained by each IOC.\nThe VsDataContainer IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\nNone\nSupport for notification on the change of attribute value is vendor-specific.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The VsDataContainer IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.10\tLink",
+                            "text_content": "This IOC is provided for sub-classing only. This IOC represents a communication link or reference point between two network entities. The Link IOC does not indicate whether the represented communication link or reference point is a physical or logical entity.\nFor the subclasses of Link, the following rules apply:\n1)\tThe subclass names shall have the form “Link_<X>_<Y>”, where <X> is a string that represents the IOC at one end of the association related to the particular Link subclass, and <Y> is a string that represents the IOC at the other end of the association. For the order of the two strings, <X> shall come alphabetically before <Y>.\n2)\tIn case <X> and <Y> are YyyFunction IOCs (inheriting from ManagedFunction and on first level below ManagedElement), the <X> and <Y> strings shall have the same form as the legal values of the managedElementType attribute (see clause 4.5.1), e.g. “Auc”.  Otherwise <X> and <Y> shall be the full IOC names.\nThus, two valid examples of Link subclass names would be: Link_As_Cscf and Link_Mrfc_Mrfp.\nThe Link IOC includes the attributes inherited from TopologicalLink_ (defined in TS 28.620 [9]), attributes inherited from TopX IOC (defined in clause 4.3.8) and the following attributes:\n\nThe common notifications defined in subclause 4.5 are valid for this IOC, without exceptions or additions\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The Link IOC includes the attributes inherited from TopologicalLink_ (defined in TS 28.620 [9]), attributes inherited from TopX IOC (defined in clause 4.3.8) and the following attributes:",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.11\tEP_RP",
+                            "text_content": "This IOC is provided for sub-classing only. This IOC represents an end point of a link used across a reference point between two network entities.\nFor naming the subclasses of EP_RP, the following rules shall apply:\n-\tThe name of the subclassed IOC shall have the form “EP_<rp>”, where <rp> is a string that represents the name of the reference point.\nThus, two valid examples of EP_RP subclassed IOC names would be: EP_S1 and EP_X2.\nThe EP_RP IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\nNone\nThis class does not support any notification.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The EP_RP IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.12\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.13\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.14\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.15\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.16\tThresholdMonitor",
+                            "text_content": "This IOC represents a threshold monitor for performance metrics. It can be name-contained by SubNetwork, ManagedElement, or ManagedFunction. A threshold monitor checks for threshold crossings of performance metric values related to specified managed objects and generates a notification when that happens.\nThe ThresholdMonitor is used only when NRM based threshold monitoring is supported.\nTo activate threshold monitoring, a MnS consumer needs to create a ThresholdMonitor instance on the MnS producer. For ultimate deactivation of threshold monitoring, the MnS consumer should delete the monitor to free up resources on the MnS producer.\nFor temporary suspension of threshold monitoring, the MnS consumer can manipulate the value of the administrative state attribute. The MnS producer may disable threshold monitoring as well, for example in overload situations. This situation is indicated by the MnS producer with setting the operational state attribute to disabled. When monitoring is resumed the operational state is set again to enabled.\nAll object instances below and including the instance name-containing the ThresholdMonitor (base object instance) are scoped for performance metricthreshold monitoring. Performance metrics are monitored only on those object instances whose object class matches the object class associated to the performance metrics to be monitored.\nThe optional attributes objectInstances and rootObjectInstances allow to restrict the scope. When the attribute objectInstances is present, only the object instances identified by this attribute are scoped. When the attribute rootObjectInstances is present, then the subtrees whose root objects are identified by this attribute are scoped. Both attributes may be present at the same time meaning the total scope is equal to the sum of both scopes. Object instances may be scoped by both the objectInstances and rootObjectInstances attributes. This shall not be considered as an error by the MnS producer.\nMultiple thresholds can be defined for multiple performance metric sets in a single monitor using thresholdInfoList. The attribute monitorGranularityPeriod defines the granularity period to be applied. The value is a multiple of a supported granularity period for the measurements being monitored.\nA threshold is defined using the attributes thresholdValue, thresholdDirection and hysteresis.\nWhen hysteresis is absent or carries no information, a threshold is triggered when the thresholdValue is reached or crossed. When hysteresis is present, two threshold values are specified for the threshold as follows: A high threshold value equal to the threshold value plus the hysteresis value, and a low threshold value equal to the threshold value minus the hysteresis value. When the monitored performance metric increases, the threshold is triggered when the high threshold value is reached or crossed. When the monitored performance metric decreases, the threshold is triggered when the low threshold value is reached or crossed. The hysteresis ensures that the performance metric value can oscillate around a comparison value without triggering each time the threshold when the threshold value is crossed.Using the thresholdDirection attribute a threshold can be configured in such a manner that it is triggered only when the monitored performance metric is going up or down upon reaching or crossing the threshold.\nA ThresholdMonitor creation request shall be rejected, if the performance metrics requested to be monitored, the requested granularity period, or the requested combination thereof is not supported by the MnS producer. A creation request may fail, when the performance metrics requested to be monitored are not produced by a PerfMetricJob.\nCreation and deletion of ThresholdMonitor instances by MnS consumers is optional; when not supported, ThresholdMonitor instances may be created and deleted by the system or be pre-installed.\nA threshold crossing event detected by a \"ThresholdMonitor\" shall trigger a \"notifyThresholdCrossing\" notification. To subscribe to \"notifyThresholdCrossing\" notifications the MnS consumer shall specify one or more \"ThresholdMonitor\" instances in the subscription. All threshold crossings detected by the specified \"ThresholdMonitor\" instances are sent as \"notifyThresholdCrossing\" to subscribed MnS consumers (unless filtered out by the \"notificationFilter\" attribute of \"NtfSubscriptionControl).\nThe \"ThresholdMonitor\" IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\nNone.\nThe common notifications defined in clause 4.5 are valid for this IOC.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The \"ThresholdMonitor\" IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.17\tManagedNFService",
+                            "text_content": "A ManagedNFService represents a Network Function (NF) service as defined in clause 7 of 3GPP TS 23.501[22].\nThe ManagedNFService IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\nAttribute constraint for registrationState: The attribute registrationState should be supported by instance of a ManagedNFService if the service is designed for being published and discovered by other NFs, and need to be registered to a repository function. E.g. Authentication service provided by AUSF should include this attribute. NF management services provided by NRF don’t include this attribute.\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions or additions\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The ManagedNFService IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.18\tOperation <<dataType>>",
+                            "text_content": "This data type represents an Operation. An Operation is comprised of a name, an allowedNFType and an operationSemantics (See TS 23.502 [23]).\n\nNone\nThe subclause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.19\tSAP <<dataType>>",
+                            "text_content": "This data type represents the access point of a managed NF service which is comprised of a host and a port.\n\nNone\nThe subclause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.20\tManagedEntity <<ProxyClass>>",
+                            "text_content": "This <<ProxyClass>> represents one or multiple IOCs. The IOCs the <<ProxyClass>> represents are defined where the <<ProxyClass>> is used.\nSee respective IOCs.\nSee respective IOCs.\nSee respective IOCs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.21\tHeartbeatControl",
+                            "text_content": "MnS consumers (i.e. notification recipients) use heartbeat notifications to monitor the communication channels between themselves and MnS producers configured to emit notifications such as notifyNewAlarm and notifyFileReady.\nA HeartbeatControl instance allows controlling the emission of heartbeat notifications by MnS producers. The recipients of heartbeat notifications are specified by the notificationRecipientAddress attribute of the NtfSubscriptionControl instance name containing the HeartbeatControl instance.\nNote that the MnS consumer managing the HeartbeatControl instance and the MnS consumer receiving the heartbeat notifications may not be the same.\nAs a pre-condition for the emission of heartbeat notifications, a HeartbeatControl instance needs to be created. Creation of an instance with an initial non-zero value of the heartbeatNtfPeriod attribute triggers an immediate heartbeat notification emission. Creation of an instance with an initial zero value of the heartbeatPeriod attribute does not trigger an emission of a heartbeat notification. Deletion of an instance does not trigger an emission of a heartbeat notification.\nOnce the instance is created, heartbeat notifications are emitted with a periodicity defined by the value of the heartbeatNtfPeriod attribute. No heartbeat notifications are emitted if the value is equal to zero. Setting a zero value to a non zero value, or a non zero value to a different non zero value, triggers an immediate heartbeat notification, that is the base for the new heartbeat period. Setting a non zero value to a zero value stops emitting heartbeats immediately; no final heartbeat notification is sent.\nThe attribute triggerHeartbeatNtf allows MnS consumers to trigger the emission of an immediate additional heartbeat notification. The emission of heartbeat notifications according to the heartbeat period is not impacted by this additional notification.\nCreation and deletion of HeartbeatControl instances by MnS Consumers is optional; when not supported, the HeartbeatControl instances may be created and deleted by the system or be pre-installed.\nThe emission of heartbeat notifications is fully controlled by HeartbeatControl instances. Subscription for heartbeat notifications is not supported by NtfSubscriptionControl.\n\nThe HeartbeatControl IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\nNone.\nThe common notifications defined in clause 4.5 are valid for this IOC. In addition, the following set of notifications is also valid.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The HeartbeatControl IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The common notifications defined in clause 4.5 are valid for this IOC. In addition, the following set of notifications is also valid.",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.22\tNtfSubscriptionControl",
+                            "text_content": "NtfSubscriptionControl represents a notification subscription of a notification recipient. It can be name-contained by SubNetwork or ManagedElement.\nThe scope attribute is used to select managed object instances included in the subscription. The base object instance of the scope (see clause 4.3.23) is the object instance name-containing the NtfSubscriptionControl instance. When the scope attribute is absent, all objects below and including the base object are scoped. The notifications related to the selected managed object instances are candidates to be sent to the address specified by the notificationRecipientAddress attribute.\nThe notificationTypes attribute and notificationFilter attribute allow MnS consumers to control which candidate notifications are sent to the notificationRecipientAddress.\nIf the notificationTypes attribute is present, its value identifies the notification types that are candidates to be sent to the notificationRecipientAddress. If the notificationTypes attribute is absent, notifications of all types are candidates to be sent to notificationRecipientAddress. Notification types supported in the NtfSubscriptionControl.notificationTypes attribute are the ones listed in the attribute SupportedNotifications.notificationTypes.\nIf supported, the notificationFilter attribute defines a filter that is applied to the set of candidate notifications. The filter is applicable to all parameters of a notification. Only candidate notifications that pass the filter criteria are sent to the notificationRecipientAddress. If the notificationFilter attribute is absent, all candidate notificatios are sent to the notificationRecipientAddress.\nTo receive notifications, a MnS consumer has to create a NtfSubscriptionControl instance on the MnS producer. A MnS consumer can create a subscription for another MnS consumer since it is not required the notificationRecipientAddress be his own address.\nWhen a MnS consumer does not wish to receive notifications any more the MnS consumer shall delete the corresponding NtfSubscriptionControl instance.\nWhen a subscription is created and the notification scope inludes the created subscription object and the subscribed notification types include notifications reporting object creation (notifyMOICreation or notifyMOIChanges), the first notification sent related to the new subscription shall report the creation of the NtfSubscriptionControl instance. Likewise, when a subscription is deleted and the notification scope inludes the deleted subscription object and the subscribed notification types include notifications reporting object deletion (notifyMOIDeletion or notifyMOIChanges), the last notification sent related to the subscription shall report the deletion of the NtfSubscriptionControl instance.\nCreation and deletion of NtfSubscriptionControl instances by MnS consumers is optional; when not supported, the NtfSubscriptionControl instances may be created and deleted by the system or be pre-installed.\nThe NtfSubscriptionControl IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\nNone.\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The NtfSubscriptionControl IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.23\tScope <<dataType>>",
+                            "text_content": "This <<dataType>> defines a scope for selecting managed object instances below and including a base managed object instance. The scope is specified with the scope type and a scope level attributes. The specification of the base object instance is not part of this <<dataType>> and needs to be specified by other means.\n\nNone.\nThe subclause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.24\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.25\tVoid",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.26\tAlarmList",
+                            "text_content": "The AlarmList represents the capability to store and manage alarm records. It can be name-contained by SubNetwork and ManagedElement. The management scope of an AlarmList is defined by all descendant objects of the base managed object, which is the object name-containing the AlarmList, and the base object itself.\nAlarmList instances are created by the system or are pre-installed. They cannot be created nor deleted by MnS consumers.\nAn instance of SubNetwork or ManagedElement has at most one name-contained instance of AlarmList.\nWhen the alarm list is locked or disabled, the existing alarm records are not updated or deleted, and new alarm records are not added to the alarm list.\nThe AlarmList IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\nNone\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The AlarmList IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.27\tAlarmRecord <<dataType>>",
+                            "text_content": "An AlarmRecord contains alarm information of an alarmed object instance. A new record is created in the alarm list when an alarmed object instance generates an alarm and no alarm record exists with the same values for objectInstance, alarmType, probableCause and specificProblem. When a new record is created the MnS producer creates an alarmId, that unambiguously identifies an alarm record in the AlarmList.\nAlarm records are maintained only for active alarms. Inactive alarms are automatically deleted by the MnS producer from the AlarmList. Active alarms are alarms whose\na)\tperceivedSeverity is not \"CLEARED\", or whose\nb)\tperceivedSeverity is \"CLEARED\" and its ackState is not \"ACKNOWLEDED\".\nThe attributes are defined in clause 11.2.2.1.5.1 of TS 28.532 [27]. Many of them are based on definitions in ITU-T X.733 [31].\n\n\nNone.\nMnS producers shall support alarm related information elements (AlarmList.alarmRecords fields and Fault Supervision notification parameters see TS 28.532 [27]. Clause 11.2) in a consistent manner. If a field is supported in the AlarmRecord then a parameter in FM notifications with the same name shall be supported.\nSee clause 4.5.1.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.28\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.29\tTop",
+                            "text_content": "This IOC is provided for sub-classing only. All information object classes defined in all TS that claim to be conformant to 32.102 [2] and support the Federated Network Information Model (FNIM) concept shall inherit from Top.\nThis IOC includes attributes inherited from TopX IOC (defined in clause 4.3.8) and the attributes inherited from Top_ IOC (defined in TS 28.620 [9]).\nNone\nThere is no notification defined.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.30\tTraceJob",
+                            "text_content": "A TraceJob instance represents the Trace Control and Configuration parameters of a particular Trace Job (see TS 32.421 [29] and TS 32.422 [30] for details). It can be name-contained by SubNetwork, ManagedElement, ManagedFunction. In case of signalling based trace activation, it shall be name-contained by the UDM.\nTo activate Trace Jobs, a MnS consumer has to create TraceJob object instances on the MnS producer. A MnS consumer can activate a Trace Job for another MnS consumer since it is not required the value of traceCollectionEntityIPAddress or traceReportingConsumerUri to be his own.\nFor the details of Trace Job activation see clauses 4.1.1.1.2 and 4.1.2.1.2 of TS 32.422 [30].\nWhen a MnS consumer wishes to deactivate a Trace Job, the MnS consumer shall delete the corresponding TraceJob instance. For details of management Trace Job deactivation see clauses 4.1.3.8 to 4.1.3.11 and 4.1.4.10 to 4.1.4.13  of TS 32.422 [30].\nThe attribute traceReference specifies a globally unique ID and identifies a Trace session. One Trace Session may be activated to multiple Network Elements. The traceReference is populated by the consumer that makes the request for a Trace Session, TS 32.422 [30].\nThe jobId attribute presents the job identifier of a TraceJob instance. The jobId can be used to associate  multiple TraceJob instances. For example, it is possible to configure the same jobId value for multiple TraceJob instances required to produce the data (e.g. RSRP values of M1 and RLF reports) for a specific network analysis.\nThe attribute traceReportingFormat defines the method for reporting the produced measurements. The selectable options are file-based or stream-based reporting. In case of file-based reporting the attribute traceCollectionEntityIPAddress is used to specify the IP address to which the trace records shall be transferred, while in case of stream-based reporting the attribute traceReportingConsumerUri specifies the streaming target.\nThe mandatory attribute traceTarget determines the target object of the TraceJob. Dependent on the network element to which the Trace Session is activated different types of the target object are possible. The attribute pLMNTarget defines the PLMN for which sessions shall be selected in the Trace Session in case of management based activation when several PLMNs are supported in the RAN.\nThe attribute jobType specifies the kind of data to collect. In case of TRACE_ONLY, the configuration parameters of attribute traceConfig shall be applied. In case of IMMEDIATE_MDT_ONLY, LOGGED_MDT_ONLY, RLF_REPORT_ONLY, RCEF_REPORT_ONLY and LOGGED_MBSFN_MDT the configuration parameters of attribute mdtConfig or a subset of these shall be applied. In case of IMMEDIATE_MDT_AND_TRACE both attributes, traceConfig and mdtConfig are applicable.\nCreation and deletion of TraceJob instances by MnS consumers is optional; when not supported, the TraceJob instances may be created and deleted by the system or be pre-installed.\nThe TraceJob IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\n\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions. In addition, the following set of notifications is also valid.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The TraceJob IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The common notifications defined in clause 4.5 are valid for this IOC, without exceptions. In addition, the following set of notifications is also valid.",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.31\tPerfMetricJob",
+                            "text_content": "This IOC represents a performance metric production job. It can be name-contained by SubNetwork, ManagedElement, or ManagedFunction.\nTo activate the production of the specified performance metrics, a MnS consumer needs to create a PerfMetricJob instance on the MnS producer. For ultimate deactivation of metric production, the MnS consumer should delete the job to free up resources on the MnS producer.\nFor temporary suspension of metric production, the MnS consumer can manipulate the value of the administrative state attribute. The MnS producer may disable metric production as well, for example in overload situations. This situation is indicated by the MnS producer with setting the operational state attribute to disabled. When production is resumed the operational state is set back to enabled.\nThe jobId attribute can be used to associate metrics from multiple PerfMetricJob instances. The jobId can be included when reporting performance metrics to allow a MnS consumer to associate received metrics for the same purpose.  For example, it is possible to configure the same jobId value for multiple PerfMetricJob instances required to produce the measurements for a specific KPI.\nThe attribute performanceMetrics defines the performance metrics to be produced and the attribute granularityPeriod defines the granularity period to be applied.\nAll object instances below and including the instance name-containing the PerfMetricJob (base object instance) are scoped for performance metric production. Performance metrics are produced only on those object instances whose object class matches the object class associated to the performance metrics to be produced.\nThe optional attributes objectInstances and rootObjectInstances allow to restrict the scope. When the attribute objectInstances is present, only the object instances identified by this attribute are scoped. When the attribute rootObjectInstances is present, then the subtrees whose root objects are identified by this attribute are scoped. Both attributes may be present at the same time meaning the total scope is equal to the sum of both scopes. Object instances may be scoped by both the objectInstances and rootObjectInstances attributes. This shall not be considered as an error by the MnS producer.\nWhen the performance metric requires performance metric production on multiple managed objects, which is for example the case for KPIs, the MnS consumer needs to ensure all required objects are scoped. Otherwise a PerfMetricJob creation request shall fail.\nThe production of the configured performance metrics can be constrained by conditions such that metric production shall be active only if the corresponding conditions are satisfied. These conditions are not configured directly in the PerfMetricJob. Instead, the attributes schedulerRef and conditionMonitorRef are provided allowing a PerfMetricJob to refer to a Scheduler or ConditionMonitor object. Only when the conditions in the referenced object are satisfied shall metric production be enabled.\nMultiple PerfMetricJob objects can be linked to the same Scheduler or ConditionMonitor object. This may be necessary, when PerfMetricJob objects need to be switched on and off synchronously.\nThe attribute reportingCtrl specifies the method and associated control parameters for reporting the produced measurements to MnS consumers. Three methods are available: file-based reporting with selection of the file location by the MnS producer, file-based reporting with selection of the file location by the MnS consumer, and stream-based reporting.\nFor file-based reporting, all performance metrics that are produced related to a \"PerfMetricJob\" instance for a reporting period shall be stored in a single reporting file.\nWhen the administrative state is set to \"UNLOCKED\" after the creation of a \"PerfMetricJob\" the first granularity period shall start. When the administrative state is set to \"LOCKED\" or the operational state to \"DISABLED\", the ongoing reporting period shall be aborted, for streaming the ongoing granularity period. When the administrative state is set back to \"UNLOCKED\" or the operational state to \"ENABLED\" a new reporting period shall start, in case of streaming a new granularity period.\nChanges of all other configurable attributes shall take effect only at the beginning of the next reporting period, for streaming at the beginning of the next granularity period.\nWhen the \"PerfMetricJob\" is deleted, the ongoing reporting period shall be aborted, for streaming the ongoing granularity period.\nA PerfMetricJob creation request shall be rejected, if the requested performance metrics, the requested granularity period, the requested reporting method, or the requested combination thereof is not supported by the MnS producer.\nCreation and deletion of PerfMetricJob instances by MnS consumers is optional; when not supported, PerfMetricJob instances may be created and deleted by the system or be pre-installed.\nWhen the file retrieval NRM fragment is supported by the MnS producer, the \"_linkToFiles\" attribute shall be supported, for details on the usage of this attribute see the definition of the file retrieval NRM fragment.\nThe PerfMetricJob IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\n\nThe common notifications defined in clause 4.5 are valid for this IOC. In addition, the following set of notifications is also valid.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The PerfMetricJob IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The common notifications defined in clause 4.5 are valid for this IOC. In addition, the following set of notifications is also valid.",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.32\tSupportedPerfMetricGroup <<dataType>>",
+                            "text_content": "This <<dataType>> captures a group of supported performance metrics, and associated (production and monitoring) granularity periods and reporting methods that are supported for the specified performance metric group.\n\nNone\nNot applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.33\tReportingCtrl <<choice>>",
+                            "text_content": "This <<choice>> defines the method for reporting collected performance metrics to MnS consumers as well as the parameters for configuring the reporting function. It is a choice between the control parameter required for the reporting methods, whose presence selects the reporting method as follows:\nWhen only the fileReportingPeriod attribute is present (CHOICE_1), the MnS producer shall store files on the MnS producer at a location selected by the MnS producer and, on condition that an appropriate subscription is in place, inform the MnS consumer about the availability of new files and the file location using the notifyFileReady notification. In case the preparation of a file fails, \"notifyFilePreparationError\" shall be sent instead.\nWhen the \"fileReportingPeriod\" and \"notificationRecipientAddress\" attributes are present (CHOICE_2), then the MnS producer shall behave like described for the case that only the \"fileReportingPeriod\" is present. In addition, the MnS producer shall create on behalf of the MnS consumer a subscription, using \"NtfSubscriptionControl\", for the notification types \"notifyMOICreation\" and \"notifyMOIDeletion\" related to the \"File\" instances that will be produced later.In case an existing subscription does already include the \"File\" instances to be produced, no new subscription shall be created. The \"notificationRecipientAddress\" attribute in the created \"NtfSubscriptionControl\" instance shall be set to the value of the \"notificationRecipientAddress\" in the related \"PerfMetricJob\". This feature is called implicit notification subscription, as opposed to the case where the MnS consumer creates the subscription (explicit notification subscription). When the related \"PerfMetricJob\" is deleted, the \"NtfSubscriptionControl\" instance created due to the request for implicit subscription shall be deleted as well.\nWhen only the fileReportingPeriod and fileLocation attributes are present (CHOICE_3), the MnS producer shall store the files on a MnS consumer, that can be any entity such as a file server, at the location specified by fileLocation. No notification is emitted by the MnS producer.\nWhen only the streamTarget attribute is present (CHOICE_4), the MnS producer shall stream the data to the location specified by streamTarget.\nFor the file-based reporting methods the fileReportingPeriod attribute specifies the time window during which collected measurements are stored into the same file before the file is closed and a new file is opened.\n\n\nThe subclause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.34\tThresholdInfo <<dataType>>",
+                            "text_content": "This data type defines a single threshold level.\n\nNone\nThe subclause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.35\tTraceReference <<dataType>>",
+                            "text_content": "This <<dataType>> defines a globally unique identifier, which uniquely identifies the Trace Session that is created by the TraceJob. It is composed of the MCC, MNC (resulting in PLMN identifier) and the trace identifier.\n\nNone.\nThe clause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.36\tAreaConfig <<dataType>>",
+                            "text_content": "This <<dataType>> defines the area for which measurement logging should be performed. It is described by a list of cells and a list of frequencies.\n\nNone.\nThe clause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.37\tFreqInfo <<dataType>>",
+                            "text_content": "This <<dataType>> defines the RF reference frequency and the frequency operating bands used in a cell for a given direction (UL or DL) in FDD or for both UL and DL directions in TDD.\n\nNone.\nThe clause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.38\tAreaScope <<dataType>>",
+                            "text_content": "This <<dataType>> defines the area scope of MDT.\nThe Area Scope parameter in LTE and NR contains one of the followings:\n-\tlist of Cells, identified by E-UTRAN-CGI or NG-RAN CGI. Maximum 32 CGI can be defined.\n-\tlist of Tracking Area, identified by TAC. Maximum of 8 TAC can be defined.\n-\tlist of Tracking Area Identity, identified by TAC with associated plmn-Identity perTAC-List containing the PLMN identity for each TAC. Maximum of 8 TAI can be defined.\nThe Area Scope parameter in NR can also contain:\n-\tlist of NPN IDs in NR. It is either a list of PNI-NPNs identified by CAG ID with associated plmn-Identity (Maximum 256 PNI-NPNs can be defined) or a list of SNPN by Network ID with associated plmn-Identity (Maximum 16 SNPNs can be defined).\n\nNone.\nThe clause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.39\tTai <<dataType>>",
+                            "text_content": "This <<dataType>> defines a Tracking Area Identity (TAI) as specified in clause 28.6 of TS 23.003 [5], clause 8.2 of TS 38.300 [33] and clause 9.3.3.11 of TS 38.413 [34]. It is composed of the PLMN identifier (PLMN-Id, which is composed of the MCC and MNC) and the Tracking Area Code (TAC).\n\nNone.\nThe clause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.40\tMbsfnArea <<dataType>>",
+                            "text_content": "This <<dataType>> defines a MBSFN area. It is composed of the MBSFN Area identifier and the carrier frequency (EARFCN).\n\nNone.\nThe clause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.41\tMnsRegistry",
+                            "text_content": "This IOC is a container for MnsInfo IOC-s. It can be contained only by SubNetwork IOC. A SubNetwork IOC can contain only one instance of MnsRegistry.\nThe IOC is instantiated by the system.\nThe MnsRegistry IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29).\nNone.\nNone.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.42\tMnsInfo",
+                            "text_content": "This IOC represents an available Management Service (MnS) and provides the data required to support its discovery.  It is name-contained by MnsRegistry.\nThe present document does not specify how “MnsInfo” objects are created and maintained.\nThis information is used by the consumer to discover the producers of specific Management Services and to derive the addresses of the Management Service.\nAttributes mnsLabel, mnsType, and mnsVersion are used to describe the Management Service.\nAttribute mnsAddress is used to provide addressing information for the Management Service operations.\nAttribute mnsScope is used to provide information about the management scope of the Management Service. The management scope is defined as the set of managed object instances that can be accessed using the Management Service.\nThe MnsInfo IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\nNone.\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The MnsInfo IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.43\tProcessMonitor <<dataType>>",
+                            "text_content": "This data type provides attributes to monitor the progress of processes with specific purpose and limited lifetime running on MnS producers. It may be used as data type for dedicated progress monitor attributes when specifying the management representation of these processes. The attributes in this clause are defined in a generic way. For some attributes specialisations may be provided when specifying a concrete process representation.\nIf a management operation on some IOCs triggers an associated asynchronous process (whose progress shall be monitored), this should also result in creating an attribute named \"processMonitor\" (of type \"ProcessMonitor\") in these IOC(s). The processMonitor attribute may be accompanied by use-case specific additional data items.\nThe progress of the process is described by the \"status\" and \"progressPercentage\" attributes. Additional textual qualifications for the \"status\" attribute may be provided by the \"progessStateInfo\" and \"resultStateInfo\" attributes.\nWhen the process is instantiated, the \"status\" is set to \"NOT_RUNNING\" and the \"progressPercentage\" to \"0\". The MnS producer decides when to start executing the process and to transition into the \"RUNNING\" state. This time is captured in the \"startTime\" attribute. Alternatively, the process may start to execute directly upon its instantiation. One alternative must be selected when using this data type.\nDuring the \"RUNNING\" state the \"progressPercentage\" attribute may be repeatedly updated. The exact semantic of this attribute is subject to further specialisation. The \"progessInfo\" attribute may be used to provide additional textual information in the \"NOT_RUNNING\", “CANCELLING” and \"RUNNING\" states. Further specialisation of \"progressStateInfo\" may be provided where this data type is used.\nUpon successful completion of the process, the \"status\" attribute is set to \"FINISHED\", the \"progressPercentage\" to 100%. The time is captured in the \"endTime\" attribute. Additional textual information may be provided in the \"resultStateInfo\" attribute. The type of \"resultStateInfo\" in this data type definition is \"String\". Further specialisation of \"resultStateInfo\" may be provided where this data type is used.\nIn case the process fails to complete successfully, the \"status\" attribute is set to \"FAILED\" or \"PARTIALLY_FAILED\", the current value of \"progressPercentage\" is frozen, and the time captured in \"endTime\". The \"resultStateInfo\" specifies the reason for the failure. Specific failure reasons may be specified where the data type defined in this clause is used. The exact semantic of failure may be subject for further specialisation as well.\nIn case the process is cancelled, the \"status\" attribute is first set to \"CANCELLING\" and when the process is really cancelled then to \"CANCELLED\". The transition to \"CANCELLED\" is captured in the \"endTime\" attribute. The value of \"progressPercentage\" is frozen. Additional textual information may be provided in the \"resultStateInfo\" attribute.\nThe \"resultStateInfo\" attribute is provided only for additional textual qualification of the states \"FINISHED\", \"FAILED\", \"PARTIALLY_FAILED\" or \"CANCELLED\". It shall not be used for making the outcome, that the process may produce in case of success, available.\nThe process may have to be completed within a certain time after its creation, for example because required data may not be available any more after a certain time, or the process outcome is needed until a certain time and when not provided by this time is not needed any more. The time until the MnS producer automatically cancels the process is indicated by the \"timer\" attribute.\n\nNone.\nThe clause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.44\tFiles",
+                            "text_content": "This IOC represents a collection of files. It can be name-contained by \"SubNetwork\", \"ManagedElement\", \"PerfMetricJob\" or \"TraceJob\". The \"Files\" object name-contains \"File\" objects, that represent the files of the collection. File collections allow to structure related files under a common root.\nInstances of \"Files\" are created by MnS producers. They shall be created at latest when the first file of the collection becomes available for retrieval by MnS consumers.\nThe attributes of \"Files\" represent properties of the file collection and not properties of individual files.\nWhen the file retrieval NRM fragment is used together with a data collection job (\"PerfMetricJob\" or \"TraceJob\") the following provisions shall apply:\n-\tThe \"Files\" object shall be created at the same time as the object representing the data collection job.\n-\tThe attributes \"jobRef\" and \"jobId\" shall be supported and present in a \"Files\" instance. They shall identify the job that the files in the file collection relate to.\n-\tA \"Files\" instance shall contain files related to one and only one job.\n-\tThe files produced by one job shall be contained in one and only one \"Files\" instance.\n-\tThe job object shall support an attribute with a link to the created \"Files\" instance (\"_linkToFiles\").\n-\tThe attribute \"_linkToFiles\" shall be returned in the job creation response, if the stage 3 protocol supports returning attributes in an object creation response.\n-\tThe MnS producer decides where to name-contain the \"Files\" instance related to a job.\nThe attribute \"_linkToFiles\" allows a MnS consumer to create simple and targeted subscriptions for \"notifyFileReady\", \"notifyFilePreparationError\" and file related notifications \"notifyFileDeletion\", or \"notifyMOICreation\",\"notifyMOIChanges\", and \"notifyMOIDeletion\" related to \"File\" instances created or deleted under the \"Files\" instance of a specific job. The subscription needs to scope simply objects one level below the \"Files\" object.\nIn addition, the attribute \"_linkToFiles\" allows for simple deployments not relying on notifications for reporting the availability of new files, where the MnS consumer polls regularly for new files under \"Files\".\nThe Files IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\n\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions or additions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The Files IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.45\tFile",
+                            "text_content": "This IOC represents a file. It is name-contained by \"Files\".\nWhen a file becomes available on a MnS producer for retrieval by a MnS consumer, the MnS producer shall create a \"File\" instance representing that file.\nThe time of creation shall be captured by the MnS producer in the \"fileReadyTime\" attribute. The MnS producer shall keep the file at least until the time specified by \"fileExpirationTime\". After that time the MnS producer may delete the \"File\" instance. The \"fileExpirationTime\" is determined by the MnS producer based on considerations such as available storage space or file retention policies.\nThe attributes \"fileSize\", \"fileCompression\", \"fileDataType\" and \"fileFormat\" describe the file properties.\nThe \"fileLocation\" attribute indicates the address where the file can be retrieved. The address includes the file transfer protocol (schema). Allowed file transfer protocols are \"sftp\", \"ftpes\" and \"https\".\nThe value of \"fileLocation\" can be identical to or different from the address of the \"File\" instance. The attribute \"fileContent\" is provided for retrieving the actual file content. When identifying in the Read request a \"File\" instance and specifying only the \"fileContent\" attribute be returned, then only the file content shall be returned in the response. Note, as usual, multiple attributes can be specified to be returned, so that the file content together with some or all file meta data attributes can be returned in response to a single request.\nIn case the \"fileLocation\" specifies a location different than the \"File\" object location, then the attribute \"fileContent\" cannot be used for retrieving the file content. For example, the \"File\" object location may be given by\n\"https://companyA.com/ManagedElement=1/Files=1/File=1\nand the value of the \"fileLocation\" attribute by\n\"sftp://companyA.com/datastore/fileName.xml\"\nIn this case the file needs to be retrieved using \"sftp\" from \"sftp://companyA.com/datastore/fileName.xml\". Attempts to read the \"fileContent\" attribute shall return an error.\nWhen the file retrieval NRM fragment is used together with a data collection job (\"PerfMetricJob\" or \"TraceJob\") the following provisions shall apply:\n-\tThe attributes \"jobRef\" and \"jobId\" shall be supported and present. They shall identify the job that the file is related to.\nThe attributes \"jobRef\" and \"jobId\" allow to set notification filters in the subscription in such a way that only \"notifyMOICreation\", \"notifyMOIDeletion\" and \"notifyMOIChanges\" notifications are sent to subscribed MnS consumers if the created or deleted \"File\" instance represents data related to jobs the subscribed MnS consumer created or is interested in.\nUpon creation of a \"File\" instance, a notification of type \"notifyMOICreation\" or\"notifyMOIChanges\" shall be emitted to subscribed MnS consumers as usual. For the case that the file contains performance metric data (\"fileDataType\" is \"PERFORMANCE\") the MnS producer shall emit either a notification of type \"notifyMOICreation\" or\"notifyMOIChanges\" or of type \"notifyFileReady\". The MnS consumer selects the notification type he wishes to receive with the subscription created on the MnS producer.\nThe \"objectClass\" and \"objectInstance\" parameters in the notification header of \"notifyFileReady\" shall identify the new \"File\" instance, instead of the related \"PerfMetricJob\", \"TraceJob\", \"ManagedElement\" or \"ManagementNode\"as described in  TS 28.532 [27], clause 11.6.1.1.1 for the case that \"notifyFileReady\" is used as part of the file data reporting MnS.\nThe notification \"notifyFilePreparationError\" shall be supported as well by the \"File\" object. It shall be sent when an error occurs during the preparation of the file. No \"notifyFileReady\" or \"notifyMOICreation\" or \"notifyMOIChanges\" shall be sent in that case. The \"objectClass\" and \"objectInstance\" parameters of the notification header shall identify the new \"File\" instance representing the corrupted file, instead of the related \"PerfMetricJob\", \"TraceJob\", \"ManagedElement\" or \"ManagementNode\"as described in 3GPP TS 28.532 [27], clause 11.6.1.1.1 for the case that \"notifyFilePreparationError\" is used as part of the file data reporting MnS. When the file is not created at all or deleted, the \"objectClass\" and \"objectInstance\" parameters of the notification header are populated as described in 3GPP TS 28.532 [27], clause 11.6.1.1.1. Note that to receive \"notifyFilePreparationError\" in that case the notification subscription needs to include these objects in its scope.\nThe File IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\n\nThe common notifications defined in clause 4.5 are valid for this IOC. In addition, the following set of notifications is also valid.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The File IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 50,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The common notifications defined in clause 4.5 are valid for this IOC. In addition, the following set of notifications is also valid.",
+                                    "table number": 51,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.46\tFileDownloadJob",
+                            "text_content": "The \"FileDownloadJob\" represents a job on a MnS producer that downloads a file to the MnS producer. It can be name-contained by \"ManagedElement\" or \"SubNetwork\".\nA \"FileDownloadJob\" is created by a MnS consumer to request that the MnS producer download a file from a specified location. The creation request contains the information required by the MnS producer to download the file, namely the attribute \"fileLocation\".\nThe creation request may contain as well a \"notificationRecipientAddress\". If present, this attribute instructs the MnS producer to create, on behalf of the MnS consumer, a subscription for attribute value change notifications of the new \"FileDownloadJob\" (implicit notification subscription). In case the MnS producer supports the notification type \"notifyMOIChanges\", the created subscription shall be for this type, otherwise for \"notifyMOIAttributeValueChanges\". The MnS consumer needs to be prepared to receive either of them. The \"notificationRecipientAddress\" attribute of the created \"NtfSubscriptionControl\" object shall be set to the value of the \"notificationRecipientAddress\" in the \"FileDownloadJob\" creation request.\nThe \"jobMonitor\" attribute represents the status of a file download job and includes information the MnS consumer can use to monitor the progress and result of the file download job. The data type of this attribute is \"ProcessMonitor\". The following specialisations are provided for this data type for the file download job:\n-\tThe \"status\" attribute values are \"NOT_STARTED\", \"RUNNING\", \"CANCELLING\", \"FINISHED, \"FAILED\" and \"CANCELLED\". The values  \"SUSPENDED\" and \"PARTIALLY_FAILED\" are not used.\n-\tThe MnS consumer can set the value of the \"timer\" attribute to specify the time by which the file download is expected to complete, i.e. to indicate how long the file is available for download. If the timer expires before the MnS producer has finished the job the \"status\" is set to \"FAILED\" and \"resultStateInfo\" is set to \"TIMER_EXPIRED\".\n-\tThe \"progessPercentage\" attribute indicates how much percent of the file is already downloaded as measured by downloaded bytes from total file size in bytes.\n-\tNo specialisations are provided for the \"progressStateInfo\" attribute. Vendor specific information may be provided though.\n-\tFor the case that the \"status\" is equal to \"FAILED\" the \"resultStateInfo\" attribute shall indicate one of the following failure reasons: \"UNKNOWN\", \"NO_STORAGE\", \"LOW_MEMROY\", \"NO_CONNECTION_TO_REMOTE_SERVER\", \"FILE_NOT_AVAILABLE\", \"DNS_CANNOT_BE_RESOLVED\", \"TIMER_EXPIRED\", \"OTHER\".\n-\tFor the case that the \"status\" is equal to \"FINISHED\" or \"CANCELLED\" no specialisations are provided for the \"resultStateInfo\" attribute. Vendor specific information may be provided though.\nOnce the job is complete with \"jobStatus\" equal to \"FINISHED\", \"CANCELLED\", or \"FAILED\" the MnS consumer shall delete the \"FileDownloadJob\". The MnS producer may also delete the \"FileDownloadJob\".\nThe FileDownloadJob IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\nNone.\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions or additions.\n\nNone.\nThe configuration notifications defined in clause 4.5.2 are valid for this IOC.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The FileDownloadJob IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 52,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.47\tManagementDataCollection",
+                            "text_content": "This IOC represents a management data collection request job. The requested data could be of kind Trace, MDT (Minimization of Drive Test), RLF (Radio Link Failure) report, RCEF (RRC Connection Establishment Failure) report, PM (performance measurements), KPI (end-to-end key performance indicators) or a combination of these.\nThe attribute \"managementData\" defines the management data which shall be reported. This may either include a list of data categories or a list of management data identified with their name. For further details see clause 4.3.50. The \"targetNodeFilter\" attribute can be used to target object instance(s) producing the required management data. It is assumed that the consumer may not have detailed knowledge of the network and hence may not identify the exact object instance producing the required management data. In this case consumer can request management data, specified by 3GPP, produced by certain object instance (s) based on a particular location, the domain (CN or RAN) of theobject instances, and the handled traffic (CP or UP) of the object instances.\nTo activate the production of the requested data, a MnS consumer has to create a \"ManagementDataCollection\" object instance on the MnS producer.\nThe MnS producer may derive multiple jobs (\"PerfMetricJob\", \"TraceJob\") from a single \"ManagementDataCollection\" job for collecting the required management data. If the MnS producer receives the collected data from multiple sources, it consolidate the data into a set of management data for reporting.\nThe attribute \"collectionTimeWindow\" specifies the time window for which the management data should be reported.\nThe attribute \"reportingCtrl\" specifies the method and associated control parameters for reporting the produced management data to MnS consumers. Three methods are available: file-based reporting with selection of the file location by the MnS producer, file-based reporting with selection of the file location by the MnS consumer and stream-based reporting.\nThe attribute \"dataScope\" configures, whether the management data should be reported per S-NSSAI or per 5QI or per PLMN, if applicable.\nThe ManagementDataCollection IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\nNone.\nThe common notifications defined in clause 4.5 are valid for this IOC. In addition, the following set of notifications is also valid.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The ManagementDataCollection IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 53,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The common notifications defined in clause 4.5 are valid for this IOC. In addition, the following set of notifications is also valid.",
+                                    "table number": 54,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.48\tTimeWindow <<choice>>",
+                            "text_content": "This choice defines a time window.\nIt is a choice between the control parameters required to define the time window as follows:\nWhen startTime and endTime is present (CHOICE_1), the time window starts when startTime is reached and ends when endTime is reached.\nWhen only the startTime attribute is present (CHOICE_2), the time window starts when startTime is reached and runs until deletion of the managed object instance including this timeWindow.\nWhen only the endTime attribute is present (CHOICE_3), the time window starts when the managed object instance including this timeWindow is created and ends when endTime is reached.\n\n\nThe clause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 55,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 56,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.49\tNodeFilter <<dataType>>",
+                            "text_content": "This data type defines several selection criteria for the target node(s) i.e., the node(s) producing the requested management data.\nThe attribute \"areaOfInterest\" determines the location for which the management data is collected. The system translates the area into the target managed objects. The location is either configured by a list of TAI, a list of cells (identified either by NG-RAN CGI, E-UTRAN CGI or UTRAN CGI) or by a geographical area. The geographical area will be mapped to the cells providing coverage for this area. The cell coverage status at the time of the request is used for the mapping.  Managed objects providing service to these cells are considered as target managed objects. Furthermore, an object which name contains or is associated to a managed object providing service to the considered cell, is considered as target managed object as well.\nThe attribute \"networkDomain\" is used to select a particular domain (e.g. RAN, CN) for which the management data is collected. The system translates this information into the target managed objects. Managed objects from this selected particular domain (e.g RAN, CN) are considered as target managed objects. Furthermore, an object which name contains or is associated to a managed object of that domain, is considered as target managed object as well.\nThe attribute \"cpUpType\" is used to select the traffic type (CP, UP) for which the management data is collected. The system translates this information into the target managed objects. Managed objects catering particular traffic type (CP, UP) are considered as target managed objects. Furthermore, an object which name contains or is associated to a managed object of that traffic type, shall be considered as target managed object as well.\nThe attribute \"sst\" is used to select the SST (Slice/Service Type)[22] for which the management data is collected. The system translates this information into the target managed objects. Managed objects related to particular SST will be considered as target managed objects.\nIf it is not possible to select the target node(s) (based on a particular selection criteria) deterministically, the selection criteria should not be used.\n\nNone.\nThe subclause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 57,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.50\tManagementData <<choice>>",
+                            "text_content": "This <<choice>> defines the management data which is requested. It is a choice between\n- \ta list of data categories (attribute mgtDataCategory) This may include \"COVERAGE\", \"CAPACITY\", \"MOBILITY\", \"ENERGY_EFFICIENCY\", \"ACCESSIBILITY\" etc. The mapping of exact measurement with the requested category will be done at the producer and is implementation specific.\n- \ta list of management data identified with their name (attribute \"mgtDataName\"). The management data name presents a specific single measurement (e.g. by selecting \"RRU.PrbTotDl\", see TS 28.552 [20] or \"immediateMdt.nr.m1\", see TS 32.422 [30]) or a set of measurements (e.g. measurement families such as RRU (radio resource utilization) or MM (mobility management) in case of PM, see TS 28.552 [20], or group of measurements such as \"immediateMdt.nr\" in case of MDT, see TS 32.422 [30]).\n\nNone.\nThe clause 4.5 of the <<IOC>> using this <<choice>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 58,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.51\tAreaOfInterest <<choice>>",
+                            "text_content": "This <<choice>> defines the area which shall be considered for the service.\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 59,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 60,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.52\tGeoAreaToCellMapping <<dataType>>",
+                            "text_content": "This data type contains a geographical area and an association threshold. The geo-area is defined as a convex polygon using the attribute \"geoArea\".\nThe MnS producer shall map the geographical area to cells. There are two evaluation criteria whether a cell belongs to a geographical area or not. If attribute \"associationThreshold\" is absent, the location of the base station antenna determines the belonging. If attribute \"associationThreshold\" is configured, the coverage area is considered. The attribute \"associationThreshold\" determines the lower boundary of the coverage ratio. For example, if the \"associationThreshold\" is configured to 60%, a cell shall be considered as included in the geographical area if at least 60% of the coverage area of that cell overlaps with the specified geographical area.\nThe mapping of the geographical area to cells is performed at instantiation of the IOC.\n\nNone.\nThe clause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 61,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.53\tGeoCoordinate <<dataType>>",
+                            "text_content": "This data type defines a geographical location on earth with the altitude.\n\nNone.\nThe clause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 62,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.54\tQMCJob",
+                            "text_content": "The QoE Measurement Collection provides capability for collecting QoE information from:\n- UEs which are in the specified area in case of Management Based Activation or\n- an individual UE in case of Signalling Based Activation.\nThe QoE Measurement Collection enables collection of application layer measurements from the UE for specified end user service type. The supported service types are:\n-\tStreaming services, see TS 26.247 [51].\n-\tMTSI services, see TS 26.114 [52].\n-\tVR services, see TS 26.118 [53].\nA QMCJob instance represents the job for collecting QoE measurements according to the job parameters. For details of the QoE measurement collection configuration parameters see clause 5 of TS 28.405 [50]. A QMCJob instance can be name-contained by SubNetwork or ManagedElement.\nA QMC Job is activated by creating a QMCJob object instance in the MnS producer. For details of Management Based Activation of QoE Measurement Collection see clause 4.5 and for details of Signalling Based Activation of QoE Measurement Collection see clause 4.6 of TS 28.405 [50]. The attributes areaScope and pLMNTarget are only relevant when Management Based Activation is used and the attribute qoETarget is only relevant when Signalling Based Activation is used. All other attributes are common for both Management Based Activation and Signalling Based Activation.\n\nWhen a MnS consumer wishes to deactivate a QMC Job, the MnS consumer shall delete the corresponding QMCJob instance.\nNOTE: \tIf the reporting is ongoing, when a request to delete a QMCJob instance is received, the reporting does not end. The QMCJob instance is deleted, when the last reporting for the QMC Job expires.\nThe jobId attribute presents the job identifier of a QMCJob instance. The jobId can be used to associate  multiple QMCJob instances. For example, it is possible to configure the same jobId value for multiple QMCJob instances required to produce the data (e.g. Streaming services and MTSI reports) for a specific network analysis.\nThe QMCJob IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\n\nThe common notifications defined in clauses 4.5.1 and 4.5.2 are valid for this IOC, without exceptions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The QMCJob IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 63,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 64,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.55\tGeoArea <<datatype>>",
+                            "text_content": "This data type defines a geographical area. The geo-area is defined using a convex polygon in the attribute \"convexGeoPolygon\".\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 65,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.56\tExcessPacketDelayThresholds <<dataType>>",
+                            "text_content": "This <<dataType>> defines a excess packet delay threshold information to enable the calculation of the PDCP Excess Packet Delay in the uplink in case of M6 uplink measurements are requested. The excess packet delay threshold information is specified with the 5QI value and excess packet delay threshold value.\n\nNone\nThe subclause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 66,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.57\tTraceConfig <<dataType>>",
+                            "text_content": "This <<dataType>> defines the configuration parameters of IOC TraceJob which are specific for Trace or combined Trace and Immediate MDT.\nThe attribute listOfNeTypes specifies the network elements to be traced. The optional attribute listOfInterfaces allows to specify the individual interfaces of the network elements to be recorded.\nThe attribute traceDepth allows to configure the level of detail of the information which shall be recorded.\nFor trace the reporting is event based, where the triggering event is configured with attribute triggeringEvent. For each triggering event the first and last message (start/stop triggering event) to record  are specified.\n\n\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 67,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 68,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.58\tMdtConfig <<dataType>>",
+                            "text_content": "This <<dataType>> defines the configuration parameters of IOC TraceJob which are specific for MDT.\nThe attribute anonymizationOfMdtData specifies the level of anonymization of MDT data.\nThe optional attribute areaScope allows to specify the area in terms of cells or Tracking Area/Routing Area/Location area where the MDT data collection shall take place. In case of RLF_REPORT_ONLY and RCEF_REPORT_ONLY the optional attribute areaScope allows to specify the eNB or list of eNBs or gNB or list of gNBs where the reports should be collected.\nThe optional attribute sensorInformation allows to specify  the sensor information to include.\nBased on the value configured for attribute jobType in IOC TraceJob, the attributes immediateMdtConfig or loggedMdtConfig are available: In case of IMMEDIATE_MDT_ONLY or IMMEDIATE_MDT_AND_TRACE the attribute immediateMdtConfig is applicable. In case of LOGGED_MDT_ONLY or LOGGED_MBSFN_MDT the attribute loggedMdtConfig is applicable.\n\n\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 69,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 70,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.59\tImmediateMdtConfig <<dataType>>",
+                            "text_content": "This <<dataType>> defines the configuration parameters of IOC TraceJob which are specific for Immediate MDT or combine Trace and Immediate MDT.\nThe optional attribute positioningMethod allows to specify the positioning methods to use.\nThe following attributes are conditional available based on the measurements configured in listOfMeasurements:\n-\treportInterval: conditional for M1 in LTE or NR and M1/M2 in UMTS,\n-\treportAmount: conditional for M1/M2 in UMTS,\n-\treportAmountM1LTE (conditional for M1 in LTE),\n-\treportAmountM4LTE (conditional for M4 in LTE),\n-\treportAmountM5LTE (conditional for M5 in LTE),\n-\treportAmountM6LTE (conditional for M6 in LTE),\n-\treportAmountM7LTE (conditional for M7 in LTE),\n-\treportAmountM1NR (conditional for M1 in NR),\n-\treportAmountM4NR (conditional for M4 in NR),\n-\treportAmountM5NR (conditional for M5 in NR),\n-\treportAmountM6NR (conditional for M6 in NR),\n-\treportAmountM7NR (conditional for M7 in NR),\n-\treportingTrigger: conditional for M1 in LTE or NR and M1/M2 in UMTS,\n-\teventThreshold: conditional for A2 event reporting or A2 event triggered periodic reporting,\n-\tcollectionPeriodRrmNR: conditional for M4 and M5 in NR,\n-\tcollectionPeriodM6NR: conditional for M6 in NR,\n-\tcollectionPeriodM7NR: conditional for M7 in NR,\n-\tcollectionPeriodRrmLte (conditional for M3 in LTE),\n-\tmeasurementPeriodLTE (conditional for M4 and M5 in LTE),\n-\tcollectionPeriodM6Lte (conditional for M6 in LTE),\n-\tcollectionPeriodM7Lte (conditional for M7 in LTE),\n-\tcollectionPeriodRrmUmts (conditional for M4 and M5 in UMTS),\n-\tmeasurementPeriodUmts (conditional for M6 and M7 in UMTS),\n-\tmeasurementQuantity (conditional for 1F event reporting).\n-\tbeamLevelMeasurement (conditional for M1 in NR),\n-\texcessPacketDelayThresholds (conditional for M6 UL measurement in NR).\n\nFor immediate MDT, the measurement reporting is dependent on the configured measurements:\n-\tFor measurement M1 in LTE or NR, it is possible to select between periodical, event triggered, event triggered periodic reporting or reporting according to all configured RRM event triggers. For M1 and M2 measurement in UMTS, it is possible to select between periodical, event triggered reporting or reporting according to all configured RRM event triggers. Parameter reportingTrigger determines which of the reporting methods is selected and in case of event triggered or event-triggered periodic, which is the decisive event type. For periodical reporting, parameters reportInterval and reportAmount determine the interval between two successive reports and the number of reports. This means the periodical reporting terminates after reportAmount reports have been sent as long as reportAmount is configured with a value different from infinity. For event-triggered periodic reporting, these two parameters apply in addition to parameter eventThreshold which determines the threshold of the event. In this case up to reportAmount reports are sent with a periodicity of reportInterval after the entering condition is fulfilled. The reporting is stopped, if the leaving condition is fulfulled and is restarted if the configured event reoccurs. For event based reporting, there is only one report sent after the event occurs. The parameters to configure are reportingTrigger and eventThreshold. In case of UMTS  and 1f event reporting, additionally parameter measurementQuantity is necessary in order to determine for which measurement(s) the event threshold is applicable. Parameter beamLevelMeasurement determines whether beam level measurements shall be included in case of NR.\n-\tFor measurement M2 in LTE or NR, reporting is according to RRM configuration, see TS 38.321 [36], TS 36.321 [37] and TS 38.331 [38], TS 36.331 [39]. For measurement M4 in UMTS, reporting is either according to RRM configuration, see TS 25.321 [40] and TS 25.331 [41] or periodic or event triggered periodic using parameter collectionPeriodRrmUmts and eventThresholdUphUmts.\n-\tFor measurement M3 in UMTS, the reporting is done upon availability, see TS 37.320 [43].\n-\tFor measurements M4, M5, M6 and M7 in NR, for measurements M3, M4, M5, M6 and M7 in LTE and for measurements M5, M6 and M7 in UMTS periodical reporting is applied. The configurable parameter is the interval between two measurements (collectionPeriodRrmNr, collectionPeriodM6NR, collectionPeriodM7Nr, collectionPeriodRrmLte, measurementPeriodLte, collectionPeriodM6Lte, collectionPeriodM7Lte, collectionPeriodRrmUmts, measurementPeriodUmts). If no collection period is configured for M5 in UMTS, all available measurements are logged according to RRM configuration.\n\n\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 71,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 72,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.60\tLoggedMdtConfig <<dataType>>",
+                            "text_content": "This <<dataType>> defines the configuration parameters of IOC TraceJob which are specific for Logged MDT or Logged MBSFN MDT.\nThe optional attribute plmnList allows to specify the PLMNs where measurement collection, status indication and log reporting is allowed, the optional attribute areaConfigurationForNeighCell allows to specify the area for which UE is requested to perform measurements logging for neighbour cells which have list of frequencies\nFor logged MDT in UMTS and LTE, the reporting is periodical. Parameter loggingInterval determines the interval between the reports and parameter loggingDuration determines how long the configuration is valid meaning after this duration has passed no further reports are sent. In NR, the reporting can be periodical or event based, determined by parameter reportType. For periodical reporting the same parameters as in LTE and UMTS apply. For event based reporting, parameter eventListForEventTriggeredMeasurement configures the event type, namely ‘out of coverage’ or ‘L1 event’. In case ‘L1 event’ is selected as event type, the logging is performed according to parameter loggingInterval at regular intervals only when the conditions indicated by eventThresholdL1, hysteresisL1, timeToTriggerL1 (defining the thresholds, hysteresis and time to trigger) are met and if UE is ‘camped normally’ state (TS 38.331 [38], TS 38.304 [42]). In case ‘out of coverage’ is selected as event type, the logging is performed according to parameter loggingInterval at regular intervals only when the UE is in ‘any cell selection’ state. Furthermore, logging is performed immediately upon transition from the ‘any cell selection’ state to the ‘camped normally’  state ( TS 38.331 [38], TS 38.304 [42]).\n\n\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 73,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 74,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.61\tSupportedNotifications",
+                            "text_content": "SupportedNotifications represents the notification related capabilities of a MnS producer. It can be name-contained by SubNetwork or ManagedElement.\nThe notificationTypes attribute lists notificationTypes supported by the MnSProducer. Specific IOCs can be the source of a specific but not necessary every supported notificationType.\nThe notificationProtocols attribute identifies the notification transport protocols supported by a MnS producer.\nThe SupportedNotifications IOC includes attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\n\nNone\nThe common notifications defined in clause 4.5 are valid for this IOC\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 75,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.62\tScheduler",
+                            "text_content": "This IOC defines a time scheduler. It can be name-contained by SubNetwork or ManagedElement.\nThe attribute schedulingTimes allows to configure one or several active time intervals. The active intervals can be configured to occur once or recurring periodically.\nThe boolean attribute schedulerStatus switches between TRUE and FALSE depending upon whether the configured time constraints are fulfilled or not. This attribute makes the internal Scheduler status observable.\nThe Scheduler IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\nNone.\nThe configuration notifications defined in clause 4.5.2 are valid for this IOC.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The Scheduler IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 76,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.63\tSchedulingTime <<choice>>",
+                            "text_content": "This <<choice>> defines the scheduling time and allows to configure one of four possible scheduling methods:\nOne time interval: The attribute timeWindow presents the active scheduling time. A duration more than one day may be configured.\nDaily periodicity: Several active intervals per day can be configured in attribute timeIntervals. The active scheduling times recur each day.\nWeekly periodicity: Several active intervals for one day can be configured in attribute timeIntervals. The active scheduling times recur on the days of the weeks configured by attribute daysOfWeek\nMonthly periodicity: Several active intervals for one day can be configured in attribute timeIntervals. The active scheduling times recur on the days of the months configured by attribute daysOfMonth.\n\n\nThe subclause 4.5 of the <<IOC>> using this <<choice>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 77,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 78,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.64\tTimeInterval <<dataType>>",
+                            "text_content": "This data type defines a time interval within one day. If the whole day shall be selected, intervalStart shall be set to 00:00:00 and intervalEnd shall be set to 23:59:59.\n\nNone.\nThe subclause 4.5 of the <<IOC>> using this <<dataType>> as one of its attributes, shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 79,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.65\tConditionMonitor",
+                            "text_content": "This IOC defines one or several conditions and monitors whether these conditions are satisfied. It can be name-contained by SubNetwork or ManagedElement.\nThe attribute condition allows to configure one or several conditions. Possible conditions include but are not limited to scheduling requirements or parameter settings e.g. evaluation if a configuration parameter is above a certain threshold or has a certain values.\nThe boolean attribute conditionStatus switches between TRUE and FALSE depending upon whether the configured conditions are fulfilled or not. This attribute makes the internal ConditionMonitor status observable.\nThe ConditionMonitor IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:\n\nNone.\nThe configuration notifications defined in clause 4.5.2 are valid for this IOC.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The ConditionMonitor IOC includes the attributes inherited from Top IOC (defined in clause 4.3.29) and the following attributes:",
+                                    "table number": 80,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.66\tNpnId <<datatype>>",
+                            "text_content": "This <<dataType>> represents the NPN supported by the <<IOC>> using this <<dataType>> as one of its attributes in a Non-Public Network use case.\n\nThe common notifications defined in clause 4.5 are valid for this IOC, without exceptions.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 81,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 82,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "4.4\tAttribute definitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.4.1\tAttribute properties",
+                            "text_content": "The following table defines the properties of attributes specified in the present document.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The following table defines the properties of attributes specified in the present document.",
+                                    "table number": 83,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.4.2\tConstraints",
+                            "text_content": "None\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.5\tCommon notifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.5.1\tAlarm notifications",
+                            "text_content": "This clause presents a list of notifications, defined in [27], that a MnS consumer can receive. The notification header attribute objectClass/objectInstance, defined in [3], captures the DN of an instance of an IOC defined in the present document.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "This clause presents a list of notifications, defined in [27], that a MnS consumer can receive. The notification header attribute objectClass/objectInstance, defined in [3], captures the DN of an instance of an IOC defined in the present document.",
+                                    "table number": 84,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.5.2\tConfiguration notifications",
+                            "text_content": "This clause presents a list of notifications, defined in [27], that a MnS consumer can receive. The notification header attribute objectClass/objectInstance, defined in [3], captures the DN of an instance of an IOC defined in the present document.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "This clause presents a list of notifications, defined in [27], that a MnS consumer can receive. The notification header attribute objectClass/objectInstance, defined in [3], captures the DN of an instance of an IOC defined in the present document.",
+                                    "table number": 85,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.5.3\tThreshold Crossing notifications",
+                            "text_content": "This clause presents a list of notifications, defined in [27], that a MnS consumer can receive. The notification header attribute objectClass/objectInstance, defined in [3], captures the DN of an instance of an IOC defined in the present document.\n\nThis class diagram combines the Figure 4.2.1-1 of this document with Figure 1 of [9], the class diagram of UIM.\nFigure A-1 presents an alternate class diagram for a telecommunication system, illustrating the relationships between various classes such as User, Service, and Network. The diagram showcases the interactions between these classes, emphasizing the dynamic nature of communication processes. Notable elements include the use of inheritance to represent different types of services, and the association between users and services, highlighting the core functionality of the system.\nFigure A-1: Alternate class diagram\n\nFigure 4.2.1-13: SupportedNotifications NRM fragment\n@startuml\nskinparam monochrome true\nclass ManagedEntity <<ProxyClass>> {\n}\nclass SupportedNotifications {\n}\nhide empty members\nhide circle\nManagedEntity “1” *- “1” SupportedNotifications : <<names>>\nnote top of ManagedEntity\nRepresents the following IOCs:\nSubNetwork, or\nManagedElement.\nEnd note\n@enduml\n\nFigure 4.2.2-12: SupportedNotifications NRM fragment\n@startuml\nskinparam monochrome true\nabstract class Top <<InformationObjectClass>> {\n}\nclass SupportedNotifications <<InformationObjectClass>> {\n}\nhide empty members\nhide circle\n\nTop  <|-- SupportedNotifications\n@endum\n\n\n\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "This clause presents a list of notifications, defined in [27], that a MnS consumer can receive. The notification header attribute objectClass/objectInstance, defined in [3], captures the DN of an instance of an IOC defined in the present document.",
+                                    "table number": 86,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 87,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 88,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

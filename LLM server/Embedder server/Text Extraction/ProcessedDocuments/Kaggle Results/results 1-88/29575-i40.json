@@ -1,0 +1,888 @@
+{
+    "document_name": "29575-i40.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "This clause is optional. If it exists, it is always the second unnumbered clause.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the stage 3 protocol and data model for the ADRF Service Based Interface. It provides stage 3 protocol definitions and message flows, and specifies the API for each service offered by the ADRF.\nThe 5G System stage 2 architecture and procedures are specified in 3GPP TS 23.501 [2] and 3GPP TS 23.502 [3]. The stage 2 definition and procedures of store and retrieve the collected data and analytics are contained in 3GPP TS 23.288 [14] and 3GPP TS 23.502 [3].\nThe Technical Realization of the Service Based Architecture and the Principles and Guidelines for Services Definition are specified in 3GPP TS 29.500 [4] and 3GPP TS 29.501 [5].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[3]\t3GPP TS 23.502: \"Procedures for the 5G System; Stage 2\".\n[4]\t3GPP TS 29.500: \"5G System; Technical Realization of Service Based Architecture; Stage 3\".\n[5]\t3GPP TS 29.501: \"5G System; Principles and Guidelines for Services Definition; Stage 3\".\n[6]\tOpenAPI: \"OpenAPI 3.0.0 Specification\", .\n[7]\t3GPP TR 21.900: \"Technical Specification Group working methods\".\n[8]\t3GPP TS 33.501: \"Security architecture and procedures for 5G system\".\n[9]\tIETF RFC 6749: \"The OAuth 2.0 Authorization Framework\".\n[10]\t3GPP TS 29.510: \"5G System; Network Function Repository Services; Stage 3\".\n[11]\tIETF RFC 9113: \"HTTP/2\".\n[12]\tIETF RFC 8259: \"The JavaScript Object Notation (JSON) Data Interchange Format\".\n[13]\tIETF RFC 9457: \"Problem Details for HTTP APIs\"\n[14]\t3GPP TS 23.288: \"Architecture enhancements for 5G System (5GS) to support network data analytics services\".\n[15]\t3GPP TS 29.520: \"5G System; Network Data Analytics Services; Stage 3\".\n[16]\t3GPP TS 29.571: \"5G System; Common Data Types for Service Based Interfaces; Stage 3\".\n[17]\t3GPP TS 29.508: \"5G System; Session Management Event Exposure Service; Stage 3\".\n[18]\t3GPP TS 29.518: \"5G System; Access and Mobility Management Services; Stage 3\".\n[19]\t3GPP TS 29.503: \"5G System; Unified Data Management Services; Stage 3\".\n[20]\t3GPP TS 29.517: \"5G System; Application Function Event Exposure Services; Stage 3\".\n[21]\t3GPP TS 29.591: \"5G System; Network Exposure Function Southbound Services; Stage 3\".\n[22]\t3GPP TS 29.122: \"T8 reference point for Northbound APIs\".\n[23]\t3GPP TS 29.574: \"5G System; Data Collection Coordination Services; Stage 3\".\n[24]\t3GPP TS 29.576: \"5G System; Messaging Framework Adaptor Services; Stage 3\".\n[25]\t3GPP TS 29.536: \"5G System; Network Slice Admission Control Services; Stage 3\".\n[26]\t3GPP TS 29.564: \"5G System; User Plane Function Services; Stage 3\".\n[27]\t3GPP TS 29.515: \"5G System; Gateway Mobile Location Services; Stage 3\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nNone.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\nNone.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nADRF\tAnalytics Data Repository Function\nAF\tApplication Function\nAMF\tAccess and Mobility Management Function\nDCCF\tData Collection Coordination Function\nGMLC\tGateway Mobile Location Centre\nMFAF\tMessaging Framework Adaptor Function\nNEF\tNetwork Exposure Function\nNF\tNetwork Function\nNRF\tNetwork Repository Function\nNWDAF\tNetwork Data Analytics Function\nNSACF\tNetwork Slice Admission Control Function\nSMF\tSession Management Function\nUDM\tUnified Data Management\nUPF\tUser Plane Function\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tServices offered by the ADRF",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Analytics Data Repository Service is used for the Analytics Data Repository Function (ADRF) to storage and retrieval of data and ML model(s) by e.g. Consumers NF(s) (e.g. NWDAF) which access the data or ML model(s) using Nadrf service. The ADRF offers to other NFs the following services:\nTable 4.1-1: Service provided by ADRF\n\nTable 4.1-2 summarizes the corresponding APIs defined for this specification.\nTable 4.1-2: API Descriptions\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 4.1-1: Service provided by ADRF",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 4.1-2: API Descriptions",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tNadrf_DataManagement Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tService Description",
+                            "text_content": "The Nadrf_DataManagement service as defined in 3GPP TS 23.288 [14], is provided by the Analytics Data Repository Function (ADRF).\nThis service:\n-\tallows NF consumers to store data or analytics in the ADRF, and request/receive notifications about data or analytics that are about to be deleted;\n-\tallows NF consumers to retrieve data or analytics from an ADRF; and\n-\tallows NF consumers to delete data or analytics from an ADRF.\nThe 5G System Architecture is defined in 3GPP TS 23.501 [2]. The Network Data Analytics Exposure architecture is defined in 3GPP TS 23.288 [14].\nThe Nadrf_DataManagement service is part of the Nadrf service-based interface exhibited by the Analytics Data Repository Function (ADRF).\nKnown consumers of the Nadrf_DataManagement service are:\n-\tData Collection Coordination Function (DCCF)\n-\tNetwork Data Analytics Function (NWDAF)\n-\tMessaging Framework Adaptor Function (MFAF)\nThe Nadrf_DataManagement service is provided by the ADRF and consumed by the NF service consumers as shown in figure 4.2.1.2-1 for the SBI representation model and in figure 4.2.1.2-2 for the reference point representation model.\nFigure 4.2.1.2-1 presents a reference architecture for the Nadrf_DataManagement service, utilizing a Service-Based Infrastructure (SBI) representation. The figure illustrates the various components involved, including the Data Management Service (DMS), Data Management System (DMS), and Data Management Application (DMA). The DMS is responsible for managing and storing data, while the DMA handles the application-specific data management tasks. The figure also shows the interaction between the DMS and DMA, as well as the communication between the different components. This architecture ensures efficient data management and provides a clear understanding of the service's structure and functionality.\nFigure 4.2.1.2-1: Reference Architecture for the Nadrf_DataManagement Service; SBI representation\nFigure 4.2.1.2-2 presents a reference point representation of the Nadrf_DataManagement service architecture, illustrating the hierarchical structure of data management within a telecommunications system. The figure showcases various components, such as the Data Management System (DMS), Data Management Service (DMS), and Data Management Application (DMA), which work together to ensure efficient data handling and storage. The visual representation emphasizes the interconnected nature of these elements, highlighting their roles in managing and processing data across the network.\nFigure 4.2.1.2-2: Nadrf_DataManagement service architecture, reference point representation\nThe Analytics Data Repository Function (ADRF) provides the functionality to allow NF consumers to store, retrieve, and remove data or analytics from the ADRF, and request/receive notifications about data or analytics that are about to be deleted.\nThe NWDAF and DCCF:\n-\tsupports storing data or analytics in the ADRF, and requesting/receiving notifications about data or analytics that are about to be deleted;\n-\tsupports retrieving data or analytics from an ADRF; and\n-\tsupports deletion data or analytics from an ADRF.\nThe MFAF:\n-\tsupports storing data or analytics in the ADRF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tService Operations",
+                            "text_content": "Table 4.2.2.1-1: Operations of the Nadrf_DataManagement Service\n\nThe Nadrf_DataManagement_StorageRequest service operation is used by an NF service consumer to store data or analytics.\nFigure 4.2.2.2.2-1 shows a scenario where the NF service consumer sends a request to the ADRF to store data or analytics.\nFigure 4.2.2.2.2-1 illustrates a network function service consumer requesting to store data or analytics. The figure depicts the interaction between the service consumer and the network function as a request is made to store data or perform analytics. The network function, represented by the box in the center, processes the request and communicates with other network functions and storage systems as needed. The figure highlights the importance of network functions in enabling advanced services and the need for efficient communication between different components of the network.\nFigure 4.2.2.2.2-1: NF service consumer requesting to store data or analytics\nThe NF service consumer shall invoke the Nadrf_DataManagement_StorageRequest service operation to store data or analytics. The NF service consumer shall send an HTTP POST request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/data-store-records\" as Resource URI representing the \"ADRF Data Store Records\" resource, as shown in figure 4.2.2.2.2-1, step 1, to create an \"Individual ADRF Data Store Record\" according to the information in the message body. The NadrfDataStoreRecord data structure provided in the request body shall include:\n-\tone of the following:\n-\tanalytics subscription notification(s) within the \"anaNotifications\" attribute together with the corresponding subscription information within the \"anaSub\" attribute;\n-\tdata subscription notification within the \"dataNotif\" attribute together with the corresponding subscription information within the \" dataSub\" attribute.\nand may include:\n-\tstorage handling information within the \"storeHandl\" attribute, if the \"EnhDataMgmt\" feature is supported.\n-\ta data set tag within the \"dataSetTag\" attribute, if the \"EnhDataMgmt\" feature is supported;\n-\tdata synthesis and compression information within the \"dsc\" attribute, if the \"EnhDataMgmt\" feature is supported.\nNOTE:\tThe data synthesis and compression information can include an indication that the data have been generated using a data synthesis tool, an indication that the data have been generated using a data compression tool, and information about the data synthesis and/or compression technique.\nUpon the reception of an HTTP POST request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/data-store-records\" as Resource URI and NadrfDataStoreRecord data structure as request body, the ADRF shall:\n-\tcreate a new data store record;\n-\tassign a storeTransId;\n-\tstore the data or analytics.\nNOTE 1:\tIf the data and/or analytics is already stored or being stored in the ADRF, the ADRF will still create a new \"Individual ADRF Data Store Record\" resource and assign a new storeTransId if the ADRF intends to not really store the data again in the memory again based on the implementation.\nIf the ADRF created an \"Individual ADRF Data Store Record\" resource, the ADRF shall respond with \"201 Created\" with the message body containing a representation of the created record, as shown in figure 4.2.2.2.2-1, step 2. The ADRF shall include a Location HTTP header field. The Location header field shall contain the URI of the created record i.e. \"{apiRoot}/nadrf-datamanagement/<apiVersion>/data-store-records/{storeTransId}\".\nIf the ADRF receives storage handling information in the request but determines (e.g. based on local policy) that a different storage approach shall be followed, it indicates the determined storage approach to the consumer by setting accordingly the \"storeHandl\" attribute (e.g. providing a different lifetime, or omitting the deletion notification URI to indicate that no deletion alerts will be sent) in the message body of the response. When more than one consumer has requested storage lifetime for the same data or analytics, the storage approach should be based on the longest requested storage lifetime.\nNOTE 2:\tThe default operator policy for how long data or analytics are to be stored can be longer or shorter than the lifetime requested by the consumer. A default operator policy can for example accept only consumer requested lifetimes that are shorter or longer than the default policy.\nIf an error occurs when processing the HTTP POST request, the ADRF shall send an HTTP error response as specified in clause 5.1.7.\nThe Nadrf_DataManagement_StorageSubscriptionRequest service operation is used by an NF service consumer to request that the ADRF creates a subscription to data or analytics and subsequently stores notified data or analytics in the ADRF.\nFigure 4.2.2.3.2-1 shows a scenario where the NF service consumer sends a request to the ADRF to subscribe for data or analytics to be stored in the ADRF.\nFigure 4.2.2.3.2-1 illustrates the process of a Network Function Service (NF Service) consumer requesting that the Access and Routing Function (ARF) subscribes to and subsequently stores data or analytics. The figure depicts the interaction between the NF Service consumer, the ARF, and the Network Function Repository (NFR). The NF Service consumer initiates the process by sending a request to the NFR, which then communicates with the ARF to subscribe to the desired NF service. The ARF processes the request and stores the necessary data or analytics, enabling the NF Service consumer to access the information as needed. This process is crucial for enabling efficient and dynamic network functions, as it allows for quick and easy updates and modifications to network services.\nFigure 4.2.2.3.2-1: NF service consumer requesting that the ADRF subscribes to and subsequently stores data or analytics\nThe NF service consumer shall invoke the Nadrf_DataManagement_StorageSubscriptionRequest service operation to request the ADRF to subscribe to data or analytics. The NF service consumer shall send an HTTP POST request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/request-storage-sub\" as URI, as shown in figure 4.2.2.3.2-1, step 1. The NadrfDataStoreSubscription data structure provided in the request body shall include:\n-\tone of the following subscription attributes:\n-\tanalytics subscription information within the \"anaSub\" attribute;\n-\tdata subscription information within the \"dataSub\" attribute;\n-\tone of the following target identifiers:\n-\tDCCF or NWDAF instance identifier within the \"targetNfId\" attribute;\n-\tDCCF or NWDAF NF set identifier within the \"targetNfSetId\" attribute;\nand may include:\n-\tformatting instructions within the \"formatInstruct\" attribute;\n-\tprocessing instructions within the \"procInstruct\" attribute or the \"multiProcInstructs\" attribute if the \"MultiProcessingInstruction\" feature is supported.\nNOTE 1:\tThe parameters provided by the NF service consumer, including Formatting and Processing Instructions (if provided) are used by the ADRF when subscribing to a DCCF or NWDAF for Data or Analytics to be stored.\n-\tstorage handling information within the \"storeHandl\" attribute, if the \"EnhDataMgmt\" feature is supported.\n-\ta data set tag to be associated with this subscription and with the data or analytics collected based on this subscription within the \"dataSetTag\" attribute, if the \"EnhDataMgmt\" feature is supported.\nUpon the reception of an HTTP POST request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/request-storage-sub\" as URI and NadrfDataStoreSubscription data structure as request body, the ADRF shall assign a transaction reference identifier to this request and, if the request is successfully processed and accepted, the ADRF shall respond with \"200 OK\" as shown in figure 4.2.2.3.2-1 step 2, with the message body containing an NadrfDataStoreSubscriptionRef data structure, which shall include the assigned transaction reference identifier as \"transRefId\" attribute.\nNOTE 2:\tIf the data and/or analytics is already stored or being stored in the ADRF, the ADRF will still assign a new transaction reference identifier if the ADRF intends to not really store the data again in the memory again based on the implementation.\nIf an error occurs when processing the HTTP POST request, the ADRF shall send an HTTP error response as specified in clause 5.1.7.\nIf the ADRF receives storage handling information in the request but determines (e.g. based on local policy) that a different storage approach shall be followed, it indicates the determined storage approach to the consumer by setting accordingly the \"storeHandl\" attribute (e.g. providing a different lifetime, or omitting the deletion notification URI to indicate that no deletion alerts will be sent) in the message body of the response. When more than one consumer has requested storage lifetime for the same data or analytics, the storage approach should be based on the longest requested storage lifetime.\nNOTE 3:\tThe default operator policy for how long data or analytics are to be stored can be longer or shorter than the lifetime requested by the consumer. A default operator policy can for example accept only consumer requested lifetimes that are shorter or longer than the default policy.\nIn the case of a successful response, the ADRF may subsequently create a data or analytics subscription (according to inputs that had been received in the NadrfDataStoreSubscription data structure; this is not performed if the ADRF determines that the data is already being stored based on an existing subscription) with a DCCF as described in 3GPP TS 29.574 [23] or with an NWDAF as described in 3GPP TS 29.520 [15], and create a mapping between the previously assigned and returned transaction reference identifier and the subscription that is used to serve the transaction.\nThe Nadrf_DataManagement_StorageSubscriptionRemoval service operation is used by an NF service consumer to request the ADRF to remove a subscription for data or analytics.\nFigure 4.2.2.4.2-1 shows a scenario where the NF service consumer sends a request to the ADRF to unsubscribe for storage of data or analytics.\nFigure 4.2.2.4.2-1 illustrates a network function service consumer requesting the removal of subscription(s) to storage of data or analytics. The figure depicts the process of deregistering a subscription from a storage service, which involves several steps such as authentication, authorization, and the actual removal of the subscription. The figure highlights the importance of secure and efficient data management in modern network systems.\nFigure 4.2.2.4.2-1: NF service consumer requesting the removal of subscription(s) to storage of data or analytics\nThe NF service consumer shall invoke the Nadrf_DataManagement_StorageSubscriptionRemoval service operation to request the ADRF to remove subscription(s) to data or analytics that are stored in the ADRF. The NF service consumer shall send an HTTP POST request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/request-storage-sub-removal\" as URI, as shown in figure 4.2.2.4.2-1, step 1. The POST request body shall contain an NadrfDataStoreSubscriptionRef data structure, which shall include a transaction reference identifier as \"transRefId\" attribute or, if the \"EnhDataMgmt\" feature is supported, a data set identifier as \"dataSetId\" attribute.\nUpon the reception of an HTTP POST request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/request-storage-sub-removal\" as URI, if the ADRF successfully processed and accepted the received HTTP POST request, the ADRF shall respond with HTTP \"204 No Content\" status. Subsequently, the ADRF shall remove the (DCCF or NWDAF) subscription that had been created and mapped to the received transaction reference identifier or the (DCCF or NWDAF) subscription(s) associated to the received data set identifier as described in clause 4.2.2.3, unless this subscription is mapped to further transaction reference identifier(s) (of transactions that are still active) or associated with further data set identifier(s).\nIf errors occur when processing the HTTP POST request, the ADRF shall send an HTTP error response as specified in clause 5.1.7.\nThe Nadrf_DataManagement_RetrievalRequest service operation is used by an NF service consumer to retrieve stored data or analytics.\nFigure 4.2.2.5.2-1 shows a scenario where the NF service consumer sends a request to the ADRF to retrieve stored data or analytics.\nFigure 4.2.2.5.2-1 illustrates a network function service consumer requesting to retrieve stored data or analytics. The figure depicts the interaction between the service consumer and the network function as a request is made. The service consumer initiates the process by sending a request to the network function, which then processes the request and retrieves the necessary data or analytics. The figure highlights the importance of efficient communication between the service consumer and the network function in ensuring timely and accurate data retrieval.\nFigure 4.2.2.5.2-1: NF service consumer requesting to retrieve stored data or analytics\nThe NF service consumer shall invoke the Nadrf_DataManagement_RetrievalRequest service operation to retrieve stored data or analytics. The NF service consumer shall send an HTTP GET request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/data-store-records\" as Resource URI representing the \"ADRF Data Store Records\" resource, as shown in figure 4.2.2.5.2-1, step 1, to request ADRF data store records according to the query parameter value of the store transaction identifier within the \"store-trans-id\" attribute, the query parameter value of the fetch correlation identifier(s) within the \"fetch-correlation-ids\" attribute, or, if the \"EnhDataMgmt\" feature is supported, the query parameter value of the data set identifier within the \"data-set-id\" attribute.\nUpon the reception of the HTTP GET request, the ADRF shall:\n-\tfind the data or analytics according to the requested parameters.\nIf the requested data or analytics is found, the ADRF shall respond with \"200 OK\" status code with the message body containing the NadrfDataStoreRecord data structure. The NadrfDataStoreRecord data structure in the response body shall include:\n-\tone of the following:\n-\tinformation about network analytics function events that occurred in the \"anaNotifications\" attribute together with the corresponding subscription information within the \"anaSub\" attribute;\n-\tinformation about data event within the \"dataNotif\" attribute together with the corresponding subscription information within the \"dataSub\" attribute.\nand may include:\n-\ta data set tag within the \"dataSetTag\" attribute, if the \"EnhDataMgmt\" feature is supported.\n-\tdata synthesis and compression information within the \"dsc\" attribute, if the \"EnhDataMgmt\" feature is supported.\nNOTE:\tThe data synthesis and compression information can include an indication that the data have been generated using a data synthesis tool, an indication that the data have been generated using a data compression tool, and information about the data synthesis and/or compression technique.\nIf the requested analytics or data does not exist, the ADRF shall respond with \"204 No Content\". If an error occurs when processing the HTTP GET request, the ADRF shall send an HTTP error response as specified in clause 5.1.7.\nThe Nadrf_DataManagement_RetrievalSubscribe service operation is used by an NF service consumer to subscribe to the ADRF to retrieve via notifications data or analytics that is stored in the ADRF and to receive future notifications with data or analytics when they are received by the ADRF.\nFigure 4.2.2.6.2-1 shows a scenario where the NF service consumer sends a request to the ADRF to retrieve and subscribe to data or analytics.\nFigure 4.2.2.6.2-1 illustrates a network function service consumer requesting to retrieve and subscribe to data or analytics. The figure depicts the interaction between the service consumer and the network function as a service (NFaaS) provider. The service consumer initiates the request, which is then processed by the NFaaS provider. The NFaaS provider manages the network functions required to fulfill the request, such as data retrieval and analytics processing. The figure highlights the role of NFaaS in enabling efficient and flexible network services, allowing service consumers to access and utilize network functions without the need for on-premises infrastructure.\nFigure 4.2.2.6.2-1: NF service consumer requesting to retrieve and subscribe to data or analytics\nThe NF service consumer shall invoke the Nadrf_DataManagement_RetrievalSubscribe service operation to retrieve and subscribe to data or analytics. The NF service consumer shall send an HTTP POST request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/data-retrieval-subscriptions\" as Resource URI representing the \"ADRF Data Retrieval Subscriptions\" resource, as shown in figure 4.2.2.6.2-1, step 1, to create an \"Individual ADRF Data Retrieval Subscription\" according to the information in the message body. The NadrfDataRetrievalSubscription data structure provided in the request body shall include:\n-\tnotification correlation identfier within the \"notifCorrId\" attribute;\n-\tone of the following:\n-\tanalytics subscription information within the \"anaSub\" attribute;\n-\tdata subscription information within the \"dataSub\" attribute;\n-\tdata set identifier within the \"dataSetId\" attribute, if the \"EnhDataMgmt\" feature is supported;\n-\ta notification target address within the \"notificationURI\" attribute;\n-\ta time window for the data retrieval and subscription within the \"timePeriod\" attribute;\nand may include:\n-\ta Consumer triggered Notification indication within the \"consTrigNotif\" attribute.\nUpon the reception of an HTTP POST request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/data-retrieval-subscriptions\" as Resource URI and NadrfDataRetrievalSubscription data structure as request body, the ADRF shall:\n-\tcreate a new subscription;\n-\tassign a subscriptionId;\n-\tstore the subscription.\nIf the ADRF created an \"Individual ADRF Data Retrieval Subscription\" resource, the ADRF shall respond with \"201 Created\" with the message body containing a representation of the created subscription, as shown in figure 4.2.2.6.2-1, step 2. The ADRF shall include a Location HTTP header field. The Location header field shall contain the URI of the created record i.e. \"{apiRoot}/nadrf-datamanagement/<apiVersion>/data-retrieval-subscriptions/{subscriptionId}\".\nIf an error occurs when processing the HTTP POST request, the ADRF shall send an HTTP error response as specified in clause 5.1.7.\nEditor’s Note: How to ensure that the consumer to comply with the user consent when retrieving data from ADRF is FFS.\nThe Nadrf_DataManagement_RetrievalUnsubscribe service operation is used by an NF service consumer to remove a retrieval subscription to data or analytics.\nFigure 4.2.2.7.2-1 shows a scenario where the NF service consumer sends a request to the ADRF to remove a retrieval subscription for data or analytics.\nFigure 4.2.2.7.2-1 illustrates a network function service consumer requesting to remove a retrieval subscription for data or analytics. The figure depicts the interaction between the service consumer and the network function, showing the process of unsubscribing from a data or analytics retrieval service. The figure highlights the importance of network functions in managing subscriptions and ensuring efficient data retrieval.\nFigure 4.2.2.7.2-1: NF service consumer requesting to remove retrieval subscription for data or analytics\nThe NF service consumer shall invoke the Nadrf_DataManagement_RetrievalUnsubscribe service operation to remove a retrieval subscription for data or analytics. The NF service consumer shall send an HTTP DELETE request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/data-retrieval-subscriptions/{subscriptionId}\" as Resource URI representing an \"Individual ADRF Data Retrieval Subscription\" resource, as shown in figure 4.2.2.7.2-1, step 1, where \"{subscriptionId}\" is the identifier of the existing data retrieval subscription that is to be deleted.\nUpon the reception of an HTTP DELETE request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/data-retrieval-subscriptions/{subscriptionId}\" as Resource URI, if the ADRF successfully processed and accepted the received HTTP DELETE request, the ADRF shall:\n-\tremove the corresponding subscription;\n-\trespond with HTTP \"204 No Content\" status.\nIf errors occur when processing the HTTP DELETE request, the ADRF shall send an HTTP error response as specified in clause 5.1.7.\nIf the ADRF determines the received HTTP DELETE request needs to be redirected, the ADRF shall send an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\nThe Nadrf_DataManagement_RetrievalNotify service operation is used by ADRF to notify NF service consumers about subscribed events related to data or analytics and about data or analytics that are about to be deleted.\nFigure 4.2.2.8.2-1 shows a scenario where the ADRF sends a request to the NF service consumer to notify it about data or analytics events.\nFigure 4.2.2.8.2-1 illustrates the process of ADRF (Access and Data Request Framework) notifying the NF (Network Function) service consumer about subscribed data or analytics. The figure depicts the interaction between the ADRF and the NF service consumer, highlighting the flow of information and the role of ADRF in managing data requests and analytics. The figure emphasizes the importance of efficient communication between network functions and the management of data requests for optimal network performance.\nFigure 4.2.2.8.2-1: ADRF notifies the NF service consumer about subscribed data or analytics\nThe ADRF shall invoke the Nadrf_DataManagement_RetrievalNotify service operation to notify about subscribed data or analytics events. The ADRF shall send an HTTP POST request to the \"{notificationURI}\" received in the subscription (see clause 5.1.5 for the definition of this notificationURI), as shown in figure 4.2.2.8.2-1, step 1. The NadrfDataRetrievalNotification data structure provided in the request body shall include:\n-\tnotification correlation Id within the \"notifCorrId\" attribute;\n-\tthe time stamp which represents the time when ADRF completes preparation of the requested data or analytics within the \"timeStamp\" attribute;\n-\tone of the following:\n-\tinformation about network data analytics function events that occurred in the \"anaNotifications\" attribute;\n-\tdata collected from data sources (e.g. SMF, NEF) in the \"dataNotif\" attribute;\n-\tinformation for fetching the data or analytics in the \"fetchInstruct\" attribute.\nNOTE:\tThe fetch correlation identifiers included in the fetch instructions of the \"fetchInstruct\" attribute can be used to fetch data or analytics using the Nadrf_DataManagement_RetrievalRequest service operation as described in clause 4.2.2.5.2. The (mandatory) fetch URI included in the fetch instructions of the \"fetchInstruct\" attribute is expected to be in line with the standard resource URI defined for the Nadrf_DataManagement_RetrievalRequest service operation, i.e. {apiRoot}/nadrf-datamanagement/<apiVersion>/data-store-records, but it can be anything because it is actually not needed by the NF service consumer in this case.\nThe NadrfDataRetrievalNotification data structure provided in the request body may include:\n-\ta termination request provided by the ADRF within the \"terminationReq\" attribute.\n-\tdata synthesis and compression information within the \"dsc\" attribute, if the \"EnhDataMgmt\" feature is supported.\nNOTE:\tThe data synthesis and compression information can include an indication that the data have been generated using a data synthesis tool, an indication that the data have been generated using a data compression tool, and information about the data synthesis and/or compression technique.\nUpon the reception of an HTTP POST request with \"{notificationURI}\" as Resource URI and NadrfDataRetrievalNotification data structure as request body, if the NF service consumer successfully processed and accepted the received HTTP POST request, the NF Service Consumer shall:\n-\tstore the notification;\n-\trespond with HTTP \"204 No Content\" status code.\nIf errors occur when processing the HTTP POST request, the NF service consumer shall send an HTTP error response as specified in clause 5.1.7.\nIf the NF service consumer determines the received HTTP POST request needs to be redirected, the NF service consumer shall send an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\nAfter the successful processing of the HTTP POST request, if the ADRF requests the NF service consumer to retrieve the data or analytics with the \"fetchInstruct\" attribute, the NF service consumer may invoke the Nadrf_DataManagement_RetrievalRequest service operation to retrieve the notified data or analytics as defined in clause 4.2.2.5.\nFigure 4.2.2.8.3-1 shows a scenario where the ADRF sends a request to the NF service consumer to notify it about data or analytics that are about to be deleted.\nFigure 4.2.2.8.3-1 illustrates the process of ADRF (Analytics Data and Reporting Framework) notifying the NF (Network Function) service consumer about data or analytics that are about to be deleted. The figure depicts the flow of information between various components, including the ADRF, NF service consumer, and the underlying network infrastructure. The visual representation emphasizes the importance of timely communication and data management in maintaining the efficiency and reliability of network services.\nFigure 4.2.2.8.3-1: ADRF notifies the NF service consumer about data or analytics that are about to be deleted.\nIn order to notify about data or analytics that are about to be deleted, the ADRF shall invoke the Nadrf_DataManagement_RetrievalNotify service operation. The ADRF shall send an HTTP POST request to the \"{delNotificationURI}\" received as \"delNotifUri\" attribute in a storage request as defined in clause 4.2.2.2.2 or in a storage subscription request as defined in clause 4.2.2.3.2, as shown in figure 4.2.2.8.3-1, step 1. The NadrfAlertNotification data structure provided in the request body shall include:\n-\ta notification correlation identifier within the \"delNotifCorrId\" attribute;\n-\ta storage transaction identifier, which may be used by the NF service consumer to retrieve the data, within the \"alertStorTransId\" attribute;\nNOTE:\tThe \"alertStorTransId\" attribute, which is used for retrieving data prior to deletion, does not have to be the same with or related to the \"storeTransId\" attribute that is assigned and returned during the storage of the data.\nUpon the reception of an HTTP POST request with \"{delNotificationURI}\" as Resource URI and NadrfAlertNotification data structure as request body, if the NF service consumer successfully processed and accepted the received HTTP POST request, the NF Service Consumer shall either respond with HTTP \"204 No Content\" status code or with HTTP \"200 OK\" status code and the NadrfAlertNotificationResponse data structure in the message body.\nIf errors occur when processing the HTTP POST request, the NF service consumer shall send an HTTP error response as specified in clause 5.1.7.\nIf the NF service consumer determines the received HTTP POST request needs to be redirected, the NF service consumer shall send an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\nAfter the successful processing of the HTTP POST request, the NF service consumer may invoke the Nadrf_DataManagement_RetrievalRequest service operation as defined in clause 4.2.2.5, using the storage transaction identifier received within the \"alertStorTransId\" attribute of the NadrfAlertNotification, in order to retrieve the data or analytics that are about to be deleted.\nThe Nadrf_DataManagement_Delete service operation is used by an NF service consumer to delete stored data or analytics.\nFigure 4.2.2.9.2-1 shows a scenario where the NF service consumer sends a request to the ADRF to delete stored data or analytics.\nFigure 4.2.2.9.2-1 illustrates a network function service consumer requesting the removal of stored data or analytics. The figure depicts the interaction between the service consumer and the network function, showing the process of data retrieval and deletion. Key components include the service consumer, network function, and data storage system. The figure highlights the importance of data privacy and security in modern communication networks.\nFigure 4.2.2.9.2-1: NF service consumer requesting to remove stored data or analytics\n\nThe NF service consumer shall invoke the Nadrf_DataManagement_Delete service operation to remove stored data or analytics. The NF service consumer shall send an HTTP DELETE request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/data-store-records/{storeTransId}\" as Resource URI representing an \"Individual ADRF Data Store Record\" resource, as shown in figure 4.2.2.9.2-1, step 1, where \"{storeTransId}\" is the transaction identifier of the stored record that is to be deleted.\nUpon the reception of an HTTP DELETE request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/data-store-records/{storeTransId}\" as Resource URI, if the ADRF successfully processed and accepted the received HTTP DELETE request, the ADRF shall:\n-\tremove the corresponding stored record;\n-\trespond with HTTP \"204 No Content\" status code.\nIf errors occur when processing the HTTP DELETE request, the ADRF shall send an HTTP error response as specified in clause 5.1.7.\nIf the ADRF determines the received HTTP DELETE request needs to be redirected, the ADRF shall send an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\nFigure 4.2.2.9.3-1 shows a scenario where the NF service consumer sends a request to the ADRF to delete stored data or analytics based on a data or analytics specification.\nFigure 4.2.2.9.3-1 illustrates a network function service consumer requesting the removal of stored data or analytics. The figure depicts the interaction between the service consumer and the network function, highlighting the process of data deletion. Key components include the service consumer, network function, and data storage system. The figure emphasizes the importance of data privacy and security in modern communication networks.\nFigure 4.2.2.9.3-1: NF service consumer requesting to remove stored data or analytics\nThe NF service consumer shall invoke the Nadrf_DataManagement_Delete service operation to remove stored data or analytics based on a data or analytics specification. The NF service consumer shall send an HTTP POST request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/remove-stored-data-analytics\" as URI, as shown in figure 4.2.2.9.3-1, step 1. The POST request body shall contain an NadrfStoredDataSpec data structure. The NadrfStoredDataSpec data structure provided in the request body shall include:\n-\ta time window in which the data to be deleted was collected in the \"timePeriod\" attribute; and\n-\tone of the following:\n-\ta data specification in the \"dataSpec\" attribute;\n-\tan analytics specification in the \"anaSpec\" attribute;\n-\ta data set identifier within the \"dataSetId\" attribute, if the \"EnhDataMgmt\" feature is supported.\nUpon the reception of an HTTP POST request with \"{apiRoot}/nadrf-datamanagement/<apiVersion>/remove-stored-data-analytics\" as URI, if the ADRF successfully processed and accepted the received HTTP POST request, the ADRF shall respond with HTTP \"204 No Content\" status. The ADRF shall remove any stored analytics or data that match the analytics specification, the data specification, or the data set identifier received in the request.\nIf errors occur when processing the HTTP POST request, the ADRF shall send an HTTP error response as specified in clause 5.1.7.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.2.2.1-1: Operations of the Nadrf_DataManagement Service",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tNadrf_ MLModelManagement Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.1\tService Description",
+                            "text_content": "The Nadrf_ MLModelManagement service as defined in 3GPP TS 23.288 [14], is provided by the Analytics Data Repository Function (ADRF).\nThis service:\n-\tallows NF consumers to store ML model(s) in the ADRF;\n-\tallows NF consumers to retrieve ML model(s) from an ADRF; and\n-\tallows NF consumers to delete ML model(s) from an ADRF.\nThe 5G System Architecture is defined in 3GPP TS 23.501 [2]. The Network Data Analytics Exposure architecture is defined in 3GPP TS 23.288 [14].\nThe Nadrf_MLModelManagement service is part of the Nadrf service-based interface exhibited by the Analytics Data Repository Function (ADRF).\nKnown consumers of the Nadrf_MLModelManagement service are:\n-\tNetwork Data Analytics Function (NWDAF).\nThe Nadrf_MLModelManagement service is provided by the ADRF and consumed by the NF service consumers as shown in figure 4.3.1.2-1 for the SBI representation model and in figure 4.3.1.2-2 for the reference point representation model.\nFigure 4.3.1.2-1 presents a reference architecture for the Nadrf_MLModelManagement service, utilizing a Service-Based Architecture (SBI) representation. The figure illustrates the various components involved, including the ML Model Management Service, ML Model Repository, ML Model Execution Environment, and the underlying infrastructure. The architecture emphasizes the use of microservices and APIs for efficient communication and data exchange among these components. The figure also highlights the security measures implemented, such as access control and data encryption, to ensure the confidentiality and integrity of the ML models. Overall, the architecture aims to provide a scalable, secure, and efficient platform for managing and executing machine learning models in a real-world context.\nFigure 4.3.1.2-1: Reference Architecture for the Nadrf_MLModelManagement Service; SBI representation\nFigure 4.3.1.2-2 illustrates the service architecture of the Nadrf_MLModelManagement, focusing on the reference point representation. The figure showcases the various components involved, including the service interface, data exchange, and the underlying infrastructure. Key elements include the service registry, model repository, and the model management service. The figure emphasizes the role of the service registry in managing model versions and the model repository in storing and retrieving models. The model management service is depicted as the central hub, orchestrating the exchange of data and ensuring efficient model handling. The reference point representation highlights the interoperability and ease of integration with other services in the system.\nFigure 4.3.1.2-2: Nadrf_MLModelManagement service architecture, reference point representation\nThe Analytics Data Repository Function (ADRF) provides the functionality to allow NF consumers to store, retrieve, and remove ML model(s) or ML model address(es) from the ADRF.\nThe NWDAF:\n-\tsupports storing of ML model(s) in the ADRF;\n-\tsupports retrieving of ML model(s) from an ADRF; and\n-\tsupports deletion of ML model(s) from an ADRF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.2\tService Operations",
+                            "text_content": "Table 4.3.2.1-1: Operations of the Nadrf_MLModelManagement Service\n\nThe Nadrf_MLModelManagement_StorageRequest service operation is used by an NF service consumer to store ML model(s) or ML model address(es).\nFigure 4.3.2.2.2-1 shows a scenario where the NF service consumer sends a request to the ADRF to store ML model(s).\nFigure 4.3.2.2.2-1 illustrates the process of a network function service consumer requesting to store a machine learning model. The figure depicts the interaction between the service consumer and the network function as they communicate to store the model. The service consumer initiates the process by sending a request to the network function, which then handles the storage and retrieval of the model. The figure highlights the importance of efficient communication between the service consumer and the network function in order to ensure the successful storage and retrieval of machine learning models.\nFigure 4.3.2.2.2-1: NF service consumer requesting to store ML model(s)\nThe NF service consumer shall invoke the Nadrf_MLModelManagement_StorageRequest service operation to store ML model(s). The NF service consumer shall send an HTTP POST request with \"{apiRoot}/nadrf-mlmodelmanagement/<apiVersion>/mlmodel-store-records\" as Resource URI representing the \"ADRF ML Model Store Records\" resource, as shown in figure 4.3.2.2.2-1, step 1, to create an \"Individual ADRF ML Model Store Record\" according to the information in the message body. The NadrfMLModelStoreRecord data structure provided in the request body shall include either the MLModelInfo data structure in the \"mlModelInfo\" attribute or the MLModel data structure in the \"mlModels\" attribute. If the MLModelInfo data structure is provided, the unique ML model identifier within the \"modelUniqueId\" attribute, the address of the ML model within the \"mlFileAddr\" attribute, and the storage size required for each of the ML model(s) in the \"mlStorageSize\" attribute shall be included. If the MLModel data structure is provided, the unique ML model identifier within the \"modelUniqueId\" attribute and the ML model within the \"mlModel\" attribute shall be included.\nUpon the reception of an HTTP POST request with \"{apiRoot}/nadrf-mlmodelmanagement /<apiVersion>/mlmodel-store-records\" as Resource URI and NadrfMLModelStoreRecord data structure as request body, the ADRF shall:\n-\tcreate a new ML model store record;\n-\tassign a storeTransId;\n-\tdownload and store the ML model(s).\nNOTE 1:\tIf the ML model(s) are already stored or being stored in the ADRF, the ADRF will still create a new \"Individual ADRF ML Model Store Record\" resource and assign a new storeTransId if the ADRF intends to not really store the ML model(s) in the memory again based on the implementation.\nIf the ADRF created an \"Individual ADRF ML Model Store Record\" resource, the ADRF shall respond with \"201 Created\" with the message body containing a representation of the created ML model record, as shown in figure 4.3.2.2.2-1, step 2. If the storage of the ML models provided in the \"mlModelInfo\" attribute of the request partially failed, the ADRF may include information about the models that failed to be stored within the \"modelStoreResult\" attribute in the response. The ADRF shall include a Location HTTP header field, which shall contain the URI of the created record i.e. \"{apiRoot}/nadrf- mlmodelmanagement/<apiVersion>/mlmodel-store-records/{storeTransId}\".\nIf an error occurs when processing the HTTP POST request, the ADRF shall send an HTTP error response as specified in clause 5.2.7.\nEditor's Note:\tThe use of Application Errors to indicate the result of the storage operation when the operation result is erroneous and is the same for all ML models provided in the store request is FFS.\nThe Nadrf_MLModelManagement_RetrievalRequest service operation is used by an NF service consumer to retrieve stored ML model(s).\nFigure 4.3.2.3.2-1 shows a scenario where the NF service consumer sends a request to the ADRF to retrieve stored ML model(s).\nFigure 4.3.2.3.2-1 illustrates the process of a network function service consumer requesting to retrieve stored machine learning models. The figure depicts the interaction between the service consumer and the network function as they communicate to access the required ML model. The visual elements include the service consumer, network function, and the storage system, which are essential components in the retrieval process. This figure is crucial in understanding the flow of data and the role of machine learning models in enhancing network performance and decision-making.\nFigure 4.3.2.3.2-1: NF service consumer requesting to retrieve stored ML model(s)\nThe NF service consumer shall invoke the Nadrf_MLModelManagement_RetrievalRequest service operation to retrieve stored ML model(s). The NF service consumer shall send an HTTP GET request with \"{apiRoot}/nadrf-mlmodelmanagement/<apiVersion>/mlmodel-store-records\" as Resource URI representing the \"ADRF ML Model Store Records\" resource, as shown in figure 4.3.2.3.2-1, step 1, to request ADRF ML model store records according to the storage transaction identifier within the \"store-trans-id\" attribute or the unique ML model identifier within the \"modelUniqueId\" attribute.\nUpon the reception of the HTTP GET request, the ADRF shall:\n-\tfind the ML model(s) according to the requested parameters.\nIf one ore more of the requested ML model(s) are found, the ADRF shall respond with \"200 OK\" status code with the message body containing the NadrfMLModelStoreRecord data structure. The NadrfMLModelStoreRecord data structure in the response body shall include the MLModelInfo data structure in the \"mlModelInfo\" attribute with the unique ML model identifier in the \"modelUniqueId\" attribute and the address of the ML model file stored in the ADRF in the \"mlFileAddr\" attribute.\nIf the NF Service Consumer is not included in the allowed NF consumer list for the ML model and/or is not same as the NF of the NWDAF containing MTLF that stored the model, the ADRF shall send an HTTP \"403 Forbidden\" error response including the \"cause\" attribute set to \"RETRIEVAL_ML_MODEL_NOT_ALLOWED\".\nIf none of the requested ML model(s) exist, the ADRF shall respond with \"204 No Content\". If an error occurs when processing the HTTP GET request, the ADRF shall send an HTTP error response as specified in clause 5.2.7.\nThe Nadrf_MLModelManagement_Delete service operation is used by an NF service consumer to delete stored ML model(s) or ML model address(es).\nFigure 4.3.2.4.2-1 shows a scenario where the NF service consumer sends a request to the ADRF to delete stored ML model(s).\n\nFigure 4.3.2.4.2-1 illustrates the process of a network function service consumer requesting to remove stored machine learning models. The figure depicts the interaction between the service consumer, the network function, and the service provider. The service consumer initiates the process by sending a request to the network function, which then communicates with the service provider to remove the specified machine learning models. The figure highlights the importance of efficient communication between different entities in the network to ensure smooth and timely removal of ML models.\nFigure 4.3.2.4.2-1: NF service consumer requesting to remove stored ML model(s)\nThe NF service consumer shall invoke the Nadrf_MLModelManagement_Delete service operation to remove the ML model(s) that are stored in the corresponding storage transaction. The NF service consumer shall send an HTTP DELETE request with \"{apiRoot}/nadrf-mlmodelmanagement/<apiVersion>/mlmodel-store-records/{storeTransId}\" as Resource URI representing an \"Individual ADRF ML Model Store Record\" resource, as shown in figure 4.3.2.4.2-1, step 1, where \"{storeTransId}\" is the transaction identifier of the stored record that is to be deleted.\nUpon the reception of an HTTP DELETE request with \"{apiRoot}/nadrf-mlmodelmanagement/<apiVersion>/mlmodel-store-records/{storeTransId}\" as Resource URI, if the ADRF successfully processed and accepted the received HTTP DELETE request, the ADRF shall:\n-\tremove the storage transaction corresponding stored ML model record;\n-\trespond with HTTP \"204 No Content\" status code, or with HTTP \"200 OK\" status code with the message body containing, for each of the ML Models that had been stored under the given storage transaction identifier, the MLModelDelResult data structure with the unique ML model identifier in the \"modelUniqueId\" attribute and the result in the \"delResult\" attribute.\nIf errors occur when processing the HTTP DELETE request, the ADRF shall send an HTTP error response as specified in clause 5.2.7.\nIf the ADRF determines the received HTTP DELETE request needs to be redirected, the ADRF shall send an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [4].\nFigure 4.3.2.4.3-1 shows a scenario where the NF service consumer sends a request to the ADRF to delete stored ML model(s) based on the unique ML model identifier.\n\nFigure 4.3.2.4.3-1: NF service consumer requesting to remove stored ML model(s)\nThe NF service consumer shall invoke the Nadrf_MLModelManagement_Delete service operation to remove stored ML model(s) based on the unique ML model identifier. The NF service consumer shall send an HTTP POST request with \"{apiRoot}/nadrf-mlmodelmanagement/<apiVersion>/remove-stored-mlmodel\" as URI, as shown in figure 4.3.2.4.3-1, step 1. The POST request body shall contain a NadrfMLModelStoreRecord data structure. The NadrfMLModelStoreRecord data structure provided in the request body shall include the MLModelInfo data structure in the \"mlModelInfo\" attribute with the unique ML model identifier in the \"modelUniqueId\" attribute.\nUpon the reception of an HTTP POST request with \"{apiRoot}/nadrf-mlmodelmanagement/<apiVersion>/remove-stored-mlmodel\" as URI, if the ADRF successfully processed and accepted the received HTTP POST request, the ADRF shall remove any stored ML model(s) that match the unique ML model identifier received in the request and respond with HTTP \"200 OK\" status with the message body containing the MLModelDelResult data structure. The ADRF shall include the unique ML model identifier in the \"modelUniqueId\" attribute and the result in the \"delResult\" attribute. If errors occur when processing the HTTP POST request, the ADRF shall send an HTTP error response as specified in clause 5.2.7.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.3.2.1-1: Operations of the Nadrf_MLModelManagement Service",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tAPI Definitions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tNadrf_DataManagement Service API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tIntroduction",
+                            "text_content": "The Nadrf_DataManagement service shall use the Nadrf_DataManagement API.\nThe API URI of the Nadrf_DataManagement API shall be:\n{apiRoot}/<apiName>/<apiVersion>\nThe request URIs used in HTTP requests from the NF service consumer towards the NF service producer shall have the Resource URI structure defined in clause 4.4.1 of 3GPP TS 29.501 [5], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [5].\n-\tThe <apiName> shall be \"nadrf-datamanagement\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 5.1.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tUsage of HTTP",
+                            "text_content": "HTTP/2, IETF RFC 9113 [11], shall be used as specified in clause 5 of 3GPP TS 29.500 [4].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [4].\nThe OpenAPI [6] specification of HTTP messages and content bodies for the Nadrf_DataManagement API is contained in Annex A.\nSee clause 5.2.2 of 3GPP TS 29.500 [4] for the usage of HTTP standard headers.\nJSON, IETF RFC 8259 [12], shall be used as content type of the HTTP bodies specified in the present specification as specified in clause 5.4 of 3GPP TS 29.500 [4]. The use of the JSON format shall be signalled by the content type \"application/json\".\n\"Problem Details\" JSON object shall be used to indicate additional details of the error in a HTTP response body and shall be signalled by the content type \"application/problem+json\", as defined in IETF RFC 9457 [13].\nThe mandatory HTTP custom header fields specified in clause 5.2.3.2 of 3GPP TS 29.500 [4] shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tResources",
+                            "text_content": "This clause describes the structure for the Resource URIs, the resources and methods used for the service.\nFigure 5.1.3.1-1 depicts the resource URIs structure for the Nadrf_DataManagement API.\nFigure 5.1.3.1-1 illustrates the resource URI structure of the Nadrf_DataManagement API, which is a crucial component of the network's data management system. The figure shows the hierarchical organization of the API, with various resources such as devices, sensors, and configurations, each represented by unique URIs. The figure also highlights the relationships between these resources, emphasizing the API's capability to manage and manipulate network data efficiently.\nFigure 5.1.3.1-1: Resource URI structure of the Nadrf_DataManagement API\nTable 5.1.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 5.1.3.1-1: Resources and methods overview\n\nThe ADRF Data Store Records resource represents all data storage records to the Nadrf_DataManagement Service at a given ADRF. The resource allows an NF service consumer to create a new Individual ADRF Data Store Record resource and to retrieve Individual ADRF Data Store Record resources that fulfil certain criteria.\nResource URI: {apiRoot}/nadrf-datamanagement/<apiVersion>/data-store-records\nThe <apiVersion> shall be set as described in clause 5.1.1.\nThis resource shall support the resource URI variables defined in table 5.1.3.2.2-1.\nTable 5.1.3.2.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 5.1.3.2.3.1-1.\nTable 5.1.3.2.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 5.1.3.2.3.1-2 and the response data structures and response codes specified in table 5.1.3.2.3.1-3.\nTable 5.1.3.2.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 5.1.3.2.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 5.1.3.2.3.1-4: Headers supported by the 201 response code on this resource\n\nThis method shall support the URI query parameters specified in table 5.1.3.2.3.2-1.\nTable 5.1.3.2.3.2-1: URI query parameters supported by the GET method on this resource\n\nThis method shall support the request data structures specified in table 5.1.3.2.3.1-2 and the response data structures and response codes specified in table 5.1.3.2.3.1-3.\nTable 5.1.3.2.3.1-2: Data structures supported by the GET Request Body on this resource\n\nTable 5.1.3.2.3.1-3: Data structures supported by the GET Response Body on this resource\n\nNone.\nThe Individual ADRF Data Store Record resource represents data or analytics stored via the Nadrf_DataManagement_StorageRequest in ADRF.\nResource URI: {apiRoot}/nadrf-datamanagement/<apiVersion>/data-store-records/{storeTransId}\nThe <apiVersion> shall be set as described in clause 5.1.1.\nThis resource shall support the resource URI variables defined in table 5.1.3.3.2-1.\nTable 5.1.3.3.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 5.1.3.3.3.1-1.\nTable 5.1.3.3.3.1-1: URI query parameters supported by the DELETE method on this resource\n\nThis method shall support the request data structures specified in table 5.1.3.3.3.1-2 and the response data structures and response codes specified in table 5.1.3.3.3.1-3.\nTable 5.1.3.3.3.1-2: Data structures supported by the DELETE Request Body on this resource\n\nTable 5.1.3.3.3.1-3: Data structures supported by the DELETE Response Body on this resource\n\nTable 5.1.3.3.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 5.1.3.3.3.1-5: Headers supported by the 308 Response Code on this resource\n\nNone in this release of the specification.\nThe ADRF Data Retrieval Subscriptions resource represents all data retrieval subscriptions to the Nadrf_DataManagement Service at a given ADRF. The resource allows an NF service consumer to create a new Individual ADRF Data Retrieval Subscription resource.\nResource URI: {apiRoot}/nadrf-datamanagement/<apiVersion>/data-retrieval-subscriptions\nThe <apiVersion> shall be set as described in clause 5.1.1.\nThis resource shall support the resource URI variables defined in table 5.1.3.4.2-1.\nTable 5.1.3.4.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 5.1.3.4.3.1-1.\nTable 5.1.3.4.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 5.1.3.4.3.1-2 and the response data structures and response codes specified in table 5.1.3.4.3.1-3.\nTable 5.1.3.4.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 5.1.3.4.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 5.1.3.4.3.1-4: Headers supported by the 201 response code on this resource\n\nNone in this release of the specification.\nThe Individual ADRF Data Retrieval Subscription resource represents single ADRF data retrieval subscription to the Nadrf_DataManagement Service at a given ADRF. The resource allows an NF service consumer to delete Individual ADRF Data Retrieval Subscription resource.\nResource URI: {apiRoot}/nadrf-datamanagement/<apiVersion>/data-retrieval-subscriptions/{subscriptionId}\nThis resource shall support the resource URI variables defined in table 5.1.3.5.2-1.\nTable 5.1.3.5.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 5.1.3.5.3.1-1.\nTable 5.1.3.5.3.1-1: URI query parameters supported by the DELETE method on this resource\n\nThis method shall support the request data structures specified in table 5.1.3.5.3.1-2 and the response data structures and response codes specified in table 5.1.3.5.3.1-3.\nTable 5.1.3.5.3.1-2: Data structures supported by the DELETE Request Body on this resource\n\nTable 5.1.3.5.3.1-3: Data structures supported by the DELETE Response Body on this resource\n\nTable 5.1.3.5.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 5.1.3.5.3.1-5: Headers supported by the 308 Response Code on this resource\n\nNone in this release of the specification.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.3.1-1: Resources and methods overview",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.2.2-1: Resource URI variables for this resource",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.2.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.2.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.2.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.2.3.1-4: Headers supported by the 201 response code on this resource",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.2.3.2-1: URI query parameters supported by the GET method on this resource",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.2.3.1-2: Data structures supported by the GET Request Body on this resource",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.2.3.1-3: Data structures supported by the GET Response Body on this resource",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.3.2-1: Resource URI variables for this resource",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.3.3.1-1: URI query parameters supported by the DELETE method on this resource",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.3.3.1-2: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.3.3.1-3: Data structures supported by the DELETE Response Body on this resource",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.3.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.3.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.4.2-1: Resource URI variables for this resource",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.4.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.4.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.4.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.4.3.1-4: Headers supported by the 201 response code on this resource",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.5.2-1: Resource URI variables for this resource",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.5.3.1-1: URI query parameters supported by the DELETE method on this resource",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.5.3.1-2: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.5.3.1-3: Data structures supported by the DELETE Response Body on this resource",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.5.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.3.5.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.4\tCustom Operations without associated resources",
+                            "text_content": "The structure of the custom operation URIs of the Nadrf_DataManagement service is shown in Figure 5.1.4.1-1.\n\nFigure 5.1.4.1-1 illustrates the custom operation URI structure of the n adrf_DataManagement API, which is used for managing data in a network. The figure shows the hierarchical organization of the API, with various operations nested under a main operation. This structure allows for efficient data management and retrieval, ensuring that network administrators can easily access and manipulate the necessary data. The figure also highlights the use of RESTful principles, which ensures compatibility with a wide range of devices and systems.\nFigure 5.1.4.1-1: Custom operation URI structure of the Nadrf_DataManagement API\nTable 5.1.4.1-1 provides an overview of the custom operations and applicable HTTP methods.\nTable 5.1.4.1-1: Custom operations without associated resources\n\nThe operation is used by the NF service consumer to request the ADRF to create a subscription for data or analytics and then store the received data or analytics in the ADRF.\nThis operation shall support the request data structures shown in Table 5.1.4.2.2-1 and the response data structures and error codes specified in Tables 5.1.4.2.2-2.\nTable 5.1.4.2.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 5.1.4.2.2-2: Data structures supported by the POST Response Body on this resource\n\nThe operation is used by the NF service consumer to request the ADRF to remove a subscription for data or analytics which was used to store the received data or analytics in the ADRF.\nThis operation shall support the request data structures shown in Table 5.1.4.3.2-1 and the response data structures and error codes specified in Tables 5.1.4.3.2-2.\nTable 5.1.4.3.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 5.1.4.3.2-2: Data structures supported by the POST Response Body on this resource\n\nThe operation is used by the NF service consumer to request the ADRF to remove stored data or analytics based on a data or analytics specification.\nThis operation shall support the request data structures shown in Table 5.1.4.4.2-1 and the response data structures and error codes specified in Tables 5.1.4.4.2-2.\nTable 5.1.4.4.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 5.1.4.4.2-2: Data structures supported by the POST Response Body on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.4.1-1: Custom operations without associated resources",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.4.2.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.4.2.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.4.3.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.4.3.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.4.4.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.4.4.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.5\tNotifications",
+                            "text_content": "Notifications shall comply to clause 6.2 of 3GPP TS 29.500 [4] and clause 4.6.2.3 of 3GPP TS 29.501 [5].\nTable 5.1.5.1-1: Notifications overview\n\nThe Retrieval Notification is used by the NF service producer to report one or several data retrieval events to an NF service consumer that has subscribed to such notifications.\nThe Callback URI \"{notificationURI}\" shall be used with the callback URI variables defined in table 5.1.5.2.2-1.\nTable 5.1.5.2.2-1: Callback URI variables\n\nThis method shall support the request data structures specified in table 5.1.5.2.3.1-1 and the response data structures and response codes specified in table 5.1.5.2.3.1-2.\nTable 5.1.5.2.3.1-1: Data structures supported by the POST Request Body\n\nTable 5.1.5.2.3.1-2: Data structures supported by the POST Response Body\n\nTable 5.1.5.2.3.1-3: Headers supported by the 307 Response Code on this resource\n\nTable 5.1.5.2.3.1-4: Headers supported by the 308 Response Code on this resource\n\n5.1.5.3\tADRF Alert Notification\n5.1.5.3.1\tDescription\nThe ADRF Alert Notification is used by the NF service producer to notify an NF service consumer about data or analytics that are about to be deleted.\n5.1.5.3.2\tTarget URI\nThe Callback URI \"{delNotificationURI}\" shall be used with the callback URI variables defined in table 5.1.5.3.2-1.\nTable 5.1.5.3.2-1: Callback URI variables\n\n5.1.5.3.3\tStandard Methods\n5.1.5.3.3.1\tPOST\nThis method shall support the request data structures specified in table 5.1.5.3.3.1-1 and the response data structures and response codes specified in table 5.1.5.3.3.1-2.\nTable 5.1.5.3.3.1-1: Data structures supported by the POST Request Body\n\nTable 5.1.5.3.3.1-2: Data structures supported by the POST Response Body\n\nTable 5.1.5.3.3.1-3: Headers supported by the 307 Response Code on this resource\n\nTable 5.1.5.3.3.1-4: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.5.1-1: Notifications overview",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.5.2.2-1: Callback URI variables",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.5.2.3.1-1: Data structures supported by the POST Request Body",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.5.2.3.1-2: Data structures supported by the POST Response Body",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.5.2.3.1-3: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.5.2.3.1-4: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.5.3.2-1: Callback URI variables",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.5.3.3.1-1: Data structures supported by the POST Request Body",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.5.3.3.1-2: Data structures supported by the POST Response Body",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.5.3.3.1-3: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.5.3.3.1-4: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 50,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.6\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the Nadrf_DataManagement API.\nTable 5.1.6.1-1 specifies the data types defined for the Nadrf_DataManagement service based interface protocol.\nTable 5.1.6.1-1: Nadrf_DataManagement specific Data Types\n\nTable 5.1.6.1-2 specifies data types re-used by the Nadrf_DataManagement service based interface protocol from other specifications, including a reference to their respective specifications and when needed, a short description of their use within the Nadrf_DataManagement service based interface.\nTable 5.1.6.1-2: Nadrf_DataManagement re-used Data Types\n\nThis clause defines the structures to be used in resource representations.\nTable 5.1.6.2.2-1: Definition of type NadrfDataStoreRecord\n\nTable 5.1.6.2.3-1: Definition of type NadrfDataStoreSubscription\n\nTable 5.1.6.2.4-1: Definition of type NadrfDataRetrievalSubscription\n\nTable 5.1.6.2.5-1: Definition of type NadrfDataRetrievalNotification\n\nTable 5.1.6.2.6-1: Definition of type NadrfDataStoreSubscriptionRef\n\nTable 5.1.6.2.7-1: Definition of type NadrfStoredDataSpec\n\nTable 5.1.6.2.8-1: Definition of type DataSubscription\n\nTable 5.1.6.2.9-1: Definition of type DataNotification\n\nTable 5.1.6.2.10-1: Definition of type StorageHandlingInfo\n\nTable 5.1.6.2.11-1: Definition of type NadrfAlertNotification\n\nTable 5.1.6.2.12-1: Definition of type NadrfAlertNotificationResponse\n\nTable 5.1.6.2.13-1: Definition of type DataSetTag\n\nNone.\nNone.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.6.1-1: Nadrf_DataManagement specific Data Types",
+                                    "table number": 51,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.1-2: Nadrf_DataManagement re-used Data Types",
+                                    "table number": 52,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.2.2-1: Definition of type NadrfDataStoreRecord",
+                                    "table number": 53,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.2.3-1: Definition of type NadrfDataStoreSubscription",
+                                    "table number": 54,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.2.4-1: Definition of type NadrfDataRetrievalSubscription",
+                                    "table number": 55,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.2.5-1: Definition of type NadrfDataRetrievalNotification",
+                                    "table number": 56,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.2.6-1: Definition of type NadrfDataStoreSubscriptionRef",
+                                    "table number": 57,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.2.7-1: Definition of type NadrfStoredDataSpec",
+                                    "table number": 58,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.2.8-1: Definition of type DataSubscription",
+                                    "table number": 59,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.2.9-1: Definition of type DataNotification",
+                                    "table number": 60,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.2.10-1: Definition of type StorageHandlingInfo",
+                                    "table number": 61,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.2.11-1: Definition of type NadrfAlertNotification",
+                                    "table number": 62,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.2.12-1: Definition of type NadrfAlertNotificationResponse",
+                                    "table number": 63,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.6.2.13-1: Definition of type DataSetTag",
+                                    "table number": 64,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.7\tError Handling",
+                            "text_content": "For the Nadrf_DataManagement API, HTTP error responses shall be supported as specified in clause 4.8 of 3GPP TS 29.501 [5]. Protocol errors and application errors specified in table 5.2.7.2-1 of 3GPP TS 29.500 [4] shall be supported for an HTTP method if the corresponding HTTP status codes are specified as mandatory for that HTTP method in table 5.2.7.1-1 of 3GPP TS 29.500 [4].\nIn addition, the requirements in the following clauses are applicable for the Nadrf_DataManagement API.\nNo specific procedures for the Nadrf_DataManagement service are specified.\nThe application errors defined for the Nadrf_DataManagement  service are listed in Table 5.1.7.3-1.\nTable 5.1.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.7.3-1: Application errors",
+                                    "table number": 65,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.8\tFeature negotiation",
+                            "text_content": "The optional features in table 5.1.8-1 are defined for the Nadrf_DataManagement API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [4].\nTable 5.1.8-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.8-1: Supported Features",
+                                    "table number": 66,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.9\tSecurity",
+                            "text_content": "As indicated in 3GPP TS 33.501 [8] and 3GPP TS 29.500 [4], the access to the Nadrf_DataManagement API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [9]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [10]) plays the role of the authorization server.\nAs indicated in 3GPP TS 33.501 [8] and 3GPP TS 29.500 [4], the access to the Nadrf_DataManagement API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [9]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [10]) plays the role of the authorization server.\nIf OAuth2 is used, an NF Service Consumer, prior to consuming services offered by the Nadrf_DataManagement API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [10], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF that the NF Service Consumer used for discovering the Nadrf_DataManagement service.\nThe Nadrf_DataManagement API defines the following scopes for OAuth2 authorization as described in 3GPP TS 29.501 [5], clause 4.10.\nTable 5.1.9-1: OAuth2 scopes defined in Nadrf_DataManagement API\n.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.9-1: OAuth2 scopes defined in Nadrf_DataManagement API",
+                                    "table number": 67,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tNadrf_MLModelManagement Service API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tIntroduction",
+                            "text_content": "The Nadrf_MLModelManagement service shall use the Nadrf_MLModelManagement API.\nThe API URI of the Nadrf_MLModelManagement API shall be:\n{apiRoot}/<apiName>/<apiVersion>\nThe request URIs used in HTTP requests from the NF service consumer towards the NF service producer shall have the Resource URI structure defined in clause 4.4.1 of 3GPP TS 29.501 [5], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [5].\n-\tThe <apiName> shall be \"nadrf-mlmodelmanagement\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 5.2.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tUsage of HTTP",
+                            "text_content": "HTTP/2, IETF RFC 9113 [11], shall be used as specified in clause 5 of 3GPP TS 29.500 [4].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [4].\nThe OpenAPI [6] specification of HTTP messages and content bodies for the Nadrf_MLModelManagement API is contained in Annex A.\nSee clause 5.2.2 of 3GPP TS 29.500 [4] for the usage of HTTP standard headers.\nJSON, IETF RFC 8259 [12], shall be used as content type of the HTTP bodies specified in the present specification as specified in clause 5.4 of 3GPP TS 29.500 [4]. The use of the JSON format shall be signalled by the content type \"application/json\".\n\"Problem Details\" JSON object shall be used to indicate additional details of the error in a HTTP response body and shall be signalled by the content type \"application/problem+json\", as defined in IETF RFC 9457 [13].\nThe mandatory HTTP custom header fields specified in clause 5.2.3.2 of 3GPP TS 29.500 [4] shall be applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tResources",
+                            "text_content": "This clause describes the structure for the Resource URIs, the resources and methods used for the service.\nFigure 5.2.3.1-1 depicts the resource URIs structure for the Nadrf_MLModelManagement API.\nFigure 5.2.3.1-1 illustrates the resource URI structure of the Nadrf_MLModelManagement API, which is a part of the Nadrf (National Aerospace and Defense Contractors Accreditation Program) framework. The figure shows a hierarchical structure of URIs, starting from the top-level API endpoint and descending to specific model management resources. This structure is essential for developers to understand how to interact with the API to efficiently manage machine learning models within the Nadrf system. The figure is a visual representation of the API's organization, aiding in the development and implementation of applications that utilize Nadrf's machine learning capabilities.\nFigure 5.2.3.1-1: Resource URI structure of the Nadrf_MLModelManagement API\nTable 5.2.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 5.2.3.1-1: Resources and methods overview\n\nThe ADRF ML Model Store Records resource represents all ML model storage records to the Nadrf_MLModelManagement Service at a given ADRF. The resource allows an NF service consumer to create a new Individual ADRF ML Model Store Record resource and to retrieve Individual ADRF ML Model Store Record resources that fulfil certain criteria.\nResource URI: {apiRoot}/nadrf-mlmodelmanagement/<apiVersion>/mlmodel-store-records\nThe <apiVersion> shall be set as described in clause 5.2.1.\nThis resource shall support the resource URI variables defined in table 5.2.3.2.2-1.\nTable 5.2.3.2.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 5.2.3.2.3.1-1.\nTable 5.2.3.2.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 5.2.3.2.3.1-2 and the response data structures and response codes specified in table 5.2.3.2.3.1-3.\nTable 5.2.3.2.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 5.2.3.2.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 5.2.3.2.3.1-4: Headers supported by the 201 response code on this resource\n\nThis method shall support the URI query parameters specified in table 5.2.3.2.3.2-1.\nTable 5.2.3.2.3.2-1: URI query parameters supported by the GET method on this resource\n\nThis method shall support the request data structures specified in table 5.2.3.2.3.2-2 and the response data structures and response codes specified in table 5.2.3.2.3.2-3.\nTable 5.2.3.2.3.2-2: Data structures supported by the GET Request Body on this resource\n\nTable 5.2.3.2.3.2-3: Data structures supported by the GET Response Body on this resource\n\nNone.\nThe Individual ADRF ML Model Store Record resource represents ML model(s) stored via the Nadrf_MLModelManagement_StorageRequest in ADRF.\nResource URI: {apiRoot}/nadrf-mlmodelmanagement/<apiVersion>/mlmodel-store-records/{storeTransId}\nThe <apiVersion> shall be set as described in clause 5.2.1.\nThis resource shall support the resource URI variables defined in table 5.2.3.3.2-1.\nTable 5.2.3.3.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 5.2.3.3.3.1-1.\nTable 5.2.3.3.3.1-1: URI query parameters supported by the DELETE method on this resource\n\nThis method shall support the request data structures specified in table 5.2.3.3.3.1-2 and the response data structures and response codes specified in table 5.2.3.3.3.1-3.\nTable 5.2.3.3.3.1-2: Data structures supported by the DELETE Request Body on this resource\n\nTable 5.2.3.3.3.1-3: Data structures supported by the DELETE Response Body on this resource\n\nTable 5.2.3.3.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 5.2.3.3.3.1-5: Headers supported by the 308 Response Code on this resource\n\nNone in this release of the specification.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.3.1-1: Resources and methods overview",
+                                    "table number": 68,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.2.2-1: Resource URI variables for this resource",
+                                    "table number": 69,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.2.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 70,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.2.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 71,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.2.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 72,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.2.3.1-4: Headers supported by the 201 response code on this resource",
+                                    "table number": 73,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.2.3.2-1: URI query parameters supported by the GET method on this resource",
+                                    "table number": 74,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.2.3.2-2: Data structures supported by the GET Request Body on this resource",
+                                    "table number": 75,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.2.3.2-3: Data structures supported by the GET Response Body on this resource",
+                                    "table number": 76,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.3.2-1: Resource URI variables for this resource",
+                                    "table number": 77,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.3.3.1-1: URI query parameters supported by the DELETE method on this resource",
+                                    "table number": 78,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.3.3.1-2: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 79,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.3.3.1-3: Data structures supported by the DELETE Response Body on this resource",
+                                    "table number": 80,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.3.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 81,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.3.3.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 82,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.4\tCustom Operations without associated resources",
+                            "text_content": "The structure of the custom operation URIs of the Nadrf_MLModelManagement service is shown in Figure 5.2.4.1-1.\nFigure 5.2.4.1-1 illustrates the custom operation URI structure of the n adrf_MLModelManagement API, which is used for managing machine learning models in a telecommunications system. The figure shows the hierarchical organization of the API, with various endpoints for different operations such as creating, retrieving, updating, and deleting ML models. The figure also highlights the use of secure authentication and authorization mechanisms to ensure that only authorized users can access and manipulate the ML models. Overall, the figure provides a clear and concise overview of the API's structure and its role in managing machine learning models in a telecommunications system.\nFigure 5.2.4.1-1: Custom operation URI structure of the Nadrf_MLModelManagement API\nTable 5.2.4.1-1 provides an overview of the custom operations and applicable HTTP methods.\nTable 5.2.4.1-1: Custom operations without associated resources\n\nThe operation is used by the NF service consumer to request the ADRF to remove stored ML model(s) based on a unique ML model identifier.\nThis operation shall support the request data structures shown in Table 5.2.4.4.2-1 and the response data structures and error codes specified in Tables 5.2.4.4.2-2.\nTable 5.2.4.4.2-1: Data structures supported by the POST Request Body on this resource\n\nTable 5.1.4.4.2-2: Data structures supported by the POST Response Body on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.4.1-1: Custom operations without associated resources",
+                                    "table number": 83,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.4.4.2-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 84,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.4.4.2-2: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 85,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.5\tNotifications",
+                            "text_content": "None in this release of the specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.6\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the Nadrf_MLModelManagement API.\nTable 5.2.6.1-1 specifies the data types defined for the Nadrf_MLModelManagement service based interface protocol.\nTable 5.2.6.1-1: Nadrf_MLModelManagement specific Data Types\n\nTable 5.2.6.1-2 specifies data types re-used by the Nadrf_MLModelManagement service based interface protocol from other specifications, including a reference to their respective specifications and when needed, a short description of their use within the Nadrf_MLModelManagement service based interface.\nTable 5.2.6.1-2: Nadrf_MLModelManagement re-used Data Types\n\nThis clause defines the structures to be used in resource representations.\nTable 5.2.6.2.2-1: Definition of type NadrfMLModelStoreRecord\n\nTable 5.2.6.2.3-1: Definition of type MLModelInfo\n\nTable 5.2.6.2.4-1: Definition of type MLModel\n\nTable 5.2.6.2.5-1: Definition of type MLModelOpResult\n\nTable 5.2.6.2.6-1: Definition of type AllowedConsumer\n\nTable 5.2.6.2.7-1: Definition of type ModelStoreResult\n\n5.2.6.3.1\tEnumeration: DeleteResult\nTable 5.2.6.3.1-1: Enumeration DeleteResult\n\nTable 5.2.6.3.2-1: Enumeration StoreResult\n\nNone.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.6.1-1: Nadrf_MLModelManagement specific Data Types",
+                                    "table number": 86,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.6.1-2: Nadrf_MLModelManagement re-used Data Types",
+                                    "table number": 87,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.6.2.2-1: Definition of type NadrfMLModelStoreRecord",
+                                    "table number": 88,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.6.2.3-1: Definition of type MLModelInfo",
+                                    "table number": 89,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.6.2.4-1: Definition of type MLModel",
+                                    "table number": 90,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.6.2.5-1: Definition of type MLModelOpResult",
+                                    "table number": 91,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.6.2.6-1: Definition of type AllowedConsumer",
+                                    "table number": 92,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.6.2.7-1: Definition of type ModelStoreResult",
+                                    "table number": 93,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.6.3.1-1: Enumeration DeleteResult",
+                                    "table number": 94,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.2.6.3.2-1: Enumeration StoreResult",
+                                    "table number": 95,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.7\tError Handling",
+                            "text_content": "For the Nadrf_MLModelManagement API, HTTP error responses shall be supported as specified in clause 4.8 of 3GPP TS 29.501 [5]. Protocol errors and application errors specified in table 5.2.7.2-1 of 3GPP TS 29.500 [4] shall be supported for an HTTP method if the corresponding HTTP status codes are specified as mandatory for that HTTP method in table 5.2.7.1-1 of 3GPP TS 29.500 [4].\nIn addition, the requirements in the following clauses are applicable for the Nadrf_MLModelManagement API.\nNo specific procedures for the Nadrf_MLModelManagement service are specified.\nThe application errors defined for the Nadrf_MLModelManagement  service are listed in Table 5.2.7.3-1.\nTable 5.2.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.7.3-1: Application errors",
+                                    "table number": 96,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.8\tFeature negotiation",
+                            "text_content": "The optional features in table 5.2.8-1 are defined for the Nadrf_MLModelManagement API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [4].\nTable 5.2.8-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.8-1: Supported Features",
+                                    "table number": 97,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.9\tSecurity",
+                            "text_content": "As indicated in 3GPP TS 33.501 [8] and 3GPP TS 29.500 [4], the access to the Nadrf_MLModelManagement API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [9]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [10]) plays the role of the authorization server.\nAs indicated in 3GPP TS 33.501 [8] and 3GPP TS 29.500 [4], the access to the Nadrf_MLModelManagement API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [9]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [10]) plays the role of the authorization server.\nIf OAuth2 is used, an NF Service Consumer, prior to consuming services offered by the Nadrf_MLModelManagement API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [10], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF that the NF Service Consumer used for discovering the Nadrf_MLModelManagement service.\nThe Nnwdaf_MLModelManagement API defines a single scope \"nnwdaf-mlmodelmanagement\" for the entire service, and it does not define any additional scopes at resource or operation level.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "This Annex specifies the formal definition of the API(s) defined in the present specification. It consists of OpenAPI 3.0.0 specifications in YAML format.\nThis Annex takes precedence when being discrepant to other parts of the specification with respect to the encoding of information elements and methods within the API(s).\nNOTE 1:\tThe semantics and procedures, as well as conditions, e.g. for the applicability and allowed combinations of attributes or values, not expressed in the OpenAPI definitions but defined in other parts of the specification also apply.\nInformative copies of the OpenAPI specification files contained in this 3GPP Technical Specification are available on a Git-based repository that uses the GitLab software version control system (see 3GPP TS 29.501 [5] clause 5.3.1 and 3GPP TR 21.900 [7] clause 5B).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tNadrf_DataManagement API",
+            "description": "openapi: 3.0.0\ninfo:\nversion: 1.1.0-alpha.5\ntitle: Nadrf_DataManagement\ndescription: |\nADRF Data Management Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\nexternalDocs:\ndescription: 3GPP TS 29.575 V18.4.0; 5G System; Analytics Data Repository Services; Stage 3.\nurl: 'https://www.3gpp.org/ftp/Specs/archive/29_series/29.575/'\n#\nservers:\n- url: '{apiRoot}/nadrf-datamanagement/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501.\n#\nsecurity:\n- oAuth2ClientCredentials:\n- nadrf-datamanagement\n- {}\n#\npaths:\n/data-store-records:\npost:\nsummary: Creates a new Individual Data Store Record resource.\noperationId: CreateADRFDataStoreRecord\ntags:\n- ADRF Data Store Records (Collection)\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfDataStoreRecord'\nrequired: true\ndescription: ADRF data store record to be stored.\nresponses:\n'201':\ndescription: Successful creation of new Individual ADRF Data Store Record resource.\nheaders:\nLocation:\ndescription: >\nContains the URI of the newly created resource, according to the structure\n{apiRoot}/nadrf-datamanagement/<apiVersion>/data-store-records/{storeTransId}\nrequired: true\nschema:\ntype: string\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfDataStoreRecord'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\ncallbacks:\nstorageAlertNotification:\n'{$request.body#/delNotifUri}':\npost:\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfAlertNotification'\nresponses:\n'200':\ndescription: The alert receipt is acknowledged and a planned action is provided.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfAlertNotificationResponse'\n'204':\ndescription: The alert receipt is acknowledged.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\nget:\nsummary: Retrieves existing Individual ADRF Data Store Records.\noperationId: GetAdrfDataStoreRecords\ntags:\n- ADRF Data Store Records (Collection)\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- nnadrf-datamanagement\n- oAuth2ClientCredentials:\n- nnadrf-datamanagement\n- nnadrf-datamanagement:storagerequest\nparameters:\n- name: store-trans-id\ndescription: A storage transaction identifier of a data store record in ADRF.\nin: query\nrequired: false\nschema:\ntype: string\n- name: fetch-correlation-ids\ndescription: Fetch correlation identifiers received as part of fetch instruction.\nin: query\nrequired: false\nstyle: form\nexplode: false\nschema:\ntype: array\nitems:\ntype: string\nminItems: 1\n- name: data-set-id\ndescription: The data set identifier.\nin: query\nrequired: false\nschema:\ntype: string\nresponses:\n'200':\ndescription: Data store records are returned.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfDataStoreRecord'\n'204':\ndescription: No matching ADRF data were found.\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'406':\n$ref: 'TS29571_CommonData.yaml#/components/responses/406'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n/data-store-records/{storeTransId}:\ndelete:\nsummary: Delete an existing Individual ADRF Data Store Record.\noperationId: DeleteADRFDataStoreRecord\ntags:\n- Individual ADRF Data Store Record (Document)\nparameters:\n- name: storeTransId\nin: path\ndescription: String identifying a Data Store Record in ADRF.\nrequired: true\nschema:\ntype: string\nresponses:\n'204':\ndescription: >\nNo Content. The Individual ADRF Data Store Record resource matching the\nstoreTransId was deleted.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n/data-retrieval-subscriptions:\npost:\nsummary: Creates a new Individual ADRF Data Retrieval Subscription resource.\noperationId: CreateADRFDataRetrievalSubscription\ntags:\n- ADRF Data Retrieval Subscriptions (Collection)\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- nnadrf-datamanagement\n- oAuth2ClientCredentials:\n- nnadrf-datamanagement\n- nnadrf-datamanagement:storagerequest\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfDataRetrievalSubscription'\nrequired: true\ndescription: Individual ADRF Data Retrieval Subscription resource to be created.\nresponses:\n'201':\ndescription: Created a new Individual ADRF Data Retrieval Subscription resource.\nheaders:\nLocation:\ndescription: >\nContains the URI of the newly created resource, according to the structure\n{apiRoot}/nadrf-datamanagement/<apiVersion>/data-retrieval-subscriptions/{subscriptionId}\nrequired: true\nschema:\ntype: string\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfDataRetrievalSubscription'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\ncallbacks:\nadrfDataRetrievalNotification:\n'{$request.body#/notificationURI}':\npost:\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfDataRetrievalNotification'\nresponses:\n'204':\ndescription: The receipt of the Notification is acknowledged.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n/data-retrieval-subscriptions/{subscriptionId}:\ndelete:\nsummary: Delete an existing Individual ADRF Data Retrieval Subscription resource.\noperationId: DeleteADRFDataRetrievalSubscription\ntags:\n- Individual ADRF Data Retrieval Subscription (Document)\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- nnadrf-datamanagement\n- oAuth2ClientCredentials:\n- nnadrf-datamanagement\n- nnadrf-datamanagement:storagerequest\nparameters:\n- name: subscriptionId\nin: path\ndescription: >\nString identifying a data retrieval subscription to the Nadrf_DataManagement\nService.\nrequired: true\nschema:\ntype: string\nresponses:\n'204':\ndescription: >\nNo Content. The Individual ADRF Data Retrieval Subscription resource matching\nthe subscriptionId was deleted.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n/request-storage-sub:\npost:\nsummary: Triggers the creation of a new ADRF Storage Subscription.\noperationId: CreateADRFStorageSubscription\ntags:\n- ADRF Storage Subscriptions\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- nnadrf-datamanagement\n- oAuth2ClientCredentials:\n- nnadrf-datamanagement\n- nnadrf-datamanagement:storagerequest\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfDataStoreSubscription'\nrequired: true\nresponses:\n'200':\ndescription: >\nSuccessful response with reference used to identify the subscription at the ADRF.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfDataStoreSubscriptionRef'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\ncallbacks:\nstorageSubAlertNotification:\n'{$request.body#/delNotifUri}':\npost:\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfAlertNotification'\nresponses:\n'200':\ndescription: The alert receipt is acknowledged and a planned action is provided.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfAlertNotificationResponse'\n'204':\ndescription: The alert receipt is acknowledged.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n/request-storage-sub-removal:\npost:\nsummary: Triggers the removal of ADRF storage subscription.\noperationId: DeleteADRFStorageSubscription\ntags:\n- ADRF Storage Subscriptions\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- nnadrf-datamanagement\n- oAuth2ClientCredentials:\n- nnadrf-datamanagement\n- nnadrf-datamanagement:storagerequest\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfDataStoreSubscriptionRef'\nrequired: true\nresponses:\n'204':\ndescription: >\nNo Content. The ADRF Storage Subscription matching the provided reference was deleted.\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n/remove-stored-data-analytics:\npost:\nsummary: Remove ADRF data based on data or analytics specification.\noperationId: DeleteADRFData\ntags:\n- ADRF Stored Data\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- nnadrf-datamanagement\n- oAuth2ClientCredentials:\n- nnadrf-datamanagement\n- nnadrf-datamanagement:storagerequest\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfStoredDataSpec'\nrequired: true\nresponses:\n'204':\ndescription: No Content. The ADRF data matching the provided specification is deleted.\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n#\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{nrfApiRoot}/oauth2/token'\nscopes:\nnadrf-datamanagement: Access to the nadrf-datamanagement API\n#\nschemas:\n#\nNadrfDataStoreRecord:\ndescription: Represents an Individual ADRF Data Store Record.\ntype: object\noneOf:\n- allOf:\n- required: [anaSub]\n- required: [anaNotifications]\n- allOf:\n- required: [dataSub]\n- required: [dataNotif]\nproperties:\ndataNotif:\n$ref: '#/components/schemas/DataNotification'\nanaNotifications:\ntype: array\nitems:\n$ref: 'TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NnwdafEventsSubscriptionNotification'\nminItems: 1\ndescription: List of analytics subscription notifications.\nanaSub:\ntype: array\nitems:\n$ref: 'TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NnwdafEventsSubscription'\nminItems: 1\ndescription: >\nRepresents the subscription information of the corresponding analytics notification.\ndataSub:\ntype: array\nitems:\n$ref: '#/components/schemas/DataSubscription'\nminItems: 1\ndescription: >\nRepresents the subscription information of the corresponding data notification.\nstoreHandl:\n$ref: '#/components/schemas/StorageHandlingInfo'\ndataSetTag:\n$ref: '#/components/schemas/DataSetTag'\ndsc:\ntype: string\ndescription: Data synthesis and compression information.\nsuppFeat:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'\n#\nNadrfDataStoreSubscription:\ndescription: >\nContains information to be used by the ADRF to create a Data or Analytics subscription.\ntype: object\nallOf:\n- oneOf:\n- required: [anaSub]\n- required: [dataSub]\n- oneOf:\n- required: [targetNfId]\n- required: [targetNfSetId]\nproperties:\nanaSub:\n$ref: 'TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NnwdafEventsSubscription'\ndataSetTag:\n$ref: '#/components/schemas/DataSetTag'\ndataSub:\n$ref: '#/components/schemas/DataSubscription'\ntargetNfId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/NfInstanceId'\ntargetNfSetId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/NfSetId'\nformatInstruct:\n$ref: 'TS29574_Ndccf_DataManagement.yaml#/components/schemas/FormattingInstruction'\nprocInstruct:\n$ref: 'TS29574_Ndccf_DataManagement.yaml#/components/schemas/ProcessingInstruction'\nmultiProcInstructs:\ntype: array\nitems:\n$ref: 'TS29574_Ndccf_DataManagement.yaml#/components/schemas/ProcessingInstruction'\nminItems: 1\ndescription: Processing instructions to be used for sending event notifications.\nstoreHandl:\n$ref: '#/components/schemas/StorageHandlingInfo'\nsuppFeat:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'\n#\nNadrfDataRetrievalSubscription:\ndescription: Represents an Individual ADRF Data Retrieval Subscription.\ntype: object\nrequired:\n- notifCorrId\n- notificationURI\n- timePeriod\noneOf:\n- required: [anaSub]\n- required: [dataSub]\n- required: [dataSetId]\nproperties:\nanaSub:\n$ref: 'TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NnwdafEventsSubscription'\ndataSetId:\ntype: string\ndescription: data set identifier of the data or analytics that are subscribed.\ndataSub:\n$ref: '#/components/schemas/DataSubscription'\nnotificationURI:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\ntimePeriod:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/TimeWindow'\nnotifCorrId:\ntype: string\ndescription: Notification correlation identifier.\nconsTrigNotif:\ntype: boolean\ndescription: >\nIt indicates that notifications shall be buffered (sending only fetch instructions\nto the NF service consumer) until the NF service consumer requests their delivery\nusing Nadrf_DataManagement Service.\nsuppFeat:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'\n#\nNadrfDataRetrievalNotification:\ndescription: >\nRepresents a notification that corresponds with an Individual ADRF Data\nRetrieval Subscription.\ntype: object\nrequired:\n- notifCorrId\n- timeStamp\noneOf:\n- required: [anaNotifications]\n- required: [dataNotif]\n- required: [fetchInstruct]\nproperties:\nnotifCorrId:\ntype: string\ndescription: Notification correlation identifier.\nanaNotifications:\ntype: array\nitems:\n$ref: 'TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NnwdafEventsSubscriptionNotification'\nminItems: 1\ndescription: List of analytics subscription notifications.\ndataNotif:\n$ref: '#/components/schemas/DataNotification'\nfetchInstruct:\n$ref: 'TS29576_Nmfaf_3caDataManagement.yaml#/components/schemas/FetchInstruction'#\nterminationReq:\ntype: boolean\ndescription: >\nIt indicates the termination of the data management subscription that requested by the\nADRF.\ndsc:\ntype: string\ndescription: Data synthesis and compression information.\ntimeStamp:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\n#\nNadrfDataStoreSubscriptionRef:\ndescription: Contains a reference to a request for a Data or Analytics subscription.\ntype: object\noneOf:\n- required: [transRefId]\n- required: [dataSetId]\nproperties:\ntransRefId:\ntype: string\ndescription: Transaction reference identifier.\ndataSetId:\ntype: string\ndescription: data set identifier of data or analytics.\n#\nNadrfStoredDataSpec:\ndescription: Contains information about Data or Analytics specification.\ntype: object\nrequired:\n- timePeriod\noneOf:\n- required: [dataSpec]\n- required: [anaSpec]\n- required: [dataSetId]\nproperties:\ndataSpec:\n$ref: '#/components/schemas/DataSubscription'\nanaSpec:\n$ref: 'TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NnwdafEventsSubscription'\ntimePeriod:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/TimeWindow'\ndataSetId:\ntype: string\ndescription: Data set identifier of stored data or analytics records.\n#\nDataSubscription:\ndescription: Contains a data specification.\ntype: object\noneOf:\n- required: [amfDataSub]\n- required: [smfDataSub]\n- required: [udmDataSub]\n- required: [nefDataSub]\n- required: [afDataSub]\n- required: [nrfDataSub]\n- required: [nsacfDataSub]\n- required: [upfDataSub]\n- required: [gmlcDataSub]\nproperties:\namfDataSub:\n$ref: 'TS29518_Namf_EventExposure.yaml#/components/schemas/AmfEventSubscription'\nsmfDataSub:\n$ref: 'TS29508_Nsmf_EventExposure.yaml#/components/schemas/NsmfEventExposure'\nudmDataSub:\n$ref: 'TS29503_Nudm_EE.yaml#/components/schemas/EeSubscription'\nafDataSub:\n$ref: 'TS29517_Naf_EventExposure.yaml#/components/schemas/AfEventExposureSubsc'\nnefDataSub:\n$ref: 'TS29591_Nnef_EventExposure.yaml#/components/schemas/NefEventExposureSubsc'\nnrfDataSub:\n$ref: 'TS29510_Nnrf_NFManagement.yaml#/components/schemas/SubscriptionData'\nnsacfDataSub:\n$ref: 'TS29536_Nnsacf_SliceEventExposure.yaml#/components/schemas/SACEventSubscription'\nupfDataSub:\n$ref: 'TS29564_Nupf_EventExposure.yaml#/components/schemas/UpfEventSubscription'\ngmlcDataSub:\n$ref: 'TS29515_Ngmlc_Location.yaml#/components/schemas/InputData'\n#\nDataNotification:\ndescription: Represents a Data Subscription Notification.\ntype: object\noneOf:\n- required: [amfEventNotifs]\n- required: [smfEventNotifs]\n- required: [udmEventNotifs]\n- required: [nefEventNotifs]\n- required: [afEventNotifs]\n- required: [nrfEventNotifs]\n- required: [nsacfEventNotifs]\n- required: [upfEventNotifs]\n- required: [gmlcEventNotifs]\nproperties:\namfEventNotifs:\ntype: array\nitems:\n$ref: 'TS29518_Namf_EventExposure.yaml#/components/schemas/AmfEventNotification'\nminItems: 1\ndescription: List of notifications of AMF events.\nsmfEventNotifs:\ntype: array\nitems:\n$ref: 'TS29508_Nsmf_EventExposure.yaml#/components/schemas/NsmfEventExposureNotification'\nminItems: 1\ndescription: List of notifications of SMF events.\nudmEventNotifs:\ntype: array\nitems:\n$ref: 'TS29503_Nudm_EE.yaml#/components/schemas/MonitoringReport'\nminItems: 1\ndescription: List of notifications of UDM events.\nnefEventNotifs:\ntype: array\nitems:\n$ref: 'TS29591_Nnef_EventExposure.yaml#/components/schemas/NefEventExposureNotif'\nminItems: 1\ndescription: List of notifications of NEF events.\nafEventNotifs:\ntype: array\nitems:\n$ref: 'TS29517_Naf_EventExposure.yaml#/components/schemas/AfEventExposureNotif'\nminItems: 1\ndescription: List of notifications of AF events.\nnrfEventNotifs:\ntype: array\nitems:\n$ref: 'TS29510_Nnrf_NFManagement.yaml#/components/schemas/NotificationData'\nminItems: 1\ndescription: List of notifications of NRF events.\nnsacfEventNotifs:\ntype: array\nitems:\n$ref: 'TS29536_Nnsacf_SliceEventExposure.yaml#/components/schemas/SACEventReport'\nminItems: 1\ndescription: List of notifications of NSACF events.\nupfEventNotifs:\ntype: array\nitems:\n$ref: 'TS29564_Nupf_EventExposure.yaml#/components/schemas/NotificationData'\nminItems: 1\ndescription: List of notifications of UPF events.\ngmlcEventNotifs:\ntype: array\nitems:\n$ref: 'TS29515_Ngmlc_Location.yaml#/components/schemas/EventNotifyData'\nminItems: 1\ndescription: List of notifications of GMLC events.\ntimeStamp:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\n\n#\nStorageHandlingInfo:\ndescription: Contains storage handling information about data or analytics.\ntype: object\nproperties:\nlifetime:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DurationSec'\ndelNotifUri:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\ndelNotifCorrId:\ntype: string\ndescription: Notification correlation identifier for deletion alerts.\n#\nNadrfAlertNotification:\ndescription: Contains information about data or analytics that are about to be deleted.\ntype: object\nproperties:\nalertStorTransId:\ntype: string\ndescription: >\nStorage transaction identifier that can be used to retrieve data or analytics.\ndelNotifCorrId:\ntype: string\ndescription: Notification correlation identifier.\nrequired:\n- alertStorTransId\n- delNotifCorrId\n#\nNadrfAlertNotificationResponse:\ndescription: >\nContains information about planned actions related to data or analytics\nthat are about to be deleted.\ntype: object\nproperties:\nretrievalInd:\ntype: boolean\ndescription: >\nIndicates if the NF service consumer has determined to retrieve the data\nor analytics that are about to be deleted.\nrequired:\n- retrievalInd\n#\nDataSetTag:\ndescription: Contains an identifier and a description of associated records.\ntype: object\nrequired:\n- dataSetId\nproperties:\ndataSetId:\ntype: string\ndescription: Data set identifier of data or analytics records.\ndataSetDesc:\ntype: string\ndescription: Data set description of data or analytics records.\n#\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.3\tNadrf_MLModelManagement API",
+            "description": "openapi: 3.0.0\ninfo:\nversion: 1.0.0-alpha.2\ntitle: Nadrf_MLModelManagement\ndescription: |\nADRF ML Model Management Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\nexternalDocs:\ndescription: 3GPP TS 29.575 V18.4.0; 5G System; Analytics Data Repository Services; Stage 3.\nurl: 'https://www.3gpp.org/ftp/Specs/archive/29_series/29.575/'\n#\nservers:\n- url: '{apiRoot}/nadrf-mlmodelmanagement/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501.\n#\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- nadrf-mlmodelmanagement\n#\npaths:\n/mlmodel-store-records:\npost:\nsummary: Creates a new Individual ADRF ML Model Store Record resource.\noperationId: CreateADRFMLModelStoreRecord\ntags:\n- ADRF ML Model Store Records (Collection)\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfMLModelStoreRecord'\nrequired: true\ndescription: ADRF ML model store record to be stored.\nresponses:\n'201':\ndescription: Successful creation of new Individual ADRF ML Model Store Record resource.\nheaders:\nLocation:\ndescription: >\nContains the URI of the newly created resource, according to the structure\n{apiRoot}/nadrf-mlmodelmanagement/<apiVersion>/mlmodel-store-records/{storeTransId}\nrequired: true\nschema:\ntype: string\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfMLModelStoreRecord'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\nget:\nsummary: Retrieves existing Individual ADRF ML Model Store Record.\noperationId: GetAdrfMLModelStoreRecord\ntags:\n- ADRF ML Model Store Records (Collection)\nparameters:\n- name: store-trans-id\ndescription: A storage transaction identifier of a ML model store record in ADRF.\nin: query\nrequired: false\nschema:\ntype: string\n- name: modelUniqueId\ndescription: Unique Model identifier of a ML model.\nin: query\nrequired: false\nschema:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uinteger'\nminItems: 1\nresponses:\n'200':\ndescription: ML model store records are returned.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/NadrfMLModelStoreRecord'\n'204':\ndescription: No matching ADRF ML Model were found.\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'406':\n$ref: 'TS29571_CommonData.yaml#/components/responses/406'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n/mlmodel-store-records/{storeTransId}:\ndelete:\nsummary: Delete an existing Individual ADRF ML Model Store Record.\noperationId: DeleteADRFMLModelStoreRecord\ntags:\n- Individual ADRF ML Model Store Record (Document)\nparameters:\n- name: storeTransId\nin: path\ndescription: String identifying a ML Model Store Record in ADRF.\nrequired: true\nschema:\ntype: string\nresponses:\n'200':\ndescription: >\nAttempted to remove ML model(s) in the Individual ADRF ML Model Store Record resource.\nThe result is returned.\ncontent:\napplication/json:\nschema:\ntype: array\nitems:\n$ref: '#/components/schemas/MLModelDelResult'\nminItems: 1\n'204':\ndescription: >\nNo Content. The Individual ADRF ML Model Store Record resource matching the\nstoreTransId was deleted.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n/remove-stored-mlmodel:\npost:\nsummary: Remove stored ML model based on unique ML model identifier.\noperationId: DeleteADRFMLModel\ntags:\n- ADRF Stored ML Model\nrequestBody:\ncontent:\napplication/json:\nschema:\ntype: array\nitems:\n$ref: '#/components/schemas/NadrfMLModelStoreRecord'\nminItems: 1\nrequired: true\nresponses:\n'200':\ndescription: >\nThe ADRF ML model matching the provided unique ML model identifier\nwas attempted to be deleted. The result is returned.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MLModelDelResult'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n#\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{nrfApiRoot}/oauth2/token'\nscopes:\nnadrf-mlmodelmanagement: Access to the nadrf-mlmodelmanagement API\n#\nschemas:\n#\nNadrfMLModelStoreRecord:\ndescription: Represents an Individual ADRF ML Model Store Record.\ntype: object\nallOf:\n- oneOf:\n- required: [nfInstanceId]\n- required: [nfSetId]\n- anyOf:\n- required: [mlModelIdnfo]\n- required: [mlModels]\nproperties:\nnfInstanceId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/NfInstanceId'\nnfSetId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/NfSetId'\nmlModelInfo:\ntype: array\nitems:\n$ref: '#/components/schemas/MLModelInfo'\nminItems: 1\ndescription: List of ML Model Information.\nmlModels:\ntype: array\nitems:\n$ref: '#/components/schemas/MLModel'\nminItems: 1\ndescription: Represents ML Model(s).\nmodelStoreResult:\n$ref: '#/components/schemas/ModelStoreResult'\nsuppFeat:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'\n#\nMLModelInfo:\ndescription: Represents informatiom of the ML Model.\ntype: object\nallOf:\n- required: [modelUniqueId]\n- required: [mlFileAddr]\n- required: [mlStorageSize]\nproperties:\nmodelUniqueId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uinteger'\nmlFileAddr:\n$ref: 'TS29520_Nnwdaf_MLModelProvision.yaml#/components/schemas/MLModelAddr'\nmlStorageSize:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uinteger'\nallowConsumerList:\ntype: array\nitems:\n$ref: '#/components/schemas/AllowedConsumer'\nminItems: 1\ndescription: The allowed consumer list of the ML Model.\n#\nAllowedConsumer:\ndescription: Represents informatiom of the allowed consumer list of the ML Model.\ntype: object\nproperties:\nnfInstanceId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/NfInstanceId'\nnfSetId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/NfSetId'\noneOf:\n- required: [nfInstanceId]\n- required: [nfSetId]\n#\nMLModelDelResult:\ndescription: Represents informatiom of the ML Model.\ntype: object\nallOf:\n- required: [modelUniqueId]\n- required: [DeleteResult]\nproperties:\nmodelUniqueId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uinteger'\ndeleteResult:\n$ref: '#/components/schemas/DeleteResult'\n#\nMLModel:\ndescription: Represents an ML Model.\ntype: object\nallOf:\n- required: [modelUniqueId]\n- required: [mlModel]\nproperties:\nmodelUniqueId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uinteger'\nmlModel:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Binary'\n#\nModelStoreResult:\ndescription: Contains information about ML Model storage result.\ntype: object\nallOf:\n- required: [modelUniqueId]\n- required: [storeResult]\nproperties:\nmodelUniqueId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uinteger'\nstoreResult:\n$ref: '#/components/schemas/StoreResult'\n#\n# ENUMERATIONS DATA TYPES\n#\nDeleteResult:\nanyOf:\n- type: string\nenum:\n- ML_MODEL_DELETED\n- ML_MODEL_NOT_FOUND\n- ML_MODEL_FOUND_BUT_NOT_DELETED\n- type: string\ndescription: >\nThis string provides forward-compatibility with future\nextensions to the enumeration but is not used to encode\ncontent defined in the present version of this API.\ndescription: |\nRepresents the store result type.\nPossible values are:\n- ML_MODEL_DELETED: Indicates that the ML model was deleted in ADRF.\n- ML_MODEL_FILE_ADDRESS_NOT_FOUND: Indicates that the ML model was not found in ADRF.\n- ML_MODEL_FOUND_BUT_NOT_DELETED: Indicates that the ML model was found in ADRF but not deleted.\n\n#\nStoreResult:\nanyOf:\n- type: string\nenum:\n- ML_MODEL_FILE_STORED_IN_ADRF\n- ML_MODEL_FILE_ADDRESS_NOT_FOUND\n- ML_MODEL_FILE_DOWNLOAD_FAILED\n- type: string\ndescription: >\nThis string provides forward-compatibility with future\nextensions to the enumeration but is not used to encode\ncontent defined in the present version of this API.\ndescription: |\nRepresents the store result type.\nPossible values are:\n- ML_MODEL_FILE_STORED_IN_ADRF: Indicates that the ML model was successfully stored in ADRF.\n- ML_MODEL_FILE_ADDRESS_NOT_FOUND: Indicates that the ML model file address was not found.\n- ML_MODEL_FILE_DOWNLOAD_FAILED: Indicates that the download of the ML model file failed.\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 98,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

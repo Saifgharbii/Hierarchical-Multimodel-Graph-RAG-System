@@ -1,0 +1,372 @@
+{
+    "document_name": "38351-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document provides description of the Sidelink Relay Adaptation Protocol (SRAP).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 38.300: \"NG Radio Access Network; Overall description\".\n[3]\t3GPP TS 38.331: \"NR Radio Resource Control (RRC); Protocol Specification\".\n[4]\t3GPP TS 38.322: \"NR Radio Link Control (RLC) protocol specification\".\n[5]\t3GPP TS 38.323: \"NR; Packet Data Convergence Protocol (PDCP) specification\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nEgress RLC channel: a RLC channel on which a packet is transmitted by a U2N Relay UE, a U2N Remote UE, a U2U Remote UE, a U2U Relay UE or a network node.\nEgress link: a radio link on which a packet is transmitted by a U2N Relay UE, a U2N Remote UE, a U2U Remote UE, a U2U Relay UE or a network node.\nIngress RLC channel: a RLC channel on which a packet is received from a U2N Relay UE, a U2N Remote UE, a U2U Remote UE, a U2U Relay UE or a network node.\nIngress link: a radio link on which a packet is received from a U2N Relay UE, a U2N Remote UE, a U2U Remote UE, a U2U Relay UE or a network node.\nU2N Relay UE: a UE that provides functionality to support connectivity to the network for U2N Remote UE(s).\nU2N Remote UE: a UE that communicates with the network via a U2N Relay UE.\nU2U Relay UE: a UE that provides functionality to support connectivity between two U2U Remote UEs.\nU2U Remote UE: a UE that communicates with other UE(s) via a U2U Relay UE.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nSRAP\tSidelink Relay Adaptation Protocol\nU2N\tUE-to-Network\nU2U\tUE-to-UE\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The objective is to describe the SRAP architecture and the SRAP entities from a functional point of view.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tSRAP architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tGeneral",
+                            "text_content": "This clause describes a model of the SRAP, i.e., it does not specify or restrict implementations.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tSRAP entities",
+                            "text_content": "Figure 4.2.2-1 represents one possible structure for the SRAP sublayer. The figure is based on the radio interface protocol architecture defined in TS 38.300 [2].\nThe SRAP structure overview in Figure 4.2.2-1 illustrates the network's architecture, highlighting the various components and their interconnections. The diagram includes a detailed depiction of the SRAP (Switch-to-Router-to-Access Point) structure, which is crucial for routing and switching traffic between different network segments. The SRAP is designed to ensure efficient and reliable communication, with redundant paths to ensure failover in case of network failures. The SRAP structure is a key component of the network's design, contributing to its overall functionality and performance.\nFigure 4.2.2-1: SRAP structure overview\nOn the U2N Relay UE, the SRAP sublayer contains one SRAP entity at Uu interface and a separate collocated SRAP entity at the PC5 interface. On the U2N Remote UE, the SRAP sublayer contains only one SRAP entity at the PC5 interface. On the U2U Relay UE and U2U Remote UE, the SRAP sublayer contains only one SRAP entity at the PC5 interface.\nEach SRAP entity has a transmitting part and a receiving part. Across the PC5 interface in the U2N case, the transmitting part of the SRAP entity at the U2N Remote UE has a corresponding receiving part of an SRAP entity at the U2N Relay UE, and vice versa. Across the Uu interface, the transmitting part of the SRAP entity at the U2N Relay UE has a corresponding receiving part of an SRAP entity at the gNB, and vice versa.\nAcross the PC5 interface in the U2U case, the transmitting part of the SRAP entity at the U2U Remote UE has a corresponding receiving part of an SRAP entity at the U2U Relay UE, and vice versa.\nFigure 4.2.2-2 and Figure 4.2.2-3 represents the functional view of the SRAP entity in U2N Relay case for the SRAP sublayer at PC5 interface and at Uu interface respectively. Figure 4.2.2-4 represents the functional view of the SRAP entity in U2U Relay case for the SRAP sublayer at PC5 interface.\nThe figure depicts a functional view of the SRAP sublayer at the PC5 interface in the U2N relay case, illustrating the various components and their interconnections.\nFigure 4.2.2-2: Example of functional view of SRAP sublayer at PC5 interface in U2N Relay case\nThe figure depicts a functional view of the SRAP sublayer at the Uu interface, illustrating the various components and their interconnections. The sublayer is composed of a set of processing units, including a router, a forwarding engine, and a forwarding table, which are interconnected through a set of routing protocols. The figure provides a clear and concise representation of the SRAP sublayer's architecture, allowing for a better understanding of its functionality and interdependencies.\nFigure 4.2.2-3: Example of functional view of SRAP sublayer at Uu interface\nIn the example of Figure 4.2.2-2 and Figure 4.2.2-3, at relay UE:\n-\tFor data packet not corresponding to SRB0, the receiving part on the SRAP entity of Uu interface delivers SRAP Data PDUs to the transmitting part on the collocated SRAP entity of PC5 interface, and the receiving part on the SRAP entity of PC5 interface delivers SRAP Data PDUs to the transmitting part on the collocated SRAP entity of Uu interface. As an alternative, the receiving part may deliver SRAP SDUs to the transmitting part on the collocated SRAP entity. When passing SRAP SDUs, the receiving part removes the SRAP header and the transmitting part of the relay UE adds the SRAP header with the same SRAP header content as carried on the SRAP Data PDU header prior to removal. Passing SRAP SDUs in this manner is therefore functionally equivalent to passing SRAP Data PDUs, in implementation. The following specification therefore refers to the passing of SRAP data packets.\n-\tFor UL data packet corresponding to SRB0, the receiving part on the SRAP entity of PC5 interface delivers SRAP SDUs to the transmitting part on the collocated SRAP entity of Uu interface, and the transmitting part on the SRAP entity of Uu interface adds the SRAP header in accordance with clause 5.3.3.\n-\tFor DL data packet corresponding to SRB0, the receiving part on the SRAP entity of Uu interface delivers SRAP Data PDUs to the transmitting part on the collocated SRAP entity of PC5 interface, and the transmitting part on the SRAP entity of PC5 interface removes the SRAP header in accordance with clause 5.2.2. As an alternative for handling DL data packet corresponding to SRB0 not shown in Figure 4.2.2-2 or Figure 4.2.2-3, the receiving part on the SRAP entity of Uu interface removes the SRAP header and delivers SRAP SDUs to the transmitting part on the collocated SRAP entity of PC5 interface.\nThe figure depicts a functional view of the SRAP sublayer at the PC5 interface in the U2U relay case, illustrating the sublayer's role in the network's data transmission. The sublayer is responsible for processing and forwarding data packets, ensuring efficient communication between the source and destination nodes. The figure includes various components such as the SRAP sublayer, the PC5 interface, and the U2U relay case, providing a comprehensive understanding of the sublayer's functionality and its role in the network's data transmission.\nFigure 4.2.2-4: Example of functional view of SRAP sublayer at PC5 interface in U2U Relay case\nIn the example of Figure 4.2.2-4, at U2U relay UE:\n-\tFor U2U data packet, the receiving part on the SRAP entity of PC5 interface between the U2U Relay UE and the U2U Remote UE delivers U2U SRAP Data PDUs to the transmitting part on the SRAP entity of PC5 interface between the U2U Relay UE and the peer U2U Remote UE. As an alternative, the receiving part may deliver SRAP SDUs to the transmitting part on the SRAP entity. When passing SRAP SDUs, the receiving part removes the SRAP header and the transmitting part of the relay UE adds the SRAP header with the same SRAP header content as carried on the U2U SRAP Data PDU header prior to removal. Passing SRAP SDUs in this manner is therefore functionally equivalent to passing U2U SRAP Data PDUs, in implementation. The following specification therefore refers to the passing of SRAP data packets.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tServices",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.1\tServices provided to upper layers",
+                            "text_content": "The following services are provided by the SRAP sublayer to upper layers:\n-\tData transfer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.2\tServices expected from lower layers",
+                            "text_content": "An SRAP sublayer expects the following services from lower layers per RLC entity (for a detailed description see TS 38.322 [4]):\n-\tAcknowledged data transfer service;\n-\tUnacknowledged data transfer service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.4\tFunctions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The SRAP sublayer supports the following functions:\n-\tData transfer;\n-\tDetermination of UE ID field and BEARER ID field for data packets;\n-\tDetermination of egress link;\n-\tDetermination of egress RLC channel.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.5\tConfigurations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The configuration of the SRAP entity for U2N Remote UE includes:\n-\tMapping from a radio bearer identified by BEARER ID field to egress PC5 Relay RLC channel via RRC;\n-\tThe local identity via RRC.\nThe configuration of the SRAP entity for U2N Relay UE includes:\n-\tThe local identity for each U2N Remote UE via RRC;\n-\tMapping from a radio bearer identified by UE ID field and BEARER ID field to egress Uu Relay RLC channel for each U2N Remote UE via RRC;\n-\tMapping from a radio bearer identified by UE ID field and BEARER ID field to egress PC5 Relay RLC channel for each U2N Remote UE via RRC.\nThe configuration of the SRAP entity for U2U Remote UE includes:\n-\tMapping from a sidelink radio bearer identified by BEARER ID field to egress PC5 Relay RLC channel for each U2U Remote UE pair;\n-\tThe local identities.\nThe configuration of the SRAP entity for U2U Relay UE includes:\n-\tMapping from a sidelink radio bearer identified by BEARER ID field to egress PC5 Relay RLC channel for each U2U Remote UE pair and each direction of data transfer.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tProcedures",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tSRAP entity handling",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tSRAP entity establishment",
+                            "text_content": "When upper layers request establishment of an SRAP entity, UE shall:\n-\testablish an SRAP entity;\n-\tfollow the procedures in clause 5.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tSRAP entity release",
+                            "text_content": "When upper layers request release of an SRAP entity, UE shall:\n-\trelease the SRAP entity and the related SRAP configurations.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tDL Data transfer",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tReceiving operation of U2N Relay UE",
+                            "text_content": "Upon receiving an SRAP Data PDU from lower layer, the receiving part of the SRAP entity on the Uu interface of U2N Relay UE shall:\n-\tdeliver the SRAP data packet to the transmitting part of the collocated SRAP entity on the PC5 interface.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tTransmitting operation of U2N Relay UE",
+                            "text_content": "The transmitting part of the SRAP entity on the PC5 interface of U2N Relay UE receives SRAP data packets from the receiving part of the SRAP entity on the Uu interface of the same U2N Relay UE, and construct SRAP Data PDUs as needed (see clause 4.2.2).\nWhen the transmitting part of the SRAP entity on the PC5 interface has an SRAP Data PDU to transmit, the transmitting part of the SRAP entity on the PC5 interface shall:\n-\tDetermine the egress link in accordance with clause 5.2.2.1;\n-\tDetermine the egress RLC channel in accordance with clause 5.2.2.2;\n-\tif the SRAP Data PDU is for SRB0 (the BEARER ID field is 0, and the bearer is identified as SRB based on sl-RemoteUE-RB-Identity associated with the entry containing the sl-EgressRLC-ChannelUu which matches the LCID of the Uu Relay RLC Channel from which the SRAP Data PDU is received):\n-\tRemove the SRAP header from the SRAP Data PDU;\n-\tSubmit this SRAP Data PDU to the determined egress RLC channel of the determined egress link.\nFor a SRAP Data PDU to be transmitted, SRAP entity shall:\n-\tif there is an entry in sl-RemoteUE-ToAddModList, whose sl-LocalIdentity included in sl-SRAP-ConfigRelay matches the UE ID field in SRAP Data PDU:\n-\tDetermine the egress link on PC5 interface corresponding to sl-L2IdentityRemote configured for the concerned sl-LocalIdentity as specified in TS 38.331 [3].\nFor a SRAP Data PDU to be transmitted, the SRAP entity shall:\n-\tif the SRAP Data PDU is for SRB0 (the BEARER ID field is 0 and the bearer is identified as SRB based on sl-RemoteUE-RB-Identity associated with the entry containing the sl-EgressRLC-ChannelUu which matches the LCID of the Uu Relay RLC Channel from which the SRAP Data PDU is received):\n-\tDetermine the egress PC5 Relay RLC channel in the determined egress link corresponding to logicalChannelIdentity for SL-RLC0 as specified in TS 38.331 [3].\n-\telse if there is an entry in sl-RemoteUE-ToAddModList, whose sl-LocalIdentity included in sl-SRAP-ConfigRelay matches the UE ID field in SRAP Data PDU, which includes an sl-RemoteUE-RB-Identity that matches the SRB identity or DRB identity of the SRAP Data PDU determined by the BEARER ID field (For the BEARER ID shared by both SRB and DRB, SRB and DRB are differentiated based on sl-RemoteUE-RB-Identity associated with the entry containing the sl-EgressRLC-ChannelUu which matches the LCID of the Uu Relay RLC Channel from which the SRAP Data PDU is received, and for DRB, the DRB identity is BEARER ID plus 1):\n-\tif the SRAP Data PDU is for SRB1 but the corresponding sl-EgressRLC-ChannelPC5 is absent in sl-SRAP-ConfigRelay:\n-\tDetermine the egress PC5 Relay RLC channel in the determined egress link corresponding to logicalChannelIdentity for SL-RLC1 as specified in TS 38.331 [3].\n-\telse:\n-\tDetermine the egress PC5 Relay RLC channel in the determined egress link corresponding to sl-EgressRLC-ChannelPC5 configured for the concerned sl-LocalIdentity and concerned sl-RemoteUE-RB-Identity as specified in TS 38.331 [3].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tReceiving operation of U2N Remote UE",
+                            "text_content": "Upon receiving an SRAP Data PDU from lower layer, the receiving part of the SRAP entity shall:\n-\tif the SRAP Data PDU is not for SRB0 (not received from SL-RLC0 as specified in TS 38.331 [3]):\n-\tif the SRAP Data PDU is received from SL-RLC1 as specified in TS 38.331 [3]:\n-\tremove the SRAP header of this SRAP Data PDU and deliver the SRAP SDU to PDCP entity of SRB1 by ignoring the UE ID field and BEARER ID field of this SRAP Data PDU;\n-\telse:\n-\tremove the SRAP header of this SRAP Data PDU and deliver the SRAP SDU to upper layer entity corresponding to the BEARER ID field of this SRAP Data PDU (For the BEARER ID shared by both SRB and DRB, SRB and DRB are differentiated based on sl-RemoteUE-RB-Identity associated with the entry containing the sl-EgressRLC-ChannelPC5 which matches LCID of the PC5 Relay RLC Channel from which the SRAP Data PDU is received, and for DRB, the DRB identity is BEARER ID plus 1);\n-\telse:\n-\tdeliver the SRAP SDU (i.e., same as SRAP PDU for SRB0) to upper layer, i.e., RRC layer entity (TS 38.331 [3]).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tUL Data transfer",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tTransmitting operation of U2N Remote UE",
+                            "text_content": "The transmitting part of the SRAP entity on the PC5 interface of U2N Remote UE can receive SRAP SDU from upper layer and constructs SRAP Data PDU.\nUpon receiving an SRAP SDU from upper layer, the transmitting part of the SRAP entity on the PC5 interface shall:\n-\tif the SRAP SDU is not for SRB0:\n-\tDetermine the UE ID field and BEARER ID field in accordance with clause 5.3.1.1;\n-\tConstruct an SRAP Data PDU with SRAP header, where the UE ID field and BEARER ID field are set to the determined values, in accordance with clause 6.2.2;\n-\telse:\n-\tConstruct an SRAP Data PDU without SRAP header in accordance with clause 6.2.2.\n-\tDetermine the egress RLC channel in accordance with clause 5.3.1.2;\n-\tSubmit this SRAP Data PDU to the determined egress RLC channel.\nFor an SRAP SDU received from upper layer, the SRAP entity shall:\n-\tDetermine the UE ID field corresponding to sl-LocalIdentity, configured as specified in TS 38.331 [3];\n-\tDetermine the BEARER ID field corresponding to SRB identity for SRB (i.e., set the BEARER ID field to srb-Identity), or corresponding to DRB identity minus 1 for DRB (i.e., set the BEARER ID field to drb-Identity minus 1), from which the SRAP SDU is received, configured as specified in TS 38.331 [3].\nFor a SRAP Data PDU to be transmitted, the SRAP entity shall:\n-\tif the SRAP Data PDU is for SRB0:\n-\tDetermine the egress PC5 Relay RLC channel in the link with U2N Relay UE corresponding to logicalChannelIdentity for SL-RLC0 as specified in TS 38.331 [3].\n-\telse if the SRAP Data PDU is for SRB1 and if there is not an entry in sl-MappingToAddModList, whose sl-RemoteUE-RB-Identity matches the SRB identity of the SRAP Data PDU, or if there is an entry in sl-MappingToAddModList without the corresponding sl-EgressRLC-ChannelPC5:\n-\tDetermine the egress PC5 Relay RLC channel in the link with U2N Relay UE corresponding to logicalChannelIdentity for SL-RLC1 as specified in TS 38.331 [3].\n-\telse if there is an entry in sl-MappingToAddModList, whose sl-RemoteUE-RB-Identity matches the SRB identity or DRB identity of the SRAP Data PDU:\n-\tDetermine the egress PC5 Relay RLC channel of the link with U2N Relay UE corresponding to sl-EgressRLC-ChannelPC5 configured for the concerned sl-RemoteUE-RB-Identity as specified in TS 38.331 [3].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tReceiving operation of U2N Relay UE",
+                            "text_content": "Upon receiving an SRAP Data PDU from lower layer, the receiving part of the SRAP entity on the PC5 interface shall:\n-\tdeliver the SRAP data packet to the transmitting part of the collocated SRAP entity on the Uu interface.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.3\tTransmitting operation of U2N Relay UE",
+                            "text_content": "The transmitting part of the SRAP entity on the Uu interface of U2N Relay UE can receive SRAP data packets from the receiving part of the SRAP entity on the PC5 interface of the same U2N Relay UE, and construct SRAP Data PDUs as needed (see clause 4.2.2).\nWhen the transmitting part of the SRAP entity on the Uu interface has an SRAP Data PDU to transmit, the transmitting part of the SRAP entity on the Uu interface shall:\n-\tif the SRAP Data PDU is received from SL-RLC0 as specified in TS 38.331 [3]:\n-\tDetermine the UE ID field and BEARER ID field in accordance with clause 5.3.3.1;\n-\tConstruct an SRAP Data PDU with SRAP header, where the UE ID field and BEARER ID field are set to the determined values, in accordance with clause 6.2.2;\n-\tDetermine the egress RLC channel in accordance with clause 5.3.3.2;\n-\tSubmit this SRAP Data PDU to the determined egress RLC channel.\nFor an SRAP Data PDU received from SL-RLC0 as specified in TS 38.331 [3], the SRAP entity shall:\n-\tif there is an entry in sl-RemoteUE-ToAddModList, whose sl-L2IdentityRemote matches the Layer-2 ID of the remote UE from which the SRAP Data PDU is received:\n-\tDetermine the UE ID field corresponding to sl-LocalIdentity configured for the concerned sl-L2IdentityRemote as specified in TS 38.331 [3];\n-\tDetermine the BEARER ID field as 0 (i.e., set BEARER ID field as 0).\nFor a SRAP Data PDU to be transmitted, the SRAP entity shall:\n-\tif there is an entry in sl-RemoteUE-ToAddModList, whose sl-LocalIdentity included in sl-SRAP-ConfigRelay matches the UE ID field in SRAP Data PDU:\n-\tif the SRAP Data PDU is for SRB0:\n-\tDetermine the egress Uu Relay RLC channel corresponding to sl-EgressRLC-ChannelUu configured for SRB0 for the concerned sl-LocalIdentity as specified in TS 38.331 [3].\n-\telse if the SRAP Data PDU is received from SL-RLC1 as specified in TS 38.331 [3]:\n-\tDetermine the egress Uu Relay RLC channel corresponding to sl-EgressRLC-ChannelUu configured for SRB1 for the concerned sl-LocalIdentity as specified in TS 38.331 [3].\n-\telse if there is an entry in sl-RemoteUE-ToAddModList which includes an sl-RemoteUE-RB-Identity matches SRB identity or DRB identity of the SRAP Data PDU determined by the BEARER ID field (For the BEARER ID shared by both SRB and DRB, SRB and DRB are differentiated based on sl-RemoteUE-RB-Identity associated with the entry containing the sl-EgressRLC-ChannelPC5 which matches LCID of the PC5 Relay RLC Channel from which the SRAP Data PDU is received, and for DRB, the DRB identity is BEARER ID plus 1):\n-\tDetermine the egress Uu Relay RLC channel corresponding to sl-EgressRLC-ChannelUu configured for the concerned sl-LocalIdentity and concerned sl-RemoteUE-RB-Identity as specified in TS 38.331 [3].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3a\tU2U SL Data transfer",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3a.1\tTransmitting operation of U2U Remote UE",
+                            "text_content": "The transmitting part of the SRAP entity on the PC5 interface of U2U Remote UE can receive SRAP SDU from upper layer and constructs U2U SRAP Data PDU.\nUpon receiving an SRAP SDU from upper layer, the transmitting part of the SRAP entity on the PC5 interface shall:\n-\tDetermine the UE ID fields and BEARER ID field in accordance with clause 5.3a.1.2;\n-\tConstruct an U2U SRAP Data PDU with SRAP header, where the UE ID fields and BEARER ID field are set to the determined values, in accordance with clause 6.2.2;\n-\tDetermine the egress RLC channel in accordance with clause 5.3a.1.3;\n-\tSubmit this U2U SRAP Data PDU to the determined egress PC5 Relay RLC channel.\nFor an U2U SRAP SDU received from upper layer, the SRAP entity shall:\n-\tDetermine the UE ID (for SRC) field corresponding to sl-RemoteUE-LocalIdentity and UE ID (for DST) field corresponding to sl-PeerRemoteUE-LocalIdentity, configured as specified in TS 38.331 [3];\n-\tDetermine the BEARER ID field for SL-SRBs as the fixed value (i.e., set 0/1/2/3 for SL-SRB0/1/2/3 respectively) or for SL-DRBs as the 5 LSBs of slrb-PC5-ConfigIndex used in end-to-end SL DRB configuration procedure as specified in TS 38.331 [3].\nFor a U2U SRAP Data PDU to be transmitted, the SRAP entity shall:\n-\tIf the U2U SRAP Data PDU is for SRB (i.e., the BEARER ID field is 0/1/2/3):\n-\tDetermine the egress PC5 Relay RLC channel in the determined egress link corresponding to logicalChannelIdentity for SL-U2U-RLC as specified in TS 38.331 [3].\n-\tElse if the SRAP Data is for DRB:\n-\tDetermine the egress PC5 Relay RLC channel in the determined egress link corresponding to RLC channel ID configured for the concerned bearer as specified in TS 38.331 [3].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3a.2\tReceiving operation of U2U Relay UE",
+                            "text_content": "Upon receiving an U2U SRAP Data PDU from lower layer, the receiving part of the SRAP entity on the PC5 interface between the U2U Relay UE and the U2U Remote UE shall:\n-\tdeliver the SRAP data packet to the transmitting part of the SRAP entity on the PC5 interface between the U2U Relay UE and the peer U2U Remote UE.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3a.3\tTransmitting operation of U2U Relay UE",
+                            "text_content": "The transmitting part of the SRAP entity of U2U Relay UE on the PC5 interface between the U2U Relay UE and the peer U2U Remote UE can receive SRAP data packets from the receiving part of the SRAP entity of the same U2U Relay UE on the PC5 interface between the U2U Relay UE and the U2U Remote UE, and constructs U2U SRAP Data PDUs as needed (see clause 4.2.2).\nWhen the transmitting part of the SRAP entity of the U2U Relay UE has an U2U SRAP Data PDU to transmit on the PC5 interface between U2U Relay UE and the peer U2U Remote UE, the transmitting part of the SRAP entity of U2U Relay UE shall:\n-\tDetermine the egress link in accordance with clause 5.3a.3.2;\n-\tDetermine the egress RLC channel in accordance with clause 5.3a.3.3;\n-\tSubmit this U2U SRAP Data PDU to the determined egress RLC channel of the determined egress link.\nFor a U2U SRAP Data PDU to be transmitted, SRAP entity shall:\n-\tDetermine the egress link on PC5 interface towards the peer U2U remote UE based on the UE ID fields in the U2U SRAP Data PDU.\nFor a U2U SRAP Data PDU to be transmitted, the SRAP entity shall:\n-\tIf the U2U SRAP Data PDU is for SRB (i.e., the BEARER ID field is 0/1/2/3):\n-\tDetermine the egress PC5 Relay RLC channel in the determined egress link corresponding to logicalChannelIdentity for SL-U2U-RLC as specified in TS 38.331 [3].\n-\tElse if the U2U SRAP Data PDU is for DRB:\n-\tDetermine the egress PC5 Relay RLC channel in the determined egress link corresponding to RLC channel configured for the concerned bearer as specified in TS 38.331 [3].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3a.4\tReceiving operation of U2U Remote UE",
+                            "text_content": "Upon receiving an U2U SRAP Data PDU from lower layer, the receiving part of the SRAP entity shall:\n-\tRemove the SRAP header of this U2U SRAP Data PDU and deliver the U2U SRAP SDU to upper layer entity corresponding to the BEARER ID and UE ID fields of this U2U SRAP Data PDU.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tHandling of unknown, unforeseen, and erroneous protocol data",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For U2N Remote UE, if sl-LocalIdentity and sl-RemoteUE-RB-Identity are both configured, when a SRAP Data PDU with SRAP header that contains a UE ID field or BEARER ID field which does not match sl-LocalIdentity or sl-RemoteUE-RB-Identity included in sl-SRAP-ConfigRemote is received, the SRAP entity shall:\n-\tdiscard the received SRAP Data PDU.\nFor U2N Relay UE, when a SRAP Data PDU with SRAP header that contains a UE ID field or BEARER ID field which does not match sl-LocalIdentity or sl-RemoteUE-RB-Identity included in sl-SRAP-ConfigRelay is received except in the case where the SRAP Data PDU from SL-RLC1 as specified in TS 38.331 [3] is the first SRAP Data PDU received from a U2N Remote UE, or when a SRAP Data PDU that contains a UE ID which does not match the concerned sl-LocalIdentity corresponding to sl-L2IdentityRemote of the ingress link is received by U2N Relay UE, the SRAP entity shall:\n-\tdiscard the received SRAP Data PDU.\nWhen any of the U2N Remote UE, the U2N Relay UE, the U2U Remote UE or the U2U Relay UE receives a SRAP PDU with invalid or reserved values, the SRAP entity shall:\n-\tdiscard the received SRAP PDU.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tProtocol data units, formats, and parameters",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tProtocol data units",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tData PDU",
+                            "text_content": "The SRAP Data PDU is used to convey the following with or without the PDU header:\n-\tupper layer data.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tFormats",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tGeneral",
+                            "text_content": "An SRAP Data PDU is a bit string that is byte aligned (i.e. multiple of 8 bits) in length. The formats of SRAP Data PDUs are described in clause 6.2.2 and their parameters are described in clause 6.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tData PDU",
+                            "text_content": "Figure 6.2.2-1 shows the format of the U2N SRAP Data PDU with SRAP header being configured. This SRAP Data PDU format is applicable to U2N SRAP SDU except those for SRB0 delivered over PC5 interface.\nThe figure depicts a U2N SRAP Data PDU format with SRAP header, illustrating the data structure and format used for transmitting data over the network.\nFigure 6.2.2-1: U2N SRAP Data PDU format with SRAP header\nFigure 6.2.2-2 shows the format of the U2N SRAP Data PDU consisting only of a data field without any SRAP header. This SRAP Data PDU format is applicable to U2N SRAP SDU for SRB0 delivered over PC5 interface.\nThe figure depicts a U2N SRAP Data PDU format without the SRAP header, illustrating the data structure and its components.\nFigure 6.2.2-2: U2N SRAP Data PDU format without SRAP header\nFigure 6.2.2-3 shows the format of the U2U SRAP Data PDU. This SRAP Data PDU format is applicable to U2U SRAP SDU delivered over PC5 interface.\nThe figure depicts a U2U SRAP Data PDU format with SRAP header, illustrating the data structure and format used for transmitting and receiving data between two UEs. The SRAP header contains the necessary information for the data PDU, such as the number of UEs, the data rate, and the protocol type. The figure provides a clear visual representation of the data PDU format, making it easier to understand and interpret the data transmission process.\nFigure 6.2.2-3: U2U SRAP Data PDU format with SRAP header\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tParameters",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tGeneral",
+                            "text_content": "If not otherwise mentioned in the definition of each field the bits in the parameters shall be interpreted as follows: the left most bit is the first and most significant and the right most bit is the last and least significant bit.\nUnless otherwise mentioned, integers are encoded in standard binary encoding for unsigned integers. In all cases the bits appear ordered from MSB to LSB when read in the PDU.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tUE ID",
+                            "text_content": "Length: 8 bits.\nIn U2N Relay case, this field carries local identity of U2N Remote UE. In U2U Relay case, there are two UE ID fields: one for local identity of each U2U Remote UE.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.3\tBEARER ID",
+                            "text_content": "Length: 5 bits.\nIn U2N Relay case, this field carries information to identify Uu radio bearer for U2N Remote UE. For SRBs, the value is set to SRB Identity (which is configured by RRC parameter srb-Identity). For DRBs, the value is set to DRB Identity (which is configured by RRC parameter drb-Identity) minus 1.\nIn U2U Relay case, this field carries information to identify end-to-end PC5 radio bearer for U2U Remote UE. For SL-SRBs, the value is set to 0/1/2/3 for SL-SRB 0/1/2/3 respectively. For SL-DRBs, the value is set to the 5 LSBs of slrb-PC5-ConfigIndex used in end-to-end SL DRB configuration procedure as specified in TS 38.331 [3].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.4\tData",
+                            "text_content": "Length: Variable\nThis field carries the SRAP SDU (i.e. PDCP PDU or RRC PDU).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.5\tR",
+                            "text_content": "Length: 1 bit\nReserved. In this release, reserved bits shall be set to 0. Reserved bits shall be ignored by the receiver.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.6\tD/C",
+                            "text_content": "Length: 1 bit\nThis field indicates whether the corresponding SRAP PDU is an SRAP Data PDU or an SRAP Control PDU (not used in this release).\nTable 6.3.6-1: D/C field\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.6-1: D/C field",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

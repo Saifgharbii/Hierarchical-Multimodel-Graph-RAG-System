@@ -1,0 +1,669 @@
+{
+    "document_name": "26.258-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "Attached to this document is an electronic copy of the floating-point C code for the Immersive Voice and Audio Services (IVAS) Codec. This C code is the unique alternative reference specification besides the fixed-point C code for the IVAS Codec (3GPP TS 26.251) for a standard compliant implementation of the IVAS Codec (3GPP TS 26.253), Rendering (3GPP TS 26.254), Error Concealment of Lost Packets (3GPP TS 26.255) and Jitter Buffer Management (JBM) (3GPP TS 26.256).\nThe bit-exact fixed-point C code in 3GPP TS 26.251 is the preferred implementation for all applications, but the floating-point codec may be used instead of the fixed-point codec when the implementation platform is better suited for a floating-point implementation.\nRequirements for any implementation of the IVAS codec to be standard compliant are specified in 3GPP TS 26.252 (Test sequences).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 26.253: \"Codec for Immersive Voice and Audio Services - Detailed Algorithmic Description incl. RTP payload format and SDP parameter definitions\".\n[3]\t3GPP TS 26.254: \"Codec for Immersive Voice and Audio Services - Rendering\".\n[4]\t3GPP TS 26.255: \"Codec for Immersive Voice and Audio Services - Error concealment of lost packets\".\n[5]\t3GPP TS 26.256: \"Codec for Immersive Voice and Audio Services - Jitter Buffer Management\".\n[6]\t3GPP TS 26.252: \"Codec for Immersive Voice and Audio Services – Test Sequences\".\n[7]\tIETF RFC 3550: \"RTP: A Transport Protocol for Real-Time Applications\".\n[8]\tRecommendation ITU-T G.191 (03/23): \"Software tools for speech and audio coding standardization\".\n[9]\tRecommendation ITU-T G.192: \"A common digital parallel interface for speech standardization activities\".\n[10]\tISO/IEC 23008-3:2015: “High efficiency coding and media delivery in heterogeneous environments — Part 3: 3D audio”\n[11]\tISO/IEC 23091-3:2018: “Coding-independent code points — Part 3: Audio“\n\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nbslbf: Bit string, left bit first. Bit strings are written as a string of 1s and 0s within single quote marks, for example '1000 0001'. Blanks within a bit string are for ease of reading and have no significance.\nuimsbf: Unsigned integer, most significant bit first.\nvlclbf: Variable length code, left bit first, where “left” refers to the order in which the variable length codes are written.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nACN\tAmbisonic Channel Number\nCICP\tCoding-independent Code Points\nCSV\tComma Separated Values\nEVS\tEnhanced Voice Services\nFB\tFullband\nFEC\tFrame Erasure Concealment\nHRTF\tHead Related Transfer Function\nISM\tIndependent Stream with Metadata\nIVAS\tImmersive Voice and Audio Services\nJBM\tJitter Buffer Management\nLFE\tLow Frequency Enhancement\nMASA\tMetadata-Assisted Spatial Audio\nMC\tMulti-channel\nNB\tNarrowband\nOBA\tObject Based Audio\nSBA\tScene Based Audio\nSID\tSilence Insertion Descriptor\nSWB\tSuper Wideband\nWB\tWideband\nWMOPS\tWeighted Millions of Operations Per Second\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tC code structure",
+            "description": "This clause gives an overview of the structure of the floating-point C code and provides an overview of the contents and organization of the C code attached to the present document.\nThe C code has been verified on the following platforms:\n-\tIBM PC compatible computers with Windows 10 operating systems and Microsoft Visual C++ 2017 compiler, 32-bit.\nC was selected as the programming language because portability was desirable.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tContents of the C source code",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The C code is organized as listed in Table 1:\nTable 1: Source code directory structure\n\nThe distributed files with suffix \"c\" contain the source code and the files with suffix \"h\" are the header files. The ROM data is contained in files named \"rom_*\" and “ivas_rom_*” with suffix \"c\".\nMakefiles are provided for the platforms in which the C code has been verified (listed above). Once the software is installed, this directory will have a compiled version of the encoder (named IVAS_cod), the decoder (named IVAS_dec) and the renderer (named IVAS_rend).\n",
+                    "tables": [
+                        {
+                            "description": "Table 1: Source code directory structure",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tProgram execution",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The codec for Immersive Voice and Audio Services is implemented in three programs:\n-\tIVAS_cod: encoder;\n-\tIVAS_dec: decoder;\n- \tIVAS_rend: renderer.\nThe programs should be called like:\n-\tIVAS_cod [encoder options] <input file> <bitstream file>;\n-\tIVAS_dec [decoder options] <bitstream file> <output file>;\n- \tIVAS_rend [renderer options] -i <input file> -if <input format> -o <output file> -of <output format>.\nThe input and output files contain 16-bit linear encoded PCM samples (headerless or in WAVE format) and the bitstream file contains encoded data.\nThe encoder, decoder, and renderer options will be explained by running the programs without any input arguments. See the file readme.txt for more information on how to run the IVAS_cod, IVAS_dec and IVAS_rend programs.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tFile Formats",
+            "description": "This clause describes the file formats used by the encoder and decoder programs. The test sequences defined in [6] also use the file formats described here.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tAudio Input/output file format",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the input files read by the encoder/renderer and output files written by the decoder/renderer the following formats are supported:\n-\tHeaderless format: 16-bit integer words per each data sample. The byte order in each word depends on the host architecture (e.g. LSB first on PCs, etc.).\n-\tWAVE format: 16-bit little-endian integer words per each data sample.\nBoth the encoder and the decoder program process complete frames corresponding to multiples of 20 ms.\nThe encoder will pad the last frame to integer multiples of 20ms frames, i.e. n speech frames will be produced from an input file with a length between [(n-1)*20ms+1 sample; n*20ms]. The files produced by the decoder will always have a length of n*20ms.\nInput/output audio shall follow configurations as specified in Table 2. Ambisonics components follow the ACN ordering where  for real-valued spherical harmonics components of order  and degree , where  and .\nTable 2: Audio track configurations\n\n* = Ambisonics order\nFor Ambisonics, SN3D normalization is assumed.\n",
+                    "tables": [
+                        {
+                            "description": "Table 2: Audio track configurations",
+                            "table number": 4,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tRate switching profile (encoder input)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The encoder program can optionally read in a rate switching profile file which specifies the encoding bitrate for each frame of the input data. The rate switching profile is a binary file, generated by 'gen-rate-profile' tool, which is part of STL 2023, as contained in ITU-T G.191 [8]. The rate switching profile contains 32-bit integer words where each word represents the encoding bitrate for each particular frame. The rate switching profile is recycled if it contains less entries than the total number of frames in the input file.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tBandwidth switching profile (encoder input)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The encoder program can optionally read in a bandwidth switching profile, which specifies the encoding bandwidth for each frame of speech processed. The file is a text file where each line contains \"nb_frames B\". B specifies the signal bandwidth that is one of the supported bandwidths. For IVAS operation modes, WB, SWB or FB are supported. For EVS operation modes, NB, WB, SWB and FB are supported. \"nb_frames\" is an integer number of frames and specifies the duration of activation of the accompanied signal bandwidth B.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tChannel-aware configuration file (encoder input and decoder output)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the EVS operation modes, the encoder program can optionally read in a configuration file which specifies the values of FEC indicator p and FEC offset o, where FEC indicator, p: LO or HI, and FEC offset, o: 2, 3, 5, or 7 in number of frames. Each line of the configuration file contains the values of p and o separated by a space.\nThe channel-aware configuration file is meant to simulate channel feedback from a receiver to a sender, i.e. the decoder would generate FEC indication and FEC offset values for receiver feedback that correspond to the current transmission channel characteristics, thereby allowing optimization of the transmission by the encoder which applies the FEC offset and FEC indication when in the channel-aware mode.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tObject based audio metadata file (encoder/renderer input and decoder output)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For object based audio input (including the combined formats OBA + MASA and OBA + SBA), the encoder/renderer can optionally read corresponding metadata files describing the object characteristics. For bitstreams containing object based audio, the decoder can optionally write corresponding metadata files. The metadata files for object based audio (per audio object) are files consisting of comma-separated values (CSV). Each line corresponds to 20ms audio at the renderer and consists of:\n-\tAzimuth (floating-point, range [-180°;180°[; mandatory)\n-\tElevation (floating-point, range [-90°;90°]; mandatory)\n-\tRadius (floating-point, range [0; 15.75]; optional; default: 1.0)\n-\tSpread (floating-point, range [0; 360]; optional; default: 0.0)\n-\tGain (floating-point, range [0;1]; optional; default: 1.0)\n-\tYaw (floating-point, range [-180; 180], positive indicates left; optional; default: 0.0)\n-\tPitch (floating-point, range [-90; 90], positive indicates up; optional; default: 0.0)\n-\tNon-diegetic (floating-point, range [0; 1]; optional; default: 0; if Flag is set to 1, panning gain is specified by azimuth Value between [-90,90], 90 left, -90 right, 0 center)\nThe columns are in the following order:\nAzimuth,Elevation,Radius,Spread,Gain,Yaw,Pitch,Non-diegetic\nThe metadata reader accepts 1-8 values specified per line. If a value is not specified, the default value is assumed.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.6\tMetadata-assisted spatial audio (MASA) metadata file (encoder/renderer input and decoder output)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For MASA audio input (including the combined format OBA + MASA), the encoder/renderer reads MASA metadata files. For bitstreams containing MASA audio, the decoder can optionally write MASA metadata files. The Syntax of the MASA metadata files is specified in Annex A.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.7\tParameter bitstream file (encoder output / decoder input)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The files produced by the speech/audio encoder/expected by the speech decoder contain an arbitrary number of frames in the following available formats.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.7.1\tITU-T G.192 compliant format",
+                            "text_content": "\n\nThe encoder/decoder support parameter bitstream files according to ITU-T G.192 [9]: Each box corresponds to one Word16 value in the bitstream file, for a total of 2+nn words or 4+2nn bytes per frame, where nn is the number of encoded bits in the frame. Each encoded bit is represented as follows: Bit 0 = 0x007f, Bit 1 = 0x0081. The fields have the following meaning:\n- SYNC_WORD: Word to ensure correct frame synchronization between the encoder and the decoder. It is also used to indicate the occurrences of bad frames.\nIn the encoder output: (0x6b21)\nIn the decoder input:\tGood frames\t(0x6b21), \tBad frames\t(0x6b20)\n- DATA_LENGTH: Length of the speech data. Codec mode and frame type is extracted in the decoder using this parameter\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.8\tVoIP parameter bitstream file (decoder input)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n\nThe fields have the following size and meaning:\n-\tPacket size: 32-bit unsigned integer (= 12 + 2 + DATA_LENGTH).\n-\tArrival time: 32-bit unsigned integer in ms.\n-\tRTP header: 96 bits (see RFC 3550 [7]), including RTP timestamp and SSRC.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 6,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.9\tJBM trace file (decoder output)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The decoder can generate a JBM trace file with the –Tracefile switch as a by-product of the decoder operation in case of JBM operation (which is triggered with the –VOIP switch on the decoder side).\nThe trace file is a CSV file with semi-colon as separator. The trace file starts with one header line that contains the column names in the following order:\nrtpSeqNo;rtpTs;rcvTime;playtime;active\n\nFor each played out speech frame one entry is written to the trace file. The interval of the playtime values is usually 20ms, but may differ, depending on the JBM operation. Each entry is a line in the trace file that contains values as specified in Table 3.\nTable 3: JBM trace file entry format\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 3: JBM trace file entry format",
+                            "table number": 7,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.10\tHRTF filter file (decoder/renderer input)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "HR filters for the binaural rendering may be provided to the decoder by using dynamic loading of external binary file.\n\nThe decoder program should be called with option -hrtf <binary_file>. This option can be used with the output configurations BINAURAL, BINAURAL_ROOM_IR and BINAURAL_ROOM_REVERB.\n\nA binary file has a specific container format with a header and a sequence of entries.\n\nThe header of a binary file is defined as follows:\n\n\nEvery entry contains a header followed by the related raw data which is the binary representation of the HR filter.\n\nThe header of each entry is defined as follows :\n\n\nThe format of the raw data depends on the rendering and the HR filters are represented in floating point.\n\nNote :\n-\tWith renderer type RENDERER_BINAURAL_PARAMETRIC_ROOM, the HR filters contain always one set of data which is independent of input audio configuration (set as BINAURAL_INPUT_AUDIO_CONFIG_UNDEFINED) and sampling rate (48 kHz always). This provides full data for use in the parametric binaural renderer in all situations including renderer type RENDERER_BINAURAL_PARAMETRIC.\n-\tThe HR filters for the renderer types RENDERER_BINAURAL_FASTCONV and RENDERER_BINAURAL_FASTCONV_ROOM are fully defined at 48kHz.\n-\tFor the renderer type RENDERER_BINAURAL_OBJECTS_TD the input audio configuration is always BINAURAL_INPUT_AUDIO_CONFIG_UNDEFINED.\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 8,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 9,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.11\tHead rotation trajectory file (decoder/renderer input)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "In the reference implementation of the codec, input data representing the current rotation of the listeners head can be provided to the decoder in an ASCII formatted file comprising four columns separated by commas. These columns contain floating-point numbers representing either a quaternion or a Euler angle. The distinction between these two input formats is made by a magic number in the first column. If this value is set to -3.0, it is assumed that the remaining three columns contain three Euler angles. Otherwise, all four columns are interpreted as a Quaternion. The input is expected to have one line for each subframe of 5 ms.\nIn the case of Quaternion-based input, the columns are the w, x, y, z components of a unit quaternion. Proper normalization to 1 shall be maintained in the input. The coordinate system is defined such that the x-axis points from the left to the right ear, the y axis points into the direction of view, and the z axis point from bottom to top. The origin is in the center of the head. For example, an approximate 90-degree rotation around the horizontal (z) axis would be represented by the following input line:\n0.707107,0.000000,0.000000,0.707107\n.\nIn the case of Euler-angle input, the first column contains the magic number -3.0, and the next three columns are the Euler angles yaw, pitch, and roll. The rotations are applied in the order yaw-pitch-roll. The yaw angle rotates around the z axis. The pitch angle rotates around the new y axis. The roll angle rotates around the new x axis. The equivalent of the example line above is then:\n-3.0,90.000035,0.000000,0.000000\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.12\tReference rotation/vector file (decoder/renderer input)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The external reference orientation of the orientation tracking feature can either be provided as a rotation (Quaternion or Euler angles) or as a pair of 3-dimensional positions (listener position and acoustic reference position).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.12.1\tReference Rotation format",
+                            "text_content": "The format is identical to the format used for Head rotation trajectory file (see clause 5.11). When the rotation applied is the identity operator, the reference position is in front of the listener. Example values:\nThe Quaternion value “1, 0, 0, 0” places the acoustic reference in front of the listener, e.g. an object with azimuth 0 and elevation 0, would get rendered in front of the listener.\nThe Quaternion value “0.71, 0, 0, 0.71\" (see the example in clause 5.11) places the acoustic reference 90 degrees to the right of the listener, e.g. an object with azimuth 0 and elevation 0, would get rendered 90 degrees to the right of the listener:\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.12.2\tReference Vector format",
+                            "text_content": "The Reference Vector file format describes a pair of x/y/z positions, one for the listener and one for the acoustic reference. The acoustic reference direction is defined by the vector from the listener towards the acoustic reference position.\nThe reference vector file is a CSV file with comma as separator. Each line shall contain a listener and an acoustic reference position in the following order:\nxlistener, ylistener, zlistener, xreference, yreference, zreference\nTable 4: Reference Vector entry format\n\nExample values:\nThe value “0, 0, 0, 1, 0, 0” places the acoustic reference in front of the listener, e.g., an object with azimuth 0 and elevation 0, would get rendered in front of the listener.\nThe value “0, 0, 0, -1, 0, 0” places the acoustic reference behind the listener, e.g., an object with azimuth 0 and elevation 0, would get rendered behind the listener.\nThe value “0, 0, 0, 1, 1, 0” places the acoustic reference 45 degrees to the right of the listener, e.g., an object with azimuth 0 and elevation 0, would get rendered 45 degrees to the right of the listener.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4: Reference Vector entry format",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.13\tExternal orientation file (decoder/renderer input)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The external orientation file provides orientation information for any non-listener dependent orientations. The orientations shall be given as floating-point quaternions to the decoder/renderer in (w, x, y, z) order. Additional information may be given as HeadRotIndicator, ExtOriIndicator, ExtIntrpFlag and ExtIntrpNFrames. These options are presented in Table 5. Each entry line represents a sub-frame entry, where the sub-frame resolution is 5ms (i.e., 4 sub-frames result in a 20-ms frame).\nQuaternion_W, Quaternion_X, Quaternion_Y and Quaternion_Z represent the external orientation in quaternions. The quaternion input follows the same convention as in the case of head rotations (subclause 5.11),  The quaternion components shall always be present in the entry line of an external orientation file.HeadRotIndicator indicates how the head rotation is handled in the decoder/renderer. Permissive values are 0, 1, and 2. Value 0 disables the head rotation for the current sub-frame. Value 1 enables the head rotation for the current sub-frame. Value 2 freezes the head rotation value to the current head rotation. Subsequent entries with HeadRotIndicator=2 use the same head rotation as in the first entry with HeadRotIndicator=2. If HeadRotIndicator is not present in the external orientation file, a default value of 1 is used, i.e., head-tracking is applied by default according to subclause 5.11.\nExtOriIndicator indicates how the external orientation is handled in the decoder/renderer. Permissive values are 0, 1, and 2. Value 0 disables the external orientation for the current sub-frame. Value 1 enables the external orientation for the current sub-frame. Value 2 freezes the external orientation value to the current external orientation. Subsequent entries with ExtOriIndicator =2 use the same external orientation as in the first entry with ExtOriIndicator =2. If ExtOriIndicator is not present in the external orientation file, a default value of 1 is used.\nExtIntrpFlag is used to enable (value 1) or disable (value 0) interpolation for external orientations. The interpolation process interpolates to the target external orientation from the current external orientation. The target external orientation is the external orientation entry with ExtIntrpFlag=1 included in the entry. The target orientation is reached in N number of frames, where N is determined by ExtIntrpNFrames entry. If the value of ExtIntrpNFrames exceeds the maximum value of 500, the processing uses the value of 500 as the frame count for the external orientation interpolation. If ExtIntrpFlag is not present in the external orientation file, a default value of 0 is used. If ExtIntrpNFrames is not present in the external orientation file, a default value of 0 is used.\nThe external orientation file is an ASCII formatted file comprising input values separated by commas (i.e., a CSV file). Each line shall contain the orientation for a sub-frame in (w, x, y, z) order. Each line may also have additional entries in the following order:\nQuaternion_W, Quaternion_X, Quaternion_Y, Quaternion_Z, HeadRotIndicator\nOR\nQuaternion_W, Quaternion_X, Quaternion_Y, Quaternion_Z, HeadRotIndicator, ExtOriIndicator\nOR\nQuaternion_W, Quaternion_X, Quaternion_Y, Quaternion_Z, HeadRotIndicator, ExtOriIndicator, ExtIntrpFlag\nOR\nQuaternion_W, Quaternion_X, Quaternion_Y, Quaternion_Z, HeadRotIndicator, ExtOriIndicator, ExtIntrpFlag, ExtIntrpNFrames\nThe order of the entries shall not change, and the optional entries shall not be included without first including the previous entries. For example, ExtOriIndicator shall not be contained in an entry line without first containing HeadRotIndicator.\nThe decoder/renderer operation is activated using option -exof <external_orientation_file>.\nTable 5: External orientation entry format\n\nExample usage:\nThe value “0.7, 0.7, 0, 0” applies the corresponding external orientation in the processing.\nThe value “0.7, 0.7, 0, 0, 0, 1” applies only the corresponding external orientation in the processing and disables the head rotation.\nThe value “0.7, 0.7, 0, 0, 1, 1, 1, 20” interpolates to the corresponding external orientation from the current external orientation in the span of 20 processing frames. For example, if the current external orientation is identity (1, 0, 0, 0), the external orientation is interpolated from identity to the target input orientation (0.7, 0.7, 0, 0) and the target input orientation is reached after 20 processing frames have passed.\nThe value “0.7, 0.7, 0, 0, 2, 1” applies the corresponding external orientation in the processing and freezes the head orientation. For example, if the current head rotation is (0.7, -0.7, 0, 0), and the next external orientation entry is “0.65, 0.75, 0, 0, 2, 1”, the next processing sub-frame uses the frozen head orientation value (0.7, -0.7, 0, 0).\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 5: External orientation entry format",
+                            "table number": 11,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.14\tRenderer config file (decoder/renderer input)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The renderer configuration file provides metadata for controlling the rendering process. This metadata includes acoustics environment parameters and source directivity. The data can be provided using binary bitstream or a text file. The binary bitstream format is intended to be used while providing rendering configuration remotely, e.g., associated with audio content as distributed by a content provider. The text format is intended to be used locally on the UE. The binary configuration bitstream is provided from a file. A path to the binary bitstream file is provided in the text configuration file.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.14.1\tBinary renderer config metadata format",
+                            "text_content": "The syntax of the binary renderer config metadata format is specified in Annex B.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.14.2\tText renderer config metadata format",
+                            "text_content": "The text based renderer configuration file contains the following syntax elements:\n[general]\theader of general metadata\nbinaryConfig = path;\tpath to the binary configuration file\n[roomAcoustics]\theader of room acoustic metadata group\nfrequencyGridCount = N;\tnumber of frequency grids\nacousticEnvironmentCount = N;\tnumber of acoustic environments\n[frequencyGrid:N] \theader of a frequency grid, where N is a zero-based, sequential grid index\nmethod = individualFrequencies | startHopAmount | defaultBanding;\nspecifies frequency grid representation method\nnrBands = N;\tnumber of frequency bands, applicable for individual frequencies and start-hop-amount representation methods\nfrequencies = [...];\tcenter frequencies for individualFrequencies representation method, a comma separated list of N numeric values (ints or floats)\nstartFrequency = value;\tstarting frequency for start-hop-amount representation method\nfrequencyHop = value;\tfrequency hop for start-hop-amount representation method. Center frequencies for a grid are computed as fcn = fcn-1 * hop\ndefaultGrid = N;\tdefault grid identifier. The available default grids are as in Annex B.1, Table B.4.\ndefaultGridOffset = N;\tit is possible to use a subset of a default grid by specifying an offset - index of the first center frequency of the default grid and\ndefaultGridNrBands = N;\tnumber of bands from the default grid to be used\n[acousticEnvironment:N]\theader of an acoustic environment element, where N is a zero-based grid index (does not have to be sequential)\nfrequencyGridIndex = N;\tindex of the frequency grid (see above) used for frequency dependent parameters\npreDelay = value;\ta delay at which DSR (diffuse to source ratios) were measured\nrt60 = [...];\tRT60 values per frequency band\ndsr = [...];\tdiffuse to source sound energy ratio per frequency band\nearlyReflectionsSize = [x, y, z];\tshoebox model room size in x, y, z dimension in meters\nabsorptionCoeffs = [x1, x2, y1, y2, z1, z2];\nearly reflections absorption coefficients per wall\nlistenerOrigin = [x, y, z];\tearly reflections listener origin (optional) as offset from the room center\nlowComplexity = TRUE | FALSE;\tearly reflection low-complexity mode flag (FALSE by default)\n[directivitySetting]\theader of the directivity data group\ndirectivityCount = N;\tnumber of directivity components\n[directivityPattern:N]\theader of a directivity pattern element, where N is a zero-based element index\ndirectivity = [ia, oa, og];\tdirectivity data: ia – inner angle, oa – outer angle, og – outer gain.\n\nThe config file format supports comments starting with a hash sign #. It also supports splitting data into multiple lines, useful in case of larger arrays.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.15\tScene description file (renderer input)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The renderer can render scenes consisting of one or multiple sources. The scenes can be described using a scene description file (textfile) which is defined according to Table 6:\nTable 6 : Scene Description File Syntax\n\nEach input definition may be followed by a list of optional properties in the following format:\n<property_key>:<property_value>\nEach key-value pair shall be placed on a separate line.\nThe following key-value pairs are supported:\n\nExample configuration:\nThe following example defines a scene with 4 inputs:\n-\tISM with trajectory defined in a separate file. Channel 12 in the input file. Apply a gain of 0.5 dB.\n-\tAmbisonics, order 1. Channels 1-4 in the input audio file. Apply -6 dB of gain.\n-\tCICP6 channel bed. Channels 5-10 in the input audio file.\n-\tISM with 2 defined positions (-90,0) and (90,0). Channel 11 in the input file. The object will start at position (-90,0) and stay there for 5 frames, then move to (90,0) and stay there for 5 frames. This trajectory is looped ver the duration of the input audio file.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6 : Scene Description File Syntax",
+                            "table number": 12,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "The following key-value pairs are supported:",
+                            "table number": 13,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "-\tISM with 2 defined positions (-90,0) and (90,0). Channel 11 in the input file. The object will start at position (-90,0) and stay there for 5 frames, then move to (90,0) and stay there for 5 frames. This trajectory is looped ver the duration of the input audio file.",
+                            "table number": 14,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "This Annex describes the Metadata-assisted spatial audio (MASA) format. The MASA format consists of audio signals and metadata. The audio signals for MASA can be mono or stereo. The metadata shall be provided according to a structure defined here, and it comprises descriptive metadata and spatial metadata, as defined in the following clauses.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tMASA format metadata structure",
+            "description": "MASA format input to IVAS encoder follows the 20-ms frame size. For each 20-ms audio frame, one corresponding metadata frame is provided. Each metadata frame is structured as illustrated in Figure A.1. The descriptive metadata common for the whole frame is written first. This is followed by the spatial metadata, which consists of four spatial metadata subframes, each corresponding to 5 ms of audio. The structure of the spatial metadata subframes depends on the number of direction parameters in the frame. There are two options for the structure, illustrated in Figure A.2 and Figure A.3 for one direction and two directions, respectively.\n\nThe figure depicts a metadata structure for one MASA input signal frame, illustrating the various components and their relationships. The structure includes fields for the input signal frame's timestamp, timestamp offset, and the number of input frames. The figure also shows the metadata for the input signal frame, including the frame number, timestamp, and the number of input frames.\nFigure A.1: Metadata structure for one MASA input signal frame\nThe figure depicts a spatial metadata structure for one subframe with one direction, illustrating the MASA (Multi-Attribute Space-Time Association) format used in the context of a 5G network. The structure includes various attributes such as the subframe number, direction, and time, which are used to associate spatial metadata with the corresponding subframe. This format is crucial for efficient network management and data association in 5G networks.\nFigure A.2: MASA spatial metadata structure for one subframe with one direction\nThe figure depicts a spatial metadata structure for one subframe with two directions, illustrating the MASA (Multi-Attribute Space-Aware) approach used in the subframe. The structure includes attributes such as spatial location, direction, and time, which are used to determine the subframe's position and movement within the frame. This approach is crucial for accurate and efficient subframe tracking in optical communication systems.\nFigure A.3: MASA spatial metadata structure for one subframe with two directions\nTable A.1 presents the MASA descriptive common metadata parameters in order of writing. The definitions and use of the descriptive metadata parameters are described in clause A.4.\n\nTable A.2a and Table A.2b present the MASA spatial metadata parameters dependent and independent of the number of directions, respectively. The definitions and use of the spatial metadata parameters are described in clause A.5.\n\nTable A.1: MASA format descriptive common metadata parameters\n\nTable A.2a: MASA format spatial metadata parameters (dependent of number of directions)\n\nTable A.2b: MASA format spatial metadata parameters (independent of number of directions)\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table A.1: MASA format descriptive common metadata parameters",
+                    "table number": 15,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table A.2a: MASA format spatial metadata parameters (dependent of number of directions)",
+                    "table number": 16,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table A.2b: MASA format spatial metadata parameters (independent of number of directions)",
+                    "table number": 17,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.3\tMASA format time-frequency resolution",
+            "description": "The MASA spatial metadata parameters describe the spatial characteristics of the captured spatial sound scene. The parametric representation is based on frequency bands. A certain spatial characteristic thus relates to a frequency band, and a neighbouring frequency band can exhibit a different characteristic. For MASA format, 24 frequency bands are used. Table A.3 presents these frequency bands.\nThe metadata frame corresponding to 20-ms frame of audio is divided into four subframes of 5 ms each, which allows for higher temporal resolution of the spatial characteristics than offered by the frame size. The parametric representation in each frame therefore consists of 24 frequency bands in 4 time slots giving a total of 96 time-frequency tiles.\nWhen a frame describes the scene using one spatial direction, there are 96 instances of each of the spatial metadata parameters corresponding with the 96 time-frequency tiles. When a frame describes the scene using two spatial directions, there are two values per time-frequency tile for some of the spatial metadata parameters. In this case, there are 192 instances of those spatial metadata parameters in one metadata frame.\n\nTable A.3. MASA spatial metadata frequency bands\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table A.3. MASA spatial metadata frequency bands",
+                    "table number": 18,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.4\tMASA descriptive metadata parameters",
+            "description": "The MASA descriptive metadata is provided once per frame. It includes information for correctly reading the metadata frame and information relating to creation of the current MASA format signal and its transport audio signals that can be used to assist encoding or rendering of the spatial audio.\nThe parameter fields of Table A.1 as defined as follows:\nFormat descriptor (64 bits)\nThe unique format descriptor code is provided at the beginning of every MASA format metadata frame. It specifies MASA format for the IVAS codec.\n\nChannel audio format (16 bits as specified below)\nTwo bytes providing the following individual fields:\n-\tNumber of directions\n-\tNumber of channels\n-\tSource format\nand a variable 12-bit description configured based on ‘Number of channels’ and ‘Source format’.\n\nNumber of directions (1 bit)\nThis parameter field indicates how many directions are described in current MASA format frame. Size of the metadata associated with the current frame depends on the number of directions.\n\nNumber of channels (1 bit)\nThis parameter field indicates how many transport channels are used for the MASA format. This parameter is required by the codec or renderer in some form to read the correct number of channels. Some additional channel format descriptors further depend on the number of channels.\n\nSource format (2 bits)\nThis parameter field describes the format of source signals that were used to form the MASA format input file/stream. This parameter provides additional information that can benefit encoding, decoding, and/or rendering. First bit value (00) is the default value.\n\nVariable description (12 bits including zero padding)\nBased on the values of the ‘Number of channels’ bit and ‘Source format’ bits, the variable description is configured to provide up to three additional fields to further describe the source format or transport channels. This information can guide, e.g., metadata encoding and rendering. The following presents the possible field combinations and their definitions.\nSource format == 00 (Default/Other)\nIf number of channels is 1 (bit value 0), no additional metadata is specified. Instead, 12-bit zero padding is applied.\nIf number of channels is 2 (bit value 1), following additional fields are configured in order:\n-\tTransport definition field (3 bits). This field describes the configuration of the two transport channels. The possible bit values and corresponding configurations are provided in Table A.4.\n-\tChannel angle field (3 bits). This field describes symmetric angle positions for transport signals with directivity patterns. In this notation, 0° corresponds to the front. The bit values and corresponding configuration are defined in Table A.5.\n-\tChannel distance field (6 bits). The bit values and corresponding configuration are defined in Table A.6.\n\n\nTable A.4: Transport definition field for Source formats: Default/Other and Microphone grid\n\nTable A.5: Channel angles for directive patterns for Source formats: Default/Other and Microphone grid\nNote: If Transport definition value is “Unknown”, “Omni”, or “Binaural”, value 000 is used.\nThe channel distance parameter is defined with a few predefined values and the distance values between 0.01 m and 1 m are calculated as an equal multiplicative interval such that there are 60 values from 0.01 m to 1 m. The equation for this is given as:\n\nwhere  is the decoded distance value and  is the bit value as an integer value, i.e., . The result is in meters.\nTable A.6: Channel distance for Source formats: Default/Other and Microphone grid\n\nSource format == 01 (Microphone grid)\nIf number of channels is 1 (bit value 0), no additional metadata is specified. Instead, 12-bit zero padding is applied.\nIf number of channels is 2 (bit value 1), following additional fields are configured in order:\n-\tTransport definition field (3 bits). This field describes the configuration of the two transport channels. The possible bit values and corresponding configurations are provided in Table A.4.\n-\tChannel angle field (3 bits). This field describes symmetric angle positions for transport signals with directivity patterns. In this notation, 0° corresponds to the front. The bit values and corresponding configuration are defined in Table A.5.\n-\tChannel distance field (6 bits). The bit values and corresponding configuration are defined in Table A.6.\nThe field definitions used for Microphone grid source format and Default/Other source format are the same. Differentiation is based on Source format parameter itself.\n\nSource format == 10 (Channel-based)\nFor premixed content, the original channel layout can be provided. In addition to common CICP layouts relevant for IVAS, two generic options (3D and 2D) are available. The description of the bit values is provided in Table A.7. The transport signals with this source format are assumed to be a mono (1 channels) or left-right stereo (2 channels) downmix of the multi-channel signals, and thus the number of channels can be 1 or 2 (bit values 0 or 1).\nIn addition to the 3-bit Channel layout field, 9 bits of zero padding is applied to complete the 12-bit variable description.\nTable A.7: Channel layout field for the channel-based source format\nNote 1: ITU channel order is given in ISO/IEC 23008-3:2015 [10], Table 95.\nNote 2: Azimuth positions are given in ISO/IEC 23091-3:2018 [11], Table 3.\n\nSource format == 11 (Ambisonics)\nIf number of channels is 1 (bit value 0), no additional metadata is specified. Instead, 12-bit zero padding is applied.\nIf number of channels is 2 (bit value 1), following two additional fields are configured in order:\n-\tTransport definition field (3 bits). This describes the configuration of the two transport channels. The possible bit values and corresponding configurations are provided in Table A.4. However, bit values 001 (omni) and 111 (binaural) are not allowed and are interpreted as bit value 000.\n-\tChannel angle field (3 bits). Describes symmetric angle positions for transports signals with directive patterns. In this notation, 0° corresponds to the front. This is defined in Table A.5.\n-\tIn addition, 6 bits of zero padding is applied to complete the 12-bit variable description.\nFor Ambisonics-based transport signals, transport channels are considered coincident, and there is therefore no ‘Channel distance’ field specified.\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "The unique format descriptor code is provided at the beginning of every MASA format metadata frame. It specifies MASA format for the IVAS codec.",
+                    "table number": 19,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "This parameter field indicates how many directions are described in current MASA format frame. Size of the metadata associated with the current frame depends on the number of directions.",
+                    "table number": 20,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "This parameter field indicates how many transport channels are used for the MASA format. This parameter is required by the codec or renderer in some form to read the correct number of channels. Some additional channel format descriptors further depend on the number of channels.",
+                    "table number": 21,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "This parameter field describes the format of source signals that were used to form the MASA format input file/stream. This parameter provides additional information that can benefit encoding, decoding, and/or rendering. First bit value (00) is the default value.",
+                    "table number": 22,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table A.4: Transport definition field for Source formats: Default/Other and Microphone grid",
+                    "table number": 23,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table A.5: Channel angles for directive patterns for Source formats: Default/Other and Microphone grid",
+                    "table number": 24,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table A.6: Channel distance for Source formats: Default/Other and Microphone grid",
+                    "table number": 25,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table A.7: Channel layout field for the channel-based source format",
+                    "table number": 26,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.5\tMASA spatial metadata parameters",
+            "description": "The MASA spatial metadata describes the spatial audio characteristics corresponding to the one or two transport audio signals. Thus, the spatial audio scene can be rendered for listening based on the combination of the transport audio signals and the spatial metadata.\nThe MASA spatial metadata is provided once per subframe in each frame following the time-frequency resolution presented in clause A.3. Spatial metadata for each subframe contains one or two first sets of parameters depending on the number of directions (as defined by the corresponding metadata field in descriptive metadata, clause A.4) and one second set of parameters that does not depend on the number of directions. As shown in Figure A.2 and Figure A.3, the parameters corresponding to Table A.2a are written first in the stream, followed by the parameters corresponding to Table A.2b.\nThe definitions and use of the MASA spatial metadata parameters are described in order in the following.\n\nDirection index: Spatial direction(s)\nSpatial directions represent the directional energy flows in the sound scene. Each spatial direction together with corresponding direct-to-total energy ratio describes how much of the total energy for each time-frequency tile is coming from that specific direction. In general, this parameter can also be thought of as the direction of arrival (DOA).\nThere can be one or two spatial directions for each time-frequency tile in the input metadata. Each spatial direction is represented using a 16-bit direction index. This is an efficient representation of directions as points of a spherical grid with an accuracy of about 1 degree in any arbitrary direction.\nThe direction indexing corresponds to the function for transforming the audio direction angular values (azimuth ϕ and elevation θ) into an index, and the inverse function for transforming the index into the audio direction angular values.\nEach pair of values containing the elevation and the azimuth is first quantized on a spatial spherical grid of points and the index of the corresponding point is constructed. The structure of the spherical grid is defined first, followed by the quantization function and lastly the index formation followed by the corresponding de-indexing function.\nThe spherical grid is defined as a succession of horizontal circles of points. The circles are distributed on the sphere, and they correspond to several elevation values. The indexing functions make the connection between the angles (elevation and azimuth) corresponding to each of these points on the grid and a 16-bit index.\nThe spherical grid is on a sphere of unitary radius that is defined by the following elements:\n-\tThe elevation values are equidistant between -90 and +90 degrees; the value 0 is represented and corresponds to the circle situated on the equator. The values are symmetrical with respect to the origin. The number of positive elevation values is\n-\tFor each elevation value there are several equally spaced azimuth values. One point on the grid is given by the elevation and the azimuth value. The number n(i) of azimuth values is calculated as follows:\n-\ton the equator of the spherical grid () is it set to\n\n-\tthere is one point at each of the poles ( degrees)\n\n-\tthe function calculating the number of points  on the grid for other elevation indices,  uses the following definition:\nwith  and\n\nwhere  is the uniform quantization step for ,   is a rounding function to the nearest even integer (above  for  , closest for ) The term  gives the cumulative cardinality (i.e., cumulative number of points in the spherical grid) in a spherical zone going from the first non-zero elevation value to the -th elevation value. This cumulative cardinality is derived from the relative area on the spherical surface, assuming a (near) uniform point distribution of the remaining number of points  (let alone the equator and poles).\n-\tThe azimuth values start from the front direction and are in trigonometrical order from 0 to .\n-\tThe quantized azimuth values for odd values of  are equally spaced and start at 0.\n-\tThe quantized azimuth values for even values of  are equally spaced and start at .\n-\tThere is a same number of quantized azimuth values for same absolute value elevation codewords.\n\nThe quantization in the spherical grid is done as follows:\n-\tThe elevation value is quantized in the uniform scalar quantizer to the two closest values\n-\tThe azimuth value is quantized in the azimuth scalar quantizers corresponding to the elevation values\n-\tThe distance on the sphere is calculated between the input elevation azimuth pair and each of the quantized pairs\n\n-\tThe pair with lower distance is chosen as the quantized direction.\nThe resulting quantized direction index is obtained by enumerating the points on the spherical grid by starting with the points for null elevation first, then the points corresponding to the smallest positive elevation codeword, the points corresponding to the first negative elevation codeword, followed by the points on the following positive elevation codeword and so on.\n\nDirect-to-total energy ratio(s)\nDirect-to-total energy ratios work together with spatial directions as described above. Each direct-to-total energy ratio corresponds to a specific spatial direction and describes how much of the energy comes from that specific spatial direction compared to the total energy.\n\nSpread coherence\nSpread coherence is a parameter that describes the directional energy flow further. It represents situations where coherent directional sound energy is coming from multiple directions at the same time. This is represented with a single spread coherence parameter that describes how the sound should be synthesized.\nIn synthesis, this parameter should be used such that value 0 means that the sound is synthesized to single direction as directed by the spatial direction, value 0.5 means that the sound is synthesized to the spatial direction and two surrounding directions as coherent, and 1 means that the sound is synthesized to two surrounding directions around the spatial direction.\n\nDiffuse-to-total energy\nDiffuse-to-total energy ratio represents non-directional energy flow in the sound scene. This is a complement to the direct-to-total energy ratios and in an ideal capture with no undesired signal (or synthesized sound scene), the diffuse-to-total ratio value is always\n\n\nSurround coherence\nSurround coherence is a parameter that describes the non-directional energy flow. It represents how much of the non-directional energy should be presented as coherent reproduction instead of decorrelated reproduction.\n\nRemainder-to-total energy ratio\nRemainder-to-total represents all the energy that does not “belong” to the captured sound scene based on the used model. This includes possible microphone noise and other capture artefacts that have not been removed from the signal in pre-processing. This means that by considering the direct-to-total energy ratio, the diffuse-to-total energy ratio, and the remainder-to-total energy we end up with a complete energy ratio model of\n\nwhen there is any remainder energy present. Otherwise, the energy ratio equation defined for diffuse-to-total energy ratio can be followed.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.1\tDefinition of binary renderer config metadata format",
+            "description": "The binary renderer config metadata format consists of acoustic environment and directivity payload components (payloadRendConfig, see Table B.1). The acoustic environment component (payloadAcEnv, see Table B.2) metadata syntax consists of a frequency grids element (payloadFreqGrid) containing single or multiple frequency grids, and a single or multiple acoustic environments. An acoustic environment contains a late reverb element (payloadLateReverb), and optionally a shoebox model element for early reflections synthesis (payloadEarlyReflections). This construction allows for dynamic switching between acoustic environments by selecting an environment using its identifier (revAcEnvID). This facilitates multiple use cases, such as scenes with multiple, fully independent rooms, dynamic scene changes, or user selectable acoustics environments. The payload syntax of the payloadAcEnv() and its elements are shown in the tables below. Locally atomic data components are marked bold with their respective size in bits and mnemonic format, and their descriptions are provided below the payload element tables. The complex payload elements are provided in subsequent tables.\n\nTable B.1: Syntax of payloadRendConfig\n\n\nTable Table B.2: Syntax of payloadAcEnv\n\nThe payloadFreqGrid() element provides representation of frequency grids. There are three possible frequency grid representations possible for efficient representation: individual frequencies, start-hop-amount, and preset grid selection.\nTable B.3: Syntax of payloadFreqGrid()\n\nfgdMethod\tIndicates the method with which the frequency grid is coded.\n\nLUT()\t\tExecutes query on look-up table corresponding to the field whose name is provided as argument. The look-up tables used by the support elements are listed in Annex B.2.\nfrequencyHopCode\tIndicates the hop-factor for the frequency banding.\n\nfgdDefaultGrid\tField indicating which default grid to use as frequency banding.\nThe preset frequency grids consist of common, perceptually relevant grids.\nTable B.4: fgdDefaultGrid code table\n\nfgdIsSubGrid\tFlag indicating whether further data is present indicating a subset of the default grids.\nfgdDefaultGridOffset\tIndicates the (0-based) index of the first relevant frequency of the default grid that is used.\nfgdDefaultGridNrBands\tIndicates the number of bands used from the default grid.\nfgdNrBands[g] = fgdDefaultGridNrBands + 1.\nThe payloadLateReverb() element contains late reverb control parameters. The RT60 and DSR parameters are provided per frequency band. These frequency bands are provided in a frequency grid as selected with revFreqGridIdx[e], which refers to an index in the frequency grid array.\nTable B.5: Syntax of payloadLateReverb\n\ndsrCode \tCode indicating the DSR value (see Table B.21).\nThe payloadEarlyReflections() element contains early reflections control parameters. These parameters include room dimensions, wall absorption coefficients, and optionally a listener origin. The absorption coefficients are provided per frequency band. Please note, that early reflections element uses a separate frequency grid index, since early reflections typically require lower frequency resolution than late reverb synthesis. The listener origin determines the initial listener position in a room. Eventually, the listener position can be dynamically updated. Every acoustic environment can have an individual listener origin specified.\nTable B.6: Syntax of payloadEarlyReflections\n\nabsorptionCode\tCode indicating absorption coefficients (see Table B.22).\nhasListenerOrigin\tIndicates whether listener origin is provided. If yes, listener origin x and y coordinates are provided relative to the room center and z coordinate indicates height above the floor level.\nisPositiveX, isPositiveY\tFlags indicating listener origin (x, y dimensions) offset sign.\nlowComplexity\tFlag activating low complexity mode that favors efficient early reflection rendering over spatial accuracy.\n\nThe GetCountOrIndex() element is a basis element for providing an integer value.\nTable B.7: Syntax of GetCountOrIndex\n\ncountOrIndexLoCode\tCode indicating the lower bits of a count or index value (see Table B.10).\nisLargerNumber\tFlag indicating whether more bits are sent to indicate a larger number.\ncountOrIndexHiCode\tCode indicating the higher bits of a count or index value (see Table B.11).\n\nThe GetDuration() element provides means of time duration representation. Tenths of seconds are used as a leading unit as they provide the most efficient representation.\nTable B.8: Syntax of GetDuration\n\ndeciSecondsCode\tCode for indicating decimal seconds duration offset (see Table B.12).\naddMilliseconds\tFlag indicating whether milliseconds duration offset is transmitted next.\nmilliSecondsCode\tCode for indicating milliseconds duration offset (see Table B.13).\naddMicroseconds\tFlag indicating whether microseconds duration offset is transmitted next.\nmicrosecondsCode\tCode for indicating number of microseconds duration offset (see Table B.14).\naddSeconds\tFlag indicating whether seconds duration offset is transmitted next.\nsecondsCode\tCode for indicating seconds duration offset (see Table B.15).\n\nThe GetDistance() element provides means of length representation. Please note, that for unconstrained acoustic environments, the isSmallScene flag shall be set to false.\nTable B.8: Syntax of GetDistance\n\nmetersCode\tCode that indicates a distance in meters (see Table B.16).\naddHectometers\tFlag that indicates whether hectometers data is available for longer distance values.\nhectometersCode\tCode that indicates a distance in hectometers (see Table B.17).\naddKilometers\tFlag that indicates whether kilometers data is available for very long distances.\nkilometersCode\tCode that indicates a distance in kilometers (see Table B.18).\ncentimetersCode\tCode that indicates a distance in centimeters (see Table B.19).\n\nThe GetFrequency() elements provides means of frequency representation. The basic frequency look-up-table provides coarse one-third octave representation, whereas in case moreAccuracy flag is set to true, frequency can be refined further.\nTable B.9: Syntax of GetFrequency\n\nfrequencyCode\tCode that indicates a center frequency in Hz of a one-third octave band (see Table B.20)\nmoreAccuracy\tFlag that indicates whether data for a more accurate frequency is transmitted.\nfrequencyRefine\tField that indicates a value for refining the frequency value.\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.1: Syntax of payloadRendConfig",
+                    "table number": 27,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table Table B.2: Syntax of payloadAcEnv",
+                    "table number": 28,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.3: Syntax of payloadFreqGrid()",
+                    "table number": 29,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "fgdMethod\tIndicates the method with which the frequency grid is coded.",
+                    "table number": 30,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "frequencyHopCode\tIndicates the hop-factor for the frequency banding.",
+                    "table number": 31,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.4: fgdDefaultGrid code table",
+                    "table number": 32,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.5: Syntax of payloadLateReverb",
+                    "table number": 33,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.6: Syntax of payloadEarlyReflections",
+                    "table number": 34,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.7: Syntax of GetCountOrIndex",
+                    "table number": 35,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.8: Syntax of GetDuration",
+                    "table number": 36,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.8: Syntax of GetDistance",
+                    "table number": 37,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.9: Syntax of GetFrequency",
+                    "table number": 38,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.2\tSupport Elements Look-up Tables",
+            "description": "This clause contains the look-up tables used in the binary renderer config metadata.\nTable B.10: countOrIndexLoCode look-up table\n\nTable B.11: countOrIndexHiCode look-up table\n\nTable B.12: deciSecondsCode look-up table\n\nTable B.13: millisecondsCode look-up table\n\nTable B.14: microsecondsCode look-up table\n\nTable B.15: secondsCode look-up table\n\nTable B.16: metersCode look-up table\n\nTable B.17: hectometersCode look-up table\n\nTable B.18: kilometersCode table\n\nTable B.19: centimetersCode look-up table\n\nTable B.20: frequencyCode look-up table\n\nTable B.21: dsrCode look-up table\n\nTable B.22: absorptionCode look-up table\n\nTable B.23: Syntax of payloadDirectivity\n\nTable B.24: Syntax of GetAngle\n\nTable B.25: Syntax of GetOuterGain\n\nTable B.26: angleCode look-up table\n\nTable B.27: outerGainCode look-up table\n\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table B.10: countOrIndexLoCode look-up table",
+                    "table number": 39,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.11: countOrIndexHiCode look-up table",
+                    "table number": 40,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.12: deciSecondsCode look-up table",
+                    "table number": 41,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.13: millisecondsCode look-up table",
+                    "table number": 42,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.14: microsecondsCode look-up table",
+                    "table number": 43,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.15: secondsCode look-up table",
+                    "table number": 44,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.16: metersCode look-up table",
+                    "table number": 45,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.17: hectometersCode look-up table",
+                    "table number": 46,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.18: kilometersCode table",
+                    "table number": 47,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.19: centimetersCode look-up table",
+                    "table number": 48,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.20: frequencyCode look-up table",
+                    "table number": 49,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.21: dsrCode look-up table",
+                    "table number": 50,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.22: absorptionCode look-up table",
+                    "table number": 51,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.23: Syntax of payloadDirectivity",
+                    "table number": 52,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.24: Syntax of GetAngle",
+                    "table number": 53,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.25: Syntax of GetOuterGain",
+                    "table number": 54,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.26: angleCode look-up table",
+                    "table number": 55,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B.27: outerGainCode look-up table",
+                    "table number": 56,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 57,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

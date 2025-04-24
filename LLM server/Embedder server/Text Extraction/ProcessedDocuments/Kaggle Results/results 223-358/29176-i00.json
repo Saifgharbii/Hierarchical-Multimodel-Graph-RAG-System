@@ -1,0 +1,407 @@
+{
+    "document_name": "29176-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the stage 3 protocol and data model for the Nmf Service Based Interface. It provides stage 3 protocol definitions and message flows, and specifies the API for each service offered by the Media Function (MF).\nThe 5G System stage 2 architecture and procedures are specified in 3GPP TS 23.501 [2] and 3GPP TS 23.502 [3].\nThe IP Multimedia Subsystem (IMS) Data Channel (DC) architecture and procedures are specified in annex AC of 3GPP TS 23.228 [14].\nThe Technical Realization of the Service Based Architecture and the Principles and Guidelines for Services Definition are specified in 3GPP TS 29.500 [4] and 3GPP TS 29.501 [5].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[3]\t3GPP TS 23.502: \"Procedures for the 5G System; Stage 2\".\n[4]\t3GPP TS 29.500: \"5G System; Technical Realization of Service Based Architecture; Stage 3\".\n[5]\t3GPP TS 29.501: \"5G System; Principles and Guidelines for Services Definition; Stage 3\".\n[6]\tOpenAPI: \"OpenAPI Specification Version 3.0.0\", .\n[7]\t3GPP TR 21.900: \"Technical Specification Group working methods\".\n[8]\t3GPP TS 33.501: \"Security architecture and procedures for 5G system\".\n[9]\tIETF RFC 6749: \"The OAuth 2.0 Authorization Framework\".\n[10]\t3GPP TS 29.510: \"5G System; Network Function Repository Services; Stage 3\".\n[11]\tIETF RFC 7540: \"Hypertext Transfer Protocol Version 2 (HTTP/2)\".\n[12]\tIETF RFC 8259: \"The JavaScript Object Notation (JSON) Data Interchange Format\".\n[13]\tIETF RFC 7807: \"Problem Details for HTTP APIs\".\n[14]\t3GPP TS 23.228: \"IP Multimedia Subsystem (IMS); Stage 2\".\n[15]\tIETF RFC 6902: \" JavaScript Object Notation (JSON) Patch\".\n[16]\t3GPP TS 29.571: \"5G System; Common Data Types for Service Based Interfaces Stage 3\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nDefinition format (Normal)\n<defined term>: <definition>.\nexample: text used to clarify abstract rules by applying them literally.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\n\nDC2\t Reference point between MF and IMS AS\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nAR\tAugmented Reality\nDC\tData Channel\nMF\tMedia Function\nIMS AS\tIP Multimedia Subsystem Application Server\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tOverview",
+            "description": "Within the IMS DC architecture, the MF offers services to the IMS AS via the Nmf service based interface (see 3GPP TS 23.228 [14]).\nFigure 4.1-1 provides the reference model (in service-based interface representation and in reference point representation), with focus on the MF services.\nThe figure depicts a reference model for a multi-fiber optical network, illustrating the various components and their interconnections. The model includes multiple fiber-optic paths, core switches, and distributed nodes, all interconnected through redundant paths to ensure high reliability. The layered design of the network aligns with SDN principles, allowing for efficient network management and control.\nFigure 4.1-1: Reference model – MF\nDC2 is the reference point between MF and IMS AS.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tServices offered by the MF",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The MF offers the following services via the Nmf interface:\n-\tNmf_MediaResourceManagement (MRM) Service\nTable 5.1-1 summarizes the corresponding APIs defined for this specification.\nTable 5.1-1: API Descriptions\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 5.1-1: API Descriptions",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tNmf_MediaResourceManagement (MRM) Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tService Description",
+                            "text_content": "The Nmf_MRM service as defined in 3GPP TS 23.228 [14] is provided by the Media Function (MF). This service enables the consumer to create, update and delete media resources. Data Channel (DC) and Augmented Reality (AR) are two capabilities supported by MF.\nThe media resource represents a media context including one or multiple media terminations. A media termination includes media resources for one or multiple medias on the Mb interface. When a media pass through the MF, there is one termination for the input stream and one termination for the output stream.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tService Operations",
+                            "text_content": "The Nmf_MRM service supports the following service operation.\nTable 5.2.2.1-1: Service operations supported by the Nmf_MRM service\n\nThe Nmf_MRM_Create service operation is used by an NF service consumer to create a media context including one or multiple terminations and reserve media resources for anchoring one or multiple medias of Mb interface in each termination on MF. The consumer NF may also include application function (e.g. DCSF, DC AS) specification information requested by the application layer to be applied on the media by the MF.\n\nThe NF service consumer shall request a new context by using HTTP method POST with \"{apiRoot}/nmf/<apiVersion>/contexts\" as resource URI representing the \"Contexts Collection\", see clause 6.1.3.2.\nThe figure depicts a media context, specifically a 2.2.2.2-1 network, which is a crucial component in the creation of a media context. This network is designed to support various media services, such as video, audio, and data, and is essential for the smooth functioning of a media context. The network is composed of various components, including routers, switches, and network devices, which work together to ensure the efficient delivery of media content. The figure also highlights the importance of network security, as it is crucial to protect the network from potential threats and ensure the smooth operation of media services. Overall, the figure provides a comprehensive overview of the 2.2.2.2-1 network and its components, highlighting its importance in the creation of a media context.\nFigure 5.2.2.2.2-1 Creation of a media context\n1.\tThe NF Service Consumer shall send a POST request to create an \"Individual Context\" resource in the MF. The payload body of the POST request shall contain a representation of the individual context resource to be created.\nThe NF service consumer shall include list of termination descriptors in the HTTP message body. Each termination descriptor shall include list of media stream descriptors. Each media stream descriptor shall include:\n-\tMedia ID, i.e. a unique identity of the media stream within the media context instance;\n-\tRemote Mb specifications, i.e. the media stream IP address and port allocated at the remote endpoint, i.e. remote UE, remote network.\n-\tMedia resource description, which includes\n1)\tMedia resource type, e.g. DC, AR.\n2)\tIf media resource type is set to \"DC\", the DC media specification shall be included. The DC media specification shall include:\na)\tData Channel Mapping and Configuration information when originating/terminating data channel media flows on the Mb interface. It shall include the SCTP stream Id for the DC, and may include subprotocol, order, maxRetry, maxTime and priority may be included.\nb)\tMaximum Message Size, which represents the maximum size to be expected.\nc)\tData Channel Port, which represents the port of SCTP port for the Data Channel.\nd)\tSecurity Setup, which identifies the security setup of the DTLS connection.\ne)\tSecurity Certificate Fingerprint, which identifies the security certificate fingerprint.\nf\tSecurity Transport Identity, which identifies transport layer identity.\nFor establishing bootstrap data channel or P2A/A2P application data channel, the following parameters shall be included:\na)\tmedia proxy configuration applicable to the media flow;\nb)\tremote MDC1/MDC2 media specification information to be applied on the media by the MF;\nc)\tReplacement HTTP URL for each streamId allocated by the application layer representing the application list (e.g. graphical user interface) offered to the IMS subscriber via the MDC1 interface.\n3)\tIf media resource type is set to \"AR\", the AR media resource description shall be included, which includes:\na)\tMedia processing specification.\n2a.\tUpon the reception of the HTTP POST request, if the request is accepted and no error occur, the MF shall:\n-\tcreate a new media context;\n-\tassign a media contextId;\n-\tassign a terminationId for each termination descriptor; and\n-\treserve media resources for each mediaId.\nThe MF shall include a HTTP Location header to provide the location of a newly created resource (MediaContext) together with the status code 201 indicating the requested resource is created in the response message.\n2b.\tOn failure, one of the HTTP status code listed in Table 6.1.3.2.3.1-3 shall be returned. For a 4xx/5xx response, the message body shall contain a ProblemDetails structure with the \"cause\" attribute set to one of the application errors listed in Table 6.1.3.2.3.1-3.\nOn redirection, the MF shall include 3xx status code, which shall contain a Location header with an URI pointing to the endpoint to another MF (service) instance.\n\nThe Nmf_MRM_Update service operation is used by an NF service consumer to update one or multiple existing media resources within a specific media context on MF. Terminations and/or Medias can be added, modified, or deleted within an Update request.\nThe NF Service Consumer shall modify the context by using HTTP method PATCH with the URI \"{apiRoot}/nmf/<apiVersion>/contexts/{contextId}\" as resource URI representing the \"Individual Context \", see clause 6.1.3.3.\n\nThe figure depicts a media context with various elements such as a user, a media, and a media context. The user is positioned at the center, while the media is located at the bottom. The media context is situated at the bottom right corner.\nFigure 5.2.2.3.2-1 Update a media context\n1.\tThe NF Service Consumer shall send a PATCH request to modify a context resource in the MF. The modification may be for adding, updating or deleting terminations of the existing media context.\nFor adding, removing or updating a termination in an existing MediaContext, the payload body of the PATCH request shall contain an \"add\", \"remove\" or \"replace\" PATCH operation respectively, with one item of the attribute \"terminations\" of the MediaContext.\n2a.\tOn success, if the change is to delete the existing termination and MF accepts the request change, the MF shall return the status code 204 No Content.\n2b. On success, if the change is to add a new termination or to update the existing termination and DCMF accepts the request change, the MF shall return the status code 200 OK. The response shall contain the new resource representation of the resource Individual Context, which includes the added and modified resource or its sub-resource.\n2c\tOn failure, one of the HTTP status code listed in Table 6.1.3.3.3.1-3 indicating the error shall be returned. For a 4xx/5xx response, the message body shall contain a ProblemDetails structure with the \"cause\" attribute set to one of the application errors listed in Table 6.1.3.3.3.1-3.\nOn redirection, the MF shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint to another MF (service) instance.\n\nThe Nmf_MRM_Delete service operation is used by an NF service consumer to delete an existing media context including all existing terminations and medias on MF previously created by itself.\nThe NF Service Consumer shall delete an existing context by using HTTP method DELETE with the URI \"{apiRoot}/nmf/<apiVersion>/contexts/{contextId}\" as resource URI representing the \"Individual Context \", see clause 6.1.3.3.\nThe figure depicts a media context with a 2.2.4.2 IP address, indicating that the media context is a part of a larger network. The IP address is a crucial component in network management, allowing network administrators to track and manage the network's resources.\nFigure 5.2.2.4.2-1 Delete a media context\n1.\tThe NF Service Consumer shall send a DELETE request to delete an existing context resource in the MF.\n2a.\tOn success, the request is accepted, the MF shall reply with the status code 204 No Content indicating the resource identified by context ID is successfully deleted in the response message.\n2b.\tOn failure, one of the HTTP status code listed in Table 6.1.3.3.3.2-3 indicating the error shall be returned. For a 4xx/5xx response, the message body shall contain a ProblemDetails structure with the \"cause\" attribute set to one of the application errors listed in Table 6.1.3.3.3.2-3.\nOn redirection, the MF shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint to another MF (service) instance.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.2.1-1: Service operations supported by the Nmf_MRM service",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tAPI Definitions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tNmf_MRM Service API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tIntroduction",
+                            "text_content": "The Nmf_MRM service shall use the Ndcmf_MRM API.\nThe API URI of the Nmf_MRM API shall be:\n{apiRoot}/<apiName>/<apiVersion>\nThe request URIs used in HTTP requests from the NF service consumer towards the NF service producer shall have the Resource URI structure defined in clause 4.4.1 of 3GPP TS 29.501 [5], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [5].\n-\tThe <apiName> shall be \" nmf_mrm\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 6.1.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tUsage of HTTP",
+                            "text_content": "HTTP/2, IETF RFC 7540 [11], shall be used as specified in clause 5 of 3GPP TS 29.500 [4].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [4].\nThe OpenAPI [6] specification of HTTP messages and content bodies for the Nmf_MRM API is contained in Annex A.\nSee clause 5.2.2 of 3GPP TS 29.500 [4] for the usage of HTTP standard headers.\nJSON, IETF RFC 8259 [12], shall be used as content type of the HTTP bodies specified in the present specification as specified in clause 5.4 of 3GPP TS 29.500 [4]. The use of the JSON format shall be signalled by the content type \"application/json\".\n\"Problem Details\" JSON object shall be used to indicate additional details of the error in a HTTP response body and shall be signalled by the content type \"application/problem+json\", as defined in IETF RFC 7807 [13].\nThe use of JSON Patch (IETF RFC 6902 [15]) format in a HTTP request body shall be signaled by the content type \"application/json-patch+json\".\nThe mandatory HTTP custom header fields specified in clause 5.2.3.2 of 3GPP TS 29.500 [4] shall be supported, and the optional HTTP custom header fields specified in clause 5.2.3.3 of 3GPP TS 29.500 [4] may be supported.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tResources",
+                            "text_content": "This clause describes the structure for the Resource URIs and the resources and methods used for the service.\nFigure 6.1.3.1-1 depicts the resource URIs structure for the Nmf_MRM API.\nThe figure depicts the resource URI structure of the Nmf_MRM API, which is used to access the NMF (Non-negative Matrix Factorization) model. The structure includes the resource URI, the resource type, and the resource identifier. This information is crucial for developers to understand the API's functionality and how to interact with it.\nFigure 6.1.3.1-1: Resource URI structure of the Nmf_MRM API\nTable 6.1.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 6.1.3.1-1: Resources and methods overview\n\nThe Contexts Collection resource represents a collection of contexts created by NF service consumers of Nmf_MRM service at a given MF. The resource is modelled as Collection resource archetype (see clause C.2 of 3GPP TS 29.501 [2]).\nResource URI: {apiRoot}/ nmf_mrm/<apiVersion>/contexts\nThis resource shall support the resource URI variables defined in table 6.1.3.2.2-1.\nTable 6.1.3.2.2-1: Resource URI variables for this resource\n\n6.1.3.2.3.1\tPOST\nThis method shall support the URI query parameters specified in table 6.1.3.2.3.1-1.\nTable 6.1.3.2.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 6.1.3.2.3.1-2 and the response data structures and response codes specified in table 6.1.3.2.3.1-3.\nTable 6.1.3.2.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 6.1.3.2.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 6.1.3.2.3.1-4: Headers supported by the 201 response code on this resource\n\nTable 6.1.3.2.3.1-5: Headers supported by the 307 Response Code on this resource\n\nTable 6.1.3.2.3.1-6: Headers supported by the 308 Response Code on this resource\n\n\nNone in the release of this specification.\nThe Individual Context resource represents an individual context created by the NF service consumers of Nmf_MRM service at a given MF. This resource is modelled as the Document resource archetype (see clause C.1 of 3GPP TS 29.501 [2]).\nResource URI: {apiRoot}/nmf_mrm/<apiVersion>/contexts/{contextId}\nThe <apiVersion> shall be set as described in clause 6.3.1.\nThis resource shall support the resource URI variables defined in table 6.1.3.3.2-1.\nTable 6.1.3.3.2-1: Resource URI variables for this resource\n\n6.1.3.3.3.1\tPATCH\nThis method shall support the URI query parameters specified in table 6.1.3.3.3.1-1.\nTable 6.1.3.3.3.1-1: URI query parameters supported by the PATCH method on this resource\n\nThis method shall support the request data structures specified in table 6.1.3.3.3.1-2 and the response data structures and response codes specified in table 6.1.3.3.3.1-3.\nTable 6.1.3.3.3.1-2: Data structures supported by the PATCH Request Body on this resource\n\nTable 6.1.3.3.3.1-3: Data structures supported by the PATCH Response Body on this resource\n\nTable 6.1.3.3.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.1.3.3.3.1-5: Headers supported by the 308 Response Code on this resource\n\n\n6.1.3.3.3.2\tDELETE\nThis method shall support the URI query parameters specified in table 6.1.3.3.3.2-1.\nTable 6.1.3.3.3.2-1: URI query parameters supported by the DELETE method on this resource\n\nThis method shall support the request data structures specified in table 6.1.3.3.3.2-2 and the response data structures and response codes specified in table 6.1.3.3.3.2-3.\nTable 6.1.3.3.3.2-2: Data structures supported by the DELETE Request Body on this resource\n\nTable 6.1.3.3.3.2-3: Data structures supported by the DELETE Response Body on this resource\n\nTable 6.1.3.3.3.2-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.1.3.3.3.2-5: Headers supported by the 308 Response Code on this resource\n\n\nNone in the release of specification.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.3.1-1: Resources and methods overview",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.2-1: Resource URI variables for this resource",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-4: Headers supported by the 201 response code on this resource",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-5: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.2.3.1-6: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.2-1: Resource URI variables for this resource",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.1-1: URI query parameters supported by the PATCH method on this resource",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.1-2: Data structures supported by the PATCH Request Body on this resource",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.1-3: Data structures supported by the PATCH Response Body on this resource",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.2-1: URI query parameters supported by the DELETE method on this resource",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.2-2: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.2-3: Data structures supported by the DELETE Response Body on this resource",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.2-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.3.3.3.2-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.4\tCustom Operations without associated resources",
+                            "text_content": "None in this release of specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.5\tNotifications",
+                            "text_content": "None in this release of specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.6\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API.\nTable 6.1.6.1-1 specifies the data types defined for the Nmf_MRM service based interface protocol.\nTable 6.1.6.1-1: Nmf_MRM specific Data Types\n\nTable 6.1.6.1-2 specifies data types re-used by the Nmf_MRM service based interface protocol from other specifications, including a reference to their respective specifications and when needed, a short description of their use within the Nmf_MRM service based interface.\nTable 6.1.6.1-2: Nmf_MRM re-used Data Types\n\nThis clause defines the structures to be used in resource representations.\nTable 6.1.6.2.2-1: Definition of type MediaContext\n\nTable 6.1.6.2.3-1: Definition of type TerminationInfo\n\nTable 6.1.6.2.4-1: Definition of type MediaInfo\n\nTable 6.1.6.2.5-1: Definition of type DcMedia\n\nTable 6.1.6.2.6-1: Definition of type ArMedia\n\nEditor’s note: The definition of ArMedia is FFS.\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nThe simple data types defined in table 6.1.6.3.2-1 shall be supported.\nTable 6.1.6.3.2-1: Simple data types\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.6.1-1: Nmf_MRM specific Data Types",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.1-2: Nmf_MRM re-used Data Types",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.2-1: Definition of type MediaContext",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.3-1: Definition of type TerminationInfo",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.4-1: Definition of type MediaInfo",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.5-1: Definition of type DcMedia",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.6-1: Definition of type ArMedia",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.3.2-1: Simple data types",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.7\tError Handling",
+                            "text_content": "For the Nmf_MRM API, HTTP error responses shall be supported as specified in clause 4.8 of 3GPP TS 29.501 [5]. Protocol errors and application errors specified in table 5.2.7.2-1 of 3GPP TS 29.500 [4] shall be supported for an HTTP method if the corresponding HTTP status codes are specified as mandatory for that HTTP method in table 5.2.7.1-1 of 3GPP TS 29.500 [4].\nIn addition, the requirements in the following clauses are applicable for the Nmf_MRM API.\nNo specific procedures for the Nmf_MRM service are specified.\nThe application errors defined for the Nmf_MRM service are listed in Table 6.1.7.3-1.\nTable 6.1.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.7.3-1: Application errors",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.8\tFeature negotiation",
+                            "text_content": "The optional features in table 6.1.8-1 are defined for the Nmf_MRM API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [4].\nTable 6.1.8-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.8-1: Supported Features",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.9\tSecurity",
+                            "text_content": "As indicated in 3GPP TS 33.501 [8] and 3GPP TS 29.500 [4], the access to the Nmf_MRM API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [9]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [10]) plays the role of the authorization server.\nIf OAuth2 is used, an NF Service Consumer, prior to consuming services offered by the Nmf_MRM API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [10], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF that the NF Service Consumer used for discovering the Nmf_MRM service.\nThe Nmf_MRM API defines a single scope \" nmf-mrm\" for the entire service, and it does not define any additional scopes at resource or operation level.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.10\tHTTP redirection",
+                            "text_content": "An HTTP request may be redirected to a different MF service instance when using direct or indirect communications (see 3GPP TS 29.500 [4]).\nAn SCP that reselects a different MF producer instance will return the NF Instance ID of the new MF producer instance in the 3gpp-Sbi-Producer-Id header, as specified in clause 6.10.3.4 of 3GPP TS 29.500 [4].\nIf an MF redirects a service request to a different MF using an 307 Temporary Redirect or 308 Permanent Redirect status code, the identity of the new MF towards which the service request is redirected shall be indicated in the 3gpp-Sbi-Target-Nf-Id header of the 307 Temporary Redirect or 308 Permanent Redirect response as specified in clause 6.10.9.1 of 3GPP TS 29.500 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "This Annex specifies the formal definition of the API(s) defined in the present specification. It consists of OpenAPI specifications in YAML format.\nThis Annex takes precedence when being discrepant to other parts of the specification with respect to the encoding of information elements and methods within the API(s).\nNOTE 1:\tThe semantics and procedures, as well as conditions, e.g. for the applicability and allowed combinations of attributes or values, not expressed in the OpenAPI definitions but defined in other parts of the specification also apply.\nInformative copies of the OpenAPI specification files contained in this 3GPP Technical Specification are available on a Git-based repository that uses the GitLab software version control system (see clause 5.3.1 of 3GPP TS 29.501 [5] and clause 5B of 3GPP TR 21.900 [7]).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tNdcmf_MRM API",
+            "description": "openapi: 3.0.0\n\ninfo:\ntitle: 'MF Media Resource Management (MRM) Service'\nversion: 1.0.0-alpha.1\ndescription: |\nMF Media Resource Management (MRM) Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: >\n3GPP TS 29.176 V18.0.0; IP Multimedia Subsystem (IMS); Media Function (MF) Services; Stage 3.\nurl: https://www.3gpp.org/ftp/Specs/archive/29_series/29.176/\n\nservers:\n- url: '{apiRoot}/nmf-mrm/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- nmf-mrm\n\npaths:\n\n/contexts:\npost:\nsummary: Create a new  media context.\noperationId: CreateMediaContext\ntags:\n- MediaContext(Collection)\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MediaContext'\nresponses:\n'201':\ndescription: Success\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MediaContext'\nheaders:\nLocation:\ndescription: >\nContains the URI of the newly created resource, according to the structure:\n{apiRoot}/nmf-mrm/<version>/contexts/{contextId}\nrequired: true\nschema:\ntype: string\n'307':\ndescription: Temporary Redirect\ncontent:\napplication/json:\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'\nheaders:\nLocation:\ndescription: The URI pointing to the resource located on the redirect target MF.\nrequired: true\nschema:\ntype: string\n'308':\ndescription: Permanent Redirect\ncontent:\napplication/json:\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'\nheaders:\nLocation:\ndescription: The URI pointing to the resource located on the redirect target MF.\nrequired: true\nschema:\ntype: string\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n/contexts/{contextId}:\n\npatch:\nsummary: Update Media Context\noperationId: UpdateMediaContext\ntags:\n- Media Context ID (Document)\nparameters:\n- name: contextId\nin: path\nrequired: true\ndescription: Unique ID of the Media Context to update.\nschema:\ntype: string\nrequestBody:\ncontent:\napplication/json-patch+json:\nschema:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PatchItem'\nminItems: 1\nrequired: true\nresponses:\n'200':\ndescription: Expected response to a valid request.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/MediaContext'\n'204':\ndescription: Expected response with empty body\n'307':\ndescription: Temporary Redirect\ncontent:\napplication/json:\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'\nheaders:\nLocation:\ndescription: The URI pointing to the resource located on the redirect target MF.\nrequired: true\nschema:\ntype: string\n'308':\ndescription: Permanent Redirect\ncontent:\napplication/json:\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'\nheaders:\nLocation:\ndescription: The URI pointing to the resource located on the redirect target MF.\nrequired: true\nschema:\ntype: string\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'409':\n$ref: 'TS29571_CommonData.yaml#/components/responses/409'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'412':\n$ref: 'TS29571_CommonData.yaml#/components/responses/412'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'501':\n$ref: 'TS29571_CommonData.yaml#/components/responses/501'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\ndelete:\nsummary: Deletes a given Media Context\noperationId: DeleteMediaContext\ntags:\n- Media Context ID (Document)\nparameters:\n- name: contextId\nin: path\nrequired: true\ndescription: Unique ID of the Media Context to delete.\nschema:\ntype: string\nresponses:\n'204':\ndescription: Expected response to a successful deletion.\n'307':\ndescription: Temporary Redirect\ncontent:\napplication/json:\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'\nheaders:\nLocation:\ndescription: The URI pointing to the resource located on the redirect target NRF.\nrequired: true\nschema:\ntype: string\n'308':\ndescription: Permanent Redirect\ncontent:\napplication/json:\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'\nheaders:\nLocation:\ndescription: The URI pointing to the resource located on the redirect target NRF.\nrequired: true\nschema:\ntype: string\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'501':\n$ref: 'TS29571_CommonData.yaml#/components/responses/501'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\ncomponents:\n\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{nrfApiRoot}/oauth2/token'\nscopes:\nnmf-mrm: Access to the Nmf_MRM API.\n\nschemas:\n\nMediaContext:\ndescription: Information of a Media Context in a MF.\ntype: object\nrequired:\n- terminations\nproperties:\ncontextId:\ntype: string\nterminations:\ntype: array\nitems:\n$ref: '#/components/schemas/TerminationInfo'\nminItems: 1\n\nTerminationInfo:\ndescription: Represents the termination information.\ntype: object\nrequired:\n- medias\nproperties:\nterminationId:\ntype: string\nmedias:\ntype: array\nitems:\n$ref: '#/components/schemas/MediaInfo'\nminItems: 1\n\nMediaInfo:\ndescription: Represents the media information.\ntype: object\nrequired:\n- mediaId\n- mediaResourceType\nproperties:\nmediaId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MediaId'\nmediaResourceType:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MediaResourceType'\nlocalMbEndpoint:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Endpoint'\nremoteMbEndpoint:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Endpoint'\ndcMedia:\n$ref: '#/components/schemas/DcMedia'\nmediaProcessingUri:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\n\nDcMedia:\ndescription: Represents the DC media descriptor.\ntype: object\nrequired:\n- streams\nproperties:\nmediaProxyConfig:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MediaProxy'\nreplaceHttpUrl:\ntype: object\ndescription: >\nContains a list of replacement HTTP URLs. The streamId attribute\nwithin the ReplaceHttpUrl data type is the key of the map.\nadditionalProperties:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ReplaceHttpUrl'\nminProperties: 1\nremoteMdc1Endpoint:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Endpoint'\nremoteMdc2Endpoint:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Endpoint'\nlocalMdc1Endpoint:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Endpoint'\nlocalMdc2Endpoint:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Endpoint'\nmdc2Protocol:\ntype: string\nstreams:\ntype: object\ndescription: >\nContains a data channel mapping and configuration information. The streamId\nattribute within the DcStream data type is the key of the map.\nadditionalProperties:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DcStream'\nminProperties: 1\nmaxMessageSize:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MaxMessageSize'\nlocalDcEndpoint:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DcEndpoint'\nremoteDcEndpoint:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DcEndpoint'\nsecuritySetup:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SecuritySetup'\n\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 34,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

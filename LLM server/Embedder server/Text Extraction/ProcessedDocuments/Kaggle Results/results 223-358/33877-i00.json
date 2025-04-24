@@ -1,0 +1,236 @@
+{
+    "document_name": "33877-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The study aims at identifying key issues and solutions in order to address the security aspects of employing AI/ML techniques in RAN. The motivation of this study is to provide potential security handling for the procedures of the NG-RAN AI/ML framework [2]. The NG-RAN AI/ML framework includes functional entities and information flows between functions in order to realize an AI/ML architecture for data collection, model training, data inference and actions/feedback for the NG-RAN and UEs. The NG-RAN AI/ML framework is also accompanied by three RAN-related use cases.\nThe study aims at studying the following aspects:\n-\tThe applicability of existing security mechanisms for the NG-RAN AI/ML framework.\n-\tWhether user privacy issues exist for the selected use cases in the related RAN group studies, not disrupting the current system designs. Use cases not selected in AI/ML for NG RAN by RAN groups are out of scope of this study. The need for alignment with the study of privacy of identifiers over radio access would also be assessed.\n-\tSecurity aspects of the RAN use cases from the point of view of AI/ML robustness in the face of AI/ML adversaries in AI/ML for NG-RAN.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TR 37.817: \"Study on enhancement for data collection for NR and ENDC\"\n[3]\t3GPP TS 38.423: \"NG-RAN; Xn Application Protocol (XnAP)\"\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nAI\tArtificial Intelligence\nCHO\tConditional Handover\nML\t\tMachine Learning\nRLF\tRadio Link Failure\nQoE\tQuality of Experience\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tBackground",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NG-RAN AI/ML framework has been described in clause 4.2 of TR 37.817 [2] and the related use cases which are captured in clause 5 of TR 37.817 [2]. This document aims at studying the potential security handling of the NG-RAN AI/ML framework and the selected use cases.\nThe selected use cases in TR 37.817 [2] are briefly described below.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tNG-RAN use cases",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Clause 5 of TR 37.817 [2] includes the following use cases:\n-\tNetwork Energy Saving: This use case is about cell activation/deactivation which is an energy saving scheme in the spatial domain that exploits traffic offloading in a layered structure to reduce the energy consumption of the whole radio access network (RAN). When the expected traffic volume is lower than a fixed threshold, the cells may be switched off, and the served UEs may be offloaded to a new target cell.\n-\tLoad Balancing: The use case is to distribute the load evenly among cells and among areas of cells, or to transfer part of the traffic from congested cells or from congested areas of cells, or to offload users from one cell, cell area, carrier or RAT to improve network performance. This can be done by means of optimization of handover parameters and handover actions.\n-\tMobility Optimization: The use case is to minimize performance loss due to unsuccessful or erroneous mobility management events. Mobility management is expected to guarantee the service-continuity during the mobility by minimizing the call drops, Radio Link Failures (RLFs), unnecessary handovers, and ping-pong. In the future, it is expected that handovers will be increasing in numbers as the coverage of a single node decreases and UE mobility gets higher and higher. In addition, for the applications characterized with the stringent QoS requirements such as reliability, latency etc., the Quality of Experience (QoE) is sensitive to the handover performance, so that mobility management should avoid unsuccessful handovers and reduce the latency during the handover procedures.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tKey Issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tKey Issue #1: User Privacy of the RAN AI/ML framework",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tKey issue details",
+                            "text_content": "The RAN AI/ML framework studied in TR 37.817 [2] and specified in RAN specifications (e.g., TS 38.423 [3]) includes several network entities exchanging AI/ML related information for the purposes of data collection, data inference, output and feedback. These network entities are UEs, RAN nodes and potentially OAM nodes depending on the architecture. The RAN AI/ML framework specifies three use cases, namely Network Energy Saving, Load Balancing and Mobility Optimization for which the UEs and RAN nodes provide input and inference data and the RAN AI/ML framework on RAN and potentially OAM nodes provides output and feedback data to relevant nodes.\nAn OAM and /or NG-RAN node may train a model or perform inference using UE related information acquired by the RAN node (e.g., UE location information and UE trajectory prediction), and the information obtained from neighbouring RAN nodes (e.g., UE mobility history information).\nThe RAN AI/ML framework includes information transfer procedures from UEs and RAN nodes. UE-related data are annotated with temporary UE identifiers or UE measurement identifiers. Moreover, the UE and RAN node generated information stays within the 3GPP network and is not exposed to third parties.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tSecurity threats",
+                            "text_content": "The source, inferred, output and feedback data used for RAN AI/ML use cases can contain UE related information such as UE location information, UE trajectory predictions, etc. which may compromise user privacy.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tPotential security requirements",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tKey Issue #2: Robustness of the RAN AI/ML framework against data poisoning attacks",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tKey issue details",
+                            "text_content": "The RAN AI/ML framework studied in TR 37.817 [2] and specified in RAN specifications (e.g., TS 38.423 [3]) includes several network entities exchanging AI/ML related information for the purposes of data collection, data inference, output and feedback. These network entities are UEs, RAN nodes and potentially OAM nodes depending on the architecture.\nThe input data from UEs and RAN nodes are used to train AI/ML models which are in turn used to generate inferred data and actions on the behaviour of the RAN. As a result, there is a potential information path from an adversary to network entities. Moreover, specifically since the RAN AI/ML framework includes the realization of three use cases (Energy Saving. Load Balancing, Mobility Optimization) an attacker has a potential control knob to affect the energy consumption of a network, the load distribution across the network and mobility performance.\nThe AI/ML model or algorithm is out of scope of 3GPP, only the inputs, outputs, inferred data and feedback information is standardized and the types of data provided by the UE and RAN node, assuming an attacker can eavesdrop (and deduce the type of data) is generic and based on existing specifications. However, an attacker may have some knowledge of the use case or cases that the network has decided to support. As a result, the adversary operates with the grey box assumption with respect to data poisoning.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tSecurity threats",
+                            "text_content": "The RAN AI/ML framework uses input and inference data from network entities, some of which may be under the control of adversaries which could disrupt the AI/ML model and potentially cause network outages (availability attacks), denial of service and poor performance (resource consumption) to the network depending on the use case.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tPotential security requirements",
+                            "text_content": "Not Applicable.\nNOTE:\tThe effect of data poisoning depends on the ML algorithm/model for the use cases considered in the Technical Report. There could be multiple ML algorithms/models for one specific use case. Hence countermeasures to such attacks that affect the integrity of the ML model are left to the implementation.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tKey Issue #3: Security of information transfer between RAN AI/ML framework nodes",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tKey issue details",
+                            "text_content": "The RAN AI/ML framework studied in TR 37.817 [2] and specified in RAN specifications (e.g., TS 38.423 [3]) includes several network entities exchanging AI/ML related information for the purposes of data collection, data inference, output and feedback. These network entities are UEs, RAN nodes and potentially OAM nodes depending on the architecture.\nThe RAN AI/ML framework specifies three use cases, namely Network Energy Saving, Load Balancing and Mobility Optimization for which the UEs and RAN nodes provide input and inference data and the RAN AI/ML framework on RAN and potentially OAM nodes provides output and feedback data to relevant nodes.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tSecurity threats",
+                            "text_content": "If the information transferred between the UE and RAN nodes, the RAN nodes and the RAN nodes and OAM nodes is not protected, an attacker can modify, eavesdrop, or replay input, inference, output and feedback data provided and generated by the different data providers and consumers in the RAN AI/ML framework.\nTherefore, any information transfer between the relevant network entities (UE, RAN nodes, OAM nodes) in the RAN AI/ML procedures needs to be secure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.3\tPotential security requirements",
+                            "text_content": "For the use cases of Network Energy Saving, Load Balancing and Mobility Optimization of the RAN AI/ML framework the 5G System shall support integrity, confidentiality, and replay protection for the information transfer between the relevant network entities for the purposes of the RAN AI/ML framework.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tSolutions",
+            "description": "NOTE:\tThere are no agreed solutions addressing the identified key issues.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "7\tConclusions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tConclusion for Key Issue #1: User Privacy of the RAN AI/ML framework",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "No normative work is pursued as there is no agreement for any solution addressing this key issue.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tConclusion for Key Issue #2: Robustness of the RAN AI/ML framework against data poisoning attacks",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "No normative work is pursued as there is no agreement for any solution addressing this key issue.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tConclusion for Key Issue #3: Security of information transfer between RAN AI/ML framework nodes",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The specification re-uses existing interfaces (e.g. Xn) while specifying new requests/responses for the purposes of the RAN AI/ML framework. As a result, existing security mechanisms can be supported with respect to the information transfer security in the RAN AI/ML framework.\nTherefore no normative work is necessary.\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

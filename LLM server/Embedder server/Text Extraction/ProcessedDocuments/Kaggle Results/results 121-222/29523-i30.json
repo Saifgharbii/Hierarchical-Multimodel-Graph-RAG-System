@@ -1,0 +1,610 @@
+{
+    "document_name": "29523-i30.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the stage 3 protocol and data model for the Policy Control Event Exposure Service of the 5G System. It provides stage 3 protocol definitions, message flows and specifies the API for the Npcf Event Exposure service.\nThe 5G System stage 2 architecture and the procedures are specified in 3GPP TS 23.501 [2], 3GPP TS 23.502 [3] and 3GPP TS 23.503 [4].\nThe 5G System stage 3 call flows are provided in 3GPP TS 29.513 [8].\nThe Technical Realization of the Service Based Architecture and the Principles and Guidelines for Services Definition are specified in 3GPP TS 29.500 [5] and 3GPP TS 29.501 [6].\nThe Policy Control Event Exposure Service is provided by the Policy Control Function (PCF). This service exposes policy control events observed at the PCF.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[3]\t3GPP TS 23.502: \"Procedures for the 5G System; Stage 2\".\n[4]\t3GPP TS 23.503: \"Policy and Charging Control Framework for the 5G System; Stage 2\".\n[5]\t3GPP TS 29.500: \"5G System; Technical Realization of Service Based Architecture; Stage 3\".\n[6]\t3GPP TS 29.501: \"5G System; Principles and Guidelines for Services Definition; Stage 3\".\n[7]\tOpenAPI: \"OpenAPI Specification Version 3.0.0\", .\n[8]\t3GPP TS 29.513: \"5G System; Policy and Charging Control signalling flows and QoS parameter mapping; Stage 3\".\n[9]\t3GPP TS 29.512: \"5G System; Session Management Policy Control Service; Stage 3\".\n[10]\t3GPP TS 29.507: \"5G System; Access and Mobility Policy Control Service; Stage 3\".\n[11]\t3GPP TS 29.525: \"5G System; UE Policy Control Service; Stage 3\".\n[12]\t3GPP TS 29.514: \"5G System; Policy Authorization Service; Stage 3\".\n[13]\t3GPP TS 29.214: \"Policy and Charging Control over Rx reference point\".\n[14]\t3GPP TS 29.571: \"5G System; Common Data Types for Service Based Interfaces; Stage 3\".\n[15]\t3GPP TS 29.508: \"5G System; Session Management Event Exposure Service; Stage 3\".\n[16]\tIETF RFC 9113: \"HTTP/2\".\n[17]\tIETF RFC 8259: \"The JavaScript Object Notation (JSON) Data Interchange Format\".\n[18]\tIETF RFC 9457: \"Problem Details for HTTP APIs\".\n[19]\t3GPP TS 33.501: \"Security architecture and procedures for 5G system\".\n[20]\tIETF RFC 6749: \"The OAuth 2.0 Authorization Framework\".\n[21]\t3GPP TS 29.510: \"5G System; Network Function Repository Services; Stage 3\".\n[22]\t3GPP TR 21.900: \"Technical Specification Group working methods\".\n[23]\t3GPP TS 29.534: \"5G System; Access and Mobility Policy Authorization Service; Stage 3\".\n[24]\t3GPP TS 29.519: \"5G System; Usage of the Unified Data Repository service for Policy Data, Application Data and Structured Data for Exposure; Stage 3\".\n[25]\t3GPP TS 29.522: \"5G System; Network Exposure Function Northbound APIs; Stage 3\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nexample: text used to clarify abstract rules by applying them literally.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nAF\tApplication Function\nAMF\tAccess and Mobility Management Function\nAPI\tApplication Programming Interface\nATSSS\tAccess Traffic Steering, Switching and Splitting\nDNN\tData Network Name\nePDG\tevolved Packet Data Gateway\nGEO\tGeosynchronous Orbit\nGPSI\tGeneric Public Subscription Identifier\nHTTP\tHypertext Transfer Protocol\nLEO\tLow Earth Orbit\nMA\tMulti-Access\nMEO\tMedium Earth Orbit\nNEF\tNetwork Exposure Function\nNID\tNetwork Identifier\nNF\tNetwork Function\nNRF\tNetwork Repository Function\nNWDAF\tNetwork Data Analytics Function\nOAM\tOperation And Maintenance\nPCF\tPolicy Control Function\nRFSP\tRAT Frequency Selection Priority\nSAC\tService Area Coverage\nS-NSSAI\tSingle Network Slice Selection Assistance Information\nSMF\tSession Management Function\nSNPN\tStand-alone Non-Public Network\nSUPI\tSubscription Permanent Identifier\nUDM\tUnified Data Management\nUDR\tUnified Data Repository\nURSP\tUE Route Selection Policy\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tNpcf_EventExposure Service",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tService Description",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.1.1\tOverview",
+                            "text_content": "The Policy Event Exposure Service, as defined in 3GPP TS 23.502 [3] and 3GPP TS 23.503 [4], is provided by the Policy Control Function (PCF).\nThis service:\n-\tallows NF service consumers to subscribe to, modify and unsubscribe from policy control events; and\n-\tnotifies NF service consumers with a corresponding subscription about observed events on the PCF.\nThe types of observed events include:\n-\tPLMN identifier notification;\nNOTE 1:\tWithin the PLMN identifier notification event the PLMN Identifier or SNPN Identifier where the UE is currently located is provided. The SNPN Identifier consists of the PLMN Identifier and the NID.\nNOTE 2:\tMobility between non-equivalent SNPNs, and between SNPN and PLMN is not supported. When the UE is operating in SNPN access mode, the trigger reports changes of equivalent SNPNs.\n-\taccess type change;\n-\tsatellite backhaul category change;\n-\tservice area coverage change;\n-\tsuccessful or unsuccessful outcome of the UE Policy Delivery; and\n-\tapplication traffic detection events.\nThe target of the event reporting may include a group of UE(s) or any UE (i.e. all UEs). When an event occurs, to which the NF service consumer has subscribed, the PCF reports the requested information to the NF service consumer based on the event reporting information definition requested by the NF service consumer (see 3GPP TS 23.502 [3], clause 4.15.1).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.2\tService Architecture",
+                            "text_content": "The 5G System Architecture is defined in 3GPP TS 23.501 [2]. The Policy and Charging related 5G architecture and signalling flows are also described in 3GPP TS 29.513 [8].\nThe Policy Event Exposure Service (Npcf_EventExposure) is part of the Npcf service-based interface exhibited by the Policy Control Function (PCF).\nThe known NF service consumers of the Npcf_EventExposure service are the Network Exposure Function (NEF) and the Application Function (AF).\nThe Npcf_EventExposure service is provided by the PCF and consumed by NF service consumers (e.g. NEF, AF), as shown in figure 4.1.2-1 for the SBI representation model and in figure 4.1.2-2 for reference point representation model.\nThe Npcf_EventExposure service architecture, as depicted in Figure 4.1.2-1, illustrates the service's design and components. It includes a Service Broker (SBI), Event Exposer, and Event Exposer Service (EES). The SBI is responsible for managing the service's lifecycle, including event creation, event delivery, and event management. The Event Exposer is responsible for exposing the service's events to the network, while the Event Exposer Service (EES) is responsible for managing the event delivery process. The architecture is designed to be scalable and fault-tolerant, with redundant components to ensure reliability.\nFigure 4.1.2-1: Npcf_EventExposure service Architecture, SBI representation\n\nThe Npcf_EventExposure service architecture, as depicted in Figure 4.1.2-2, is a comprehensive framework that enables efficient and reliable event exposure management in a network. This service is designed to handle the complexities of event-driven applications, ensuring that the network remains resilient and responsive to changing conditions. The architecture is based on a layered design, with key components such as reference points, event sources, and event destinations. This design allows for efficient data flow and ensures that the network can handle a wide range of event types, from simple to complex, with minimal disruption. The service is also designed to be scalable, with the ability to handle large volumes of data and event sources, ensuring that the network can meet the demands of modern applications. Overall, the Npcf_EventExposure service architecture is a powerful tool for managing event exposure in a network, providing a reliable and efficient solution for event-driven applications.\nFigure 4.1.2-2: Npcf_EventExposure service Architecture, reference point representation\nNOTE:\tThe NWDAF and the DCCF can be consumers of the Npcf_EventExposure service to perform data collection. However, there is no data collected from the PCF by the NWDAF or the DCCF defined in this release of the specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.3\tNetwork Functions",
+                            "text_content": "The PCF (Policy Control Function) is a functional element that encompasses policy control decision and flow based charging control functionalities as defined in 3GPP TS 29.512 [9], access and mobility policy decisions for the control of the UE Service Area Restrictions and RAT/RFSP control as defined in 3GPP TS 29.507 [10] and UE Policy decisions for the control of Access network discovery and selection policy and UE Route Selection Policy (URSP) as defined in 3GPP TS 29.525 [11].\nThe policy control decision and flow based charging control functionalities enable the PCF to provide network control regarding the service data flow detection, gating, QoS and flow based charging (except credit management) towards the SMF/UPF. The PCF offers these capabilities to the NF service consumers (e.g. the AF and NEF) as defined in 3GPP TS 29.514 [12] and 3GPP TS 29.214 [13].\nThe PCF also offers the access and mobility policy control to the NF service consumers as defined in 3GPP TS 29.534 [23].\nThe Policy Event Exposure Service enables the PCF to report policy control events observed in one or more PCF services to NF service consumers.\nAs indicated in clause 4.1.2 above, the known NF service consumer of the Npcf_EventExposure service are the Network Exposure Function (NEF) and the Application Function (AF).\nThe Network Exposure Function (NEF) is a functional element that supports the following functionalities:\n-\tThe NEF securely exposes network capabilities and events provided by 3GPP NFs to AF.\n-\tThe NEF provides a means for the AF to securely provide information to 3GPP network and can authenticate, authorize and assist in throttling the AF.\n-\tThe NEF translates the information received from the AF to the one sent to internal 3GPP NFs, and vice versa.\n-\tThe NEF supports exposing information (collected from other 3GPP NFs) to the AF.\nThe Application Function (AF) is a functional element offering control to applications that require the policy and charging control of traffic plane resources; specific user plane paths for the requested traffic, the monitoring of the required service QoS, and/or specific QoS and alternative QoS profiles. The AF uses the Npcf_EventExposure service to receive exposed information from the 5GC network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.2\tService Operations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tIntroduction",
+                            "text_content": "Service operations defined for the Npcf_EventExposure Service are shown in table 4.2.1-1.\nTable 4.2.1-1: Npcf_EventExposure Service Operations\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.2.1-1: Npcf_EventExposure Service Operations",
+                                    "table number": 1,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.2\tNpcf_EventExposure_Subscribe service operation",
+                            "text_content": "This service operation is used by an NF service consumer to explicitly subscribe for policy events notifications on a specified context for a group of UE(s) or any UE, or to modify an existing subscription.\nThe following are the types of events for which a subscription can be made:\n-\tPLMN identifier notification;\nNOTE 1:\tWithin the PLMN identifier notification event the PLMN Identifier or SNPN Identifier where the UE is currently located is provided. The SNPN Identifier consists of the PLMN Identifier and the NID.\nNOTE 2:\tMobility between non-equivalent SNPNs, and between SNPN and PLMN is not supported. When the UE is operating in SNPN access mode, the trigger reports changes of equivalent SNPNs.\n-\tchange of Access Type;\n-\twhen the feature \"AMPoliciesEvents\" is supported, change of Service Area Coverage;\n-\twhen the feature \"SatelliteBackhaul\" is supported, satellite backhaul category change;\n-\twhen the feature \"DeliveryOutcome\" is supported, UE Policy delivery outcome; and\n-\twhen the feature \"AppDetection\" is supported, application traffic detection (Start/Stop) event notification.\nThe following procedures using the Npcf_EventExposure_Subscribe service operation are supported:\n-\tcreating a new subscription;\n-\tmodifying an existing subscription.\nNOTE 3:\tIt is also possible to implicitly subscribe for policy events notifications for a single UE, for a group of UE(s) or any UE. Implicit subscription information is obtained from the UDR for application data. In this case, the PCF will use the callback URI provided by the AF to the UDR, see 3GPP TS 29.519 [24] for the details.\nFigure 4.2.2.2-1 illustrates the creation of a subscription.\nThe figure depicts a subscription creation process in a telecommunications network, illustrating the steps involved in creating a new subscription. The process includes selecting a subscription type, specifying the subscription's parameters, and submitting the request to the network. The figure provides a visual representation of the steps, making it easier to understand the process.\nFigure 4.2.2.2-1: Creation of a subscription\nTo subscribe to event notifications, the NF service consumer shall send an HTTP POST request with: \"{apiRoot}/npcf-eventexposure/v1/subscriptions\" as request URI as shown in figure 4.2.2.2-1, step 1, and the \"PcEventExposureSubsc\" data structure as request body.\nThe \"PcEventExposureSubsc\" data structure shall include:\n-\tidentification of the policy events to subscribe as \"eventSubs\" attribute;\n-\tindication of the UEs to which the subscription applies via:\na)\tidentification of a group of UE(s) via a \"groupId\" attribute; or\nb)\tidentification of any UE by omitting the \"groupId\" attribute;\n-\ta URI where to receive the requested notifications as \"notifUri\" attribute; and\n-\ta Notification Correlation Identifier assigned by the NF service consumer for the requested notifications as \"notifId\" attribute.\nThe \"PcEventExposureSubsc\" data structure may also include:\n-\tdescription of the event reporting information as \"eventsRepInfo\", which may include:\na)\tevent notification method (periodic, one time, on event detection) as \"notifMethod\" attribute;\nb)\tMaximum Number of Reports as \"maxReportNbr\" attribute;\nc)\tMonitoring Duration as \"monDur\" attribute;\nd)\trepetition period for periodic reporting as \"repPeriod\" attribute;\ne)\timmediate reporting indication as \"immRep\" attribute;\nf)\tsampling ratio as \"sampRatio\" attribute;\ng)\tgroup reporting guard time as \"grpRepTime\" attribute;\nh)\tpartitioning criteria for partitioning the UEs before performing sampling as \"partitionCriteria\" attribute if the EneNA feature is supported; and/or\ni)\ta notification flag as \"notifFlag\" attribute if the EneNA feature is supported;\n-\tif the supported feature \"ExtendedSessionInformation\" is supported, to filter the AF sessions for which the policy event report shall occur, the identification of the services one or more AF sessions may belong to as \"filterServices\" attribute, which may include per service identification:\na)\ta list of ethernet flows in the \"servEthFlows\" attribute; or\nb)\ta list of IP flows in the \"servIpFlows\" attribute; and/or\nc)\tan AF application identifier in the \"afAppId\" attribute;\n-\tto filter the DNNs for which the policy event report shall occur, the identification of the DNNs in the \"filterDnns\" attribute;\n-\tto filter the S-NSSAIs for which the policy event report shall occur, the identification of the S-NSSAIs in the \"filterSnssais\" attribute;\n-\twhen the feature \"EneNA\" and/or \"AppDetection\" are supported, to filter the specific DNN and S-NSSAI combination list for which the policy event report shall occur, the identification of each combination within the \"snssaiDnn\" attribute; and\n-\twhen the feature \"AppDetection\" is supported, to indicate the specific application(s) for which the policy event report shall occur, the application identifier(s) in the \"appIds\" attribute.\nIf the PCF cannot successfully fulfil the received HTTP POST request due to an internal PCF error or an error in the HTTP POST request, the PCF shall send an HTTP error response as specified in clause 5.7.\nUpon successful reception of the HTTP POST request with \"{apiRoot}/npcf-eventexposure/v1/subscriptions\" as request URI and \"PcEventExposureSubsc\" data structure as request body, the PCF shall create a new \"Individual Policy Events Subscription\" resource, store the subscription and send a HTTP \"201 Created\" response as shown in figure 4.2.2.2-1, step 2. The PCF shall include in the \"201 Created\" response:\n-\ta Location header field; and\n-\tan \"PcEventExposureSubsc\" data type in the content.\nThe Location header field shall contain the URI of the created individual application session context resource i.e. \"{apiRoot}/npcf-eventexposure/v1/subscriptions/{subscriptionId}\".\nThe \"PcEventExposureSubsc\" data type in the response content shall contain the representation of the created \"Individual Policy Events Subscription\".\nWhen the \"monDur\" attribute is included in the response, it represents a server selected expiry time that is equal or less than a possible expiry time in the request.\nWhen the \"immRep\" attribute set to true is included in the subscription and the subscribed policy control events are available:\n-\tif the feature \"ERIR\" is not supported, the PCF shall immediately notify the NF service consumer with the current available value(s) for the subscribed event(s) using the Npcf_EventExposure_Notify service operation, as described in clause 4.2.4.2.\n-\tif the feature \"ERIR\" is supported, the PCF shall immediately notify the NF service consumer with the current available value(s) for the subscribed event(s) within the HTTP \"201 Created\" response as shown in figure 4.2.2.2-1, step 2. The \"PcEventExposureSubsc\" data type shall include the corresponding event(s) notification within the \"eventNotifs\" attribute, as described in clause 4.2.4.2.\nWhen the sampling ratio as the \"sampRatio\" attribute is included in the subscription without a \"partitionCriteria\" attribute, the PCF shall select a random subset of UEs among the target UEs according to the sampling ratio and only report the event(s) related to the selected subset of UEs. If the \"partitionCriteria\" attribute is additionally included, then the PCF shall first partition the UEs according to the value of the \"partitionCriteria\" attribute and then select a random subset of UEs from each partition according to the sampling ratio and only report the event(s) related to the selected subsets of UEs.\nWhen the group reporting guard time as the \"grpRepTime\" attribute is included in the subscription, the PCF shall accumulate all the event reports for the target UEs until the group reporting guard time expires. Then the PCF shall notify the NF service consumer using the Npcf_EventExposure_Notify service operation, as described in clause 4.2.4.2.\nWhen the \"notifFlag\" attribute is included and set to \"DEACTIVATE\" in the request, the PCF shall mute the event notification and store the available events until the NF service consumer requests to retrieve them by setting the \"notifFlag\" attribute to \"RETRIEVAL\" or until a muting exception occurs (e.g. full buffer).\nEditor's Note: It is FFS to determine whether any further provisions or limitations with regard to the usage of the \"notifFlag\" attribute are needed.\nEditor’s Note: When the PCF accepts the subscription from the NF service consumer, whether the PCF is required to subscribe to other NF is FFS.\nFigure 4.2.2.3-1 illustrates the modification of an existing subscription.\nThe figure depicts a modification of an existing subscription, showing how a user can modify their subscription plan to include additional services or features. The figure includes a graphical representation of the subscription plan, with different options for the user to choose from. The user can select the desired plan, and the system will automatically update the subscription plan to reflect the selected options. The figure also includes a legend to help users understand the different options available for their subscription plan.\nFigure 4.2.2.3-1: Modification of an existing subscription\nTo modify an existing subscription to event notifications, the NF service consumer shall send an HTTP PUT request with: \"{apiRoot}/npcf-eventexposure/v1/subscriptions/{subscriptionId}\" as request URI, as shown in figure 4.2.2.3-1, step 1, where \"{subscriptionId}\" is the subscription correlation ID of the existing subscription. The \"PcEventExposureSubsc\" data structure is included as request body as described in clause 4.2.2.2.\nNOTE 1:\tAn alternate NF service consumer than the one that requested the generation of the subscription resource can send the PUT.\nNOTE 2:\tThe \"notifUri\" attribute within the PcEventExposureSubsc data structure can be modified to request that subsequent notifications are sent to a new NF service consumer.\nIf the PCF cannot successfully fulfil the received HTTP PUT request due to an internal PCF error or an error in the HTTP PUT request, the PCF shall send an HTTP error response as specified in clause 5.7.\nIf the feature \"ES3XX\" is supported, and the PCF determines the received HTTP PUT request needs to be redirected, the PCF shall send an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [5].\nUpon successful reception of an HTTP PUT request with: \"{apiRoot}/npcf-eventexposure/v1/subscriptions/{subscriptionId}\" as request URI and \"PcEventExposureSubsc\" data structure as request body, the PCF shall store the subscription and send an HTTP \"200 OK\" response with the \"PcEventExposureSubsc\" data structure as response body or an HTTP \"204 No Content\" response, as shown in figure 4.2.2.3-1, step 2.\nThe \"PcEventExposureSubsc\" data structure in the response content shall contain the representation of the modified \"Individual Policy Events Subscription\".\nWhen the \"monDur\" attribute is included in the response, it represents a NF service producer selected expiry time that is equal or less than a possible expiry time received in the request.\nWhen the \"immRep\" attribute set to true is included in the updated subscription and the subscribed policy control events are available:\n-\tif the feature \"ERIR\" is not supported, the PCF shall immediately notify the NF service consumer with the current available value(s) for the subscribed event(s) using the Npcf_EventExposure_Notify service operation, as described in clause 4.2.4.2.\n-\tif the feature \"ERIR\" is supported, the PCF shall immediately notify the NF service consumer with the current available value(s) for the subscribed event(s) within the HTTP \"200 OK\" response as shown in figure 4.2.2.3-1, step 2a. The \"PcEventExposureSubsc\" data type shall include the corresponding event(s) notification within the \"eventNotifs\" attribute, as described in clause 4.2.4.2.\nWhen the sampling ratio as the \"sampRatio\" attribute is included in the subscription without a \"partitionCriteria\" attribute, the PCF shall select a random subset of UEs among the target UEs according to the sampling ratio and only report the event(s) related to the selected subset of UEs. If the \"partitionCriteria\" attribute is additionally included, then the PCF shall first partition the UEs according to the value of the \"partitionCriteria\" attribute and then select a random subset of UEs from each partition according to the sampling ratio and only report the event(s) related to the selected subsets of UEs.\nWhen the group reporting guard time as the \"grpRepTime\" attribute is included in the subscription, the PCF shall accumulate all the event reports for the target UEs until the group reporting guard time expires. Then the PCF shall notify the NF service consumer using the Npcf_EventExposure_Notify service operation, as described in clause 4.2.4.2.\nWhen the \"notifFlag\" attribute is included, and set to \"DEACTIVATE\" in the request, the PCF shall mute the event notification and store the available events until the NF service consumer requests to retrieve them by setting the \"notifFlag\" attribute to \"RETRIEVAL\" or until a muting exception occurs (e.g. full buffer); if the \"notifFlag\" attribute is set to \"RETRIEVAL\" in the request, the PCF shall send the stored events to the NF service consumer, mute the event notification again and store available events; if the \"notifFlag\" attribute is set to \"ACTIVATE\" and the event notifications are muted (due to a previously received \"DECATIVATE\" value), the PCF shall unmute the event notification, i.e. start sending again notifications for available events.\nEditor's Note: It is FFS to determine whether any further provisions or limitations with regard to the usage of the \"notifFlag\" attribute are needed.\nEditor’s Note: When the PCF accepts the subscription modification from the NF service consumer, whether the PCF is required to subscribe to other NF is FFS.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.3\tNpcf_EventExposure_UnSubscribe service operation",
+                            "text_content": "This service operation is used by an NF service consumer to unsubscribe from event notifications.\nThe following procedure using the Npcf_EventExposure_UnSubscribe service operation is supported:\n-\tunsubscription from event notifications.\nFigure 4.2.3.2-1 illustrates the unsubscription from event notifications.\nThe figure depicts a simplified representation of an event notification system, with a focus on unsubscription from notifications. It shows a user interface with a list of unsubscription options, such as \"All\", \"All but this event\", and \"This event only\". The system uses a tree-like structure to organize notifications, with each notification having a parent node and a child node for each unsubscription option. The system also includes a \"Delete\" button for deleting unsubscriptions. The figure is designed to be user-friendly and intuitive, making it easy for users to navigate and select the unsubscription options they need.\nFigure 4.2.3.2-1: Unsubscription from event notifications\nTo unsubscribe from event notifications, the NF service consumer shall send an HTTP DELETE request with: \"{apiRoot}/npcf-eventexposure/v1/subscriptions/{subscriptionId}\" as request URI, as shown in figure 4.2.3.2-1, step 1, where \"{subscriptionId}\" is the subscription correlation identifier of the existing resource subscription that is to be deleted.\nIf the PCF cannot successfully fulfil the received HTTP DELETE request due to an internal PCF error or an error in the HTTP DELETE request, the PCF shall send the HTTP error response as specified in clause 5.7.\nIf the feature \"ES3XX\" is supported, and the PCF determines the received HTTP DELETE request needs to be redirected, the PCF shall send an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [5].\nUpon successful reception of the HTTP DELETE request with: \"{apiRoot}/npcf-eventexposure/v1/subscriptions/{subscriptionId}\" as request URI, the PCF shall remove the corresponding subscription and send an HTTP \"204 No Content\" response as shown in figure 4.2.3.2-1, step 2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.4\tNpcf_EventExposure_Notify service operation",
+                            "text_content": "The Npcf_EventExposure_Notify service operation enables the PCF to notify the NF service consumers that the previously (explicitly or implicitly) subscribed policy control event occurred.\nThe following procedure using the Npcf_EventExposure_Notify service operation is supported:\n-\tnotification about subscribed events.\nFigure 4.2.4.2-1 illustrates the notification about subscribed events.\nThe figure depicts a notification system for subscribed events, with a user interface (UI) and a backend system. The UI includes a list of events, a search bar, and a notification button. The backend system manages the subscription process, including event creation, validation, and notification delivery.\nFigure 4.2.4.2-1: Notification about subscribed events\nIf the PCF observes policy control related event(s) for which an NF service consumer has subscribed explicitly as defined in clause 4.2.2 or implicitly when the subscription information is obtained from the UDR for application data, the PCF shall send an HTTP POST request as shown in figure 4.2.4.2-1, step 1, with the \"{notifUri}\" as request URI containing the value previously provided by the NF service consumer within the corresponding subscription or containing the callback URI provided by the AF to the UDR, and the \"PcEventExposureNotif\" data structure.\nThe \"PcEventExposureNotif\" data structure shall include:\n-\tThe notification correlation ID provided by the NF service consumer during the subscription as \"notifId\" attribute or obtained from the UDR as specified in 3GPP TS 29.519 [24]; and\n-\tinformation about the observed event(s) within the \"eventNotifs\" attribute that shall contain for each observed event an \"PcEventNotification\" data structure that shall include:\n1.\tthe Policy Control event as \"event\" attribute;\n2.\tfor an access type change:\na)\tnew access type as \"accType\" attribute;\nb)\tthe new RAT type as \"ratType\" attribute, if applicable for the notified access type; and\nc)\tif the \"ATSSS\" feature is supported:\ni.\tif it is the first access type report for a PDU session, and both, 3GPP and non-3GPP access information is available, the \"addAccessInfo\" attribute. The \"addAccessInfo\" attribute contains the additional access type information, where the access type is encoded in the \"accessType\" attribute, and the RAT type is encoded in the \"ratType\" attribute when applicable for the notified access type;\nii.\tif it is a subsequent access type change report:\n-\tif a new access type is added to the MA PDU session, the \"addAccessInfo\" attribute with the added access type encoded in the \"accessType\" attribute, and the RAT type encoded in the \"ratType\" attribute when applicable for the notified access type;\n-\tif an access type is released in the MA PDU session, the \"relAccessInfo\" attribute with the released access type encoded in the \"accessType\" attribute, and the RAT type encoded in the \"ratType\" attribute when applicable for the notified access type; and\nNOTE 1:\tFor a MA PDU session, if the \"ATSSS\" feature is not supported by the AF, the PCF includes the \"accessType\" attribute and the \"ratType\" attribute with a currently active combination of access type and RAT type (if applicable for the notified access type). When both 3GPP and non-3GPP accesses are available, the PCF includes the information corresponding to the 3GPP access.\nd)\tfor EPC interworking scenarios, the ePDG address as \"anGwAddr\" attribute, if applicable for the notified access type;\n3.\tfor a PLMN change:\na)\tnew network identity containing the PLMN Identifier or the SNPN Identifier in the \"plmnId\" attribute;\nNOTE 2:\tThe SNPN Identifier consists of the PLMN Identifier and the NID.\nNOTE 3:\tMobility between non-equivalent SNPNs, and between SNPN and PLMN is not supported. When the UE is operating in SNPN access mode, the trigger reports changes of equivalent SNPNs.\n4.\twhen the feature \"AMPoliciesEvents\" is supported, for a service area coverage change, the new service area coverage in the \"appliedCov\" attribute, encoded as specified in 3GPP TS 29.534 [23], clause 4.2.7.4;\nNOTE 4:\tThe service area coverage change event is met and the notification is triggered when the PCF determines the tracking areas where the service is allowed in relation to the NF consumer requested service area coverage. The actual service area coverage for the UE might be larger than the one reported with the service area coverage change event.\n5.\tfor a satellite backhaul category change:\na)\twhen the \"SatelliteBackhaul\" feature is supported:\ni)\tthe satellite backhaul category (i.e., \"GEO\", \"MEO\", \"LEO\", or \"OTHER_SAT\") or the indication of non-satellite backhaul category (i.e., \"NON_SATELLITE\") in the \"satBackhaulCategory\" attribute; or\nb)\twhen dynamic satellite backhaul is used by the NG-RAN and the feature \"EnSatBackhaulCatChg\" is supported:\ni)\tthe dynamic satellite backhaul category (i.e., \"DYNAMIC_GEO\", \"DYNAMIC_MEO\", \"DYNAMIC_LEO\", or \"DYNAMIC_OTHER_SAT\") in the \"satBackhaulCategory\" attribute;\n6.\twhen the feature \"DeliveryOutcome\" is supported, to report the unsuccessful outcome of the UE Policy Delivery related to the invocation of AF provisioned service parameters, the reason of failure within the \"delivFailure\" attribute;\n7.\tthe identity of the affected UE in the \"supi\" attribute and, if available, in the \"gpsi\" attribute;\n8.\tthe time at which the event was observed encoded as \"timeStamp\" attribute;\n9.\tif available, and if the feature \"ExtendedSessionInformation\" is supported, information about the PDU session involved in the reported event in the \"pduSessInfo\" attribute, that shall include:\na)\tthe S-NSSAI of the PDU session in the \"snssai\" attribute;\nb)\tthe DNN of the PDU session in the \"dnn\" attribute; and\nc)\tthe IPv4 address in the \"ueIpv4\" attribute and/or the IPv6 prefix in the \"ueIpv6\" attribute, or the Ethernet MAC address in the \"ueMac\" attribute; and\nif the IPv4 address is included in the \"ueIpv4\" attribute, may include the IP domain in the \"ipDomain\" attribute;\n10.\tif available, and if the feature \"ExtendedSessionInformation\" is supported, information about the services involved in the reported event in the indicated PDU session in the \"repServices\" attribute, which may include per identified service:\na)\ta list of Ethernet flows in the \"servEthFlows\" attribute which contains an impacted Ethernet flow number within the \"flowNumber\" attribute in each EthernetFlowInfo data structure; or\nb)\ta list of IP flows in the \"servIpFlows\" attribute which contains an impacted IP flow number within the \"flowNumber\" attribute in each IpFlowInfo data structure; and/or\nc)\tan AF application identifier in the \"afAppId\" attribute.\n11.\tfor an application detection event and if the feature \"AppDetection\" is supported:\na)\tthe IPv4 address in the \"ueIpv4\" attribute and/or the IPv6 prefix in the \"ueIpv6\" attribute within the \"pduSessInfo\" attribute; and\nb)\tthe application identifier for which the notification applies in the \"appId\" attribute.\nIf the NF service consumer cannot successfully fulfil the received HTTP POST request due to an internal error or an error in the HTTP POST request, the NF service consumer shall send an HTTP error response as specified in clause 5.7.\nIf the feature \"ES3XX\" is supported, and the NF service consumer determines the received HTTP POST request needs to be redirected, the NF service consumer shall send an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [5].\nUpon successful reception of the HTTP POST request with \"{notifUri}\" as request URI and a \"PcEventExposureNotif\" data structure as request body, the NF service consumer shall send a \"204 No Content\" HTTP response, as shown in figure 4.2.4.2-1, step 2, for a successful processing.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tNpcf_EventExposure Service API",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Npcf_EventExposure Service shall use the Npcf_EventExposure API.\nThe API URI of the Npcf_EventExposure API shall be:\n{apiRoot}/<apiName>/<apiVersion>\nThe request URIs used in HTTP requests from the NF service consumer towards the PCF shall have the Resource URI structure defined in clause 4.4.1 of 3GPP TS 29.501 [6], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [6].\n-\tThe <apiName> shall be \"npcf-eventexposure\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 5.3.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tUsage of HTTP",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tGeneral",
+                            "text_content": "HTTP/2, IETF RFC 9113  [16], shall be used as specified in clause 5.2 of 3GPP TS 29.500 [5].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [5].\nThe OpenAPI [7] specification of HTTP messages and content bodies for the Npcf_EventExposure is contained in Annex A.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tHTTP standard headers",
+                            "text_content": "See clause 5.2.2 of 3GPP TS 29.500 [5] for the usage of HTTP standard headers.\nJSON, IETF RFC 8259 [17], shall be used as content type of the HTTP bodies specified in the present specification as specified in clause 5.4 of 3GPP TS 29.500 [5]. The use of the JSON format shall be signalled by the content type \"application/json\".\n\"Problem Details\" JSON object shall be used to indicate additional details of the error in a HTTP response body and shall be signalled by the content type \"application/problem+json\", as defined in IETF RFC 9457 [18].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tHTTP custom headers",
+                            "text_content": "The mandatory HTTP custom header fields specified in clause 5.2.3.2 of 3GPP TS 29.500 [5] shall be supported, and the optional HTTP custom header fields specified in clause 5.2.3.3 of 3GPP TS 29.500 [5] may be supported.\nIn this Release of the specification, no specific custom headers are defined for the Npcf_EventExposure API.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tResources",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tResource Structure",
+                            "text_content": "This clause describes the structure for the Resource URIs and the resources and methods used for the service.\nFigure 5.3.1-1 depicts the resource URIs structure for the Npcf_EventExposure API.\nThe figure depicts the resource URI structure of the Npcf_EventExposure API, which is used to expose event exposure data. The structure includes the event type, event ID, and event timestamp, as well as the resource URI for the event data. This API is used to retrieve event exposure data from the Npcf_EventExposure service, which is a part of the Npcf_EventExposure service. The API is designed to be flexible and extensible, allowing for the addition of new event types and event data.\nFigure 5.3.1-1: Resource URI structure of the Npcf_EventExposure API\nTable 5.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 5.3.1-1: Resources and methods overview\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.1-1: Resources and methods overview",
+                                    "table number": 2,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.3.2\tResource: Policy Control Events Subscriptions (Collection)",
+                            "text_content": "The Policy Control Events Subscriptions resource represents all subscriptions of the Npcf_EventExposure service at a given PCF.\nResource URI: {apiRoot}/npcf-eventexposure/v1/subscriptions\nThis resource shall support the resource URI variables defined in table 5.3.2.2-1.\nTable 5.3.2.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 5.3.2.3.1-1.\nTable 5.3.2.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 5.3.2.3.1-2 and the response data structures and response codes specified in table 5.3.2.3.1-3.\nTable 5.3.2.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 5.3.2.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 5.3.2.3.1-4: Headers supported by the 201 Response Code on this resource\n\nNone.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.2.2-1: Resource URI variables for this resource",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.2.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.2.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.2.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.2.3.1-4: Headers supported by the 201 Response Code on this resource",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.3.3\tResource: Individual Policy Control Events Subscription (Document)",
+                            "text_content": "The Individual Policy Control Events Subscription resource represents a single subscription of the Npcf_EventExposure service at a given PCF.\nResource URI: {apiRoot}/npcf-eventexposure/v1/subscriptions/{subscriptionId}\nThis resource shall support the resource URI variables defined in table 5.3.3.2-1.\nTable 5.3.3.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 5.3.3.3.1-1.\nTable 5.3.3.3.1-1: URI query parameters supported by the GET method on this resource\n\nThis method shall support the request data structures specified in table 5.3.3.3.1-2 and the response data structures and response codes specified in table 5.3.3.3.1-3.\nTable 5.3.3.3.1-2: Data structures supported by the GET Request Body on this resource\n\nTable 5.3.3.3.1-3: Data structures supported by the GET Response Body on this resource\n\nTable 5.3.3.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 5.3.3.3.1-5: Headers supported by the 308 Response Code on this resource\n\nThis method shall support the URI query parameters specified in table 5.3.3.3.2-1.\nTable 5.3.3.3.2-1: URI query parameters supported by the PUT method on this resource\n\nThis method shall support the request data structures specified in table 5.3.3.3.2-2 and the response data structures and response codes specified in table 5.3.3.3.2-3.\nTable 5.3.3.3.2-2: Data structures supported by the PUT Request Body on this resource\n\nTable 5.3.3.3.2-3: Data structures supported by the PUT Response Body on this resource\n\nTable 5.3.3.3.2-4: Headers supported by the 307 Response Code on this resource\n\nTable 5.3.3.3.2-5: Headers supported by the 308 Response Code on this resource\n\nThis method shall support the URI query parameters specified in table 5.3.3.3.3-1.\nTable 5.3.3.3.3-1: URI query parameters supported by the DELETE method on this resource\n\nThis method shall support the request data structures specified in table 5.3.3.3.3-2 and the response data structures and response codes specified in table 5.3.3.3.3-3.\nTable 5.3.3.3.3-2: Data structures supported by the DELETE Request Body on this resource\n\nTable 5.3.3.3.3-3: Data structures supported by the DELETE Response Body on this resource\n\nTable 5.3.3.3.3-4: Headers supported by the 307 Response Code on this resource\n\nTable 5.3.3.3.3-5: Headers supported by the 308 Response Code on this resource\n\nNone.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.3.2-1: Resource URI variables for this resource",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.1-1: URI query parameters supported by the GET method on this resource",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.1-2: Data structures supported by the GET Request Body on this resource",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.1-3: Data structures supported by the GET Response Body on this resource",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.2-1: URI query parameters supported by the PUT method on this resource",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.2-2: Data structures supported by the PUT Request Body on this resource",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.2-3: Data structures supported by the PUT Response Body on this resource",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.2-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.2-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.3-1: URI query parameters supported by the DELETE method on this resource",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.3-2: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.3-3: Data structures supported by the DELETE Response Body on this resource",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.3-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.3-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tCustom Operations without associated resources",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "None.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tNotifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.5.1\tGeneral",
+                            "text_content": "Notifications shall comply with clause 6.2 of 3GPP TS 29.500 [5] and clause 4.6.2.3 of 3GPP TS 29.501 [6].\nTable 5.5.1-1: Notifications overview\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.5.1-1: Notifications overview",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.5.2\tPolicy Control Event Notification",
+                            "text_content": "The Policy Control Event Notification is used by the PCF to report one or several observed policy control events to the NF service consumer that has subscribed to such notifications.\nNOTE 1:\tThe \"callback\" clause of the OpenAPI specification found in Annex A.2 associated to the POST method of the \"Policy Control Events Subscriptions\" resource is used as the notification request for both explicit and implicit subscriptions.\nNOTE 2:\tFor implicit subscriptions, the NEF can have previously stored in the UDR the notification URI to be used in the notifications initiated by the PCF. See 3GPP TS 29.519 [24] for the details.\nThe Callback URI \"{notifUri}\" shall be used with the callback URI variables defined in table 5.5.2.2-1.\nTable 5.5.2.2-1: Callback URI variables\n\nThis method shall support the URI query parameters specified in table 5.5.2.3.1-1.\nTable 5.5.2.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 5.5.2.3.1-2 and the response data structures and response codes specified in table 5.5.2.3.1-3.\nTable 5.5.2.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 5.5.2.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 5.5.2.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 5.5.2.3.1-5: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.5.2.2-1: Callback URI variables",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.5.2.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.5.2.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.5.2.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.5.2.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.5.2.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.6\tData Model",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.6.1\tGeneral",
+                            "text_content": "This clause specifies the application data model supported by the API.\nTable 5.6.1-1 specifies the data types defined for the Npcf_EventExposure service based interface protocol.\nTable 5.6.1-1: Npcf_EventExposure specific Data Types\n\nTable 5.6.1-2 specifies data types re-used by the Npcf_EventExposure service based interface protocol from other specifications, including a reference to their respective specifications and when needed, a short description of their use within the Npcf_EventExposure service based interface.\nTable 5.6.1-2: Npcf_EventExposure re-used Data Types\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.6.1-1: Npcf_EventExposure specific Data Types",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.1-2: Npcf_EventExposure re-used Data Types",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.6.2\tStructured data types",
+                            "text_content": "This clause defines the structures to be used in resource representations.\nTable 5.6.2.2-1: Definition of type PcEventExposureSubsc\n\nTable 5.6.2.3-1: Definition of type PcEventExposureNotif\n\nTable 5.6.2.4-1: Definition of type ReportingInformation\n\nTable 5.6.2.5-1: Definition of type ServiceIdentification\n\nTable 5.6.2.6-1: Definition of type EthernetFlowInfo\n\nTable 5.6.2.7-1: Definition of type IpFlowInfo\n\nTable 5.6.2.8-1: Definition of type PcEventNotification\n\nTable 5.6.2.9-1: Definition of type PduSessionInformation\n\nTable 5.6.2.10-1: Definition of type SnssaiDnnCombination\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.6.2.2-1: Definition of type PcEventExposureSubsc",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.3-1: Definition of type PcEventExposureNotif",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.4-1: Definition of type ReportingInformation",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.5-1: Definition of type ServiceIdentification",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.6-1: Definition of type EthernetFlowInfo",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.7-1: Definition of type IpFlowInfo",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.8-1: Definition of type PcEventNotification",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.9-1: Definition of type PduSessionInformation",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.10-1: Definition of type SnssaiDnnCombination",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.6.3\tSimple data types and enumerations",
+                            "text_content": "This clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nThe simple data types defined in table 5.6.3.2-1 shall be supported.\nTable 5.6.3.2-1: Simple data types\n\nThe enumeration PcEvent represents the policy control events that can be subscribed. It shall comply with the provisions defined in table 5.6.3.3-1.\nTable 5.6.3.3-1: Enumeration PcEvent\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.6.3.2-1: Simple data types",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.3.3-1: Enumeration PcEvent",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.7\tError handling",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.7.1\tGeneral",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 5.2.4 of 3GPP TS 29.500 [5].\nFor the Npcf_EventExposure API, HTTP error responses shall be supported as specified in clause 4.8 of 3GPP TS 29.501 [6].\nProtocol errors and application errors specified in table 5.2.7.2-1 of 3GPP TS 29.500 [5] shall be supported for an HTTP method if the corresponding HTTP status codes are specified as mandatory for that HTTP method in table 5.2.7.1-1 of 3GPP TS 29.500 [5].\nIn addition, the requirements in the following clauses are applicable for the Npcf_EventExposure API.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.2\tProtocol Errors",
+                            "text_content": "In this Release of the specification, there are no service specific protocol errors applicable for the Npcf_EventExposure API.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.3\tApplication Errors",
+                            "text_content": "The application errors defined for the Npcf_EventExposure service are listed in table 5.7.3-1.\nTable 5.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.7.3-1: Application errors",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.8\tFeature negotiation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The optional features in table 5.8-1 are defined for the Npcf_EventExposure API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [5].\nTable 5.8-1: Supported Features\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 5.8-1: Supported Features",
+                            "table number": 45,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.9\tSecurity",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "As indicated in 3GPP TS 33.501 [19] and 3GPP TS 29.500 [5], the access to the Npcf_EventExposure API, based on local configuration, may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [20]), using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [21]) plays the role of the authorization server.\nIf OAuth2 authorization is used, an NF Service Consumer, prior to consuming services offered by the Nnrf_NFManagement API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [21], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF where the NF Service Consumer invoked the discovery of the Npcf_EventExposure service.\nThe Npcf_EventExposure API defines a single scope \"npcf-eventexposure\" for the entire service, and it does not define any additional scopes at resource or operation level.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "The present Annex contains an OpenAPI [7] specification of HTTP messages and content bodies used by the Npcf_EventExposure API.\nThis Annex shall take precedence when being discrepant to other parts of the specification with respect to the encoding of information elements and methods within the API.\nNOTE:\tThe semantics and procedures, as well as conditions, e.g. for the applicability and allowed combinations of attributes or values, not expressed in the OpenAPI definitions but defined in other parts of the specification also apply.\nInformative copies of the OpenAPI specification file contained in this 3GPP Technical Specification are available on a Git-based repository that uses the GitLab software version control system (see clause 5B of the 3GPP TR 21.900 [22] and clause 5.3.1 of the 3GPP TS 29.501 [6] for further information).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tNpcf_EventExposure API",
+            "description": "openapi: 3.0.0\ninfo:\nversion: 1.3.0-alpha.3\ntitle: Npcf_EventExposure\ndescription: |\nPCF Event Exposure Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: 3GPP TS 29.523 V18.2.0; 5G System; Policy Control Event Exposure Service; Stage 3.\nurl: https://www.3gpp.org/ftp/Specs/archive/29_series/29.523/\n\nservers:\n- url: '{apiRoot}/npcf-eventexposure/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- npcf-eventexposure\n\npaths:\n/subscriptions:\npost:\nsummary: Creates a new Individual Policy Control Events Subscription resource\noperationId: PostPcEventExposureSubsc\ntags:\n- Policy Control Events Subscription (Collection)\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/PcEventExposureSubsc'\nresponses:\n'201':\ndescription: Success\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/PcEventExposureSubsc'\nheaders:\nLocation:\ndescription: >\nContains the URI of the created individual policy control events subscription\nresource, according to the structure\n{apiRoot}/npcf-eventexposure/v1/subscriptions/{subscriptionId}\nrequired: true\nschema:\ntype: string\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\ncallbacks:\nPcEventNotification:\n'{$request.body#/notifUri}':\npost:\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/PcEventExposureNotif'\nresponses:\n'204':\ndescription: No Content, Notification was succesfull.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n/subscriptions/{subscriptionId}:\nget:\nsummary: \"Reads an existing Individual Policy Control Events Subscription\"\noperationId: GetPcEventExposureSubsc\ntags:\n- Individual Policy Control Events Subscription (Document)\nparameters:\n- name: subscriptionId\nin: path\ndescription: Policy Control Event Subscription ID.\nrequired: true\nschema:\ntype: string\nresponses:\n'200':\ndescription: OK. Resource representation is returned.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/PcEventExposureSubsc'\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'406':\n$ref: 'TS29571_CommonData.yaml#/components/responses/406'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\nput:\nsummary: \"Modifies an existing Individual Policy Control Events Subscription \"\noperationId: PutPcEventExposureSubsc\ntags:\n- Individual Policy Control Events Subscription (Document)\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/PcEventExposureSubsc'\nparameters:\n- name: subscriptionId\nin: path\ndescription: Policy Control Event Subscription ID.\nrequired: true\nschema:\ntype: string\nresponses:\n'200':\ndescription: OK. Resource was succesfully modified and representation is returned.\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/PcEventExposureSubsc'\n'204':\ndescription: No Content. Resource was succesfully modified.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\ndelete:\nsummary: \"Cancels an existing Individual Policy Control Events Subscription \"\noperationId: DeletePcEventExposureSubsc\ntags:\n- Individual Policy Control Events Subscription (Document)\nparameters:\n- name: subscriptionId\nin: path\ndescription: Policy Control Event Subscription ID.\nrequired: true\nschema:\ntype: string\nresponses:\n'204':\ndescription: No Content. Resource was succesfully deleted.\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{nrfApiRoot}/oauth2/token'\nscopes:\nnpcf-eventexposure: Access to the Npcf_EventExposure API.\n\nschemas:\n\nPcEventExposureNotif:\ndescription: >\nRepresents notifications about Policy Control events related to an Individual\nPolicy Events Subscription resource.\ntype: object\nproperties:\nnotifId:\ntype: string\neventNotifs:\ntype: array\nitems:\n$ref: '#/components/schemas/PcEventNotification'\nminItems: 1\nrequired:\n- notifId\n- eventNotifs\n\n\nPcEventExposureSubsc:\ndescription: Represents an Individual Policy Events Subscription resource.\ntype: object\nproperties:\neventSubs:\ntype: array\nitems:\n$ref: '#/components/schemas/PcEvent'\nminItems: 1\neventsRepInfo:\n$ref: '#/components/schemas/ReportingInformation'\ngroupId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/GroupId'\nfilterDnns:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Dnn'\nminItems: 1\nfilterSnssais:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Snssai'\nminItems: 1\nsnssaiDnns:\ntype: array\nitems:\n$ref: '#/components/schemas/SnssaiDnnCombination'\nminItems: 1\nfilterServices:\ntype: array\nitems:\n$ref: '#/components/schemas/ServiceIdentification'\nminItems: 1\nappIds:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ApplicationId'\nminItems: 1\nnotifUri:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nnotifId:\ntype: string\neventNotifs:\ntype: array\nitems:\n$ref: '#/components/schemas/PcEventNotification'\nminItems: 1\nsuppFeat:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'\nrequired:\n- eventSubs\n- notifId\n- notifUri\n\nReportingInformation:\ndescription: Represents the type of reporting that the subscription requires.\ntype: object\nproperties:\nimmRep:\ntype: boolean\nnotifMethod:\n$ref: 'TS29508_Nsmf_EventExposure.yaml#/components/schemas/NotificationMethod'\nmaxReportNbr:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uinteger'\nmonDur:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\nrepPeriod:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DurationSec'\nsampRatio:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SamplingRatio'\npartitionCriteria:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PartitioningCriteria'\nminItems: 1\ndescription: Criteria for partitioning the UEs before applying the sampling ratio.\ngrpRepTime:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DurationSec'\nnotifFlag:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/NotificationFlag'\nnotifFlagInstruct:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MutingExceptionInstructions'\nmutingSetting:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MutingNotificationsSettings'\n\nServiceIdentification:\ndescription: Identifies the service to which the subscription applies.\ntype: object\nproperties:\nservEthFlows:\ntype: array\nitems:\n$ref: '#/components/schemas/EthernetFlowInfo'\nminItems: 1\nservIpFlows:\ntype: array\nitems:\n$ref: '#/components/schemas/IpFlowInfo'\nminItems: 1\nafAppId:\n$ref: 'TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/AfAppId'\n# All conditions in allOf must be met\nallOf:\n# First condition is that servEthFlows and servIpFlows are mutually exclusive\n- not:\nrequired: [servEthFlows, servIpFlows]\n# Second condition is that at least one the servEthFlows, servIpFlows and afAppId shall be present\n- anyOf:\n- required: [servEthFlows]\n- required: [servIpFlows]\n- required: [afAppId]\n\nEthernetFlowInfo:\ndescription: Identifies an UL/DL ethernet flow.\ntype: object\nproperties:\nethFlows:\ntype: array\nitems:\n$ref: 'TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription'\nminItems: 1\nmaxItems: 2\nflowNumber:\ntype: integer\nrequired:\n- flowNumber\n\nIpFlowInfo:\ndescription: Identifies an UL/DL IP flow.\ntype: object\nproperties:\nipFlows:\ntype: array\nitems:\n$ref: 'TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/FlowDescription'\nminItems: 1\nmaxItems: 2\nflowNumber:\ntype: integer\nrequired:\n- flowNumber\n\nPcEventNotification:\ndescription: Represents the information reported for a Policy Control event.\ntype: object\nproperties:\nevent:\n$ref: '#/components/schemas/PcEvent'\naccType:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/AccessType'\naddAccessInfo:\n$ref: 'TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/AdditionalAccessInfo'\nrelAccessInfo:\n$ref: 'TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/AdditionalAccessInfo'\nanGwAddr:\n$ref: 'TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/AnGwAddress'\nratType:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/RatType'\nplmnId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PlmnIdNid'\nsatBackhaulCategory:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SatelliteBackhaulCategory'\nappliedCov:\n$ref: 'TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/ServiceAreaCoverageInfo'\nsupi:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'\ngpsi:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Gpsi'\ntimeStamp:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\npduSessionInfo:\n$ref: '#/components/schemas/PduSessionInformation'\nappId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ApplicationId'\nrepServices:\n$ref: '#/components/schemas/ServiceIdentification'\ndelivFailure:\n$ref: 'TS29522_ServiceParameter.yaml#/components/schemas/Failure'\nrequired:\n- event\n- timeStamp\n\nPduSessionInformation:\ndescription: Represents PDU session identification information.\ntype: object\nproperties:\nsnssai:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Snssai'\ndnn:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Dnn'\nueIpv4:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Ipv4Addr'\nueIpv6:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Ipv6Prefix'\nipDomain:\ntype: string\nueMac:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MacAddr48'\nrequired:\n- snssai\n- dnn\noneOf:\n- required: [ueMac]\n- anyOf:\n- required: [ueIpv4]\n- required: [ueIpv6]\nSnssaiDnnCombination:\ndescription: Represents a combination of S-NSSAI and DNN(s).\ntype: object\nproperties:\nsnssai:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Snssai'\ndnns:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Dnn'\nminItems: 1\n\n# Simple data types and Enumerations\n\nPcEvent:\ndescription: Represents the policy control events that can be subscribed.\nanyOf:\n- type: string\nenum:\n- AC_TY_CH\n- PLMN_CH\n- SAC_CH\n- SAT_CATEGORY_CH\n- SUCCESS_UE_POL_DEL_SP\n- UNSUCCESS_UE_POL_DEL_SP\n- APPLICATION_START\n- APPLICATION_STOP\n- type: string\ndescription: >\nThis string provides forward-compatibility with future extensions to the enumeration\nand is not used to encode content defined in the present version of this API.\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 46,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

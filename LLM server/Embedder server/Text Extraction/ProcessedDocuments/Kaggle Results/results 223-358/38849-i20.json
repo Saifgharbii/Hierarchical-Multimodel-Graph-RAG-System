@@ -1,0 +1,374 @@
+{
+    "document_name": "38849-i20.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document is a technical report for Work Item on New Radio (NR) Access Technology, covering introduction of lower 6GHz NR unlicensed operation for Europe (NR_6GHz_unlic_EU) and in the 5925-7125 MHz range for other regions (NR_6GHz_unlic_full).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TR 37.890: Feasibility Study on 6 GHz for LTE and NR in Licensed and Unlicensed Operations\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nACLR\t\t\t\tAdjacent Channel Leakage Ratio\nACS\t\t\t\tAdjacent Channel Selectivity\nBS\t\t\t\tBase Station\nBW\t\t\t\tBandwidth\nEIRP\t\t\t\tEffective Isotropic Radiated Power\nFR\t\t\t\tFrequency Range\nGSCN\t\t\t\tGlobal Synchronization Channel Number\nICS\t\t\t\tIn-Channel Selectivity\nITU-R\t\t\t\tRadiocommunication Sector of the International Telecommunication Union\nNR\t\t\t\tNew Radio\nNR-ARFCN\t\t\t\tNR Absolute Radio Frequency Channel Number\nOTA\t\t\t\tOver The Air\nRF\t\t\t\tRadio Frequency\nRX\t\t\t\tReceiver\nSCS\t\t\t\tSub-Carrier Spacing\nTDD\t\t\t\tTime division Duplex\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tBackground",
+            "description": "Administrations in Europe have had unlicensed operation in the range 5925 to 6425 MHz for consultation. The result of this consultation is that at the November 2020 meeting the ECC with ECC Decision (20)01 “on the harmonised use of the frequency bands 5945 to 6425 MHz for the implementation of Wireless Access Systems including Radio Local Area Networks (WAS/RLANs)” approved unlicensed operation in the range 5945 to 6425 MHz. This initiated this TR which has later been expanded to also include NR unlicensed operation in the 6 GHz band for other regions.\nNR-Unlicensed is standardized in Rel-16 with the definition of band n96 covering the spectrum range 5925-7125 MHz which is currently applicable in the USA only subject to FCC Report and Order FCC 20-51. For Rel-17 3GPP WG4 is tasked to also enable unlicensed operation in the range 5945 to 6425 MHz for European deployments and in the 5925-7125 MHz range for other regions.\nRegulatory information is maintained in [2].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tNR Frequency band definition",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tBand definition",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1 Band definition for lower 6GHz NR unlicensed operation",
+                            "text_content": "A NR band for unlicensed operation in the range 5925-6425 MHz is defined as:\nTable 5.1.1-1: NR operating bands in FR1\n\nTable 5.1.1-2: Channel bandwidths and SCS per operating band in FR1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.1-1: NR operating bands in FR1",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.1-2: Channel bandwidths and SCS per operating band in FR1",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.2 Band definition for the full 6GHz NR unlicensed operation",
+                            "text_content": "A NR band covering the full 6 GHz unlicensed range is defined as:\nTable 5.1.2-1: NR operating bands in FR1\n\nTable 5.1.2-2: Channel bandwidths and SCS per operating band in FR1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.1.2-1: NR operating bands in FR1",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.1.2-2: Channel bandwidths and SCS per operating band in FR1",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tNR-ARFCN and GSCN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\t\tNR-ARFCN and GSCN for full 6GHz NR unlicensed operation",
+                            "text_content": "Operation in the full 6GHz band is to be aligned with other technologies operation in the same shared spectrum restricted to the following NR-ARFCN and GSCN points.\nApplicable GSCN:\n-\tGSCN = {9548, 9562, 9576, 9590, 9603, 9617,9631, 9645, 9659, 9673, 9687, 9701, 9714, 9728, 9742, 9756, 9770, 9784, 9798, 9812, 9826, 9840, 9853, 9867, 9881, 9895, 9909, 9923, 9937, 9951, 9964, 9978, 9992, 10006, 10020, 10034, 10048, 10062, 10076, 10090, 10103, 10117, 10131, 10145, 10159, 10173, 10187, 10201, 10214, 10228, 10242, 10256, 10270, 10284, 10298, 10312, 10325, 10339, 10353}\nApplicable NR-ARFCN:\n-\tFor 20 MHz channel bandwidth, NREF = {795668, 797000, 798332, 799668, 801000, 802332, 803668, 805000, 806332, 807668, 809000, 810332, 811668, 813000, 814332, 815668, 817000, 818332, 819668, 821000, 822332, 823668, 825000, 826332, 827668, 829000, 830332, 831668, 833000, 834332, 835668, 837000, 838332, 839668, 841000, 842332, 843668, 845000, 846332, 847668, 849000, 850332, 851668, 853000, 854332, 855668, 857000, 858332, 859668, 861000, 862332, 863668, 865000, 866332, 867668, 869000, 870332, 871668, 873000, 874332}\n-\tFor 40 MHz channel bandwidth, NREF = {797668, 800332, 803000, 805668, 808332, 811000, 813668, 816332, 819000, 821668, 824332, 827000, 829668, 832332, 835000, 837668, 840332, 843000, 845668, 848332, 851000, 853668, 856332, 859000, 861668, 864332, 867000, 869668, 872332}\n-\tFor 60 MHz channel bandwidth, NREF = {798332, 799668, 803668, 805000, 809000, 810332, 814332, 815668, 819668, 821000, 825000, 826332, 830332, 831668, 835668, 837000, 841000, 842332, 846332, 847668, 851668, 853000, 857000, 858332, 862332, 863668, 867668, 869000, 873000}\n-\tFor 80 MHz channel bandwidth, NREF = {799000, 804332, 809668, 815000, 820332, 825668, 831000, 836332, 841668, 847000, 852332, 857668, 863000, 868332}\n-\tFor 100 MHz channel bandwidth, NREF = {799668, 803668, 810332, 814332, 821000, 825000, 831668, 835668, 842332, 846332, 853000, 857000, 863668, 867668, 869000, 870332, 871668}\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\t\tNR-ARFCN and GSCN for lower 6GHz NR unlicensed operation",
+                            "text_content": "Operation in the lower 6GHz band is to be aligned with other technologies operation in the same shared spectrum restricted to the following NR-ARFCN and GSCN points.\nApplicable GSCN:\n-\tGSCN = {9548, 9562, 9576, 9590, 9603, 9617,9631, 9645, 9659, 9673, 9687, 9701, 9714, 9728, 9742, 9756, 9770, 9784, 9798, 9812, 9826, 9840, 9853, 9867}\nApplicable NR-ARFCN:\n-\tFor 20 MHz channel bandwidth, NREF = {795668, 797000, 798332, 799668, 801000, 802332, 803668, 805000, 806332, 807668, 809000, 810332, 811668, 813000, 814332, 815668, 817000, 818332, 819668, 821000, 822332, 823668, 825000, 826332, 827668}\n-\tFor 40 MHz channel bandwidth, NREF = {797668, 800332, 803000, 805668, 808332, 811000, 813668, 816332, 819000, 821668, 824332, 827000}\n-\tFor 60 MHz channel bandwidth, NREF = {798332, 799668, 803668, 805000, 809000, 810332, 814332, 815668, 819668, 821000, 825000, 826332}\n-\tFor 80 MHz channel bandwidth, NREF = {799000, 804332, 809668, 815000, 820332, 825668}\n-\tFor 100 MHz channel bandwidth, NREF = {799668, 803668, 810332, 814332, 821000, 825000}\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tRF requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tUE specific",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tTransmitter characteristics",
+                            "text_content": "This section details specific transmitter characteristics for a UE operating in the 6 GHz NR band.\nTable 6.1.1-1: Summary of NS values.\n\nAdditional emission requirements can be signalled by the network. Each additional emission requirement is associated with a unique network signalling (NS) value indicated in RRC signalling by an NR frequency band number of the applicable operating band as detailed in TS 38.101-1.\nTo meet the additional requirements applicable in EU as given in EN 303 687, additional maximum power reduction (A-MPR) is allowed for the maximum output power as specified in Table 6.1.1.1.1-1 for low power indoor (LPI) with PC5 and in Table 6.1.1.1.1-1b for PC3.\n\nTable 6.1.1.1-1:  A-MPR for PC5 LPI\n\nTable 6.1.1.1.1-1a:  Signal setup\n\nThe figure depicts a simulation of a 5G network scenario, specifically focusing on the performance of a PC3 LPI (Long Term Evolution-Advanced) in the EU/CEPT (European Commission for the Promotion of Research and Technological Development) network. The simulation results show the impact of various factors on the network's performance, such as the number of users, the number of base stations (BTS), and the distance between the BTS and the user equipment (UE). The figure also includes a visual representation of the network's topology, showing the distribution of BTS and UE locations.\nFigure 6.1.1.1.1-1a: A-MPR simulation results for PC3 LPI in EU/CEPT.\n\nTable 6.1.1.1.1-1b: A-MPR for PC3 LPI (1TX)\n\nFor very low power (VLP) operation the out-of-band emissions and in-band power spectral density requirements are much more restrictive than for LPI.  For PC5 VLP, a comprehensive set of A-MPR simulation results is provided below for 20, 40, 60, and 80 MHz channels.  In Figure 6.1.1.1-1 all channels in the band are represented while in Figure 6.1.1.1-2 lower edge channels are not illustrated since those are most impacted by the additional spurious emission requirement of -45 dBm/MHz.  The lower edge channels found to be impacted were the ones centered at 5955 MHz for 20 MHz channels, 5965 MHz for 40 MHz channels, 5975 MHz and 5995 MHz for 60 MHz channels, and 5985 MHz for 80 MHz channels.\nTable 6.1.1.1-2.  Simulation scenarios for all CBW/SCS\n\nThe figure depicts a power backoff scheme for 20, 40, 60, and 80 MHz channels, illustrating the different power levels at which the signal is transmitted. The scheme is designed to ensure reliable communication in various frequency bands.\nFigure 6.1.1.1.1-1. Power backoff for 20, 40, 60, and 80 MHz channels\n\nThe figure depicts a power backoff scenario with lower edge channels excluded, illustrating the impact of these channels on the system's performance. The figure shows the power backoff configuration, with the lower edge channels excluded, which can lead to a reduction in the system's capacity and impact on the overall system performance.\nFigure 6.1.1.1.1-2. Power backoff with lower edge channels excluded\nBased on these simulation results, the A-MPR table for VLP is provided below in Table 6.1.1.1.1-3.\nTable 6.1.1.1.1-3.  PC5 A-MPR table for VLP\n\nTable 6.1.1.2.2-1: Signal setup (LPI).\n\nThe figure depicts a simulation of a 5G network in Australia, showing the performance of PC5 LPI (Long Term Evolution Plus) in terms of packet loss, jitter, and delay. The results indicate that the network is performing well, with low packet loss and jitter, and a low delay.\nFigure 6.1.1.2.2-1: A-MPR simulation results for PC5 LPI in Australia.\nTable 6.1.1.2.2-2: A-MPR for PC5 LPI in Australia\n\n\nTable 6.1.1.2.3-1: Signal setup (LPI and VLP).\n\nThe figure depicts a simulation of a 5G network in Japan, showing the performance of PC5 LPI (Long Term Evolution Plus) in terms of packet loss, jitter, and delay. The results indicate that the network is performing well, with low packet loss and jitter, and a low delay.\nFigure 6.1.1.2.3-1: A-MPR simulation results for PC5 LPI in Japan.\n\nTable 6.1.1.2.3-3a: A-MPR for PC5 LPI in Japan (lower edge)\n\nTable 6.1.1.2.3-3b: A-MPR for PC5 LPI in Japan (upper edge)\n\nThe figure depicts a simulation of a 5G network in Japan, showing the performance of PC5 VLP (Vehicular Packet Core) in terms of packet delivery rate (PDR) and packet loss rate (PLR). The simulation results indicate that PC5 VLP has a high PDR of 99.99% and a low PLR of 0.0001%, which demonstrates its effectiveness in providing reliable and high-speed communication in the 5G network.\nFigure 6.1.1.2.3-2: A-MPR simulation results for PC5 VLP in Japan.\n\nTable 6.1.1.2.3-3: A-MPR for PC5 VLP in Japan\n\nTable 6.1.1.2.1-1: Signal setup (LPI).\n\nThe figure depicts a simulation of a 5G network in Canada, showing the performance of PC5 LPI (Long Term Evolution Plus) in terms of packet loss, jitter, and delay. The results indicate that the network is performing well, with low packet loss and jitter, and a low delay.\nFigure 6.1.1.2.1-1: A-MPR simulation results for PC5 LPI in Canada.\n\nTable 6.1.1.2.1-2: A-MPR for PC5 LPI in Canada\n\nTable 6.1.1.2.1-3: Signal setup (VLP).\n\nThe figure depicts a simulation of a Passive Microwave Radar (PMR) system in Canada, with a focus on the performance of a Passive Microwave Radar (PMR) system in a specific location. The simulation results show the system's ability to detect and track vehicles, with a sensitivity of 100 meters and a range of 1000 meters. The system is designed to operate in a wide range of environmental conditions, including high temperatures and low temperatures, and is capable of detecting vehicles at night and in poor visibility conditions. The simulation results indicate that the system is effective in detecting and tracking vehicles, with a high level of accuracy and reliability.\nFigure 6.1.1.2.1-2: A-MPR simulation results for PC5 VLP in Canada.\nTable 6.1.1.2.1-4: A-MPR for PC5 VLP in Canada\n\nTable 6.1.1.2.2-1: Signal setup (LPI and VLP).\n\nThe figure depicts a simulation of a 5G network in South Korea, showing the performance of PC5 LPI (Long Term Evolution Plus) in terms of packet loss, jitter, and delay. The results indicate that the network is performing well, with low packet loss and jitter, and a low delay.\nFigure 6.1.1.2.2-1: A-MPR simulation results for PC5 LPI in South Korea.\n\nTable 6.1.1.2.2-2: A-MPR for PC5 LPI in South Korea\n\nTable 6.1.1.2.2-3 contains A-MPR values for the 5945-6425MHz frequency range based on South Korea regulatory requirements.\nTable 6.1.1.2.2-3: A-MPR for PC5 VLP in South Korea (5945-6425MHz).\n\nTable 6.1.1.2.2-4 contains A-MPR values for the 5925-5945MHz frequency range based on South Korea regulatory requirements.\n\nTable 6.1.1.2.2-4: A-MPR for PC5 VLP in South Korea (5925-5945MHz).\n\nTable 6.1.1.2.2-5 provides the A-MPR values for PC3 LPI with 1Tx based on South Korea regulatory requirements.\nTable 6.1.1.2.2-5: A-MPR for PC3 LPI with 1Tx in South Korea\n\nTable 6.1.1.2.2-6 provides the A-MPR values for PC3 LPI with 2Tx based on South Korea regulatory requirements.\nTable 6.1.1.2.2-6: A-MPR for PC3 LPI with 2Tx in South Korea\n\nTable 6.1.1.2.3-1: Signal setup (LPI).\n\nThe figure depicts a simulation of a 5G network in Peru and Chile, showing the performance of the PC5 LPI (Long Term Evolution) technology. The results show that the network achieves a 2.5 Gbps throughput in Peru and 1.5 Gbps in Chile, demonstrating the potential of 5G technology in providing high-speed connectivity in these regions.\nFigure 6.1.1.2.3-1: A-MPR simulation results for PC5 LPI in Peru and Chile.\nTable 6.1.1.2.3-2: A-MPR for PC5 LPI in Peru and Chile\n\nThe A-MPR results for PC5 LPI in Peru and Chile are mostly identical to the A-MPR results defined by NS_53 (LPI in US). In some cases, A-MPR results are 0.5-1dB relaxed comparing to NS_53. Thus, accounting for the marginal difference between these A-MPR values and NS_53, the latter can be re-used to support Peru and Chile.\n\n\nTable 6.1.1.2.4-1: Signal setup (VLP).\n\nThe figure depicts a simulation of a 5G network in Brazil, showing the performance of PC5 LPI (Long Term Evolution Plus) in terms of packet loss, jitter, and delay. The results indicate that the network is performing well, with low packet loss and jitter, and a low delay.\nFigure 6.1.1.2.4-1: A-MPR simulation results for PC5 LPI in Brazil.\n\nTable 6.1.1.2.4-2:  A-MPR for PC5 LPI in Brazil\n\n6.1.2\tReceiver characteristics\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.1-1: Summary of NS values.",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.1-1:  A-MPR for PC5 LPI",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.1.1-1a:  Signal setup",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.1.1-1b: A-MPR for PC3 LPI (1TX)",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.1-2.  Simulation scenarios for all CBW/SCS",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.1.1-3.  PC5 A-MPR table for VLP",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.2-1: Signal setup (LPI).",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.2-2: A-MPR for PC5 LPI in Australia",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.3-1: Signal setup (LPI and VLP).",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.3-3a: A-MPR for PC5 LPI in Japan (lower edge)",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.3-3b: A-MPR for PC5 LPI in Japan (upper edge)",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.3-3: A-MPR for PC5 VLP in Japan",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.1-1: Signal setup (LPI).",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.1-2: A-MPR for PC5 LPI in Canada",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.1-3: Signal setup (VLP).",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.1-4: A-MPR for PC5 VLP in Canada",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.2-1: Signal setup (LPI and VLP).",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.2-2: A-MPR for PC5 LPI in South Korea",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.2-3: A-MPR for PC5 VLP in South Korea (5945-6425MHz).",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.2-4: A-MPR for PC5 VLP in South Korea (5925-5945MHz).",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.2-5: A-MPR for PC3 LPI with 1Tx in South Korea",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.2-6: A-MPR for PC3 LPI with 2Tx in South Korea",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.3-1: Signal setup (LPI).",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.3-2: A-MPR for PC5 LPI in Peru and Chile",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.4-1: Signal setup (VLP).",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.1.2.4-2:  A-MPR for PC5 LPI in Brazil",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tBS specific",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "6.2.1\tTransmitter characteristics\nFor operation in full unlicensed band 5925-7125MHz, existing BS transmitter requirements for n96 can be reused.\n6.2.2\tReceiver characteristics\nFor operation in full unlicensed band 5925-7125MHz, existing BS receiver requirements for n96 can be reused.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tRRM",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tFrequency bands grouping",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 33,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 34,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

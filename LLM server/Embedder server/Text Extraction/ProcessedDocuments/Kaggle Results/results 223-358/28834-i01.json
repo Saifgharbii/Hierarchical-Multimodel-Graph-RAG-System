@@ -1,0 +1,534 @@
+{
+    "document_name": "28834-i01.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document studies potential use cases, requirements and solutions for the management of cloud-native virtualized network function and the impacts on the 3GPP management system. The present document provides conclusions and recommendations on the next steps in the standardization.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\tNGMN Cloud Native Enabling Future Telco Platforms v5.2. 17. May 2021.\n[3]\tETSI GR NFV-IFA 029: \"Report on the Enhancements of the NFV architecture towards cloud-native and Paas\".\n[4]\tETSI GR NFV-EVE 019: \"Report on VNF generic OAM functions\".\n[5]\tETSI GR NFV-IFA 037: \"Report on further NFV support for 5G\".\n[6]\tETSI GS NFV-IFA 040: \"Requirements for service interfaces and object models for OS container management and orchestration specification\".\n[7]\tETSI GS NFV-EVE 011 \"Specification of the Classification of Cloud Native VNF implementations\".\n[8]\tETSI GS NFV-IFA 008 V4.3.1 (2022-05): \"Network Functions Virtualisation (NFV) Release 4; Management and Orchestration; Ve-Vnfm reference point - Interface and Information Model Specification\".\n[9]\tETSI GS NFV-IFA 013 V4.3.1 (2022-06) \"Network Function Virtualization (NFV); Management and Orchestration; Os-Ma-nfvo Reference Point - Interface and Information Model Specification\".\n[10]\t3GPP TS 28.526: \"Life Cycle Management (LCM) for mobile networks that include virtualized network functions; Procedures\".\n[11]\t3GPP TS 28.533: \"Management and orchestration; Architecture framework\".\n[12]\tETSI GS NFV-IFA 011 V4.3.1 (2022-06): \"Network Functions Virtualisation (NFV) Release 4; Management and Orchestration; VNF Descriptor and Packaging Specification\".\n[13]\tVoid\n[14]\t3GPP TS 28.516: \"Fault Management (FM) for mobile networks that include virtualized network functions; Procedure\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TR 21.905 [1] and TS 28.526 [10]. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1] or in TS 28.526 [10].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nCM\tConfiguration Management\nFM\tFault Management\nLCM\tLifecycle Management\nNF\tNetwork Function\nNFV\tNetwork Functions Virtualization\nNFVO\tNetwork Functions Virtualization Orchestrator\nNS\tNetwork Service\nOSS\tOperations Support System\nPM\tPerformance Management\nSBMA\tService Based Management Architecture\nVNF\tLifecycle Management\nVNFC\tVirtualized Network Function Component\nVNFM\tVirtualized Network Function Manager\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4 \tConcepts and background",
+            "description": "Concepts relevant to cloud native VNFs are defined in various standardization bodies and industry fora, including \"cloud-native network function\" in CNCF and \"cloud-native VNF\" in ETSI.\nIn [2] transformation toward cloud-native in the main domains of the telecommunication infrastructure is analysed as an important driver for internal optimization, cost saving, and enablement of vertical solutions.\nClause 6.2 of ETSI GS NFV-EVE 011 [7] describes a set of characteristics which relate to cloud-native virtualized network functions (VNFs) including: redundancy – resiliency, fault monitoring and failure detection, scaling in/out, decomposition, automated instantiation and configuration, load balancing, and automated resource management.\nPotential impact of providing \"PaaS\"-type capabilities and supporting VNFs which follow cloud-native design principles on the NFV architecture is studied in [3]. Annex A in [3] also provides a comprehensive overview of the cloud-native related industry initiatives.\nRequirements on the list of services offered by architectural elements providing the container management related functions described in [3] are specified in [6].\nIn [4] the types of VNF management functions which can be generalized and provided as \"generic OAM functions\" are analysed and defined. Possible solutions for realizing such generic functions are also described.\nIn [5] NFV architectural capabilities and features are profiled based on their utility in addressing the 5G network capabilities and features and enhancements to NFV architectural framework are recommended to further support 5G network characteristics\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tPotential use cases and requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tUse case# 1: Configuration of the cloud-native VNF using generic OAM functions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tDescription",
+                            "text_content": "This use case is about the configuration of cloud-native VNFs that are implemented to use \"VNF configuration manager function\", which is one of the generic OAM functions proposed in [4] and can handle changes to the configuration of a VNF/VNFC, such as obtaining configuration files, managing configuration versions, storing configuration files, implementing configurations, etc.\nWhen configuring cloud-native VNFs, the proposed new generic OAM function would allow the 3GPP management system to send a request with the cloud-native VNF/VNFC instance(s) configuration to the VNF configuration manager, then the VNF configuration manager performs the required configuration to the target VNF/VNFC instance(s), and finally the 3GPP management system will receive the configuration results from the VNF configuration manager. In this use case scenario, the 3GPP management system can use the VNF configuration manager function to deliver configuration requirements to multiple VNFs in a more unified way. That can reduce the duplication of work in the configuration of the 3GPP management system.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tIssues",
+                            "text_content": "The APIs related to the VNF configuration manager have not been published yet as an ETSI NFV solution. ETSI NFV may publish new APIs as a result of normative work, as a result 3GPP specifications may need to be updated to refer to the new APIs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tPotential requirements",
+                            "text_content": "REQ-CVNF_CM_CON-1: The 3GPP management system shall be able to send a configuration request for a cloud-native VNF/VNFC to the VNF configuration manager.\nREQ-CVNF_CM_CON-2: The 3GPP management system shall be able to receive responses from the VNF configuration manager about the completion of the cloud-native VNF configuration request.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tUse case# 2: Traffic management of the cloud-native VNF using generic OAM functions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tDescription",
+                            "text_content": "This use case is about the traffic management of cloud-native VNFs using the \"traffic enforcer function\", which is one of the generic OAM functions proposed in [4] and can block and reroute the traffic of VNFC instances.\nWhen there is a problem with one of the VNFCs of the cloud-native VNF, the proposed new generic OAM function would allow the 3GPP management system to send a traffic management request to the traffic enforcer, then the traffic enforcer performs the required blocking operations on the VNFC instances and reroutes the traffic by using the APIs exposed by MANO, and finally the 3GPP management system will receive the management results from the traffic enforcer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tIssues",
+                            "text_content": "The APIs related to the traffic enforcer function have not been published yet as an ETSI NFV solution. ETSI NFV may publish new APIs as a result of normative work, as a result 3GPP specifications may need to be updated to refer to the new APIs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tPotential requirements",
+                            "text_content": "REQ-CVNF_TM_CON-1: The 3GPP management system shall be able to send a traffic management request for a cloud-native VNF/VNFC to the traffic enforcer.\nREQ-CVNF_TM_CON-2: The 3GPP management system shall be able to receive a returned result from the traffic enforcer about the traffic management of cloud-native VNFs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tUse case# 3: Performance monitoring of the cloud-native VNF using generic OAM functions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tDescription",
+                            "text_content": "This use case is about the performance monitoring of cloud-native VNFs using the \" VNF metrics aggregator function and VNF metrics analyser function\", which belongs to generic OAM functions proposed in [4]. The VNF metrics aggregator function can collect the metrics from the VNF/VNFC/NFV-MANO, the VNF metrics analyser function can analyse the metrics provided by the VNF metrics aggregator and can be configured to send notifications based on e.g. statistical processing, abnormal behaviour detection, or threshold crossing.\nThe 3GPP management system sends a performance monitoring request to the VNF metrics analyser, then the VNF metrics analyser retrieves the metrics of the VNF/VNFC/NFV-MANO from the VNF metrics aggregator.\nThe VNF metrics analyser processes and evaluates the metrics (e.g. analysis and identifies possible issues), the 3GPP management system will receive the metrics analytics result from VNF metrics analyser function.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tIssues",
+                            "text_content": "The APIs related to the VNF metrics aggregator function and VNF metrics analyser function have not been published yet as an ETSI NFV solution. ETSI NFV may publish new APIs as a result of normative work, as a result 3GPP specifications may need to be updated to refer to the new APIs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.3\tPotential requirements",
+                            "text_content": "REQ-CVNF_PM-1: The 3GPP management system shall be able to send a performance monitoring request for a cloud-native VNF to the VNF metrics analyser function.\nREQ-CVNF_PM-2: The 3GPP management system shall be able to receive the notify from VNF metrics analyser function about the performance monitoring of cloud-native VNFs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tUse case# 4: Failure of VNFC within cloud-native VNF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tDescription",
+                            "text_content": "Figure 5.4-1 (copied from ETSI GR NFV-IFA 029 [3] clause 5.2.2.1) shows a cloud-native VNF which is composed of multiple VNFCs. Load balancing is done over several VNFC instances. In the case of a failing VNFC instance, fail-over can happen to another VNFC instance.\nThe figure depicts a cloud-native VNF load balancing and failover system, illustrating how virtual network functions (VNFs) are managed and distributed across multiple cloud instances. Key components include load balancing algorithms, failover mechanisms, and monitoring tools, ensuring efficient and reliable network performance.\nFigure 5.4-1: Cloud-native VNF load balancing and failover\nAs a pre-condition to this use case, the network is running normally. The 3GPP management system has initiated collection of measurements from the cloud-native VNF.\nThe use case begins when a VNFC instance (for example VNFC-1) fails.\nAs described in ETSI GR NFV-IFA 029 [3], the VNFM, the failover agent, and the load balancer may work together to execute failover to a replacement VNFC instance.\nIn case the failover is too slow or the failover is unsuccessful, the VNF may experience an overload situation. This overload situation will result in abnormal values in the performance measurements which are collected by the 3GPP management system. In some cases, this may result in notifications from the 3GPP management system if pre-defined thresholds are crossed. Depending on the impact to the VNF functionality, the 3GPP management system may issue alarms to indicate that functionality is lost or impaired.\nThe end result is that the 3GPP management system may issue alarms or performance data indicating a VNF overload situation if the failover is too slow or if the failover is unsuccessful.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tPotential requirements",
+                            "text_content": "None.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.5\tUse case# 5: NF creation as a cloud native VNF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.5.1\tDescription",
+                            "text_content": "As described in clause 5.3.1 in ETSI GR NFV-IFA 029 [3], Container as a Service (CaaS) is widely applied in the industry for improving the efficiency of enterprise DevOps activities, and it has the characteristics of both PaaS and Cloud-native. One of the recommendations from ETSI GR NFV-FA 029 [3] is to introduce support for container management in ETSI NFV MANO, such as introducing support for MCIOP (Managed Container Infrastructure Object Package) and CISM (Container Infrastructure Service Management).\nThe use case begins when the 3GPP management system decides to deploy a NF as a containerised VNF.\nThe 3GPP management system requests to interact with ETSI NFV MANO for instantiation of the VNF (See in ETSI GS NFV-IFA 008 V4.3.1 [8] and ETSI GS NFV-IFA 013 V4.3.1 [9]). NFV MANO inspects the relevant VNF Descriptor (as defined in ETSI GS NFV-IFA 011 V4.3.1 [12]) to get the required containerised resource information.\nNFV MANO will request CISM for containerised resource creation ( as defined in ETSI GS NFV-IFA 040 V4.3.1 [6]). When the VNF instance has been created, NFV MANO sends a notification to the 3GPP management system to notify the VNF has been instantiated.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.2\tIssues",
+                            "text_content": "TS 28.526 [10] describes the procedures to be used by the 3GPP management system to request instantiation of a VNF. However, TS 28.526 [10] is not compatible with 5G/SBMA architecture and only contains reference of the release 2 specifications from ETSI NFV which do not support containerized VNF LCM.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.3\tPotential requirements",
+                            "text_content": "REQ-CVNF_NF_CREATION-1: The 3GPP management system shall have a capability to interact with ETSI NFV MANO for creation of NF as a containerised VNF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.6\tUse case# 6: Scaling of cloud-native VNF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.6.1\tDescription",
+                            "text_content": "As a pre-condition to this use case, the network is running normally. The 3GPP management system has subscribed to VNF instance lifecycle notifications from ETSI NFV MANO.\nThe use case begins when the 3GPP management system decides to scale a VNF.\nThe 3GPP management system requests ETSI NFV MANO to scale the VNF (as defined in ETSI GS NFV-IFA 008 [8] for the case where EM communicates with VNFM, and ETSI GS NFV-IFA 013 V4.3.1 [9] for the case where OSS communicates with NFVO). ETSI NFV MANO inspects the relevant VNF Descriptor (as defined in ETSI GS NFV-IFA 011 [12]) to find the VNF components (VNFCs).\nETSI NFV MANO will add or remove VNFC instances as needed for the desired scaling level of the VNF. When the VNFCs have been added or removed, ETSI NFV MANO sends a notification to the 3GPP management system to notify that the VNF has been scaled. This notification includes information on the changes to VNFCs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.2\tIssues",
+                            "text_content": "TS 28.526 [10] describes the procedures to be used by the 3GPP management system to request scaling. However, TS 28.526 [10] is written in terms (for example Network Manager and Element Manager) which are not compatible with the 5G architecture as described in TS 28.533 [11] and do not support scaling for containerized VNF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.6.3\tPotential requirements",
+                            "text_content": "REQ-CVNF_SCALING-1: The 3GPP management system shall have a capability to interact with ETSI NFV MANO for scaling a cloud-native VNF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.7\tUse case# 7: Healing of cloud-native VNF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.7.1\tDescription",
+                            "text_content": "As a pre-condition to this use case, the 3GPP management system has subscribed to VNF instance lifecycle notifications from ETSI NFV MANO.\nThe use case begins when a faulty virtualization-specific aspect of the VNF has been notified to the 3GPP management system.\nthe 3GPP management decide to initiate a healing procedure to recover the faulty virtualization-specific aspects of the VNF.\nThe 3GPP management system requests ETSI NFV MANO to execute healing VNF with indication of VNF Components to recover and indication of the healing procedure to execute (as defined in clause 7.2.10 ETSI GS NFV-IFA 008 [8] for the case where EM communicates with VNFM, and ETSI GS NFV-IFA 013 V4.3.1 [9] for the case where OSS communicates with NFVO).\nETSI NFV MANO sends a notification to 3GPP management system about the start of the VNF healing execution.\nETSI NFV MANO identifies the VNF instance and executes the procedure to heal the VNF instance.\nETSI NFV MANO sends a notification to 3GPP management system about the end and the result of the VNF Healing execution, this notification includes success or failure. In case of success, the VNF/VNFC has been healed, and the associated instance of a VnfInfo information element has been updated. In case of failure, appropriate error information is provided in the notification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.2\tIssues",
+                            "text_content": "TS 28.516 [14] describes the procedures to be used by the 3GPP management system to request healing. However, TS 28.516 [14] is written in terms (for example Element Manager) which are not compatible with the 5G architecture as described in TS 28.533 [11].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.3\tPotential requirements",
+                            "text_content": "REQ-CVNF_Healing-1 The 3GPP management system shall have a capability to interact with ETSI NFV MANO for healing a cloud-native VNF.\nREQ-CVNF_Healing-2 The 3GPP management system shall have a capability to interact with ETSI NFV VNFM for healing a cloud-native VNF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.8\tUse case# 8: VNF package update of the cloud-native VNF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.8.1\tDescription",
+                            "text_content": "As a pre-condition to this use case, the network is running normally. The 3GPP management system has subscribed to VNF instance lifecycle notifications from ETSI NFV MANO.\nThe use case begins when the 3GPP management system decides to update VNF package for a VNF instance.\nThe 3GPP management system requests ETSI NFV MANO to change current VNF package (as defined in clause 7.2.24 in ETSI GS NFV-IFA 008 V4.3.1 [8]) for the case where EM communicates with VNFM, and clause 7.3.5 in ETSI GS NFV-IFA 013 V4.3.1 [9] for the case where OSS communicates with NFVO).\nETSI NFV MANO inspects the current and target VNF Descriptor (as defined in clause 7.1.15 in ETSI GS NFV-IFA 011 V4.3.1 [12]) to differentiate possible changing values that concern to some VNF component (e.g. VDU, internal VLD, etc.) or property (e.g. a Scaling Aspect, etc.).\nThe ETSI NFV MANO will change of both the VNF software version and the VNF virtualised resources, including terminating the virtualised resource instances running the current software version and instantiating new virtualised resource instances with the target VNF software version.\nWhen the VNF software version and the VNF virtualised resources have been changed, ETSI NFV MANO sends a notification to the 3GPP management system to notify that the VNF package has been updated. This notification includes information on the changes to VNF package.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.2\tIssues",
+                            "text_content": "TS 28.526 [10] describes the procedures to be used by the 3GPP management system to update. However, TS 28.526 [10] is not compatible with 5G/SBMA architecture and only contains reference of the release 2 specifications from ETSI NFV which do not support containerized VNF LCM.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.8.3\tPotential requirements",
+                            "text_content": "REQ-CVNF_Updating-1: The 3GPP management system shall be able to send a request for VNF package update of the cloud-native VNF to ETSI NFV MANO.\nREQ-CVNF_Updating-2: The 3GPP management system shall be able to receive notification from ETSI NFV MANO about VNF package update of cloud-native VNF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.9\tUse case# 9: VNF package management of the cloud-native VNF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.9.1\tDescription",
+                            "text_content": "VNF package procedure involves VNF package on-boarding, VNF Package enabling, VNF Package disabling, VNF Package deleting, Abort VNF package deletion, VNF Package querying, fetch VNF Package, notify operation on VNF Package management interface, subscribe operation on VNF Package management interface and fetch on-boarded VNF Package artifacts, as described in clause 4.3 in TS 28.526 [10].The VNF package management operations (as defined in clause 7.7 in ETSI GS NFV-IFA 013 V4.3.1 [9]) used by procedures of VNF Package enabling, VNF Package disabling and Abort VNF package deletion have been voided. VNF package on-boarding of the cloud-native VNF is taken as an example to describe the VNF package management of the cloud-native VNF.\nETSI GR NFV-IFA 029 [3] clause 5.3.7 provides descriptions of use cases for the onboarding of VNF Packages for containerized workloads. It covers two different use cases, where the container images are either included or not included in the VNF Package to be onboarded and introduce MCIOP (Managed Container Infrastructure Object Package) and CIR (Container Image Registry).\nAs a pre-condition to this use case, the network is running normally. The 3GPP management system has subscribed to VNF instance lifecycle notifications from ETSI NFV MANO.\nThe use case begins when the 3GPP management system decides to on-board a containerized VNF package which is used to instantiate the VNF instance.\nThe 3GPP management system requests ETSI NFV MANO to on-board a containerized VNF package (as defined in clause 7.2.2 in ETSI GS NFV-IFA 013 V4.3.1 [9])\nETSI NFV MANO will upload all managed container infrastructure object packages which contain declarative descriptors and configuration files (as defined in ETSI GS NFV-IFA 040 V4.3.1 [6]).\nETSI NFV MANO sends a notification to the 3GPP management system to notify the result of on-boarding of containerized VNF package. The result indicates if the uploading and processing, including validation, of the VNF Package has been successful or not with a standard success/error result.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.9.2\tIssues",
+                            "text_content": "TS 28.526 [10] describes the procedures to be used by the 3GPP management system to request VNF package management. However, TS 28.526 [10] is written in terms (for example Network Manager) which are not compatible with the 5G architecture as described in TS 28.533 [11] and do not support VNF package management for containerized VNF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.9.3\tPotential requirements",
+                            "text_content": "REQ-CVNF_VNF_PKG-1: The 3GPP management system shall have a capability to interact with ETSI NFV MANO for VNF package management of the cloud-native VNF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tPotential solutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "6.1\tPotential solution for management of the cloud-native VNF using generic OAM functions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.2\tPotential impact of allocation of functionality about generic OAM functions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tIntroduction",
+                            "text_content": "ETSI GR NFV-EVE 019 [4] proposes 4 general solutions (A, B1, B2, and C). This clause explores how the 3GPP Management System may be impacted by the proposed allocation of functionality for these solutions.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tETSI GR NFV-EVE 019 Solution A",
+                            "text_content": "In ETSI GR NFV-EVE 019 [4] Solution A, it is proposed to introduce a new functional block \"Generic OAM\". This new functional block would not be contained by any existing functional block. Figure 6.2.2-1 (copied from Figure 6.3.3-1 in [4]) shows an overview of the solution.\nThe figure depicts a detailed allocation of functionality for Solution A, illustrating the various components and their respective responsibilities within the system.\nFigure 6.2.2-1: Allocation of functionality for Solution A\nAccording to this proposal, there will be a new touchpoint from OSS/BSS to the Generic OAM functional block. Work is ongoing to define the services or APIs which are exposed via this new touchpoint, therefore it is not possible at this time to analyse the impacts to the 3GPP Management System.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tETSI GR NFV-EVE 019 Solution B1",
+                            "text_content": "In ETSI GR NFV-EVE 019 [4] Solution B1, it is proposed to allocate the new functionality to existing functional blocks. Figure 6.2.3-1 (copied from Figure 6.4.2-1 in [4]) uses arrows to show where the functions should be placed.\nThe figure depicts a detailed allocation of functionality for Solution B1, illustrating the various components and their respective responsibilities within the system.\nFigure 6.2.3-1: Allocation of functionality for Solution B1\nAccording to this proposal, it is proposed to allocate the following functions within the Element Manager:\n-\tNetwork Configuration Manager\n-\tVNF Configuration Manager\n-\tUpgrade VNF\n-\tVNF Metrics Manager\n-\tVNF Metrics Aggregator\nThe conclusion of ETSI GR NFV-EVE 019 [4] states that Solution B \"is not recommended to be further considered during the normative work\". Therefore, the implications of Solution B1 are not analysed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.4\tETSI GR NFV-EVE 019 Solution B2",
+                            "text_content": "In ETSI GR NFV-EVE 019 [4] Solution B2, it is proposed to allocate the new functionality to existing functional blocks. Figure 6.2.4-1 (copied from Figure 6.4.3-1 in [4]) uses arrows to show where the functions should be placed.\nFigure 6.2.4-1: Allocation of functionality for Solution B2\nAccording to this proposal, it is proposed to allocate the following functions within the Element Manager:\nNetwork Configuration Manager\n-\tVNF Configuration Manager\n- \tUpgrade VNF\nThe conclusion of ETSI GR NFV-EVE 019 [4] states that Solution B \"is not recommended to be further considered during the normative work\". Therefore, the implications of Solution B2 are not analysed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.5\tETSI GR NFV-EVE 019 Solution C",
+                            "text_content": "In ETSI GR NFV-EVE 019 [4] Solution C, it is proposed that each generic OAM function should be a VNF.\nAccording to this proposal, there will be multiple new external management functions. Work is ongoing to define the services or APIs which are exposed by these new functions, therefore it is not possible at this time to analyse the impacts to the 3GPP Management System.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tPotential solution for cloud native VNF creation with ETSI NFV MANO",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tIntroduction",
+                            "text_content": "The following solution corresponds to the use case # 5 on NF creation as a cloud native VNF.\nIn this solution, 3GPP management system (Network Function Management Service Provider (NFMS_P)) interacts with ETSI NFV MANO when initiating a NF as a cloud native VNF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tDescription",
+                            "text_content": "The Figure 6.3.2-1 illustrates the procedure of creating a new network function instance by interacting with ETSI NFV MANO. It is proposed that the existing procedure in clause 7.10 in TS 28.531 can be re-used, however the latest Release 4 specifications from ETSI NFV should be used.\nThe figure depicts the network function instance creation procedure, illustrating the steps involved in creating a network function instance (NFI) in a 5G network. The figure shows the process of creating a new NFI, including the selection of a network function, the creation of a network function instance, and the deployment of the NFI. The figure also includes a diagram of the network function instance, showing the components and their connections.\nFigure 6.3.2-1: Network Function Instance Creation procedure\n-\tNetwork Function Management Service Provider (NFMS_P) receives a create network function request (createMOI) from a consumer.\n-\tIf NF instance to be created contains virtualized part and containerized resource needs to be allocated, NFMS_P interacts with ETSI NFV MANO for VNF instance creation by using the operation produced by ETSI NFV MANO as specified in ETSI NFV release 4 specifications. For example:\n-\tif needed the NFMS_P invokes corresponding VNF Package management procedure as described in clause 7.7 in ETSI NFV-IFA013 V4.3.1 [9]. The VNF package which support designing a VNFD for a containerized VNF is complied with ETSI GS NFV-IFA 011 V4.3.1 [12].\n-\tthe NFMS_P invokes VNF lifecycle management procedure by interworking with ETSI NFV MANO as described in clause 7.3.5 (update NS operation) in ETSI NFV-IFA013 V4.3.1 [9] or in clause 7.2.3 (Instantiate VNF operation) in ETSI GS NFV-IFA 008 V4.3.1 [8].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tPotential solution for scaling of cloud-native VNF with ETSI NFV MANO",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tIntroduction",
+                            "text_content": "The following solution corresponds to the use case # 6 on Scaling of cloud-native VNF.\nIn this solution, 3GPP management system interacts with ETSI NFV MANO when initiating scale a NF as a cloud native VNF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.2\tDescription",
+                            "text_content": "The 3GPP management system invokes the Scale NS operation (see clause 7.3.4 in ETSI GS NFV-IFA 013 [9]) to request NFVO via the Os-Ma-nfvo interface to scale a cloud-native VNF with ScaleVnfData as included. When the NFVO receives the Scale NS operation of a cloud-native VNF from the 3GPP management system, the NFVO sends the NS Lifecycle Change notification to the 3GPP management system indicating the result of Scale NS operation (see clause 7.3.12 of ETSI GS NFV-IFA 013 [6]).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.5\tPotential solution for healing of cloud-native NFV",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.5.1\tSolution for healing of cloud-native NFV with ETSI NFV MANO",
+                            "text_content": "The following solution corresponds to the use case # 7 Healing of cloud-native VNF.\nIn this solution, 3GPP management system interacts with ETSI NFV MANO when initiating healing a cloud-native VNF.\n3GPP management system determines to initiate a healing procedure to recover the faulty virtualization-specific aspects of the cloud-native VNF. The 3GPP management system invokes the heal NS operation (see clause 7.3.9 in ETSI GS NFV-IFA 013 [9]) to request NFVO via the Os-Ma-nfvo interface to heal a cloud-native VNF with HealVnfData as included. When the NFVO receives the heal NS operation of a cloud native VNF from the 3GPP management system, the NFVO sends the NS Lifecycle Change notification to the 3GPP management system indicating the result of Heal NS operation (see clause 7.3.12 of ETSI GS NFV-IFA 013 [6]).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.5.2\tSolution for healing of cloud-native NFV with ETSI NFV VNFM",
+                            "text_content": "The following solution corresponds to the use case # 7 Healing of cloud-native VNF.\nIn this solution, 3GPP management system interacts with ETSI NFV VNFM when initiating healing a cloud-native VNF.\n3GPP management system determines to initiate a healing procedure to recover the faulty virtualization-specific aspects of the cloud-native VNF. The 3GPP management system invokes the heal VNF operation (see clause 7.2.10 in ETSI GS NFV-IFA 008 [8]) to request VNFM via the Ve-Vnfm-em interface to heal a cloud-native VNF. When the VNFM receives the heal VNF operation of a cloud native VNF from the 3GPP management system, the VNFM sends the VNF Lifecycle Change notification to the 3GPP management system indicating the result of Heal VNF operation (see clause 7.2.15 of ETSI GS NFV-IFA 008 [8]).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.6\tPotential solution for cloud-native VNF package management with ETSI NFV MANO",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.6.1\tIntroduction",
+                            "text_content": "The following solution corresponds to the use cases # 8 and 9 on cloud-native VNF package management.\nIn this solution, 3GPP management system interacts with ETSI NFV MANO when initiating VNF package onboarding or update operation for a cloud native VNF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.6.2\tDescription",
+                            "text_content": "The 3GPP management system invokes the UploadVnfPackageRequest or UpdateNsRequest operation (see clauses 7.7.2 and 7.3.5 in ETSI GS NFV-IFA 013 [9]) to request NFVO via the Os-Ma-nfvo interface to upload a new package or update an existing VNF package of the cloud-native VNF.\nIn addition, the 3GPP management system can also invoke ChangeCurrentVnfPackageRequest (see clause 7.2.24 in ETSI GS NFV-IFA 008 [8] ) to request VNFM via the Ve-Vnfm interface to update the current VNF package of a cloud-native VNF.\nThe new VNF package or updated VNF package, which support the deployment requirements, should comply with ETSI GS NFV-IFA011 [12].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tConclusions and recommendations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The present document presents use cases related to the management of cloud-native virtualized network functions, in terms of life cycle management, PM, FM and CM, and some of these use cases are related to VNF generic OAM functions. The potential solutions about the VNF generic OAM functions see clause 6.1 and the potential impact of different solutions on the 3GPP management system is briefly analysed in clause 6.2. In addition, based on the analysis of these use cases, it is recommended that the further normative work should take into account the relevant progress from ETSI NFV.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tIssue on NF creation as a cloud native VNF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "It is recommended for 3GPP management system to support the capability of creation a cloud-native VNF by interacting with ETSI NFV MANO. The operation as defined in release 4 of ETSI GS NFV-IFA 013 [9] or ETSI GS NFV-IFA 008 [8] should be used.\nThe detailed solution see clause 6.3.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tIssue on Scaling of cloud-native VNF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "It is recommended for 3GPP management system to support the capability of scaling a cloud-native VNF by interacting with ETSI NFV MANO. The operation as defined in release 4 of ETSI GS NFV-IFA 013 should be used.\nThe detailed solution see clause 6.4.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.4\tIssue on healing of cloud-native VNF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "It is recommended that 3GPP management system interacts with ETSI NFV MANO for healing a cloud-native VNF. The operation as defined in release 4 of ETSI GS NFV-IFA 013 [9] should be used.\nIt is recommended that 3GPP management system interacts with ETSI NFV VNFM for healing a cloud-native VNF. The operation as defined in release 4 of ETSI GS NFV-IFA 008 [8] should be used.\nThe detailed solution see clause 6.8.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.5\tIssue on VNF package management of the cloud-native VNF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "It is recommended that 3GPP management system interacts with ETSI NFV MANO for VNF package management procedures of cloud-native VNF. The operation as defined in release 4 of ETSI GS NFV-IFA 013 and ETSI GS NFV-IFA 008 should be used.\nThe detailed solution see clause 6.9.\nPublished versions of TS 28.526 [1] (from Release-14 to Release-17) should be corrected to remove references to VNF package management operations that have been voided in ETSI GS NFV-IFA 013 [9].\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

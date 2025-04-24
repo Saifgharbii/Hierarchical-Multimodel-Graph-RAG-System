@@ -1,0 +1,305 @@
+{
+    "document_name": "28832-i01.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document investigates the potential requirements related to management of the URLLC features defined in RAN side. It documents key issues related to configuration management of URLLC features and to the performance measurements for URLLC service. It provides potential solutions and recommendations for the normative work.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 22.104: \"Service requirements for cyber-physical control applications in vertical domains; Stage 1\".\n[3]\t3GPP TS 22.261: \"Service requirements for the 5G system; Stage 1\".\n[4]\t3GPP TS 38.211: \"NR; Physical channels and modulation\".\n[5]\t3GPP TS 38.212: \"NR; Multiplexing and channel coding\".\n[6]\t3GPP TS 38.213: \"NR; Physical layer procedures for control\".\n[7]\t3GPP TS 38.214: \"NR; Physical layer procedures for data\".\n[8]\t3GPP TS 38.300: \"NR; NR and NG-RAN Overall Description; Stage 2\".\n[9]\t3GPP TS 38.321: \"NR; Medium Access Control (MAC) protocol specification\".\n[10]\t3GPP TS 38.323: \"NR; Packet Data Convergence Protocol (PDCP) specification\".\n[11]\t3GPP TR 38.824: \"Study on physical layer enhancements for NR ultra-reliable and low latency case (URLLC)\".\n[12]\t3GPP TS 28.541: \"Management and orchestration; 5G Network Resource Model (NRM)\".\n[13]\t3GPP TS 28.552: \"Management and orchestration; 5G performance measurements\".\n[14]\t3GPP TS 28.554: \"Management and orchestration; 5G end to end Key Performance Indicators (KPI)\".\n[15]\tVoid\n[16]\tITU-R M.2410: \"Minimum requirements related to technical performance for IMT-2020 radio interface(s)\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nPI\tPreemption Indication\nCI\tCancellation Indication\nPB\tPower Boosting\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tConcepts and overview",
+            "description": "URLLC, Ultra Reliable Low Latency Communication, is a typical service of 5G network, which is mainly applicable to the scenarios having high requirements on latency and reliability. The deployment and commercialization of URLLC service are of great significance to network operators. Efforts to build URLLC service oriented to vertical industries may become a potential growth point to increase revenue.\nIn order to satisfy the requirements of URLLC service, 3GPP has defined many features to decrease latency and increase reliability to guarantee the SLA of URLLC service. However, only principle and implementation mode of each feature are defined in 3GPP specifications, and it is not indicated that how to manage the features to enable URLLC service in actual network deployment. Consequently, the management of URLLC related features need to be studied to achieve the service requirements of URLLC defined in TS 22.261 [3].\nThe characteristics of URLLC are mainly reflected in several aspects such as delay/latency, reliability and availability. The concepts and terms used in the present document related to management of URLLC service are shown below:\n\nThe present document studies on the management of URLLC related features defined in RAN groups, including sorting the features from latency, reliability and multiplexing aspects, investigating the requirements of configuration management and performance measurements in OAM.\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "The characteristics of URLLC are mainly reflected in several aspects such as delay/latency, reliability and availability. The concepts and terms used in the present document related to management of URLLC service are shown below:",
+                    "table number": 3,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tKey Issues Investigation and Potential Solutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tKey Issue #1: Classification of URLLC related RAN features from management perspective",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tDescription",
+                            "text_content": "URLLC is a set of service scenarios which require low-latency and high reliable communications. Specific SLAs are defined for each scenario correspondingly. Different scenarios have different requirements, some of which focus on latency (e.g. Motion control) and some focus on reliability (e.g. Discrete automation).\nIn order to satisfy the requirements of URLLC, many features have been defined by 3GPP to decrease latency and increase reliability to guarantee the SLAs of different URLLC service scenarios. These features with different functions and different effects are distributed in different specifications, which bring complexity to the invocation and management when deploying URLLC service. Features related to URLLC need to be classified from the perspective of management, so that different features can be invoked according to different SLAs, and the management of URLLC-related features can be achieved.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tPotential solutions",
+                            "text_content": "The present document sorts out the features related to URLLC defined in RAN and classifies them from a management perspective. According to the characteristics of URLLC service, features are classified into the following two categories based on their effects: low latency and ultra reliability. Features belonging to low-latency category are mainly used to reduce data transmission delay, and reliability features are mainly used to improve the reliability of transmission. Among the features belonging to low-latency category, some of them reduce the transmission latency from the effective mechanism and other features improve service priority to reduce URLLC latency in multi-service scenario.\n\nThere are nearly 30 features classified in the clause 5.1.2.1. The mechanisms of the features above are various and the protocol layers where they have effects are different. Different features have different effects and they also show different performance in improving the characteristics of URLLC service. The amount of RAN features related to URLLC service is large. In order to ensure the accuracy and efficiency of the subsequent study, it is necessary to select some important features as candidates for the study of management. The potential results could be configuration parameters, feature switches, performance measurements, etc. Based on the conclusions made in TR 38.824 [11] and TS 38.300 [8] together with the mechanisms of features, the following features are selected as candidates for management investigation.\nPDCCH enhancements\nUE processing capability#2\nSpan based PDCCH monitoring\nDCI format 0_2 and DCI format 1_2\nUCI enhancements\nSub-slot level HARQ-ACK\nTwo HAQR-ACK codebooks\nPUSCH enhancements\nPUSCH repetitions/PUSCH repetitions enhancement\nMini-slot\nPDSCH enhancements\nPDSCH repetitions\nMini-slot\nInter-UE multiplexing\nUL Cancellation Indication\nUL Power Boosting\nDL Pre-emption Indication\nScheduling\nUL configured grant transmission\nDL SPS\nLow SE MCS/CQI table\nLayer 2 enhancements\nLogical Channel Priority Restrictions\nPDCP Duplication\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The present document sorts out the features related to URLLC defined in RAN and classifies them from a management perspective. According to the characteristics of URLLC service, features are classified into the following two categories based on their effects: low latency and ultra reliability. Features belonging to low-latency category are mainly used to reduce data transmission delay, and reliability features are mainly used to improve the reliability of transmission. Among the features belonging to low-latency category, some of them reduce the transmission latency from the effective mechanism and other features improve service priority to reduce URLLC latency in multi-service scenario.",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tIssue #2: Support for performance management related on URLLC resource load",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tDescription",
+                            "text_content": "Under the new definition of 5G application scenarios, there are coexistence scenarios of URLLC and eMBB services, and 3GPP specifications also contains related contents of eMBB and URLLC multiplexing mechanisms.\nCo-existence Scenario\nURLLC UEs and eMBB UEs can co-exist in a cell when the cell provides both services, which can be achieved by different slices. According to TS 38.300 [8], hardware/software resource isolation is up to implementation. Each slice may be assigned with either shared, prioritized or dedicated radio resource up to RRM implementation and SLA as in TS 28.541 [12]. Consequently, URLLC UEs and eMBB UEs can share the resource in the same cell even the two kinds of services allocated to different slices.\nResource Multiplexing/Pre-emption\nURLLC service has more stringent requirement on latency and pre-emption may happen when the resource for URLLC is not enough under co-existence scenario. When URLLC service arrives, gNB can reuse the radio resource which is already allocated for eMBB to URLLC in order to guarantee the on-demand transmission of URLLC service.\nSeveral features are defined in TS 38.213 [6] for URLLC to achieve inter-UE resource multiplexing, such as CI(cancellation indication), PB(power boosting) and PI(preemption indication). Detailed description about the features are listed in the following paragraph.\nTaking the uplink service scenario as an example, TR 38.824 [11] evaluates the performance of URLLC and eMBB services under enhanced UL inter UE Tx prioritization/multiplexing mechanisms, and proposes potential enhancements for UL inter UE Tx prioritization/multiplexing, which includes UE UL cancelation mechanisms and enhanced UL power control.\nCorresponding to the UE UL cancelation mechanisms, there is a definition of Cancellation Indication (CI) in TS 38.213 [6]. The Cancellation Indication instructs other UE services to cancel their transmissions, which can realize resource preemption for different services in the uplink transmissions. Corresponding to enhanced UL power control, there is a related definition of power boosting (PB). By increasing the uplink transmission power of the UE, it can resist the interference caused by the transmission of other UEs.\nAt the same time, preemption indication (PI) is also defined for resource preemption of different services in the downlink transmission, and PI can be used to indicate to other UEs that their resources are preempted.\nAt present, the network resource load is mainly evaluated through resource usage-related measurements. Referring to TS 28.552 [13], the evaluation measurements are mainly PRB usage rate-related measurements, which measures usage (in percentage) of physical resource blocks (PRBs). Although these measurements can evaluate the overall resource load of the cell, they cannot effectively evaluate the resource load of the URLLC service under the eMBB and URLLC multiplexing scenarios considering the on-demand transmission requirement.\nFor example, in a statistical time period, the PRB usage rate of the network is low. Because the URLLC service has high requirements for latency, it needs to be transmitted immediately. If the URLLC service has data transmission requirements on the resources scheduled by eMBB, the URLLC service will preempt eMBB service resources. In this case, since the PRB usage rate only reflects the overall resource load of the cell, it cannot reflect the situation that the resources of the URLLC service are insufficient at this time.\nTherefore, the existing PRB related measurements cannot effectively evaluate the actual congestion of URLLC services at the transmission occasion under eMBB and URLLC multiplexing scenarios. And what this issue needs to solve is to propose measurement method for evaluating the resource load of URLLC services at the transmission occasion in eMBB and URLLC multiplexing scenarios.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tPotential Solution",
+                            "text_content": "The existing resource load measurements only reflect the overall resource load of a cell and they cannot be counted separately for URLLC. When resource preemption occurs under eMBB and URLLC multiplexing scenarios, they cannot effectively evaluate the resource load of URLLC services. Therefore, this solution proposes an approach to better evaluate the resource load of URLLC services under co-existence scenario by counting the ratio of multiplexing features (CI, PB and PI).\nThe requirements for performance management of radio network providing URLLC services is:\n-\tThe OAM should have the capability of performing measurement on DL (DownLink) and UL(UpLink) resource load of URLLC services under eMBB and URLLC multiplexing scenarios.\nIn Downlink, PI (Preemption Indication) in TS 38.213 [6] is defined for URLLC to achieve inter-UE multiplexing when radio resource is not sufficient. If the feature is triggered, it indicates that downlink resource for URLLC is not enough. So it proposes to calculate the ratio of PI to representing the resource load of URLLC. The detailed description is as follows: Calculate the ratio between the number of time domain resource that uses PI feature and the number of time domain resource with DL data transmitted.\nIn Uplink, CI (Cancellation Indication) in TS 38.213 [6] is defined for URLLC to achieve inter-UE multiplexing when radio resource is not sufficient. If the feature is triggered, it indicates that uplink resource for URLLC is not enough. So it proposes to calculate the ratio of CI to representing the resource load of URLLC. The detailed description is as follows: Calculate the ratio between the number of time domain resource that uses CI feature and the number of time domain resource with UL data transmitted.\nIn Uplink, PB (Power Boosting) in TS 38.213 [6] is defined for URLLC to achieve inter-UE multiplexing when radio resource is not sufficient. If the feature is triggered, it indicates that uplink resource for URLLC is not enough. So it proposes to calculate the ratio of PB to representing the resource load of URLLC. The detailed description is as follows: Calculate the ratio between the number of time domain resource that uses PB feature and the number of time domain resource with UL data transmitted.\nUse case: One usage of this measurement is for evaluating resource load of URLLC services under eMBB and URLLC multiplexing scenarios.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tIssue #3: Support for URLLC Performance management on reliability in RAN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tDescription",
+                            "text_content": "As a new service deployed in 5G, URLLC is significantly different from traditional eMBB service in terms of service requirement. In order to guarantee the performance of URLLC, the performance of 5G network which provides URLLC service needs to meet certain target for reliability accordingly.\nAnnex F in TS 22.104 [2] depicts relation of reliability and communication service availability. It has the following description, \"Communication service availability addresses the availability of a communication service. This definition follows the vertical standard IEC 61907 [7]. On the other hand, reliability is a 3GPP term and addresses the availability of a communication network.\"\nThe issue mainly focuses on the 5G RAN network that provides URLLC service. In particular, the measurements on communication network performance need to be investigated.\nReliability is a typical network performance measurement used to evaluate whether the 5G network which provides URLLC services meets the corresponding performance requirements. As for 5G network, it is the radio network including air interface that mainly restricts the reliability and latency performance. Therefore, more attentions should be paid to the reliability and latency performance measurement for radio network from the perspective management. However, the reliability performance measurements for radio network are not totally enough.\nThe definition of reliability is specified in TS 22.261 [3]:\n-\treliability: in the context of network layer packet transmissions, percentage value of the packets successfully delivered to a given system entity within the time constraint required by the targeted service out of all the packets transmitted.\nAccording to the above definition, when trying to calculate the reliability of a network, time constraint (a required maximum time) needs to be considered. Neither PER defined in TS 28.552 [13] nor reliability KPIs defined in TS 28.554 [14] seem to totally match the definition of URLLC reliability in RAN.\nURLLC performance management on reliability and latency should be supported by 5G management system and the measurement method should be studied.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tPotential Solution",
+                            "text_content": "Ultra-Reliable is a typical characteristic of URLLC service, thus reliability is an important metric of network which provides URLLC service. The measurement of reliability can be used to evaluate the performance of URLLC network. So the requirements for performance management of radio network providing URLLC services is:\n-\tThe OAM should have the capability of providing the reliability of NG-RAN with specific delay threshold.\nSince the existing measurements and KPIs cannot match the definition of reliability in RAN considering delay threshold well, a new approach needs to be studied to measure the reliability performance in RAN. According to the definition of reliability, this contribution proposes an algorithm in RAN, which is as follows: Calculate the ratio between the number of successfully transmitted packets with a delay threshold and the total number of packets between UE and gNB, and the result is reliability in RAN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tIssue #4: Configuration of reliability in slice profiles and service profile",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tDescription",
+                            "text_content": "URLLC is a set of service scenarios which require low-latency and high reliable communications. TS 22.261 [3] specifies service requirements for the 5G system. There are use cases of different reliability requirement between UL and DL, like in 1st use case of table 7.6.1-1 in TS 22.261 [3]. However, the NRM for slice profiles in TS 28.541 [12] does not support reliability to distinguish between UL and DL configuration. Based on the above description, the configuration of reliability in slice profiles and service profile need to be studied.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tPotential solutions",
+                            "text_content": "1. The ServiceProfile <<dataType>> defined in TS 28.541 [12] adds dLReliability and uLReliability attributes. The original reliability attribute shall be replaced by these two new attributes.\nThe dLReliability and uLReliability attributes is added as follows:\n\n2. The CNSliceSubnetProfile<<dataType>> defined in TS 28.541 [12] adds dLReliability and uLReliability attributes. The original reliability attribute is replaced by these two new attributes.\nThe dLReliability and uLReliability attributes is added as follows:\n\n3. The RANSliceSubnetProfile<<dataType>> defined in TS 28.541 [12] adds dLReliability and uLReliability attributes. The original reliability attribute is replaced by these two new attributes.\nThe dLReliability and uLReliability attributes is added as follows:\n\n4. The TopSliceSubnetProfile<<dataType>> defined in TS 28.541 [12] adds dLReliability and uLReliability attributes. The original reliability attribute is replaced by these two new attributes.\nThe dLReliability and uLReliability attributes is added as follows:\n\n5. The dLReliability and uLReliability attributes is defined in TS 28.541 [12] as follows.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The dLReliability and uLReliability attributes is added as follows:",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The dLReliability and uLReliability attributes is added as follows:",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The dLReliability and uLReliability attributes is added as follows:",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The dLReliability and uLReliability attributes is added as follows:",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "5. The dLReliability and uLReliability attributes is defined in TS 28.541 [12] as follows.",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.5\tIssue #5: Configuration of latency for URLLC in RAN including the air interface",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.5.1\tDescription",
+                            "text_content": "URLLC is a service with requirement of ultra-reliability and low latency. End to end latency is an important attribute used to describe the requirement for URLLC service. Latency in RAN is part of end to end latency and the corresponding attribute can be used to specify the maximum allowed delay in RAN including the air interface. The definition of latency in RAN is specified in ITU-R M.2410. The description is as follows:\n4.7.1 User plane latency\nUser plane latency is the contribution of the radio network to the time from when the source sends a packet to when the destination receives it (in ms). It is defined as the one-way time it takes to successfully deliver an application layer packet/message from the radio protocol layer 2/3 SDU ingress point to the radio protocol layer 2/3 SDU egress point of the radio interface in either uplink or downlink in the network for a given service in unloaded conditions, assuming the mobile station is in the active state. This requirement is defined for the purpose of evaluation in the eMBB and URLLC usage scenarios.\nAccording to the definition above, the latency in RAN should contain the delay over the air interface which is a crucial part of end to end latency. In TS 28.541 [12], the attribute \"dlLatency\" and \"ulLatency\" in RANSliceSubnetProfile only represent the packet processing latency in gNB excluding that of air interface. The performance of delay over the air interface cannot be evaluated simply through the existing latency configuration. Consequently, the issue is that the existing attributes in RANSliceSubnetProfile cannot match the configuration requirement for latency when taking air interface into consideration.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.2\tPotential Solution",
+                            "text_content": "The requirement for configuration management of radio network providing URLLC services is:\n-\tThe OAM should have the capability of configuring the maximum allowed downlink and uplink latency in RAN including the delay over air interface.\nAccording to the requirement above, the attributes \"dlLatency\" and \"ulLatency\" of RANSliceSubnetProfile defined in TS 28.541 should be modified to contain the latency over the air interface. The specific changes are proposed.\n1. The attributes \"dlLatency\" and \"ulLatency\" of RANSliceSubnetProfile<<dataType>> defined in TS 28.541 are modified as follows:\n\nNOTE 1: Even though this study is about URLLC, the two attributes are also applicable for latency requirement for non URLLC services.\nNOTE 2: The two attributes represent maximum latency allowed or target latency of RAN slice subnet.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "1. The attributes \"dlLatency\" and \"ulLatency\" of RANSliceSubnetProfile<<dataType>> defined in TS 28.541 are modified as follows:",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tConclusion and Recommendation",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tIssue #1: Classification of URLLC related RAN features from management perspective",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This issue and corresponding solution have investigated the features designed for URLLC and try to classify the RAN features related to URLLC into two categories based on the effects: low latency and ultra-reliability from management perspective. Some important features are identified as candidates for the investigation of URLLC management. Features to implement inter-UE multiplexing, PDSCH enhancement, PDCP duplication, etc. are selected as examples. The detailed classification method and candidate features are described in clause 5.1.2.\nThe above work is concluded as the summary of existing features related to URLLC and preparation the follow-up issues of this study and no further normative work needs to be recommended.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tIssue #2: Support for performance management related on URLLC resource load",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This issue identifies that existing measurements and KPIs cannot evaluate URLLC resource load well under URLLC and eMBB co-existence scenario and the corresponding solution tries to address the issue proposing a new approach to measure the resource load performance in RAN.\nIt is recommended to make some enhancement on performance management referred to algorithm in this solution in the future normative work.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.3\tIssue #3: Support for URLLC Performance management on reliability in RAN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This issue identifies that existing measurements and KPIs cannot match the definition of reliability in RAN considering delay threshold well and the corresponding solution tries to address the issue by proposing a new approach to measure the reliability performance in RAN. Detailed description about the solution is in clause 5.3.2.\nIt is recommended to make some enhancement on performance management referred to algorithm in this solution in the future normative work.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.4\tIssue #4: Configuration of reliability in slice profiles and service profile",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This issue identifies a misalignment between the different requirements for UL and DL defined on reliability in TS 22.261 [3] and the single reliability attribute used in slice and service profiles defined in TS 28.541 [12].\nTS 22.261 [3] specifies service requirements for the 5G system. Clause 7.6.1 defines some use cases of URLLC. The first use case of table 7.6.1-1 has different requirements for uplink and downlink reliability. However, the existing service profile and slices profiles in TS 28.541 [12] cannot support for configuring different reliabilities for UL and DL because there is only one reliability attribute in either service or slice profiles.\nThe corresponding solution tries to addresses the above issue by enhancing the reliability related attribute used in slice and service profiles from one single reliability attribute to two separate reliability attributes representing UL and DL respectively for URLLC. Detailed description about the solution is in clause 5.4.2. It is recommended to make some enhancement on NRM referred to this solution in the future normative\nNOTE: \tEven though this study is about URLLC, the attributes are also applicable for reliability requirement for non URLLC services.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.5\tIssue #5: Configuration of latency for URLLC in RAN including the air interface",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This issue identifies that \"RANSliceSubnetProfile.dLLatency\" and \"RANSliceSubnetProfile.uLLatency\" in TS 28.541 [12] only representing the latency within gNB cannot cover the requirement for configuration of RAN latency between gNB and UE. The corresponding solution tries to address the issue by modifying the existing attributes defined in TS 28.541 [12] to cover the whole RAN latency between gNB and UE. Detailed description about the solution is in clause 5.5.2. It is recommended to make some enhancement on NRM referred to this solution in the future normative work.\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 11,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

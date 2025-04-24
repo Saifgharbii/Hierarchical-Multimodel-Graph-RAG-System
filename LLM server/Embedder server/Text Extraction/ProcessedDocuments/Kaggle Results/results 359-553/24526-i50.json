@@ -1,0 +1,668 @@
+{
+    "document_name": "24526-i50.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document defines UE policies for 5G System (5GS) as specified in 3GPP TS 23.503 [2] including:\n-\tUE route selection policy; and\n-\tAccess network discovery and selection policy.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.503: \" Policy and Charging Control Framework for the 5G System; Stage 2\".\n[3]\t3GPP TS 24.502: \"Access to the 3GPP 5G Core Network (5GCN) via Non-3GPP Access Networks (N3AN); Stage 3\".\n[4]\t3GPP TS 23.003: \"Numbering, addressing and identification\".\n[5]\t3GPP TS 25.331: \"Radio Resource Control (RRC); Protocol Specification\".\n[6]\tVoid\n[6A]\t3GPP TS 36.413: \"Evolved Universal Terrestrial Radio Access (E-UTRA); S1 Application Protocol (S1AP)\".\n[7]\t3GPP TS 23.032: \"Universal Geographical Area Description (GAD)\".\n[8]\tIEEE Std 802.11™-2016: \"Information Technology- Telecommunications and information exchange between systems-Local and metropolitan area networks-Specific requirements-Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications\".\n[9]\tWi-Fi Alliance: \"Hotspot 2.0 (Release 2) Technical Specification, version 1.0.0\", 2014-08-08.\n[10]\tITU-T Recommendation E.212: \"The international identification plan for public networks and subscriptions\", 2016-09-23.\n[11]\t3GPP TS 24.501: \"Non-Access-Stratum (NAS) protocol for 5G System (5GS); Stage 3\".\n[12]\tIETF RFC 1035: \"Domain names - implementation and specification\".\n[13]\tISO 8601:2004: \"Data elements and interchange formats -- Information interchange -- Representation of dates and times\".\n[14]\t3GPP TS 38.413: \"NG-RAN; NG Application Protocol (NGAP)\".\n[15]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[16]\tIETF RFC 4122: \"A Universally Unique IDentifier (UUID) URN Namespace\".\n[17]\tIETF RFC 5905: \"Network Time Protocol Version 4: Protocol and Algorithms Specification\".\n[18]\t3GPP TS 24.588: \"Vehicle-to-Everything (V2X) services in 5G System (5GS); User Equipment (UE) policies; Stage 3\".\n[18A]\t3GPP TS 24.555: \"Proximity-services (ProSe) in 5G System (5GS); User Equipment (UE) policies; Stage 3\".\n[19]\tIEEE 1003.1-2004, Part 1: Base Definitions.\n[20]\tIEEE Std 802.1Q-2018: \"IEEE Standard for Local and metropolitan area networks--Bridges and Bridged Networks\".\n[21]\t3GPP TS 24.554: \"Proximity-services (ProSe) in 5G System (5GS) protocol aspects; Stage 3\".\n[22]\t3GPP TS 24.193: \"Access Traffic Steering, Switching and Splitting; Stage 3\".\n[23]\t3GPP TS 24.514: \"Ranging based services and sidelink positioning in 5G system(5GS); Stage 3\".\n[24]\t3GPP TS 24.578: \"Aircraft-to-Everything (A2X) services in 5G System (5GS); UE policies\".\n[25]\t3GPP TS 23.316: \"Wireless and wireline convergence access support for the 5G System (5GS)\".\n[26]\tGSMA PRD NG.135, version 3.0: \"E2E Network Slicing Requirements\".\n[27]\t3GPP TS 23.273: \"5G System (5GS) Location Services (LCS); Stage 2\".\n[28]\t3GPP TS 23.122: \"Non-Access-Stratum (NAS) functions related to Mobile Station (MS) in idle mode\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nNon-subscribed SNPN signalled URSP: URSP rules signalled by a non-subscribed SNPN according to annex D of 3GPP TS 24.501 [11].\nPLMN generic (PG) URSP: URSP rules applicable in any PLMN, and determined according to annex D of 3GPP TS 24.501 [11].\nVPLMN specific (VPS) URSP of the RPLMN: URSP rules applicable when the UE is registered via one or both accesses and the RPLMN of each access is a VPLMN, and determined according to annex D of 3GPP TS 24.501 [11].\nVPLMN specific (VPS) URSP of the equivalent PLMN of the RPLMN: URSP rules applicable when the UE is registered via one or both accesses, the RPLMN of each access is a VPLMN, and the equivalent PLMN is a VPLMN, and determined according to annex D of 3GPP TS 24.501 [11].\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 23.501 [15] apply:\nCredentials Holder (CH)\nnon-seamless non-3GPP offload\nPIN\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 23.503 [2] apply:\nUE local configuration\nUser preferences on non-3GPP access selection\nVPLMN specific (VPS) URSP\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 24.501 [11] apply:\n5GMM-IDLE mode\nPDU session for LADN\nSNPN access operation mode\n\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 23.316 [25] apply:\nAuthenticable Non-3GPP device (AUN3)\nNon-Authenticable Non-3GPP device (NAUN3)\n\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 23.122 [28] apply:\nSubscribed SNPN\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\n5GCN\t5G Core Network\n5GS\t5G System\nA2XP\tA2X Policy\nANDSP\tAccess Network Discovery and Selection Policy\nCH\tCredentials Holder\nDNN\tData Network Name\nePDG\tevolved Packet Data Gateway\nFQDN\tFully Qualified Domain Name\nH-PCF\tA PCF in the HPLMN\nIMS\tIP Multimedia Subsystem\nLADN\tLocal Area Data Network\nMCC\tMobile Country Code\nME\tMobile Equipment\nMMS\tMultimedia Messaging Service\nMNC\tMobile Network Code\nN3AN\tNon-3GPP Access Network\nN3IWF\tNon-3GPP InterWorking Function\nOS\tOperating System\nPCF\tPolicy Control Function\nPIN\tPersonal IoT Network\nProSeP\t5G ProSe Policy\nRSLPP\tRanging and Sidelink Positioning Policy\nRSN\tRedundancy Sequence Number\nS-NSSAI\tSingle Network Slice Selection Assistance Information\nSSC\tSession and Service Continuity\nSUPI\tSubscriber Permanent Identifier\nSUPL\tSecure User Plane Location\nTNAN\tTrusted Non-3GPP Access Network\nTNGF\tTrusted Non-3GPP Gateway Function\nURSP\tUE Route Selection Policy\nUSIM\tUser Services Identity Module\nV-PCF\tA PCF in the VPLMN\nV2XP\tV2X Policy\nWLANSP\tWLAN Selection Policy\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tDescriptions of UE policies for 5GS",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tOverview",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The UE policies for 5GS include:\n-\tUE route selection policy (URSP)(see clause 4.2);\n-\tAccess network discovery and selection policy (ANDSP)(see clause 4.3);\n-\tV2X policy (V2XP);\n-\t5G ProSe policy (ProSeP);\n-\tRanging and sidelink positioning policy (RSLPP); and\n-\tA2X policy (A2XP).\nThe UE policies can be delivered from the PCF to the UE. The UE policy delivery procedure is specified in 3GPP TS 24.501 [11].\nThe UE policies can also be pre-configured in the UE. The pre-configured policy shall be applied by the UE only when the UE has not received the same type of policy from the PCF. The implementation of pre-configured UE policies is out of scope of this specification.\nThe UE policies can be delivered from the PCF to the 5G-RG or a W-AGF acting on behalf of the FN-RG. The UE policy delivery service is specified in 3GPP TS 24.501 [11]. These UE policies include the UE route selection policy (URSP) (see clause 4.2).\nThe UE policies can also be pre-configured in the 5G-RG or a W-AGF acting on behalf of the FN-RG. The pre-configured policy shall be applied by the 5G-RG or a W-AGF acting on behalf of the FN-RG only when the 5G-RG or a W-AGF acting on behalf of the FN-RG has not received the same type of policy from the PCF. The implementation of pre-configured UE policies is out of scope of this specification.\nNOTE 1:\tIn this specification, the UE policies can be delivered to a 5G-RG that is acting as a UE, a 5G-RG that is acting on behalf of AUN3 device, a 5G-RG that is acting on behalf of NAUN3 device.\nThe UE policies for V2X (V2XP) are specified in 3GPP TS 24.588 [18].\nThe UE policies for 5G ProSe policy (ProSeP) are specified in 3GPP TS 24.555 [18A].\nThe UE policies for A2X (A2XP) are specified in 3GPP TS 24.578 [24].\nThe UE policies for ranging and sidelink positioning (RSLPP) are specified in 3GPP TS 24.514 [23].\nFor the present specification, the UE shall consider a UE policy as signalled by the HPLMN, if the PLMN ID part of the UE policy section identifier (see annex D.1.1 of 3GPP TS 24.501 [11]) is equal to the HPLMN code derived from the IMSI.\nNOTE 2:\tThis is also applicable if the UE has a non-empty EHPLMN list, even if the EHPLMN list does not include the PLMN ID derived from the IMSI.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tUE route selection policy (URSP)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tGeneral",
+                            "text_content": "The URSP is defined in 3GPP TS 23.503 [2] and is a set of one or more URSP rules, where a URSP rule is composed of:\na)\ta precedence value of the URSP rule identifying the precedence of the URSP rule among all the existing URSP rules;\nb)\ta traffic descriptor, including either:\n1)\tmatch-all traffic descriptor; or\n2)\tat least one of the following components (see table 6.6.2.1-2 in 3GPP TS 23.503 [2]):\nA)\tone or more application identifiers;\nB)\tone or more IP descriptors, each consists of a set of IP 3 tuples as defined in 3GPP TS 23.503 [2] i.e. the destination IP address, the destination port number, and the protocol in use above the IP;\nC)\tone or more non-IP descriptors, i.e. destination information of non-IP traffic;\nD)\tone or more DNNs;\nE)\tone or more connection capabilities;\nF)\tone or more domain descriptors, i.e. destination FQDN(s) or a regular expression as a domain name matching criteria;\nG)\tone PIN ID; and\nH)\tone or more connectivity group IDs; and\nc)\tone or more route selection descriptors each consisting of a precedence value of the route selection descriptor and either\n1)\tone PDU session type and, optionally, one or more of the followings:\nA)\tSSC mode;\nB)\tone or more S-NSSAIs. If the URSP rule is a part of a non-subscribed SNPN signalled URSP, the S-NSSAI is of the non-subscribed SNPN otherwise the S-NSSAI is of the HPLMN or the subscribed SNPN. Mapped HPLMN SST and mapped HPLMN SD are not included in the S-NSSAI;\nC)\tone or more DNNs;\nD)\tVoid;\nE)\tpreferred access type;\nF)\tmulti-access preference;\nG)\ta time window;\nH)\tlocation criteria;\nI)\tPDU session pair ID;\nJ)\tRSN; and\nK)\t5G ProSe multi-path preference;\n2)\tnon-seamless non-3GPP offload indication; or\n3)\t5G ProSe layer-3 UE-to-network relay offload indication.\nOnly one URSP rule in the URSP can be a default URSP rule and the default URSP rule shall contain a match all traffic descriptor. If a default URSP rule and one or more non-default URSP rules are included in the URSP, any non-default URSP rule shall have lower precedence value than (i.e. shall be prioritised over) the default URSP rule.\nIf a traffic descriptor lists one or more application identifiers together with one or more connection capabilities, the UE shall consider that the application identifiers identify the applications requesting access to the connection capabilities.\nNOTE 1:\tThe connection capability identifiers defined in table 5.2.1 are OS independent. It is based on the UE implementation how the UE matches the connection capabilities requested by the applications to the connection capability identifiers in table 5.2.1.\nNOTE 2:\tIf the UE has multiple concurrently active OS, the traffic descriptor can list as many multiple OS Ids.\nNOTE 3:\tIt is recommended to avoid the combination of more than two components in the traffic descriptor.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tAssociation between an application, an AUN3 device, a connectivity group or a PIN and a PDU session, non-seamless non-3GPP offload or 5G ProSe layer-3 UE-to-network relay offload",
+                            "text_content": "Association between an application, an AUN3 device, a connectivity group or a PIN and a PDU session, non-seamless non-3GPP offload or 5G ProSe Layer-3 UE-to-network relay offload is described separately for a UE and for a 5G-RG or a W-AGF acting on behalf of an FN-RG. Clause 4.2.2.2 is not applicable for the 5G-RG or the W-AGF acting on behalf of the FN-RG.\nIn order to send a PDU of an application or a PIN, the upper layers require information on the PDU session (e.g. PDU address) via which to send a PDU of an application or a PIN.\nNOTE 0:\tIf PAP/CHAP is used, it is recommended that the request from the upper layers includes a DNN.\nWhen the upper layers request information of the PDU session via which to send a PDU of an application;\n-\tinformation on the non-3GPP access outside of a PDU session shall be provided to the upper layers, without evaluating the URSP rules, if due to UE local configuration non-seamless non-3GPP offload is requested; or\n-\tinformation on the 5G ProSe layer-3 UE-to-network relay shall be provided to the upper layers, without evaluating the URSP rules, if due to UE local configuration 5G ProSe layer-3 UE-to-network relay offload is requested;\notherwise, the UE shall proceed in the following order:\na)\tthe UE shall evaluate the URSP rules, except the default URSP rule, with a traffic descriptor matching the application information or the PIN information in increasing order of their precedence values, if any. If the traffic descriptor contains more than one traffic descriptor component type, each of a different type, all of them shall be matched. If the traffic descriptor contains more than one traffic descriptor component of the same traffic descriptor component type, at least one of the traffic descriptor components of the same traffic descriptor component type shall be matched with the application information. A URSP rule is determined not to be applicable when for any given component in the traffic descriptor no corresponding information from the application or no corresponding information for a PIN is available or the corresponding information from the application or no corresponding information for a PIN does not match any of the values in the traffic descriptor component as specified in clause 6.6.2.1 of 3GPP TS 23.503 [2].\nIf the UE finds the traffic descriptor in a non-default URSP rule matching the application information or the information for a PIN, and:\nI)\tif there is an established connection to non-3GPP access, an established connection with a 5G ProSe layer-3 UE-to-network relay UE, or one or more established PDU sessions or any combinations of these, the UE shall evaluate the route selection descriptors of the URSP rule in increasing order as followings:\nif:\n1)\tthe route selection descriptor of the URSP rule contains a non-seamless non-3GPP offload indication and the information on the non-3GPP access outside of a PDU session is available;\nthe UE shall provide information on the non-3GPP access outside of a PDU session to the upper layers;\n1a)\tthe route selection descriptor of the URSP rule contains a 5G ProSe layer-3 UE-to-network relay offload indication and the information on 5G ProSe layer-3 UE-to-network relay is available;\nthe UE shall provide information on the 5G ProSe layer-3 UE-to-network relay to the upper layers;\n1b)\tthe route selection descriptor of the URSP rule contains a 5G ProSe multi-path preference and the information on 5G ProSe layer-3 UE-to-network relay without N3IWF support is available;\nthe UE shall provide information on the 5G ProSe layer-3 UE-to-network relay without N3IWF support and the 5G ProSe multi-path preference to the upper layers; and\n2)\tthere is one or more PDU sessions:\ni)\tfor which the parameters associated with the PDU session, the parameters requested by the UE during the PDU session establishment procedure or the mapped parameters from the parameters requested by the UE during the UE requested PDN connectivity procedure to establish a PDN connection as a user-plane resource of an MA PDU session as specified in clause 5.3.1 of 3GPP TS 24.193 [22] match the route selection descriptors of the URSP rule except the preferred access type and the multi-access preference, if any, wherein:\n-\ta route selection descriptor with PDU session type IPv4v6 matches also with PDU session type IPv4 if the network has sent 5GSM cause value #50 \"PDU session type IPv4 only allowed\" in the PDU SESSION ESTABLISHMENT ACCEPT message or matches also with PDN type IPv4 if the network has sent ESM cause is #50 \"PDN type IPv4 only allowed\" in the ACTIVATE DEFAULT EPS BEARER CONTEXT REQUEST message of the PDN connectivity procedure to establish a PDN connection as a user-plane resource of an MA PDU session as specified in clause 5.3.1 of 3GPP TS 24.193 [22];\n-\tthe route selection descriptor with PDU session type IPv4v6 matches also with PDU session type IPv6 if the network has sent 5GSM cause value #51 \"PDU session type IPv6 only allowed\" in the PDU SESSION ESTABLISHMENT ACCEPT message or matches also with PDN type IPv6 if the network has sent ESM cause is #51 \"PDN type IPv6 only allowed\" in the ACTIVATE DEFAULT EPS BEARER CONTEXT REQUEST message of the PDN connectivity procedure to establish a PDN connection as a user-plane resource of an MA PDU session as specified in clause 5.3.1 of 3GPP TS 24.193 [22];\n-\tthe route selection descriptor with PDU session type IPv4v6 matches also with PDU session type IPv6 or IPv4 if the UE requested the PDU session type IPv4v6 but the selected PDU session type is set to IPv4 or IPv6 in the PDU SESSION ESTABLISHMENT ACCEPT message or if the UE requested the PDN type IPv4v6 but the network allocates a PDN address of a PDN type IPv4 or IPv6 in the ACTIVATE DEFAULT EPS BEARER CONTEXT REQUEST message of the PDN connectivity procedure to establish a PDN connection as a user-plane resource of an MA PDU session as specified in clause 5.3.1 of 3GPP TS 24.193 [22]; and\n-\tif the UE is in a non-subscribed SNPN and the URSP rule is a part of the non-subscribed SNPN signalled URSP, or is in the HPLMN or the subscribed SNPN, then a route selection descriptor with an S-NSSAI matches the S-NSSAI of the PDU session, otherwise a route selection descriptor with an S-NSSAI matches the mapped S-NSSAI of the PDU session; and\nii)\testablished without requesting any parameter for which the matching route selection descriptor of the URSP rule does not provide a route selection descriptor component, except:\nA)\tthe preferred access type;\nB)\tthe multi-access preference;\nC)\tthe DNN, if no DNN is included in the route selection descriptor component and the DNN provided by the application is the same as the DNN requested by the UE during the PDU session establishment or the same as the DNN mapped from the APN requested by the UE during the PDN connectivity procedure to establish a PDN connection as a user-plane resource of an MA PDU session as specified in clause 5.3.1 of 3GPP TS 24.193 [22]; and\nD)\tthe S-NSSAI, if the UE has only one S-NSSAI in the allowed NSSAI.\nthe UE shall provide information on the PDU session that matches the route selection and the 5G ProSe multi-path preference if included in the route selection descriptor to the upper layers; and\nif the UE supports reporting of URSP rule enforcement and:\ni)\tthe UE has URSP rule enforcement report indication;\nii)\tone or more connection capabilities are included in the traffic descriptor; and\niii)\tthe connection capabilities provided by the application are not included in the connection capabilities sent to the network by the UE in the latest URSP rule enforcement report, if available, during the PDU session establishment or modification procedure,\nthen the URSP handling layer requests the UE NAS layer to send a URSP rule enforcement report with the connection capabilities provided by the application including the connection capabilities of the previous URSP rule enforcement report, if available, to the network using the PDU session modification procedure;\nNOTE 1:\tIt is up to the UE implementation which PDU session to select if there exist multiple PDU sessions matching the same route selection descriptor of the lowest precedence value.\nII)\totherwise:\n1)\tthe UE shall select a route selection descriptor with the next smallest precedence value which has not yet been evaluated;\n2)\tif:\ni)\tthe selected route selection descriptor contains a non-seamless non-3GPP offload indication:\nA)\tif the information on the non-3GPP access outside of a PDU session is available, it shall be provided to the upper layers and the UE shall stop selecting a route selection descriptor matching the application information; or\nB)\tif the information about the non-3GPP access outside of a PDU session is not available, or non-3GPP access is not available, the UE shall proceed to step II) 4);\nia)\tthe selected route selection descriptor contains a 5G ProSe layer-3 UE-to-network relay offload indication:\nA)\tif the information on the 5G ProSe layer-3 UE-to-network relay is available and the UE supports acting as a 5G ProSe layer-3 remote UE as specified in 3GPP TS 24.554 [21], it shall be provided to the upper layers and the UE shall stop selecting a route selection descriptor matching the application information; or\nB)\tif the information about the 5G ProSe layer-3 UE-to-network relay is not available, the UE may initiate a UE-to-network relay discovery over PC5 interface as specified in clause 8.2.1 of 3GPP TS 24.554 [21] if the UE supports acting as a 5G ProSe layer-3 remote UE as specified in 3GPP TS 24.554 [21]. If the connection with a 5G ProSe layer-3 UE-to-network relay UE has been successfully established, the UE shall provide information on the 5G ProSe layer-3 UE-to-network relay to the upper layers and the UE shall stop selecting a route selection descriptor matching the application information. If the connection with a 5G ProSe layer-3 UE-to-network relay UE has not been successfully established or the UE does not support acting as a 5G ProSe layer-3 remote UE as specified in 3GPP TS 24.554 [21], the UE shall proceed to step II) 4);\nib)\tthe selected route selection descriptor includes the 5G ProSe multi-path preference but the UE does not support acting as a 5G ProSe layer-3 remote UE as specified in 3GPP TS 24.554 [21], the UE shall proceed to step II) 4);\nii)\tthe selected route selection descriptor includes a PDU session type or an SSC mode which is not supported by the UE (SSC mode 2 or 3), the UE shall proceed to step II) 4);\niii)\tthe selected route selection descriptor contains a time window but the time does not match the time window, the UE shall proceed to step II) 4);\niv)\tthe selected route selection descriptor contains location criteria but the UE location does not match the location criteria, the UE shall proceed to step II) 4);\nv)\tthe selected route selection descriptor includes the multi-access preference but the UE does not support ATSSS, the UE shall proceed to step II) 4);\nva)\tthe selected route selection descriptor includes an SSC mode which either has been rejected by the network with 5GSM cause value #68 \"not supported SSC mode\" for the same DNN (or no DNN, if no DNN was indicated by the UE) and the same S-NSSAI associated with (if available in roaming scenarios) a mapped S-NSSAI (or no S-NSSAI, if no S-NSSAI was indicated by the UE) or was not included in the Allowed SSC mode IE following a rejection with 5GSM cause value #68 \"not supported SSC mode\" for the same DNN (or no DNN, if no DNN was indicated by the UE) and the same S-NSSAI associated with (if available in roaming scenarios) a mapped S-NSSAI (or no S-NSSAI, if no S-NSSAI was indicated by the UE), the UE shall proceed to step II) 4); or\nvi)\tthe selected route selection descriptor does not contain a non-seamless non-3GPP offload indication nor a 5G ProSe layer-3 UE-to-network relay offload indication, the URSP handling layer requests the UE NAS layer to establish a PDU session providing the following PDU session attributes based on the selected route selection descriptor:\nA)\tSSC mode if there is a SSC mode in the route selection descriptor;\nNOTE 2:\tThe SSC mode 3 is only used when the PDU session type is IPv4, IPv6 or IPv4v6.\nB)\tone S-NSSAI if the S-NSSAI is in the route selection descriptor; and the S-NSSAI is in the allowed NSSAI. Additionally, if the UE supports LADN per DNN and S-NSSAI, the request is for a PDU session for LADN, the extended LADN information is available for that LADN and the S-NSSAI is associated with that LADN in the service area of that LADN. If none of the S-NSSAI(s) in the route selection descriptor is in the allowed NSSAI, the UE shall proceed to step II) 4);\nNOTE 3:\tIf there are multiple S-NSSAIs in the route selection descriptor, an S-NSSAI is chosen among the S-NSSAIs based on UE implementation.\nC)\tone DNN, if the DNN is in the route selection descriptor; and if the DNN is an LADN DNN and the UE is in the service area of that LADN;\nNOTE 4:\tIf one or more DNNs are included in the traffic descriptor and no DNN is included in the route selection descriptor, the DNN provided by the application is selected as one of the PDU session attributes by the URSP handling layer to request the UE NAS layer.\nNOTE 5:\tIf there are multiple DNNs in the route selection descriptor, a DNN is chosen based on UE implementation.\nD)\tthe PDU session type of the route selection descriptor;\nE)\tpreferred access type or multi-access preference, if the preferred access type or the multi-access preference is in the route selection descriptor;\nNOTE 6:\tIf a preferred access type or a multi-access preference is included in the route selection descriptor of a URSP rule, it is recommended that the UE establishes a PDU session based on the preferred access type or the multi-access preference.\nNOTE 6A:\tIf a multi-access preference is included in the route selection descriptor of a URSP rule, the UE is allowed to use a 5G ProSe layer-3 UE-to-network relay with N3IWF support as specified in clause 8.2.7 of 3GPP TS 24.554 [21] to establish an MA PDU session in case that the UE is configured with the corresponding ProSe policy as specified in clause 5.2.5 of 3GPP TS 24.554 [21].\nNOTE 7:\tIf a preferred access type is included in the route selection descriptor of a URSP rule and the preferred access type is 3GPP access, the UE is allowed to discover a 5G ProSe layer-2 UE-to-network relay UE as specified in clause 8.2.1 of 3GPP TS 24.554 [21] to access the network in case that the UE is configured with the corresponding ProSe policy as specified in clause 5.2.5 of 3GPP TS 24.554 [21].\nNOTE 8:\tIf a preferred access type is included in the route selection descriptor of a URSP rule and the preferred access type is non-3GPP access, the UE is allowed to discover a 5G ProSe layer-3 UE-to-network relay UE with N3IWF support as specified in clause 8.2.7 of 3GPP TS 24.554 [21] to establish a PDU session in case that the UE is configured with the corresponding ProSe policy as specified in clause 5.2.5 of 3GPP TS 24.554 [21].\nF)\tPDU session pair ID if there is a PDU session pair ID in the route selection descriptor; and\nG)\tRSN if there is an RSN in the route selection descriptor, and\nif the UE supports reporting of URSP rule enforcement and:\nA)\tthe UE has URSP rule enforcement report indication; and\nB)\tone or more connection capabilities are included in the traffic descriptor,\nthen the URSP handling layer requests the UE NAS layer to send a URSP rule enforcement report with the connection capabilities provided by the application to the network during PDU session establishment;\nThe UE NAS layer indicates the result of the PDU session establishment. Upon successful completion of the PDU session establishment, the UE NAS layer shall additionally indicate the attributes of the established PDU session (e.g. PDU session identity, SSC mode, S-NSSAI, DNN, PDU session type, access type, PDU address) to the URSP handling layer, and shall provide information (e.g. PDU address) of the successfully established PDU session to the upper layers.\nIf the PDU session establishment is successful, the 5G ProSe multi-path preference is included in the route selection descriptor, and:\nA)\tthe information on the 5G ProSe layer-3 UE-to-network relay without N3IWF support is available and the UE supports acting as a 5G ProSe layer-3 remote UE as specified in 3GPP TS 24.554 [21], the UE shall provide the information on the 5G ProSe layer-3 UE-to-network relay without N3IWF support and the 5G ProSe multi-path preference to the upper layers; or\nB)\tthe information on the 5G ProSe layer-3 UE-to-network relay is not available, the UE may discover and establish a connection via a 5G ProSe layer-3 UE-to-network relay without N3IWF support as specified in 3GPP TS 24.554 [21]. If the connection via a 5G ProSe layer-3 UE-to-network relay without N3IWF support has been successfully established, the UE shall provide the information on the 5G ProSe layer-3 UE-to-network relay without N3IWF support and the 5G ProSe multi-path preference to the upper layers.\nThe UE shall stop selecting a route selection descriptor matching the application information or the information for a PIN. If the PDU session establishment is unsuccessful, the UE shall proceed to step II) 3);\n3)\tBased on the rejection cause and if there is another value which can be used for the rejected component in the same route selection descriptor, the UE shall select another combination of values in the currently selected route selection descriptor by using this value of the rejected component and proceed to step II) 2), otherwise the UE shall proceed to step II) 4); and\n4)\tif there is any route selection descriptor which has not yet been evaluated, the UE shall proceed to step II) 1). If all route selection descriptors for the matching non-default URSP rule have been evaluated and there is one or more non-default matching URSP rule which has not yet been evaluated, the UE shall proceed to step a). If all non-default matching URSP rules have been evaluated, the UE shall inform the upper layers of the failure.\nb)\tif no non-default matching URSP rule can be found and if UE local configuration for the application or the PIN is available, the UE shall perform the association of the application or the PIN to a PDU session accordingly. If no matching PDU session exists, the UE NAS layer shall attempt to establish a PDU session using UE local configuration; and\nNOTE 9:\tAny missing information in the UE local configuration needed to build the PDU session establishment request can be the appropriate corresponding component from the default URSP rule with the \"match-all\" traffic descriptor.\nNOTE 10:\tIf a DNN was provided by the application and no DNN is included in the UE local configuration, the DNN provided by the application is selected as one of the PDU session attributes by the URSP handling layer to request the UE NAS layer.\nNOTE 11:\tIf there are multiple DNNs in the UE local configuration, a DNN is chosen based on UE implementation.\nIf the PDU session establishment is successful, the UE NAS layer shall provide information (e.g. PDU address) of the successfully established PDU session to the upper layers. Otherwise, the UE shall go to step c);\nc)\tif no non-default matching URSP rule can be found and if either UE local configuration for the application is not available or the PDU session establishment based on UE local configuration for the application was unsuccessful, the UE shall perform the association of the application to a PDU session, to non-seamless non-3GPP offload or to 5G ProSe layer-3 UE-to-network relay offload according to the default URSP rule with the \"match-all\" traffic descriptor, if any. If the association is unsuccessful, the UE shall inform the upper layers of the failure.\nNOTE 12:\tIf a DNN was provided by the application and no DNN is included in the route selection descriptor of the default URSP rule, the DNN provided by the application is selected as one of the PDU session attributes by the URSP handling layer to request the UE NAS layer. If one or more DNNs are included in the route selection descriptor of the default URSP rule, the DNN in the route selection descriptor is selected as one of the PDU session attributes by the URSP handling layer to request the UE NAS layer. When there are multiple DNNs in the route selection descriptor, the DNN is selected based on UE implementation.\nThe HPLMN may pre-configure the UE with URSP in the ME or in the USIM and the subscribed SNPN(s) may pre-configure the UE with URSP in the corresponding entry of the \"list of subscriber data\" stored in ME. The HPLMN or subscribed SNPN may pre-configure URSP(s) in the ME for non-subscribed SNPN(s) and associate the URSP(s) with the entry of the subscribed SNPN of the \"list of subscriber data\" or associate the URSP(s) with the corresponding PLMN subscription of the HPLMN. It is up to implementation how many pre-configured URSP(s) for non-subscribed SNPN(s) per entry of the \"list of subscriber data\" or per PLMN subscription can be stored in the ME.The HPLMN, the subscribed SNPN(s) and the non-subscribed SNPN(s) may provide URSP to the UE by signalling as described in annex D of 3GPP TS 24.501 [11]. The HPLMN pre-configured URSP in the ME and the HPLMN signalled URSP shall be stored in a non-volatile memory in the ME together with the SUPI from the USIM. The subscribed SNPN(s) signalled URSP shall be stored per SNPN in a non-volatile memory in the ME together with the subscriber identifier and the associated SNPN identity of the SNPN in the \"list of subscriber data\" configured in the ME. If the UE accepts URSP rules signalled by a non-subscribed SNPN that the UE accesses using credentials from a credential holder (see 3GPP TS 24.501 [11] clause C.2 and D.2), the non-subscribed SNPN(s) signalled URSP shall be stored per non-subscribed SNPN and associated with the selected entry of the \"list of subscriber data\" or the selected PLMN subscription. It is up to implementation how many signalled URSP(s) for non-subscribed SNPN(s) per entry of the \"list of subscriber data\" or per PLMN subscription can be stored in the ME. Only the subscribed SNPN(s) pre-configured URSP and the subscribed SNPN(s) signalled URSP shall be used when the selected SNPN identity matches the associated subscribed SNPN identity.\nIf the UE registered to a subscribed SNPN or a PLMN, has both pre-configured URSP(s) and signalled URSP, the UE shall only use the signalled URSP.\nFor a UE not operating in SNPN access operation mode, if the UE supports VPS URSP and has signalled URSP, when the upper layers request information of the PDU session via which to send a PDU of an application or the PIN as described above, the UE shall evaluate URSP rules, if available, in accordance with the following order until a matching URSP rule is found:\n1)\tif the UE is registered via one or both accesses and the RPLMN of each access is a VPLMN, non-default URSP rules in the VPS URSP of the RPLMN using steps in bullet a) above;\n2)\tif the UE is registered via one or both accesses and the RPLMN of each access is a VPLMN, non-default URSP rules in the VPS URSP of the equivalent PLMN of the RPLMN using steps in bullet a) above;\n3)\tnon-default URSP rules in the PG URSP using steps in bullet a) above;\n4)\tUE local configuration for the application or the PIN using steps in bullet b) above;\n5)\tif the UE is registered via one or both accesses and the RPLMN of each access is a VPLMN, default URSP rule in the VPS URSP of the RPLMN using steps in bullet c) above;\n6)\tif the UE is registered via one or both accesses and the RPLMN of each access is a VPLMN, default URSP rules in the VPS URSP of the equivalent PLMN of the RPLMN using steps in bullet c) above; and\n7)\tdefault URSP rule in the PG URSP using steps in bullet c) above.\nFor a UE not operating in SNPN access operation mode, if the UE has no signalled URSP, when the upper layers request information of the PDU session via which to send a PDU of an application as described above, the UE shall evaluate URSP rules, if available, in accordance with the following order until a matching URSP rule is found:\n1)\tif there are pre-configured URSP rules of the HPLMN in the USIM;\ni)\tnon-default URSP rules in the pre-configured URSP rules of the HPLMN in the USIM using steps in bullet a) above;\nii)\tUE local configuration for the application using steps in bullet b) above;\niii)\tdefault URSP rule in the pre-configured URSP rules of the HPLMN in the USIM using steps in bullet c) above; and\niv)\tshall ignore URSP rules of other PLMN(s) in the USIM; or\n2)\totherwise, if the UE has pre-configured URSP in the ME then:\ni)\tnon-default URSP rules in the pre-configured URSP rules in the ME using steps in bullet a) above;\nii)\tUE local configuration for the application using steps in bullet b) above; and\niii)\tdefault URSP rule in the pre-configured URSP rules in the ME using steps in bullet c) above.\nWhen the UE is registered to a non-subscribed SNPN using credentials from a credentials holder then when the upper layers request information of the PDU session via which to send a PDU of an application as described above:\n1)\tif the UE has the non-subscribed SNPN signalled URSP associated with the selected entry of the \"list of subscriber data\" or the selected PLMN subscription, or the subscribed SNPN signalled URSP when the credentials holder is an SNPN or the HPLMN signalled URSP when the credentials holder is a PLMN, the UE shall evaluate URSP rules, if available, in accordance with the following order until a matching URSP rule is found:\ni)\tthe non-subscribed SNPN signalled non-default URSP rules associated with the selected entry of the \"list of subscriber data\" or the selected PLMN subscription stored in the ME using steps in bullet a) above;\nii)\tif the credentials holder is:\n-\tan SNPN, the subscribed SNPN signalled non-default URSP rules stored in the ME using steps in bullet a) above; or\n-\ta PLMN, the HPLMN signalled non-default URSP rules stored in the ME using steps in bullet a) above;\niii)\tUE local configuration for the application using steps in bullet b) above;;\niv)\tthe non-subscribed SNPN signalled default URSP rule associated with the selected entry of the \"list of subscriber data\" or the selected PLMN subscription stored in the ME using steps in bullet c) above; or\nv)\tif the credentials holder is:\n-\tan SNPN, the subscribed SNPN signalled default URSP rule stored in the ME using steps in bullet c) above; or\n-\ta PLMN, the HPLMN signalled default URSP rule stored in the ME using steps in bullet c) above;\nNOTE 13:\tIf no matching URSP rule is found, the UE informs the upper layers of the failure.\n2)\totherwise, if the UE has\ni)\tURSP pre-configured for the non-subscribed SNPN associated with the selected entry of the \"list of subscriber data\" or the selected PLMN subscription;\nii)\tURSP pre-configured for the subscribed SNPN when the credentials holder is an SNPN or for the HPLMN when the credentials holder is a PLMN; or\niii)\tUE local configuration for the application;\nthen the UE shall evaluate URSP rules, if available, in accordance with the following order until a matching URSP rule is found:\ni)\tthe non-default URSP rules pre-configured for the non-subscribed SNPN and associated with the selected entry of the \"list of subscriber data\" or the selected PLMN subscription stored in the ME using steps in bullet a) above;\nii)\tif the credentials holder is:\nA)\tan SNPN, the subscribed SNPN pre-configured non-default URSP rules stored in the ME using steps in bullet a) above; or\nB)\ta PLMN:\n-\tthe HPLMN pre-configured non-default URSP rules stored in the in USIM using steps in bullet a) above; or\n-\tthe HPLMN pre-configured non-default URSP rules stored in the in ME using steps in bullet a) above;\niii)\tUE local configuration for the application using steps in bullet b) above;\niv)\tthe default URSP rule pre-configured for the non-subscribed SNPN and associated with the selected entry of the \"list of subscriber data\" or the selected PLMN subscription stored in the ME using steps in bullet c) above; or\nv)\tif the credentials holder is:\nA)\tan SNPN, the subscribed SNPN pre-configured default URSP rule stored in the ME using steps in bullet c) above; or\nB)\ta PLMN:\n-\tthe HPLMN pre-configured default URSP rule stored in the in USIM using steps in bullet c) above; or\n-\tthe HPLMN pre-configured default URSP rule stored in the in ME using steps in bullet c) above.\nNOTE 14:\tIf no matching URSP rule is found, the UE informs the upper layers of the failure.\nThe HPLMN pre-configured URSP in the ME shall be stored until a new URSP is configured by HPLMN or the USIM is removed.\nFor a UE not operating in SNPN access operation mode, the signalled URSP may be modified by the procedures defined in annex D of 3GPP TS 24.501 [11] and shall be stored until USIM is removed. The URSP can only be used if the SUPI from the USIM matches the SUPI stored in the non-volatile memory of the ME. If the SUPI from the USIM does not match the SUPI stored in the non-volatile memory of the ME, the UE shall delete the URSP.\nFor a UE operating in SNPN access operation mode and registered to a subscribed SNPN, the subscribed SNPN signalled URSP may be modified by the procedures defined in annex D of 3GPP TS 24.501 [11] and shall be stored until the entry of the \"list of subscriber data\" with the corresponding SNPN identity is updated or considered as \"invalid\".\nFor a UE operating in SNPN access operation mode and registered to a non-subscribed SNPN, the non-subscribed SNPN signalled URSP may be modified by the procedures defined in annex D of 3GPP TS 24.501 [11].\nThe UE may re-evaluate the URSP rules, to check if the change of the association of an application or a PIN to a PDU session is needed, when:\nNOTE 15:\tThe time when the UE performs the re-evaluation is up to UE implementation. It is recommended that the UE performs the re-evaluation in a timely manner.\na)\tthe UE performs periodic URSP rules re-evaluation based on UE implementation;\nb)\tthe UE NAS layer indicates that an existing PDU session used for routing traffic of an application or a PIN based on a URSP rule is released;\nc)\tthe URSP is updated by the PCF;\nd)\tthe UE NAS layer indicates that the UE performs inter-system change from S1 mode to N1 mode;\ne)\tthe UE NAS layer indicates that the UE is successfully registered in N1 mode over 3GPP access or non-3GPP access;\nf)\tthe UE establishes or releases a connection to a WLAN access and transmission of a PDU of the application via non-3GPP access outside of a PDU session becomes available/unavailable;\ng)\tthe allowed NSSAI, the partially allowed NSSA or the configured NSSAI is changed;\nh)\tthe LADN information or the extended LADN information is changed;\ni)\tthe UE NAS layer indicates that back-off timer T3396, T3584 or T3585 (see 3GPP TS 24.501 [11] clause 6.2.7 and clause 6.2.8) is stopped or expired;\nj)\tthe UE NAS layer indicates the successful change of the PLMN; or\nk)\tthe UE NAS layer indicates that current TAI is in the list of TAs for which the S-NSSAI is allowed (see 3GPP TS 24.501 [11] clause 4.6.3.6).\nIf the re-evaluation leads to a change of the association of an application or a PIN to a PDU session, the UE may enforce such change immediately or when UE returns to 5GMM-IDLE mode.\nNOTE 16:\tThe time when the UE enforces the change of the association of an application or a PIN to a PDU Session is up to UE implementation. It is recommended that the UE performs the enforcement in a timely manner.\nThe URSP handling layer may request the UE NAS layer to release an existing PDU session after the re-evaluation.\nIn order to send a PDU of an application, the upper layers require information on the PDU session (e.g. PDU address) via which to send a PDU of an application.\nIn order to send a PDU of an AUN3 device behind 5G-RG, the 5G-RG requires information on the PDU session (e.g. PDU address) via which to send a PDU of an AUN3 device behind 5G-RG.\nIn order to send a PDU of a connectivity group consisting of one or more NAUN3 devices, the 5G-RG requires information on the PDU session (e.g. PDU address) via which to send a PDU of a connectivity group.\nNOTE 1:\tIf PAP/CHAP is used, it is recommended that the request from the upper layers includes a DNN.\nThe 5G-RG or the W-AGF acting on behalf of the FN-RG shall proceed in the following order:\na)\tthe 5G-RG or the W-AGF acting on behalf of the FN-RG shall evaluate the URSP rules, except the default URSP rule, with a traffic descriptor matching the application information in increasing order of their precedence values, if any. If the traffic descriptor contains more than one traffic descriptor component type, each of a different type, all of them shall be matched. If the traffic descriptor contains more than one traffic descriptor component of the same traffic descriptor component type, at least one of the traffic descriptor components of the same traffic descriptor component type shall be matched with the application information.\nFor NAUN3 devices behind 5G-RG:\n-\tIP descriptors are matched against header information contained in IP packets sent by NAUN3 devices; IP descriptors are only applicable for traffic from NAUN3 devices if network address translation (NAT) is performed for that traffic;\n-\tnon-IP descriptors are matched against header information contained in Ethernet frames sent by NAUN3 devices; and\n-\tconnectivity group ID in the traffic descriptor in the URSP rule is matched against the connectivity group ID that the NAUN3 device is associated with.\nA URSP rule is determined not to be applicable when for any given component in the traffic descriptor no corresponding information from the application is available or the corresponding information from the application does not match any of the values in the traffic descriptor component as specified in clause 6.6.2.1 of 3GPP TS 23.503 [2]. The 5G-RG or the W-AGF acting on behalf of the FN-RG shall ignore the route selection descriptor of the URSP rule when it includes any route selection descriptor component of type identifier set to PDU session pair ID, RSN or 5G ProSe multi-path preference.\nIf the 5G-RG or the W-AGF acting on behalf of the FN-RG finds the traffic descriptor in a non-default URSP rule matching the application information or the information for the AUN3 device or connectivity group, and:\nI)\tif there is one or more PDU sessions:\n1)\tfor which the parameters associated with the PDU session, the parameters requested by the UE during the PDU session establishment procedure or the mapped parameters from the parameters requested by the UE during the UE requested PDN connectivity procedure to establish a PDN connection as a user-plane resource of an MA PDU session as specified in clause 5.3.1 of 3GPP TS 24.193 [22] match at least one of the route selection descriptors of the URSP rule except the preferred access type and the multi-access preference, if any, wherein:\nA)\ta route selection descriptor with PDU session type IPv4v6 matches also with PDU session type IPv4 if the network has sent 5GSM cause value #50 \"PDU session type IPv4 only allowed\" in the PDU SESSION ESTABLISHMENT ACCEPT message or matches also with PDN type IPv4 if the network has sent ESM cause is #50 \"PDN type IPv4 only allowed\" in the ACTIVATE DEFAULT EPS BEARER CONTEXT REQUEST message of the PDN connectivity procedure to establish a PDN connection as a user-plane resource of an MA PDU session as specified in clause 5.3.1 of 3GPP TS 24.193 [22];\nB)\ta route selection descriptor with PDU session type IPv4v6 matches also with PDU session type IPv6 if the network has sent 5GSM cause value #51 \"PDU session type IPv6 only allowed\" in the PDU SESSION ESTABLISHMENT ACCEPT message or matches also with PDN type IPv6 if the network has sent ESM cause is #51 \"PDN type IPv6 only allowed\" in the ACTIVATE DEFAULT EPS BEARER CONTEXT REQUEST message of the PDN connectivity procedure to establish a PDN connection as a user-plane resource of an MA PDU session as specified in clause 5.3.1 of 3GPP TS 24.193 [22];\nC)\ta route selection descriptor with PDU session type IPv4v6 matches also with PDU session type IPv6 or IPv4 if the UE requested the PDU session type IPv4v6 but the selected PDU session type is set to IPv4 or IPv6 in the PDU SESSION ESTABLISHMENT ACCEPT message or if the UE requested the PDN type IPv4v6 but the network allocates a PDN address of a PDN type IPv4 or IPv6 in the ACTIVATE DEFAULT EPS BEARER CONTEXT REQUEST message of the PDN connectivity procedure to establish a PDN connection as a user-plane resource of an MA PDU session as specified in clause 5.3.1 of 3GPP TS 24.193 [22];\nD)\tif the 5G-RG is in the HPLMN, then a route selection descriptor with an S-NSSAI matches the S-NSSAI of the PDU session, otherwise a route selection descriptor with an S-NSSAI matches the mapped S-NSSAI of the PDU session; and\nE)\tif the W-AGF acts on behalf of the FN-RG, a route selection descriptor with an S-NSSAI matches the S-NSSAI of the PDU session; and\n2)\testablished without requesting any parameter, except the preferred access type and the multi-access preference, for which the matching route selection descriptor of the URSP rule does not provide a route selection descriptor component,\nthe 5G-RG or the W-AGF acting on behalf of the FN-RG shall provide information on the PDU session that matches the route selection descriptor of the lowest precedence value to the upper layers; and\nNOTE 2:\tIt is up to the 5G-RG or the W-AGF acting on behalf of the FN-RG implementation which PDU session to select if there exist multiple PDU sessions matching the same route selection descriptor of the lowest precedence value.\nif the 5G-RG or the W-AGF acting on behalf of the FN-RG supports reporting of URSP rule enforcement and:\n1)\tthe 5G-RG or the W-AGF acting on behalf of the FN-RG has URSP rule enforcement report indication;\n2)\tone or more connection capabilities are included in the traffic descriptor; and\n3)\tthe connection capabilities provided by the application are not included in the connection capabilities sent to the network by the 5G-RG or the W-AGF acting on behalf of the FN-RG in the latest URSP rule enforcement report, if available, during the PDU session establishment or modification procedure,\nthen the URSP handling layer requests the UE NAS layer of the 5G-RG or the W-AGF acting on behalf of the FN-RG to send a URSP rule enforcement report with the connection capabilities provided by the application including the connection capabilities of the previous URSP rule enforcement report, if available, to the network using the PDU session modification procedure;\nII)\totherwise:\n1)\tthe 5G-RG or the W-AGF acting on behalf of the FN-RG shall select a route selection descriptor with the next smallest precedence value which has not yet been evaluated;\n2)\tif:\ni)\tthe selected route selection descriptor contains a non-seamless non-3GPP offload indication or a 5G ProSe layer-3 UE-to-network relay offload indication, the 5G-RG or the W-AGF acting on behalf of the FN-RG shall proceed to step 4);\nii)\tthe selected route selection descriptor includes a PDU session type which is not supported by the 5G-RG or the W-AGF acting on behalf of the FN-RG, the 5G-RG or the W-AGF acting on behalf of the FN-RG shall proceed to step 4);\niii)\tthe selected route selection descriptor contains a time window but the time does not match the time window, the 5G-RG or the W-AGF acting on behalf of the FN-RG shall proceed to step 4);\niv)\tthe selected route selection descriptor contains location criteria but location of the 5G-RG or the W-AGF acting on behalf of the FN-RG does not match the location criteria, the 5G-RG or the W-AGF acting on behalf of the FN-RG shall proceed to step 4);\nv)\tthe selected route selection descriptor includes the multi-access preference but the 5G-RG or the W-AGF acting on behalf of the FN-RG does not support ATSSS, the 5G-RG or the W-AGF acting on behalf of the FN-RG shall proceed to step 4);\nva)\tthe selected route selection descriptor includes an SSC mode which either has been rejected by the network with 5GSM cause value #68 \"not supported SSC mode\" for the same DNN (or no DNN, if no DNN was indicated by the 5G-RG or the W-AGF acting on behalf of the FN-RG) and the same S-NSSAI associated with (if available in roaming scenarios) a mapped S-NSSAI (or no S-NSSAI, if no S-NSSAI was indicated by the 5G-RG or the W-AGF acting on behalf of the FN-RG) or was not included in the Allowed SSC mode IE following a rejection with 5GSM cause value #68 \"not supported SSC mode\" for the same DNN (or no DNN, if no DNN was indicated by the 5G-RG or the W-AGF acting on behalf of the FN-RG) and the same S-NSSAI associated with (if available in roaming scenarios) a mapped S-NSSAI (or no S-NSSAI, if no S-NSSAI was indicated by the 5G-RG or the W-AGF acting on behalf of the FN-RG), the 5G-RG or the W-AGF acting on behalf of the FN-RG shall proceed to step 4); or\nvi)\tthe URSP handling layer requests NAS layer of the 5G-RG or the W-AGF acting on behalf of the FN-RG to establish a PDU session providing at least one of the following PDU session attributes:\nA)\tSSC mode if there is a SSC mode in the route selection descriptor;\nNOTE 3: The SSC mode 3 is only used when the PDU session type is IPv4, IPv6 or IPv4v6.\nB)\tone S-NSSAI if the S-NSSAI is in the route selection descriptor; and the S-NSSAI is in the allowed NSSAI. Additionally, if the UE supports LADN per DNN and S-NSSAI, the request is for a PDU session for LADN, the extended LADN information is available for that LADN and the S-NSSAI is associated with that LADN in the service area of that LADN. If none of the S-NSSAI(s) in the route selection descriptor is in the allowed NSSAI, the 5G-RG or the W-AGF acting on behalf of the FN-RG shall proceed to step 4);\nNOTE 4:\tIf there are multiple S-NSSAIs in the route selection descriptor, an S-NSSAI is chosen among the S-NSSAIs based on implementation of the 5G-RG or the W-AGF acting on behalf of the FN-RG.\nC)\tone DNN, if the DNN is in the route selection descriptor; and if the DNN is an LADN DNN and the 5G-RG is in the service area of that LADN;\nNOTE 5:\tThe LADN service does not apply for either 5G-RG connected to 5GC via wireline access or the W-AGF acting on behalf of the FN-RG.\nNOTE 6:\tIf one or more DNNs are included in the traffic descriptor of a URSP rule and no DNN is included in the route selection descriptor, the DNN provided by the application is selected as one of the PDU session attributes by the URSP handling layer to request the UE NAS layer.\nNOTE 7:\tIf there are multiple DNNs in the route selection descriptor, a DNN is chosen based on implementation of the 5G-RG or the W-AGF acting on behalf of the FN-RG.\nD)\tthe PDU session type of the route selection descriptor;\nE)\tpreferred access type or multi-access preference, if the preferred access type or the multi-access preference is in the route selection descriptor;\nNOTE 8:\tIf a preferred access type or a multi-access preference is included in the route selection descriptor of a URSP rule, it is recommended that the 5G-RG or the W-AGF acting on behalf of the FN-RG establishes a PDU session based on the preferred access type or the multi-access preference. The preferred access type or the multi-access preference does not apply to the AUN3 device or connectivity group.\nF)\tPDU session pair ID if there is a PDU session pair ID in the route selection descriptor; and\nG)\tRSN if there is an RSN in the route selection descriptor, and\nif the 5G-RG or the W-AGF acting on behalf of the FN-RG supports reporting of URSP rule enforcement and:\nA)\tthe 5G-RG or the W-AGF acting on behalf of the FN-RG has URSP rule enforcement report indication; and\nB)\tone or more connection capabilities are included in the traffic descriptor,\nthen the URSP handling layer requests the UE NAS layer of the 5G-RG or the W-AGF acting on behalf of the FN-RG to send a URSP rule enforcement report with the connection capabilities provided by the application to the network during PDU session establishment;\nThe NAS layer of the 5G-RG or the W-AGF acting on behalf of the FN-RG indicates the result of the PDU session establishment. Upon successful completion of the PDU session establishment, the NAS layer of the 5G-RG or the W-AGF acting on behalf of the FN-RG shall additionally indicate the attributes of the established PDU session (e.g. PDU session identity, SSC mode, S-NSSAI, DNN, PDU session type, access type, PDU address) to the URSP handling layer, and shall provide information (e.g. PDU address) of the successfully established PDU session to the upper layers. The 5G-RG or the W-AGF acting on behalf of the FN-RG shall stop selecting a route selection descriptor matching the application information or information of the AUN3 device or connectivity group. If the PDU session establishment is unsuccessful, the 5G-RG or the W-AGF acting on behalf of the FN-RG shall proceed to step 3);\n3)\tBased on the rejection cause and if there is another value which can be used for the rejected component in the same route selection descriptor, the 5G-RG or the W-AGF acting on behalf of the FN-RG shall select another combination of values in the currently selected route selection descriptor by using this value of the rejected component and proceed to step 2), otherwise the 5G-RG or the W-AGF acting on behalf of the FN-RG shall proceed to step 4); and\n4)\tif there is any route selection descriptor which has not yet been evaluated, the 5G-RG or the W-AGF acting on behalf of the FN-RG shall proceed to step 1). If all route selection descriptors for the matching non-default URSP rule have been evaluated and there is one or more non-default matching URSP rule which has not yet been evaluated, the 5G-RG or the W-AGF acting on behalf of the FN-RG shall proceed to step a). If all non-default matching URSP rules have been evaluated, the 5G-RG or the W-AGF acting on behalf of the FN-RG shall inform the upper layers of the failure.\nb)\tif no non-default matching URSP rule can be found:\n1)\tby the 5G-RG and local configuration of the 5G-RG for the application is available, the 5G-RG shall perform the association of the application to a PDU session accordingly. If no matching PDU session exists, the NAS layer of the 5G-RG shall attempt to establish a PDU session using local configuration of the 5G-RG.\nNOTE 9:\tAny missing information in local configuration of the 5G-RG needed to build the PDU session establishment request can be the appropriate corresponding component from the default URSP rule with the \"match-all\" traffic descriptor.\nIf the PDU session establishment is successful, the NAS layer of the 5G-RG shall provide information (e.g. PDU address) of the successfully established PDU session to the upper layers. Otherwise, the 5G-RG shall go to step c);\n2)\tby the W-AGF acting on behalf of the FN-RG, the W-AGF acting on behalf of the FN-RG shall go to step c); or\n3)\tby the 5G-RG acting on behalf of the AUN3 device or connectivity group shall go to step c); and\nc)\tif no non-default matching URSP rule can be found:\n1)\tby the 5G-RG and if either local configuration of the 5G-RG for the application is not available or the PDU session establishment based on local configuration of the 5G-RG for the application was unsuccessful, the 5G-RG shall perform the association of the application to a PDU session according to the default URSP rule with the \"match-all\" traffic descriptor, if any. If the association is unsuccessful, the 5G-RG shall inform the upper layers of the failure;\n2)\tby the W-AGF acting on behalf of the FN-RG, the W-AGF acting on behalf of the FN-RG shall perform the association of the application to a PDU session according to the default URSP rule with the \"match-all\" traffic descriptor, if any. If the association is unsuccessful, and local configuration of the W-AGF acting on behalf of the FN-RG for the application is available, the W-AGF acting on behalf of the FN-RG shall perform the association of the application to a PDU session accordingly. If no matching PDU session exists, the NAS layer of the W-AGF acting on behalf of the FN-RG shall attempt to establish a PDU session using local configuration of the W-AGF acting on behalf of the FN-RG. If the PDU session establishment is successful, the NAS layer of the W-AGF acting on behalf of the FN-RG shall provide information (e.g. PDU address) of the successfully established PDU session to the upper layers. Otherwise, the W-AGF acting on behalf of the FN-RG shall inform the upper layers of the failure; or\n3)\tby the 5G-RG acting on behalf of the AUN3 device or connectivity group, the 5G-RG acting on behalf of the AUN3 device or connectivity group shall perform the association of the AUN3 device or connectivity group to a PDU session according to the default URSP rule with the \"match-all\" traffic descriptor, if any. If the association is unsuccessful, and local configuration of the 5G-RG acting on behalf of the AUN3 device or connectivity group is available, the 5G-RG acting on behalf of the AUN3 device or connectivity group shall perform the association of the AUN3 device or connectivity group to a PDU session accordingly. If no matching PDU session exists, the NAS layer of the 5G-RG acting on behalf of the AUN3 device or connectivity group shall attempt to establish a PDU session using local configuration of the 5G-RG acting on behalf of the AUN3 device or connectivity group. If the PDU session establishment is successful, the NAS layer of the 5G-RG acting on behalf of the AUN3 device or connectivity group shall provide information (e.g. PDU address) of the successfully established PDU session to the upper layers. Otherwise, the 5G-RG acting on behalf of the AUN3 device or connectivity group shall inform the upper layers of the failure.\nFor a 5G-RG not operating in SNPN access operation mode, if the 5G-RG supports VPS URSP and has signalled URSP, when the upper layers request information of the PDU session via which to send a PDU of an application, an AUN3 device, or a connectivity group as described above, the 5G-RG shall evaluate URSP rules, if available, in accordance with the following order until a matching URSP rule is found:\n1)\tif the UE is registered via one or both accesses and the RPLMN of each access is a VPLMN, non-default URSP rules in the VPS URSP of the RPLMN using steps in bullet a) above;\n2)\tif the UE is registered via one or both accesses and the RPLMN of each access is a VPLMN, non-default URSP rules in the VPS URSP of the equivalent PLMN of the RPLMN using steps in bullet a) above;\n3)\tnon-default URSP rules in the PG URSP using steps in bullet a) above;\n4)\tif local configuration of the 5G-RG for the application, an AUN3 device, or a connectivity group is available, local configuration of the 5G-RG for the application, an AUN3 device, or a connectivity group using steps in bullet b) above;\n5)\tif the UE is registered via one or both accesses and the RPLMN of each access is a VPLMN, default URSP rule in the VPS URSP of the RPLMN using steps in bullet c) above;\n6)\tif the UE is registered via one or both accesses and the RPLMN of each access is a VPLMN, default URSP rules in the VPS URSP of the equivalent PLMN of the RPLMN using steps in bullet c) above; and\n7)\tdefault URSP rule in the PG URSP using steps in bullet c) above.\nThe HPLMN may pre-configure the 5G-RG or the W-AGF acting on behalf of the FN-RG with URSP or may provide URSP to the 5G-RG or the W-AGF acting on behalf of the FN-RG by signalling as described in annex D of 3GPP TS 24.501 [11]. In the 5G-RG, the pre-configured URSP and the signalled URSP shall be stored in a non-volatile memory in the ME together with the SUPI from the USIM. If the 5G-RG or the W-AGF acting on behalf of the FN-RG has both pre-configured URSP and signalled URSP, the 5G-RG or the W-AGF acting on behalf of the FN-RG shall only use the signalled URSP. The pre-configured URSP shall be stored until a new URSP is configured by HPLMN or the USIM is removed from the 5G-RG. The signalled URSP may be modified by the procedures defined in annex D of 3GPP TS 24.501 [11] and shall be stored until USIM is removed from the 5G-RG or until W-AGF acting on behalf of the FN-RG deregisters on behalf of the FN-RG. In the 5G-RG,\n-\twhen the 5G-RG acts on behalf of the AUN3 device, the URSP for the AUN3 device can be used if 5G-RG is registered on behalf of the AUN3 device;\n-\twhen the 5G-RG acting on cases other than AUN3 device, the URSP can only be used if the SUPI from the USIM matches the SUPI stored in the non-volatile memory of the ME, if the SUPI from the USIM does not match the SUPI stored in the non-volatile memory of the ME, the 5G-RG shall delete the URSP.\nThe 5G-RG or the W-AGF acting on behalf of the FN-RG may re-evaluate the URSP rules, to check if the change of the association of an application, an AUN3 device or a connectivity group to a PDU session is needed, when:\nNOTE 10:\tThe time when the 5G-RG or the W-AGF acting on behalf of the FN-RG performs the re-evaluation is up to implementation of the 5G-RG or the W-AGF acting on behalf of the FN-RG. It is recommended that the 5G-RG or the W-AGF acting on behalf of the FN-RG performs the re-evaluation in a timely manner.\na)\tthe 5G-RG or the W-AGF acting on behalf of the FN-RG performs periodic URSP rules re-evaluation based on implementation of the 5G-RG or the W-AGF acting on behalf of the FN-RG;\nb)\tthe NAS layer of the 5G-RG or the W-AGF acting on behalf of the FN-RG indicates that an existing PDU session used for routing traffic of an application based on a URSP rule is released;\nc)\tthe URSP is updated by the PCF;\nd)\tthe NAS layer of the 5G-RG indicates that the 5G-RG performs inter-system change from S1 mode to N1 mode;\ne)\tthe NAS layer of the 5G-RG indicates that the 5G-RG is successfully registered in N1 mode over 3GPP access;\nf)\tthe allowed NSSAI or the configured NSSAI is changed;\ng)\tthe LADN information or the extended LADN information is changed for the 5G-RG; or\nh)\tthe NAS layer of the 5G-RG indicates the successful change of the PLMN.\nIf the re-evaluation leads to a change of the association of an application, an AUN3 device or a connectivity group to a PDU session, the 5G-RG or the W-AGF acting on behalf of the FN-RG may enforce such change immediately or when the 5G-RG or the W-AGF acting on behalf of the FN-RG returns to 5GMM-IDLE mode.\nNOTE 11:\tThe time when the 5G-RG or the W-AGF acting on behalf of the FN-RG enforces the change of the association of an application to a PDU Session is up to implementation of the 5G-RG or the W-AGF acting on behalf of the FN-RG. It is recommended that the 5G-RG or the W-AGF acting on behalf of the FN-RG performs the enforcement in a timely manner.\nThe URSP handling layer may request the NAS layer of the 5G-RG or the W-AGF acting on behalf of the FN-RG to release an existing PDU session after the re-evaluation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.3\tUnknown or unexpected URSP rules",
+                            "text_content": "If the network provides URSP rules including any new component in the traffic descriptor or in the route selection descriptor which is not recognized by the UE, the 5G-RG or the W-AGF acting on behalf of an FN-RG, such URSP rules are unknown or unexpected to the UE, the 5G-RG or the W-AGF acting on behalf of an FN-RG. In this case:\n-\tif the traffic descriptor of this URSP rule includes any component which is not recognized by the UE, the UE shall skip this URSP rule when evaluating the URSP rules to associate an application or a PIN with a PDU session, with non-seamless non-3GPP offload or with 5G ProSe layer-3 UE-to-network relay offload;\n-\tif the traffic descriptor of this URSP rule includes any component which is not recognized by the 5G-RG or the W-AGF acting on behalf of an FN-RG, the 5G-RG or the W-AGF acting on behalf of an FN-RG shall skip this URSP rule when evaluating the URSP rules to associate an application, an AUN3 device or a connectivity group with a PDU session; or\n-\tif the route selection descriptor of this URSP rule includes any component which is not recognized by the UE, the 5G-RG or the W-AGF acting on behalf of an FN-RG, the UE, the 5G-RG or the W-AGF acting on behalf of an FN-RG shall skip this route selection descriptor and handle this URSP rule with the remaining route selection descriptors.\nIf the UE, the 5G-RG or the W-AGF acting on behalf of an FN-RG receives any unknown value within a known traffic descriptor or route selection descriptor component, the value shall be still used to identify a match with the application information, the PIN information, the AUN3 device information or the connectivity group information, when the same unknown value is provided by upper layers. The same handling shall be applied to operator-specific values.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.4\tReporting of URSP rule enforcement",
+                            "text_content": "URSP rule enforcement for a specific application and a specific URSP rule can be reported to the network.\nThe URSP rule needs to be reported after enforcement if the URSP rule includes URSP rule enforcement report indication and if it contains the connection capabilities in the traffic descriptors. A rule with the \"match-all\" traffic descriptor cannot contain connection capabilities in the traffic descriptor.\nURSP rule enforcement report includes the connection capabilities contained in the traffic descriptor of the associated URSP rule. If more than one connection capabilities are contained in the traffic descriptor of the associated URSP rule, and not all match the application, the UE only includes those matching the application. If several URSP rules for multiple applications are enforced, and these multiple applications' traffic are all associated to a PDU session, more than one URSP rule enforcement can be reported at the same time.\nIf the UE supports reporting of URSP rule enforcement, the URSP rule matching the application contains the connection capabilities in the traffic descriptor and a URSP rule enforcement report indication, the URSP rule enforcement report indication is set to \"URSP rule enforcement report is required\", and\n-\tthe traffic descriptor of the URSP rule matches the application information of a newly detected application and associates the application with a new PDU Session; or\n-\tthe traffic descriptor of the URSP rule matches the application information of a newly detected application and associates the application with an existing PDU Session;\nthe UE shall send URSP rule enforcement report including the connection capabilities provided by the associated application (i.e. only the matched connection capabilities in traffic descriptor), to the network according to 3GPP TS 24.501 [11].\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tAccess network discovery and selection policy (ANDSP)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.1\tOverview",
+                            "text_content": "The ANDSP is used to control the UE behaviour related to access network discovery and selection over non-3GPP access network.\nThe ANDSP consists of:\n-\tWLAN Selection Policy (WLANSP) which is described in clause 4.3.2; and\n-\tnon-3GPP access network (N3AN) node configuration information which is described in clause 4.3.3.\nThe 5G-RG or a W-AGF acting on behalf of the FN-RG shall ignore any ANDSP information, if received.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.2\tWLAN selection policy (WLANSP)",
+                            "text_content": "The WLANSP is used to control UE behaviour related to selection and reselection of a WLAN.\nThe WLANSP consists of zero or more WLANSP rules.\nEach WLANSP rule consists of:\n-\trule identifier;\n-\tone or more groups of WLAN selection criteria;\n-\tvalidity area;\n-\tzero or more time of day;\n-\trule priority;\n-\troaming.\nEach group of WLAN selection criteria contains:\n-\tcriteria priority;\n-\thome network indication;\n-\tpreferred roaming partner list;\n-\tmin backhaul threshold;\n-\tmaximum BSS load value;\n-\trequired proto port tuple;\n-\tSP exclusion list;\n-\tpreferred SSID list; and\n-\tslice-based TNAN list.\nThe priority of a selection criteria is encoded in the criteria priority field. The WLAN priority defined in the preferred SSID list (see figure 5.3.2.4c) represents the priority of the WLAN matching the selection criteria.\nThe validity of the WLANSP rule can be restricted by validity conditions. The validity of the WLANSP rule takes into account validity area, roaming, and time of day where each condition shall match in order to make the WLANSP rule valid.\nEach validity area consists of:\n-\t3GPP location;\n-\tWLAN location; and\n-\tGeo location.\nEach time of day consists of:\n-\ttime start;\n-\ttime stop;\n-\tdate start;\n-\tdate stop; and\n-\tday of week.\nWhen the selection criteria is for slice-based TNAN list, the selection criteria sub entry consists of:\n-\tTNGF ID;\n-\tS-NSSAI list; and\n-\tSSID list.\nThe S-NSSAI list indicates the list of S-NSSAI(s) that are supported by the indicated TNGF. The SSID list indicates the list of SSID(s) through which the indicated TNGF can be reached.\nThe WLANSP rule is considered valid if none of the validity conditions exist or all validity conditions match.\nThere can be multiple valid WLANSP rules at the same time. In addition to validity conditions and selection criteria, there is a rule priority that shall be set for each WLANSP rule. The rule priority is encoded in the rule priority field, and it enables the UE to determine which WLANSP rule, out of potentially several valid WLANSP rules, it should consider as active. A WLANSP rule is active if it is valid and has highest rule priority out of the valid WLANSP rules. At any point in time, there shall be at most one active WLANSP rule. A WLAN that matches a selection criteria of the active WLANSP rule is considered as matching the selection criteria.\nIf the UE is roaming and WLANSP rules from both HPLMN and VPLMN are available, visited WLANSP rules shall take precedence.\nIf the UE is in a non-subscribed SNPN and WLANSP rules from both:\n-\tthe subscribed SNPN, the CH with AAA server or the HPLMN; and\n-\tthe non-subscribed SNPN;\nare available, the non-subscribed SNPN's WLANSP rules shall take precedence.\nThe procedure of UE selecting WLAN access network based on WLAN selection policy is specified in 3GPP TS 24.502 [3].\nThe 5G-RG and the W-AGF acting on behalf of an FN-RG shall ignore the WLAN selection policy, if received.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.3\tN3AN node configuration information",
+                            "text_content": "Non-3GPP access network (N3AN) node configuration information is used to control UE behaviour related to selection of either N3IWF or ePDG for accessing 5GCN or EPC respectively via non-3GPP access.\nThe non-3GPP access network (N3AN) node configuration information provisioned by the HPLMN consists of:\na)\tNon-3GPP access network (N3AN) node selection information;\nb)\toptionally, home ePDG identifier configuration;\nc)\toptionally, home N3IWF identifier configuration;\nd)\toptionally, extended home N3IWF identifier configuration; and\ne)\toptionally, slice-specific N3IWF prefix configuration.\nThe non-3GPP access network (N3AN) node configuration information provisioned by a VPLMN consists of:\na)\tslice-specific N3IWF prefix configuration.\nNOTE:\tAs an implementation option, the UE can store slice-specific N3IWF prefix configuration provisioned by a PLMN for later use.\nThe procedure of UE selecting an N3AN node based on N3AN node configuration information is specified in 3GPP TS 24.502 [3].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.4\tInterworking with EPC",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.4.1\tPrecedence between URSP, ANDSP, ANDSF and RAN rules",
+                            "text_content": "If the UE supports both S1 mode and N1 mode:\n-\tthe UE shall always use the ANDSP information and applicable user preferences on non-3GPP access selection, if available at the UE, for non-3GPP access node selection;\nNOTE:\tThis includes the case when the UE is registered to the 5GCN via 3GPP access, the case when the UE is registered to the EPC via 3GPP access, and the case when the UE is not registered to any CN via 3GPP access.\n-\tif the UE is:\na)\tregistered to the 5GCN via 3GPP access and not registered to any CN via non-3GPP access; or\nb)\tregistered to the 5GCN via 3GPP access and registered to the 5GCN via non-3GPP access,\nthe UE shall apply URSP rules and applicable UE local configuration, if available at the UE, to all uplink user data;\n-\tif the UE is registered to the 5GCN via 3GPP access and registered to the EPC via non-3GPP access, the UE shall:\na)\tuse the ANDSF rules and RAN rules, if available at the UE, for uplink user data sent via the ePDG; and\nb)\tapply URSP rules and applicable UE local configuration, if available at the UE, to all other uplink user data;\n-\tif the UE is:\na)\tregistered to the EPC via 3GPP access and not registered to any CN via non-3GPP access; or\nb)\tregistered to the EPC via 3GPP access and registered to the EPC via non-3GPP access,\nthe UE:\na)\tshall use the ANDSF rules and RAN rules, if available at the UE, for all uplink user data for which there is one or more applicable ANDSF rule or RAN rule, except for the rules and parameters related to non-3GPP access node selection; and\nb)\tshould use the URSP rules, if available at the UE, to derive the parameters to be used in EPS as specified in clause 4.4.2 for all uplink user data for which there is no applicable ANDSF rule or RAN rule except for the rules and parameters related to non-3GPP access node selection and there is no applicable UE local configuration; and\n-\tif the UE is registered to the EPC via 3GPP access and registered to the 5GCN via non-3GPP access, the UE:\na)\tshall apply URSP rules and applicable UE local configuration, if available at the UE, to uplink user data sent via non-3GPP access;\nb)\tshall use the ANDSF rules and RAN rules, if available at the UE, for all other uplink user data for which there is one or more applicable ANDSF rule or RAN rule, except for the rules and parameters related to non-3GPP access node selection; and\nc)\tshould use the URSP rules, if available at the UE, to derive the parameters to be used in EPS as specified in clause 4.4.2 for all uplink user data for which there is no applicable ANDSF rule or RAN rule except for the rules and parameters related to non-3GPP access node selection. and there is no applicable UE local configuration\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.4.2\tUse of URSP in EPS",
+                            "text_content": "If the UE:\n-\tsupports both S1 mode and N1 mode;\n-\tdoes not have preconfigured rules for associating an application to a PDN connection, a non-seamless non-3GPP offload or a 5G ProSe layer-3 UE-to-network relay offload (i.e. there are no rules in UE local configuration and no ANDSF rules applicable for the application); and\n-\tis provisioned with URSP,\nwhen in S1 mode, the UE should use a matching URSP rule, if available, to derive the parameters, e.g. APN, using the mapping between the parameters in the URSP rules and the parameters used for PDN connection establishment specified in table 4.4.2.1 and table 4.4.2.2. The URSP rule with the derived EPS parameters are used for associating the application to a PDN connection, non-seamless non-3GPP offload or a 5G ProSe layer-3 UE-to-network relay offload, as specified in clause 4.2.2. The precedence of URSP rule is reused in EPS.\nIf a route selection descriptor for the matching URSP rule includes:\n-\tat least one parameter not applicable in EPS, the UE shall not use the route selection descriptor and shall proceed to evaluate the route selection descriptor with the next lowest precedence value; and\n-\tone or more parameters ignored in EPS, the UE shall evaluate the route selection descriptor without considering the one or more parameters ignored in EPS.\nTable 4.4.2.1: Mapping table for traffic descriptor parameters\n\nTable 4.4.2.2: Mapping table for route selection descriptor parameters\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.4.2.1: Mapping table for traffic descriptor parameters",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 4.4.2.2: Mapping table for route selection descriptor parameters",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tEncoding of UE policies",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tOverview",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The content of UE policies is included in the UE policy part contents defined in annex D.6.2 of 3GPP TS 24.501 [11].\nThe UE policy part contents includes URSP, ANDSP, V2XP, ProSeP, A2XP or RSLPP.\nFor URSP definition, the encoding is defined in clause 5.2.\nFor ANDSP definition, it includes encoding of WLANSP and encoding of N3AN node configuration information. The encoding of WLANSP is defined in clause 5.3.2. The encoding of N3AN node configuration information is defined in clause 5.3.3.\nFor V2XP definition, the coding is specified in 3GPP TS 24.588 [18].\nFor ProSeP definition, the coding is specified in 3GPP TS 24.555 [18A].\nFor A2XP definition, the coding is specified in 3GPP TS 24.578 [24].\nFor RSLPP definition, the coding is specified in 3GPP TS 24.514 [23].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tEncoding of UE policy part type URSP",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The UE policy part type URSP contains one or more URSP rules which may be included in the UE policy part contents as defined in annex D.6.2 of 3GPP TS 24.501 [11].\nIf the UE policy part contents includes one or more URSP rules (i.e. the UE policy part type field is set to \"URSP\"), the UE policy part contents including URSP rules is encoded as shown in figures 5.2.1 to 5.2.4A and table 5.2.1.\nFigure 5.2.1: UE policy part contents including one or more URSP rules\nFigure 5.2.2: URSP rule\nFigure 5.2.3: Route selection descriptor list\nFigure 5.2.4: Route selection descriptor\nFigure 5.2.4A: Additional indications\nTable 5.2.1: UE policy part contents including a URSP rule\n\nFigure 5.2.5: Location criteria\nFigure 5.2.6: Location area\nFigure 5.2.7: Location area contents {Type of location area = E-UTRA cell identities list}\nFigure 5.2.8: Location area contents {Type of location area = NR cell identities list}\nFigure 5.2.9: Location area contents {Type of location area = Global RAN node identities list}\nTable 5.2.2: Location criteria\n\n",
+                    "tables": [
+                        {
+                            "description": "If the UE policy part contents includes one or more URSP rules (i.e. the UE policy part type field is set to \"URSP\"), the UE policy part contents including URSP rules is encoded as shown in figures 5.2.1 to 5.2.4A and table 5.2.1.",
+                            "table number": 5,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Figure 5.2.1: UE policy part contents including one or more URSP rules",
+                            "table number": 6,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Figure 5.2.2: URSP rule",
+                            "table number": 7,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Figure 5.2.3: Route selection descriptor list",
+                            "table number": 8,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Figure 5.2.4: Route selection descriptor",
+                            "table number": 9,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 5.2.1: UE policy part contents including a URSP rule",
+                            "table number": 10,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 11,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Figure 5.2.5: Location criteria",
+                            "table number": 12,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Figure 5.2.6: Location area",
+                            "table number": 13,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Figure 5.2.7: Location area contents {Type of location area = E-UTRA cell identities list}",
+                            "table number": 14,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Figure 5.2.8: Location area contents {Type of location area = NR cell identities list}",
+                            "table number": 15,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 5.2.2: Location criteria",
+                            "table number": 16,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tEncoding of UE policy part type ANDSP",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tGeneral",
+                            "text_content": "The purpose of the ANDSP is to indicate the WLAN Selection Policy (WLANSP) and non-3GPP access network (N3AN) node configuration information related to access network discovery and selection and N3AN node selection for non-3GPP access network.\nThe ANDSP is encoded as shown in figures 5.3.1.1 to 5.3.1.3 and table 5.3.1.1 according to UE policy part top level format (see Annex D of 3GPP TS 24.501 [11]).\nFigure 5.3.1.1: UE policy part when UE policy part type = {ANDSP}\nFigure 5.3.1.2: ANDSP contents\nFigure 5.3.1.3: ANDSP Info\nTable 5.3.1.1: ANDSP information format\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The ANDSP is encoded as shown in figures 5.3.1.1 to 5.3.1.3 and table 5.3.1.1 according to UE policy part top level format (see Annex D of 3GPP TS 24.501 [11]).",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.1.1: UE policy part when UE policy part type = {ANDSP}",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.1.2: ANDSP contents",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.1.1: ANDSP information format",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.3.2\tEncoding of WLANSP",
+                            "text_content": "The purpose of the WLANSP field is to indicate the rules related to selection and reselection of a WLAN.\nThe WLANSP field is encoded as shown in figures 5.3.2.1 to 5.3.2.21 and table 5.3.2.1.\n\nFigure 5.3.2.1: ANDSP Info type = {WLANSP}\nFigure 5.3.2.2: WLANSP contents\nFigure 5.3.2.3: WLANSP rule\nFigure 5.3.2.4: Selection criteria\nFigure 5.3.2.4a: Selection criteria entry\nFigure 5.3.2.4b: Selection criteria set\nFigure 5.3.2.4c: Selection criteria sub entry {selection criteria set type = preferred SSID list}\nFigure 5.3.2.4d: Selection criteria sub entry {selection criteria set type = preferred roaming partner list}\nFigure 5.3.2.4e: Selection criteria sub entry {selection criteria set type = required protocol port tuple}\nFigure 5.3.2.4f: Selection criteria sub entry {selection criteria set type = SP exclusion list}\nFigure 5.3.2.4g: Selection criteria sub entry {selection criteria set type = minimum backhaul threshold}\nFigure 5.3.2.4h:Selection criteria sub entry {selection criteria set type = slice-based TNAN list}\nFigure 5.3.2.5: Validity area\nFigure 5.3.2.6: Location entry\nFigure 5.3.2.7: Location entry {entry type =3GPP location}\nFigure 5.3.2.8: Location entry {entry type =WLAN location}\nFigure 5.3.2.9: Location entry {entry type =Geo location}\n\nFigure 5.3.2.10: Location sub entry {entry type= 3GPP location}\nFigure 5.3.2.10a: Location sub entry {entry type= WLAN location or Geo location}\nFigure 5.3.2.11a: Location field {entry type= Geo location}\nFigure 5.3.2.11b: Location field {entry type= 3GPP location}\nFigure 5.3.2.11c: Location field {entry type= WLAN location}\nFigure 5.3.2.12: 3GPP location field {field type = TAC}\nFigure 5.3.2.13: 3GPP location field {field type = EUTRA CI}\nFigure 5.3.2.14: 3GPP location field {field type = NR CI}\nFigure 5.3.2.14a: WLAN location field {field type = HESSID}\nFigure 5.3.2.14b: WLAN location field {field type = SSID}\nFigure 5.3.2.14c: WLAN location field {field type = BSSID}\nFigure 5.3.2.15: Time of day\nFigure 5.3.2.16: Time of day sub field\nFigure 5.3.2.17: ToD sub field\nFigure 5.3.2.18: ToD sub field {field type = \"time start\" or \"time stop\"}\nFigure 5.3.2.19: ToD sub field {field type = \"date start\" or \"date stop\"}\nFigure 5.3.2.20: ToD sub field {field type = \"day of the week\"}\nFigure 5.3.2.21: SSID list\n\nTable 5.3.2.1: WLANSP information element\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.1: ANDSP Info type = {WLANSP}",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.2: WLANSP contents",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.3: WLANSP rule",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.4: Selection criteria",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.4a: Selection criteria entry",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.4b: Selection criteria set",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.4c: Selection criteria sub entry {selection criteria set type = preferred SSID list}",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.4d: Selection criteria sub entry {selection criteria set type = preferred roaming partner list}",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.4e: Selection criteria sub entry {selection criteria set type = required protocol port tuple}",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.4f: Selection criteria sub entry {selection criteria set type = SP exclusion list}",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.4g: Selection criteria sub entry {selection criteria set type = minimum backhaul threshold}",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.4h:Selection criteria sub entry {selection criteria set type = slice-based TNAN list}",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.5: Validity area",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.6: Location entry",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.7: Location entry {entry type =3GPP location}",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.8: Location entry {entry type =WLAN location}",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.10: Location sub entry {entry type= 3GPP location}",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.10a: Location sub entry {entry type= WLAN location or Geo location}",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.11a: Location field {entry type= Geo location}",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.11b: Location field {entry type= 3GPP location}",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.11c: Location field {entry type= WLAN location}",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.12: 3GPP location field {field type = TAC}",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.13: 3GPP location field {field type = EUTRA CI}",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.14: 3GPP location field {field type = NR CI}",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.14a: WLAN location field {field type = HESSID}",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.14b: WLAN location field {field type = SSID}",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.14c: WLAN location field {field type = BSSID}",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.15: Time of day",
+                                    "table number": 50,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.16: Time of day sub field",
+                                    "table number": 51,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.17: ToD sub field",
+                                    "table number": 52,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.18: ToD sub field {field type = \"time start\" or \"time stop\"}",
+                                    "table number": 53,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.19: ToD sub field {field type = \"date start\" or \"date stop\"}",
+                                    "table number": 54,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.2.20: ToD sub field {field type = \"day of the week\"}",
+                                    "table number": 55,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.2.1: WLANSP information element",
+                                    "table number": 56,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.3.3\tEncoding of N3AN node configuration information",
+                            "text_content": "The purpose of the N3AN node configuration information is to indicate the non-3GPP access network (N3AN) node configuration information to the UE for selection of either N3IWF or ePDG for accessing 5GCN or EPC respectively via non-3GPP access.\nThe N3AN node configuration information is encoded as shown in figure 5.3.3.1.1, table 5.3.3.1.1, figure 5.3.3.1.2, table 5.3.3.1.2.\nFigure 5.3.3.1.1: ANDSP info containing N3AN node configuration information, where x=k\nTable 5.3.3.1.1: N3AN node configuration information\n\nFigure 5.3.3.1.2: N3AN node configuration information contents\nTable 5.3.3.1.2: Content of N3AN node configuration information\n\nThe content of N3AN node selection information contains a sequence of the N3AN node selection information entries. Each N3AN node selection information entry contains a PLMN ID and information for the PLMN ID. The content of N3AN node selection information contains at least an N3AN node selection information entry with information for the HPLMN and an N3AN node selection information entry for \"any_PLMN\".\nNOTE:\tIf N3AN node selection information does not contain at least:\n-\tan N3AN node selection information entry with information for the HPLMN; and\n-\tan N3AN node selection information entry for \"any_PLMN\";\nthe N3AN node selection information is handled as a syntactically incorrect IE according to 3GPP TS 24.501 [11].\nThe content is encoded according to figure 5.3.3.2.1, figure 5.3.3.2.2 and table 5.3.3.2.1.\nFigure 5.3.3.2.1: Content of N3AN node selection information\nFigure 5.3.3.2.2: N3AN node selection information entry\nTable 5.3.3.2.1: N3AN node selection information\n\nThe content of home N3IWF identifier configuration contains a list of home N3IWF identifier entries.\nThe content of home N3IWF identifier configuration is encoded according to figure 5.3.3.3.1.\nThe content of each home N3IWF identifier entry is coded according to figure 5.3.3.3.2, figure 5.3.3.3.3 and table 5.3.3.3.1.\nFigure 5.3.3.3.1: Content of home N3IWF identifier configuration\n\nFigure 5.3.3.3.2: Home N3IWF identifier entry (Home N3IWF identifier type = \"IPv4\", \"IPv6\" or \"IPv4v6\")\n\nFigure 5.3.3.3.3: Home N3IWF identifier entry (Home N3IWF identifier type = \"FQDN\")\nTable 5.3.3.3.1: Home N3IWF identifier entry\n\nTable 5.3.3.3.2: Void\n\nThe content of home ePDG identifier configuration contains a list of home ePDG identifier entries.\nThe content of home ePDG identifier configuration is encoded according to figure 5.3.3.4.1.\nThe content of each home ePDG identifier entry is encoded according to figure 5.3.3.4.2, figure 5.3.3.4.3 and table 5.3.3.4.1.\nFigure 5.3.3.4.1: Content of home ePDG identifier configuration\n\nFigure 5.3.3.4.2: Home ePDG identifier entry (Home ePDG identifier type = \"IPv4\", \"IPv6\" or \"IPv4v6\")\n\nFigure 5.3.3.4.3: Home ePDG identifier entry (Home ePDG identifier type = \"FQDN\")\nTable 5.3.3.4.1: Home ePDG identifier entry\n\nTable 5.3.3.4.2: Void\n\nThe content of extended home N3IWF identifier configuration contains a list of extended home N3IWF identifier entries. The content of the extended home N3IWF identifier configuration is encoded according to figure 5.3.3.5.1.\nFigure 5.3.3.5.1: Content of extended home N3IWF identifier configuration\nThe content of each extended home N3IWF identifier entry is coded according to figure 5.3.3.5.2.\nFigure 5.3.3.5.2: Extended home N3IWF identifier entry\nThe content of each home N3IWF identifier entry is coded according to figure 5.3.3.3.2, figure 5.3.3.3.3 and table 5.3.3.3.1. The S-NSSAI list is the list of one or more S-NSSAIs subscribed by the UE and supported by the N3IWF. The content of each S-NSSAI list is coded as the NSSAI IE in 3GPP TS 24.501 [11], starting from octet 2.\nThe content of slice-specific N3IWF prefix configuration contains a list of slice-specific N3IWF prefix entries. The content of the slice-specific N3IWF prefix configuration is encoded according to figure 5.3.3.6.1.\nFigure 5.3.3.6.1: Content of slice-specific N3IWF prefix configuration\nThe content of each slice-specific N3IWF prefix entry is encoded according to figure 5.3.3.6.2 and table 5.3.3.6.1.\nFigure 5.3.3.6.2: slice-specific N3IWF prefix entry\nTable 5.3.3.6.1: slice-specific N3IWF prefix entry\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The N3AN node configuration information is encoded as shown in figure 5.3.3.1.1, table 5.3.3.1.1, figure 5.3.3.1.2, table 5.3.3.1.2.",
+                                    "table number": 57,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.1.1: N3AN node configuration information",
+                                    "table number": 58,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 59,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.1.2: Content of N3AN node configuration information",
+                                    "table number": 60,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The content is encoded according to figure 5.3.3.2.1, figure 5.3.3.2.2 and table 5.3.3.2.1.",
+                                    "table number": 61,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Figure 5.3.3.2.1: Content of N3AN node selection information",
+                                    "table number": 62,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.2.1: N3AN node selection information",
+                                    "table number": 63,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The content of each home N3IWF identifier entry is coded according to figure 5.3.3.3.2, figure 5.3.3.3.3 and table 5.3.3.3.1.",
+                                    "table number": 64,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 65,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 66,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.1: Home N3IWF identifier entry",
+                                    "table number": 67,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The content of each home ePDG identifier entry is encoded according to figure 5.3.3.4.2, figure 5.3.3.4.3 and table 5.3.3.4.1.",
+                                    "table number": 68,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 69,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 70,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.4.1: Home ePDG identifier entry",
+                                    "table number": 71,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The content of extended home N3IWF identifier configuration contains a list of extended home N3IWF identifier entries. The content of the extended home N3IWF identifier configuration is encoded according to figure 5.3.3.5.1.",
+                                    "table number": 72,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The content of each extended home N3IWF identifier entry is coded according to figure 5.3.3.5.2.",
+                                    "table number": 73,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The content of slice-specific N3IWF prefix configuration contains a list of slice-specific N3IWF prefix entries. The content of the slice-specific N3IWF prefix configuration is encoded according to figure 5.3.3.6.1.",
+                                    "table number": 74,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The content of each slice-specific N3IWF prefix entry is encoded according to figure 5.3.3.6.2 and table 5.3.3.6.1.",
+                                    "table number": 75,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.6.1: slice-specific N3IWF prefix entry",
+                                    "table number": 76,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 77,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

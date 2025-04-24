@@ -1,0 +1,1010 @@
+{
+    "document_name": "38306-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document defines the NR UE Radio Access Capability Parameters.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 38.101-1: \"NR; User Equipment (UE) radio transmission and reception Part 1: Range 1 Standalone\".\n[3]\t3GPP TS 38.101-2: \"NR; User Equipment (UE) radio transmission and reception Part 2: Range 2 Standalone\".\n[4]\t3GPP TS 38.101-3: \"NR; User Equipment (UE) radio transmission and reception Part 3: Range 1 and Range 2 Interworking operation with other radios\".\n[5]\t3GPP TS 38.133: \"NR; Requirements for support of radio resource management\".\n[6]\t3GPP TS 38.211: \"NR; Physical channels and modulation\".\n[7]\t3GPP TS 37.340: \"Evolved Universal Terrestrial Radio Access (E-UTRA) and NR Multi-connectivity\".\n[8]\t3GPP TS 38.321: \"NR; Medium Access Control (MAC) protocol specification\".\n[9]\t3GPP TS 38.331: \"NR; Radio Resource Control (RRC) protocol specification\".\n[10]\t3GPP TS 38.212: \"NR; Multiplexing and channel coding\".\n[11]\t3GPP TS 38.213: \"NR; Physical layer procedures for control\".\n[12]\t3GPP TS 38.214: \"NR; Physical layer procedures for data\".\n[13]\t3GPP TS 38.215: \"NR; Physical layer measurements\".\n[14]\t3GPP TS 36.101: \"Evolved Universal Terrestrial Radio Access (E-UTRA) radio transmission and reception\".\n[15]\t3GPP TS 36.306: \"Evolved Universal Terrestrial Radio Access (E-UTRA) User Equipment (UE) radio access capabilities\".\n[16]\t3GPP TS 38.323: \"NR; Packet Data Convergence Protocol (PDCP) specification\".\n[17]\t3GPP TS 36.331: \"Evolved Universal Terrestrial Radio Access (E-UTRA) Radio Resource Control (RRC); Protocol Specification\".\n[18]\t3GPP TS 38.101-4: \"NR; User Equipment (UE) radio transmission and reception Part 4: Performance requirements\".\n[19]\t3GPP TS 36.213: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Physical layer procedures\".\n[20]\t3GPP TS 25.306: \"UE radio access capabilities\".\n[21]\t3GPP TS 38.304: \"User Equipment (UE) procedures in Idle mode and RRC Inactive state\".\n[22]\t3GPP TS 37.355: \" LTE Positioning Protocol (LPP)\".\n[23]\t3GPP TS 38.340: \"NR; Backhaul Adaptation Protocol (BAP) specification\".\n[24]\t3GPP TR 38.822: \"NR; User Equipment (UE) feature list\".\n[25]\t3GPP TS 37.324: \"E-UTRA and NR; Service Data Adaptation Protocol (SDAP) specification\"\n[26]\t3GPP TS 38.314: \"NR; Layer 2 Measurements\".\n[27]\t3GPP TS 36.133: \"Evolved Universal Terrestrial Radio Access (E-UTRA); Requirements for support of radio resource management\".\n[28]\t3GPP TS 38.300: \"NR; NR and NG-RAN Overall Description; Stage-2\".\n[29]\t3GPP TS 26.247: \"Transparent end-to-end Packet-switched Streaming Service (PSS); Progressive Download and Dynamic Adaptive Streaming over HTTP (3GP-DASH)\".\n[30]\t3GPP TS 26.114: \"IP Multimedia Subsystem (IMS); Multimedia Telephony; Media handling and interaction\".\n[31]\t3GPP TS 26.118: \"Virtual Reality (VR) profiles for streaming applications\".\n[32]\t3GPP TS 37.213: \"Physical layer procedures for shared spectrum channel access\".\n[33]\t3GPP TS 38.401: \"NG-RAN; Architecture description\".\n[34]\t3GPP TS 38.101-5: \"NR; User Equipment (UE) radio transmission and reception; Part 5: Satellite access Radio Frequency (RF) and performance requirements\".\n[35]\t3GPP TS 38.104: \"NR; Base Station (BS) radio transmission and reception\".\n[36]\t3GPP TS 38.322: \"NR; Radio Link Control (RLC) protocol specification\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\neRedCap UE: a UE with enhanced reduced capabilities as specified in clause 4.2.22.1.\nFallback band combination: A Uu band combination that would result from another Uu band combination (parent band combination) by releasing at least one SCell or uplink configuration of SCell, or SCG, or SUL. A PC5 band combination that would result from another PC5 band combination (parent band combination) by releasing at least one sidelink carrier. An intra-band non-contiguous band combination is not considered to be a fallback band combination of an intra-band contiguous band combination. A fallback band combination supports the same channel bandwidth(s) for each carrier as its parent band combination(s).\nFallback per band feature set: A feature set per band that has same or lower capabilities than the reported capabilities from the reported feature set per band for a given band.\nFallback per CC feature set: A feature set per CC that has same or lower capabilities than the capabilities of UE (e.g. supported MIMO layers, BW, modulation order) while keeping the numerology the same from the reported feature set per CC for a given carrier per band. The supportedMinBandwidthDL/supportedMinBandwidthUL defines the lower bound of the bandwidth supported by the UE.\nRedCap UE: The UE with reduced capabilities as specified in clause 4.2.21.1.\nSwitching SCell (sSCell): The SCell configured with cross-carrier scheduling to PCell/PSCell.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\nMaxDLDataRate:\tMaximum DL data rate\nMaxDLDataRate_MN:\tMaximum DL data rate in the MN\nMaxDLDataRate_SN:\tMaximum DL data rate in the SN\nMaxULDataRate:\tMaximum UL data rate\nMaxSLtxDataRate:\tMaximum SL data rate in transmission\nMaxSLrxDataRate:\tMaximum SL data rate in reception\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nA-CSI\tAperiodic-CSI\nATG\tAir To Ground\nBAP\tBackhaul Adaptation Protocol\nBC\tBand Combination\nBPS\tBody Proximity Sensing\nBT\tBluetooth\nCCS\tCross Carrier Scheduling\nCMR\tChannel Measurement Resource\nCPAC\tConditional PSCell Addition/Change\nDAPS\tDual Active Protocol Stack\nDL\tDownlink\nEHC\tEthernet Header Compression\nFS\tFeature Set\nFSPC\tFeature Set Per Component-carrier\nGSO\tGeosynchronous Orbit\nHSDN\tHigh Speed Dedicated Network\nIAB-MT\tIntegrated Access Backhaul Mobile Termination\nIDC\tIn-Device Coexistence\nMAC\tMedium Access Control\nMHI\tMobility History Information\nMBS\tMulticast/Broadcast Service\nMCG\tMaster Cell Group\nMN\tMaster Node\nMO-SDT\tMobile Originated Small Data Transmission\nMRB\tMBS Radio Bearer\nMR-DC\tMulti-Radio Dual Connectivity\nMSD\tMaximum Sensitivity Degradation\nMT-SDT\tMobile Terminated Small Data Transmission\nmTRP\tMultiple TRP\nMUSIM\tMulti-Universal Subscriber Identity Module\nNCJT\tNon-Coherent Joint Transmission\nNCR\tNetwork Controlled Repeater\nNCR-MT\tNCR Mobile Termination\nNCSG\tNetwork Controlled Small Gap\nNES\tNetwork Energy Savings\nNGSO\tNon-Geosynchronous Orbit\nNTN\tNon-Terrestrial Network\nP-CSI\tPeriodic CSI\nPDCP\tPacket Data Convergence Protocol\nPSI\tPDU Set Importance\nQoE\tQuality of Experience\nRLC\tRadio Link Control\nRTT\tRound Trip Time\nSCG\tSecondary Cell Group\nSDAP\tService Data Adaptation Protocol\nSN\tSecondary Node\nsTRP\tServing TRP\nTN\tTerrestrial Network\nTRP\tTransmit/Receive Point\nUDC\tUplink Data Compression\nUL\tUplink\nWLAN\tWireless Local Area Network\nXR\teXtended Reality\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tUE radio access capability parameters",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tSupported max data rate",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.1.1\tGeneral",
+                            "text_content": "The DL, UL and SL max data rate supported by the UE is calculated by band or band combinations supported by the UE. A UE supporting NR (NR SA, MR-DC) shall support the calculated DL and UL max data rate defined in 4.1.2. A UE supporting NR sidelink communication shall support the calculated SL max data rate defined in 4.1.5.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.2\tSupported max data rate for DL/UL",
+                            "text_content": "For NR, the approximate data rate for a given number of aggregated carriers in a band or band combination is computed as follows.\n\nwherein\nJ is the number of aggregated component carriers in a band or band combination\nRmax = 948/1024\nFor the j-th CC,\nis the maximum number of supported layers given by maxNumberMIMO-LayersPDSCH for downlink and maximum of maxNumberMIMO-LayersCB-PUSCH and maxNumberMIMO-LayersNonCB-PUSCH for uplink.\nis the maximum supported modulation order given by supportedModulationOrderDL for downlink and supportedModulationOrderUL for uplink.\nis the scaling factor given by scalingFactor or scalingFactor-1024QAM-FR1 and can take the values 1, 0.8, 0.75, and 0.4.\nis the numerology (as defined in TS 38.211 [6])\nis the average OFDM symbol duration in a subframe for numerology , i.e. . Note that normal cyclic prefix is assumed.\nis the maximum RB allocation in bandwidth  with numerology , as defined in 5.3 TS 38.101-1 [2], 5.3 TS 38.101-2 [3], and 5.3 TS 38.101-5 [34], where  is the UE supported maximum bandwidth in the given band or band combination.\nis the overhead and takes the following values\n0.14, for frequency range FR1 for DL\n0.18, for frequency range FR2 for DL\n0.08, for frequency range FR1 for UL\n0.10, for frequency range FR2 for UL\nNOTE 1:\tOnly one of the UL or SUL carriers (the one with the higher data rate) is counted for a cell operating SUL.\nNOTE 2:\tFor UL Tx switching between carriers, only the supported MIMO layer combination across carriers that results in the highest combined data rate is counted for the carriers in the supported maximum UL data rate.\nThe approximate maximum data rate can be computed as the maximum of the approximate data rates computed using the above formula for each of the supported band or band combinations. For the CCs where UE supports pdsch-1024QAM-2MIMO-FR1-r17 for the concerned band, data rate shall be derived as maximum what UE would support if using 1024 QAM (when mcs-Table-r17 or mcs-TableDCI-1-2-r17 is configured) or 256 QAM.\nFor single carrier NR SA operation and except for UEs supporting supportOfERedCap-r18, the UE shall support a data rate for the carrier that is no smaller than the data rate computed using the above formula, with  and component  is no smaller than 4.\nNOTE 3: As an example, the value 4 in the component above can correspond to ,  and .\nFor single carrier NR SA operation and for UEs supporting supportOfERedCap-r18, the UE shall support a data rate for the carrier that is the data rate computed using the above formula, with  and:\nif the UE supports eRedCapNotReducedBB-BW-r18:\n-\tcomponent  is 0.75 if , or;\n-\tcomponent  is 0.8 if ;\nelse:\n-\tcomponent  is 3.2, and;\n-\t is 25 if μ = 0 or, 12 if μ = 1;\nFor EUTRA in case of MR-DC, the approximate data rate for a given number of aggregated carriers in a band or band combination is computed as follows.\nData rate (in Mbps) =\nwherein\nJ is the number of aggregated EUTRA component carriers in MR-DC band combination\nis the total maximum number of DL-SCH transport block bits received or the total maximum number of UL-SCH transport block bits transmitted, within a 1ms TTI for j-th CC, as derived from TS 36.213 [19] based on the UE supported maximum MIMO layers for the j-th CC, and based on the maximum modulation order for the j-th CC and number of PRBs based on the bandwidth of the j-th CC according to indicated UE capabilities.\nThe approximate maximum data rate can be computed as the maximum of the approximate data rates computed using the above formula for each of the supported band or band combinations.\nFor MR-DC, the approximate maximum data rate is computed as the sum of the approximate maximum data rates from NR and EUTRA.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.3\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.4\tTotal layer 2 buffer size for DL/UL",
+                            "text_content": "The total layer 2 buffer size is defined as the sum of the number of bytes that the UE is capable of storing in the RLC transmission windows and RLC reception and reassembly windows and also in PDCP reordering windows for all radio bearers.\nThe required total layer 2 buffer size in MR-DC is the maximum value of the calculated values based on the following equations:\n-\tMaxULDataRate_MN * RLCRTT_MN + MaxULDataRate_SN * RLCRTT_SN + MaxDLDataRate_SN * RLCRTT_SN + MaxDLDataRate_MN * (RLCRTT_SN + X2/Xn delay + Queuing in SN)\n-\tMaxULDataRate_MN * RLCRTT_MN + MaxULDataRate_SN * RLCRTT_SN + MaxDLDataRate_MN * RLCRTT_MN + MaxDLDataRate_SN * (RLCRTT_MN + X2/Xn delay + Queuing in MN)\nOtherwise it is calculated by MaxDLDataRate * RLC RTT + MaxULDataRate * RLC RTT.\nNOTE:\tAdditional L2 buffer required for preprocessing of data is not taken into account in above formula.\nThe required total layer 2 buffer size is determined as the maximum total layer 2 buffer size of all the calculated ones for each band combination and the applicable Feature Set combination in the supported MR-DC or NR band combinations. The RLC RTT for NR cell group corresponds to the smallest SCS numerology supported in the band combination and the applicable Feature Set combination.\nwherein\nX2/Xn delay + Queuing in SN = 25ms if SCG is NR, and 55ms if SCG is EUTRA\nX2/Xn delay + Queuing in MN = 25ms if MCG is NR, and 55ms if MCG is EUTRA\nRLC RTT for EUTRA cell group = 75ms\nRLC RTT for NR cell group is defined in Table 4.1.4-1\nTable 4.1.4-1: RLC RTT for NR cell group per SCS\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.1.4-1: RLC RTT for NR cell group per SCS",
+                                    "table number": 1,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.1.5\tSupported max data rate for SL",
+                            "text_content": "For NR sidelink, the approximate data rate is computed as follows.\n\nwherein\nRmax = 948/1024,\nis the the maximum number of supported layers for sidelink transmission (or reception) given by UE capability on supporting rank 2 PSSCH transmission and rankTwoReception,\nis the maximum supported modulation order between 6 or 8 given by sl-Tx-256QAM and sl-Rx-256QAM,\nis the scaling factor for sidelink transmission and reception given by scalingFactorTxSidelink and scalingFactorRxSidelink respectively, as specified in TS 36.331 [17] and TS 38.331 [9], and can take the values 1, 0.8, 0.75, and 0.4.\nis the numerology (as defined in TS 38.211 [6])\nis the average OFDM symbol duration in a subframe for numerology , i.e. . Note that normal cyclic prefix is assumed.\nis the maximum possible RB allocation in bandwidth BW for PSSCH, where BW is the UE supported maximum bandwidth in the given band or band combination,\nis the overhead and takes the following values\n0.217, for frequency range FR1 for SL\n0.25, for frequency range FR2 for SL\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.6\tTotal layer 2 buffer size for NR SL",
+                            "text_content": "The total layer 2 buffer size for NR sidelink communication is defined as the sum of the number of bytes that the UE is capable of storing in the RLC transmission windows and RLC reception and reassembly windows and also in PDCP reordering windows for all radio bearers for NR sidelink communication.\nThe required total layer 2 buffer size for NR sidelink communication is the maximum value of the calculated values based on the following equations:\nMaxSLtxDataRate * RLC RTT + MaxSLrxDataRate * RLC RTT.\nNOTE:\tAdditional L2 buffer required for preprocessing of data is not taken into account in above formula.\nThe required total layer 2 buffer size for NR sidelink communication is determined as the maximum total layer 2 buffer size of all the calculated ones for each band combination and the applicable Feature Set combination in the supported NR sidelink band combinations. The RLC RTT for NR sidelink communication corresponds to the smallest SCS numerology supported in the band combination and the applicable Feature Set combination.\nwherein\nRLC RTT for NR sidelink communication is defined in Table 4.1.6-1\nTable 4.1.6-1: RLC RTT for NR sidelink communication per SCS\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.1.6-1: RLC RTT for NR sidelink communication per SCS",
+                                    "table number": 2,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "4.2\tUE Capability Parameters",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tIntroduction",
+                            "text_content": "The following clauses define the UE radio access capability parameters. Only parameters for which there is the possibility for UEs to signal different values are considered as UE radio access capability parameters. Therefore, mandatory features without capability parameters that are the same for all UEs are not listed here.\nThe network needs to respect the signalled UE radio access capability parameters when configuring the UE and when scheduling the UE.\nFor capabilities that required to be set consistently for all FDD-FR1 bands (i.e. capabilities that are supposed to be per UE), the UE shall also set capability values for all SUL bands with same values for FDD-FR1 bands if SUL band is supported by the UE.\nThe UE may support different functionalities between FDD and TDD, and/or between FR1 and FR2. The UE shall indicate the UE capabilities as follows. In the table of UE capability parameter in subsequent clauses, \"Yes\" in the column by \"FDD-TDD DIFF\" and \"FR1-FR2 DIFF\" indicates the UE capability field can have a different value for between FDD and TDD or between FR1 and FR2 and \"No\" indicates if it cannot. \"(Incl FR2-2 DIFF)\" in the column by \"FR1-FR2 DIFF\" indicates the UE capability field can have a different value for between FR2-1 and FR2-2. Regarding to the per UE capabilities that are FDD/TDD differentiated(i.e. capabilities indicated as \"Yes\" in the column by \"FDD-TDD DIFF\"), the corresponding capabilities indicated by the FDD capability is applied to SUL if SUL band is supported by the UE. \"FD\" in the column indicates to refer the associated field description. \"FR1 only\" or \"FR2 only\" in the column indicates the associated feature is only supported in FR1 or FR2 and \"TDD only\" indicates the associated feature is only supported in TDD and not applicable to SUL carriers. \"N/A\" in the column indicates it is not applicable to the feature (e,g. the signalling supports the UE to have different values between FDD and TDD or between FR1 and FR2).\n1>\tset all fields of UE-NR/MRDC-Capability except fdd-Add-UE-NR/MRDC/Sidelink-Capabilities, tdd-Add-UE-NR/MRDC/Sidelink-Capabilities, fr1-Add-UE-NR/MRDC-Capabilities and fr2-Add-UE-NR/MRDC-Capabilities, to include the values applicable for all duplex mode(s) and frequency range(s) that the UE supports;\n1>\tif UE supports both FDD (or SUL) and TDD and if (some of) the UE capability fields have a different value for FDD (or SUL) and TDD\n2>\tif for FDD (and, if the UE supports SUL, for SUL), the UE supports additional functionality compared to what is indicated by the previous fields of UE-NR/MRDC-Capability/SidelinkParameters:\n3>\tinclude field fdd-Add-UE-NR/MRDC/Sidelink-Capabilities and set it to include fields reflecting the additional functionality applicable for FDD;\n2>\tif for TDD, the UE supports additional functionality compared to what is indicated by the previous fields of UE-NR/MRDC-Capability/SidelinkParameters:\n3>\tinclude field tdd-Add-UE-NR/MRDC/Sidelink-Capabilities and set it to include fields reflecting the additional functionality applicable for TDD;\n1>\tif UE supports both FR1 and FR2 and if (some of) the UE capability fields have a different value for FR1 and FR2:\n2>\tif for FR1, the UE supports additional functionality compared to what is indicated by the previous fields of UE-NR/MRDC-Capability:\n3>\tinclude field fr1-Add-UE-NR/MRDC-Capabilities and set it to include fields reflecting the additional functionality applicable for FR1;\n2>\tif for FR2, the UE supports additional functionality compared to what is indicated by the previous fields of UE-NR/MRDC-Capability:\n3>\tinclude field fr2-Add-UE-NR/MRDC-Capabilities and set it to include fields reflecting the additional functionality applicable for FR2;\nNOTE 1:\tThe fields which indicate \"shall be set to 1\" or \"shall be set to supported\" in the following tables means these features are purely mandatory and are assumed they are the same as mandatory without capability signalling.\nNOTE 2:\tFor the case where the UE is allowed to support different functionality between FDD and TDD and between FR1 and FR2 according to the specification, the UE capability indication is clarified in Annex B.\nFor optional features, the UE radio access capability parameter indicates whether the feature has been implemented and successfully tested. For mandatory features with the UE radio access capability parameter, the parameter indicates whether the feature has been successfully tested. In the table of UE capability parameter in subsequent clauses, \"Yes\" in the column by \"M\" indicates the associated feature is mandatory and \"No\" indicates the associated feature is optional. \"CY\" in the column indicates the associated feature is conditional mandatory and the condition is described in the field description and the associated feature is considered mandatory with capability parameter, when the described condition is satisfied. \"FD\" in the column indicates to refer the associated field description. Some parameters in subsequent clauses are not related to UE features and in the case, \"N/A\" is indicated in the column.\nUE capability parameters have hierarchical structure. In the table of UE capability parameter in subsequent clauses, \"Per\" indicates the level the associated parameter is included. \"UE\" in the column indicates the associated parameter is signalled per UE, \"Band\" indicates it is signalled per band, \"BC\" indicates it is signalled per band combination, \"FS\" indicates it is signalled per feature set (per band per band combination), \"FSPC\" indicates it is signalled per feature set per component carrier (per CC per band per band combination), and \"FD\" in the column indicates to refer the associated field description.\nNOTE 3:\tUnless otherwise specified, for dependent capabilities with prerequisite capability in a finer granularity, the UE should indicate support of the prerequisite capability in at least one finer granularity. And the dependent capability is supported only in the finer granularity where the prerequisite capability is supported, e.g. a UE indicating support of supportNewDMRS-Port-r16 (dependent capability which is defined per band) should indicate at least one band combination where singleDCI-SDM-scheme-r16 (prerequisite capability which is defined per feature set) is supported in the corresponding band. In this case, supportNewDMRS-Port-r16 is considered supported only in the corresponding band of the band combination where singleDCI-SDM-scheme-r16 is supported.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tGeneral parameters",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.3\tSDAP Parameters",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.4\tPDCP Parameters",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.5\tRLC parameters",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.6\tMAC parameters",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.7\tPhysical layer parameters",
+                            "text_content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.8\tVoid",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.9\tMeasAndMobParameters",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.9a\tMeasAndMobParametersMRDC",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.10\tInter-RAT parameters",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.11\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.12\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.13\tIMS Parameters",
+                            "text_content": "\nNOTE:\tIn this release of specification, IMS voice over split bearer is not supported for NR-DC and NE-DC.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.14\tRRC buffer size",
+                            "text_content": "The RRC buffer size is defined as the maximum overall RRC configuration size that the UE is required to store. The RRC buffer size is 45Kbytes.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.15\tIAB Parameters",
+                            "text_content": "Table 4.2.15.1-1, Table 4.2.15.1-2 and Table 4.2.15.1-3 capture feature groups, which are mandatory for an IAB-MT. All other feature groups or components of the feature groups as captured in TR 38.822 [24] as well as capabilities specified in this specification are optional for an IAB-MT, unless indicated otherwise.\nTable 4.2.15.1-1: Layer-1 mandatory features for IAB-MT\n\nTable 4.2.15.1-2: Layer-2 and Layer-3 mandatory features for IAB-MT\n\nTable 4.2.15.1-3: RF/RRM mandatory features for IAB-MT\n\nMobile IAB-MT shall apply the same capabilities as IAB-MT unless indicated otherwise. In addition, it is mandatory for mobile IAB-MT to support the following features:\n-\tAcquisition of gNB-ID-Length from SIB1, as specified in TS 38.331 [9].\n-\tCell barring based on mobileIAB-Support, as specified in TS 38.331 [9].\n-\tInclusion of mobileIAB-NodeIndication, as specified in TS 38.331 [9].\n\n\n\n\n\n\n\n\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.2.15.1-1: Layer-1 mandatory features for IAB-MT",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 4.2.15.1-2: Layer-2 and Layer-3 mandatory features for IAB-MT",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 4.2.15.1-3: RF/RRM mandatory features for IAB-MT",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.16\tSidelink Parameters",
+                            "text_content": "\n\n\n\n\n\n\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.17\tSON parameters",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 50,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.18\tUE-based performance measurement parameters",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 51,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.19\tHigh speed parameters",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 52,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.20\tApplication layer measurement parameters",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 53,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.21\tRedCap Parameters",
+                            "text_content": "RedCap UE is the UE with reduced capability:\n-\tThe maximum bandwidth is 20 MHz for FR1, and is 100 MHz for FR2. UE features and corresponding capabilities related to UE bandwidths wider than 20 MHz in FR1 or wider than 100 MHz in FR2 are not supported by RedCap UEs;\n-\tThe maximum mandatory supported DRB number is 8;\n-\tThe mandatory supported PDCP SN length is 12 bits while 18 bits being optional;\n-\tThe mandatory supported RLC AM SN length is 12 bits while 18 bits being optional;\n-\tFor FR1, 1 DL MIMO layer if 1 Rx branch is supported, and 2 DL MIMO layers if 2 Rx branches are supported; for FR2, either 1 or 2 DL MIMO layers can be supported, while 2 Rx branches are always supported. For FR1 and FR2, UE features and corresponding capabilities related to more than 2 UE Rx branches or more than 2 DL MIMO layers, as well as UE features and capabilities related to more than 1 UE Tx branch or more than 1 UL MIMO layer are not supported by RedCap UEs;\n-\tCA, MR-DC, DAPS, CPAC and IAB (i.e., the RedCap UE is not expected to act as IAB node) related UE features and corresponding capabilities are not supported by RedCap UEs. All other feature groups or components of the feature groups as captured in TR 38.822 [24] as well as capabilities specified in this specification remain applicable for RedCap UEs same as other UEs, unless indicated otherwise.\n\n\n\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 54,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 55,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 56,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 57,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 58,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.22\teRedCap Parameters",
+                            "text_content": "eRedCap UE is the UE with reduced peak data rate and, with or without reduced baseband bandwidth in FR1:\n-\tThe maximum bandwidth is 20 MHz for FR1. UE features and corresponding capabilities related to UE bandwidths wider than 20 MHz in FR1 are not supported by eRedCap UEs. eRedCap UEs do not support operation in FR2 and in FR1 60kHz SCS.\n-\tCA, MR-DC, DAPS, CPAC and IAB (i.e., the eRedCap UE is not expected to act as IAB node) related UE features and corresponding capabilities are not supported by eRedCap UEs. All other feature groups or components of the feature groups as captured in TR 38.822 [24] as well as capabilities specified in this specification remain applicable for eRedCap UEs same as other UEs, unless indicated otherwise.\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 59,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.23\tNCR Parameters",
+                            "text_content": "Table 4.2.23.1-1, Table 4.2.23.1-2 capture feature groups, which are mandatory for an NCR-MT.\nCA, MR-DC, handover (e.g. CHO, DAPS, CPAC, etc) related UE features and corresponding capabilities are not supported by an NCR-MT. All other feature groups or components of the feature groups as captured in TR 38.822 [24] as well as capabilities specified in this specification are optional for an NCR-MT, unless indicated otherwise.\nTable 4.2.23.1-1: Layer-1 mandatory features for NCR-MT\n\nTable 4.2.23.1-2: Layer-2 and Layer-3 mandatory features for NCR-MT\n\n\n\n\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.2.23.1-1: Layer-1 mandatory features for NCR-MT",
+                                    "table number": 60,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 4.2.23.1-2: Layer-2 and Layer-3 mandatory features for NCR-MT",
+                                    "table number": 61,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 62,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 63,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 64,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 65,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 66,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.24\tAerial UE Parameters",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 67,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tOptional features without UE radio access capability parameters",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tPWS features",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 68,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tUE receiver features",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 69,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tRRC connection",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 70,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tOther features",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 71,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tSidelink Features",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 72,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.6\tRRM measurement features",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 73,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.7\tMDT and SON features",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 74,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.8\tExtended DRX features",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 75,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.9\tSidelink Relay Features",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 76,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.10\tMBS features",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "\n5.11\tIdle/inactive measurement for voice fallback features\n\n5.12\tNCR features\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 77,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "5.11\tIdle/inactive measurement for voice fallback features",
+                            "table number": 78,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "5.12\tNCR features",
+                            "table number": 79,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tConditionally mandatory features without UE radio access capability parameters",
+            "description": "\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 80,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "7\tVoid",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "8\tUE Capability Constraints",
+            "description": "The following table lists constraints indicating the UE capabilities that the UE shall support.\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "The following table lists constraints indicating the UE capabilities that the UE shall support.",
+                    "table number": 81,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.1:\tTDD/FDD differentiation of capabilities in TDD-FDD CA",
+            "description": "Annex A.1 specifies for which TDD and FDD serving cells a UE supporting TDD/FDD CA shall support a feature/capability for which it indicates support within the capability signalling.\nA UE that indicates support for TDD/FDD CA (e.g. MCG or SCG):\n-\tFor the fields for which the UE is allowed to indicate different support for FDD and TDD, the UE shall support the feature on the PCell and/or SCell(s), as specified in tables A.1-1 in accordance to the following rules:\n-\tPCell: the UE shall support the feature for the PCell, if the UE indicates support of the feature for the PCell duplex mode;\n-\tPSCell: the UE shall support the feature for the PSCell, if the UE indicates support of the feature for the PSCell duplex mode;\n-\tPer serving cell: the UE shall support the feature for a serving cell if the UE indicates support of the feature for the serving cell's duplex mode;\n-\tAll serving cells: UE shall support the feature for all serving cells in a CG if the UE indicates support of the feature for both TDD and FDD duplex modes;\n-\tAssociated serving cells: UE shall support the feature if the UE indicates support of the feature for all associated serving cells's duplex modes;\n-\tFor the fields where the UE is not allowed to indicate different support for FDD and TDD, the UE shall support the feature for PCell and SCell(s) if the UE indicates support of the feature via the common capability bit.\nTable A.1-1: UE capabilities for which FDD/TDD differentiation is allowed\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table A.1-1: UE capabilities for which FDD/TDD differentiation is allowed",
+                    "table number": 82,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2:\tFR1/FR2 differentiation of capabilities in FR1-FR2 CA",
+            "description": "Annex A.2 specifies for which FR1 and FR2 serving cells a UE supporting FR1/FR2 CA shall support a feature/capability for which it indicates support within the capability signalling.\nA UE that indicates support for FR1/FR2 CA (e.g. MCG or SCG):\n-\tFor the fields for which the UE is allowed to indicate different support for FR1 and FR2, the UE shall support the feature on the PCell and/or SCell(s), as specified in tables A.2-1 in accordance to the following rules:\n-\tPCell: the UE shall support the feature for the PCell, if the UE indicates support of the feature for the PCell FR mode;\n-\tAssociated serving cells: UE shall support the feature if the UE indicates support of the feature for associated serving cells's FR modes;\n-\tFor the fields where the UE is not allowed to indicate different support for FR1 and FR2, the UE shall support the feature for PCell and SCell(s) if the UE indicates support of the feature via the common capability bit.\nTable A.2-1: UE capabilities for which FR1/FR2 differentiation is allowed\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table A.2-1: UE capabilities for which FR1/FR2 differentiation is allowed",
+                    "table number": 83,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.3:\tTDD/FDD differentiation of capabilities for sidelink",
+            "description": "Annex A.3 specifies for which TDD and FDD serving cells for Uu interface and carrier for PC5 interface a UE supporting sidelink shall support a feature/capability for which it indicates support within the capability signalling.\nA UE that indicates support for sidelink:\n-\tFor the fields for which the UE is allowed to indicate different support for FDD and TDD, the UE shall support the feature on the PCell and/or SCell(s) for Uu interface, as specified in tables A.3-1 in accordance to the following rules:\n-\tPer serving cell: the UE shall support the feature for a serving cell if the UE indicates support of the feature for the serving cell's duplex mode;\n-\tAssociated serving cells: UE shall support the feature if the UE indicates support of the feature for all associated serving cells's duplex modes;\n-\tFor the fields where the UE is not allowed to indicate different support for FDD and TDD, the UE shall support the feature for PCell and SCell(s) for Uu interface and carrier for PC5 interface if the UE indicates support of the feature via the common capability bit.\nTable A.3-1: Rel-16 UE capabilities for which FDD/TDD differentiation is allowed\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table A.3-1: Rel-16 UE capabilities for which FDD/TDD differentiation is allowed",
+                    "table number": 84,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.4:\tSidelink capabilities applicable to Uu and PC5",
+            "description": "Annex A.4 specifies for each sidelink related capability, in which interface (i.e., UECapabilityInformation in Uu RRC and UECapabilityInformationSidelink in PC5 RRC) a UE supporting sidelink shall report the concerned capability:\n-\tUECapabilityInformation: the concerned sidelink capability is reported within UECapabilityInformation;\n-\tUECapabilityInformationSidelink: the concerned sidelink capability is reported within UECapabilityInformationSidelink;\nTable A.4-1: Sidelink capability reported in UECapabilityInformation/ UECapabilityInformationSidelink\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table A.4-1: Sidelink capability reported in UECapabilityInformation/ UECapabilityInformationSidelink",
+                    "table number": 85,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.5:\tGeneral differentiation of capabilities in Cross-Carrier operation",
+            "description": "Annex A.5 specifies for which multiple serving cells a UE supporting cross-carrier operation shall support a feature/capability for which it indicates support within the capability signalling.\nA UE that indicates support for cross-carrier operation in CA (e.g. MCG or SCG):\n-\tFor the fields for which the UE is allowed to indicate different support for different bands, the UE shall support the feature on the PCell and/or SCell(s) in cross-carrier operation, as specified in table A.5-1 in accordance to the following rules:\n-\tTriggered serving cell: the UE shall support the feature if the UE indicates support of the feature for the band of the scheduled/triggered/indicated serving cell;\n-\tTriggering&Triggered serving cells: UE shall support the feature if the UE indicates support of the feature for the band of both the scheduling/triggering/indicating serving cell and the scheduled/triggered/indicated serving cell;\nTable A.5-1: General UE capabilities for which differentiation is allowed\n\n\nAnnex B clarifies the UE capability indication for the case where the UE is allowed to support different functionality between FDD and TDD, and between FR1 and FR2. Table B-1 clarifies the setting of UE capability fields for cases where the UE supports the corresponding feature in different combinations of duplex mode and frequency range. There are two possible ways of UE capability indication in Case 3 and Case 8.\nTable B-1: UE capability indication for UE capabilities with both FDD/TDD and FR1/FR2 differentiations\n\nNOTE 1:\tFor a UE capability which cannot be differentiated between FR2-1 and FR2-2, 'FR2 TDD' in Table B-1 includes both 'FR2-1 TDD' and 'FR2-2 TDD'.\nNOTE 2:\tFor a UE capability which can be differentiated between FR2-1 and FR2-2, 'FR2 TDD' in Table B-1 only means 'FR2-1 TDD'.\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table A.5-1: General UE capabilities for which differentiation is allowed",
+                    "table number": 86,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "Table B-1: UE capability indication for UE capabilities with both FDD/TDD and FR1/FR2 differentiations",
+                    "table number": 87,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 88,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

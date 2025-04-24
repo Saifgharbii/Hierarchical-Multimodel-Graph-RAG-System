@@ -1,0 +1,729 @@
+{
+    "document_name": "38410-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document is an introduction to the 3GPP TS 38.41x series of technical specifications that define the NG interface for the interconnection of an NG-RAN node to the 5GC (5G Core Network).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 38.411: \"NG-RAN; NG layer 1\".\n[3]\t3GPP TS 38.412: \"NG-RAN; NG signalling transport\".\n[4]\t3GPP TS 38.413: \"NG-RAN; NG Application Protocol (NGAP) \".\n[5]\t3GPP TS 38.414: \"NG-RAN; NG data transport\".\n[6]\t3GPP TS 23.502: \"Procedures for the 5G system\".\n[7]\t3GPP TS 38.300: \"NR; Overall Description; Stage 2\".\n[8]\t3GPP TS 23.501: \"System Architecture for the 5G system\".\n[9]\t3GPP TS 38.415: \"PDU Session User Plane Protocol\".\n[10]\t3GPP TS 38.455: \"NR Positioning Protocol A (NRPPa)\".\n[11]\t3GPP TS 36.300: \"E-UTRAN); Overall description; Stage 2\".\n[12]\t3GPP TS 23.247: “Architectural enhancements for 5G multicast-broadcast services; Stage 2”.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TR 21.905 [1] and the following apply. \nA term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\ngNB: as defined in TS 38.300 [7].\nNB-IoT: as defined in TS36.300 [11].\nng-eNB: as defined in TS 38.300 [7].\nNG-RAN node: as defined in TS 38.300 [7].\nUPF: as defined in TS 23.501 [8].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TR 21.905 [1] and the following apply. \nA term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\n5GC\t5G Core Network\nAMF\tAccess and Mobility Management Function\nCIoT\tCellular IoT\nDRX\tDiscontinuous Reception\nMBS\tMulticast/Broadcast Service\nNB-IoT\tNarrow Band Internet of Things\nNG-U\tNG User plane interface\nPTP\tPoint to Point\nPTM\tPoint to Multipoint\nQMC\tQoE Measurement Collection\nQoE\tQuality of Experience\nRIM\tRemote Interference Management\nSMF\tSession Management Function\nUP\tUser Plane\nUPF\tUser Plane Function\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral aspects",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tNG Architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NG-RAN is layered into a Radio Network Layer (RNL) and a Transport Network Layer (TNL). The NG-RAN architecture, i.e. the NG-RAN logical nodes and interfaces between them, are defined as part of the RNL.\nThe NG-RAN architecture consists of a set of gNBs and ng-eNBs which are connected to the 5GC through the NG interface and is specified in TS 38.300 [7].\nThe NG-RAN may have several NG access points towards the 5GC. As a minimum, each NG access point \n(in NG-RAN or 5GC) shall independently fulfil the requirements of the relevant NG specifications (3GPP 38.41x series - see clause 7).\nNG is a logical interface.\nThere may be multiple NG-C logical interfaces towards the 5GC from any one NG-RAN node. The selection of the NG-C interface is then determined by the NAS Node Selection function as described in clause 5.\nThere may be multiple NG-U logical interfaces towards the 5GC from any one NG-RAN node. The selection of the NG-U interface is done within the 5GC and signalled to the NG-RAN node by the AMF.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tNG interface general principles",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The general principles for the specification of the NG interface are as follows:\n-\tthe NG interface is open;\n-\tthe NG interface supports the exchange of signalling information between the NG-RAN and 5GC;\n-\tfrom a logical standpoint, the NG is a point-to-point interface between an NG-RAN node and a 5GC node. A point-to-point logical interface is feasible even in the absence of a physical direct connection between the NG-RAN and 5GC;\n-\tthe NG interface supports control plane and user plane separation;\n-\tthe NG interface separates Radio Network Layer and Transport Network Layer;\n-\tthe NG interface is future proof to fulfil different new requirements and support of new services and new functions;\n-\tthe NG interface is decoupled with the possible NG-RAN deployment variants;\n-\tthe NG Application Protocol supports modular procedures design and uses a syntax allowing optimized encoding /decoding efficiency.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tNG interface specification objectives",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NG interface specification facilitates the following:\n-\tinter-connection of NG-RAN nodes with AMFs supplied by different manufacturers;\n-\tseparation of NG interface Radio Network functionality and Transport Network functionality to facilitate introduction of future technology.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tNG interface capabilities",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NG interface supports:\n-\tprocedures to establish, maintain and release NG-RAN part of PDU sessions;\n-\tprocedures to perform intra-RAT handover and inter-RAT handover;\n-\tthe separation of each UE on the protocol level for user specific signalling management;\n-\tthe transfer of NAS signalling messages between UE and AMF;\n-\tmechanisms for resource reservation for packet data streams;\n-\tprocedures to establish, maintain and release NG-RAN part of MBS sessions.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tFunctions of the NG interface",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following clauses describe the functions supported over the NG interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tPaging function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The paging function supports the sending of paging requests to the NG-RAN nodes involved in the paging area e.g. the NG-RAN nodes of the TA(s) the UE is registered.\nThe function also supports CN controlled subgrouping paging for UE Power Saving.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tUE Context Management function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The UE Context management function allows the AMF to establish, modify or release a UE Context in the AMF and the NG-RAN node e.g. to support user individual signalling on NG.\nThe function also enables the AMF to manage RRC state notifications of a CM-CONNECTED UE.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tMobility Management function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The mobility function for UEs in CM-CONNECTED includes the intra-system handover function to support mobility within NG-RAN and inter-system handover function to support mobility from/to EPS system. It comprises the preparation, execution and completion of handover via the NG interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tPDU Session Management function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The PDU Session function is responsible for establishing, modifying and releasing the involved PDU sessions NG-RAN resources for user data transport once a UE context is available in the NG-RAN node.\nNGAP supports transparent relaying of PDU Session related information by the AMF as described in TS 23.502 [6].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.6\tNAS Transport function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NAS Signalling Transport function provides means to transport or reroute a NAS message (e.g. for NAS mobility management), or report the non-delivery of a NAS message for a specific UE over the NG interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.7\tNAS Node Selection function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The interconnection of NG-RAN nodes to multiple AMFs is supported in the 5GS architecture.\nTherefore, a NAS node selection function is located in the NG-RAN node to determine the AMF association of the UE, based on the UE's temporary identifier, which was assigned to the UE by the AMF. When the UE's temporary identifier has not been yet assigned or is no longer valid the NG-RAN node may instead take into account other information (e.g. slicing information, onboarding indication) to determine the AMF. When the NG-RAN node is configured to ensure that the selected AMF serves the country where the UE is located, as described in TS 23.501 [8], the NG-RAN node takes into account UE location information, if available, when determining the AMF.\nThis functionality is located in the NG-RAN node and enables proper routing via the NG interface. On NG, no specific procedure corresponds to the NAS Node Selection Function.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.8\tNG Interface Management function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NG-interface management functions provide\n-\tmeans to ensure a defined start of NG-interface operation (reset);\n-\tmeans to handle different versions of application part implementations and protocol errors (error indication).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.9\tWarning Message Transmission function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The warning message transmission function provides means to transfer warning messages via NG interface or cancel ongoing broadcast of warning messages. It also provides the capability for the NG-RAN to inform the AMF that ongoing PWS operation has failed for one or more areas, or that one or more areas may be reloaded by the CBC.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.10\tConfiguration Transfer function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Configuration Transfer function is a generic mechanism that allows the request and transfer of RAN configuration information (e.g. SON information) between two RAN nodes via the core network.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.11\tTrace function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Trace function provides means to control trace sessions in the NG-RAN node.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.12\tAMF Management function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The AMF management function supports AMF planned removal and AMF auto-recovery as specified in TS 23.501 [8].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.13\tMultiple TNL Associations Support Function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "When there are multiple TNL associations between a NG-RAN node and an AMF, the NG-RAN node selects the TNL association for NGAP signalling based on the usage and the weight factor of each TNL association received from the AMF, and uses the TNL association as specified in TS 23.501 [8] and TS 23.502 [6]. If an AMF releases a TNL association or a TNL association has failed, the NG-RAN node selects a new one as specified in TS 23.501 [8] and TS 23.502 [6].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.14\tAMF Load Balancing function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NG interface supports the indication by the AMF of its relative capacity to the NG-RAN node in order to achieve load-balanced AMFs within the pool area.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.15\tLocation Reporting function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This function enables the AMF to request the NG-RAN node to report the UE's current location, or the UE's last known location with timestamp, or the UE's presence in a configured area of interest.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.16\tAMF Re-allocation function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This function allows to redirect an initial connection request issued by an NG-RAN node from an initial AMF towards a target AMF selected by 5GC. In this case the NG-RAN node initiates an Initial UE Message procedure over one NG interface instance and receives the first downlink message to close the UE-associated logical connection over a different NG interface instance.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.17\tUE Radio Capability Management function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The UE Radio Capability Management function is related to the UE radio capability handling.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.18\tNRPPa Signaling Transport function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NRPPa (NR Positioning Protocol A) Signalling Transport function provides means to transport an NRPPa (3GPP TS 38.455 [10]) message transparently over the NG interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.19\tOverload Control function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The overload function provides means to enable AMF controls the load that the NG-RAN node(s) are generating.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.20\tReport of Secondary RAT data volumes Function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Report of Secondary RAT data volumes Function enables the NG-RAN node to report Secondary RAT usage data information in case of MR-DC, either with a dedicated procedure or by including Secondary RAT usage data information in other messages.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.21\tRIM Information Transfer function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The RIM Information Transfer function is a generic mechanism that allows the transfer of Remote Interference Management (RIM) information between two RAN nodes via the core network.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.22\tRetrieve UE Information function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Retrieve UE Information function enables the NG-RAN node to request UE information (e.g. QoS differentiation information) from the AMF before the setup of the NG connection for NB-IoT UE(s) using Control Plane CIoT 5GS Optimization.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.23\tRAN CP Relocation Indication function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The RAN CP Relocation Indication function enables the initiation of the UE-associated logical NG-connection for a NB-IoT UE using Control Plane CIoT 5GS Optimisation following a re-establishment request. It allows to have the re-estabblishment request authenticated by the AMF.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.24\tSuspend-Resume function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This function enables to suspend the UE-associated logical NG-connection and release the NG-U tunnel while storing the UE context in the NG-RAN for a faster subsequent resume as specified for User Plane CIoT 5GS optimizations in TS 23.501 [8]. In this version of the specification, this function only applies for long eDRX cycles.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.25\tConnection Establishment Indication Function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The connection establishment indication function enables the AMF to complete the establishment of the UE-associated logical NG-connection.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.26\tAMF CP Relocation Indication Function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The AMF CP relocation indication function enables the AMF to inform the previously serving NG-RAN node that the UE's connection is to be relocated to a new NG-RAN node.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.27\tNR MBS Session Management function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The MBS Session Management function is responsible for establishing, modifying and releasing the involved NR MBS sessions NG-RAN resources for user data transport once an MBS context is available in the NG-RAN node.\nNGAP supports transparent relaying of MBS Session related information by the AMF as described in TS 23.247 [12].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.28\tMulticast Group Paging Function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Multicast group paging function supports the sending of multicast group paging requests to the NG-RAN nodes in order to group-page UEs that have joined the Multicast MBS Session\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.29\tQMC support function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The QMC function provides means to manage the QMC sessions and support the mobility of QMC sessions over the NG interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.30\tMT Communication Handling function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The function enables to support MT data and signalling handling within the CN for UEs in RRC_INACTIVE state with extended DRX beyond 10.24s as specified in TS 23.501[8].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.31\tTiming Synchronisation Status Reporting function",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Timing Synchronisation Status Reporting function enables the AMF to request the NG-RAN node to report the RAN timing synchronisation status information, and for the NG-RAN node to provide the RAN timing synchronisation status information to the AMF.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tSignalling procedures of the NG interface",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tPDU Session Management Procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following PDU Session management procedures are used to establish, release or modify PDU sessions.\n-\tPDU Session Resource Setup;\n-\tPDU Session Resource Release;\n-\tPDU Session Resource Modify;\n-\tPDU Session Resource Notify;\n-\tPDU Session Resource Modify Indication.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tUE Context Management Procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following UE Context management procedures are used to establish, release or modify the UE context. They may also be used to report RRC state transition from NG-RAN to 5GC.\n-\tInitial Context Setup;\n-\tUE Context Release Request;\n-\tUE Context Release;\n-\tUE Context Modification;\n-\tRRC Inactive Transition Report.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.3\tNAS transport procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NAS transport procedures enable transparent transfer of NAS signalling data between the AMF and the UE. The procedures providing this functionality are:\n-\tInitial UE Message (NG-RAN node initiated);\n-\tUplink NAS transport (NG-RAN node initiated);\n-\tDownlink NAS transport (AMF initiated);\n-\tNAS non delivery indication (NG-RAN node initiated);\n-\tReroute NAS Request (AMF initiated).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.4\tUE Mobility Management Procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following UE Mobility management procedures are used to prepare, execute or cancel handovers:\n-\tHandover Preparation;\n-\tHandover Resource Allocation;\n-\tHandover Notification;\n-\tPath Switch Request;\n-\tUplink RAN Status Transfer;\n-\tDownlink RAN Status Transfer;\n-\tHandover Cancellation ;\n-\tHandover Success;\n-\tUplink RAN Early Status Transfer;\n-\tDownlink RAN Early Status Transfer.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.5\tPaging procedure",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following paging procedure is used to send paging requests to the NG-RAN nodes involved in the paging area:\n-\tPaging.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.6\tAMF Management procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following AMF management procedures are used by the AMF to inform the NG-RAN nodes about an AMF's status, and to release the UE TNLA binding for specific UE(s):\n-\tAMF Status Indication;\n-\tUE TNLA binding release.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.7\tNG Interface Management procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are used to manage the NG interface:\n-\tNG Setup;\n-\tRAN Configuration Update;\n-\tAMF Configuration Update;\n-\tNG Reset;\n-\tError Indication.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.8\tWarning message transmission procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are used to manage the broadcasting of warning messages:\n-\tWrite-Replace Warning;\n-\tPWS Cancel;\n-\tPWS Restart Indication;\n-\tPWS Failure Indication.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.9\tLocation Reporting procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are used to report the location of the UE:\n-\tLocation Reporting Control;\n-\tLocation Report;\n-\tLocation Reporting Failure Indication.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.10\tUE Radio Capability Management procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are related to the UE radio capability handling:\n-\tUE Radio Capability Check;\n-\tUE Radio Capability Info Indication;\n-\tUE Radio Capability ID Mapping.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.11\tUE Tracing procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are used to trace the UE:\n-\tTrace Start;\n-\tTrace Failure Indication;\n-\tDeactivate Trace;\n-\tCell Traffic Trace.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.12\tNR Positioning Protocol A (NRPPa) procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are used for NRPPa signalling:\n-\tDownlink UE Associated NRPPa Transport;\n-\tUplink UE Associated NRPPa Transport;\n-\tDownlink non-UE Associated NRPPa Transport;\n-\tUplink non-UE Associated NRPPa Transport.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.13\tOverload Control procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are used by the AMF to start or stop overload control:\n-\tOverload Start procedure;\n-\tOverload Stop procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.14\tConfiguration Transfer procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are used by the AMF to transfer the RAN configuration information:\n-\tDownlink RAN Configuration Transfer procedure;\n-\tUplink RAN Configuration Transfer procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.15\tSecondary RAT Data Usage Report procedure",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedure is used to provide information on the used resources of the secondary RAT:\n-\tSecondary RAT Data Usage Report procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.16\tRIM Information Transfer procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are used by the AMF to transfer the Remote Interference Management (RIM) information:\n-\tDownlink RIM Information Transfer procedure;\n-\tUplink RIM Information Transfer procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.17\tRetrieve UE Information procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are used by the NG-RAN node to retrieve UE information from the AMF:\n-\tRetrieve UE Information Request procedure;\n-\tUE Information Transfer procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.18\tRAN CP Relocation Indication procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedure is used by the NG-RAN node to initiate the UE-associated logical NG-connection for the RAN CP Relocation function:\n-\tRAN CP Relocation Indication procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.19\tUE Context Suspend procedure",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedure is to suspend the UE-associated logical NG-connection and release the NG-U tunnel with the 5GC while keeping the UE context in NG-RAN. In this version of the specification, this procedure applies only if the NG-RAN node is an ng-eNB.\n-\tUE Context Suspend procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.20\tConnection Establishment Indication procedure",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedure is used to enable the AMF to provide information to the NG-RAN node to complete the establishment of the UE-associated logical NG-connection, for UEs using CIoT 5GS Optimization:\n-\tConnection Establishment Indication.\nThe UE Radio Capability may be provided from the AMF to the NG-RAN node in this procedure. If the UE Radio Capability is not included, this may trigger the NG-RAN node to request the UE Radio Capability from the UE and to provide it to the AMF in the UE RADIO CAPABILITY INFO INDICATION message.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.21\tAMF CP Relocation Indication procedure",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedure is used to inform the previously serving NG-RAN node that the UE's connection is to be relocated to a new NG-RAN node, for UEs using Control Plane CIoT 5GS optimizations:\n-\tAMF CP Relocation Indication.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.22\tUE Context Resume procedure",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedure is used to resume the UE context, resume the suspended logical NG-connection and re-establish the related NG-U tunnel in the 5GC for the involved UE. In this version of the specification, this procedure applies only if the NG-RAN node is an ng-eNB.\n-\tUE Context Resume procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.23\tNR MBS Session Management Procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following list of MBS Session management procedures are used to establish, release, or modify NG-RAN resources for a NR MBS session:\n-\tBroadcast Session Resource Setup;\n-\tBroadcast Session Modification;\n-\tBroadcast Session Resource Release;\n-\tBroadcast Session Resource Release Required;\n-\tBroadcast Session Transport;\n-\tMulticast Session Activation;\n-\tMulticast Session Deactivation;\n-\tMulticast Session Update;\n-\tDistribution Setup;\n-\tDistribution Release;\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.24\tMulticast Group Paging Procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following Multicast Group Paging procedure is used to send multicast group paging requests to the NG-RAN nodes:\n-\tMulticast Group Paging.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.25\tThe procedures for supporting QMC",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are used to control the QMC sessions in the UE and to transfer QMC session information to the target NG-RAN node during a UE’s intra-system intra-RAT or intra-system inter-RAT mobility:\n-\tInitial Context Setup;\n-\tUE Context Modification;\n-\tHandover Preparation;\n-\tHandover Resource Allocation.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.26\tMT Communication Handling procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are used by the NG-RAN node to request the AMF to activate or deactivate the CN based MT communication handling for UEs in RRC_INACTIVE state with long extended DRX beyond 10.24 seconds, and by the CN to indicate availability of downlink data or downlink signalling to the NG-RAN node.\n-\tMT Communication Handling procedure.\n-\tRAN Paging Request procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.27\tTiming Synchronisation Status Reporting procedures",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following procedures are used to report the RAN timing synchronisation status information:\n-\tTiming Synchronization Status;\n-\tTiming Synchronization Status Report.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tNG interface protocol structure",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tNG Control Plane",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The control plane protocol stack of the NG interface is shown on Figure 7.1-1. The transport network layer is built on IP transport. For the reliable transport of signalling messages, SCTP is added on top of IP. The application layer signalling protocol is referred to as NGAP (NG Application Protocol).\nThe figure depicts the interface control plane of a 5G network, showing the various components and their connections. The diagram illustrates the control plane's role in managing network functions, such as network slicing, network slicing, and network slicing.\nFigure 7.1-1: NG Interface Control Plane\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tNG User Plane",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NG user plane (NG-U) interface is defined between a NG-RAN node and a UPF. The NG-U interface provides non guaranteed delivery of PDU Session/MBS session user plane PDUs between the NG-RAN node and the UPF.\nThe protocol stack for NG-U is shown in Figure 7.2-1.\nThe NG-U protocol structure for PDU /MBS Session in Figure 7.2-1 illustrates the communication between a PDU (Primary User Device) and a MBS (Multiplexed Base Station) in a 5G network. The diagram highlights the key components, including the PDU, MBS, and the network infrastructure, which are essential for efficient communication.\nFigure 7.2-1: NG-U protocol structure for PDU/MBS Session\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tOther NG interface specifications",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tNG-RAN NG interface: NG layer 1 (TS 38.411)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TS 38.411 [2] specifies the physical layer technologies that may be used to support the NG interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.2\tNG-RAN NG interface:  NG signalling transport (TS 38.412)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TS 38.412 [3] specifies how the NGAP signalling messages are transported over NG.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.3\tNG-RAN NG interface: NG application protocol (NGAP) (TS 38.413)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TS 38.413 [4] specifies the radio network layer signalling procedures of the control plane between the NG-RAN node and the AMF.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.4\tNG-RAN NG interface: NG data transport (TS 38.414)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TS 38.414 [5] specifies the standards for user data transport protocols over the NG interface.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "8.5\tNG-RAN NG interface: NG PDU Session user plane protocol (TS 38.415)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TS 38.415 [9] specifies the PDU Session user plane protocol procedures, and the PDU Set Information user plane protocol procedures over the NG interface.\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 1,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

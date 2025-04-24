@@ -1,0 +1,1117 @@
+{
+    "document_name": "28531-i40.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies use cases, requirements, management services and procedures for provisioning of 5G networks. For the cases when a NF taking part in these networks contains virtualized parts, interactions with ETSI NFV MANO system are described.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 28.525: \"Telecommunication management; Life Cycle Management (LCM) for mobile networks that include virtualized network functions; Requirements\".\n[3]\tETSI GS NFV-IFA 013 (V4.5.1) (2023-09): \"Network Function Virtualisation (NFV); Release 4; Management and Orchestration; Os-Ma-nfvo reference point - Interface and Information Model Specification\".\n[4]\t3GPP TS 28.530: \"Management and orchestration; Concepts, use cases and requirements\".\n[5]\t3GPP TS 22.261 \"Service requirements for next generation new services and markets\".\n[6]\t3GPP TS 28.541: \"Management and orchestration; 5G Network Resource Model (NRM); Stage 2 and stage 3\".\n[7]\tVoid.\n[8]\t3GPP TS 28.532: \"Management and orchestration; Generic management services\".\n[9]\tGSMA NG.116 Generic Network Slice Template v9.0 (2023-04-27) - NG.116-v9.0.pdf (gsma.com).\n[10]\t3GPP TS 23.501: \"Technical Specification Group Services and System Aspects;System Architecture for the 5G System;Stage 2\".\n[11]\t3GPP TS 38.300: \"Technical Specification Group Radio Access Network;NR; NR and NG-RAN Overall Description;Stage 2\".\n[12]\tETSI GS NFV-IFA 014 (V4.2.1) (2021-05): \"Network Function Virtualisation (NFV); Release 4; Management and Orchestration; Network Service Templates Specification\".\n[13]\t3GPP TS 28.622: \"Telecommunication management; Generic Network Resource Model (NRM) Integration Reference Point (IRP); Information Service (IS)\".\n[14]\tETSI GS NFV-IFA 011 (V4.3.1) (2022-06): \"Network Function Virtualisation (NFV); Release 4; Management and Orchestration; VNF Descriptor and Packaging Specification\".\n[15]\tETSI GS NFV-IFA 008 (V4.3.1) (2022-05): \"Network Function Virtualisation (NFV); Release 4; Management and Orchestration; Ve-Vnfm reference point - Interface and Information Model Specification\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in TR 21.905 [1], TS 28.530 [4] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1] and TS 28.530 [4].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1], TS 28.530 [4] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\n5GAA\t5G Automative Association\n5G-ACIA\t5G Association for Connected Industries and Automation\n5GC\t5G Core Network\nAMF\tAccess and Mobility Management Function\nCSC\tCommunication Service Customer\nCSP\tCommunication Service Provider\nCP\tControl Plane\nGST\tGeneric Slice Template\nIOC\tInformation Object Class\nMANO\tManagement and Orchestration\nMnS\tManagement Service\nNEST\tNetwork Slice Type\nNF\tNetwork Function\nNFV\tNetwork Functions Virtualisation\nNRM\tNetwork Resource Model\nNSaaS\tNetwork Slice as a Service\nNSC\tNetwork Slice Customer\nNSI\tNetwork Slice Instance\nNSP\tNetwork Slice Provider\nNSSI\tNetwork Slice Subnet Instance\nP-NEST\tPrivate NEST\nS-NEST\tStandardized NEST\nTN\tTransport Network\nVNF\tVirtualized Network Function\nUP\tUser Plane\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tOverview",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "A 5G system consists of a 5G Access Network (AN), and a 5G Core Network (5GC). Network slicing is one of the key 5G features.\nThe management aspects of a Network Slice Instance (NSI) are described by the four phases shown in Figure 4.3.1.1 of TS 28.530 [4].\nThe provisioning of network slicing includes the four phases which are preparation, commissioning, operation and decommissioning:\n-\tIn the preparation phase the NSI does not exist. The preparation phase includes network slice design, on-boarding, evaluation of the network slice requirements, preparing the network environment and other necessary preparations required to be done before the creation of an NSI.\n-\tDuring the NSI lifecycle stage which include commissioning phase, operation phase and decommissioning phase, the NSI provisioning operations include:\n-\tCreate an NSI;\n-\tActivate an NSI;\n-\tDeactivate an NSI;\n-\tModify an NSI;\n-\tTerminate an NSI.\nThe operations of the provisioning of an NSI occurs during different phases of a NSI:\na)\tDuring the commissioning phase:\n-\tCreate an NSI.\nDuring NSI creation all resources to the NSI have been created and configured to satisfy the network slice requirements. NSI creation may trigger NSSI(s) creation or using existing NSSI(s) and setting up the corresponding associations.\nb)\tDuring the operation phase:\n-\tActivate an NSI;\n-\tModify an NSI;\n-\tDeactivate an NSI.\nNSI activation includes any actions that make the NSI active to provide communication services. NSI activation may trigger NSSI activation.\nNSI modification in operation phase could map to several workflows, e.g. changes of NSI capacity, changes of NSI topology, NSI reconfiguration. NSI modification can be triggered by receiving new network slice related requirements, new communication service requirements, or the result of NSI supervision automatically. NSI modification may trigger NSSI modification.\nThe NSI deactivation operation may be needed before NSI modification operation and the NSI activation operation may be needed after the NSI modification operation. NSI deactivation includes any actions that make the NSI inactive and not providing any communication services. NSI deactivation trigger NSSI deactivation to deactivate constituent NSSI(s) which is not used by other NSI(s). Operator may decide to keep the NSI without termination after deactivation and reactivate it when receives new communication service request.\nc)\tDuring the decommissioning phase:\n-\tTerminate an NSI.\nNSI termination step includes any action that make the NSI does not exist anymore and release resources that are not used by other NSI(s). NSI termination may trigger NSSI termination to terminate constituent NSSI(s) which is not used by other NSI(s).\nSimilarly, provisioning for network slice subnet instance includes the following operations:\n-\tCreate an NSSI;\n-\tActivate an NSSI and associate it with certain NSI to be used by the NSI;\n-\tDisassociate the NSSI with certain NSI and deactivate the NSSI if it’s not associated with any NSI;\n-\tModify an NSSI;\n-\tTerminate an NSSI.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tConfiguration information for the constituents of an NSI",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "To use network slice to support communication service or deliver a network slice as a service, the 3GPP defined constituents of the NSI should be configured by 3GPP management system according to the types and requirements of the network slice so that the NSI can be operated and maintained.\nThe configuration information of these components may include:\n-\tInformation on the requirements to be applied to every NSI constituent to satisfy the requirements of multiple NSIs if the constituent is shared by multiple NSIs;\n-\tNetwork function selection information: Information on the selection of the NFs (e.g., AMF) according to the requirements of this NSI;\n-\tConnection information: The information of the logical links to carry the NSI’s CP and UP data between the component and other NFs and NSSIs belonging to the NSI.\nNOTE 1:\tThe list of information above is not exhaustive.\nNOTE 2:\tThe list of information above is not all necessary for an NSI.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tGeneral information for network slice instance",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The general information used to describe a network slice instance may include:\n-\tResource model information, which describes the static parameters and functional components of network slice, includes service profile, network slice type (e.g. eMBB), additional system feature (e.g. multicast, Edge Computing), priority.\n-\tManagement model information, which describes the information model that is used for network slice lifecycle management, includes configuration profile (e.g. application configuration parameters).\n-\tCapability model information, which describes the capability including supported communication service characteristic information (e.g. service type, UE mobility level, density of users, traffic density), QoS attributes (e.g. bandwidth, latency, throughput and so on) and capacity (e.g. maximum number of UEs), can be exposed to CSC .\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tGeneral information for network slice subnet instance",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The general information used to describe a network slice subnet instance may include:\n-\tResource model information, which describes the static parameters and functional component of network slice subnet, includes slice profile, network slice subnet type (e.g. RAN eMBB, CN eMBB), additional system feature (e.g. multicast, Edge Computing), priority, QoS attributes (e.g. bandwidth, latency, number of subscribers and so on), NSD ID.\n-\tManagement model information, which describes the information model that is used for network slice subnet lifecycle management, includes configuration profile (e.g. application configuration parameters).\n-\tCapability model information, which describes the capability including supported communication service characteristic information (e.g. service type, UE mobility level, density of users, traffic density), QoS attributes (e.g. bandwidth, latency, throughput and so on) and capacity (e.g. maximum number of UEs).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.5\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.6\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tSpecification level requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tUse cases",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tNetwork slice instance allocation",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 2,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.2\tNetwork slice subnet instance allocation",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.3\tNetwork slice instance deallocation",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.4\tNetwork slice subnet instance deallocation",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.5\tObtaining network slice subnet instance information",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.6\tNetwork slice feasibility check",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.7\tNetwork slice instance activation",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.8\tNetwork slice instance deactivation",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.9\tNetwork slice instance modification",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.10\tNetwork slice subnet instance activation",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.11\tNetwork slice subnet instance deactivation",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.12\tNetwork slice subnet instance modification",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.13\tNetwork slice subnet configuration",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.14\tObtaining network slice management data",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.15\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.16\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.17\tCreation of a 3GPP NF",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.18\tConfiguration of a 3GPP NF instance",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.19\tCreation of a 3GPP sub-network",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.20\tConfiguration of a 3GPP sub-network",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.21\tNetwork slice subnet feasibility check",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.22\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.23\tNetwork slice subnet management with assigned priority",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.24\tManagement interaction with NFV MANO for network service priority",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.1.25\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.26\tObtaining network slice subnet provider capability information",
+                            "text_content": "\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tRequirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tRequirements for network slice provisioning service",
+                            "text_content": "REQ-PRO_NSI-FUN-1\tThe network slice provisioning service provider shall have the capability allowing its authorized consumer to request a network slice instance.\nREQ-PRO_NSI-FUN-2\tThe network slice provisioning service provider shall have the capability allowing its authorized consumer to send the network slice related requirements.\nNOTE 1: The network slice related requirements include requirements such as area traffic capacity, coverage area, isolation/sharing, end-to-end latency, mobility, overall user density, priority, service availability, service reliability, UE speed; see TS 22.261 [5] where these parameters are defined for end user services.\nNOTE 2: The network slice related requirements also include requirements derived from the Generic network Slice Template (GST) defined by GSMA in [9].\nNOTE 3: The SLA requirements can be translated to service profile which can be used to decides on the constituent NSSIs and the topology of the NSI.\nNOTE 4: Void\nREQ-PRO_NSI-FUN-3\tThe network slice provisioning service provider shall have the capability allowing its authorized consumer to request the deallocation of a network slice instance.\nREQ-PRO_NSI–FUN-4\tThe network slice provisioning service provider shall have the capability allowing its authorized consumer to request activation of a network slice instance.\nREQ-PRO_NSI–FUN-5\tThe network slice provisioning service provider shall have the capability allowing its authorized consumer to request deactivation of a network slice instance.\nREQ-PRO_NSI-FUN-6\tThe network slice provisioning service provider shall have the capability allowing its authorized consumer to request the modification of a network slice instance.\nREQ-PRO_NSI-FUN-7\tThe network slice provisioning service provider shall have the capability allowing its consumer to obtain the network slice management data.\nREQ-PRO_NSI-FUN-8\tThe network slice provisioning service provider shall have the capability allowing its authorized consumer to obtain the feasibility of provisioning the requested network slice instance at a particular point of time.\nREQ-PRO_NSI-FUN-9\tThe network slice provisioning service provider shall have the capability to satisfy the requirements using shared or dedicated managed resources for a network slice instance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tRequirements for network slice subnet provisioning service",
+                            "text_content": "REQ-PRO_NSSI-FUN-1\tThe network slice subnet provisioning service provider shall have the capability allowing its authorized consumer to request a network slice subnet instance.\nREQ-PRO_NSSI-FUN-2\tThe network slice subnet provisioning service provider shall have the capability of interaction with NFVO via the NS lifecycle management interface.\nREQ-PRO_NSSI-FUN-3\tThe network slice subnet provisioning service provider shall have the capability allowing its authorized consumer to send network slice subnet related requirements.\nREQ-PRO_NSSI-FUN-4\tThe network slice subnet provisioning service provider shall have the capability allowing its authorized consumer to request to create a new NSSI or use an existing NSSI based on the network slice subnet related requirements.\nREQ-PRO_NSSI-FUN-5\tThe network slice subnet provisioning service provider shall have the capability allowing its authorized consumer to request to associate the NS instance with corresponding NSSI.\nREQ-PRO_NSSI-FUN-6\tThe network slice subnet provisioning service provider shall have the capability allowing its authorized consumer to request the configuration of the RAN NSSI constituents with the RRM policy information for simultaneous support of multiple NSIs.\nREQ-PRO_NSSI-FUN-7\tThe network slice subnet provisioning service provider shall have the capability allowing its authorized consumer to obtain network slice subnet instance information.\nREQ-PRO_NSSI-FUN-8\tThe network slice subnet provisioning service provider shall have the capability of allowing its authorized consumer to request the deallocation of a network slice subnet instance.\nREQ-PRO_NSSI-FUN-9\tThe network slice subnet provisioning service provider shall have the capability allowing its authorized consumer to request activation of a network slice subnet instance.\nREQ-PRO_NSSI-FUN-10\tThe network slice subnet provisioning service provider shall have the capability allowing its authorized consumer to request deactivation of a network slice subnet instance.\nREQ-PRO_NSSI-FUN-11\tThe network slice subnet provisioning service provider shall have the capability allowing its authorized consumer to request modification of a network slice subnet instance.\nREQ-PRO_NSSI-FUN-12\tThe network slice subnet provisioning service provider shall have the capability allowing its consumer to obtain information regarding available network slice subnet resources.\nREQ-PRO_NSSI-FUN-13\tThe network slice subnet provisioning service provider shall have the capability allowing its authorized consumer to obtain the feasibility of provisioning a network slice subnet instance at a particular point of time.\nREQ-PRO_NSSI-FUN-14\tThe network slice subnet provisioning service provider shall have the capability to satisfy the request to consume the NF provisioning service.\nREQ-PRO_NSSI-FUN-16\tThe network slice subnet provisioning service provider shall have the capability allowing its consumer to provide slice specific operation information for the (re)configuration to a NSSI.\nREQ-PRO_NSI-FUN-17\tThe network slice subnet provisioning service provider shall have the capability allowing its authorized consumer to assign priority of a network slice subnet.\nREQ-PRO_NSSI-FUN-18\tThe network slice subnet provisioning service provider shall have the capability allowing its authorized consumer to obtain network slice subnet provider capability information.\nREQ-PRO_NSSI-FUN-19\tThe network slice subnet provisioning service provider shall have the capability to satisfy the requirements using shared or dedicated managed resources for a network slice subnet instance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tRequirements for NF provisioning service",
+                            "text_content": "REQ-PRO_NF-FUN-1\tThe NF provisioning service producer shall have the capability allowing its authorized consumer to request creation of an instance of 3GPP NF.\nREQ-PRO_NF-FUN-2\tThe NF provisioning service producer shall have the capability to fulfill the consumer’s request to create an instance of 3GPP NF.\nREQ-PRO_NF-FUN-3\tThe NF provisioning service producer shall have the capability to provide the VNF and VNFC related information of the NF instance to its authorized consumer.\nREQ-PRO_NF-FUN-4\tThe NF provisioning service producer shall have the capability allowing its authorized consumer to request configuration of a 3GPP NF instance.\nREQ-PRO_NF-FUN-5\tThe NF provisioning service producer shall have the capability to request updating the VNF(s) that are realizing the virtualized part of a 3GPP NF.\nREQ-PRO_NF-FUN-6\tThe NF provisioning service producer shall have the capability to fulfill the consumer’s request to configure a 3GPP NF instance.\nREQ-PRO_NF-FUN-7\tThe NF provisioning service producer shall have the capability to request NF management service producers working in the concerned NF instance to create and maintain the MOI(s) for it.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.4\tRequirements for sub-network provisioning service",
+                            "text_content": "REQ-PRO_NW-FUN-1\tThe sub-network provisioning service producer shall have the capability allowing its authorized consumer to request creation of a 3GPP sub-network.\nREQ-PRO_NW-FUN-2\tThe sub-network provisioning service producer shall have the capability to fulfil the consumer’s request to create a 3GPP sub-network.\nREQ-PRO_NW-FUN-3\tThe sub-network provisioning service producer shall have the capability allowing its authorized consumer to request configuration of a 3GPP sub-network.\nREQ-PRO_NW-FUN-4\tThe sub-network provisioning service producer shall have the capability to fulfil the consumer’s request to configure a 3GPP sub-network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tManagement services for provisioning of networks and network slicing",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tManagement services for network slice provisioning",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The management services for network slice provisioning are listed in table 6.1-1.\nTable 6.1-1: Management services for network slice provisioning\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.1-1: Management services for network slice provisioning",
+                            "table number": 24,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tManagement services for network slice subnet provisioning",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The management services for network slice subnet provisioning are listed in table 6.2-1.\nTable 6.2-1: Management services for NSS provisioning\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.2-1: Management services for NSS provisioning",
+                            "table number": 25,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.3\tManagement services for network function provisioning",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The management services for network function provisioning are listed in table 6.3-1.\nTable 6.3-1: Management services for NF provisioning\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.3-1: Management services for NF provisioning",
+                            "table number": 26,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.4\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.5.\tOperations of provisioning",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.5.1\tAllocateNsi operation",
+                            "text_content": "This operation is invoked by network slice provisioning MnS consumer to request the provider to allocate a network slice instance to satisfy network slice related requirements. The provider may create a new NSI or using existing NSI to satisfy the request. The requirements in the request are compared/matched against the actual capabilitites of all candidate NSIs by the provider. If an existing NSI can be found it is eligible for allocation, or else a new NSI is created, provided that required NSSIs can be created.\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.5.2\tAllocateNssi operation",
+                            "text_content": "This operation is invoked by network slice subnet provisioning MnS consumer to request the provider to allocate a network slice subnet instance to satisfy the network slice subnet related requirements. The provider may create a new NSSI or using existing NSSI to satisfy the request. The requirements in the request are compared/matched against the actual capabilitites of all candidate NSSIs by the provider. If an existing NSSI can be found  then it is eligible for allocation, or else a new NSSI is created, provided that resoures are available.\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.5.3\tDeallocateNsi operation",
+                            "text_content": "This operation is invoked by network slice provisioning MnS consumer to request the provider to deallocate a service profile in an NSI. The provider may terminate the requested NSI or modify the requested NSI without termination to satisfy the request.\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.5.4\tDeallocateNssi operation",
+                            "text_content": "This operation is invoked by network slice subnet provisioning MnS consumer to request the provider to deallocate a slice profile in an NSSI. The provider may terminate the requested NSSI or modify the requested NSSI without termination to satisfy the request.\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.5.5\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tProvisioning procedures of networks and network slicing",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The procedures of provisioning of 5G networks are listed in this following subclauses.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tProcedure of Network Slice Instance Allocation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Figure 7.2-1 illustrates the procedure of creating a new NSI or using an existing NSI to satisfy the required network slice related requirements.\nFigure 7.2-1 illustrates the Network Slice Instance Allocation Request procedure, which involves the interaction between the Network Service Function (NSF) and the Network Slice Manager (NSM). The NSF is responsible for managing the network resources, while the NSM handles the allocation of network slices. The figure depicts the process flow, starting with the NSF sending a request to the NSM for a network slice instance. The NSM then evaluates the request based on predefined criteria, such as resource availability and network capacity. Once the request is approved, the NSM assigns a network slice instance to the NSF, which is then used to create a virtualized network environment. The figure also shows the communication between the NSF and the NSM, highlighting the importance of coordination and collaboration in managing network resources efficiently.\nFigure 7.2-1: Network Slice Instance Allocation Request procedure\n1a-1)\tNetwork Slice Management Service Provider (NSMS_P) receives an AllocateNsi request (see AllocateNsi operation defined in clause 6.5.1) from Network Slice Management Service Consumer (NSMS_C) with network slice related requirements (the network slice related requirements are defined as the attributes in the ServiceProfile see clause 6.3.3 in TS 28.541 [6]).\n1a-2)\tThe NSMS_P creates a NetworkSliceController MOI and configures attribute serviceProfileId to control and monitor network slice allocation process. NSMS_P starts to perform the network slice allocation process.\n1a-3)\tThe NSMS_P sends AllocateNsi response to the NSMS_C. The serviceProfileId is included in the AllocateNsi response.\n1a-4) NSMS_P sends notification (see notifyMOICreation defined in TS 28.532 [8]) to NSMS_C to notify the DN of the created NetworkSliceController instance.\n1b-1)\tNSMS_P receives a createMOI request (see createMOI operation defined in TS 28.532 [8]) from NSMS_C with network slice controller (see NetworkSliceController IOC and its attributes defined in TS 28.541[6]) including the network slice related requirements in attribute inputServiceProfile.\n1b-2)\tThe NSMS_P creates an MOI of NetworkSliceController.\n1b-3)\tThe NSMS_P sends the response to NSMS_C for the createMOI request.\nNOTE: Network slice allocation may be initiated using AllocateNsi operation as described in steps 1a or createMOI operation as described in steps 1b.\n2)\tBased on the network slice related requirements and the knowledge of the capabilities of existing deployed network slices, the NSMS_P may compare/match the provided requirements against all the candidate NetworkSlice MOIs, and then decides whether to use an existing NetworkSlice MOI or create a new NetworkSlice MOI. If the network slice related requirements allow the requested NetworkSlice MOI to be shared and if an existing suitable NetworkSlice MOI can be reused, the NSMS_P may decide to use the existing NetworkSlice MOI.\n3a-1)\tIf using an existing NetworkSlice MOI, the NSMS_ P identifies the NetworkSlice MOI to be re-used.\n3a-2)\tThe NSMS_P configures the attribute networkSliceControllerRef of the NetworkSlice MOI with the DN of NetworkSliceController MOI.\n3a-3)\tNSMS_P configures the NetworkSliceController MOI attribute networkSliceRef with the DN of NetworkSlice MOI (identified in step 3a-1).\n3a-4) If the existing NetworkSlice MOI needs to be modified to satisfy the network slice related requirements, the NSMS_P invokes the procedure of network slice instance modification as described in clause 7.6.\n3b-1) If creating a new NetworkSlice MOI, the NSMS_P derives the network slice subnet related requirements from the received network slice related requirements. Before NSMS_P derives the network slice subnet related requirements, NSMS_P may invoke corresponding network slice subnet capability information querying procedure as described in clause 7.8.\n3b-2)\tThe NSMS_P invokes the procedure of network slice subnet instance allocation as described in clause 7.3. Before NSMS_P invokes the procedure, NSMS_P may invoke corresponding procedure of feasibility check and reservation of network slice subnet as described in clause 7.14.\n3b-3)\tThe NSMS_P creates the NetworkSlice MOI and configures the attribute networkSliceSubnetRef with the DN of NetworkSliceSubnet MOI and the attribute networkSliceControllerRef with the DN of NetworkSliceController MOI. Other configuration information may be configured for the created NetworkSlice MOI.\n\nNote:\tThe detailed configuration information is described in network slice NRM (see NetworkSlice IOC defined in clause 6.3.1 in TS 28.541 [6]).\n3a-5)\tNSMS_P configures the NetworkSliceController MOI attribute networkSliceRef with the DN of NetworkSlice MOI (created in step 3b-3).\n4)\tNSMS_P configures NetworkSliceController MOI attributes operationalState, administrativeState, availabilityStatus and processMonitor to indicate completion of the procedure.\nThe NSMS_C may check the status and completion of the network slice allocation procedure any time by monitoring the values of NetworkSliceController MOI attributes operationalState, administrativeState, availabilityStatus and processMonitor by querying the values or by subscribing to notifications.\nThe following step 5 describes the procedures for NSMS_C to monitor network slice allocation progress and result. These steps can happen anytime after the NetworkSliceController MOI is created and its DN is notified to the NSMS_C (step 1a-4 or step 1b-3).\n5a)\tThe NSMS_P sends notification (see notifyMOIAttributeValueChanges defined in TS 28.532 [8]) to NSMS_C to notify the progress and result for network slice allocation process (see attributes in NetworkSliceController IOC).\n5b-1)\tThe NSMS_C sends query request to NSMS_P to query the attribute values of NetworkSliceController MOI (see getMOIAttributes operation defined in TS 28.532 [8]) to obtain the progress and result (including DN of the NetworkSlice MOI) for network slice allocation process.\n5b-2)\tThe NSMS_P sends the response to NSMS_C with the NetworkSliceController information\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tProcedure of Network Slice Subnet Instance Allocation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Figure 7.3-1 illustrates the procedure of creating a new network slice subnet instance or using an existing network slice subnet instance to satisfy the required network slice subnet related requirements.\nFigure 7.3-1 illustrates the Network Slice Subnet Instance Allocation Request procedure, which involves the allocation of network resources to create a network slice. The figure shows the interaction between the Network Service Function (NSF) and the Network Function Virtualization Infrastructure (NFVI). The NSF requests the allocation of network resources, which are then assigned by the NFVI. The figure also depicts the process of subnet instance creation and the assignment of IP addresses. The visual representation of the procedure provides a clear understanding of the network resource allocation process in a cloud-native network environment.\nFigure 7.3-1: Network Slice Subnet Instance Allocation Request procedure\n1a-1)\tNetwork Slice Subnet Management Service Provider (NSSMS_P) receives an AllocateNssi request (see AllocateNssi operation defined in clause 6.5.2) from Network Slice Subnet Management Service Consumer NSSMS_C with network slice subnet related requirements (network slice subnet related requirements defined in SliceProfile see clause 6.3.4 in TS 28.541 [6]).\n1a-2)\tThe NSSMS_P creates an MOI of NetworkSliceSubnetController and configures attribute sliceProfileId to control and monitor network slice subnetallocation process. NSSMS_P starts to perform the network slice subnet allocation process.\n1a-3) The NSSMS_P sends AllocateNssi response to the NSSMS_C. The sliceProfileId is included in the AllocateNssi response.\n1a-4) NSSMS_P sends notification (see notifyMOICreation defined in TS 28.532 [8]) to NSSMS_C to notify the DN of the created NetworkSliceSubnetController instance.\n1b-1)\tNSSMS_P receives a createMOI request (see createMOI operation defined in TS 28.532 [8]) from NSSMS_C with network slice subnet controller (see NetworkSliceSubnetController IOC and its attributes defined in TS 28.541[6])) including the network slice subnet related requirements in attribute inputSliceProfile.\n1b-2)\tThe NSSMS_P creates an MOI of NetworkSliceSubnetController.\n1b-3)\tThe NSSMS_P sends the response to NSSMS_C for the createMOI request.\nNOTE: Network slice subnet allocation may be initiated using AllocateNssi operation as described in steps 1a or createMOI operation as described in steps 1b.\n2)\tNSSMS_P may invoke corresponding procedure of feasibility check and reservation of network slice subnet as described in clause 7.14. If the network slice subnet related requirements can be satisfied, the following step 3) to step 5) are needed, else go to step 6).\n3)\tBased on the network slice subnet related requirements and the existing NetworkSliceSubnet MOI capabilities, NSSMS_P decides whether to use an existing NetworkSliceSubnet MOI or create a new NetworkSliceSubnet MOI. If the network slice subnet related requirements allow the requested NetworkSliceSubnet MOI to be shared and if an existing suitable NetworkSliceSubnet MOI can be reused, the NSSMS_P decides to use the existing NetworkSliceSubnet MOI.\n4a-1) If using an existing NetworkSliceSubnet MOI, the NSSMS_ P identifies the NetworkSliceSubnet MOI to be reused.\n4a-2)\tThe NSSMS_P configures NetworkSliceSubnet MOI (attribute networkSliceSubnetControllerRef) with the DN of NetworkSliceSubnetController MOI.\n4a-3)\tNSSMS_P configures the NetworkSliceSubnetController MOI (attribute networkSliceSubnetRef) with DN of NetworkSliceSubnet MOI (identified in step 4a-1).\n4a-4)\tIf the existing NetworkSliceSubnet MOI needs to be modified to satisfy the network slice subnet related requirements, the NSSMS_P invokes the procedure of network slice subnet instance modification as described in clause 7.7.\n4b-1)\tIf creating a new NetworkSliceSubnet MOI, the NSSMS_P creates an MOI of NetworkSliceSubnet. The NSSMS_P configures NetworkSliceSubnet MOI (attribute networkSliceSubnetControllerRef) with DN of NetworkSliceSubnetController MOI.\n4b-2)\tNSSMS_P configures the NetworkSliceSubnetController MOI (attribute networkSliceSubnetRef) with DN of NetworkSliceSubnet MOI (identified in step 4b-1).\n4b-3) NSSMS_P derives the corresponding network slice subnet constituent (i.e., NF, constituent NetworkSliceSubnet) related requirements and transport network related requirements (e.g., 3GPP endpoint information, latency requirements, bandwidth requirements and isolation requirements) from the received network slice subnet related requirements. Part of these requirements may be referenced by attribute epTransportRef as defined in clause 6.3.2.2 in TS 28.541[6]. Before NSSMS_P derives the constituent network slice subnet related requirements, NSSMS_Provider may invoke corresponding network slice subnet capability information querying procedure as described in clause 7.8.2.\n4b-4)\tIf the NetworkSliceSubnet MOI contains virtualisation part (i.e. VNF or VL), NSSMS_P derives the NS instance instantiation information (the NS instance instantiation information is described in clause 7.3.2.2 and clause 7.3.3.2 [3]) based on network slice subnet related requirements. NSSMS_P determines new VNF instance(s) that need to be deployed and the existing VNF instance(s) that need to be reused according to the necessary network function(s) and then derives the profile of virtual link(s) according to the connection requirements between the network functions. NSSMS_P chooses a proper NSD deployment flavour and creates data concerning the SAPs of the NS instance. NSSMS_P invokes the NS instantiation procedures to create a NS instance.\n\nNote:\tFor the interaction with ETSI NFV MANO, NS instantiation procedure is described in clause 7.3.3 in ETSI GS NFV-IFA 013 [3].\n4b-5)\tNSSMS_P configures NetworkSliceSubnet MOI attribute nsInfo with NS instance information.\n4b-6) For each required constituent network slice subnet (NetworkSliceSubnet MOIs), the following step 4b-6a) and 4b-6b) are needed:\n4b-6a)\tNSSMS_P invokes procedure of network slice subnet instance allocation.\n4b-6b)\tNSSMS_P configures NetworkSliceSubnet MOI attribute networkSliceSubnetRef with DN of NetworkSliceSubnet MOI.\n4b-7)\tFor each required constituent NF instance (ManagedFunction MOI), the following step 4b-7a) and 4b-7b) are needed:\n4b-7a)\tNSSMS_P invokes procedure of NF instance creation described in clause 7.10 or procedure of NF instance modification described in clause 7.11.\n4b-7b)\tNSSMS_P configures NetworkSliceSubnet MOI attribute managedFunctionRef with DN of ManagedFunction MOI.\n4b-8)\tFor each required transport network related requirements, NSSMS_P invokes corresponding procedure of coordination with relevant TN Manager to handle the TN part as described in clause 7.9.\n5)\tNSSMS_P configures NetworkSliceSubnetController MOI attributes operationalState, administrativeState, availabilityStatus and processMonitor to indicate completion of the procedure.\nThe NSSMS_C may check the status and completion of the network slice subnet allocation procedure any time by monitoring the values of NetworkSliceSubnetController MOI attributes operationalState, administrativeState, availabilityStatus and processMonitor by querying the values or by subscribing to notifications.\nFollowing step 6) describes the procedures for NSSMS_C to monitor network slice subnet allocation progress and result. These steps can happen anytime after the NetworkSliceSubnetController MOI is created and its DN is notified to the NSSMS_C (step 1a-4 or step 1b-3).\n6a) The NSSMS_P sends notification (see notifyMOIAttributeValueChanges defined in TS 28.532 [8]) to NSSMS_C to notify the progress and result for network slice subnet allocation process (see attributes in NetworkSliceSubnetController IOC).\n6b-1) The NSSMS_C sends query request to NSSMS_P to query the attribute value of NetworkSliceSubnetController MOI (see getMOIAttributes operation defined in TS 28.532 [8]) to obtain the progress and result (including DN of theNetworkSliceSubnet MOI) for network slice subnet allocation process.\n6b-2)\tThe NSMS_P sends the response to NSMS_C with the NetworkSliceSubnetController information\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.4\tProcedure of Network Slice Instance Deallocation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Figure 7.4-1 depicts the procedure of deallocating a network slice instance by the network slice management service provider to satisfy the NSI deallocation request received from an authorized consumer.\nFigure 7.4 illustrates the process of deallocating network slices in a cloud-native network infrastructure. The figure depicts the deallocation procedure, which involves the network controller, tenant, and slice instance. The process starts with the tenant requesting the deallocation of a slice instance, followed by the network controller validating the request. Once validated, the controller deactivates the slice instance, releasing the associated resources. The figure emphasizes the importance of this procedure in maintaining efficient resource management and ensuring network performance.\nFigure 7.4-1: Network slice instance deallocation procedure\n1a-1) Network Slice Management Service Provider (NSMS_P) receives a DeallocateNsi request (see DeallocateNsi operation defined in clause 6.5.3) from Network Slice Management Service Consumer (NSMS_C) indicating that the NetworkSlice MOI is no longer needed for the given requirements i.e ServiceProfile.\n1a-2)\tNSMS_P identifies the DN of NetworkSlice MOI from the attribute networkSliceRef and value of attribute serviceProfileId of the NetworkSliceController MOI to be deleted.\n1a-3)\tNSMS_P updates attribute networkSliceControllerRef of NetworkSlice MOI (identified in step 1b-2) attribute to remove the DN of NetworkSliceController MOI to be deleted.\n1a-4)\tNSMS_P deletes NetworkSliceController MOI.\n1a-5) The NSMS_P sends the DeallocateNsi response (see DeallocateNsi operation defined in clause 6.5.3) to NSMS_C.\n1b-1)\tNSMS_P receives a deleteMOI request (see deleteMOI operation defined in TS 28.532 [8]) from NSMS_C with network slice controller (see NetworkSliceController IOC and its attribute defined in TS 28.541[6])).\n1b-2)\tNSMS_P identifies the DN of NetworkSlice MOI from the attribute networkSliceRef and value of attribute serviceProfileId of the NetworkSliceController MOI to be deleted.\n1b-3)\tNSMS_P updates attribute networkSliceControllerRef of NetworkSlice MOI (identified in step 1b-2) attribute to remove the DN of NetworkSliceController MOI to be deleted.\n1b-4)\tNSMS_P deletes NetworkSliceController MOI.\n1b-5)\tNSMS_P sends the response to NSMS_C for the deleteMOI request.\nNOTE: Network slice deallocation may be initiated using DeallocateNsi operation as described in steps 1a or using deleteMOI operation as described in steps 1b.\n2)\tThe NSMS_P may decide to delete or modify the NetworkSlice MOI (identified in step 1b-2).\n3a-1)\tIf NSMS_P decides to delete the NetworkSlice MOI, then it deletes the NetworkSlice MOI.\n3a-2)\tNSMS_P invokes the procedure of network slice subnet instance deallocation as described in clause 7.5.\n3b-1) If NSMS_P decides to modify the NetworkSlice MOI, procedure of network slice subnet instance modification procedure as described in clause 7.6.\n3b-2)\tNSMS_P modifies the NetworkSlice MOI to update the serviceProfileList (using the serviceProfileId identified in step 1a-2) or 1b-2) and may update other attributes.\nIf the NSMS_C has subscribed for the notification, then NSMS_P sends notification for deletion (see notifyMOIDeletion operation defined in TS 28.532 [8]) and notification for the attribute value changes (see notifyMOIAttributeValueChanges operation defined in TS 28.532 [8]) of NetworkSliceController MOI and NetworkSlice MOI.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.5\tProcedure of network slice subnet instance deallocation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Figure 7.5-1 depicts the procedure of deallocating a network slice subnet instance by the network slice subnet management service provider to satisfy the NSSI deallocation request received from an authorized consumer.\nFigure 7 illustrates the process of deallocating network slices and subnet instances in a 5G network. The figure depicts the deallocation procedure, which involves the network controller, tenant isolation, and the deallocation request. The process begins with the network controller receiving a deallocation request from a tenant. The request is then forwarded to the tenant isolation module, which ensures that the deallocation does not affect other tenants. Finally, the deallocation request is processed, and the network slice and subnet instances are deallocated. The figure highlights the importance of efficient resource management in 5G networks to ensure optimal performance and resource utilization.\nFigure 7.5-1: Network slice subnet instance deallocation procedure\n1a-1) The network slice subnet management service provider (NSSMS_P) receives DeallocateNssi request (see DeallocateNssi operation defined in clause 6.5.4) from network slice subnet management service consumer (NSSMS_C) indicating that the NetworkSliceSubnet MOI is no longer needed for the given requirements i.e SliceProfile.\n1a-2)\tNSSMS_P identifies the DN of NetworkSliceSubnet MOI from the attribute networkSliceSubnetRef and value of attribute sliceProfileId from the NetworkSliceSubnetController MOI to be deleted.\n1a-3)\tNSSMS_P updates NetworkSliceSubnet MOI (identified in step 1b-2) attribute networkSliceSubnetControllerRef to remove the DN of NetworkSliceSubnetController MOI to be deleted.\n1a-4)\tNSSMS_P deletes NetworkSliceSubnetController MOI.\n1a-5) NSSMS_P sends response (see DeallocateNssi operation defined in clause 6.5.4) of NSSI deallocation service to NSSMS_C.\n1b-1)\tNSSMS_P receives a deleteMOI request (see deleteMOI operation defined in TS 28.532 [8]) from NSSMS_C with network slice controller (see NetworkSliceSubnetController IOC and its attribute defined in TS 28.541[6])).\n1b-2)\tNSSMS_P identifies the DN of NetworkSliceSubnet MOI from the attribute networkSliceSubnetRef and value of attribute sliceProfileId from the NetworkSliceSubnetController MOI to be deleted.\n1b-3)\tNSSMS_P updates NetworkSliceSubnet MOI (identified in step 1b-2) attribute networkSliceSubnetControllerRef to remove the DN of NetworkSliceSubnetController MOI to be deleted.\n1b-4)\tNSSMS_P deletes NetworkSliceSubnetController MOI.\n1b-5)\tNSSMS_P sends the response to NSSMS_C for the deleteMOI request.\nNOTE: Network slice subnet deallocation may be initiated using DeallocateNssi operation as described in steps 1a or using deleteMOI operation as described in steps 1b.\n2)\tThe NSSMS_P may decide to delete or modify the NetworkSliceSubnet MOI (identified in step 1b-2).\n3a)\tIf NSSMS_P decides to delete the NetworkSliceSubnet MOI, then it performs the following steps:\n3a-1)\tNSSMS_P invokes procedure of network slice subnet instance deallocation as described in clause 7.5 for each constituent NetworkSliceSubnet MOI(s) that is configured in attribute networkSliceSubnetRef of NetworkSliceSubnet MOI (identified in step 1b-2).\n3a-2) For each constituent NF instance (ManagedFunction MOI DN that is configured in attribute of managedFunctionRef of NetworkSliceSubnet MOI identified in step 1b-2), NSSMS_P invokes procedure of NF instance deletion as described in clause 7.12 only if the NF is dedicated for the NetworkSliceSubnet MOI (identified in step 1b-2)  and not being used by any other NetworkSliceSubnet MOIs in the network, otherwise, NSSMS_P procedure of NF instance modification as described in clause 7.11.\n3a-3) NSSMS_P invokes TN related coordination procedure with responsible manager as described in clause 7.9 if the NetworkSliceSubnet MOI consists of TN part.\n3a-4) NSSMS_P invokes NS termination procedure if the NetworkSliceSubnet MOI contains virtualized part.\n\nNote:\tFor the interaction with ETSI NFV MANO, NS termination procedure is described in clause 7.3.7 in ETSI GS NFV-IFA 013 [3]..\n3a-5)\tNSSMS_P deletes the NetworkSliceSubnet MOI.\n3b)\tIf NSSMS_P decides to modify the NetworkSliceSubnet MOI, then it performs the following sub steps:\n3b-1)\tFor each constituent NetworkSliceSubnet MOI, NSSMS_P invokes the procedure of network slice subnet instance modificationas described in clause 7.6.\n3b-2)\tNSSMS_P modifies the NetworkSliceSubnet MOI to update the sliceProfileList (using the sliceProfileId identified in step 1b-2) and may update other attributes.\nIf the NSSMS_C has subscribed for the notification, then NSSMS_P sends notification for deletion (see notifyMOIDeletion operation defined in TS 28.532 [8]) and notification for the attribute value changes (see notifyMOIAttributeValueChanges operation defined in TS 28.532 [8]) of NetworkSliceSubnetController MOI and NetworkSliceSubnet MOI.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.6\tProcedure of Network Slice Instance Modification",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Figure 7.6-1 illustrates the procedure of modifying an existing NSI.\nFigure 7.6-1 illustrates the process of modifying a network slice instance, detailing the steps involved in requesting and approving changes to a network slice. The figure outlines the interaction between the network slice instance owner, the network slice manager, and the network slice instance controller. The owner initiates the modification request, which is then reviewed and approved by the network slice manager. Once approved, the controller executes the requested changes, ensuring the network slice remains operational and aligned with the owner's requirements. The figure emphasizes the importance of coordination and communication between these entities to maintain the integrity and performance of the network slice.\nFigure 7.6-1: Network Slice Instance Modification Request procedure\n1a)\tNetwork Slice Management Service Provider (NSMS_P) receives a modifyMOIAttributes request (defined in TS 28.532 [8]) from Network Slice Management Service Consumer (NSMS_C) with the DN of NetworkSlice MOI and the new network slice related requirements (see ServiceProfile defined in clause 6.3.3 in TS 28.541[6]).\n1b-1)\tNetwork Slice Management Service Provider (NSMS_P) receives a modifyMOIAttributes request (defined in TS 28.532 [8]) from Network Slice Management Service Consumer (NSMS_C) with the DN of NetworkSliceController MOI (see NetworkSliceController IOC and its attribute defined in TS 28.541[6]) and the new requirements for the network slice in attribute inputServiceProfile. The NSMS_C may check the status and completion of the network slice instance modification procedure any time by monitoring the values of NetworkSliceController MOI attributes operationalState, administrativeState, availabilityStatus and processMonitor by querying the values or by subscribing to notifications.\n1b-2)\tThe NSMS_P updates NetworkSliceController MOI attributes inputServiceProfile, and may update attributes operationalState, availabilityStatus and processMonitor to indicate progress.\n1b-3)\tThe NSMS_P sends the response to NSMS_C for the modifyMOIAttributes request.\nNOTE: Network slice modification may be initiated using DN of NetworkSlice MOI in the modifyMOIAttributes operation as described in steps 1a or using DN of NetworkSliceController MOI in the modifyMOIAttributes operation as described in steps 1b.\n2)\tBased on the new network slice related requirements, NSMS_P invokes the procedure of feasibility check and reservation of network slice as described in clause 7.13. If the modification requirements can be satisfied, go to step 3), else go to step 6).\n3)\tNSMS_P decomposes the modification request into the new requirements for the network slice subnet related.\n4)\tNSMS_P, as the role of Network Slice Subnet Management Service Consumer (NSSMS_C), invokes the procedure of network slice subnet instance modification as described in clause 7.7.\n5)\tNSMS_P updates NetworkSlice MOI attributes.\n6a)\tIf NSMS_C sent new network slice related requirements in NetworkSlice MOI (in step 1a), then NSMS_P sends response for modifyMOIAttributes.\n6b)\tIf NSMS_C sent the new network slice related requirements in NetworkSliceController MOI (in step 1b-1), then NSMS_P updates NetworkSliceController MOI attributes operationalState, administrativeState, availabilityStatus and processMonitor to indicate completion of the procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.7\tProcedure of Network Slice Subnet Instance Modification",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Figure 7.7-1 illustrates the procedure of modifying an existing NSSI.\n\nFigure 7.7-1 illustrates the Network Slice Subnet Instance Modification Request procedure, which involves several steps to modify a network slice's subnet instance. The figure shows the initial state with a network slice and its associated subnet instance. The process then outlines the necessary steps, including creating a new subnet instance, updating the network slice's configuration, and notifying relevant parties. The figure emphasizes the importance of coordination and communication among network administrators, as well as the need for a systematic approach to ensure the modification is carried out smoothly and without disruption to network services.\nFigure 7.7-1: Network Slice Subnet Instance Modification Request procedure\n\n1a)\tNetwork Slice Subnet Management Service Provider (NSSMS_P) receives a modifyMOIAttributes request (defined in TS 28.532 [8]) from Network Slice Subnet Management Service Consumer (NSSMS_C) with the DN of NetworkSliceSubnet MOI and the new network slice subnet related requirements (see SliceProfile defined in clause 6.3.3 in TS 28.541[6]).\n1b-1)\tNetwork Slice Subnet Management Service Provider (NSSMS_P) receives a modifyMOIAttributes request (defined in TS 28.532 [8]) from Network Slice Subnet Management Service Consumer (NSSMS_C) with the DN of NetworkSliceSubnetController MOI (see NetworkSliceSubnetController IOC and its attribute defined in TS 28.541[6]) and the new network slice subnet related requirements in attribute inputSliceProfile. The NSSMS_C may check the status and completion of the network slice instance modification procedure any time by monitoring the values of NetworkSliceSubnetController MOI attributes operationalState, administrativeState, availabilityStatus and processMonitor by querying the values or by subscribing to notifications.\n1b-2)\tThe NSSMS_P updates NetworkSliceSubnetController MOI attributes inputSliceProfile, and may update attributes operationalState, availabilityStatus and processMonitor to indicate progress.\n1b-3)\tThe NSSMS_P sends the response to NSSMS_C for the modifyMOIAttributes request.\nNOTE: Network subnet slice modification may be initiated using DN of NetworkSliceSubnet MOI in the modifyMOIAttributes operation as described in step 1a or using DN of NetworkSliceSubnetController MOI in the modifyMOIAttributes operation as described in step 1b.\n2)\tBased on the new network slice subnet related requirements, NSSMS_P invokes the procedure of feasibility check and reservation of network slice subnet as described in clause 7.14. If the modification requirements can be satisfied, go to step 3), else go to step 6).\n3)\tNSSMS_P decomposes the NetworkSliceSubnet MOI modification request into modification requests for each constituent MOIs.\n4a)\tNSSMS_P invokes procedure of network slice subnet instance modification for each constituent NetworkSliceSubnet MOI(s) that is configured in attribute networkSliceSubnetRef of the NetworkSliceSubnet MOI.\n4b)\tFor each constituent NF instance (ManagedFunction MOI DN that is configured in attribute of managedFunctionRef of NetworkSliceSubnet MOI), NSSMS_P invokes procedure of NF instance creation as described in clause 7.10 or procedure of NF instance modification as described in clause 7.11.\n4c)\tIf the NetworkSliceSubnet MOI contains the virtualized part, NSSMS_P invokes the NS instance scaling and/or NS instance updating and/or NS instance instantiation procedures. For the interaction with ETSI NFV MANO the procedures are described in ETSI GS NFV-IFA 013 [3].\n4d)\tIf the NetworkSliceSubnet MOI contains the TN part, NSSMS_P invokes the corresponding procedure of coordination with relevant TN Manager to handle the TN part as described in clause 7.9.\n5)\tNSSMS_P updates NetworkSliceSubnet MOI attributes.\n6a)\tIf NSSMS_P sent new network slice subnet related requirements in NetworkSliceSubnet MOI (in step 1a), then NSMS_P sends response for modifyMOIAttributes.\n6b)\tIf NSSMS_C sent the new network slice subnet related requirements in NetworkSliceSubnetController MOI (in step 1b-1), then NSSMS_P updates NetworkSliceSubnetController MOI attributes operationalState, administrativeState, availabilityStatus and processMonitor to indicate completion of the procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.8\tProcedure of Obtaining Network Slice Subnet Management Service Producer Capability",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.8.1\tIntroduction",
+                            "text_content": "The clause illustrates possible procedures of obtaining network slice subnet capability information (e.g. supported maximum latency, supported capacity (e.g. maximum user number)) of network slice subnet instance(s) which can be provided by network slice subnet management service provider.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.8.2\tQuerying Network Slice Subnet Capability Information",
+                            "text_content": "Figure 7.8-2 illustrates the process of querying network slice subnet capability information, which involves several steps to ensure efficient network management and resource allocation. The figure depicts a network architecture with multiple network slices, each with its own set of resources and capabilities. The process begins with the network manager or an authorized entity sending a request to the network slice manager, which is responsible for managing the network slices. The network slice manager then queries the network slice subnet capability information database, which contains detailed information about the available resources and capabilities of each network slice. This information is then used to determine the appropriate network slice for a particular application or service, based on factors such as performance, reliability, and cost. The figure also shows how the network slice manager communicates with other components of the network, such as the network slice subnet controller and the network slice subnet database, to ensure that the correct network slice is selected and that the necessary resources are allocated. Overall, the figure provides a clear and concise overview of the process of querying network slice subnet capability information, which is a critical component of network management and resource allocation in modern network infrastructures.\nFigure 7.8-2: Procedure of querying network slice subnet capability information\n1)\tNetwork Slice Subnet Management Service Consumer (NSSMS_C) wants to query the NSS capability information of the NSSI(s) which can be provided by corresponding Network Slice Subnet Management Service Producer (NSSMS_P) NSSMS_C sends getMOIAttributes operation (defined in TS 28.532 [8]) , for NetworkSliceSubnetProviderCapabilities IOC, to NSSMS_P to obtain the NSS capability information of the NSSI(s) which can be provided by corresponding NSSMS_P.\n2)\tNSSMS_P processes the NSS capability information querying request.\n3)\tNSSMS_P sends the NSS capability information (e.g. supported maximum latency, supported capacity (e.g. user number)) of NSSI(s) that can be provided by itself, as a response to getMOIAttributes operation (as defined in TS 28.532 [8]), to NSSMS_C.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.8.3\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.9\tProcedure of TN coordination supporting network slicing",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.9.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This clause describes procedures of coordination with TN Manager to handle TN part supporting network slicing.\nNOTE:\tThe present document:  addresses interactions with NFVO as TN manager,. interactions  with other types of TN Manager (e.g. Optical, IP bearer transport network, etc.) have not been addressed.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.9.2\tInteraction with NFVO as TN Manager",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This clause considers the procedure of interaction between the 3GPP management system and the NFVO, which behaves as TN Manager, to satisfy the TN related requirements for the virtual links used in NSSI. The procedure is applicable to creation and modification of the NSSI.\nFigure 7.9.2-1 illustrates the interaction between the network function virtualization and orchestration (NFVO) and the network function virtual network orchestrator (NF-VNO) as the network slicing manager. The figure depicts the process of network slicing, where the NFVO communicates with the NF-VNO to allocate resources for network functions. This process is crucial for efficiently managing and allocating network resources in a dynamic and scalable manner, ensuring optimal performance and resource utilization. The figure highlights the role of the NF-VNO in managing network slices and the NFVO's function in coordinating with the NF-VNO for resource allocation.\nFigure 7.9.2-1: Interaction with NFVO as TN manager to support network slicing\n1)\tNetwork Slice Subnet Management Service Provider (NSSMS_P) derives the TN related requirements (e.g. 3GPP endpoint information, latency requirements, bandwidth requirements, isolation requirements) for the TN part to be used in the NSSI.\n2)\tTo satisfy the TN related requirements NSSMS_P invokes the corresponding NS instance lifecycle management procedures as described in ETSI GS NFV-IFA 013 [3].\n3)\tAfter the NFVO executes the requested operation, it sends the corresponding notification to the NSSMS_P as described in ETSI GS NFV-IFA 013 [3].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.10\tProcedure of NF instance creation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Figure 7.10-1 illustrates the procedure of creating a new network function instance to satisfy the required network function related requirements.\nFigure 7.10-1 illustrates the step-by-step process of creating a network function instance, detailing the various components involved and their interactions. The figure showcases the orchestration layer, which manages the lifecycle of network functions, and the deployment layer, which executes the functions on target resources. The process begins with the creation of a function template, followed by the instantiation of an instance, and finally, the binding of the instance to a target resource. The figure emphasizes the importance of orchestration in managing complex network functions and the seamless integration of these functions into the network infrastructure.\nFigure 7.10-1: Network Function Instance Creation procedure\n1)\tNetwork Function Management Service Provider (NFMS_P) receives a createMOI, for ManagedFunction IOC, request from Network Function Management Service Consumer (NFMS_C) with network function related requirements.\nNote:\tThe network function related requirements see information model definition for NR NRM in clause 4 and information model definition for 5GC NRM in clause 5 in TS 28.541[6].\n2)\tIf NF instance to be created contains virtualized part, NFMS_P derives the requirements for VNF instance based on the network function related requirements.\n3)\tIf corresponding VNF Package needs to be on-boarded or changed, the NFMS_P invoke corresponding VNF Package management. For the interaction with ETSI NFV MANO, the procedure is described in clause 7.7 in ETSI GS NFV-IFA013 [3]. The VNF package is compliant with ETSI GS NFV-IFA011 [14].\n4)\tThe NFMS_P invokes VNF lifecycle management. For the interaction with ETSI NFV MANO, the procedure is as described in clause 7.3.5 (Update NS operation) in ETSI GS NFV-IFA013 [3] or clause 7.2.2 (Create VNF Identifier operation) and clause 7.2.3 (Instantiate VNF operation) in ETSI GS NFV-IFA008 [15]..\n5)\tThe NFMS_P creates the MOI for the ManagedFunction to be created. If the ManagedFunction contains virtualized part, the NFMS_P may send the request of creating the MOI to the NFMS_P in the ManagedFunction.\n6)\tThe NFMS_P configures the new created MOI with corresponding configuration information (see information model definition for NR NRM in clause 4 and information model definition for 5GC NRM in clause 5 in TS 28.541[6]).\n7)\tThe NFMS_P sends the createMOI response to NFMS_C with DN of MOI for ManagedFunction.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.11\tProcedure of NF instance modification",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Figure 7.11-1 illustrates the procedure of modify NF instance.\nFigure 7.11-1 illustrates the Network Function Instance Modify procedure, detailing the steps involved in modifying network functions. The figure outlines the process, starting with the identification of the function to be modified, followed by the execution of the modification, and finally the verification of the changes. Key components include the Network Function Virtualization (NFV) Manager, which orchestrates the process, and the Network Function Virtualization Infrastructure (NFVI), which hosts the virtualized network functions. The figure emphasizes the importance of a well-structured and efficient procedure for modifying network functions to ensure smooth operation and minimal disruption to the network.\nFigure 7.11-1: Network Function Instance Modify procedure\n1)\tNetwork Function Management Service Provider (NFMS_P) receives a modifyMOIAttributes operation defined in TS 28.532 [8] from Network Function Management Service Consumer (NFMS_C) with DN of MOI for ManagedFunction and network function related requirements.\nNote:\tThe network funcation related requirements see information model definition for NR NRM in clause 4 and information model definition for 5GC NRM in clause 5 in TS 28.541[6].\n2)\tIf ManagedFunction instance contains virtualized part, NFMS_P checks whether corresponding VNF instance needs to be scaled to satisfy the network function related requirements.\n3)\tIf corresponding VNF instance needs to be scaled, NFMS_P invokes corresponding VNF instance scaling procedure. For the interaction with ETSI NFV MANO, the procedure is described in clause 7.2.4 in ETSI GS NFV-IFA008 [15] or clause 7.3.4 in ETSI GS NFV-IFA013 [3].\n4)\tNFMS_P reconfigures corresponding ManagedFunction MOI.\n5)\tThe NFMS_P sends the response (see modifyMOIAttributes operation defined in TS 28.532 [8]) to NFMS_C.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.12\tProcedure of NF instance deletion",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Figure 7.12-1 illustrates the procedure of deleting NF instance.\nFigure 7.12-1 illustrates the process of network function instance deletion, detailing the steps involved in removing a specific instance of a network function from the network. The figure outlines the necessary procedures, including the identification of the faulty or redundant function, the initiation of the deletion process, and the subsequent testing to ensure the network's stability post-deletion. Key components include the network function, the deletion process, and the testing phase, all depicted in a clear and concise manner.\nFigure 7.12-1: Network Function Instance Deletion procedure\n1)\tNetwork Function Management Service Provider (NFMS_P) receives deletetMOI from Network Function Management Service Consumer (NFMS_C) with DN of ManagedFunction MOI.\n2)\tIf the ManagedFunction instance contains virtualized part, NFMS_P invokes VNF instance termination procedure. For the interaction with ETSI NFV MANO, the procedure is with ETSI NFV MANO as described in clause 7.2.7 (Terminate VNF operation) and clause 7.2.8 (Delete VNF Identifier operation) in ETSI GS NFV-IFA008 [15] or clause 7.3.5 (Update NS operation) in ETSI GS NFV-IFA013 [3].\n3)\tNFMS_P deletes the ManagedFunction MOI.\n4)\tNFMS_P sends the response (see deleteMOI operation defined in TS 28.532 [8]) to NFMS_C.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.13\tProcedure of feasibility check and reservation of NSI",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Figure 7.13-1 presents a network slice feasibility check and reservation procedure, illustrating the steps involved in allocating resources for a specific network service. The figure shows a high-level network architecture with various components such as the network function virtualization (NFV) platform, cloud infrastructure, and service orchestration. The process begins with a request for a network slice, which is then evaluated for feasibility based on resource availability and capacity. Once approved, the request is reserved, and the necessary resources are allocated. The figure emphasizes the importance of efficient resource management and service provisioning in modern network environments.\nFigure 7.13-1 Network slice feasibility check and reservation procedure\n1)\tNetwork Slice Management Service Provider (NS MnS Provider) receives a feasibility check with or without reservation job creation request (see createMOI operation defined in TS 28.532 [8]) from Network Slice Management Service Consumer (NS MnS Consumer) with feasibility check and reservation requirements (including serviceProfile, resourceReservation,recommendationRequest, requestedReservationExpiration and feasibilityTimeWindow of FeasibilityCheckAndReservationJob IOC defined in TS 28.541 [6]). The request is to check whether the network slice related requirements (i.e., ServiceProfile) can be satisfied and optionally be requested to be reserved. The resourceReservation attribute in the request may indicate whether reservation is also requested or not.\n2)\tNS MnS Provider creates the FeasibilityCheckAndReservationJob instance and configures the attribute \"ServiceProfile\" and other attributes received from the request and NS MnS Provider starts executing the feasibility check process.\n3)\tNS MnS Provider sends the feasibility check and reservation job creation response with the DN of the FeasibilityCheckAndReservationJob instance (see createMOI operation defined in TS 28.532 [8]) to NS MnS Consumer.\n4)\tNS MnS Provider performs feasibility check locally on whether the resources are available.\nNS MnS Provider may invoke the feasibility check and reservation procedure for the constituent network slice subnet as described in clause 7.14\n5)\tNS MnS Provider performs resource reservation process when resourceReservation is True and feasibilityResult is feasible.\n6) The NS MnS Consumer may subscribe for the attribute value change notifications for this specific job or for any of the job(s) created by it to receive any asynchronous job progress notifications for those job(s). NS MnS Provider then sends the asynchronous job progress notification for feasibility check and reservation process with processMonitor attributes.\n7)\tNS MnS Provider sends the final notification with the feasibility check and reservation status (including feasibilityResult, inFeasibleReason, resourceReservationStatus, reservationFailureReason, reservationExpiration and recommendedRequirements of FeasibilityCheckAndReservationJob IOC in TS 28.541 [6]).\n8-10) Once after step 3, NS MnS Consumer can send query request to NS MnS Provider any time, to know the feasibility check and reservation job status and receive the feasibility check and reservation job status.\n11-13)\tNS MnS consumer can request to delete the feasibility check and reservation job any time and the NS MnS Provider deletes the Job and sends the Job deletion response. NS MnS Provider will cancel the resource reservation when the feasibility check and reservation job is deleted.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.14\tProcedure of feasibility check and reservation of network slice subnet",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Figure 7.14-2 illustrates the network slice subnet feasibility check and reservation procedure, which is crucial for efficiently allocating resources and ensuring optimal network performance. The figure depicts the process of evaluating the suitability of subnets for network slices, taking into account factors such as bandwidth, latency, and security requirements. It also outlines the steps involved in reserving these subnets for specific use cases, including the allocation of virtual network functions (VNFs) and the establishment of connectivity between network slices. The figure emphasizes the importance of a well-planned and organized network architecture to support diverse applications and services effectively.\nFigure 7.14-2 Network slice subnet feasibility check and reservation procedure\n1)\tNetwork Slice Subnet Management Service Provider (NSS MnS Provider) receives a feasibility check with or without reservation job creation request (see createMOI operation defined in TS 28.532 [8]) from Network Slice Subnet Management Service Consumer (NSS MnS Consumer) with feasibility check and reservation requirements (including sliceProfile, resourceReservation, recommendationRequest, requestedReservationExpiration and feasibilityTimeWindow defined in FeasibilityCheckAndReservationJob IOC defined in TS 28.541 [6]). The request is to check whether the network slice subnet related requirements (i.e. SliceProfile) can be satisfied and optionally be requested to be reserved. The resourceReservation attribute in the request may indicate whether reservation is also requested or not.\n2)\tNSS MnS Provider creates the FeasibilityCheckAndReservationJob instance and configures the attribute \"SliceProfile\" and other attributes received from the request and NSS MnS Provider starts executing the feasibility check process.\n3)\tNSS MnS Provider sends the feasibility check and reservation job creation response for the received DN of theFeasibilityCheckAndReservationJob (see createMOI operation defined in TS 28.532 [8]) requests to NSS MnS Consumer.\n4) \tNSS MnS Provider performs feasibility check locally (e.g 3GPP MnFs) on whether the resources are available.\nNSS MnS Provider may optionally perform feasibility check with other entities in control of the network slice subnet constituents (e.g., MANO, TN Manager) of the network slice subnet.\n5)\tNSS MnS Provider performs resource reservation process when resourceReservation is True and feasibilityResult is feasible.\n6)\tThe NSS MnS Consumer may subscribe for the attribute value change notifications for this specific job or for any of the job(s) created by it to receive any asynchronous job progress notifications for those job(s). NSS MnS Provider then sends the asynchronous job progress notification for feasibility check and reservation process with processMonitor attributes.\n7)\tNSS MnS Provider sends the final notification with the feasibility check and reservation status (including feasibilityResult, inFeasibleReason, resourceReservationStatus, reservationFailureReason, reservationExpiration and recommendedRequirements defined in FeasibilityCheckAndReservationJob IOC in TS 28.541 [6]).\n8-10)\tOnce after step 3, NSS MnS Consumer can send query request to NSS MnS Provider any time, to know the feasibility check and reservation job status and receive the feasibility check and reservation job status.\n11-13) NSS MnS consumer can request to delete the feasibility check and reservation job any time and the NSS MnS Provider deletes the Job and sends the Job deletion response. NSS MnS Provider will cancel the resource reservation when the feasibility check and reservation job is deleted.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.15\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.16\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.17\tProcedure of management interaction with NFV MANO for network service priority",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Figure 7.17-1 illustrates the procedure of management interaction with NFV MANO for network service priority.\nFigure 17.1-1 illustrates the management interaction with NFV MANO, showcasing the orchestration of network functions through a centralized controller. The figure depicts the interaction between the service provider's management system and the NFV MANO platform, highlighting the process of service creation, configuration, and monitoring. Key components include the service model, policy model, and orchestration model, which work together to manage and deploy virtual network functions. The figure emphasizes the automation and agility enabled by NFV MANO in managing complex network services.\nFigure 17.1-1: Management interaction with NFV MANO\n1.\tNetwork provisioning management service provider receives a CreateMOI requrest for SubNetwork IOC from a consumer. In the request, the priority is assigned by providing the value to the priorityLabel attribute.\n2.\tIf the sub-network to be created contains virtualisation part (i.e. VNF or VL), Network provisioning management service provider chooses a proper NSD deployment flavour with appropriate priority (see clause 6.3.2.2 in ETSI GS NFV-IFA 014 [12] ) according to the value of priorityLabel attribute in the CreateMOI requrest. Network provisioning management service provider invokes the NS instantiation procedures to create a NS instance.\nNote:\tNS instantiation procedure is described in clause 7.3.3 in ETSI GS NFV-IFA 013 [3].\n3.\tFor each constituent NF, Network provisioning management service provider invokes NF Creation Procedure as described in clause 7.10.\n4.\tThe Network provisioning management service provider sends the response to the consumer with DN of MOI for the created sub-network.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.18\tProcedure for Network slice instance activation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Figure 7.18-1 illustrates the procedure for network slice instance activation.\n\nFigure 7.18-1 illustrates the process of network slice instance activation, which involves the orchestration of network resources to create a dedicated virtual network slice for a specific use case. The figure depicts the interaction between the network function virtualization (NFV) manager and the network functions (NFs) within a cloud-native infrastructure. The NFV manager is responsible for managing and orchestrating the lifecycle of network functions, while the NFs are the virtualized components that perform network functions such as routing, firewalling, and load balancing. The figure shows how the NFV manager interacts with the NFs to activate a network slice, which is a logical grouping of network resources that can be provisioned and managed as a single entity. This process is crucial for enabling dynamic and efficient resource allocation in modern network environments.\nFigure 7.18-1: Network slice instance activation\n1.\tNetwork Slice Management Service Provider (NSMS_P) receives a modifyMOIAttributes operation (defined in TS 28.532 [8]) from Network Slice Management Service Consumer (NSMS_C) with the DN of NetworkSlice instance and the new value of UNLOCKED for the administrative state (see NetworkSlice IOC and administrativeState attribute defined in clause 6.3.1 in TS 28.541[6]).\n2.\tNSMS_P, as the role of etwork Slice Subnet Management Service Consumer (NSSMS_C), invokes the network slice subnet instance activation procedure.\n3.\tNSMS_P modifies the value of the administrative state attribute of the NetworkSlice instance.\n4.\tNSMS_P sends network slice instance administrative state attribute modification result (see modifyMOIAttributes operation defined in TS 28.532 [8]) to NSMS_C.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.19\tProcedure for Network slice instance deactivation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Figure 7.19-1 illustrates the procedure for network slice instance deactivation.\nFigure 7.19-1 illustrates the process of deactivating a network slice instance, showcasing the various steps involved in the deactivation process. The figure depicts the network slice instance, represented by a rectangular box, which is connected to multiple components such as the network function virtual machine (NFV), virtualized infrastructure, and the network control plane. The deactivation process is depicted as a series of steps, starting with the network slice instance being marked for deactivation, followed by the removal of the instance from the network slice catalog, and finally, the decommissioning of the instance from the virtualized infrastructure. The figure also highlights the importance of proper deactivation procedures to ensure the smooth transition of network resources and minimize downtime.\nFigure 7.19-1: Network slice instance deactivation\n1.\tNetwork Slice Management Service Provider (NSMS_P) receives a modifyMOIAttributes operation (defined in TS 28.532 [8]) from Network Slice Management Service Consumer (NSMS_C) with the DN of NetworkSlice instance and the new value of LOCKED for the administrative state (see NetworkSlice IOC and administrativeState attribute defined in clause 6.3.1 in TS 28.541[6]).\n2.\tNSMS_P, as the role of Network Slice Subnet Management Service Consumer (NSSMS_C), invokes the Network slice subnet instance deactivation procedure.\n3.\tNSMS_P modifies the value of the administrative state attribute of the NetworkSlice instance.\n4.\tNSMS_P sends network slice instance administrative state attribute modification result (see modifyMOIAttributes operation defined in TS 28.532 [8]) to NSMS_C.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.20\tProcedure for Network slice sunbet instance activation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Figure 7.20-1 illustrates the procedure for network slice subnet instance activation.\nFigure 7.20-1 illustrates the process of network slice subnet instance activation, showcasing the various components involved in the activation of a network slice. The figure depicts the interaction between the network function virtualized (NFV) manager, network function virtualized (NFV) controller, and the network slice subnet instance. The NFV manager is responsible for orchestrating the activation of the network slice, while the NFV controller manages the lifecycle of the network functions. The network slice subnet instance is the actual deployment of the network functions within the defined network slice. The figure highlights the importance of coordination between these components to ensure a seamless activation process.\nFigure 7.20-1: Network slice subnet instance activation\n1.\tNetwork Slice Subnet Management Service Provider (NSSMS_P) receives a modifyMOIAttributes operation (defined in TS 28.532 [8]) from Network Slice Subnet Management Service Consumer (NSSMS_C) with the DN of NetworkSliceSubnet instance and the new value of UNLOCKED for the administrative state (see NetworkSliceSubnet IOC and administrativeState attribute defined in clause 6.3.2 in TS 28.541[6]).\n2.\tIf the network slice subnet instance consists of constituent network slice subnet instance(s), then NSSMS_P, as the role of Network Slice Subnet Management Service Consumer (NSSMS_C), invokes the network slice subnet instance activation procedure for the constituent network slice subnet instance(s).\n3.\tIf the network slice subnet instance consists of constituent is NF instance, then NSSMS_P request the NF related provisioning management service provider to activate the NF (e.g., activate the NF in sleep mode, turn on the ports).\n4.\tNSSMS_P modifies the value of the administrative state attribute of the NetworkSliceSubnet instance.\n5.\tNSSMS_P sends network slice subnet instance administrative state attribute modification result (see modifyMOIAttributes operation defined in TS 28.532 [8]) to NSMS_C.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.21\tProcedure for Network slice subnet instance deactivation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Figure 7.21-1 illustrates the procedure for network slice subnet instance deactivation.\n\nFigure 7.21-1 illustrates the process of deactivating a network slice subnet instance. The figure depicts a network infrastructure with various components, including network slices, subnets, and instances. The process begins with the network slice being activated, which is represented by the highlighted box. This activates the associated subnet and instances, allowing them to function within the network. The deactivation process is depicted by the subsequent steps, where the subnet and instances are deactivated, returning the network slice to its original state. This figure is essential for understanding the lifecycle management of network resources in a complex network environment.\nFigure 7.21-1: Network slice subnet instance deactivation\n1.\tNetwork Slice Subnet Management Service Provider (NSSMS_P) receives a modifyMOIAttributes operation (defined in TS 28.532 [8]) from Network Slice Subnet Management Service Consumer (NSSMS_C) with the DN of NetworkSliceSubnet instance and the new value of LOCKED for the administrative state (see NetworkSliceSubnet IOC and administrativeState attribute defined in clause 6.3.2 in TS 28.541[6]).\n2.\tIf the network slice subnet instance consists of constituent network slice subnet instance(s), then NSSMS_P, as the role of Network Slice Subnet Management Service Consumer (NSSMS_C), invokes the network slice subnet instance deactivation procedure for the constituent network slice subnet instance(s).\n3.\tIf the network slice subnet instance consists of constituent is NF instance, then NSSMS_P requests the NF related provisioning management service provider to either deactivate the NF (if it is dedicated for this network slice subnet instance and not being used by any other network slice subnet instance) or to modify the NF (if it is shared by other network slice subnet instance).\n4.\tNSSMS_P modifies the value of the administrative state attribute of the NetworkSliceSubnet instance.\n5.\tNSSMS_P sends network slice subnet instance administrative state attribute modification result (see modifyMOIAttributes operation defined in TS 28.532 [8]) to NSMS_C.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tVoid",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "9\tRESTful HTTP-based solution set of provisioning",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "9.1\tNetwork slice provisioning management service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.1.1\tMapping of operations",
+                            "text_content": "Table 9.1.1-1: Mapping of IS operations to SS equivalents\n\nThis operation is to allocate a network slice instance provided by the service provider, the network slice instance may be new or existing.\nTable 9.1.2-1: Mapping of IS operation input parameters to SS equivalents (HTTP POST)\n\nTable 9.1.2-2: Mapping of IS operation output parameters to SS equivalents (HTTP POST)\n\nThe message flow for allocation is as follows:\n1.\tThe MnS consumer sends a HTTP POST request to the MnS producer.\n-\tThe target URI is equal to the concatenation of URI of the parent resource of resource to be created, and the resource (in this case ServiceProfile) to be created.\n-\tThe message body shall carry the complete representation of the resource to be created. The resource identifier shall be absent or carry null semantics.\n2.\tThe MnS producer sends a HTTP POST response to the MnS consumer.\n-\tOn success, \"201 Created\" shall be returned. The Location header shall carry the URI of the new resource (in this case ServiceProfile) and the message body shall contain the complete complete representation of the ServiceProfile and networkSliceDN identifying the NetworkSlice MOI created.\n-\tOn failure, an appropriate error code shall be returned. The response message body may provide additional error information.\nThis operation deallocate a service profile in an NSI. The provider may terminate the requested NSI or modify the requested NSI without termination to satisfy the request.\nTable 9.1.1.3-1: Mapping of IS operation input parameters to SS equivalents (HTTP DELETE)\n\nTable 9.1.1.3-2: Mapping of IS operation output parameters to SS equivalents (HTTP DELETE)\n\nThe message flow for deallocation is as follows:\n1.\tThe MnS consumer sends a HTTP DELETE request to the MnS producer.\n-\tThe target URI is equal to the concatenation of URI of the parent resource and the resource (in this case ServiceProfile) to be deleted.\n-\tThe message body shall contain the networkSliceDN identifying the NetworkSlice MOI.\n2.\tThe MnS producer sends a HTTP DELETE response to the MnS consumer.\n-\tOn success, \"204 No content\" shall be returned.\n-\tOn failure, an appropriate error code shall be returned. The response message body may provide additional error information.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.1.1-1: Mapping of IS operations to SS equivalents",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.2-1: Mapping of IS operation input parameters to SS equivalents (HTTP POST)",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.2-2: Mapping of IS operation output parameters to SS equivalents (HTTP POST)",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.1.3-1: Mapping of IS operation input parameters to SS equivalents (HTTP DELETE)",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.1.3-2: Mapping of IS operation output parameters to SS equivalents (HTTP DELETE)",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "9.1.2\tResources",
+                            "text_content": "9.1.2.1.1.1\tDescription\nThis resource represents collects of network slice related requirement (i.e. ServiceProfiles).\n9.1.2.1.1.2\tURI\nResource URI: {MnSRoot}/NSProvMnS/{MnSVersion}/ServiceProfile\n9.1.2.1.1.3\tHTTP methods\n9.1.2.1.1.3.1\tPOST\nThe POST method create a serviceProfile, the provider may create a NSI or using existing NSI to satisfy the serviceProfile.\nThis method shall support the request data structures, and the response data structures and response codes specified in the following tables.\nTable 9.1.2.1.1.3.1-1: Data structures supported by the POST Request Body on this resource\n\nTable 9.1.2.1.1.3.1-2: Data structures supported by the POST Request Body on this resource\n\n9.1.2.1.1.3.2\tDELETE\nThe DELETE method deletes a ServiceProfile.\nThis method shall support the request data structures, and the response data structures and response codes specified in the following tables.\nTable 9.1.2.1.1.3.2-1: Data structures supported by the DELETE Request Body on this resource\n\nTable 9.1.2.1.1.3.2-2: Data structures supported by the DELETE Request Body on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.1.2.1.1.3.1-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.2.1.1.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.2.1.1.3.2-1: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.1.2.1.1.3.2-2: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "9.2\tNetwork slice subnet provisioning management service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "9.2.1\tMapping of operations",
+                            "text_content": "Table 9.2.1.1-1: Mapping of IS operations to SS equivalents\n\nThis operation is to allocate a network slice subnet instance provided by the service provider, the network slice subnet instance may be new or existing.\nTable 9.2.1.2-1: Mapping of IS operation input parameters to SS equivalents (HTTP POST)\n\nTable 9.2.1.2-2: Mapping of IS operation output parameters to SS equivalents (HTTP POST)\n\nThe message flow for allocation is as follows:\n1.\tThe MnS consumer sends a HTTP POST request to the MnS producer.\n-\tThe target URI is equal to the concatenation of URI of the parent resource of resource to be created, and the resource (in this case SliceProfile) to be created.\n-\tThe message body shall carry the complete representation of the resource to be created. The resource identifier shall be absent or carry null semantics.\n2.\tThe MnS producer sends a HTTP POST response to the MnS consumer.\n-\tOn success, \"201 Created\" shall be returned. The Location header shall carry the URI of the new resource (in this case SliceProfile) and the message body shall contain the complete complete representation of the SliceProfile and networkSliceSubnetDN identifying the NetworkSliceSubnet MOI created.\n- \tOn failure, an appropriate error code shall be returned. The response message body may provide additional error information.\nThis operation deallocate a slice profile in an NSSI. The provider may terminate the requested NSSI or modify the requested NSSI without termination to satisfy the request.\nTable 9.2.1.3-1: Mapping of IS operation input parameters to SS equivalents (HTTP DELETE)\n\nTable 9.2.1.3-2: Mapping of IS operation output parameters to SS equivalents (HTTP DELETE)\n\nThe message flow for deallocation is as follows:\n1.\tThe MnS consumer sends a HTTP DELETE request to the MnS producer.\n-\tThe target URI is equal to the concatenation of URI of the parent resource and the resource (in this case SliceProfile) to be deleted.\n-\tThe message body shall contain the networkSliceSubnetDN identifying the NetworkSliceSubnet MOI.\n2.\tThe MnS producer sends a HTTP DELETE response to the MnS consumer.\n-\tOn success, \"204 No content\" shall be returned.\n-\tOn failure, an appropriate error code shall be returned. The response message body may provide additional error information.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.2.1.1-1: Mapping of IS operations to SS equivalents",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.1.2-1: Mapping of IS operation input parameters to SS equivalents (HTTP POST)",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.1.2-2: Mapping of IS operation output parameters to SS equivalents (HTTP POST)",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.1.3-1: Mapping of IS operation input parameters to SS equivalents (HTTP DELETE)",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.1.3-2: Mapping of IS operation output parameters to SS equivalents (HTTP DELETE)",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "9.2.2\tResources",
+                            "text_content": "9.2.2.1.1.1\tDescription\nThis resource represents collects of network slice subnet related requirements (i.e. SliceProfile).\n9.2.2.1.1.2\tURI\nResource URI: {MnSRoot}/NSSProvMnS/{MnSVersion}/SliceSubnetMgmt/SliceProfile\n9.2.2.1.1.3\tHTTP methods\n9.2.2.1.1.3.1\tPOST\nThe POST method create a SliceProfile, the provider may create a new NSSI or using existing NSSI to support the SliceProfile.\nThis method shall support the request data structures, and the response data structures and response codes specified in the following tables.\nTable 9.2.2.1.1.3.1-1: Data structures supported by the POST Request Body on this resource\n\nTable 9.2.2.1.1.3.1-2: Data structures supported by the POST Request Body on this resource\n\n9.2.2.1.1.3.2\tDELETE\nThe DELETE method deletes a SliceProfile.\nThis method shall support the request data structures, and the response data structures and response codes specified in the following tables.\nTable 9.2.2.1.1.3.2-1: Data structures supported by the DELETE Request Body on this resource\n\nTable 9.2.2.1.1.3.2-2: Data structures supported by the DELETE Request Body on this resource\n\nThe Generic Slice Template (GST) ([9]) provides a standardized list of attributes that can be used to characterise different types of network slice. GST is generic and is not tied to any:\n-\tType of network slice\n-\tAgreement between a Network Slice Customer (NSC) and a Network Slice Provider (NSP).\nA Network Slice Type (NEST) is a GST filled with (ranges of) values. There may be two kinds of NESTs:\n-\tStandardized NESTs (S-NEST), i.e. NESTs which character attributes are assigned (ranges of) values by SDOs, working groups, foras, etc. such as e.g. 3GPP, GSMA, 5GAA, 5G-ACIA, etc.;\n-\tPrivate NESTs (P-NEST), i.e. NESTs which character attributes are assigned (ranges of) values by the Network Slice Providers, which are different from those assigned in S-NESTs.\nNetwork Slice Providers can build their network slice product offering based on S-NESTs and/or their P-NESTs. For example, a Standardized Network Slice Type (S-NEST) NST-A, for which the attribute ‘Packet delay budget’ (see [x] – clause 3.4.26) value range is between 1 ms and 100 ms, is specified by 3GPP. Netwok Slice Provider Y may offer e.g. 3 products based on NST-A:\n-\tPlatinum NST-A based network slice product, where the attribute ‘Packet delay budget’ (see [x] – clause 3.4.26) value range is between 1 ms and 10 ms;\n-\tGold NST-A based network slice product, where the attribute ‘Packet delay budget’ (see [x] – clause 3.4.26) value range is between 11 ms and 50 ms;\n-\tSilver NST-A based network slice product, where the attribute ‘Packet delay budget’ (see [x] – clause 3.4.26) value range is between 51 ms and 100 ms.\nNSP Y’s customers can then order network slice instances from Y’s product catalog, as depicted by Figure A.1.\nFigure A.1 illustrates the transformation of a Goods and Services Tax (GST) system into a Simplified, National, and Unified Goods and Services Tax (S-(/P-)NEST) framework. The figure showcases the various stages of the transition, highlighting the changes in tax structure, administrative processes, and the impact on businesses and consumers. The visual elements, such as the flowchart and labels, provide a clear understanding of how the GST system evolved into the S-(/P-)NEST model, emphasizing the simplification and unification of tax regulations.\nFigure A.1: From GST to S-(/P-)NEST based product ordering\n1)\tA Network Slice Customer orders network slice instance to a Network Slice Provider, based on NSP’s product offering, by sending a request to NSP’ BSS\n2)\tNSP’s BSS receives the request from NSC and translates NSC requirements into NSP technical parameter values\n3)\tNSP’s BSS sends a request to NSP’s OSS to provide a network slice instance which fits NSC’s requirements (see Table 6.1-1)\n4)\tNSP’s Network Slice Provisioning MnS either creates a new network slice instance or assigns an already existing network slice instance to NSC’s request\n5)\tNSP’s Network Slice Provisioning MnS may have to request the Network Slice Subnet Provisioning MnS to provide a network slice subnet instance corresponding to the network slice instance (see Table 6.2-1)\n6)\tNSP’s Network Slice Subnet Provisioning MnS may have to create one or more inner network slice subnet instances\n7)\tNSP’s Network Function Provisioning MnS configures VNFs and/or PNFs (see Table 6.3-1).\nFigure A.2 illustrates the high-level call flow of the Network Slice journey (NSaaS model), showcasing the various stages and components involved in creating and managing network slices. The figure begins with a customer initiating a request for a network slice, which is then processed by the service provider's orchestration system. This system coordinates with the network functions virtualization (NFV) infrastructure to allocate resources and configure the required network functions. The resulting network slice is then handed off to the service delivery platform, which is responsible for managing the slice's performance and ensuring quality of service. Throughout this process, the figure emphasizes the dynamic nature of network slicing, highlighting the ability to quickly and efficiently allocate resources to meet changing customer demands.\nFigure A.2: Network Slice journey (NSaaS model) – high-level call flow\nDepending on NSP’s product offering, NSC can order network slice instances spanning one or more network domains, e.g.:\n-\tnetwork slice instances composed of a RAN-only network slice subnet instance\nFigure A.3 illustrates a radio access network (RAN) only network slice subnet exposed as a network slice. The figure depicts the RAN as the core component, with the network slice subnet encapsulated within it. The RAN is shown as a series of interconnected nodes, each responsible for handling data traffic and providing connectivity to end-users. The network slice subnet is represented as a separate layer, with its own set of virtualized resources and services. The figure highlights the importance of the RAN in providing reliable and efficient connectivity, while also emphasizing the need for a separate network slice subnet to support specialized use cases and services.\nFigure A.3: RAN-only network slice subnet exposed as network slice\n-\tnetwork slice instances composed of a CN-only network slice subnet instance\n-\tnetwork slice instances composed of a RAN network slice subnet instance + Transport network slice subnet + CN network slice subnet instance\nFigure A.4 illustrates the RAN (Radio Access Network), TN (Transport Network), and CN (Core Network) network slices, which are exposed as network slices. The RAN is responsible for providing wireless connectivity, the TN handles the transport of data, and the CN processes and manages the network traffic. The figure shows how these network slices are interconnected and how they contribute to the overall functionality of the telecommunication system.\nFigure A.4: RAN+TN+CN network slice subnets exposed as network slice\n-\tnetwork slice instances composed of a RAN network slice subnet instance + CN network slice subnet instance + IMS network slice subnet instance\n-\tor more, as shown below..\nFigure A.5 illustrates the network architecture of a telecommunications system, showcasing the various components and their interconnections. The figure depicts the Radio Access Network (RAN), Transport Network (TN), Core Network (CN), and the Interworking Function (IWF) as separate entities, each with its own subnet. The IMS (IP Multimedia Subsystem) is also represented, indicating its role in managing multimedia services. The figure emphasizes the importance of these components working together to provide seamless communication services. The exposed network slices, as shown in the figure, highlight the dynamic nature of the network and its ability to adapt to changing demands.\nFigure A.5: RAN+TN+CN+TN+IMS+TN+AS network slice subnets exposed as network slice\nThe following network slice related identifiers serve different purposes:\n\nThe NSI ID and S-NSSAI are configuration parameters of the management system.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 9.2.2.1.1.3.1-1: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.2.1.1.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 50,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.2.1.1.3.2-1: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 51,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 9.2.2.1.1.3.2-2: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 52,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The following network slice related identifiers serve different purposes:",
+                                    "table number": 53,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "C.1\tGeneral",
+            "description": "This annex contains the PlantUML source code for procedures defined in clause 7 of the present document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.2\tProcedure of network slice instance allocation",
+            "description": "\n@startuml\n\nskinparam shadowing false\nskinparam monochrome true\nhide footbox\n\nactor \"NSMS_C\" as NSMS_Consumer\nparticipant \"\\tNSMS_P\\t\\t\" as NSMS_Provider\n\nalt NSMS_C sends AllocateNsi request\nNSMS_Consumer -> NSMS_Provider: 1a-1. AllocateNsi(ServiceProfile) Request\nNSMS_Provider -> NSMS_Provider: 1a-2. Creates NetworkSliceController MOI\nNSMS_Provider --> NSMS_Consumer: 1a-3. AllocateNsi(ServiceProfileId) Response\nNSMS_Provider --> NSMS_Consumer: 1a-4. notifyMOICreation(\\n\\tobjectClass=NetworkSliceController, \\n\\tobjectInstance=DN of NetworkSliceController MOI,...)\nelse NSMS_C sends createMOI request\nNSMS_Consumer -> NSMS_Provider: 1b-1. createMOI(\\n\\t managedObjectClass=NetworkSliceController, \\n\\t attributeListIn=inputServiceProfile,...) Request\nNSMS_Provider -> NSMS_Provider: 1b-2. Creates NetworkSliceController MOI\nNSMS_Provider --> NSMS_Consumer: 1b-3. createMOI() Response\nend alt\n\nNSMS_Provider -> NSMS_Provider: 2. Decides to create a new NetworkSlice MOI\\\n\\n\\t or use an existing NetworkSlice MOI.\n\nalt Using an existing NetworkSlice MOI\nNSMS_Provider -> NSMS_Provider: 3a-1. Identifies the NetworkSlice MOI to re-use\nNSMS_Provider -> NSMS_Provider: 3a-2. Configures NetworkSlice MOI with \\n DN of NetworkSliceController MOI\nNSMS_Provider -> NSMS_Provider: 3a-3. Configures NetworkSliceController MOI with \\n DN of NetworkSlice MOI\nopt If the existing NetworkSlice MOI needs to be modified\nref over NSMS_Provider\n3a-4. Procedure of Network Slice Instance Modification\nend ref\nend opt\n\nelse Creating a new NetworkSlice MOI\nNSMS_Provider -> NSMS_Provider: 3b-1. Derives the network slice subnet related requirements\nref over NSMS_Provider\n3b-2. Procedure of Network Slice Subnet Instance Allocation\nend ref\n|||\nNSMS_Provider -> NSMS_Provider: 3b-3. Creates NetworkSlice MOI and \\n configures NetworkSlice MOI with \\nDN of NetworkSliceController MOI and \\nDN of NetworkSliceSubnet MOI\nNSMS_Provider -> NSMS_Provider: 3b-4. Configures NetworkSliceController MOI with \\n DN of NetworkSlice MOI\n\n|||\nend alt\n\nNSMS_Provider -> NSMS_Provider: 4. Updates attributes of NetworkSliceController MOI\\nindicating completion of the procedure\n\ngroup Monitoring network slice allocation progress and result. \\nThis can be happened anytime after step NetworkSliceController is created (i.e., step 1a-2 or step 1b-2)\nalt obtain the progress and result by subscribe-notification method\nNSMS_Provider -> NSMS_Consumer: 5a. Notify network slice allocation progress and result \\n (DN of NetworkSliceController MOI and its attributes)\nelse obtain the progress and result by query method\nNSMS_Consumer -> NSMS_Provider: 5b-1. Request to query the \\n NetworkSliceController information (DN of NetworkSliceController)\nNSMS_Provider -> NSMS_Consumer: 5b-2. Response with the NetworkSliceController \\n information (DN of NetworkSliceController and values of its attribute)\nend alt\n\n\n@enduml\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.3\tProcedure of Network Slice Subnet Instance Allocation",
+            "description": "@startuml\n\nskinparam shadowing false\nskinparam monochrome true\nhide footbox\n\nactor \"NSSMS_C\" as NSSMS_Consumer\nparticipant \"NSSMS_P\" as NSSMS_Provider\n\n'alt CRUD operations not visible to the consumer\nalt NSSMS_C sends AllocateNssi request\nNSSMS_Consumer -> NSSMS_Provider: 1a-1. AllocateNssi(SliceProfile) Request\nNSSMS_Provider -> NSSMS_Provider: 1a-2. Creates NetworkSliceSubnetController MOI\nNSSMS_Provider --> NSSMS_Consumer: 1a-3. AllocateNssi(SliceProfileId) Response\nNSSMS_Provider -> NSSMS_Consumer: 1a.4. notifyMOICreation(\\n\\tobjectClass=NetworkSliceSubnetController, \\n\\tobjectInstance=DN of NetworkSliceSubnetController MOI,...)\nelse NSSMS_C sends createMOI request\nNSSMS_Consumer -> NSSMS_Provider: 1b-1. createMOI(\\n\\t managedObjectClass=NetworkSliceSubnetController, \\n\\t attributeListIn=inputSliceProfile,...) Request\nNSSMS_Provider -> NSSMS_Provider: 1b-2. Creates NetworkSliceSubnetController MOI\nNSSMS_Provider --> NSSMS_Consumer: 1b-3. createMOI() Response\nend\n\nref over NSSMS_Provider\n2. Procedure of feasibility check and reservation of network slice subnet\nend ref\n\nNSSMS_Provider -> NSSMS_Provider: 3. Decides to create a new NetworkSliceSubnet MOI\\\n\\n\\t or use an existing NetworkSliceSubnet MOI.\n\nalt Using an existing NetworkSliceSubnet MOI\nNSSMS_Provider -> NSSMS_Provider: 4a-1. Identifies the NetworkSliceSubnet MOI to re-use\n|||\nNSSMS_Provider -> NSSMS_Provider: 4a-2. Configures NetworkSliceSubnet MOI with DN of NetworkSliceSubnetController MOI\nNSSMS_Provider -> NSSMS_Provider: 4a-3. Configures NetworkSliceSubnetController MOI with\\nDN of NetworkSliceSubnet MOI\n\nopt If the existing NetworkSliceSubnet MOI needs to be modified\n|||\nref over NSSMS_Provider\n4a-4. Procedure of Network Slice Subnet Instance Modification\nend ref\nend opt\n\nelse Using a new NetworkSliceSubnet MOI\n\nNSSMS_Provider -> NSSMS_Provider: 4b-1. Creates an MOI of NetworkSliceSubnet and \\nconfigures NetworkSliceSubnet MOI with DN of NetworkSliceSubnetController MOI\n\nNSSMS_Provider -> NSSMS_Provider: 4b-2. Configures NetworkSliceSubnetController MOI with\\nDN of NetworkSliceSubnet MOI\n\nNSSMS_Provider -> NSSMS_Provider: 4b-3. Derives the requirements for corresponding\\n network slice subnet constituent(s) and transport network\nopt If the NetworkSliceSubnet MOI to be created contains virtualization part (i.e., VNF or VL)\n|||\nref over NSSMS_Provider\n4b-4. NS instantiation procedure\nend ref\nNSSMS_Provider -> NSSMS_Provider: 4b-5. Configures the NetworkSliceSubnet MOI attribute nsInfo\nend opt\nloop 4b-6. for each constituent NetworkSliceSubnet MOI\n|||\nref over NSSMS_Provider\n4b-6a. Procedure of Network Slice Subnet Instance Allocation\nend ref\nNSSMS_Provider -> NSSMS_Provider: 4b-6b. Configures the NetworkSliceSubnet MOI \\n attribute networkSliceSubnetRef with the DN constituent NetworkSliceSubnet\nend loop\n\nloop 4b-7. for each constituent Network Function\n|||\nref over NSSMS_Provider\n4b-7a. \\tProcedure of NF instance creation or\n\\t\\tProcedure of NF instance modification\nend ref\nNSSMS_Provider -> NSSMS_Provider: 4b-7b. Configures the NetworkSliceSubnet MOI \\n attribute managedFunctionRef with the DN constituent ManagedFunction\nend loop\n\nloop for each transport network requirements\n|||\nref over NSSMS_Provider\n4b-8. Procedure of TN coordination\nsupporting network slicing\n|||\nend ref\nend loop\nend alt\n\n|||\nNSSMS_Provider -> NSSMS_Provider: 5. Configures attributes of NetworkSliceSubnetController MOI\\nindicating completion of the procedure\n\ngroup Monitoring network slice subnet allocation progress and result. \\nThis can be happened anytime after step NetworkSliceSubnetController is created (i.e., step 1a-2 or step 1b-2)\nalt obtain the progress and result by subscribe-notification method\nNSSMS_Provider -> NSSMS_Consumer: 6a. Notify network slice subnet allocation progress and result \\n (DN of NetworkSliceSubnetController MOI and its attributes)\nelse obtain the progress and result by query method\nNSSMS_Consumer -> NSSMS_Provider: 6b-1. Request to query the \\n NetworkSliceSubnetController information (DN of NetworkSliceSubnetController MOI)\nNSSMS_Provider -> NSSMS_Consumer: 6b-2. Response with the NetworkSliceSubnetController \\n information (DN of NetworkSliceSubnetController MOI and values of its attribute)\nend alt\n\n\n@enduml\n\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.4\tProcedure of Network Slice Instance Deallocation",
+            "description": "@startuml\n\nskinparam shadowing false\nskinparam monochrome true\nhide footbox\n\nactor \"NSMS_C\" as NSMS_Consumer\nparticipant \"NSMS_P\" as NSMS_Provider\n\nalt NSMS_C sends DeallocateNsi request\nNSMS_Consumer -> NSMS_Provider: 1a-1. DeallocateNsi(networkSliceDN, serviceProfileId) Request\nNSMS_Provider -> NSMS_Provider: 1a-2. Identifies the DN of NetworkSlice MOI to be deleted.\nNSMS_Provider -> NSMS_Provider: 1a-3. Updates NetworkSlice MOI to remove the \\nreference to DN of NetworkSliceController\nNSMS_Provider -> NSMS_Provider: 1a-4. Deletes NetworkSliceController MOI\nNSMS_Provider --> NSMS_Consumer: 1a-5. DeallocateNsi() Response\nelse NSMS_C sends deleteMOI request\nNSMS_Consumer -> NSMS_Provider: 1b-1. deleteMOI(baseObjectInstance=DN of NetworkSliceController) Request\nNSMS_Provider -> NSMS_Provider: 1b-2. Identifies the DN of NetworkSlice MOI \\nfrom the attribute networkSliceRef and \\nvalue of attribute serviceProfileId from \\nthe NetworkSliceController MOI to be deleted.\nNSMS_Provider -> NSMS_Provider: 1b-3. Updates NetworkSlice MOI to remove the \\nreference to DN of NetworkSliceController\nNSMS_Provider -> NSMS_Provider: 1b-4. Deletes NetworkSliceController MOI\nNSMS_Provider --> NSMS_Consumer: 1b-5. deleteMOI() Response\nend\n\nNSMS_Provider -> NSMS_Provider: 2. Decides to delete or modify NetworkSlice MOI\n\nalt Delete NetworkSlice MOI identified in step 1b-2. \\t\n\nNSMS_Provider -> NSMS_Provider: 3a-1. Deletes NetworkSlice MOI\nref over NSMS_Provider\n3a-2. Procedure of network slice subnet instance deallocation\nend ref\n\nelse Modify NetworkSlice MOI identified in step 1b-2.\n|||\nref over NSMS_Provider\n3b-1. Procedure of Network Slice Subnet Instance Modification\nend ref\n\nNSMS_Provider -> NSMS_Provider: 3b-2. Modify NetworkSlice MOI\nend\n\n@enduml\n\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.5\tProcedure of network slice subnet instance deallocation",
+            "description": "@startuml\n\nskinparam shadowing false\nskinparam monochrome true\nhide footbox\n\nactor \"NSSMS_C\" as NSSMS_Consumer\nparticipant \"NSSMS_P\" as NSSMS_Provider\n'participant \"NSSMS_Provider\" as NSSMS_Consumer\n\nalt NSSMS_C sends DeallocateNssi request\nNSSMS_Consumer -> NSSMS_Provider: 1a-1. DeallocateNssi(networkSliceSubnetDN, sliceProfileId) Request\nNSSMS_Provider -> NSSMS_Provider: 1a-2. Identifies the DN of NetworkSliceSubnet MOI to be deleted\nNSSMS_Provider -> NSSMS_Provider: 1a-3. Updates NetworkSliceSubnet MOI attribute networkSliceSubnetControllerRef \\n\\tto remove DN of NetworkSliceSubnetController\nNSSMS_Provider -> NSSMS_Provider: 1a-4. Deletes NetworkSliceSubnetController MOI\nNSSMS_Provider --> NSSMS_Consumer: 1a-5. DeallocateNssi() Response\nelse NSSMS_C sends deleteMOI request\nNSSMS_Consumer -> NSSMS_Provider: 1b-1. deleteMOI(baseObjectInstance=DN of NetworkSliceSubnetController) Request\nNSSMS_Provider -> NSSMS_Provider: 1b-2. Identifies the DN of NetworkSliceSubnet MOI \\nfrom the attribute networkSliceSubnetRef and \\nvalue of attribute sliceProfileId from the \\nNetworkSliceSubnetController MOI to be deleted\nNSSMS_Provider -> NSSMS_Provider: 1b-3. Updates NetworkSliceSubnet MOI attribute networkSliceSubnetControllerRef \\n\\tto remove DN of NetworkSliceSubnetController\nNSSMS_Provider -> NSSMS_Provider: 1b-4. Deletes NetworkSliceSubnetController MOI\nNSSMS_Provider --> NSSMS_Consumer: 1b-5. deleteMOI() Response\n\nend\n\nNSSMS_Provider -> NSSMS_Provider: 2. Decides to delete or modify NetworkSliceSubnetSubnet MOI\n\nalt 3a. Delete the NetworkSliceSubnetSubnet MOI identified in step 1b-2.\nopt If the NetworkSliceSubnet MOI consists of constituent NetworkSliceSubnetSubnet MOIs\nloop for each constituent NetworkSliceSubnetSubnet MOI\n|||\nref over NSSMS_Provider\n3a-1. Procedure of network slice subnet instance deallocation\nend ref\nend loop\nend opt\n\nopt If the NetworkSliceSubnet MOI consists of NFs\nloop for each constituent ManagedFunction MOI\n|||\nref over NSSMS_Provider\n3a-2. Procedure of NF instance deletion or\n\\t\\tProcedure of NF instance modification\nend ref\nend loop\nend opt\n\nopt If the NetworkSliceSubnet MOI contains TN part\n|||\nref over NSSMS_Provider\n3a-3. Procedure of TN coordination supporting network slicing\nend ref\nend opt\n\nopt If the NetworkSliceSubnet MOI contains virtualized part\n|||\nref over NSSMS_Provider\n3a-4. NS Termination procedure\nend ref\nend opt\n\nNSSMS_Provider -> NSSMS_Provider: 3a-5. Deletes NetworkSliceSubnet MOI\nelse 3b. Modify the NetworkSliceSubnetSubnet MOI identified in step 1b-2.\nopt If the NetworkSliceSubnet MOI consists of constituent NetworkSliceSubnetSubnet MOIs\nloop for each constituent NetworkSliceSubnetSubnet MOI\n|||\nref over NSSMS_Provider\n3b-1. Procedure of network slice subnet instance modification\nend ref\nend loop\nend opt\n\nNSSMS_Provider -> NSSMS_Provider: 3b-2. Modifies NetworkSliceSubnet MOI\nend\n\n@enduml\n\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.6\tProcedure of Network Slice Instance Modification",
+            "description": "@startuml\n\nskinparam shadowing false\nskinparam monochrome true\nhide footbox\n\n\nactor \"NSMS_C\" as NSMS_Consumer\nparticipant \"NSMS_P\" as NSMS_Provider\n\nalt NSMS_C sends new network slice related requirements in NetworkSlice MOI\nNSMS_Consumer -> NSMS_Provider: 1a. modifyMOIAttributes(\\n\\t baseObjectInstance=NetworkSlice, \\n\\t modificationList=serviceProfileList,...) request\nelse NSMS_C sends new network slice related \\n requirements in inputServiceProfile\nNSMS_Consumer -> NSMS_Provider: 1b-1. modifyMOIAttributes(\\n\\t baseObjectInstance=NetworkSliceController, \\n\\t modificationList=inputServiceProfile,...) request\nNSMS_Provider -> NSMS_Provider: 1b-2. Updates NetworkSliceController MOI attributes\\n with new inputServiceProfile along with progress and state information.\nNSMS_Consumer <-- NSMS_Provider: 1b-3. modifyMOIAttributes(modificationListOut=...) response\nend alt\n\nref over NSMS_Provider\n2. Procedure of feasibility check and reservation of network slice\nend ref\n\nNSMS_Provider -> NSMS_Provider: 3. Decomposes the request to network slice subnet requirements.\nref over NSMS_Provider\n4. Procedure of network slice subnet instance modification\nend ref\n\nNSMS_Provider -> NSMS_Provider: 5. Updates NetworkSlice MOI attributes (serviceProfileList)\nopt if NSMS_C sent new network slice related requirements in NetworkSlice MOI (in step 1a)\nNote over NSMS_Provider: NSMS_P sends response for modifyMOIAttributes request received in step 1a.\nNSMS_Consumer <-- NSMS_Provider: 6a. modifyMOIAttributes(modificationListOut=...) response\nelse if NSMS_C sent new network slice related requirements in NetworkSliceController MOI (in step 1b-1)\nNSMS_Provider -> NSMS_Provider: 6b. Updates attributes of NetworkSliceController MOI \\nindicating completion of the procedure\nend opt\n@enduml\n\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.7\tProcedure of Network Slice Subnet Instance Modification",
+            "description": "@startuml\n\nskinparam shadowing false\nskinparam monochrome true\nhide footbox\n\n\nactor \"NSSMS_C\" as NSSMS_Consumer\nparticipant \"NSSMS_P\" as NSSMS_Provider\n\nalt NSSMS_C sends new network slice subnet related requirements in NetworkSliceSubnet MOI\nNSSMS_Consumer -> NSSMS_Provider: 1a. modifyMOIAttributes(\\n\\t baseObjectInstance=NetworkSliceSubnet, \\n\\t modificationList=sliceProfileList,...) request\nelse NSSMS_C sends new network slice subnet related requirements in NetworkSliceSubnetController MOI\nNSSMS_Consumer -> NSSMS_Provider: 1b-1. modifyMOIAttributes(\\n\\t baseObjectInstance=NetworkSliceSubnetController, \\n\\t modificationList=inputSliceProfile,...) request\nNSSMS_Provider -> NSSMS_Provider: 1b-2. Updates NetworkSliceSubnetController MOI attributes\\n with new inputSliceProfile along with progress and state information.\nNSSMS_Consumer <-- NSSMS_Provider: 1b-3. modifyMOIAttributes(modificationListOut=...) response\nend alt\n\nref over NSSMS_Provider\n2. Procedure of feasibility check and reservation of network slice subnet\nend ref\n\nNSSMS_Provider -> NSSMS_Provider: 3. Decomposes the modification request for each constituent MOIs.\n\nloop for each constituent NetworkSliceSubnet MOIs\n|||\nref over NSSMS_Provider\n4a. Procedure of network slice subnet instance modification\nend ref\nend loop\nloop for each constituent ManagedFunction MOIs\n|||\nref over NSSMS_Provider\n4b. Procedure of NF instance creation or\n\\t\\tProcedure of NF instance modification\nend ref\nend loop\nopt The NSSI contains virtualized parts\n|||\nref over NSSMS_Provider\n4c. NS instance scaling/updating/instantiation\nprocedures\nend ref\nend opt\nopt The NSSI contains TN parts\n'|||\nref over NSSMS_Provider\n4d. Procedure of TN coordination\nsupporting network slicing\nend ref\nend opt\n\n\nNSSMS_Provider -> NSSMS_Provider: 5. Updates NetworkSliceSubnet MOI attributes\n\nopt if NSSMS_C sent new network slice related requirements in NetworkSliceSubnet MOI (in step 1a)\nNote over NSSMS_Provider: NSSMS_P sends response for modifyMOIAttributes request received in step 1a.\nNSSMS_Consumer <-- NSSMS_Provider: 6a. modifyMOIAttributes(modificationListOut=...) response\nelse if NSSMS_C sent new network slice related requirements in NetworkSliceSubnetController MOI (in step 1b-1)\nNSSMS_Provider -> NSSMS_Provider: 6b. Updates attributes of NetworkSliceSubnetController MOI \\nindicating completion of the procedure\nend opt\n\n@enduml\n\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 54,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

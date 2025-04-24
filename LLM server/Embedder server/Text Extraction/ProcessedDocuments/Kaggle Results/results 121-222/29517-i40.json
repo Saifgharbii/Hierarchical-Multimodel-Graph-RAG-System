@@ -1,0 +1,739 @@
+{
+    "document_name": "29517-i40.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, certain modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nNOTE 1:\tThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nNOTE 2:\tThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nNOTE 3:\tThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nNOTE 4:\tThe constructions \"can\" and \"cannot\" shall not to be used as substitutes for \"may\" and \"need Not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nNOTE 5:\tThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the stage 3 protocol and data model for the Application Function Event Exposure Service of the 5G System. It provides stage 3 protocol definitions, message flows and specifies the API for the Naf_EventExposure service.\nThe 5G System stage 2 architecture and the procedures are specified in 3GPP TS 23.501 [2], 3GPP TS 23.502 [3], and 3GPP TS 23.288 [4].\nThe Technical Realization of the Service Based Architecture and the Principles and Guidelines for Services Definition are specified in 3GPP TS 29.500 [5] and 3GPP TS 29.501 [6].\nThe Application Function Event Exposure Service is provided by the Application Function (AF). This service exposes service experience events observed at the AF.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[3]\t3GPP TS 23.502: \"Procedures for the 5G System; Stage 2\".\n[4]\t3GPP TS 23.288: \"Architecture enhancements for 5G System (5GS) to support network data analytics services\".\n[5]\t3GPP TS 29.500: \"5G System; Technical Realization of Service Based Architecture; Stage 3\".\n[6]\t3GPP TS 29.501: \"5G System; Principles and Guidelines for Services Definition; Stage 3\".\n[7]\tIETF RFC 9113: \"HTTP/2\".\n[8]\tOpenAPI: \"OpenAPI Specification Version 3.0.0\", .\n[9]\tIETF RFC 8259: \"The JavaScript Object Notation (JSON) Data Interchange Format\".\n[10]\tIETF RFC 9457: \"Problem Details for HTTP APIs\".\n[11]\t3GPP TR 21.900: \"Technical Specification Group working methods\".\n[12]\t3GPP TS 29.523: \"5G System; Policy Control Event Exposure Service; Stage 3\".\n[13]\t3GPP TS 29.571: \"5G System; Common Data Types for Service Based Interfaces Stage 3\".\n[14]\t3GPP TS 33.501: \"Security architecture and procedures for 5G system\".\n[15]\tIETF RFC 6749: \"The OAuth 2.0 Authorization Framework\".\n[16]\t3GPP TS 29.510: \"5G System; Network Function Repository Services; Stage 3\".\n[17]\t3GPP TS 29.122: \"T8 reference point for northbound Application Programming Interfaces (APIs)\".\n[18]\t3GPP TS 29.514: \"5G System; Policy Authorization Service; Stage 3\".\n[19]\t3GPP TS 29.520: \"5G System; Network Data Analytics Services; Stage 3\".\n[20]\tVoid.\n[21]\tIETF RFC 9112: \"HTTP/1.1\".\n[22]\tIETF RFC 9110: \"HTTP Semantics\".\n[23]\tVoid.\n[24]\tVoid.\n[25]\tIETF RFC 9111: \"HTTP Caching\".\n[26]\tVoid.\n[27]\t3GPP TS 29.503: \"5G System; Unified Data Management Services; Stage 3\".\n[28]\t3GPP TS 26.531: \"Data Collection and Reporting; General Description and Architecture\".\n[29]\t3GPP TS 26.501: \"5G Media Streaming (5GMS); General description and architecture\".\n[30]\t3GPP TS 26.512: \"5G Media Streaming (5GMS); Protocols\".\n[31]\t3GPP TS 29.591: \"5G System; Network Exposure Function Southbound Services; Stage 3\".\n[32]\t3GPP TS 23.273: \"5G System (5GS) Location Services (LCS); Stage 2\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\n(None)\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\n(None)\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\n5GMS\t5G Media Streaming\nAF\tApplication Function\nASP\tApplication Service Provider\nDCCF\tData Collection Coordination Function\nDNAI\tDN Access Identifier\nGPSI\tGeneric Public Subscription Identifier\nLCS\tLoCation Services\nLMF\tLocation Management Function\nMFAF\tMessaging Framework Adaptor Function\nNEF\tNetwork Exposure Function\nNF\tNetwork Function\nNWDAF\tNetwork Data Analytics Function\nSUPI\tSubscription Permanent Identifier\nURI\tUniform Resource Identifier\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tNaf_EventExposure Service",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tService Description",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.1.1\tOverview",
+                            "text_content": "The Application Function Exposure Service, as defined in 3GPP TS 23.502 [3] and 3GPP TS 23.288 [4], is provided by the Application Function (AF). When the UE Application data is collected via the Data Collection AF, the Application Function Exposure Service, as defined in 3GPP TS 26.531 [28], 3GPP TS 26.501 [29], and 3GPP TS 26.512 [30], is provided by the Data Collection AF instantiated in 5GMS AF for the Event Consumer AF instantiated in 5GMS ASP.\nThis service:\n-\tallows NF service consumers to subscribe, modify and unsubscribe for application events; and\n-\tnotifies NF service consumers with a corresponding subscription about observed events on the AF.\nThe types of observed events include:\nAF application events exposed by AF:\n-\tService Experience information for an application;\n-\tUE mobility information;\n-\tUE communication information;\n-\tExceptions information;\n-\tUser Data Congestion information;\n-\tCollective Behaviour information;\n-\tDispersion information; and\n-\tPerformance Data information;\n-\tGNSS Assistance Data information\nUE application events exposed via Data Collection AF:\n-\tMedia Streaming QoE metrics;\n-\tMedia Streaming Consumption reports;\n-\tMedia Streaming Network Assistance invocation;\n-\tMedia Streaming Dynamic Policy invocation; and\n-\tMedia Streaming access activity.\nWhen the event to which the NF service consumer has subscribed occurs, the AF reports the requested information to the NF service consumer based on the event reporting information definition requested by the NF service consumer (see 3GPP TS 23.502 [3]).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.2\tService Architecture",
+                            "text_content": "The Data Analytics Architecture is defined in 3GPP TS 23.288 [4]. The Media Streaming UE application data collection via the Data Collection AF is defined in 3GPP TS 26.531 [28]. The architecture for GNSS Assistance Data Collection for LCS is defined in 3GPP TS 23.273 [27].\nThe Application Function Exposure Service (Naf_EventExposure) is part of the Naf service-based interface exhibited by the Application Function (AF).\nThe known NF service consumers of the Naf_EventExposure service are the Network Exposure Function (NEF), the Network Data Analytics Function (NWDAF), the Location Management Function (LMF), the Data Collection Coordination Function (DCCF), the Messaging Framework Adaptor Function (MFAF), or the Event Consumer AF in the 5GMS ASP.\nThe Naf_EventExposure service is provided by the AF and consumed by NF service consumers (e.g. NEF, NWDAF, DCCF, MFAF, Event Consumer AF), as shown in figure 4.1.2-1 for the SBI representation model and in figure 4.1.2-2 for reference point representation model.\nThe Naf_EventExposure service architecture, as depicted in Figure 4.1.2-1, illustrates the service's design and components. The service is designed to handle event exposure, which is a critical aspect of network security. The architecture includes a set of services, such as the Naf_EventExposure_Service, that are responsible for handling event exposure. These services are designed to ensure the security of the network by preventing unauthorized access to sensitive information. The architecture also includes a set of components, such as the Naf_EventExposure_Service_Controller, that are responsible for managing the service and ensuring its proper functioning. Overall, the Naf_EventExposure service architecture is designed to provide a secure and efficient way to handle event exposure in the network.\nFigure 4.1.2-1: Naf_EventExposure service Architecture, SBI representation\nThe figure depicts the architecture of the Naf_EventExposure service, illustrating the reference point representation used in the service. The service is designed to handle event exposure, ensuring that the reference point is accurately represented in the event data. This is crucial for accurate event processing and analysis.\nFigure 4.1.2-2: Naf_EventExposure service Architecture, reference point representation\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.1.3\tNetwork Functions",
+                            "text_content": "The AF is a functional element that provides service or application related information to NF service consumers.\nThe AF allows NF service consumers to subscribe to and unsubscribe from periodic notifications and/or notifications related to the detection of subscribed event.\nThe Network Data Analytics Function (NWDAF), the Data Collection Coordination Function (DCCF), and the Messaging Framework Adaptor Function (MFAF):\n-\tsupports (un)subscribing to notifications of event(s) as described in clause 4.2.2.1;\n-\tsupports receiving the notifications of subscribed event(s) from the AF.\nThe Network Exposure Function (NEF):\n-\tsupports (un)subscribing to notifications of event(s) as described in clause 4.2.2.1;\n-\tsupports receiving the notifications of subscribed event(s) from the AF.\nThe Event Consumer Application Function (Event Consumer AF):\n-\tsupports (un)subscribing to notifications of event(s) as described in clause 4.2.2.1;\n-\tsupports receiving the notifications of subscribed event(s) from the Data Collection AF.\nThe Location Management Function (LMF):\n-\tsupports (un)subscribing to notifications of event(s) as described in clause 4.2.2.1;\n-\tsupports receiving the notifications of subscribed event(s) from the AF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.2\tService Operations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tIntroduction",
+                            "text_content": "Service operations defined for the Naf_EventExposure Service are shown in table 4.2.1-1.\nTable 4.2.1-1: Naf_EventExposure Service Operations\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 4.2.1-1: Naf_EventExposure Service Operations",
+                                    "table number": 1,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.2\tNaf_EventExposure_Subscribe service operation",
+                            "text_content": "This service operation is used by an NF service consumer to subscribe for event notifications on specific event(s), or to modify an existing subscription.\nThe following are the types of events for which a subscription can be made by the NWDAF, DCCF, MFAF, or NEF as the NF service consumer:\n-\tService Experience information for an application;\n-\tUE mobility information;\n-\tUE communication information;\n-\tExceptions information;\n-\tUser Data Congestion information;\n-\tCollective Behaviour information;\n-\tDispersion information; and\n-\tPerformance Data information.\n-\tEnd-to-end data volume transfer time information.\nThe following are the types of events for which a subscription can be made by the NWDAF, DCCF, MFAF, Event Consumer AF, or NEF as the NF service consumer:\n-\tMedia Streaming QoE metrics.\nThe following are the types of events for which a subscription can be made by the Event Consumer AF or NEF as the NF service consumer:\n-\tMedia Streaming Consumption reports;\n-\tMedia Streaming Network Assistance invocation;\n-\tMedia Streaming Dynamic Policy invocation; and\n-\tMedia Streaming access activity.\nThe following are the types of events for which a subscription can be made by the LMF or NEF as the NF service consumer:\n-\tGNSS Assistance Data information\nThe following procedures using the Naf_EventExposure_Subscribe service operation are supported:\n-\tcreating a new subscription;\n-\tmodifying an existing subscription.\nFigure 4.2.2.2-1 illustrates the creation of a subscription.\nThe figure depicts a subscription creation process in a telecommunications network, illustrating the steps involved in creating a new subscription. The process includes selecting a subscription type, specifying the subscription's parameters, and submitting the request to the network. The figure provides a visual representation of the steps, making it easier to understand the process.\nFigure 4.2.2.2-1: Creation of a subscription\nTo subscribe to event notifications, the NF service consumer shall send an HTTP POST request to the AF with: \"{apiRoot}/naf-eventexposure/<apiVersion>/subscriptions\" as request URI as shown in step 1 of figure 4.2.2.2-1, and the \"AfEventExposureSubsc\" data structure as request body.\nThe \"AfEventExposureSubsc\" data structure shall include:\n-\tdescription of subscribed event information as \"eventsSubs\" attribute by using one or more \"EventsSubs\" data;\n-\tdescription of the event reporting information as \"eventsRepInfo\" attribute;\n-\ta URI where to receive the requested notifications as \"notifUri\" attribute;\n-\ta Notification Correlation Identifier assigned by the NF service consumer for the requested notifications as \"notifId\" attribute.\nThe \"AfEventExposureSubsc\" data may include:\n-\ta specific Authorization AS provisioned Data Access Profile Identifier as \"dataAccProfId\" attribute, if the feature \"DataAccProfileId\" is supported and the subscribed events including \"MS_QOE_METRICS\", \"MS_CONSUMPTION\", \"MS_NET_ASSIST_INVOCATION\", \"MS_DYN_POLICY_INVOCATION\", and/or \"MS_ACCESS_ACTIVITY\".\nNOTE 1:\tThe optional Data Access Profile Identifier provisioned by the Authorization AS procedures are specified in clause 5.8 of 3GPP TS 26.531 [28].\nThe \"EventsSubs\" data shall include:\n-\ta event to subscribe as a \"event\" attribute; and\n-\tevent filter information as \"eventFilter\" attribute associated with the event.\nThe \"eventsRepInfo\" attribute may include:\n-\tevent notification method (periodic, one time, on event detection) as \"notifMethod\" attribute;\n-\tMaximum Number of Reports as \"maxReportNbr\" attribute;\n-\tMonitoring Duration as \"monDur\" attribute;\n-\trepetition period for periodic reporting as \"repPeriod\" attribute;\n-\timmediate reporting indication as \"immRep\" attribute;\n-\tsampling ratio as \"sampRatio\" attribute;\n-\tpartitioning criteria for partitioning the UEs before performing sampling as \"partitionCriteria\" attribute if the EneNA feature is supported;\n-\tgroup reporting guard time as \"grpRepTime\" attribute;\n-\ta notification flag as \"notifFlag\" attribute if the EneNA feature is supported; and/or\n-\tnotification muting exception instructions within the \"notifFlagInstruct\" attribute, if the EnhDataMgmt feature is supported and the \"notifFlag\" attribute is provided and set to \"DEACTIVATE\".\nThe \"eventFilter\" shall include:\n-\tidentification of target UE(s) to which the subscription applies via :\n1)\tidentification of individual UE(s) via \"gpsis\" attribute or \"supis\" attribute; or\n2)\tidentification of group(s) of UE(s) via \"exterGroupIds\" attribute or \"interGroupIds\" attribute; or\n3)\tidentification of any UE via \"anyUeInd\" attribute; or\n4)\tidentification of a UE with a specific IP address via the \"ueIpAddr\" attribute;\nNOTE 2:\tIt is assumed that the AF is provisioned with the list of UE IDs (GPSIs or SUPIs) belonging to an External or Internal Group ID.\nDepending on the event type:\n-\tif the feature \"ServiceExperience\" is supported and the event is \"SVC_EXPERIENCE\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute.\n-\tif the feature \"Exceptions\" is supported and the event is \"EXCEPTIONS\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute;\n-\tif the feature \"UeCommunication\" is supported and the event is \"UE_COMM\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute.\n-\tif the feature \"UeMobility\" is supported and the event is \"UE_MOBILITY\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute.\n-\tif the feature \"UserDataCongestion\" is supported and the event is \"USER_DATA_CONGESTION\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute.\n-\tif the feature \"PerformanceData\" is supported and the event is \"PERF_DATA\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute.\n-\tif the feature \"CollectiveBehaviour\" is supported and the event is \"COLLECTIVE_BEHAVIOUR\", the \"eventFilter\" attribute may provide:\n1)\tcollective attributes information via \"collAttrs\" attribute;\n2)\tan area of interest via \"locArea\" attribute\n3)\tidentification of application to which the subscription applies via \"appIds\" attribute.\n-\tif the feature \"Dispersion\" is supported and the event is \"DISPERSION\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute.\n-\tif the feature \"MSQoeMetrics\" is supported and the event is \"MS_QOE_METRICS\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute.\n-\tif the feature \"MSConsumption\" is supported and the event is \"MS_CONSUMPTION\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute.\n-\tif the feature \"MSNetAssInvocation\" is supported and the event is \"MS_NET_ASSIST_INVOCATION\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute.\n-\tif the feature \"MSDynPolicyInvocation\" is supported and the event is \"MS_DYN_POLICY_INVOCATION\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute.\n-\tif the feature \"MSAccessActivity\" is supported and the event is \"MS_ACCESS_ACTIVITY\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute.\n-\tif the feature \"DataVolTransferTime\" is supported and the event is \"E2E_DATA_VOL_TRANS_TIME\", the \"eventFilter\" attribute may provide:\n1)\tidentification of application to which the subscription applies via \"appIds\" attribute;\n2)\tan area of interest via \"locArea\" attribute.\nIf the AF cannot successfully fulfil the received HTTP POST request due to an internal error or an error in the HTTP POST request, the AF shall send the HTTP error response as specified in clause 5.7.\nUpon successful reception of the HTTP POST request with \"{apiRoot}/naf-eventexposure/<apiVersion>/subscriptions\" as request URI and \"AfEventExposureSubsc\" data structure as request body, the AF shall create a new \"Individual Application Event Subscription\" resource, store the subscription and send an HTTP \"201 Created\" response as shown in step 2 of figure 4.2.2.2-1, containing:\n-\ta Location header field; and\n-\tan \"AfEventExposureSubsc\" data type in the content.\nThe Location header field shall contain the URI of the created individual application session context resource i.e. \"{apiRoot}/naf-eventexposure/<apiVersion>/subscriptions/{subscriptionId}\".\nThe \"AfEventExposureSubsc\" data type content shall contain the representation of the created \"Individual Application Event Subscription\".\nWhen the \"monDur\" attribute is included in the response by the AF, it represents AF selected expiry time that is equal or less than the expiry time received in the request.\nWhen the \"immRep\" attribute is included and sets to \"true\" in the subscription and the subscribed events are available, the AF shall include the reports of the events subscribed, if available, in the HTTP POST response.\nWhen the sampling ratio as, \"sampRatio\" attribute, is included in the subscription without a \"partitionCriteria\" attribute, the AF shall select a random subset of UEs among the target UEs according to the sampling ratio and only report the event(s) related to the selected subset of UEs. If the \"partitionCriteria\" attribute is additionally included, then the AF shall first partition the UEs according to the value of the \"partitionCriteria\" attribute and then select a random subset of UEs from each partition according to the sampling ratio and only report the event(s) related to the selected subsets of UEs.\nWhen the group reporting guard time as the \"grpRepTime\" attribute is included in the subscription, the AF shall accumulate all the event reports for the target UEs until the group reporting guard time expires. Then the AF shall notify the NF service consumer using the Naf_EventExposure_Notify service operation, as described in clause 4.2.4.2.\nWhen the \"notifFlag\" attribute is included and set to \"DEACTIVATE\" in the request, the AF shall mute the event notification and store the available events until the NF service consumer requests to retrieve them by setting the \"notifFlag\" attribute to \"RETRIEVAL\" or until a muting exception occurs (e.g. full buffer). When a muting exception occurs, the AF may consider the contents of the \"notifFlagInstruct\" attribute (if provided) and/or local configuration to determine its actions.\nIf the EnhDataMgmt feature is supported and the AF accepts the muting instructions provided in the \"notifFlag\" and/or the \"notifFlagInstruct\" attributes, it may indicate the applied muting notification settings within the \"mutingSetting\" attribute in the response. If the AF does not accept the muting instructions provided in the \"notifFlag\" and/or the \"notifFlagInstruct\" attributes, it shall send an HTTP \"403 Forbidden\" error response including the \"cause\" attribute set to \"MUTING_INSTR_NOT_ACCEPTED\".\nFigure 4.2.2.3-1 illustrates the modification of an existing subscription.\nThe figure depicts a modification of an existing subscription, showing how a user can modify their subscription plan to include additional services or features. The figure includes a graphical representation of the subscription plan, with different options for the user to choose from. The user can select the desired plan, and the system will automatically update the subscription plan to reflect the selected options. The figure also includes a legend to help users understand the different options available for their subscription plan.\nFigure 4.2.2.3-1: Modification of an existing subscription\nTo modify an existing subscription to event notifications, the NF service consumer shall send an HTTP PUT request with: \"{apiRoot}/naf-eventexposure/<apiVersion>/subscriptions/{subscriptionId}\" as request URI, as shown in step 1 of figure 4.2.2.3-1, where \"{subscriptionId}\" is the subscription correlation ID of the existing subscription. The \"AfEventExposureSubsc\" data structure is included as request body as described in clause 4.2.2.2.\nNOTE 1:\tAn alternate NF service consumer than the one that requested the generation of the subscription resource can send the PUT request.\nNOTE 2:\tThe \"notifUri\" attribute within the AfEventExposureSubsc data structure can be modified to request that subsequent notifications are sent to a new NF service consumer.\nNOTE 3:\tThe \"monDur\" attribute within the AfEventExposureSubsc data structure can be modified to extend the expiry time to keep receiving notifications.\nIf the AF cannot successfully fulfil the received HTTP PUT request due to an internal error or an error in the HTTP PUT request, the AF shall send an HTTP error response as specified in clause 5.7.\nIf the feature \"ES3XX\" is supported, and the AF determines the received HTTP PUT request needs to be redirected, the AF shall send an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [5].\nUpon successful reception of an HTTP PUT request with: \"{apiRoot}/naf-eventexposure/<apiVersion>/subscriptions/{subscriptionId}\" as request URI and \"AfEventExposureSubsc\" data structure as request body, the AF shall update the subscription and send either a HTTP \"200 OK\" response with the \"AfEventExposureSubsc\" data structure as response body containing the representation of the modified \"Individual Application Event Subscription\", or an HTTP \"204 No Content\" response, as shown in step 2 of figure 4.2.2.3-1.\nWhen the \"monDur\" attribute is included in the response by the AF, it represents AF selected expiry time that is equal or less than the expiry time received in the request.\nWhen the \"immRep\" attribute is included and sets to \"true\" in the subscription and the subscribed events are available, the AF shall include the reports of the events subscribed, if available, in the HTTP PUT response.\nWhen the sampling ratio, as \"sampRatio\" attribute, is included in the subscription without a \"partitionCriteria\" attribute, the AF shall select a random subset of UEs among the target UEs according to the sampling ratio and only report the event(s) related to the selected subset of UEs. If the \"partitionCriteria\" attribute is additionally included, then the AF shall first partition the UEs according to the value of the \"partitionCriteria\" attribute and then select a random subset of UEs from each partition according to the sampling ratio and only report the event(s) related to the selected subsets of UEs.\nWhen the group reporting guard time, as \"grpRepTime\" attribute, is included in the subscription, the AF shall accumulate all the event reports for the target UEs until the group reporting guard time expires. Then, the AF shall notify the NF service consumer using the Naf_EventExposure_Notify service operation, as described in clause 4.2.4.2.\nWhen the \"notifFlag\" attribute is included, and set to \"DEACTIVATE\" in the request, the AF shall mute the event notification and store the available events until the NF service consumer requests to retrieve them by setting the \"notifFlag\" attribute to \"RETRIEVAL\" or until a muting exception occurs (e.g. full buffer). When a muting exception occurs, the AF may consider the contents of the \"notifFlagInstruct\" attribute (if provided) and/or local configuration to determine its actions; if the \"notifFlag\" attribute is set to \"RETRIEVAL\" in the request, the AF shall send the stored events to the NF service consumer, and mute the event notification again and store available events; if the \"notifFlag\" attribute is set to \"ACTIVATE\" and the event notifications are muted (due to a previously received \"DECATIVATE\" value), the AF shall unmute the event notification, i.e. start sending again notifications for available events.\nIf the EnhDataMgmt feature is supported and the AF accepts the muting instructions provided in the \"notifFlag\" and/or the \"notifFlagInstruct\" attributes, it may indicate the applied muting notification settings within the \"mutingSetting\" attribute in the response. If the AF does not accept the muting instructions provided in the \"notifFlag\" and/or the \"notifFlagInstruct\" attributes, it shall send an HTTP \"403 Forbidden\" error response including the \"cause\" attribute set to \"MUTING_INSTR_NOT_ACCEPTED\".\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.3\tNaf_EventExposure_Unsubscribe service operation",
+                            "text_content": "This service operation is used by an NF service consumer to unsubscribe from event notifications.\nThe following procedure using the Naf_EventExposure_Unsubscribe service operation is supported:\n-\tunsubscription from event notifications.\nFigure 4.2.3.2-1 illustrates the unsubscription from event notifications.\nThe figure depicts a simplified representation of an event notification system, with a focus on unsubscription from notifications. It shows a user interface with a list of unsubscription options, such as \"All\", \"All but this event\", and \"This event only\". The system uses a tree-like structure to organize notifications, with each notification having a parent node and a child node for each unsubscription option. The system also includes a \"Delete\" button for deleting unsubscriptions. The figure is designed to be user-friendly and intuitive, making it easy for users to navigate and select the unsubscription options they need.\nFigure 4.2.3.2-1: Unsubscription from event notifications\nTo unsubscribe from event notifications, the NF service consumer shall send an HTTP DELETE request with \"{apiRoot}/naf-eventexposure/<apiVersion>/subscriptions/{subscriptionId}\" as request URI, as shown in step 1 of figure 4.2.3.2-1, where \"{subscriptionId}\" is the subscription correlation identifier of the existing resource subscription that is to be deleted.\nIf the AF cannot successfully fulfil the received HTTP DELETE request due to an internal error or an error in the HTTP DELETE request, the AF shall send an HTTP error response as specified in clause 5.7.\nIf the feature \"ES3XX\" is supported, and the AF determines the received HTTP DELETE request needs to be redirected, the AF shall send an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [5].\nUpon successful reception of the HTTP DELETE request with: \"{apiRoot}/naf-eventexposure/<apiVersion>/subscriptions/{subscriptionId}\" as request URI, the AF shall remove the corresponding subscription and send an HTTP \"204 No Content\" response as shown in step 2 of figure 4.2.3.2-1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.4\tNaf_EventExposure_Notify service operation",
+                            "text_content": "The Naf_EventExposure_Notify service operation enables the AF to notify to the NF service consumer(s) that the previously subscribed application related event occurred.\nThe following procedure using the Naf_EventExposure_Notify service operation is supported:\n-\tnotification about subscribed events.\nFigure 4.2.4.2-1 illustrates the notification about subscribed events.\nThe figure depicts a notification system for subscribed events, with a user interface (UI) and a backend system. The UI includes a list of events, a search bar, and a notification button. The backend system manages the subscription process, including event creation, validation, and notification delivery.\nFigure 4.2.4.2-1: Notification about subscribed events\nIf the AF observes application related event(s) for which an NF service consumer has subscribed, the AF shall send an HTTP POST request as shown in step 1 of figure 4.2.4.2-1, with the \"{notifUri}\" as request URI containing the value previously provided by the NF service consumer within the corresponding subscription, and the \"AfEventExposureNotif\" data structure.\nThe \"AfEventExposureNotif\" data structure shall include:\na)\tthe notification correlation ID provided by the NF service consumer during the subscription as \"notifId\" attribute; and\nb)\tinformation about the observed event(s) within the \"eventNotifs\" attribute that shall contain for each observed event an \"AfEventNotification\" data structure that shall include:\n1)\tthe application related event as \"event\" attribute;\n2)\tthe time at which the event was observed encoded as \"timeStamp\" attribute;\n3)\tif the \"event\" attribute is \"SVC_EXPERIENCE\":\n-\tservice experience information about the application involved in the reported event in the \"svcExprcInfos\" attribute;\n4)\tif the \"event\" attribute is \"UE_MOBILITY\":\n-\tUE mobility information associated with the application as \"ueMobilityInfos\" attribute;\n5)\tif the \"event\" attribute is \"UE_COMM\":\n-\tapplication communication information associated with the application as \"ueCommInfos\" attribute;\n6)\tif the \"event\" attribute is \"EXCEPTIONS\":\n-\texceptions information associated with a service flow as \"excepInfos\" attribute;\n7)\tif the \"event\" attribute is \"COLLECTIVE_BEHAVIOUR\":\n-\tcollective beahviour information associated with the UEs and its applications as \"collBhvrInfs\" attribute;\n8)\tif the \"event\" attribute is \"PERF_DATA\":\n-\tperformance data information associated with the application as \"perfDataInfos\" attribute;\n9)\tif the \"event\" attribute is \"USER_DATA_CONGESTION\":\n-\tuser data congestion information collected for an AF application as \"congestionInfos\" attribute; and\n10)\tif the \"event\" attribute is \"DISPERSION\":\n-\tUE dispersion information collected for an AF application as \"dispersionInfos\" attribute.\n11)\tif the \"event\" attribute is \"MS_QOE_METRICS\":\n-\tMedia Streaming QoE metrics information collected for an UE application via the Data Collection AF as \"msQoeMetrInfos\" attribute. This attribute is deprecated; the attribute \"msQoeMetrics\" should be used instead.\n-\tif the \"MSEventExposure\" feature is supported, the Media Streaming QoE metrics information collected for an UE application via the Data Collection AF as \"msQoeMetrics\" attribute.\n12)\tif the \"event\" attribute is \"MS_CONSUMPTION\":\n-\tMedia Streaming Consumption reports collected for an UE application via the Data Collection AF as \"msConsumpInfos\" attribute. This attribute is deprecated; the attribute \"msConsumpRpts\" should be used instead.\n-\tif the \"MSEventExposure\" feature is supported, the Media Streaming Consumption reports collected for an UE application via the Data Collection AF as \"msConsumpRpts\" attribute.\n13)\tif the \"event\" attribute is \"MS_NET_ASSIST_INVOCATION\":\n-\tMedia Streaming Network Assistance invocation collected for an UE application via the Data Collection AF as \"msNetAssInvInfos\" attribute. This attribute is deprecated; the attribute \"msNetAssistInvs\" should be used instead.\n-\tif the \"MSEventExposure\" feature is supported, the Media Streaming Network Assistance invocation collected for an UE application via the Data Collection AF as \"msNetAssistInvs\" attribute.\n14)\tif the \"event\" attribute is \"MS_DYN_POLICY_INVOCATION\":\n-\tMedia Streaming Dynamic Policy invocation collected for an UE application via the Data Collection AF as \"msDynPlyInvInfos\" attribute. This attribute is deprecated; the attribute \"msDynPlyInvs\" should be used instead.\n-\tif the \"MSEventExposure\" feature is supported, the Media Streaming Dynamic Policy invocation collected for an UE application via the Data Collection AF as \"msDynPlyInvs\" attribute.\n15)\tif the \"event\" attribute is \"MS_ACCESS_ACTIVITY\":\n-\tMedia Streaming access activity collected for an UE application via the Data Collection AF as \"msAccActInfos\" attribute. This attribute is deprecated; the attribute \"msAccesses\" should be used instead.\n-\tif the \"MSEventExposure\" feature is supported, the Media Streaming access activity collected for an UE application via the Data Collection AF as \"msAccesses\" attribute.\n16)\tif the \"event\" attribute is \"GNSS_ASSISTANCE_DATA\":\n-\tGNSS Assistance Data information within the \"gnssAssistDataInfo\" attribute;\n17)\tif the \"event\" attribute is \"E2E_DATA_VOL_TRANS_TIME\":\n-\tdata volume transfer information associated with the application as \"datVolTransTimeInfos\" attribute.\nIf the NF service consumer cannot successfully fulfil the received HTTP POST request due to an internal error or an error in the HTTP POST request, the NF service consumer shall send an HTTP error response as specified in clause 5.7.\nIf the feature \"ES3XX\" is supported, and the NF service consumer determines the received HTTP POST request needs to be redirected, the NF service consumer shall send an HTTP redirect response as specified in clause 6.10.9 of 3GPP TS 29.500 [5].\nUpon successful reception of the HTTP POST request with \"{notifUri}\" as request URI and \"AfEventExposureNotif\" data structure as request body, the NF service consumer shall send a \"204 No Content\" HTTP response, as shown in step 2 of figure 4.2.4.2-1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tNaf_EventExposure Service API",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Naf_EventExposure Service shall use the Naf_EventExposure API.\nThe API URI of the Naf_EventExposure API shall be:\n{apiRoot}/<apiName>/<apiVersion>\nThe request URIs used in HTTP requests from the NF service consumer towards the AF shall have the Resource URI structure defined in clause 4.4.1 of 3GPP TS 29.501 [6], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [6].\n-\tThe <apiName> shall be \"naf-eventexposure\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 5.3.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tUsage of HTTP",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tGeneral",
+                            "text_content": "If the AF is untrusted, support of HTTP/1.1 (IETF RFC 9112 [21], IETF RFC 9110 [22] and IETF RFC 9111[25] over TLS is mandatory and support of HTTP/2 (IETF RFC 9113 [7]) over TLS is recommended. TLS shall be used as specified in clause 12.3 and clause 13.1 of 3GPP TS 33.501 [14].\nIf the AF is trusted, HTTP/2, IETF RFC 9113 [7], shall be used as specified in clause 5.2 of 3GPP TS 29.500 [5].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [5].\nThe OpenAPI [8] specification of HTTP messages and content bodies for the Naf_EventExposure is contained in Annex A.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tHTTP standard headers",
+                            "text_content": "See clause 5.2.2 of 3GPP TS 29.500 [5] for the usage of HTTP standard headers.\nJSON, IETF RFC 8259 [9], shall be used as content type of the HTTP bodies specified in the present specification as specified in clause 5.4 of 3GPP TS 29.500 [5]. The use of the JSON format shall be signalled by the content type \"application/json\".\n\"Problem Details\" JSON object shall be used to indicate additional details of the error in a HTTP response body and shall be signalled by the content type \"application/problem+json\", as defined in IETF RFC 9457 [10].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tHTTP custom headers",
+                            "text_content": "The Naf_EventExposure API shall support mandatory HTTP custom header fields specified in clause 5.2.3.2 of 3GPP TS 29.500 [5] and may support HTTP custom header fields specified in clause 5.2.3.3 of 3GPP TS 29.500 [4].\nIn this Release of the specification, no specific custom headers are defined for the Naf_EventExposure API.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tResources",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tResource Structure",
+                            "text_content": "This clause describes the structure for the Resource URIs and the resources and methods used for the service.\nFigure 5.3.1-1 depicts the resource URIs structure for the Naf_EventExposure API.\nThe figure depicts the resource URI structure of the Naf_EventExposure API, which is used to expose event exposure data. The structure includes the event type, event ID, and event timestamp, as well as the resource URI for the exposed data. This API is used to retrieve event exposure data from the Naf_EventExposure service, which is a key component of the Naf_EventExposure service. The API is designed to be flexible and extensible, allowing for the addition of new event types and event timestamps.\nFigure 5.3.1-1: Resource URI structure of the Naf_EventExposure API\nTable 5.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 5.3.1-1: Resources and methods overview\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.1-1: Resources and methods overview",
+                                    "table number": 2,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.3.2\tResource: Application Event Subscriptions",
+                            "text_content": "The Application Event Subscriptions resource represents all subscriptions of the Naf_EventExposure service at a given AF.\nResource URI: {apiRoot}/naf-eventexposure/<apiVersion>/subscriptions\nThis resource shall support the resource URI variables defined in table 5.3.2.2-1.\nTable 5.3.2.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 5.3.2.3.1-1.\nTable 5.3.2.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 5.3.2.3.1-2 and the response data structures and response codes specified in table 5.3.2.3.1-3.\nTable 5.3.2.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 5.3.2.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 5.3.2.3.1-4: Headers supported by the 201 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.2.2-1: Resource URI variables for this resource",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.2.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.2.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.2.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.2.3.1-4: Headers supported by the 201 Response Code on this resource",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.3.3\tResource: Individual Application Event Subscription",
+                            "text_content": "The Individual Application Event Subscription resource represents a single subscription of the Naf_EventExposure service at a given AF.\nResource URI: {apiRoot}/naf-eventexposure/<apiVersion>/subscriptions/{subscriptionId}\nThis resource shall support the resource URI variables defined in table 5.3.3.2-1.\nTable 5.3.3.2-1: Resource URI variables for this resource\n\nThis method shall support the URI query parameters specified in table 5.3.3.3.1-1.\nTable 5.3.3.3.1-1: URI query parameters supported by the GET method on this resource\n\nThis method shall support the request data structures specified in table 5.3.3.3.1-2 and the response data structures and response codes specified in table 5.3.3.3.1-3.\nTable 5.3.3.3.1-2: Data structures supported by the GET Request Body on this resource\n\nTable 5.3.3.3.1-3: Data structures supported by the GET Response Body on this resource\n\nTable 5.3.3.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 5.3.3.3.1-5: Headers supported by the 308 Response Code on this resource\n\nThis method shall support the URI query parameters specified in table 5.3.3.3.2-1.\nTable 5.3.3.3.2-1: URI query parameters supported by the PUT method on this resource\n\nThis method shall support the request data structures specified in table 5.3.3.3.2-2 and the response data structures and response codes specified in table 5.3.3.3.2-3.\nTable 5.3.3.3.2-2: Data structures supported by the PUT Request Body on this resource\n\nTable 5.3.3.3.2-3: Data structures supported by the PUT Response Body on this resource\n\nTable 5.3.3.3.2-4: Headers supported by the 307 Response Code on this resource\n\nTable 5.3.3.3.2-5: Headers supported by the 308 Response Code on this resource\n\nThis method shall support the URI query parameters specified in table 5.3.3.3.3-1.\nTable 5.3.3.3.3-1: URI query parameters supported by the DELETE method on this resource\n\nThis method shall support the request data structures specified in table 5.3.3.3.3-2 and the response data structures and response codes specified in table 5.3.3.3.3-3.\nTable 5.3.3.3.3-2: Data structures supported by the DELETE Request Body on this resource\n\nTable 5.3.3.3.3-3: Data structures supported by the DELETE Response Body on this resource\n\nTable 5.3.3.3.3-4: Headers supported by the 307 Response Code on this resource\n\nTable 5.3.3.3.3-5: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.3.2-1: Resource URI variables for this resource",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.1-1: URI query parameters supported by the GET method on this resource",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.1-2: Data structures supported by the GET Request Body on this resource",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.1-3: Data structures supported by the GET Response Body on this resource",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.2-1: URI query parameters supported by the PUT method on this resource",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.2-2: Data structures supported by the PUT Request Body on this resource",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.2-3: Data structures supported by the PUT Response Body on this resource",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.2-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.2-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.3-1: URI query parameters supported by the DELETE method on this resource",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.3-2: Data structures supported by the DELETE Request Body on this resource",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.3-3: Data structures supported by the DELETE Response Body on this resource",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.3-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.3.3.3.3-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tCustom Operations without associated resources",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "No custom operation is defined in this Release of the specification.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tNotifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.5.1\tGeneral",
+                            "text_content": "Notifications shall comply with clause 6.2 of 3GPP TS 29.500 [5] and clause 4.6.2.3 of 3GPP TS 29.501 [6].\nTable 5.5.1-1: Notifications overview\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.5.1-1: Notifications overview",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.5.2\tApplication Event Notification",
+                            "text_content": "The Application Event Notification is used by the AF to report one or several observed application related events to the NF service consumer that has subscribed to such notifications.\nThe callback URI \"{notifUri}\" shall be used with the callback URI variables defined in table 5.5.2.2-1.\nTable 5.5.2.2-1: Callback URI variables\n\nThis method shall support the URI query parameters specified in table 5.5.2.3.1-1.\nTable 5.5.2.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 5.5.2.3.1-2 and the response data structures and response codes specified in table 5.5.2.3.1-3.\nTable 5.5.2.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 5.5.2.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 5.5.2.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 5.5.2.3.1-5: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.5.2.2-1: Callback URI variables",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.5.2.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.5.2.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.5.2.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.5.2.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.5.2.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.6\tData Model",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.6.1\tGeneral",
+                            "text_content": "This clause specifies the application data model supported by the API.\nTable 5.6.1-1 specifies the data types defined for the Naf_EventExposure service based interface protocol.\nTable 5.6.1-1: Naf_EventExposure specific Data Types\n\nTable 5.6.1-2 specifies data types re-used by the Naf_EventExposure service based interface protocol from other specifications, including a reference to their respective specifications and when needed, a short description of their use within the Naf_EventExposure service based interface.\nTable 5.6.1-2: Naf_EventExposure re-used Data Types\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.6.1-1: Naf_EventExposure specific Data Types",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.1-2: Naf_EventExposure re-used Data Types",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.6.2\tStructured data types",
+                            "text_content": "This clause defines the structures to be used in resource representations.\nTable 5.6.2.2-1: Definition of type AfEventExposureSubsc\n\nTable 5.6.2.3-1: Definition of type AfEventExposureNotif\n\nTable 5.6.2.4-1: Definition of type EventsSubs\n\nTable 5.6.2.5-1: Definition of type EventFilter\n\nEditor's note:\tFuther event filter information is FFS.\n\nTable 5.6.2.6-1: Definition of type AfEventNotification\n\nTable 5.6.2.7-1: Definition of type ServiceExperienceInfoPerApp\n\nTable 5.6.2.8-1: Definition of type ServiceExperienceInfoPerFlow\n\nTable 5.6.2.9-1: Definition of type SvcExperience\n\nTable 5.6.2.10-1: Definition of type UeMobilityCollection\n\nTable 5.6.2.11-1: Definition of type UeCommunicationCollection\n\nTable 5.6.2.12-1: Definition of type UeTrajectoryCollection\n\nTable 5.6.2.13-1: Definition of type CommunicationCollection\n\nTable 5.6.2.14-1: Definition of type ExceptionInfo\n\nTable 5.6.2.15-1: Definition of type UserDataCongestionCollection\n\nTable 5.6.2.16-1: Definition of type PerformanceDataCollection\n\nTable 5.6.2.17-1: Definition of type PerformanceData\n\nTable 5.6.2.18-1: Definition of type AddrFqdn\n\nTable 5.6.2.19-1: Definition of type CollectiveBehaviourFilter\n\nTable 5.6.2.20-1: Definition of type CollectiveBehaviourInfo\n\nTable 5.6.2.21-1: Definition of type DispersionCollection\n\nTable 5.6.2.22-1: Definition of type PerUeAttribute\n\nTable 5.6.2.23-1: Definition of type MsQoeMetricsCollection\n\nTable 5.6.2.24-1: Definition of type MsConsumptionCollection\n\nTable 5.6.2.25-1: Definition of type MsNetAssInvocationCollection\n\nTable 5.6.2.26-1: Definition of type MsDynPolicyInvocationCollection\n\nTable 5.6.2.27-1: Definition of type MSAccessActivityCollection\n\nTable 5.6.2.28-1: Definition of type DatVolTransTimeCollection\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.6.2.2-1: Definition of type AfEventExposureSubsc",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.3-1: Definition of type AfEventExposureNotif",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.4-1: Definition of type EventsSubs",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.5-1: Definition of type EventFilter",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.6-1: Definition of type AfEventNotification",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.7-1: Definition of type ServiceExperienceInfoPerApp",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.8-1: Definition of type ServiceExperienceInfoPerFlow",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.9-1: Definition of type SvcExperience",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.10-1: Definition of type UeMobilityCollection",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.11-1: Definition of type UeCommunicationCollection",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.12-1: Definition of type UeTrajectoryCollection",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.13-1: Definition of type CommunicationCollection",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.14-1: Definition of type ExceptionInfo",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.15-1: Definition of type UserDataCongestionCollection",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.16-1: Definition of type PerformanceDataCollection",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.17-1: Definition of type PerformanceData",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.18-1: Definition of type AddrFqdn",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.19-1: Definition of type CollectiveBehaviourFilter",
+                                    "table number": 50,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.20-1: Definition of type CollectiveBehaviourInfo",
+                                    "table number": 51,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.21-1: Definition of type DispersionCollection",
+                                    "table number": 52,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.22-1: Definition of type PerUeAttribute",
+                                    "table number": 53,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.23-1: Definition of type MsQoeMetricsCollection",
+                                    "table number": 54,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.24-1: Definition of type MsConsumptionCollection",
+                                    "table number": 55,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.25-1: Definition of type MsNetAssInvocationCollection",
+                                    "table number": 56,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.26-1: Definition of type MsDynPolicyInvocationCollection",
+                                    "table number": 57,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.27-1: Definition of type MSAccessActivityCollection",
+                                    "table number": 58,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.2.28-1: Definition of type DatVolTransTimeCollection",
+                                    "table number": 59,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.6.3\tSimple data types and enumerations",
+                            "text_content": "This clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nThe simple data types defined in table 5.6.3.2-1 shall be supported.\nTable 5.6.3.2-1: Simple data types\n\nThe enumeration AfEvent represents the application events that can be subscribed/notified. It shall comply with the provisions defined in table 5.6.3.3-1.\nTable 5.6.3.3-1: Enumeration AfEvent\n\nThe enumeration CollectiveBehaviourFilterType represents the parameter type for collective behaviour information filtering. It shall comply with the provisions defined in table 5.6.3.4-1.\nTable 5.6.3.4-1: Enumeration CollectiveBehaviourFilterType\n\n5.6.3.5\tEnumeration: DataProcessingType\nThe enumeration DataProcessingType represents the type of data processing performed by the AF during UE data collection. It shall comply with the provisions defined in table 5.6.3.5-1.\nTable 5.6.3.5-1: Enumeration DataProcessingType\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.6.3.2-1: Simple data types",
+                                    "table number": 60,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.3.3-1: Enumeration AfEvent",
+                                    "table number": 61,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.3.4-1: Enumeration CollectiveBehaviourFilterType",
+                                    "table number": 62,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.6.3.5-1: Enumeration DataProcessingType",
+                                    "table number": 63,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.7\tError handling",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.7.1\tGeneral",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 5.2.4 of 3GPP TS 29.500 [5].\nFor the Naf_EventExposure API, HTTP error responses shall be supported as specified in clause 4.8 of 3GPP TS 29.501 [6]. Protocol errors and application errors specified in table 5.2.7.2-1 of 3GPP TS 29.500 [5] shall be supported for an HTTP method if the corresponding HTTP status codes are specified as mandatory for that HTTP method in table 5.2.7.1-1 of 3GPP TS 29.500 [5].\nIn addition, the requirements in the following clauses are applicable for the Naf_EventExposure API.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.2\tProtocol Errors",
+                            "text_content": "In this Release of the specification, there are no service specific protocol errors applicable for the Naf_EventExposure API.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.7.3\tApplication Errors",
+                            "text_content": "The application errors defined for the Naf_EventExposure service are listed in table 5.7.3-1.\nTable 5.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.7.3-1: Application errors",
+                                    "table number": 64,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.8\tFeature negotiation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The optional features in table 5.8-1 are defined for the Naf_EventExposure API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [5].\nTable 5.8-1: Supported Features\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 5.8-1: Supported Features",
+                            "table number": 65,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.9\tSecurity",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TLS shall be used to support the security communication between the NF Service Consumer and the AF as defined in clause 12.3 and clause 13.1 of 3GPP TS 33.501 [14].\nIf the AF is trusted, as indicated in 3GPP TS 33.501 [14] and 3GPP TS 29.500 [5], the access to the Naf_EventExposure API may be authorized by means of the OAuth 2.0 protocol (see IETF RFC 6749 [15]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [16]) plays the role of the authorization server.\nIf OAuth 2.0 is used, an NF Service Consumer, prior to consuming services offered by the Naf_EventExposure API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [16], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF that the NF Service Consumer used for discovering the Naf_EventExposure service.\nThe Naf_EventExposure API defines a single scope \"naf-eventexposure\" for the entire service, and it does not define any additional scopes at resource or operation level.\nIf the AF is untrusted, the access to Naf_EventExposure API shall be authorized by means of OAuth2 protocol (see IETF RFC 6749 [15]), based on local configuration, using the \"Client Credentials\" authorization grant. If OAuth2 is used, a NF Service Consumer (e.g. NEF), prior to consuming services offered by the Naf_EventExposure API, shall obtain a \"token\" from the authorization server.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "This Annex is based on the OpenAPI Specification [8] and provides corresponding representations of all APIs defined in the present specification.\nNOTE 1:\tAn OpenAPIs representation embeds JSON Schema representations of HTTP message bodies.\nThis Annex shall take precedence when being discrepant to other parts of the specification with respect to the encoding of information elements and methods within the API(s).\nNOTE 2:\tThe semantics and procedures, as well as conditions, e.g. for the applicability and allowed combinations of attributes or values, not expressed in the OpenAPI definitions but defined in other parts of the specification also apply.\nInformative copies of the OpenAPI specification files contained in this 3GPP Technical Specification are available on a Git-based repository that uses the GitLab software version control system (see clause 5B of the 3GPP TR 21.900 [11] and clause 5.3.1 of the 3GPP TS 29.501 [6] for further information).\nThe security scheme defined below for the Naf_EventExposure API shows the case when the AF is in untrusted domain and the \"scopes\" and \"tokenUrl\" are undefined. For the trusted AF, the \"scopes\" definition shall use \"naf-eventexposure\" and the \"tokenUrl\" definition shall use \"{nrfApiRoot}/oauth2/token\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tNaf_EventExposure API",
+            "description": "openapi: 3.0.0\n\ninfo:\nversion: 1.3.0-alpha.5\ntitle: Naf_EventExposure\ndescription: |\nAF Event Exposure Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: >\n3GPP TS 29.517 V18.4.0; 5G System; Application Function Event Exposure Service; Stage 3.\nurl: https://www.3gpp.org/ftp/Specs/archive/29_series/29.517/\n\nservers:\n- url: '{apiRoot}/naf-eventexposure/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501\n\nsecurity:\n- {}\n- oAuth2ClientCredentials: []\n\n\npaths:\n/subscriptions:\npost:\nsummary: Creates a new Individual Application Event Exposure Subscription resource\noperationId: PostAfEventExposureSubsc\ntags:\n- Application Event Subscription (Collection)\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/AfEventExposureSubsc'\nresponses:\n'201':\ndescription: Success\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/AfEventExposureSubsc'\nheaders:\nLocation:\ndescription: >\nContains the URI of the created individual application event subscription resource\nrequired: true\nschema:\ntype: string\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\ncallbacks:\nAfEventExposureNotif:\n'{$request.body#/notifUri}':\npost:\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/AfEventExposureNotif'\nresponses:\n'204':\ndescription: No Content, Notification was successful\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\n/subscriptions/{subscriptionId}:\nget:\nsummary: \"Reads an existing Individual Application Event Subscription\"\noperationId: GetAfEventExposureSubsc\ntags:\n- Individual Application Event Subscription (Document)\nparameters:\n- name: subscriptionId\nin: path\ndescription: Application Event Subscription ID\nrequired: true\nschema:\ntype: string\n- name: supp-feat\nin: query\ndescription: Features supported by the NF service consumer\nrequired: false\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'\nresponses:\n'200':\ndescription: OK. Resource representation is returned\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/AfEventExposureSubsc'\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'406':\n$ref: 'TS29571_CommonData.yaml#/components/responses/406'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\nput:\nsummary: \"Modifies an existing Individual Application Event Subscription \"\noperationId: PutAfEventExposureSubsc\ntags:\n- Individual Application Event Subscription (Document)\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/AfEventExposureSubsc'\nparameters:\n- name: subscriptionId\nin: path\ndescription: Application Event Subscription ID\nrequired: true\nschema:\ntype: string\nresponses:\n'200':\ndescription: OK. Resource was successfully modified and representation is returned\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/AfEventExposureSubsc'\n'204':\ndescription: No Content. Resource was successfully modified\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\ndelete:\nsummary: \"Cancels an existing Individual Application Event Subscription \"\noperationId: DeleteAfEventExposureSubsc\ntags:\n- Individual Application Event Subscription (Document)\nparameters:\n- name: subscriptionId\nin: path\ndescription: Application Event Subscription ID\nrequired: true\nschema:\ntype: string\nresponses:\n'204':\ndescription: No Content. Resource was successfully deleted\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\n$ref: 'TS29571_CommonData.yaml#/components/responses/default'\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{tokenUri}'\nscopes: {}\ndescription: >\nFor trusted AF, the 'naf-eventexposure' shall be used as 'scopes' and\n'{nrfApiRoot}/oauth2/token' shall be used as 'tokenUri'.\n\nschemas:\nAfEventExposureNotif:\ndescription: >\nRepresents notifications on application event(s) that occurred for an Individual Application\nEvent Subscription resource.\ntype: object\nproperties:\nnotifId:\ntype: string\neventNotifs:\ntype: array\nitems:\n$ref: '#/components/schemas/AfEventNotification'\nminItems: 1\nrequired:\n- notifId\n- eventNotifs\n\nAfEventExposureSubsc:\ndescription: Represents an Individual Application Event Subscription resource.\ntype: object\nproperties:\ndataAccProfId:\ntype: string\neventsSubs:\ntype: array\nitems:\n$ref: '#/components/schemas/EventsSubs'\nminItems: 1\neventsRepInfo:\n$ref: 'TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation'\nnotifUri:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nnotifId:\ntype: string\neventNotifs:\ntype: array\nitems:\n$ref: '#/components/schemas/AfEventNotification'\nminItems: 1\nsuppFeat:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'\nrequired:\n- eventsSubs\n- eventsRepInfo\n- notifId\n- notifUri\n\nAfEventNotification:\ndescription: Represents information related to an event to be reported.\ntype: object\nproperties:\nevent:\n$ref: '#/components/schemas/AfEvent'\ntimeStamp:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\nsvcExprcInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/ServiceExperienceInfoPerApp'\nminItems: 1\nueMobilityInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/UeMobilityCollection'\nminItems: 1\nueCommInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/UeCommunicationCollection'\nminItems: 1\nexcepInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/ExceptionInfo'\nminItems: 1\ncongestionInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/UserDataCongestionCollection'\nminItems: 1\nperfDataInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/PerformanceDataCollection'\nminItems: 1\ndispersionInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/DispersionCollection'\nminItems: 1\ncollBhvrInfs:\ntype: array\nitems:\n$ref: '#/components/schemas/CollectiveBehaviourInfo'\nminItems: 1\nmsQoeMetrInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/MsQoeMetricsCollection'\nminItems: 1\ndeprecated: true\nmsQoeMetrics:\ntype: array\nitems:\n$ref: 'TS26512_EventExposure.yaml#/components/schemas/QoEMetricsCollection'\nminItems: 1\ndescription: Represents the Media Streaming QoE metrics event records.\nmsConsumpInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/MsConsumptionCollection'\nminItems: 1\ndeprecated: true\nmsConsumpRpts:\ntype: array\nitems:\n$ref: 'TS26512_EventExposure.yaml#/components/schemas/ConsumptionReportingUnitsCollection'\nminItems: 1\ndescription: Represents the Media Streaming Consumption event records.\nmsNetAssInvInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/MsNetAssInvocationCollection'\nminItems: 1\ndeprecated: true\nmsNetAssistInvs:\ntype: array\nitems:\n$ref: 'TS26512_EventExposure.yaml#/components/schemas/NetworkAssistanceInvocationsCollection'\nminItems: 1\ndescription: >\nRepresents the Media Streaming Network Assistance Invocations event records.\nmsDynPlyInvInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/MsDynPolicyInvocationCollection'\nminItems: 1\ndeprecated: true\nmsDynPlyInvs:\ntype: array\nitems:\n$ref: 'TS26512_EventExposure.yaml#/components/schemas/DynamicPolicyInvocationsCollection'\nminItems: 1\ndescription: Represents the Media Streaming Dynamic Policy Invocations event records.\nmsAccActInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/MSAccessActivityCollection'\nminItems: 1\ndeprecated: true\nmsAccesses:\ntype: array\nitems:\n$ref: 'TS26512_EventExposure.yaml#/components/schemas/MediaStreamingAccessesCollection'\nminItems: 1\ndescription: Represents the Media Streaming access event records.\ngnssAssistDataInfo:\n$ref: 'TS29591_Nnef_EventExposure.yaml#/components/schemas/GNSSAssistDataInfo'\ndatVolTransTimeInfos:\ntype: array\nitems:\n$ref: '#/components/schemas/DatVolTransTimeCollection'\nminItems: 1\nrequired:\n- event\n- timeStamp\n\nEventsSubs:\ndescription: Represents an event to be subscribed and the related event filter information.\ntype: object\nproperties:\nevent:\n$ref: '#/components/schemas/AfEvent'\neventFilter:\n$ref: '#/components/schemas/EventFilter'\nrequired:\n- event\n- eventFilter\n\nEventFilter:\ndescription: Represents event filter information for an event.\ntype: object\nproperties:\ngpsis:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Gpsi'\nminItems: 1\nsupis:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'\nminItems: 1\nexterGroupIds:\ntype: array\nitems:\n$ref: 'TS29503_Nudm_SDM.yaml#/components/schemas/ExtGroupId'\nminItems: 1\ninterGroupIds:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/GroupId'\nanyUeInd:\ntype: boolean\nueIpAddr:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/IpAddr'\nappIds:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ApplicationId'\nminItems: 1\nlocArea:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/LocationArea5G'\ncollAttrs:\ntype: array\nitems:\n$ref: '#/components/schemas/CollectiveBehaviourFilter'\nminItems: 1\nexceptionReqs:\ntype: array\nitems:\n$ref: 'TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/Exception'\nminItems: 1\noneOf:\n- required: [gpsis]\n- required: [supis]\n- required: [exterGroupIds]\n- required: [interGroupIds]\n- required: [anyUeInd]\n- required: [ueIpAddr]\n\nServiceExperienceInfoPerApp:\ndescription: Contains service experience information associated with an application.\ntype: object\nproperties:\nappId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ApplicationId'\nappServerIns:\n$ref: '#/components/schemas/AddrFqdn'\nsvcExpPerFlows:\ntype: array\nitems:\n$ref: '#/components/schemas/ServiceExperienceInfoPerFlow'\nminItems: 1\ngpsis:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Gpsi'\nminItems: 1\nsupis:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'\nminItems: 1\ncontrWeights:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uinteger'\nminItems: 1\nrequired:\n- svcExpPerFlows\n\nServiceExperienceInfoPerFlow:\ndescription: Contains service experience information associated with a service flow.\ntype: object\nproperties:\nsvcExprc:\n$ref: '#/components/schemas/SvcExperience'\ntimeIntev:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/TimeWindow'\ndnai:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Dnai'\nipTrafficFilter:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/FlowInfo'\nethTrafficFilter:\n$ref: 'TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription'\n\nSvcExperience:\ndescription: Contains a mean opinion score with the customized range.\ntype: object\nproperties:\nmos:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Float'\nupperRange:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Float'\nlowerRange:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Float'\n\nUeMobilityCollection:\ndescription: >\nContains UE mobility information associated with an application. If the allAppInd attribute\nis present and set to true, then the value in the appId shall be ignored, which indicates\nthe collected UE mobility information is applicable to all the applications for the UE.\ntype: object\nproperties:\ngpsi:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Gpsi'\nsupi:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'\nappId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ApplicationId'\nallAppInd:\ntype: boolean\ndescription: >\nIndicates applicable to all applications if set to true, otherwise set to false.\nDefault value is false if omitted.\nueTrajs:\ntype: array\nitems:\n$ref: '#/components/schemas/UeTrajectoryCollection'\nminItems: 1\nareas:\ntype: array\nitems:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/LocationArea5G'\nminItems: 1\nrequired:\n- appId\n- ueTrajs\n\nUeCommunicationCollection:\ndescription: Contains UE communication information associated with an application.\ntype: object\nproperties:\ngpsi:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Gpsi'\nsupi:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'\nexterGroupId:\n$ref: 'TS29503_Nudm_SDM.yaml#/components/schemas/ExtGroupId'\ninterGroupId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/GroupId'\nappId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ApplicationId'\nexpectedUeBehavePara:\n$ref: 'TS29122_CpProvisioning.yaml#/components/schemas/CpParameterSet'\ncomms:\ntype: array\nitems:\n$ref: '#/components/schemas/CommunicationCollection'\nminItems: 1\nrequired:\n- appId\n- comms\n\nUeTrajectoryCollection:\ndescription: Contains UE trajectory information associated with an application.\ntype: object\nproperties:\nts:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\nlocArea:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/LocationArea5G'\nrequired:\n- ts\n- locArea\n\nCommunicationCollection:\ndescription: Contains communication information.\ntype: object\nproperties:\nstartTime:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\nendTime:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\nulVol:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/Volume'\ndlVol:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/Volume'\nrequired:\n- startTime\n- endTime\n- ulVol\n- dlVol\n\nExceptionInfo:\ndescription: Represents the exceptions information provided by the AF.\ntype: object\nproperties:\nipTrafficFilter:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/FlowInfo'\nethTrafficFilter:\n$ref: 'TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription'\nexceps:\ntype: array\nitems:\n$ref: 'TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/Exception'\nminItems: 1\nrequired:\n- exceps\noneOf:\n- required: [ipTrafficFilter]\n- required: [ethTrafficFilter]\n\nUserDataCongestionCollection:\ndescription: Contains User Data Congestion Analytics related information collection.\ntype: object\nproperties:\nappId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ApplicationId'\nipTrafficFilter:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/FlowInfo'\ntimeInterv:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/TimeWindow'\nthrputUl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/BitRate'\nthrputDl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/BitRate'\nthrputPkUl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/BitRate'\nthrputPkDl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/BitRate'\noneOf:\n- required: [appId]\n- required: [ipTrafficFilter]\n\nPerformanceDataCollection:\ndescription: Contains Performance Data Analytics related information collection.\ntype: object\nproperties:\nappId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ApplicationId'\nueIpAddr:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/IpAddr'\nipTrafficFilter:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/FlowInfo'\nueLoc:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/LocationArea5G'\nappLocs:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Dnai'\nminItems: 1\nasAddr:\n$ref: '#/components/schemas/AddrFqdn'\nperfData:\n$ref: '#/components/schemas/PerformanceData'\ntimeStamp:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\nrequired:\n- perfData\n- timeStamp\n\nPerformanceData:\ndescription: Contains Performance Data.\ntype: object\nproperties:\npdb:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PacketDelBudget'\npdbDl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PacketDelBudget'\nmaxPdbUl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PacketDelBudget'\nmaxPdbDl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PacketDelBudget'\nplr:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PacketLossRate'\nplrDl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PacketLossRate'\nmaxPlrUl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PacketLossRate'\nmaxPlrDl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PacketLossRate'\nthrputUl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/BitRate'\nmaxThrputUl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/BitRate'\nminThrputUl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/BitRate'\nthrputDl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/BitRate'\nmaxThrputDl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/BitRate'\nminThrputDl:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/BitRate'\n\nAddrFqdn:\ndescription: IP address and/or FQDN.\ntype: object\nproperties:\nipAddr:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/IpAddr'\nfqdn:\ntype: string\ndescription: Indicates an FQDN.\n\nDispersionCollection:\ndescription: Contains the dispersion information collected for an AF.\ntype: object\nproperties:\ngpsi:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Gpsi'\nsupi:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'\nueAddr:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/IpAddr'\ntimeStamp:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\ndataUsage:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/UsageThreshold'\nflowDesp:\n$ref: 'TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/FlowDescription'\nappId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ApplicationId'\ndnais:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Dnai'\nminItems: 1\nappDur:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DurationSec'\nrequired:\n- dataUsage\noneOf:\n- required: [gpsi]\n- required: [supi]\n- required: [ueAddr]\n\nCollectiveBehaviourFilter:\ndescription: Contains the collective behaviour filter information to be collected from UE.\ntype: object\nproperties:\ntype:\n$ref: '#/components/schemas/CollectiveBehaviourFilterType'\nvalue:\ntype: string\ndescription: Value of the parameter type as in the type attribute.\ncollBehAttr:\ntype: array\nitems:\n$ref: '#/components/schemas/PerUeAttribute'\nminItems: 1\ndescription: >\nContains the values of collective behaviour attributes at least one of which shall\nmatch for an AF event to be sent.\ndataProcType:\n$ref: '#/components/schemas/DataProcessingType'\nlistOfUeInd:\ntype: boolean\ndescription: >\nIndicates whether request list of UE IDs that fulfill a collective behaviour within the\narea of interest. This attribute shall set to \"true\" if request the list of UE IDs,\notherwise, set to \"false\". May only be present and sets to \"true\" if \"AfEvent\" sets to\n\"COLLECTIVE_BEHAVIOUR\".\nrequired:\n- type\n- value\n\nCollectiveBehaviourInfo:\ndescription: Contains the collective behaviour information to be reported to the subscriber.\ntype: object\nproperties:\ncolAttrib:\ntype: array\nitems:\n$ref: '#/components/schemas/PerUeAttribute'\nminItems: 1\nnoOfUes:\ntype: integer\ndescription: Total number of UEs that fulfil a collective within the area of interest.\nappIds:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ApplicationId'\nminItems: 1\nextUeIds:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Gpsi'\nminItems: 1\nueIds:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'\nminItems: 1\nrequired:\n- colAttrib\noneOf:\n- required: [extUeIds]\n- required: [ueIds]\n\nPerUeAttribute:\ndescription: UE application data collected per UE.\ntype: object\nproperties:\nueDest:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/LocationArea5G'\nroute:\ntype: string\navgSpeed:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/BitRate'\ntimeOfArrival:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\n\nMsQoeMetricsCollection:\ndescription: >\nContains the Media Streaming QoE metrics information collected for an UE Application via AF.\ntype: object\nproperties:\nmsQoeMetrics:\ntype: array\nitems:\ntype: string\nminItems: 1\nrequired:\n- msQoeMetrics\n\nMsConsumptionCollection:\ndescription: >\nContains the Media Streaming Consumption information collected for an UE Application via AF.\ntype: object\nproperties:\nmsConsumps:\ntype: array\nitems:\ntype: string\ndescription: >\nRepresents the Media Streaming Consumption reports with formatting as specified in\nclause 11.3.3 of 3GPP TS 26.512 [30], if required for Media Streaming UE Application.\nminItems: 1\nrequired:\n- msConsumps\n\nMsNetAssInvocationCollection:\ndescription: >\nContains the Media Streaming Network Assistance invocation collected for an UE Application\nvia AF.\ntype: object\nproperties:\nmsNetAssInvocs:\ntype: array\nitems:\n$ref: 'TS26512_M5_NetworkAssistance.yaml#/components/schemas/NetworkAssistanceSession'\nminItems: 1\nrequired:\n- msNetAssInvocs\n\nMsDynPolicyInvocationCollection:\ndescription: >\nContains the Media Streaming Dynamic Policy invocation collected for an UE\nApplication via AF.\ntype: object\nproperties:\nmsDynPlyInvocs:\ntype: array\nitems:\n$ref: 'TS26512_M5_DynamicPolicies.yaml#/components/schemas/DynamicPolicy'\nminItems: 1\nrequired:\n- msDynPlyInvocs\n\nMSAccessActivityCollection:\ndescription: Contains Media Streaming access activity collected for an UE Application via AF.\ntype: object\nproperties:\nmsAccActs:\ntype: array\nitems:\n$ref: 'TS26512_R4_DataReporting.yaml#/components/schemas/MediaStreamingAccessRecord'\nminItems: 1\nrequired:\n- msAccActs\n\nDatVolTransTimeCollection:\ndescription: Contains the collective data volume transfer time information to be reported to the subscriber.\ntype: object\nproperties:\nappId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/ApplicationId'\nappServerInst:\n$ref: '#/components/schemas/AddrFqdn'\ngpsi:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Gpsi'\nsupi:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'\nulTransVol:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/Volume'\ndlTransVol:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/Volume'\nulTransTimeDur:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/TimeWindow'\ndlTransTimeDur:\n$ref: 'TS29122_CommonData.yaml#/components/schemas/TimeWindow'\nanyOf:\n- anyOf:\n- required: [ulTransVol]\n- required: [dlTransVol]\n- anyOf:\n- required: [ulTransTimeDur]\n- required: [dlTransTimeDur]\n\n# Simple data types and Enumerations\n\nAfEvent:\nanyOf:\n- type: string\nenum:\n- SVC_EXPERIENCE\n- UE_MOBILITY\n- UE_COMM\n- EXCEPTIONS\n- USER_DATA_CONGESTION\n- PERF_DATA\n- DISPERSION\n- COLLECTIVE_BEHAVIOUR\n- MS_QOE_METRICS\n- MS_CONSUMPTION\n- MS_NET_ASSIST_INVOCATION\n- MS_DYN_POLICY_INVOCATION\n- MS_ACCESS_ACTIVITY\n- GNSS_ASSISTANCE_DATA\n- DATA_VOLUME_TRANSFER_TIME\n- type: string\ndescription: >\nThis string provides forward-compatibility with future extensions to the enumeration but\nis not used to encode content defined in the present version of this API.\ndescription: |\nRepresents an application's event.\nPossible values are:\n- SVC_EXPERIENCE: Indicates that the subscribed/notified event is service experience\ninformation for an application.\n- UE_MOBILITY: Indicates that the subscribed/notified event is UE mobility information.\n- UE_COMM: Indicates that the subscribed/notified event is UE communication information.\n- EXCEPTIONS: Indicates that the subscribed/notified event is exceptions information.\n- USER_DATA_CONGESTION: Indicates that the subscribed/notified event is user data congestion\nanalytics related information.\n- PERF_DATA: Indicates that the subscribed/notified event is performance data information.\n- DISPERSION: Indicates that the subscribed/notified event is dispersion information.\n- COLLECTIVE_BEHAVIOUR: Indicates that the subscribed/notified event is collective behaviour\ninformation.\n- MS_QOE_METRICS: Indicates that the subscribed/notified event is Media Streaming QoE\nmetrics.\n- MS_CONSUMPTION: Indicates that the subscribed/notified event is Media Streaming\nconsumption reports.\n- MS_NET_ASSIST_INVOCATION: Indicates that the subscribed/notified event is Media Streaming\nnetwork assistance invocation.\n- MS_DYN_POLICY_INVOCATION: Indicates that the subscribed/notified event is Media Streaming\ndynamic policy invocation.\n- MS_ACCESS_ACTIVITY: Indicates that the subscribed/notified event is Media Streaming access\nactivity.\n- GNSS_ASSISTANCE_DATA: Indicates that the subscribed/notified event is GNSS Assistance Data\nCollection.\n\nCollectiveBehaviourFilterType:\nanyOf:\n- type: string\nenum:\n- COLLECTIVE_ATTRIBUTE\n- DATA_PROCESSING\n- type: string\ndescription: >\nThis string provides forward-compatibility with future extensions to the enumeration but\nis not used to encode content defined in the present version of this API.\ndescription: |\nRepresents the parameter type for collective behaviour information filtering.\nPossible values are:\n- COLLECTIVE_ATTRIBUTE: Indicates that the parameter type is collective attributes.\n- DATA_PROCESSING: Indicates that the parameter type is data processing.\n\nDataProcessingType:\ndescription: Represents a type of data processing.\nanyOf:\n- type: string\nenum:\n- AGGREGATION\n- NORMALIZATION\n- ANONYMIZATION\n- type: string\ndescription: >\nThis string provides forward-compatibility with future extensions to the enumeration but\nis not used to encode content defined in the present version of this API.\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 66,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

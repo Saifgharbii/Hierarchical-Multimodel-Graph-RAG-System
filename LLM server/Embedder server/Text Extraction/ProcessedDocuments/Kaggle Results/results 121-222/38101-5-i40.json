@@ -1,0 +1,1311 @@
+{
+    "document_name": "38101-5-i40.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document establishes the minimum RF and performance requirements for NR User Equipment (UE) supporting satellite access operation.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 38.521-5: \"NR; User Equipment (UE) conformance specification; Radio transmission and reception; Part 5: Satellite access Radio Frequency (RF) and performance requirements \".\n[3]\tRecommendation ITU-R M.1545: \"Measurement uncertainty as it applies to test limits for the terrestrial component of International Mobile Telecommunications-2000\".\n[4]\t\t3GPP TS 38.108: \"NR; Satellite Node radio transmission and reception\"\n[5]\t3GPP TS 38.101-1: \"NR; User Equipment (UE) radio transmission and reception; Part 1: Range 1 Standalone\".\n[6]\t3GPP TS 38.101-4: \"NR; User Equipment (UE) radio transmission and reception; Part 4: Performance requirements\".\n[7]\t3GPP TS 38.213: \"NR; Physical layer procedures for control\"\n[8]\t3GPP TS 38.331: \" Radio Resource Control (RRC) protocol specification\".\n[9]\t3GPP TS 38.300: \"NR; NR and NG-RAN Overall description; Stage-2\".\n[10]\t3GPP TS 36.101: \"Evolved Universal Terrestrial Radio Access (E-UTRA); User Equipment (UE) radio transmission and reception\".\n[11]\t3GPP TS 38.306: \"User Equipment (UE) radio access capabilities\".\n[12]\t3GPP TR 38.811: \"Study on New Radio (NR) to support non-terrestrial networks\".\n[13]\t3GPP TS 38.508-1: \"5GS; User Equipment (UE) conformance specification; Part 1: Common test environment\".\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nEnhanced channel raster: channel raster with a 10 kHz granularity in bands with a 100 kHz channel raster.\nGeostationary satellite: A geosynchronous satellite whose circular and direct orbit lies in the plane of the Earth’s equator and which thus remains fixed relative to the Earth; by extension, a geosynchronous satellite which remains approximately fixed relative to the Earth.\nGeostationary-Satellite Orbit: The orbit of a geosynchronous satellite whose circular and direct orbit lies in the plane of the Earth's equator.\nGeosynchronous Earth Orbit: Earth-centered orbit at approximately 35786 kilometres above Earth's surface and synchronised with Earth's rotation. A geostationary orbit is a non-inclined geosynchronous orbit, i.e. in the Earth’s equator plane.\nGeosynchronous satellite: An earth satellite whose period of revolution is equal to the period of rotation of the Earth about its axis.\nLow Earth Orbit: Orbit around the Earth with an altitude between 300 km, and 1500 km.\nNon-terrestrial networks: Networks, or segments of networks, using an airborne or space-borne vehicle to embark a transmission equipment relay node or base station.\nSatellite: A space-borne vehicle embarking a bent pipe payload or a regenerative payload telecommunication transmitter, placed into Low-Earth Orbit (LEO), Medium-Earth Orbit (MEO), or Geostationary Earth Orbit (GEO).\nSatellite Access Node: see definition in TS 38.108[4].\nUE transmission bandwidth configuration: Set of resource blocks located within the UE channel bandwidth which may be used for transmitting or receiving by the UE.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\nΔFGlobal\tGranularity of the global frequency raster\nΔFRaster\tBand dependent channel raster granularity\nBWChannel\tChannel bandwidth\nBWinterferer\tBandwidth of the interferer\nFDL_low\tThe lowest frequency of the downlink operating band\nFDL_high\tThe highest frequency of the downlink operating band\nFUL_low\tThe lowest frequency of the uplink operating band\nFUL_high\tThe highest frequency of the uplink operating band\nFInterferer\tFrequency of the interferer\nFInterferer (offset)\tFrequency offset of the interferer (between the center frequency of the interferer and the carrier frequency of the carrier measured)\nFIoffset\tFrequency offset of the interferer (between the center frequency of the interferer and the closest edge of the carrier measured)\nFOOB\tThe boundary between the NR out of band emission and spurious emission domains\nFREF\tRF reference frequency\nFREF-Offs\tOffset used for calculating FREF\nFuw (offset)\tThe frequency separation of the center frequency of the carrier closest to the interferer and the center frequency of the interferer\nNRB\tTransmission bandwidth configuration, expressed in units of resource blocks\nNREF\tNR Absolute Radio Frequency Channel Number (NR-ARFCN)\nNREF-Offs\tOffset used for calculating NREF\nPInterferer\tModulated mean power of the interferer\nPuw\tPower of an unwanted DL signal\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nACLR\tAdjacent Channel Leakage Ratio\nACS\tAdjacent Channel Selectivity\nA-MPR\tAdditional Maximum Power Reduction\nBW\tBandwidth\nBWP\tBandwidth Part\nCP-OFDM\tCyclic Prefix-OFDM\nCW\tContinuous Wave\nDFT-s-OFDM\tDiscrete Fourier Transform-spread-OFDM\nDM-RS\tDemodulation Reference Signal\nDTX\tDiscontinuous Transmission\nEIRP\tEquivalent Isotropically Radiated Power\nEVM\tError Vector Magnitude\nFR\tFrequency Range\nFRC\tFixed Reference Channel\nGEO\tGeosynchronous Earth Orbit\nGSCN\tGlobal Synchronization Channel Number\nGSO\tGeostationary-Satellite Orbit\nIBB\tIn-band Blocking\nITU-R\tRadiocommunication Sector of the International Telecommunication Union\nLEO\tLow Earth Orbiting\nMBW\tMeasurement bandwidth defined for the protected band\nMEO\tMedium Earth Orbiting\nMOP\tMaximum Output Power\nMPR\tAllowed maximum power reduction\nMSD\tMaximum Sensitivity Degradation\nNGEO\tNon-Geostationary Earth Orbiting\nNGSO\tNon-Geostationary-Satellite Orbit\nNR\tNew Radio\nNR-ARFCN\tNR Absolute Radio Frequency Channel Number\nNS\tNetwork Signalling\nNTN\tNon-Terrestrial Network\nOCNG\tOFDMA Channel Noise Generator\nOOB\tOut-of-band\nPRB\tPhysical Resource Block\nQAM\tQuadrature Amplitude Modulation\nRAN\tRadio Access Network\nRE\tResource Element\nREFSENS\tREFerence SENSitivity\nRF\tRadio Frequency\nRMS\tRoot Mean Square (value)\nRSRP\tReference Signal Receive Power\nRSRQ\tReference Signal Receive Quality\nRX\tReceiver\nSAN\tSatellite Access Node\nSC\tSingle Carrier\nSCS\tSubcarrier spacing\nSEM\tSpectrum Emission Mask\nSNR\tSignal-to-Noise Ratio\nSRS\tSounding Reference Symbol\nSS\tSynchronization Symbol\nTN\tTerrestrial Network\nTX\tTransmitter\nTxD\tTx Diversity\nUE\tUser Equipment\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tRelationship between minimum requirements and test requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The present document is a Single-RAT specification for satellite NR UE, covering RF characteristics and minimum performance requirements. Conformance to the present specification is demonstrated by fulfilling the test requirements specified in the conformance specification 3GPP TS 38.521-5 [2].\nThe Minimum Requirements given in this specification make no allowance for measurement uncertainty. The test specification 3GPP TS 38.521-5 [2] defines test tolerances. These test tolerances are individually calculated for each test. The test tolerances are used to relax the minimum requirements in this specification to create test requirements. For some requirements, including regulatory requirements, the test tolerance is set to zero.\nThe measurement results returned by the test system are compared - without any modification - against the test requirements as defined by the shared risk principle.\nThe shared risk principle is defined in Recommendation ITU-R M.1545 [3].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tApplicability of minimum requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "a)\tIn this specification the Minimum Requirements are specified as general requirements and additional requirements. Where the Requirement is specified as a general requirement, the requirement is mandated to be met in all scenarios\nb)\tFor specific scenarios for which an additional requirement is specified, in addition to meeting the general requirement, the UE is mandated to meet the additional requirements.\nc)\tThe spurious emissions power requirements are for the long-term average of the power. For the purpose of reducing measurement uncertainty, it is acceptable to average the measured power over a period of time sufficient to reduce the uncertainty due to the statistical nature of the signal.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tSpecification suffix information",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Specification suffix information is not defined for the time being in Release 17.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tRelationship with other core specifications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The present document establishes the minimum RF and performance requirements for NR User Equipment (UE) operating in a Non-Terrestrial Network. The present document for the single-RAT specification of a satellite NR UE side is used together with the technical specification 3GPP TS 38.108 [4] specifying the Satellite Access Node (SAN).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tOperating bands and channel arrangement",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The channel arrangements presented in this clause are based on the operating bands and channel bandwidths defined in the present Release of specifications.\nNOTE:\tOther operating bands and channel bandwidths may be considered in future Releases.\nRequirements throughout the RF specifications are in many cases defined separately for different frequency ranges (FR). The frequency ranges in which NTN satellite can operate according to this version of the specification are identified as described in Table 5.1-1.\nTable 5.1-1: Definition of frequency ranges\n\nThe present specification covers FR1 operating bands.\n",
+                    "tables": [
+                        {
+                            "description": "Table 5.1-1: Definition of frequency ranges",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tOperating bands",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tGeneral",
+                            "text_content": "NTN satellite covers FR1 operating bands in the present specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tOperating bands with conducted requirements",
+                            "text_content": "NTN satellite is designed to operate in the operating bands defined in Table 5.2.2-1.\nTable 5.2.2-1: NTN satellite bands in FR1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.2.2-1: NTN satellite bands in FR1",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.2.3\treserved (for radiated requirements)",
+                            "text_content": "[To be updated]\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tUE channel bandwidth",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tGeneral",
+                            "text_content": "The UE channel bandwidth supports a single RF carrier in the uplink or downlink at the UE. From a SAN perspective, different UE channel bandwidths may be supported within the same spectrum for transmitting to and receiving from UEs connected to the SAN.\nFrom a UE perspective, the UE is configured with one or more BWP / carriers, each with its own UE channel bandwidth. The UE does not need to be aware of the SAN channel bandwidth or how the SAN allocates bandwidth to different UEs.\nThe placement of the UE channel bandwidth for each UE carrier is flexible but can only be completely within the SAN channel bandwidth.\nThe relationship between the channel bandwidth, the guardband and the maximum transmission bandwidth configuration is shown in Figure 5.3.1-1.\nThe figure depicts the definition of the channel bandwidth and the maximum transmission bandwidth configuration for one channel, illustrating the relationship between the two parameters. The figure includes a legend to help understand the different configurations and their corresponding channel bandwidth and maximum transmission bandwidth values.\nFigure 5.3.1-1: Definition of the channel bandwidth and the maximum transmission bandwidth configuration for one channel\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tMaximum transmission bandwidth configuration",
+                            "text_content": "The maximum transmission bandwidth configuration NRB for each UE channel bandwidth and subcarrier spacing is specified in Table 5.3.2-1.\nTable 5.3.2-1: Maximum transmission bandwidth configuration NRB\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.2-1: Maximum transmission bandwidth configuration NRB",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.3.3\tMinimum guardband and transmission bandwidth configuration",
+                            "text_content": "The minimum guardband for each UE channel bandwidth and SCS is specified in Table 5.3.3-1,\nTable 5.3.3-1: Minimum guardband for each UE channel bandwidth and SCS (kHz)\n\nNOTE:\tThe minimum guardbands have been calculated using the following equation: (BWChannel x 1000 (kHz) - NRB x SCS x 12) / 2 - SCS/2, where NRB are from Table 5.3.2-1.\nFigure 5.3.3-1: Void\nThe number of RBs configured in any channel bandwidth shall ensure that the minimum guardband specified in this clause is met.\nThe figure depicts the utilization of the Primary Radio Beaming (PRB) in a 5G network, showing the distribution of PRBs across different layers. The figure illustrates the importance of PRB utilization in ensuring efficient signal transmission and reducing interference.\nFigure 5.3.3-2: UE PRB utilization\nIn the case that multiple numerologies are multiplexed in the same symbol, the minimum guard band on each side of the carrier is the guard band applied at the configured UE channel bandwidth for the numerology that is transmitted/received immediately adjacent to the guard band.\n\nThe figure depicts a guard band definition for transmitting multiple numerologies, illustrating the various signal paths and their corresponding guard bands. The guard band is crucial for ensuring the integrity of the communication system, as it helps to prevent interference and ensure the correct transmission of data.\nFigure 5.3.3-3: Guard band definition when transmitting multiple numerologies\nNOTE:\tFigure 5.3.3-2 is not intended to imply the size of any guard between the two numerologies. Inter-numerology guard band within the carrier is implementation dependent.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.3-1: Minimum guardband for each UE channel bandwidth and SCS (kHz)",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.3.4\tRB alignment",
+                            "text_content": "The RB alignment refers to NR RB alignments as specified in 3GPP TS 38.101-1 [5] clause 5.3.4.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.5\tUE channel bandwidth per operating band",
+                            "text_content": "The requirements in this specification apply to the combination of channel bandwidths, SCS and operating bands shown in Table 5.3.5-1. The transmission bandwidth configuration in Table 5.3.2-1 shall be supported for each of the specified channel bandwidths. The channel bandwidths are specified for both the Tx and Rx path.\nTable 5.3.5-1: Channel bandwidths for each NTN satellite band\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.5-1: Channel bandwidths for each NTN satellite band",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.3.6\tAsymmetric channel bandwidths",
+                            "text_content": "The UE channel bandwidth can be asymmetric in downlink and uplink. In asymmetric channel bandwidth operation, the narrower carrier shall be confined within the frequency range of the wider channel bandwidth.\nIn FDD, the confinement is defined as a maximum deviation to the Tx-Rx carrier center frequency separation (defined in table 5.4.4-1) as following:\nΔFTX-RX = | (BWDL – BWUL)/2 |\nThe operating bands and supported asymmetric channel bandwidth combinations are defined in table 5.3.6-1.\nTable 5.3.6-1: FDD asymmetric UL and DL channel bandwidth combinations\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.3.6-1: FDD asymmetric UL and DL channel bandwidth combinations",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tChannel arrangement",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tChannel spacing",
+                            "text_content": "The channel spacing for adjacent NTN satellite carriers refers to the NR channel spacing as specified in 3GPP TS 38.101-1 [5] clause 5.4.1.1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tChannel raster",
+                            "text_content": "The global frequency channel raster defines a set of RF reference frequencies FREF. The RF reference frequency is used in signalling to identify the position of RF channels, SS blocks and other elements.\nThe global frequency raster is defined for all frequencies from 0 to 100 GHz. The granularity of the global frequency raster is ΔFGlobal.\nRF reference frequencies are designated by an NR Absolute Radio Frequency Channel Number (NR-ARFCN) in the range (0…2016666) on the global frequency raster. The relation between the NR-ARFCN and the RF reference frequency FREF in MHz is given by the following equation, where FREF-Offs and NREF-Offs are given in Table 5.4.2.1-1 and NREF is the NR-ARFCN.\nFREF = FREF-Offs + ΔFGlobal (NREF – NREF-Offs)\nTable 5.4.2.1-1: NR-ARFCN parameters for the global frequency raster\n\nThe channel raster defines a subset of RF reference frequencies that can be used to identify the RF channel position in the uplink and downlink. The RF reference frequency for an RF channel maps to a resource element on the carrier. For each operating band, a subset of frequencies from the global frequency raster are applicable for that band and forms a channel raster with a granularity ΔFRaster, which may be equal to or larger than ΔFGlobal.\nThe mapping between the channel raster and corresponding resource element is given in clause 5.4.2.2. The applicable entries for each operating band are defined in clause 5.4.2.3.\nThe mapping between the RF reference frequency on the channel raster and the corresponding resource element refers to the NR requirements specified in 3GPP TS 38.101-1 [5] clause 5.4.2.2.\nThe RF channel positions on the channel raster in each NTN satellite operating band are given through the applicable NR-ARFCN in Table 5.4.2.3-1, using the channel raster to resource element mapping in clause 5.4.2.2.\nFor NTN satellite operating bands with 100 kHz channel raster, ΔFRaster = 20 × ΔFGlobal. In this case every 20th NR-ARFCN within the operating band are applicable for the channel raster within the operating band and the step size for the channel raster in Table 5.4.2.3-1 is given as <20>.\nTable 5.4.2.3-1: Applicable NR-ARFCN per operating band\n\nFor NTN operating bands with 100 kHz channel raster, Enhanced channel raster is defined with ΔFRaster = 2 × ΔFGlobal. In this case every 2th NR-ARFCN within the operating band are applicable for the channel raster within the operating band and the step size for the channel raster in Table 5.4.2.3-2 is given as <2>.\nTable 5.4.2.3-2: Applicable NR-ARFCN per operating band\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.4.2.1-1: NR-ARFCN parameters for the global frequency raster",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.2.3-1: Applicable NR-ARFCN per operating band",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.2.3-2: Applicable NR-ARFCN per operating band",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.4.3\tSynchronization raster",
+                            "text_content": "The synchronization raster indicates the frequency positions of the synchronization block that can be used by the UE for system acquisition when explicit signalling of the synchronization block position is not present.\nA global synchronization raster is defined for all frequencies. The frequency position of the SS block is defined as SSREF with corresponding number GSCN. The parameters defining the SSREF and GSCN for all the frequency ranges are in Table 5.4.3.1-1.\nThe resource element corresponding to the SS block reference frequency SSREF is given in clause 5.4.3.2. The synchronization raster and the subcarrier spacing of the synchronization block is defined separately for each band.\nThe synchronization raster and the corresponding SS block do not cover all possible RF channel bandwidth and locations on Enhanced channel raster.\nTable 5.4.3.1-1: GSCN parameters for the global frequency raster\n\nThe mapping between the synchronization raster and the corresponding resource element of the SS block refers to 3GPP TS 38.101-1 [5] clause 5.4.3.2.\nThe synchronization raster for each band is give in Table 5.4.3.3-1. The distance between applicable GSCN entries is given by the <Step size> indicated in Table 5.4.3.3-1.\nTable 5.4.3.3-1: Applicable SS raster entries per operating band\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.4.3.1-1: GSCN parameters for the global frequency raster",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 5.4.3.3-1: Applicable SS raster entries per operating band",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.4.4\tTX–RX frequency separation",
+                            "text_content": "The default TX channel (carrier centre frequency) to RX channel (carrier centre frequency) separation for operating bands is specified in Table 5.4.4-1.\nTable 5.4.4-1: UE TX-RX frequency separation\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 5.4.4-1: UE TX-RX frequency separation",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tConducted transmitter characteristics",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Unless otherwise stated, the transmitter characteristics for satellite access UEs are specified at the antenna connector of the UE with a single or multiple transmit antenna(s). For UE with integral antenna only, a reference antenna with a gain of 0 dBi is assumed. Handheld power class 3 UE is assumed in Release 17 for satellite access.\nAll requirements in this section are applicable to devices supporting GSO and/or NGSO satellites.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tTransmitter power",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tUE maximum output power",
+                            "text_content": "The following UE Power Classes define the maximum output power for any transmission bandwidth within the channel bandwidth of NR carrier unless otherwise stated. The period of measurement shall be at least one sub frame (1ms).\nTable 6.2.1-1: UE Power Class\n\nThe UE shall meet the following additional requirements for maximum mean transmission power density specified in Table 6.2.1-2 when NS is signaled and when the configured channel overlaps with any portion of the specified frequency range.\nTable 6.2.1-2: Additional requirements for transmit power density\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.1-1: UE Power Class",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.1-2: Additional requirements for transmit power density",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.2\tUE maximum output power reduction",
+                            "text_content": "UE is allowed to reduce the maximum output power due to higher order modulations and transmit bandwidth configurations. For UE power class 3, the allowed maximum power reduction (MPR) is defined as Table 6.2.2-1 in 3GPP TS 38.101-1[5] clause 6.2.2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tUE additional maximum output power reduction",
+                            "text_content": "Additional emission requirements can be signalled by the network. Each additional emission requirement is associated with a unique network signalling (NS) value indicated in RRC signalling by an NR frequency band number of the applicable operating band and an associated value in the field additionalSpectrumEmission. Throughout this specification, the notion of indication or signalling of an NS value refers to the corresponding indication of an NR satellite band number of the applicable operating band, the IE field freqBandIndicatorNR and an associated value of additionalSpectrumEmission in the relevant RRC information elements [6].\nTo meet the additional requirements, additional maximum power reduction (A-MPR) is allowed for the maximum output power as specified in Table 6.2.1-1. Unless stated otherwise, the total reduction to UE maximum output power is max(MPR, A-MPR) where MPR is defined in clause 6.2.2. Outer and inner allocation notation used in clause 6.2.3 is defined in 3GPP TS 38.101-1 [5] clause 6.2.2. In absence of modulation and waveform types the A-MPR applies to all modulation and waveform types.\nTable 6.2.3.1-1 specifies the additional requirements with their associated network signalling values and the allowed A-MPR and applicable operating band(s) for each NS value. The mapping of NR satellite band numbers and values of the additionalSpectrumEmission to network signalling labels is specified in Table 6.2.3.1-1A.\nTable 6.2.3.1-1: Additional maximum power reduction (A-MPR)\n[The NS_01 label with the field additionalPmax [8] absent is default for all NTN satellite bands.]\n\nTable 6.2.3.1-1A: Mapping of network signalling label\n\nTable 6.2.3.2-1: A-MPR regions for NS_03N\n\nTable 6.2.3.2-2: A-MPR for NS_03N\n\nTable 6.2.3.3-1: A-MPR regions for NS_04N\n\nTable 6.2.3.3-2: A-MPR for NS_04N\n\nTable 6.2.3.4-1: A-MPR regions for NS_05N\n\nTable 6.2.3.4-2: A-MPR for NS_05N\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.3.1-1: Additional maximum power reduction (A-MPR)",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.1-1A: Mapping of network signalling label",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2-1: A-MPR regions for NS_03N",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2-2: A-MPR for NS_03N",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3-1: A-MPR regions for NS_04N",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3-2: A-MPR for NS_04N",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4-1: A-MPR regions for NS_05N",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4-2: A-MPR for NS_05N",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.4\tConfigured transmitted power",
+                            "text_content": "The requirements for configured transmitted power defined in subclause 6.2.4 of 3GPP TS 38.101-1 [5] clause 6.2.4 shall apply to NTN satellite UE.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tOutput power dynamics.",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tMinimum output power",
+                            "text_content": "The minimum controlled output power of the UE is defined as the power in the channel bandwidth for all transmit bandwidth configurations (resource blocks), when the power is set to a minimum value.\nThe minimum output power is defined as the mean power in at least one sub-frame (1 ms). The minimum output power shall not exceed the values specified in Table 6.3.1-1.\nTable 6.3.1-1: Minimum output power\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.1-1: Minimum output power",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.2\tTransmit OFF power",
+                            "text_content": "Transmit OFF power is defined as the mean power in the channel bandwidth when the transmitter is OFF. The transmitter is considered OFF when the UE is not allowed to transmit on any of its ports.\nThe transmit OFF power is defined as the mean power in a duration of at least one sub-frame (1 ms) excluding any transient periods. The transmit OFF power shall not exceed the values specified in Table 6.3.2-1.\nTable 6.3.2-1: Transmit OFF power\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.2-1: Transmit OFF power",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.3\tTransmit ON/OFF time mask",
+                            "text_content": "The requirements for transmit ON/OFF time mask defined in 3GPP TS 38.101-1 [5] clause 6.3.3 shall apply for NTN satellite UE.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.4\tPower control",
+                            "text_content": "The requirements for Power control defined in 3GPP TS 38.101-1 [5] clause 6.3.4 shall apply for NTN satellite UE.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tTransmit signal quality",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tFrequency error",
+                            "text_content": "The NTN satellite UE basic measurement interval of modulated carrier frequency is 1 UL slot. The NTN satellite UE pre-compensates the uplink modulated carrier frequency by the estimated Doppler shift according to 3GPP TS 38.300 [9] clause 16.14.2. The mean value of basic measurements of NTN UE modulated carrier frequency shall be accurate to within ± 0.1 PPM observed over a period of 1 ms of cumulated measurement intervals compared to ideally pre-compensated reference uplink carrier frequency.\n[NOTE:\tThe ideally pre-compensated reference uplink carrier frequency consists of the UL carrier frequency signalled to the UE by SAN and UL pre-compensated Doppler frequency shift.]\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.2\tTransmit modulation quality",
+                            "text_content": "The requirements for transmit modulation quality defined in 3GPP TS 38.101-1 [5] clause 6.4.2 shall apply for NTN satellite UE.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.5\tOutput RF spectrum emissions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.5.1\tOccupied bandwidth",
+                            "text_content": "Occupied bandwidth is defined as the bandwidth containing 99 % of the total integrated mean power of the transmitted spectrum on the assigned channel. The occupied bandwidth for all transmission bandwidth configurations (Resources Blocks) shall be less than the channel bandwidth specified in Table 6.5.1-1.\nTable 6.5.1-1: Occupied channel bandwidth\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.5.1-1: Occupied channel bandwidth",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.5.2\tOut of band emission",
+                            "text_content": "The Out of band emissions are unwanted emissions immediately outside the assigned channel bandwidth resulting from the modulation process and non-linearity in the transmitter but excluding spurious emissions. This out of band emission limit is specified in terms of a spectrum emission mask and an adjacent channel leakage power ratio.\nTo improve measurement accuracy, sensitivity and efficiency, the resolution bandwidth may be smaller than the measurement bandwidth. When the resolution bandwidth is smaller than the measurement bandwidth, the result should be integrated over the measurement bandwidth in order to obtain the equivalent noise bandwidth of the measurement bandwidth.\nThe spectrum emission mask of the UE applies to frequencies (ΔfOOB) starting from the  edge of the assigned NR channel bandwidth. For frequencies offset greater than ΔfOOB, the spurious requirements in clause 6.5.3 are applicable.\nNOTE:\tFor measurement conditions at the edge of each frequency range, the lowest frequency of the measurement position in each frequency range should be set at the lowest boundary of the frequency range plus MBW/2. The highest frequency of the measurement position in each frequency range should be set at the highest boundary of the frequency range minus MBW/2. MBW denotes the measurement bandwidth defined for the protected band.\nThe power of any UE emission shall not exceed the levels specified in Table 6.5.2.2-1 for the specified channel bandwidth.\nTable 6.5.2.2-1: General NR spectrum emission mask\n\nWhen \"NS_04N\" is indicated in the cell, the power of any UE emission shall not exceed the levels specified in Table 6.5.2.3.1-1 for any channel bandwidth configured within 1610-1618.25MHz.\nTable 6.5.2.3.1-1: Additional requirements for \"NS_04N\"\n\nWhen \"NS_05N\" is indicated in the cell, the power of any UE emission shall not exceed the levels specified in Table 6.5.2.3.2-1 for any channel bandwidth configured within 1618.25-1626.5MHz.\nTable 6.5.2.3.2-1: Additional requirements for \"NS_05N\"\n\nAdjacent Channel Leakage power Ratio (ACLR) is the ratio of the filtered mean power centred on the assigned channel frequency to the filtered mean power centred on an adjacent channel frequency.\nTo improve measurement accuracy, sensitivity and efficiency, the resolution bandwidth may be smaller than the measurement bandwidth. When the resolution bandwidth is smaller than the measurement bandwidth, the result should be integrated over the measurement bandwidth in order to obtain the equivalent noise bandwidth of the measurement bandwidth.\nNR Adjacent Channel Leakage power Ratio (NRACLR) is the ratio of the filtered mean power centred on the assigned NR channel frequency to the filtered mean power centred on an adjacent NR channel frequency at nominal channel spacing.\nThe assigned NR channel power and adjacent NR channel power are measured with rectangular filters with measurement bandwidths specified in Table 6.5.2.4.1-1.\nIf the measured adjacent channel power is greater than –50 dBm then the NRACLR shall be higher than the value specified in Table 6.5.2.4.1-2.\nTable 6.5.2.4.1-1: NR ACLR measurement bandwidth\n\nTable 6.5.2.4.1-2: NR ACLR requirement\n\nUTRA adjacent channel leakage power ratio (UTRAACLR) is the ratio of the filtered mean power centred on the assigned NR channel frequency to the filtered mean power centred on an adjacent(s) UTRA channel frequency.\nUTRAACLR is specified for the first adjacent UTRA channel (UTRAACLR1) which center frequency is ± 2.5 MHz from NR channel edge and for the 2nd adjacent UTRA channel (UTRAACLR2) which center frequency is ± 7.5 MHz from NR channel edge.\nThe UTRA channel power is measured with a RRC filter with roll-off factor = 0.22 and bandwidth of 3.84 MHz. The assigned NR channel power is measured with a rectangular filter with measurement bandwidth specified in Table 6.5.2.4.1-1.\nIf the measured adjacent channel power is greater than – 50 dBm then the UTRAACLR1 and UTRAACLR2 shall be higher than the value specified in Table 6.5.2.4.2-1.\nTable 6.5.2.4.2-1: UTRA ACLR requirement\n\nUTRA ACLR requirement is applicable when signalled by the network with network signalling value indicated by the field additionalSpectrumEmission.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.5.2.2-1: General NR spectrum emission mask",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.5.2.3.1-1: Additional requirements for \"NS_04N\"",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.5.2.3.2-1: Additional requirements for \"NS_05N\"",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.5.2.4.1-1: NR ACLR measurement bandwidth",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.5.2.4.1-2: NR ACLR requirement",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.5.2.4.2-1: UTRA ACLR requirement",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.5.3\tSpurious emission",
+                            "text_content": "Unless otherwise stated, the spurious emission limits apply for the frequency ranges that are more than FOOB (MHz) in Table 6.5.3.1-1 from the edge of the channel bandwidth. The spurious emission limits in Table 6.5.3.1-2 apply for all transmitter band configurations (NRB) and channel bandwidths.\nTable 6.5.3.1-1: Boundary between NR out of band and general spurious emission domain\n\nTable 6.5.3.1-2: Requirement for general spurious emissions limits\n\nThis clause specifies the requirements for NR NTN satellite bands for UE coexistence with protected bands.\nTable 6.5.3.2-1: Requirements for spurious emissions for UE co-existence\n\nNOTE:\tTo simplify Table 6.5.3.2-1, NR band numbers are listed for bands which are specified only for NR operation or both E-UTRA and NR operation. E-UTRA band numbers are listed for bands which are specified only for E-UTRA operation.\nThese requirements are specified in terms of an additional spectrum emission requirement. Additional spurious emission requirements are signalled by the network to indicate that the UE shall meet an additional requirement for a specific deployment scenario as part of the cell handover/broadcast message.\nWhen \"NS_02N\" is indicated in the cell, the power of any UE emission shall not exceed the levels specified in Table 6.5.3.3.2-1. This requirement also applies for the frequency ranges that are less than FOOB (MHz) in Table 6.5.3.1-1 from the edge of the channel bandwidth.\nTable 6.5.3.3.2-1: Additional requirements for \"NS_02N\"\n\nWhen \"NS_03N\" is indicated in the cell, the power of any UE emission shall not exceed the levels specified in Table 6.5.3.3.3-1. This requirement also applies for the frequency ranges that are less than FOOB (MHz) in Table 6.5.3.1-1 from the edge of the channel bandwidth.\nTable 6.5.3.3.3-1: Additional out-of-band requirements for \"NS_03N\"\n\nWhen \"NS_04N\" or \"NS_05N\" is indicated in the cell, the power of any UE emission shall not exceed the levels specified in Table 6.5.3.3.4-1. This requirement also applies for the frequency ranges that are less than FOOB (MHz) in Table 6.5.3.1-1 from the edge of the channel bandwidth.\nTable 6.5.3.3.4-1: Additional out-of-band requirements for \"NS_04N\" and \"NS_05N\"\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.5.3.1-1: Boundary between NR out of band and general spurious emission domain",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.5.3.1-2: Requirement for general spurious emissions limits",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.5.3.2-1: Requirements for spurious emissions for UE co-existence",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.5.3.3.2-1: Additional requirements for \"NS_02N\"",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.5.3.3.3-1: Additional out-of-band requirements for \"NS_03N\"",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.5.3.3.4-1: Additional out-of-band requirements for \"NS_04N\" and \"NS_05N\"",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.5.4\tTransmit intermodulation",
+                            "text_content": "The transmit intermodulation performance is a measure of the capability of the transmitter to inhibit the generation of signals in its non-linear elements caused by presence of the wanted signal and an interfering signal reaching the transmitter via the antenna.\nUE transmit intermodulation is defined by the ratio of the mean power of the wanted signal to the mean power of the intermodulation product when an interfering CW signal is added at a level below the wanted signal at each transmitter antenna port with the other antenna port(s) if any terminated. Both the wanted signal power and the intermodulation product power are measured through NR rectangular filter with measurement bandwidth shown in Table 6.5.4-1.\nThe requirement of transmit intermodulation is specified in Table 6.5.4-1.\nTable 6.5.4-1: Transmit Intermodulation\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.5.4-1: Transmit Intermodulation",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tConducted receiver characteristics",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Unless otherwise stated the receiver characteristics are specified at the antenna connector(s) of the UE. For UE(s) with an integral antenna only, a reference antenna(s) with a gain of 0 dBi is assumed for each antenna port(s). UE with an integral antenna(s) may be taken into account by converting these power levels into field strength requirements, assuming a 0 dBi gain antenna. For UEs with more than one receiver antenna connector, identical interfering signals shall be applied to each receiver antenna port if more than one of these is used (diversity).\nThe levels of the test signal applied to each of the antenna connectors shall be as defined in the respective clauses below.\nWith the exception of clause 7.3, the requirements shall be verified with the network signalling value NS_01 configured in Table 6.2.3.1-1.\nAll requirements in this section are applicable to devices supporting GSO and/or NGSO satellites.\nAll the parameters in clause 7 are defined using the UL reference measurement channels specified in 3GPP TS 38.101-1 [5] Annex A.2.2, the DL reference measurement channels specified in 3GPP TS 38.101-1 [5] Annex A.3.2 and using the set-up specified in 3GPP TS 38.101-1 [5] Annex C.3.1.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tDiversity characteristics",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The UE is required to be equipped with a minimum of two RX antenna ports in all operating bands.\nThe UE shall be verified with two RX antenna ports in all supported frequency bands.\nThe above rules apply for all clauses with the exception of clause 7.9.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tReference sensitivity",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.3.1\tGeneral",
+                            "text_content": "The reference sensitivity power level REFSENS is the minimum mean power applied to each one of the UE antenna ports for all UE categories, at which the throughput shall meet or exceed the requirements for the specified reference measurement channel.\nIn later clauses of Clause 7 where the value of REFSENS is used as a reference to set the corresponding requirement:\nin all bands, the UE shall be verified against those requirements by applying the REFSENS value in Table 7.3.2-1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.3.2\tReference sensitivity power level",
+                            "text_content": "The throughput shall be ≥ 95 % of the maximum throughput of the reference measurement channels as specified in Annex A3.2.2 of 3GPP TS 38.101-1 [5], with parameters specified in Table 7.3.2-1.\nTable 7.3.2-1: Two antenna port reference sensitivity QPSK PREFSENS for FDD bands\n\nThe reference receiver sensitivity (REFSENS) requirement specified in Table 7.3.2-1 shall be met with uplink transmission bandwidth less than or equal to that specified in Table 7.3.2-2.\nless than or equal to that specified in Table 7.3.2-2.\nTable 7.3.2-2: Uplink configuration for reference sensitivity\n\nThe minimum requirements specified in Table 7.3.2-1 shall be verified with the network signalling value NS_01 (Table 6.2.3.1-1 of 3GPP TS 38.101-1 [5]) configured.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.3.2-1: Two antenna port reference sensitivity QPSK PREFSENS for FDD bands",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.3.2-2: Uplink configuration for reference sensitivity",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "7.4\tMaximum input level",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Maximum input level is defined as the maximum mean power received at the UE antenna port, at which the specified relative throughput shall meet or exceed the minimum requirements for the specified reference measurement channel. The throughput shall be ≥ 95 % of the maximum throughput of the reference measurement channels as specified in 3GPP TS 38.101-1 [5] Annex A.3.2 (with one sided dynamic OCNG Pattern OP.1 FDD as described in 3GPP TS 38.101-1 [5] Annex A.5.1.1) with parameters specified in Table 7.4-1.\nTable 7.4-1: Maximum input level\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.4-1: Maximum input level",
+                            "table number": 43,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.5\tAdjacent channel selectivity",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Adjacent channel selectivity (ACS) is a measure of a receiver's ability to receive an NR signal at its assigned channel frequency in the presence of an adjacent channel signal at a given frequency offset from the centre frequency of the assigned channel. ACS is the ratio of the receive filter attenuation on the assigned channel frequency to the receive filter attenuation on the adjacent channel(s).\nIn Release 17, only frequency bands below 2.7GHz are considered. The NR satellite UE shall fulfil the minimum requirements specified in Table 7.5-1 for NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz. These requirements apply for all values of an adjacent channel interferer in case 1 and for any SCS specified for the channel bandwidth of the wanted signal. The lower and upper range of test parameters are chosen as in Table 7.5-2 and Table 7.5-3 for verification of the requirements specified in Table 7.5-1. For these test parameters, the throughput shall be ≥ 95 % of the maximum throughput of the reference measurement channels as specified in 3GPP TS 38.101-1 [5] Annexes A.2.2 and A.3.2 (with one sided dynamic OCNG Pattern OP.1 FDD for the DL-signal as described in 3GPP TS 38.101-1 [5] Annex A.5.1.1).\nTable 7.5-1: ACS for NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz\n\nTable 7.5-2: Test parameters for NR bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz, case 1\n\nTable 7.5-3: Test parameters for NR bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz, case 2\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.5-1: ACS for NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz",
+                            "table number": 44,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 7.5-2: Test parameters for NR bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz, case 1",
+                            "table number": 45,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 7.5-3: Test parameters for NR bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz, case 2",
+                            "table number": 46,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.6\tBlocking characteristics",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.6.1\tGeneral",
+                            "text_content": "The blocking characteristic is a measure of the receiver's ability to receive a wanted signal at its assigned channel frequency in the presence of an unwanted interferer on frequencies other than those of the spurious response or the adjacent channels, without this unwanted input signal causing a degradation of the performance of the receiver beyond a specified limit. The blocking performance shall apply at all frequencies except those at which a spurious response occurs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.6.2\tIn-band blocking",
+                            "text_content": "For NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz in-band blocking (IBB) is defined for an unwanted interfering signal falling into the UE receive band or into the first 15 MHz below or above the UE receive band.\nThe throughput of the wanted signal shall be ≥ 95 % of the maximum throughput of the reference measurement channels as specified in 3GPP TS 38.101-1 [5] Annexes A.2.2 and A.3.2 (with one sided dynamic OCNG Pattern OP.1 FDD for the DL-signal as described in Annex A.5.1.1) with parameters specified in Table 7.6.2-1 and Table 7.6.2-2. The relative throughput requirement shall be met for any SCS specified for the channel bandwidth of the wanted signal.\nTable 7.6.2-1: In-band blocking parameters for NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz\n\nTable 7.6.2-2: In-band blocking for NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.6.2-1: In-band blocking parameters for NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.6.2-2: In-band blocking for NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.6.3\tOut-of-band blocking",
+                            "text_content": "For NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz out-of-band band blocking is defined for an unwanted CW interfering signal falling outside a frequency range 15 MHz below or above the UE receive band.\nThe throughput of the wanted signal shall be ≥ 95% of the maximum throughput of the reference measurement channels as specified in 3GPP TS 38.101-1 [5] Annexes A.2.2 and A.3.2 (with one sided dynamic OCNG Pattern OP.1 FDD for the DL-signal as described in Annex A.5.1.1) with parameters specified in Table 7.6.3-1 and Table 7.6.3-2. The relative throughput requirement shall be met for any SCS specified for the channel bandwidth of the wanted signal.\nTable 7.6.3-1: Out-of-band blocking parameters for NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz\n\nTable 7.6.3-2: Out of-band blocking for NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz\n\nFor interferer frequencies across ranges 1, 2 and 3 in Table 7.6.3-1, a maximum of\n\nexceptions are allowed for spurious response frequencies in each assigned frequency channel when measured using a step size of   MHz withthe number of resource blocks in the downlink transmission bandwidth configuration, BWChannel the bandwidth of the frequency channel in MHz and n = 1, 2, 3 for SCS = 15, 30, 60 kHz, respectively. For these exceptions, the requirements in clause 7.7 apply.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.6.3-1: Out-of-band blocking parameters for NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 7.6.3-2: Out of-band blocking for NR satellite bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz",
+                                    "table number": 50,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.6.4\tNarrow band blocking",
+                            "text_content": "This requirement is measure of a receiver's ability to receive a NR signal at its assigned channel frequency in the presence of an unwanted narrow band CW interferer at a frequency, which is less than the nominal channel spacing. The relative throughput shall be ≥ 95 % of the maximum throughput of the reference measurement channels as specified in 3GPP TS 38.101-1 [5] Annexes A.2.2 and A.3.2 (with one sided dynamic OCNG Pattern OP.1 FDD for the DL-signal as described in Annex A.5.1.1) with parameters specified in Table 7.6.4-1.\nTable 7.6.4-1: Narrow Band Blocking\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.6.4-1: Narrow Band Blocking",
+                                    "table number": 51,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "7.7\tSpurious response",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Spurious response is a measure of the ability of the receiver to receive a wanted signal on its assigned channel frequency without exceeding a given degradation due to the presence of an unwanted CW interfering signal at any other frequency for which a response is obtained, i.e. for which the out-of-band blocking limit as specified in clause 7.6.3 is not met.\nThe throughput shall be ≥ 95 % of the maximum throughput of the reference measurement channels as specified in 3GPP TS 38.101-1 [5] Annexes A.2.2 and A.3.2 (with one sided dynamic OCNG Pattern OP.1 FDD for the DL-signal as described in Annex A.5.1.1) with parameters for the wanted signal as specified in Table 7.7-1 for NR bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz for the interferer as specified in Table 7.7-2. The relative throughput requirement shall be met for any SCS specified for the channel bandwidth of the wanted signal.\nTable 7.7-1: Spurious response parameters for NR bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz\n\nTable 7.7-2: Spurious response\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.7-1: Spurious response parameters for NR bands with FDL_high < 2700 MHz and FUL_high < 2700 MHz",
+                            "table number": 52,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table 7.7-2: Spurious response",
+                            "table number": 53,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.8\tIntermodulation characteristics",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The definition and requirements for intermodulation characteristics specified in 3GPP TS 38.101-1 [5] clause 7.8 shall apply for NTN satellite UE.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.9\tSpurious emissions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The spurious emissions power is the power of emissions generated or amplified in a receiver that appear at the UE antenna connector.\nThe power of any narrow band CW spurious emission shall not exceed the maximum level specified in Table 7.9-1\nTable 7.9-1: General receiver spurious emission requirements\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.9-1: General receiver spurious emission requirements",
+                            "table number": 54,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tConducted performance requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "8.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.1.1\tRelationship between minimum requirements and test requirements",
+                            "text_content": "The present document is a Single-RAT and interwork specification for NR UE, covering minimum performance requirements of both conducted and radiated requirements. Conformance to the present specification is demonstrated by fulfilling the test requirements specified in the conformance specification TS TBD [TBD].\nThe Minimum Requirements given in this specification make no allowance for measurement uncertainty. The test specification TS TBD [TBD] defines test tolerances. These test tolerances are individually calculated for each test. The test tolerances are used to relax the minimum requirements in this specification to create test requirements.\nThe measurement results returned by the test system are compared – without any modification – against the test requirements as defined by the shared risk principle.\nThe shared risk principle is defined in Recommendation ITU-R M.1545 [TBD].\nThe applicability of each requirement is described under each sub-clause in [8.2.1] and [8.3.1].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.1.2\tApplicability of minimum requirements",
+                            "text_content": "The conducted minimum requirements specified in this specification shall be met in all applicable scenarios for FR1.\nUnless otherwise stated, all minimum performance requirements defined in Clauses 8 are applicable to UE power class 3 only.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "8.1.3\tConducted requirements",
+                            "text_content": "The requirements are defined for the following modes:\n-\tMode 1: Conditions with external noise source\n-\tWanted signal with power level Es is transmitted.\n-\tExternal white noise source with power spectral density Noc is used.\n-\tEs and Noc levels are selected to achieve target SNR as described in Clause 8.1.3.3.\nThe reference point for SNR, Es and Noc of DL signal is the UE antenna connector or connectors.\nFor Mode 1 conditions conducted UE demodulation and CSI requirements the SNR is defined as:\n\nWhere\n-\tNRX denotes the number of receiver antenna connectors and the superscript receiver antenna connector j.\n-\tThe above SNR definition assumes that the REs are not precoded, and does not account for any gain which can be associated to the precoding operation.\n-\tUnless otherwise stated, the SNR refers to the SSS wanted signal.\n-\tThe downlink SSS transmit power is defined as the linear average over the power contributions in [W] of all resource elements that carry the SSS within the operating system bandwidth.\n-\tThe power ratio of other wanted signals to the SSS is defined in clause [C.3.1].\n\nThis clause describes the Noc power level for Mode 1 conditions conducted testing of demodulation and CSI requirements.\nThe Noc power spectrum density shall be larger or equal to the minimum Noc power level for each operating band supported by the UE as defined in clause 8.1.3.4.2.1.\nUnless otherwise stated, a fixed Noc power level of -145 dBm/Hz shall be used for all operating bands.\n8.1.3.4.2.1\tDerivation of Noc values for NR operating bands in FR1\nThe minimum Noc power level for an operating band, subcarrier spacing and channel bandwidth is derived based on the following equation:\nNocBand_X, SCS_Y, CBW_Z = REFSENSBand_X, SCS_Y, CBW_Z – 10*log10(12*SCS_Y*nPRB) + D – SNRREFSENS + ∆thermal\nwhere\n-\tREFSENSBand_X, SCS_Y, CBW_Z is the REFSENS value in dBm for Band X, SCS Y and CBW Z specified in Table 7.3.2-1 of TS 38.101-5 [TBD]\n-\t12 is the number of subcarriers in a PRB\n-\tSCS Y is the subcarrier spacing associated with the REFSENS value\n-\tnPRB is the maximum number of PRB for SCS Y and CBW Z associated with the REFSENS value, and is specified in Table 5.3.2-1 of TS 38.101-5 [TBD]\n-\tD is diversity gain equal to 3 dB\n-\tSNRREFSENS = -1 dB is the SNR used for simulation of REFSENS\n-\t∆thermal is the amount of dB that the wanted noise is set above UE thermal noise, giving a defined rise in total noise. ∆thermal = 16dB, giving a rise in total noise of 0.1dB, regarded as insignificant.\nThe calculated Noc value for the baseline of Band n256, 15 kHz SCS, 10 MHz CBW is -146.5 dBm/Hz.\nAn allowance of 1.5dB is made for future bands, giving an Noc power level of -145 dBm/Hz.\n\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "8.2\tDemodulation performance requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "8.2.1\tGeneral",
+                            "text_content": "The minimum performance requirements are applicable to all FR1 operating bands defined in clause 5.2.\nIf same test is listed for different UE features/capabilities in Clauses 8.2.1.1.2, then this test shall apply for UEs which support all corresponding UE features/capabilities.\nThe performance requirements in Table 8.2.1.1.2-1 shall apply for UEs which support optional UE features only.\nTable 8.2.1.1.2-1: Requirements applicability for optional UE features\n\nThe parameters specified in Table 8.2.1.2-1 are valid for all PDSCH tests unless otherwise stated.\nTable 8.2.1.2-1: Common test parameters\n\n\n8.2.1.2.2.1\tFDD\n8.2.1.2.2.1.1\tMinimum requirements for PDSCH Mapping Type A\nThe performance requirements are specified in Table 8.2.1.2.2.1.1-3 with the addition of test parameters in Table 8.2.1.2.2.1.1-2 and the downlink physical channel setup according to Annex A.3.\nThe test purposes are specified in Table 8.2.1.2.2.1.1-1.\nTable 8.2.1.2.2.1.1-1: Tests purpose\n\nTable 8.2.1.2.2.1.1-2: Test parameters\n\nTable 8.2.1.2.2.1.1-3: Minimum performance for Rank 1\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 8.2.1.1.2-1: Requirements applicability for optional UE features",
+                                    "table number": 55,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.1.2-1: Common test parameters",
+                                    "table number": 56,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.1.2.2.1.1-1: Tests purpose",
+                                    "table number": 57,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.1.2.2.1.1-2: Test parameters",
+                                    "table number": 58,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 8.2.1.2.2.1.1-3: Minimum performance for Rank 1",
+                                    "table number": 59,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "8.3\tCSI reporting requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "[To be updated]\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.1.1\tThroughput definition",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The throughput values defined in the measurement channels specified in Annex A, are calculated and are valid per codeword. For multi-codeword transmissions, the throughput referenced in the minimum requirements is the sum of throughputs of all codewords.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.2\tUL reference measurement channels",
+            "description": "\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.3\tDL reference measurement channels",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.3.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The transport block size (TBS) determination procedure is described in clause 5.1.3.2 of TS 38.214 [12].\nUnless otherwise stated, no user data is scheduled on slot #0 within 20 ms in order to avoid SSB and PDSCH transmissions in one slot and simplify test configuration.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.3.2\tReference measurement channels for PDSCH performance requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For PDSCH reference channels if more than one Code Block is present, an additional CRC sequence of L = 24 Bits is attached to each Code Block (otherwise L = 0 Bit).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "A.3.2.1\tFDD",
+                            "text_content": "Table A.3.2.1.1-1: PDSCH Reference Channel for FDD (QPSK)\n\nTable A.3.2.1.1-2: PDSCH Reference Channel for FDD (16QAM)\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table A.3.2.1.1-1: PDSCH Reference Channel for FDD (QPSK)",
+                                    "table number": 60,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table A.3.2.1.1-2: PDSCH Reference Channel for FDD (16QAM)",
+                                    "table number": 61,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.4\tTesting related to Satellite Access",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.4.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following test conditions should be maintained for Satellite Access when test equipment emulates the snapshot of the satellite link channel.\n-\tThe same ephemeris info will be maintained during each test.\n-\tA set of ephemeris information are pre-defined for each satellite corresponding to respective epoch times in TS 38.508-1 [13].\n-\tThe range of the selected constant delay shift is as follows:\n-\tFor NGSO an altitude of 600km and 1200km on a circular orbit are considered. The range of the one-way delay between UE and satellite is from 2ms (lowest value for LEO orbit 600km) to 6.67ms (highest value for LEO orbit 1200km).\n-\tFor GSO the range of the one-way delay from UE to satellite is within 119.375ms to 128.79ms.\n-\tConstant delay value is derived from ephemeris info (SIB19) and UE location associated to zero Doppler or non-zero Doppler value under test.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.4.2\tTest condition for transmitter characteristics",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "All requriements in section 6 for transmitter characteristics, other than frequency error in clause 6.4.1, shall be verified when Doppler conditions are set to zero and delay conditions are set to constant for all types of satellites.\nFrequency error requirement in clause 6.4.1 shall be verified for at least two cases: one with zero Doppler condition and the other with a constant Doppler shift where the range of the absolute value of Doppler is greater than zero and up to [0.93] ppm if the IE field ntn-ScenarioSupport-r17 is present and indicated as GSO and up to 24 ppm if the IE field ntn-ScenarioSupport-r17 is present and indicated as NGSO or only the IE field nonTerrestrialNetwork-r17 is present. The delay condition is a constant.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.4.3\tTest condition for receiver characteristics",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "All requirements in section 7 for receiver characteristics shall be verified when Doppler conditions are set to zero and delay conditions are set to constant for all types of satellites.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.4.4\tTest condition for performance requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "All requirements in section 8 for performance requirements shall be verified when Doppler conditions related to satellite motion for DL in service link are set to zero and delay conditions are set to constant for all types of NGSO satellites.\nThe one-way delay between UE and satellite for NGSO at an altitude of 600km is 2ms.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "B.1\tStatic propagation condition",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "B.1.1\tUE Receiver with 1Rx",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For 2 port transmission the channel matrix is defined in the frequency domain by\n.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.1.2\tUE Receiver with 2Rx",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For 1 port transmission the channel matrix is defined in the frequency domain by\n.\nFor 2 port transmission the channel matrix is defined in the frequency domain by\n.\n\nB.2\tMulti-path fading propagation conditions\nThe multipath propagation conditions consist of several parts:\n-\tA delay profile in the form of a \"tapped delay-line\", characterized by a number of taps at fixed positions on a sampling grid. The profile can be further characterized by the r.m.s. delay spread and the maximum delay spanned by the taps.\n-\tA combination of channel model parameters that include the Delay profile and the Doppler spectrum that is characterized by a classical spectrum shape and a maximum Doppler frequency.\nInitial channel matrix for LOS component of NTN-TDL-C channel model is equal to channel matrix of Static propagation conditions in Clause B.1.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.1\tDelay profiles",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The delay profiles are derived from the TR 38.811 [12] NTN-TDL models for the desired delay spread and tap resolution. After scaling the normalized delay spread values for each tap by the desired RMS delay spread, the tap delays are quantized to a delay resolution of 5ns by rounding to the nearest multiple of the delay resolution.\n\nTable B.2.1-1: Delay profiles for NR NTN channel models\n\nTable B.2.1-2: NTN-TDLA100 (DS = 100 ns)\n\nTable B.2.1-3 NTN-TDLC5 (DS = 5 ns)\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.1-1: Delay profiles for NR NTN channel models",
+                            "table number": 62,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table B.2.1-2: NTN-TDLA100 (DS = 100 ns)",
+                            "table number": 63,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "Table B.2.1-3 NTN-TDLC5 (DS = 5 ns)",
+                            "table number": 64,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.2\tCombinations of channel model parameters",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The propagation conditions used for the performance measurements in multi-path fading environment are indicated as a combination of a channel model name and a maximum Doppler frequency, i.e., NTN-TDLA<DS>-<Doppler>, or NTN-TDLC<DS>-<Doppler> where '<DS>' indicates the desired delay spread and '<Doppler>' indicates the maximum Doppler frequency (Hz).\nTable B.2.2-1 show the propagation conditions that are used for the performance measurements in multi-path fading environment for NLOS and LOS propagation conditions.\nTable B.2.2-1: Channel model parameters for NTN\n\n",
+                    "tables": [
+                        {
+                            "description": "Table B.2.2-1: Channel model parameters for NTN",
+                            "table number": 65,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "B.2.3\tMIMO Channel Correlation Matrices",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The MIMO channel correlation matrices defined in B.2.3 apply for the antenna configuration using uniform linear arrays at both gNB and UE.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "B.2.3.1\tMIMO Correlation Matrices using Uniform Linear Array (ULA)",
+                            "text_content": "The MIMO channel correlation matrices defined in B.2.3.1 apply for the antenna configuration using uniform linear array (ULA) at both gNB and UE.\nTable B.2.3.1.1-1 defines the correlation matrix for the gNB.\n\nTable B.2.3.1.1-1: gNB correlation matrix\n\nTable B.2.3.1.1-2 defines the correlation matrix for the UE:\n\nTable B.2.3.1.1-2: UE correlation matrix\n\nTable B.2.3.1.1-3 defines the channel spatial correlation matrix. The parameters, α and β in Table B.2.3.1-3 defines the spatial correlation between the antennas at the gNB and UE.\nTable B.2.3.1.1-3: correlation matrices\n\nThe α and β for different correlation types are given in Table B.2.3.1.2-1.\nTable B.2.3.1.2-1: The α and β parameters for ULA MIMO correlation matrices\n\nThe correlation matrices low correlation are defined in Table B.2.3.1.2-2 below.\nTable B.2.3.1.2-2: MIMO correlation matrices for low correlation\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table B.2.3.1.1-1: gNB correlation matrix",
+                                    "table number": 66,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table B.2.3.1.1-2: UE correlation matrix",
+                                    "table number": 67,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table B.2.3.1.1-3: correlation matrices",
+                                    "table number": 68,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table B.2.3.1.2-1: The α and β parameters for ULA MIMO correlation matrices",
+                                    "table number": 69,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table B.2.3.1.2-2: MIMO correlation matrices for low correlation",
+                                    "table number": 70,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "C.1\tGeneral",
+            "description": "This annex specifies the downlink physical channels that are needed for setting a connection and channels that are needed during a connection.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.2\tSetup (Conducted)",
+            "description": "Table C.2-1 describes the downlink Physical Channels that are required for connection set up.\nTable C.2-1: Downlink Physical Channels required for connection set-up\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "Table C.2-1: Downlink Physical Channels required for connection set-up",
+                    "table number": 71,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "C.3\tConnection (Conducted)",
+            "description": "The following clauses, describes the downlink Physical Channels that are transmitted during a connection i.e., when measurements are done.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "C.3.1\tMeasurement of Performance requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Table C.3.1-1 is applicable for measurements in which uniform RS-to-EPRE boosting for all downlink physical channels, unless otherwise stated.\nTable C.3.1-1: Downlink Physical Channels transmitted during a connection (FDD and TDD)\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table C.3.1-1: Downlink Physical Channels transmitted during a connection (FDD and TDD)",
+                            "table number": 72,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "E.1\tGeneral",
+            "description": "This annex specifies the environmental requirements of the UE. Within these limits the requirements of the present documents shall be fulfilled.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "E.2\tEnvironmental (Conducted)",
+            "description": "The requirements in this clause apply to all types of UE(s).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "E.2.1\tTemperature",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The UE shall fulfil all the requirements in the temperature range defined in Table E.2.1-1.\nTable E.2.1-1: Temperature conditions\n\nOutside this temperature range the UE, if powered on, shall not make ineffective use of the radio frequency spectrum. In no case shall the UE exceed the transmitted levels as defined in clause 6.2 of TS 38.101-1 [6] for extreme operation.\n",
+                    "tables": [
+                        {
+                            "description": "Table E.2.1-1: Temperature conditions",
+                            "table number": 73,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "E.2.2\tVoltage",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The UE shall fulfil all the requirements in the voltage range defined in Table E.2.2-1.\nTable E.2.2-1: Voltage conditions\n\nOutside this voltage range the UE if powered on, shall not make ineffective use of the radio frequency spectrum. In no case shall the UE exceed the transmitted levels as defined in TS 38.101-1[6, Clause 6.2] for extreme operation. In particular, the UE shall inhibit all RF transmissions when the power supply voltage is below the manufacturer declared shutdown voltage.\n\n",
+                    "tables": [
+                        {
+                            "description": "Table E.2.2-1: Voltage conditions",
+                            "table number": 74,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "E.2.3\tVibration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The UE shall fulfil all the requirements when vibrated at the following frequency/amplitudes.\nTable E.2.3-1: Vibration conditions\n\nOutside the specified frequency range the UE, if powered on, shall not make ineffective use of the radio frequency spectrum. In no case shall the UE exceed the transmitted levels as defined in TS 38.101-1[6] for extreme operation.\n\n\n\n\n\n",
+                    "tables": [
+                        {
+                            "description": "Table E.2.3-1: Vibration conditions",
+                            "table number": 75,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 76,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 77,
+                            "summary": "",
+                            "name": ""
+                        },
+                        {
+                            "description": "",
+                            "table number": 78,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

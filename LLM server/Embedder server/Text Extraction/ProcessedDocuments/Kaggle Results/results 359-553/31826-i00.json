@@ -1,0 +1,358 @@
+{
+    "document_name": "31826-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "SA3 has finalized their security requirements on network slice-specific authentication and authorization (NSSAA) in 3GPP TS 33.501 clause 16 introduced in Release 16.\nAmong these requirements, there are few with potential UICC impact and hence need CT6's attention.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The aim of this Technical Report is to study the aspects for any potential enhancements on the UICC to be developed by CT6 based on the outcome of 3GPP TS 33.501. This work does not include selecting or standardizing any specific EAP method or associated EAP credential types for NSSAA.\nFor each of the objectives in the scope of the CT6 study, the UICC aspects that are to be covered in this study are as follows:\n-\tEnhancements to support network slice-specific authentication and authorization using the UICC\n-\tStudy potential solutions for slice-specific authentication using new specific UICC application\n-\tStudy information the UICC application for NSSAA needs to contain\n-\tStudy information needed by the ME to select the correct UICC application used for NSSAA, in the case where multiple such UICC applications are available on the UICC. This information will not include UICC application selection based on a specific EAP method or type of EAP credentials.\n-\tStudy the interface that the new UICC application should feature in order to support NSSAA\nNote: The study item in CT6 will not cover any security-related aspects within SA3's remit.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 24.501: \"Non-Access-Stratum (NAS) protocol for 5G System (5GS); Stage 3\".\n[3]\t3GPP TS 23.502: \"Procedures for the 5G System; Stage 2\".\n[4]\tETSI TS 102 310: \"Extensible Authentication Protocol support in the UICC\".\n[5]\t3GPP TS 31.101: \"UICC-Terminal Interface, Physical and Logical Characteristics\".\n[6]\tISO/IEC 8825-1 (2008): \"Information technology – ASN.1 encoding rules : Specification of Basic Encoding Rules (BER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)\".\n[7]\t3GPP TS 23.003: \"Numbering, Addressing and Identification\".\n[8]\t3GPP TS 33.501: \"Security Architecture and procedures for 5G system\".\n[9]\tISO/IEC 7816-4: \"Identification cards - Integrated circuit cards,Part 4: Organization, security and  commands for interchange\".\n[10]\tIETF RFC 3748: \"Extensible Authentication Protocol (EAP)\".\n[11]\tIETF RFC 2716: \"PPP EAP TLS Authentication Protocol\".\n[12]\tETSI TS 102 221: \"Smart cards; UICC-Terminal interface; Physical and logical characteristics\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nexample: text used to clarify abstract rules by applying them literally.\nauthenticator: end of the EAP link initiating EAP authentication\npeer or supplicant: end of the EAP Link that responds to the authenticator\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nAAA-S\tAuthentication, Authorization and Accounting Server\nEAP\tExtensible Authentication Protocol\nNSSAA\tNetwork Slice-Specific Authentication and Authorization\nS-NSSAI\tSingle Network Slice Selection Assistance Information\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tSolutions overview",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "As defined in TS 24.501 [2] since Release 17, the purpose of the network slice-specific authentication and authorization (NSSAA) procedure is to enable the authentication, authorization and accounting server (AAA-S) via the Network Slice Specific and SNPN Authentication and Authorization Function (NSSAAF) to (re-)authenticate or (re-)authorize the upper layers of the UE.\nThe NSSAA procedure can be invoked for a UE supporting it and for a HPLMN S-NSSAI or an SNPN S-NSSAI.\nThe NSSAA procedure is defined in TS 23.502 [3] clause 4.2.9 following the flow described in TS 23.502 [3] figure 4.2.9.2.1.\nThe NSSAA procedure is using the EAP framework. The end-points of the procedure are UE (supplicant) and AAA-S (Authentication server) with AMF/SEAF in the middle (Authenticator). As described in TS 23.502 [3], the EAP ID and S-NSSAI are elements used by those end-points along the NSSAA procedure.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tKey issues",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tMultiple NSSAA contexts",
+                            "text_content": "Multiple slices can be associated to different AAA-S, belonging to different 3rd parties, and they can be active simultaneously. Consequently the UICC should be able to support at the same time multiple contexts for NSSAA.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.2\tDiscovery of the supported features",
+                            "text_content": "The UICC may contain multiple applications (e.g. USIM, ISIM, IOPS). The ME should be able to check whether the UICC supports the NSSAA procedure, and in such case what is the appropriate application(s) to use from UICC to handle the NSSAA procedure.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.3\tEAP framework",
+                            "text_content": "The NSSAA is based on EAP procedure consisting in this document in:\n-\tfirstly to identify the supplicant counter-part of Authentication server in the UE\n-\tsecondly to transport the EAP messages between Authentication server and supplicant\nThe ME should be able to:\n-\tretrieve from the UICC the elements (i.e. EAP ID and S-NSSAI) involved in the NSSAA procedure\n-\tuse the EAP framework implemented by the UICC to complete the NSSAA procedure\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tSolution 1",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This solution uses most of the concept defined in ETSI TS 102 310 [4] which already specifies the EAP support in the UICC.\nThe EAP architecture is described in clause 5.1 from ETSI TS 102 310 [4].\nHowever ETSI TS 102 310 [4] is not fully re-usable as is in the NSSAA context linked to the below points:\n-\tEAP clients discovery as specified in clause 5.2 from ETSI TS 102 310 [4] is EAP method oriented when NSSAA service discovery should be independent of EAP method (S-NSSAI based)\n-\tElementary files as specified in clause 7 from ETSI TS 102 310 [4] are not needed in NSSAA context where only EAP Identifier and S-NSSAI information are necessary\nThe solution consist in:\n-\tthe UICC capable of supporting one or multiple NSSAA applications handling each a dedicated NSSAA context for each independent slice\n-\tthe NSSAA application discovery is based on the identification of supported S-NSSAI by a given NSSA application and retrieval of associated EAP identifier\n-\tthe NSSAA application is responsible for handling the EAP messages exchanged with EAP authentication server for a given NSSAA session via the ME\nThe following clauses detail how to address the key issues from clause 4.2.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.1\tMultiple NSSAA contexts",
+                            "text_content": "AAA-S belongs to 3rd party and authentication to the AAA-S is isolated from network access authentication.\nIn this solution, the isolation in the UICC between NSSAA authentication and USIM authentication is achieved with a new application: the ′NSSAA application′.\nA NSSAA application supports the NSSAA procedure for a given list of S-NSSAI.\nThe NSSAA context enables the ME to associate a slice requiring a NSSAA with a given NSSAA application supporting the S-NSSAI of this slice.\nThe ME may access to more than one slice at the same time with different AAA-S. This solution allows more than one NSSAA application(s) be active simultaneously in the UICC.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.2\tDiscovery of the supported features",
+                            "text_content": "As defined in TS 31.101 [5], the ME reads the EFDIR to identify the appropriate application(s) to select and use.\nThis solution, similarly to '3GPP USIM (non-IMSI SUPI Type)' principle introduced in C6-xxxxx, defines a new 3GPP Application Code for 'NSSAA support' to identify the application(s) in the UICC supporting NSSAA procedure.\nIn case of more than one applications in EFDIR are available with 'NSSAA support' 3GPP Application Code, the ME retrieves the supported S-NSSAI list (see clause 4.3.1.1) from each NSSAA application in EFDIR and the ME can create a NSSAA context with corresponding NSSAA application.\nFor each NSSAA context, the ME retrieves the EAP Identifier (see clause 4.3.1.2) used in the corresponding NSSAA procedure.\nNOTE: S-NSSAI lists from any NSSAA application are disjoint (do not contain common S-NSSAI).\nThe EAP Identifier used during the NSSAA procedure is defined at NSSAA application level to be retrieved and used by the ME.\nThis EF is available at application level of any NSSAA application.\nThis EF contains the EAP Identifier.\n\n\nEAP ID\nContents:\n-\tEAP ID for the slice authentication\nCoding:\tthe coding of EAP ID TLV data object is described hereafter.\n\n\nThe S-NSSAI list supported by any NSSAA application is defined at the NSSAA application level.\nThis EF is available at application level of any NSSAA application.\nThis EF contains one or more records, each indicating the S-NSSAI supported by the NSSAA application.\n\n\nS-NSSAI\nContents:\n-\tS-NSSAI for which the NSSAA application is used for NSSAA procedure\nCoding:\n-\tS-NSSAI shall be coded as specified in TS 23.003 [7]\nThe EAP authentication status is defined at NSSAA application level and can be retrieved by the ME.\nThis EF contains the authentication status corresponding to the EAP client supported by the NSSAA application.\n\n\nAuthentication Status\nContents:\n-\tStatus of the corresponding EAP authentication.\nCoding:\n-\tAuthentication Status coded in one byte as below.\n\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.3\tEAP framework",
+                            "text_content": "This solution reuses the ETSI TS 102 310 [4] clause 6 specifying the EAP related commands to be supported by NSSAA application.\nThis solution proposes the perform NSSAA application selection in the following manner:\n-\tWhen a slice procedure requires a NSSAA with a supported S-NSSAI from one of the NSSAA application defined in the UICC, the ME selects the corresponding NSSAA application using the SELECT by DF name as defined in TS 31.101 [5];\n-\tThis selection occurs after the UICC activation, defined in TS 31.101 [5], and the discovery of the NSSAA services described in above clause 4.3.2.\nAfter a successful NSSAA application selection, the selected NSSAA application is stored on the UICC. This NSSAA application is identified as the 'last selected NSSAA application' by the UICC. The last selected NSSAA application is available on the UICC after a UICC deactivation followed by a UICC activation.\nIf a NSSAA application is selected using partial DF name, the partial DF name supplied in the command is uniquely identify a NSSAA application. Furthermore if a NSSAA application is selected using a partial DF name as specified in TS 31.101 [5] indicating in the SELECT command the last occurrence, the UICC selects the NSSAA application stored as the last selected NSSAA application. If, in the SELECT command, the options first, next/previous are indicated, they have no meaning if an NSSAA application has not been previously selected in the same session and shall return an appropriate error code.\nWhen the NSSAA application is associated to an NSSAA context the application is kept selected.\nNOTE 1:\tThis procedure is not to be confused with the deactivation procedure in TS 31.101 [5].\nThe ME terminates the NSSAA session with the NSSAA application as follows:\n-\tThe ME indicates to the NSSAA application by sending a particular STATUS command that the termination procedure is starting\nThe ME deletes all these subscriber related information elements from its memory\nNOTE 2:\tIf the ME has already updated any of the subscriber related information during the NSSAA session, and the value has not changed until NSSAA session termination, the ME may omit the respective update procedure.\nTo actually terminate the session, the ME shall then use one of the mechanisms described in TS 31.101 [5].\nAfter termination of the NSSAA session as defined in previous clause, the NSSAA application may be closed by closing the logical channels that are used to communicate with this particular NSSAA application.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.4\tSecurity features",
+                            "text_content": "The security aspects of NSSAA are specified in TS 33.501 [8]. This clause gives information related to security features supported by the NSSAA application with respect to user verification and file access conditions.\nThe security architecture as defined in TS 31.101 [5] applies to the NSSAA application and UICC with the following definitions and additions:\n-\tThe NSSAA application uses a global key reference as PIN1 as specified in TS 31.101 [5].\n-\tThe only valid usage qualifier is '08' which means user authentication knowledge based (PIN) as defined in ISO/IEC 7816-4 [9].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.5\tNSSAA application commands",
+                            "text_content": "The commands specified in TS 31.101 [5] are supported by NSSAA application, with the restrictions identified in this clause.\nThe commands specified in TS 31.101 [5] are supported by NSSAA application, with the restrictions identified in this clause.\nThe function is used to transfer the EAP packets from the ME to the selected NSSAA application (i.e. NSSAA that corresponds to the slice requiring NSSAA).\nThe NSSAA application provides a response EAP packet (as defined in RFC 3748 [10]) or a warning status word according to the authentication method being used.\nThe NSSAA application maintains the state machine of the authentication process as described for the particular EAP method used.\nThe function is related to a particular NSSAA application and can not be executable unless this NSSAA application has been selected and activated.\nThe format of the EAP packet is defined by the NSSAA application and respects the conventions corresponding for the EAP method.\nThe following EAP packets are allowed input packets for this command: EAP packets with code field equal to 1 \"Request\", 3 \"Success\" or 4 \"Failure\" and EAP packets with code equal to 2 \"Response\" for EAP type 1 \"Identity\" (Code and type values as defined in RFC 3748 [10]).\nNOTE:\tEAP Identity is provided by the NSSAA application.\nThe command and response data may contain specific EAP method related data as an additional input/output parameter (e.g. gmt_unix_time for EAP-TLS implementations as defined in RFC 2716 [11]).\nDepending on the length of the EAP input data, the EAP Authenticate may be used with an EVEN or ODD INS code. In the latter case, the EAP input and response data shall be encapsulated in BER TLV data objects, as specified in ETSI TS 102 221 [12].\nInput:\n-\tEAP Packet;\n-\tEAP method related data.\nOutput:\n-\tEither none (i.e. if authentication successful: EAP success packet received).\nOr:\n-\tEAP Response Packet;\n-\tEAP method related data.\n\nCommand data:\n\n\nTable 4.3.5.1.1.1: Coding of EAP command data\n\nResponse data:\n\n\nTable 4.3.5.1.1.2: Coding of EAP Response data\n\nThis clause specifies the coding of the specific status words SW1 and SW2.\nTable 4.3.5.1.1.3 shows the meaning of possible status conditions returned.\nTable 4.3.5.1.1.3: Status byte coding\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 4.3.5.1.1.1: Coding of EAP command data",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 4.3.5.1.1.2: Coding of EAP Response data",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 4.3.5.1.1.3: Status byte coding",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.3.6\tList of SFI values (annex)",
+                            "text_content": "This annex lists SFI values assigned in the present document for files at the NSAAA application level.\n\n\nAll other SFI values are reserved for future use.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5\tEvaluation criteria",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tOverview",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "In addition to the key issues described in the present document, the potential solutions also need to be evaluated against operational criteria when assessing their suitability. This clause details the evaluation criteria for the solutions.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tKey issues addressed",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Each solution clearly identifies the key issues addressed by the solution.\nThe evaluation assesses whether this key issue is met and any limitations on the way it is met (e.g. if the solution is only applicable to aspects of the key issue).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\tImpact on USIM and ISIM",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The evaluation should clearly identify the types of USIM/ISIM that the solution works with, whether modification of existing USIMs/ISIMs is required and describe the impacts on USIM/ISIM.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\tImpact on UICC",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The evaluation should clearly identify the UICC that the solution works with, whether modification of the existing UICC is required and describe the impacts on the UICC.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\tBackward compatibility",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The evaluation should clearly identify that the solution is backward compatible.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.6\tImpact on core and RAN networks",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The evaluation should clearly identify any changes required in the core network and/or RAN.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tSolutions evaluations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tSolution 1",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tKey issues",
+                            "text_content": "This solution addresses all key issues.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tUSIM and ISIM types applicable",
+                            "text_content": "The solution has no impact nor on the USIM neither on the ISIM.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tImpact on UICC",
+                            "text_content": "This solution has minor impact on the UICC, only a new application code to be defined for the new UICC application for NSSAA.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.4\tBackward compatibility",
+                            "text_content": "This solution is backward compatible.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.5\tImpact on core and RAN networks",
+                            "text_content": "The solution has no impact on the core network or RAN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tConclusion",
+            "description": "Based on the solutions and evaluations in the present document, normative work in 3GPP CT WG6 should be based on Solution 1.\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 15,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

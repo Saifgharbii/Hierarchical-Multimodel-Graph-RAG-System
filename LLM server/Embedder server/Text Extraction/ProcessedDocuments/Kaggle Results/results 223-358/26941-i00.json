@@ -1,0 +1,530 @@
+{
+    "document_name": "26941-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "Introduction",
+            "description": "This document covers key issues, candidate solutions and potential requirements for supporting network slicing with 5GMS architecture. Aspects related to provisioning of media services, dynamic policy, and resolution of slice-specific AS instances while using network slicing for media streaming use cases are covered in this document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document identifies standardization needs and potential standards gaps relevant to media streaming while using 5G network slicing. In specific, the following aspects are addressed in this document:\n-\tTo identify relevant use cases that can be addressed using network slicing, and study collaboration scenarios and deployment architectures to support network slicing for media services.\n-\tTo identify any missing provisioning aspects for configuring media services with one or more network slices including QoS configuration, reporting and dynamic policy.\n-\tTo identify impact of network slicing on dynamic policy invocation APIs, including selection of appropriate network slices for dynamic policy requests, possible migration of UE application traffic flows between network slices due to dynamic policy procedures, discovery of dynamic policy AF, and necessary routing considerations.\n-\tTo determine the need and describe methods for AF-to-AF communication to support interoperability if 5GMS AF instances from different vendors are deployed in the same 5GMS System.\n-\tTo identify methods for deploying, supporting, and resolving slice-specific 5GMS AS instances.\n-\tTo identify potential areas for normative work and communicate/align with SA2 as well as other potential 3GPP WGs (SA5, SA6) on relevant aspects related to the study.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TR 26.804: \"Study on 5G media streaming extensions\".\n[3]\t3GPP TS 28.530: \"Management and orchestration; Concepts, use cases and requirements\".\n[4]\t3GPP TS 28.531: \"Management and orchestration; Provisioning\".\n[5]\tGSM Association NG.116, “Generic Network Slice Template”,\n[6]\t\t3GPP TR 23.700-40: \"Study on enhancement of network slicing; Phase 2\".\n[7]\t3GPP TS 23.501: \"System architecture for the 5G System (5GS)\".\n[8]\t3GPP TS 23.700‑99: \"Study in Network slice capability exposure for application layer enablement (NSCALE)\".\n[9]\t3GPP TS 23.435: \"Procedures for Network Slice Capability Exposure for Application Layer Enablement Service\".\n[10]\t3GPP TS 28.541: \"Management and orchestration; 5G Network Resource Model (NRM); Stage 2 and stage 3\".\n[11]\t3GPP TS 28.542: \"Management and orchestration of networks and network slicing; 5G Core Network (5GC) Network Resource Model (NRM); Stage 1\".\n[12]\t3GPP TS 28.532: \"Management and orchestration; Generic management services\".\n[13]\t3GPP TS 28.545: \"Management and orchestration; Fault Supervision (FS)\".\n[14]\t3GPP TS 28.546: \"Management and orchestration of networks and network slicing; Fault Supervision (FS); Stage 2 and stage 3\".\n[15]\t3GPP TS 23.502: \"Procedures for the 5G System (5GS)\".\n[16]\t3GPP TS 23.503: \"Policy and charging control framework for the 5G System (5GS); Stage 2\".\n[17]\t3GPP TS 23.434: \"Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows \".\n[18]\t3GPP TS 27.007: \"AT command set for User Equipment (UE)\".\n[19]\t3GPP TS 29.520: \"5G System; Network Data Analytics Services; Stage 3\".\n[20]\t3GPP TS 26501: \"5G Media Streaming (5GMS); General description and architecture\".\n[21]\t3GPP TS 26512: \"5G Media Streaming (5GMS); Protocols\".\n[22]\t3GPP TS 28.552: \"Management and orchestration; 5G performance measurements\".\n[23]\t3GPP TS 28.554: \"Management and orchestration; 5G end to end Key Performance Indicators (KPI)\".\n[24]\t3GPP TS 23.558: \"Architecture for enabling Edge Applications\".\n[25]\t3GPP TR 28.809: \"Study on enhancement of management data analytics\".\n[26]\t3GPP TR 23700-41: \"Enhancement of Network Slicing Phase 3\".\n[27]\t3GPP TS 22.261: \"Service requirements for the 5G system\".\n[28]\t5G Media Slice Definition, version 1.2: Joint outcome between New European Media and Networld2020 technology platforms, .\n[29]\tCommercializing 5G Network Slicing, 5G Americas White Paper: https://www.5gamericas.org/wp-content/uploads/2022/07/Commercializing-5G-Network-Slicing-Jul-2022.pdf, July 2022.\n[30]\tNetwork Slicing, Technical White Paper: https://images.samsung.com/is/content/samsung/p5/global/business/networks/insights/white-paper/network-slicing/200420_Samsung_Network_Slicing_Final.pdf, April 2020\n[31]\tFCC Technological Advisory Council, 5G IOT Working Group: \"5G Network Slicing Whitepaper\", .\n[32]\tApplied Network Slicing Scenarios in 5G: .\n[33]\t5G Network Slicing: How to Secure the Opportunity: .\n[34]\tNavigate the network slicing transformation journey: .\n[35]\tGSM Association: \"5G Network Slicing\", .\n[36]\t, , ,  and : \"On the Rollout of Network Slicing in Carrier Networks: A Technology Radar\", National Library of Medicine, Sensors, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8659767/, December 2021.\n[37]\tNetwork Slicing using User Equipment Route Selection Policy (URSP): , November 2021.\n[38]\t5G Network Slicing: Android documentation, .\n[39]\tApple device support for private 5G and LTE networks: .\n[40]\tGSM Association: \"Network Slicing: North America’s Perspective (Current) Version 1.0\", https://www.gsma.com/newsroom/wp-content/uploads//NG.130-White-Paper-Network-Slicing-NA-Perspective.pdf, August 2021.\n[41]\t3GPP TS 24.526: \"User Equipment (UE) policies for 5G System (5GS); Stage 3\".\n[42]\t3GPP TS 26.510: \"Media delivery; interactions and APIs for provisioning and media session handling\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nexample: text used to clarify abstract rules by applying them literally.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\n<symbol>\t<Explanation>\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\nANDSP\tAccess Network Discovery & Selection Policy\nCSC\tCommunication Service Customer\nCSP\tCommunication Service Provider\nDN\tData Network\nDNN\tData Network Name\nECS\tEdge Configuration Server\nEEC\tEdge Enabler Client\neMBB\tEnhanced Mobile Broadband\nEPC\tEvolved Packet Core\nGST\tGeneric Network Slice Template\nMIoT\tMassive Internet of Things\nMPS\tMultimedia Priority Service\nMNO\tMobile Network Operator\nMVNO\tMobile Virtual Network Operator\nNEST\tNetwork Slice Type\nNOP\tNetwork Operator\nNRM\tNetwork Resource Model\nNSaaS\tNetwork Slice as a Service\nNSC\tNetwork Slice Customer\nNSCE\tNetwork Slice Capability Enablement\nNSI\tNetwork Slice Instance\nNSP\tNetwork Slice Provider\nNSSI\tNetwork Slice Subnet Instance\nNSSP\tNetwork Slice Selection Policy\nNWDAF\tNetwork Data Analytics Function\nPDU\tProtocol Data Unit\nProSe\tProximity based Services\nProSeP\tProSe Policy\nURSP\tUE Route Selection Policy\nV2X\tVehicle-to-Everything\nV2XP\tV2X Policy\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tOverview",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.0\tAssumptions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following assumptions apply to the present document:\n1.\tPossible and efficient solutions based on network slicing are sought to support the use cases listed in clause 5 and many others that also require differentiated QoS for their application streams. Network slicing may not be the only solution to support these use cases, but is one possible solution.\n2.\tService requirements relating to network slicing specified in TS 22.261 [27] and TR 23700-99 [8] are considered for studying possible issues in relation to 5G Media Streaming.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Clause 5.12 of TR 26.804 [2] provides a brief overview of network slicing feature standardization in different 3GPP groups, areas of study related to 5G Media Streaming for specifying network slicing extensions, and potential open issues. This clause describes different slice management processes in a little more detail that are relevant for specifying the media streaming aspects of network slicing.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tNetwork slicing architecture",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tGeneral",
+                            "text_content": "A Network Slice is a logical network with specific capabilities and characteristics as defined in clause 3.1 of TS 23.501 [7]. According to the supported features, functionalities and different groups of UEs, the multiple Network Slices can be deployed by the operator. More specifically, the network slice can support different functionality (e.g., priority, policy control), different performance requirements (e.g., latency, data rates), or different targeted users (e.g., MPS users, Public Safety users, corporate customers, roamers, or MVNO hosting users). For example, based on the operator’s needs, there can be one network slice for MIoT services, one for supporting eMBB UEs and another one for V2X services.\nA Network Slice instance is a set of Network Function instances and the required resources (e.g. compute, storage and networking resources) which form a deployed Network Slice. A slice instance includes both core network control plane and user plane network functions as defined in clause 4.15.1 of [7].\nA UE can access multiple Network Slices simultaneously. Figure 4.2.1-1 below shows some illustrative scenarios. The occurrence of PDU Session Establishment in a Network Slice instance to a DN allows data transmission in that Network Slice instance.\nNOTE:\tIn the context of 5G Media Streaming, PDU Sessions of type IPv4 or IPv6 are the primary focus.\nThe Network Slice Selection policies in the UE are used to associate an application with a specific network slice during PDU Session Establishment. A PDU Session belongs to one and only one specific Network Slice instance per PLMN. Therefore, different Network Slice instances do not share a PDU Session. But multiple PDU Sessions in different Network Slice instances may be associated with the same Data Network, identified by the same DNN.\nFigure 4.2.1-1: Mapping of PDU Sessions to Data Network Names and Network Slice instances\nIn addition, enhancements to interworking between the EPC and the 5GC have been made to the 5G System, and network slice-specific authentication and authorization are also supported. For each network slice that is subject to Network Slice Admission Control, the monitoring and control of the number of registered UEs, the number of PDU Sessions and the slice-maximum bit rate are defined in order to ensure that the maximum resource of the network slice is not exceeded.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "The Network Slice Selection policies in the UE are used to associate an application with a specific network slice during PDU Session Establishment. A PDU Session belongs to one and only one specific Network Slice instance per PLMN. Therefore, different Network Slice instances do not share a PDU Session. But multiple PDU Sessions in different Network Slice instances may be associated with the same Data Network, identified by the same DNN.",
+                                    "table number": 3,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "4.2.2\tNetwork slicing for specific applications",
+                            "text_content": "Before application services are allowed to access specific network slices, a third-party Application Service Provider can negotiate with the MNO and the MNO may create or allocate the network slices based on the service requirements. For example, a cloud gaming service provider may interact with the MNO to reserve specific network slices supporting low latency, and high computing resources.\nAfterwards, the Application Function, on behalf of the Application Service Provider, informs the 5GC that the target application service can use the specific network slices, i.e., by providing application guidance for UE Route Selection Policy (URSP) determination as defined in clause 4.15.6.10 of TS 23.502 [15]. Depending on the nature of the application guidance, the operator may update the Network Slice Selection policies in the URSP accordingly. As a consequence, the application service may be migrated to the new network slice/DNN duple based on the updated URSP rule.\nThe URSP rules in the UE, which are used to associate applications with usage of particular network slices, may be pre-configured or provided by the PCF as defined in TS 23.503 [16]. Each URSP rule is expressed as a traffic descriptor for application detection, e.g. IP descriptors, application descriptors, domain descriptors.\nNOTE:\tThere is no restriction on which part of UE should (re-)evaluate the URSP rules. This may be done by either the Operating System or the modem layer.\nOnce an application is started or detected on the UE, the following procedure is followed:\n1.\tThe UE evaluates its URSP rules in the order of Rule Precedence and determines whether the application matches the Traffic descriptor of any URSP rule.\na.\tWhen a URSP rule is determined to be applicable for a given application, the UE derives the suitable network slices based on the applicable URSP rule.\nb.\tIf the UE determines that there is more than one existing PDU Session which matches a given URSP rule, it is up to UE implementation (Operating System or modem layer) to select one of them to use. Otherwise, the UE tries to establish a new PDU Session using the derived network slices.\n2.\tIf there is no matching URSP rule (except the “match all” rule), the UE uses its own local configuration (if any) to determine which PDU Session to use.\nNOTE:\tThe UE local configuration in this context is information about the associated application, such as application-specific parameters to set up a PDU Session or end user configuration for specific applications. This can be provisioned in the UE via the application layer, e.g. following interaction between the Edge Enabler Client (EEC) and the Edge Configuration Server (ECS), as defined in TS 23.558 [24].\n3.\tWhen URSP rules are updated, or when a particular URSP rule’s validity changes, the association of existing applications to PDU Sessions may need to be re-evaluated.\n4.\tDepending on UE implementation, the associations between applications and PDU Sessions may also be re-evaluated periodically, independent of any changes to URSP rules.\nIn the case where a network slice becomes unavailable (e.g. due to overload), the AMF is triggered, either by local configuration (e.g. trigger from OAM) or by a notification from the Access and Mobility Management PCF (AM PCF) or by the NSSF [26], to replace the current S-NSSAI with a previously chosen Alternative S-NSSAI. Using a suitable NAS procedure (e.g. UE Configuration Update) the AMF informs the UE about the Alternative S-NSSAI as well as providing the mapping between S-NSSAI(s) and Alternative S-NSSAI(s) in the Allowed NSSAI and/or in the Configured NSSAI.\n1.\tIn the case where there is no existing PDU Session in the unavailable slice and the UE is trying to establish a new one to support a 5G Media Streaming session, the UE may provide both the Alternative S-NSSAI and the current S-NSSAI in the PDU Session Establishment message, in which case the AMF provides both S-NSSAI values to the SMF for the PDU Session establishment. The SMF proceeds with the PDU Session Establishment using the Alternative S-NSSAI. As a result, the new PDU Session is established over the Alternative S-NSSAI with a new IP address.\n2.\tIn the case where an ongoing 5G Media Streaming session is already being carried over the PDU Session associated with the unavailable slice, the AMF informs the SMF responsible for the PDU Session that it is to be transferred to the Alternative S-NSSAI. Then, depending on the Session and Service Continuity (SSC) mode of the existing PDU Session, either:\n-\tSSC mode 1: The SMF further updates the network slices in the UE/RAN/UPF via the PDU Session Modification procedure. In this case, the IP address of the PDU Session remains the same.\n-\tSSC mode 2 or 3: The SMF triggers the modification/release of the PDU Session and re-establishment of the PDU Session in the Alternative S-NSSAI. In this case, a new IP address is allocated during the PDU Session re-establishment procedure and the ongoing 5G Media Streaming session at reference point M4 and M5 needs to be migrated to the new PDU Session.\nEditor's note:\tthe above descriptions of Network Slice Replacement will be updated to aligned with SA2’s conclusion.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.2.3\tService continuity for media streaming sessions migrated between Network Slices",
+                            "text_content": "TR 28.809 [25] is the result of a feasibility study that looked into aspects of management data analytics. Clause 6 of [25] specifies use cases, potential requirements and possible solutions for management data analytics. One of the issues relating to service-level specifications documented in clause 6.3.2 of [25] is the issue of network slice load analysis, described as follows:\n\nFrom the above, it is understood that a Network Slice can become overloaded from time to time, and that consequently the slice cannot satisfy the traffic requirements, and therefore may fail to meet its SLA.\nClause 5.1 of TR 23700-41 [26] describes a related key issue \"Key Issue#1: Support of Network Slice Service Continuity\" in terms similar to the issue described above in [25] above. Specifically, aspects related to service continuity are being studied for two scenarios - a \"no mobility\" scenario and an \"inter-RA mobility\" scenario - in the case when a Network Slice or Network Slice instance in the Core Network (CN) or target CN is overloaded or undergoing planned maintenance (e.g., Network Slice termination), and the network performance of the Network Slice cannot meet the SLA.\nAs described in clause 4.2.2 of the present document, SA2 is in the process of specifying a method where an alternative slice is identified in advance, with the aim of migrating application traffic from the PDU Session in the current slice to the existing PDU Session or a new one in that alternative slice.\nThe 5G System provides generic support for moving application flows to different slices. As described in clause 5.15.5.2.2 of TS 23.501 [7] on determining whether ongoing traffic can be routed over existing PDU Sessions in other Network Slices:\n\nFrom the above, it is clear that either the URSP rules delivered to the UE or the UE local configuration determine how ongoing application traffic can be routed over existing PDU Sessions belonging to other Network Slices.\nClause 4.2.2 of the present document describes how the URSP rules are used to route application traffic through appropriate network slices.\nFor UE Local Configuration, clause 6.1.2.2.1 of [16] describes UE policy control, and specifies that among the four policy objects - Access Network Discovery & Selection Policy (ANDSP), UE Route Selection Policy (URSP), V2X Policy (V2XP), and ProSe Policy (ProSeP) - only ANDSP and URSP may be pre-configured in the UE.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "TR 28.809 [25] is the result of a feasibility study that looked into aspects of management data analytics. Clause 6 of [25] specifies use cases, potential requirements and possible solutions for management data analytics. One of the issues relating to service-level specifications documented in clause 6.3.2 of [25] is the issue of network slice load analysis, described as follows:",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The 5G System provides generic support for moving application flows to different slices. As described in clause 5.15.5.2.2 of TS 23.501 [7] on determining whether ongoing traffic can be routed over existing PDU Sessions in other Network Slices:",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tSlice orchestration and management",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TS 28.530 [3] and TS 28.531 [4] specify general concepts related to network slicing and slice life cycle management including specification of roles related to network slicing such as the CSC, CSP, NOP, NSC, and NSP. A network operator can perform both the roles of a CSP and NSP. A request from a CSC or NSC to the CSP or the NSP respectively for setting up a network slice is in the form of a set of slice attributes that represents the service requirements for the service that the customer intends to provide to its users.\nThe GSM Association describes a GST template [5] which specifies a set of attributes that characterize a given type of network slice/service. The slice customer prepares a NEST based on GST attributes and forwards it to the NSP for slice orchestration. A NEST is a GST filled with values. A study on GST attributes is specified in TR 23.700-40 [6], and a reference to GST attributes is included in clause 5.15.2.2 of TS 23.501 [7]. GST attributes and NEST are also discussed in study on network slice capability exposure for application enablement (NSCALE) in TR 23.700-99 [8]. The normative specification for this work is being specified in TS 23.435 [9].\nGST attributes, as defined in [5], are categorized into two types:\n-\tCharacter attributes: These attributes typically characterize a slice (e.g., throughput, latency, APIs etc.). The character attributes can be further classified as relating to performance, function, or control and management\n-\tScalability attributes: These attributes provide information about the scalability of a slice (e.g., number of UEs)\nThe CSP/NSP translates the NEST to service requirements for a set of subnets (e.g., core, transport network, RAN) using the slice NRM as described in TS 28.530 [3], TS 28.541 [10], TS 28.542 [11]. Based on individual slice subnet requirements, slice subnet resources are provisioned using slice orchestration operations for creating and managing NSI and NSSI resources as defined in TS 28.531 [4]. Such operations include:\n-\tCreation/modification/termination of NSI instances.\n-\tCreation/modification/termination of NSSI instances.\n-\tCreation/modification/termination of 3GPP NF instances.\nManagement and orchestration concepts such as provisioning management services, fault supervision management services, and performance assurance management services in addition to management service specification on the above slice resources are specified in TS 28.532 [12]. TS 28.545 [13] and TS 28.546 [14] describe fault supervision aspects of management and orchestration of networks and network slicing.\nTS 23.501 [7] and TS 23.502 [15] specify control plane architecture and procedures on enabling the connection of the UE to the above provisioned network slices including establishment of PDU sessions through those slices to the intended DNN. TS 23.503 [16] describes the data model for URSP rules and NSSP policies that enable UE application traffic to be routed through the provisioned network slices to the respective DNNs.\nIn addition, a study on network slice capability exposure for application layer enablement is described in TR 23.700-99 [8]. The application layer enablement architecture in [8] is based on the Service Enabler Architecture Layer for Verticals (SEAL) whose functional architecture and information flows are specified in TS 23.434 [17].\nOne of the key issues under study in [8] is whether a more concise approach to managing the lifecycle of network slices exposed to the application layer with additional functionality for verticals can be defined. One of the solutions being studied in clause 6.1.1 of [8] is to interface the network slice capability enablement server with the 5G system in order to perform all the network slice lifecycle management operations defined in [3] and [4]. With this capability, applications of different verticals can interface with the network slice capability enablement server for all network slice related operations.\nTS 27.007 [18], in clause 10.1, describes how via AT commands the UE is able to set network slice preferences.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tNetwork slice capability exposure",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "TR 23.700-99 [8] documents several key issues and candidate solutions in addition to enabling network slice lifecycle management operations using the network slice capability enablement server. Some of the key issues relevant to that study are the following:\n-\tDiscovery and registration aspects for management service exposure.\n-\tNetwork slice fault management capability.\n-\tCommunication service management exposure.\n-\tApplication layer QoS verification capability enablement.\n-\tNetwork slice related performance and analytics exposure.\n-\tNetwork slice capability exposure in the edge data network.\n-\tDelivery of existing network slice information to the trusted third party.\n-\tNetwork slice creation to the third party and UE.\nIn addition to the above information available at the network slice capability enablement server, TS 29.520 [19] specifies the stage-3 definition of NWDAF Services of the 5G System and provides a data model for network slice information that NWDAF can provide to authorized customers. Such information can also be used as network slice capability information.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tRelevant scenarios and use cases",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tTypes of network slicing",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tScenario 1: Operator-managed network slicing",
+                            "text_content": "In the operator-managed network slice scenario, the operator instantiates, configures, and manages a network slice that can be used by one or more customers (e.g., third-party service providers). A customer intending to provide a service to its users with differentiated quality of service or experience, requests that the operator sets up communication services in a network slice through which its users can access the customer’s service. The customer does not have any information about the slice internals, and completely relies on the operator to set up the resources requested by the customer in a network slice and make the service accessible to that customer’s users in that slice.\nThe customer and the operator negotiate a set of service requirements based on the expectation of the service that the customer intends to provide to its users. One way of negotiating service requirements is the use of GST attributes specified by GSM Association in [5]. Some of the performance-related GST attributes resemble the QoS service requirements specified in TS 26.501 [20] and TS 26.512 [21] as part of the M1d reference point specification.\nNOTE:\tA detailed mapping between the GST attributes and the QoS attributes specified in [20] and [21] is for future study.\nIn this scenario, an Application Service Provider, as a customer of the operator providing a network slice, can negotiate service parameters to be provided in a network slice. Based on the negotiated service requirements, the operator provisions necessary control and management functions to enable the setting up of an end-to-end network slice spanning different slice domains (e.g., RAN, Core, Transport etc.). The operator-provided management functions manage the end-to-end operation of the network slice and guarantee the availability of application functions that are deployed in that slice. TS 28.545 [13], TS 28.546 [14], TS 28.552 [22], TS 28.554 [23] define fault management and performance management capabilities which can be used to measure and assure the health of different slice resources.\nBy delegating these functions to the Mobile Network Operator, a media Application Service Provider can focus on media service delivery, using the 5G Media Streaming capabilities defined in TS 26.501 [20] and TS 26.512 [21], by interacting with the application functions provisioned in the network slice.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tScenario 2: Third-party-managed network slicing",
+                            "text_content": "In this scenario, a third-party entity requests that the operator creates a network slice based on certain requirements. The operator creates a network slice and hands over the network slice to the third-party entity. This mode of operation is specified in [3] and is referred to as NSaaS. Once the slice is handed over, the third-party entity can enhance the network slice e.g., by adding custom network functions, modifying slice configuration etc.\nA method for negotiating requirements for NSaaS service is the use of GST attributes specified by the GSM Association [5]. In addition to the performance-related character attributes, a number of scalability-related attributes can be used to describe the requirements of the slice to be provisioned in the 5G System.\nThe third-party entity can then provide the network slice resources to its customers. As described in the previous scenario, customers of the third-party entity can then negotiate with the third-party entity to set up communication services in that network slice. The users of the customers will then be able to access the customer’s service using the provisioned network slice.\nAn Application Service Provider can function as the third-party entity in this scenario and can receive a provisioned network slice as a service from the Mobile Network Operator. In this case, the Application Service Provider may, in addition to the capabilities described in [20] and [21], also have additional facilities to control and manage the resources of the network slice.\nNOTE:\tIt is for future study to identify how the capabilities available as a NSaaS consumer specified in [3] benefit an Application Service Provider whose role is specified in [20] and [21]. This scenario is therefore not considered further in the present document.\nEditor's note:\t[8] and [9] are to be monitored for specification related to the interface capabilities between the third-party entity and the NSCE server for control of network slices.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tUse cases",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tMultiple network slices for uplink and downlink streaming",
+                            "text_content": "[28] describes a number of media and content use cases that cover most of the common media and content situations from production to consumption. The two technology groups that co-authored [28] (New European Media and Networld2020) present nine use cases and have identified twelve parameters to adapt the network to application requirements. The following table lists the nine use cases, along with a mention of those use cases having strict QoS requirements in the uplink and/or downlink direction.\n\nThe authors make a case for different design choices using number of slices for media use cases. An extract from the document:\n\nOne way to realize the use cases referenced above requiring a combination of uplink and downlink traffic is to run them in different network slices. By doing so, QoS requirements for uplink traffic and downlink traffic can be provided using differentiated QoS possible because of network slicing.\nNOTE:\tUplink and downlink traffic carried over different network slices should have different Traffic descriptors (containing one or more components, as described in table 6.6.2.1-2 of TS 23.503 [16]).\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "[28] describes a number of media and content use cases that cover most of the common media and content situations from production to consumption. The two technology groups that co-authored [28] (New European Media and Networld2020) present nine use cases and have identified twelve parameters to adapt the network to application requirements. The following table lists the nine use cases, along with a mention of those use cases having strict QoS requirements in the uplink and/or downlink direction.",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The authors make a case for different design choices using number of slices for media use cases. An extract from the document:",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.3.2\tPremium gaming slice",
+                            "text_content": "[29] discusses aspects related to commercializing 5G network slicing. The white paper discusses network slicing use cases and path to initial commercialization, and evolution of network slicing technology. The white paper discusses gaming slice scenarios, and talks of two use-cases:\n\nThe white paper states the following:\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "[29] discusses aspects related to commercializing 5G network slicing. The white paper discusses network slicing use cases and path to initial commercialization, and evolution of network slicing technology. The white paper discusses gaming slice scenarios, and talks of two use-cases:",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "The white paper states the following:",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tCollaboration scenarios for network slicing",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.0\tGeneral",
+                            "text_content": "Clause 4.2 of the present document describes network slicing architecture based on specification in TS 23.501 [7] and figure 4.2.1-1 summarises the relationships between network slice instances, PDU Sessions, and DNNs.\nFrom figure 4.2.1-1, the following can be inferred:\n1.\tA UPF instance may be shared between multiple network slices.\n2.\tMultiple PDU Sessions terminating in different Data Networks may share the same slice.\n3.\tPDU Sessions in different network slice instances may terminate in the same Data Network.\nBased on this, the following two collaborations not currently specified in TS 26.501 [20] are possible:\n-\tDownlink media streaming wherein a 5GMS AS delivers content through two different network slices.\n-\tDownlink media streaming wherein 5GMS AS instances deployed in different Trusted DNs are accessed by the 5GMSd client in the same network slice.\nClause 5.4.2 of the present document describes collaboration options based on the above two possibilities.\nThere is some literature on the web about 5G network slicing [30][31][32][33][34][35]. Some of these [31][32][33] have information about possible ways network slicing could be used. Based on literature study, and related standard specification in 3GPP and other SDOs, we can discuss network slicing scenarios from the following perspective.\nClause 5.15.2 of TS 23.501 [7] describes the identification of network slice using NSSAI, and specifies the following:\n\nTable 5.15.2.2-1 of TS 23.501 [7] specifies standardized SST values. [36][30][37] shed light on usage of the SD value as a way to describe services, customer information and slice priority. Of particular interest amongst these three types of information is the customer information (or the tenancy information) which indicates the slice allocated to a specific customer/tenant, and the service information (to identify a service/application).\nBased on the above NSSAI identification, different network slicing scenarios are possible:\n1.\tA slice allocated for a specific customer/tenant. For example, a network slice allocated by the MNO for a specific enterprise. In this scenario, all applications of every UE in the enterprise use the allocated network slice. The SD field of the S-NSSAI is used to indicate the customer/tenant.\n-\tBoth the Android [38] and iOS [39] mobile Operating Systems have recently started supporting 5G network slicing in mobile devices for enterprise users. Android 12 onwards supports network slicing with a separate enterprise slice and slicing based on user profiles, while Android 13 onwards supports network slicing with multiple enterprise slices [38].\n2.\tA slice allocated for a specific customer/tenant for a specific service/application. For example, a network slice allocated by the MNO for a specific enterprise and application. In this scenario, the application in every UE in the enterprise uses the allocated enterprise network slice; all other applications in enterprise UEs use a different (possibly default) network slice. The SD field of the S-NSSAI is used to indicate the customer/tenant and the service information.\n3.\tA slice allocated for a specific service/application: For example, a slice optimized for 5G Media Streaming. In this scenario, the optimized slice is shared between all UEs, specifically for 5G Media Streaming application; the UEs use a different (possibly default) slice for other applications/services. The SD field of the S-NSSAI is used to indicate the service/application.\n-\tThe GSM Association specifies application-based network slicing [35], in which different network slices are provisioned for different applications.\n4.\tA slice leased by MNO to a virtual operator. In this scenario, the virtual operator leases a network slice from the MNO, and in turn, can offer any of the above three network slicing scenarios to its customers over the leased network slice.\nClause 5.4.3 of the present document describes collaboration options based on the above network slicing scenarios.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Clause 5.15.2 of TS 23.501 [7] describes the identification of network slice using NSSAI, and specifies the following:",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "5.4.1\tCollaboration scenarios for network slicing based on downlink media streaming scenarios",
+                            "text_content": "This clause presents the MNO CDN, OTT, and multi-MNO distribution collaboration scenarios corresponding to those described in clauses A.2, A.3, and A.8 of TS 26.501 [20] enhanced with network slicing. Other MNO CDN and OTT collaboration scenarios (clauses A.1, A.4, A.5, A.6, A.7 of TS 26.501 [20]) can be similarly enhanced, and are therefore not presented here.\nThe collaboration scenario shown in figure 5.4.1.1-1 corresponds to the MNO CDN collaboration scenario described in clause A.2 of TS 26.501 [20] delivered using a network slice.\nThe figure depicts a network slicing scenario where downlink media streaming is facilitated using Advanced Beamforming (ABF) and Adaptive Streaming over IP (ASIP) technologies. The network slicing allows for efficient resource allocation and improved performance, while network slicing enables the efficient use of network resources.\nFigure 5.4.1.1-1: Downlink media streaming with AF and AS in the trusted Data Network\nwith Network Slicing\nThe 5GMSd Application Provider may negotiate with the MNO for creation of a network slice as described in clause 4.2.2. The network slice is provisioned by the network operator as described in clause 4.3.\nAll the interactions between the participating entities (5GMSd Application Provider, 5GMSd-Aware Application, 5GMSd Client, 5GMSd AF, and 5GMSd AS) for the 5G Media Streaming session described in clause A.2 of TS 26.501 [20] apply in this scenario. All M4d interactions happen through a PDU Session established within the provisioned network slice.\nThis collaboration scenario shown in figure 5.4.1.2-1 corresponds to the OTT collaboration scenario described in clause A.3 of TS 26.501 [20] delivered using a network slice.\nThe figure depicts a scenario where downlink media streaming is performed in an external data network (OTT) with Network Slicing. The network slicing feature allows for the efficient allocation of resources, such as bandwidth and processing power, to different applications based on their requirements. This enables the efficient use of network resources and supports the delivery of high-quality media streaming services to users.\nFigure 5.4.1.2-1: Downlink media streaming with AF and AS in an external Data Network (OTT)\nwith Network Slicing\nThe 5GMSd Application Provider may negotiate with the MNO for the creation of a network slice as described in clause 4.2.2. The network slice is provisioned by the network operator as described in clause 4.3.\nAll the interactions between all the participating entities (5GMSd Application Provider, 5GMSd-Aware Application, 5GMSd Client, 5GMSd AF, and 5GMSd AS) described in clause A.3 of TS 26.501 [20] apply in this scenario. All M4d and M5d interactions happen through a PDU Session established within the provisioned network slice.\nThis collaboration scenario shown in figure 5.4.1.3-1 represents a multi-MNO distribution scenario where an external CDN (5GMSd AS) is used to deliver content to multiple UEs connected to different 5GMSd-capable PLMNs, as described in clause A.8 of TS 26.501 [20], but delivered using network slices on those PLMNs.\nThe figure depicts a scenario where downlink media streaming is performed in two trusted Data Networks sharing an AS in an external Data Network with Network Slicing. The network slicing allows for efficient resource allocation and improved network performance.\nFigure 5.4.1.3-1: Downlink media streaming with AFs in two trusted Data Networks sharing AS in external Data Network with Network Slicing\nThe 5GMSd Application Provider may negotiate with each of the PLMNs for creation of network sliced as described in clause 4.2.2 of the present document. The network slice for each PLMN is provisioned by the PLMN operator as described in clause 4.3.\nAll the interactions between all the participating entities (5GMSd Application Provider, 5GMSd-Aware Application, 5GMSd Client, 5GMSd AF, and 5GMSd AS, PCF) described in clause A.8 of TS 26.501 [20] apply in this scenario. All M4 and M5 interactions happen through PDU Sessions established within the provisioned network slices. Each UE in a different PLMN may use the provisioned network slice in that PLMN for all the 5G Media Streaming operations. The same external CDN (5GMSd AS) serves the users of both the PLMNs, and all the signaling and media traffic is sent through PSU Sessions in respective network slices.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tCollaboration scenarios for network slicing with multiple slices or Data Networks",
+                            "text_content": "This collaboration scenario shown in figure 5.4.2.1-1 represents the case of accessing the same external Data Network through two different network slices shown in figure 4.2.1-1. An external CDN (5GMSd AS) is accessed by the UE via this Data Network.\nThe figure depicts a scenario where downlink media streaming is performed using an AS in an external Data Network accessible through two different network slices. The AS is located in the external Data Network, which is accessible through two different network slices. This setup allows for efficient and reliable data transmission, as the AS can be accessed from both the internal and external network slices. The figure illustrates the use of the AS to support media streaming, with the media being transmitted over the external Data Network.\nFigure 5.4.2.1-1: Downlink media streaming with AS in external Data Network accessible through two different network slices\nThe 5GMSd Application Provider may negotiate with the MNO to setup two different network slices with different SLAs as described in clause 4.3. After the SLA negotiation, the operator may provision two network slices, and provide connectivity services to the external Data Network through both the slices.\nThe 5GMSd Application Provider may deliver Service Access Information through reference point M8d. The Service Access Information delivered to the 5GMSd-Aware Application may have information about different Service Operation Points accessible through each of the network slices. Upon receiving the Service Access Information, the 5GMSd-Aware Application passes this information to the 5GMSd Client. The 5GMSd Client selects the Service Operation Point of interest, and requests media streaming session establishment over the PDU Session in the network slice that provides the required Service Operation Point. Media streaming (M4d) thus happens through the selected network slice.\nThe other network slice may be used to fetch other media streaming assets (depending on criticality and SLA availability considerations), or serves as an alternate network slice in case the first slice becomes unavailable, as discussed in clause 6.3.\nNOTE:\tThe usage of multiple network slices simultaneously by the same application is currently not supported by either Android or iOS. This collaboration scenario is unlikely to be deployed.\nThis collaboration scenario shown in figure 5.4.2.2-1 represents the case of accessing two different Data Networks using the same network slice as shown in figure 4.2.1-1. A CDN server (5GMSd AS) is either deployed in each of the trusted Data Networks, or presents a multi-homed interface at reference point M4d through each of the trusted DNs.\nThe figure depicts a scenario where an AS (Application Service) is deployed in multiple trusted Data Networks, enabling media streaming services. The network is designed to ensure high availability and reliability, with redundant paths and failover mechanisms.\nFigure 5.4.2.2-1: Downlink media streaming with AS deployed in multiple trusted Data Networks\nThe 5GMSd Application Provider may negotiate with the MNO to provision a network slice as described in clause 4.3. The operator provisions the network slice, and provides connectivity services to both the DNs through the slice.\nThe 5GMSd Application Provider may deliver Service Access Information through reference point M8d. The Service Access Information delivered to the 5GMSd-Aware Application may have information about different Service Operation Points accessible through each of the DNs. For example, an enterprise may utilize an enterprise-specific CDN (e.g., hosting enterprise-related video tutorials). 5G Media Streaming sessions for enterprise-related video tutorials use the PDU Session terminating in the enterprise-specific CDN, while some other video tutorial requests are sent through PDU Sessions terminating in a different CDN. Alternatively, a DN may act as a back-up CDN, utilized by the 5GMSd Client if the primary CDN is inaccessible or unavailable for any reason.\nIn a variant of this scenario, the second CDN may be a CDN edge with optional media processing.\nIn another variation of the above scenario shown in figure 5.4.2.2-1, a common 5GMS AS may serve traffic via two trusted Data Networks down the separate PDU Sessions, as shown in figure 5.4.2.2-2.\nThe figure depicts a scenario where a single AS (Application Service) is serving traffic through multiple Data Networks, illustrating the concept of multi-path communication in a 5G network.\nFigure 5.4.2.2-2: Downlink media streaming with single AS serving traffic\nthrough multiple Data Networks\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.3\tCollaboration options based on network slicing scenarios",
+                            "text_content": "Scenarios described in this clause are based on the MNO CDN collaboration scenario described in clause A.7 of TS 26.501 [20] wherein both the 5GMSd AF and 5GMSd AS are deployed in the Trusted DN, and the 5GMSd Application Provider uses reference points M1d and M2d respectively to interact with them.\nNOTE:\tAll the collaboration scenarios described in clause A of TS 26.501 [20] can be similarly shown with each of the network slicing scenarios described in this clause.\nThis is a network slicing scenario wherein the MNO, upon a request from an enterprise, allocates one or more network slices exclusively for enterprise users.\nFigure 5.4.3.1-1 shows the case of an enterprise network slice for all applications in the enterprise UE. Every application on the enterprise UE, including the 5GMSd-Aware Application, uses the allocated network slice for communication with the DN entities.\nNOTE:\tAndroid 12 onwards supports network slicing with a separate enterprise network slice allocated by the MNO.\nThe figure depicts a network slice for all applications in the enterprise UE, illustrating the various applications and their respective network slices. The network slice is divided into different sections, each representing a different application, and is connected to the base station (gNB) through a network slice. The figure also shows the network slice's connectivity to the core switches and distributed nodes, which are essential components for the network's functionality.\nFigure 5.4.3.1-1: Network slice for all applications in the enterprise UE\nFigure 5.4.3.1-2 shows the case of an enterprise network slice for applications in the enterprise profile of the UE.\nThe figure depicts a network slice for enterprise profile applications, illustrating the various network slices and their corresponding network components. Key components include the network slice, network slice management, and network slice security. The figure highlights the importance of network slicing in modern network architectures, enabling efficient resource allocation and improved network performance.\nFigure 5.4.3.1-2: Network slice for enterprise profile applications\nIn this scenario:\n-\tEvery application in the enterprise/work profile of the UE, including the 5GMSd-Aware Application, uses the allocated enterprise network slice for communication with DN entities accessible from that slice.\n-\tEvery application in the non-enterprise profile of the UE (e.g., personal profile), including the 5GMSd-Aware application, uses the default (e.g., eMBB) network slice for communication with DN entities accessible from that slice.\nNOTE:\tAndroid 13 onwards supports network slicing with multiple enterprise slices, and slicing based on user profiles.\nThis is a network slicing scenario wherein the MNO, upon a request from an enterprise, allocates a specific network slice for a specific service/application for enterprise users.\nFigure 5.4.3.2-1 shows the case of an enterprise network slice for a specific application (e.g., 5GMSd-Aware Application) for enterprise UEs. The media streaming traffic belonging to the 5GMSd-Aware application is sent through the enterprise network slice, while traffic for all other applications is sent through a default network slice (e.g. eMBB).\nThe figure depicts a network slice for specific enterprise users, illustrating the network architecture and its components. Key features include the network slice, network slice for specific application, and network slice for enterprise users.\nFigure 5.4.3.2-1: Network slice for specific application for enterprise users\nURSP rules, provisioned by the PCF, as described in clause 6.6.2.2 of TS 23.503 [16], assist in traffic detection and route selection of appropriate network slice for application traffic in the UE.\nThis is a network slicing scenario wherein the MNO allocates a specific network slice for a specific service/application for use by multiple users. (The MNO may also provision additional network slices for carrying traffic of other specific applications.)\nNOTE 1:\tThe GSM Association specifies application-based network slicing [40], in which different network slices are provisioned for different applications.\nNOTE 2:\tUnlike Scenario#1 and Scenario#2, the users in this scenario need not belong to the same enterprise.\nFigure 5.4.3.3-1 shows the case of a slice optimized for downlink 5G Media Streaming. The traffic belonging to the 5GMSd-Aware Applications of all users is sent through this network slice, while the traffic of other applications is sent through a default network slice (e.g., eMBB).\nThe figure depicts a network slice for a specific application, with all users represented by different colors and layers. The network slice is divided into three main layers: the core network, the application layer, and the user layer. The application layer is highlighted with different colors, indicating different applications or services. The user layer is represented by different colors and layers, showing the different user groups or devices. The figure also includes a legend to help understand the different colors and layers.\nFigure 5.4.3.3-1: Network slice for specific application for all users\nURSP rules, provisioned by the PCF, as described in clause 6.6.2.2 of TS 23.503 [16], assist in traffic detection and route selection of the appropriate network slice for application traffic in the UE.\nThis is a network slicing scenario where in virtual operator leases network slice from the MNO, and uses it to provide service to its customers as described in clause 5.2.2 of present document. The virtual operator may, in turn, offer any of the above three slicing scenarios on the leased network slice.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tKey issues and candidate solutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tKey Issue #1: Service Provisioning",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tDescription",
+                            "text_content": "Clause 5.3.2 of the present document describes a use case for premium gaming where two network slices are provisioned by the 5GMS Application Provider for users with different subscription levels. Clauses 7 and 11 of TS 26.512 [21] describe 5G Media Streaming APIs for (respectively) M1 Provisioning and M5 Media Session Handling. However, the present APIs support only one Network Slice per Provisioning Session. Furthermore, it is not clear from [21] whether the same Service Operation Points and Policy Templates are available in different slices when they are provisioned in this way.\nOpen issues:\n-\tWhether and how the 5GMS Provisioning (M1) APIs and corresponding data model definitions in [21] need to be enhanced to support the use case referenced by this Key Issue.\n-\tWhether and how the Media Session Handline (M5) APIs and corresponding data model definitions in [21] need to be enhanced to support the use case referenced by this Key Issue.\nNOTE:\tMigration of media flows to different Network Slice is studied separately in clause 6.3\nAssumptions:\n-\tSlice creation and activation are out of scope of this Key Issue. The 5GMS Application Provider may perform offline negotiation with MNO OAM for slice creation and activation as described in clause 4.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tCandidate solutions",
+                            "text_content": "Pre-requisites and assumptions:\n-\tA single 5GMS Application Provider (with identity aspId) intends to provision a Policy Template for a plurality of Network Slices.\n-\tThe one or more Network Slices are already provisioned and activated. Appropriate Slice and DNN identifiers are known to the 5GMS Application Provider.\n-\tThe 5GMS AF is preconfigured by the 5G System operator with a mapping from IP subnet range(s) to S-NSSAI/DNN duples so that it can select an appropriate Network Slice and/or Data Network when manipulating the network QoS of the application flows described by a Network Assistance session or Dynamic Policy invocation.\nTo enable a Policy Template to be valid for more than one Network Slice and/or DNN, in this candidate solution the Policy Template resource specified in clause 7.9.3.1 of TS 26.512 [21] is modified as follows:\n1.\tAdd an array of networkContexts as a child under the applicationSessionContext parent. For backwards compatibility with the existing syntax, this array may be omitted, or present but empty.\n2.\tEach Network Context object includes the existing sliceInfo and dnn properties. Both properties remain optional, so it is syntactically valid for the networkContexts array to contain empty objects (although this is meaningless semantically).\n\nNOTE:\tThe cardinality relationship between aspId and sliceInfo is for future study.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "2.\tEach Network Context object includes the existing sliceInfo and dnn properties. Both properties remain optional, so it is syntactically valid for the networkContexts array to contain empty objects (although this is meaningless semantically).",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.3\tConclusions",
+                            "text_content": "The study of the key issue involved looking into use cases for running 5G Media Streaming services in one or more Network Slices, and the current stage-3 support for provisioning those slices. The stage-3 API for Policy Template provisioning supports one Network Slice and/or Data Network per Provisioning Session. It is useful for the 5G Application Service Provider to provision multiple Network Slices and/or Data Networks at once if the same Policy Template may be applied to one or more Network Slices and/or Data Networks.\nThe following is recommended for stage 3:\n-\tThe PolicyTemplate resource data model in TS 26.510 [42] is enhanced to include an array of S-NSSAI and DNN duples, as described in clause 6.1.2 of the present document, to support Policy Template provisioning for a plurality of Network Slices and/or Data Networks.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tKey Issue #2: Realising dynamic policies using different slices",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tDescription",
+                            "text_content": "Editor's note:\tKey issue to cover study objective of identifying the appropriate network slice for outbound M5 dynamic policy requests from UE to AF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tCandidate solutions",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tConclusions",
+                            "text_content": "No conclusion has been reached for this Key Issue.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tKey Issue #3: Moving media flows to other Network Slices",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tDescription",
+                            "text_content": "As introduced in clause 4.2.3 of the present document, clause 5.1 of TR 23700-41 [26] studies a Key Issue on network slice service continuity. According to this, a Network Slice or Network Slice instance can become overloaded or the performance of the Network Slice may fall below the requirements of its SLA.\nThe recommendation in clause 8.1 of [26] is for the 5G System to identify an alternative slice to migrate application flows from the PDU Session of the current slice to the existing PDU Session or a new one in the chosen alternative slice. When 5G Media Streaming sessions are carried over a PDU Sessions that cannot be migrated transparently to the application layer with the support of the service continuity procedure, the impacts on ongoing 5G Media Streaming sessions needs to be studied.\nOpen issues:\n-\tWhether the service continuity procedure is transparent to 5G Media Streaming or requires enhancement of existing procedures and data model definitions in TS 26.501 [20] and TS 26.512 [21].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tCandidate solutions",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.3\tConclusions",
+                            "text_content": "This Key Issue studied the aspect of network slice replacement specified by 3GPP SA2 in TS 23.501 [7] and its impact on 5G Media Streaming procedures. The study found that:\n-\tThe network slice replacement procedure is transparent to the Application Function and the Application Service Provider.\n-\tThere is no guarantee that the Alternative S-NSSAI provides similar performance as that of the replaced S-NSSAI when a network slice replacement procedure is undertaken by the 5G System.\nWe conclude that:\n-\tPer 3GPP SA2 guidance on the current support of network slice replacement in the 5G System, no normative work to enhance existing procedures in TS 26.501 [20] and data model definitions in TS 26.512 [21] is required at this time.\n-\tFuture work in 3GPP SA2 related to network slice replacement is to be monitored, and the data model definitions in TS 26.510 [42] enhanced, if necessary.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tKey Issue #4: AF discovery for dynamic policy",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tDescription",
+                            "text_content": "Editor's note:\tKey issue to cover study objective of discovering dynamic policy AF that the UE sends the outbound M5 requests to.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.2\tCandidate solutions",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.3\tConclusions",
+                            "text_content": "No conclusion has been reached for this Key Issue.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.5\tKey Issue #5: Interoperability considerations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.5.1\tDescription",
+                            "text_content": "Editor's note:\tKey issue to cover study objective of determining the need and describing methods for AF-to-AF communication to support interoperability if 5GMS instances from different vendors are deployed in the 5GMS system. Media services may have different types of AFs (provisioning AF, dynamic policy AF, DCAF etc.) due to slicing, edge service provisioning, reporting configuration etc., and this key issue will cover communication aspects between those AFs if the AFs are deployed by different vendors.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.5.2\tCandidate solutions",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.5.3\tConclusions",
+                            "text_content": "No conclusion has been reached for this Key Issue.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.6\tKey Issue #6: Slice resource resolution",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.6.1\tDescription",
+                            "text_content": "Editor's note:\tKey issue to cover study objective of identifying methods for deploying, supporting, and resolving slice-specific 5GMS AS instances. Solutions all levels - higher layer methods such as modification of media description documents to lower layer methods using networking protocols - can be included.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.6.2\tCandidate solutions",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.6.3\tConclusions",
+                            "text_content": "No conclusion has been reached for this Key Issue.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.7\tKey Issue #7: Bootstrapping application invocation on Network Slice",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.7.1\tDescription",
+                            "text_content": "Clauses 5 and 6 of TS 26.501 [20] describe the high-level procedures for downlink and uplink media streaming respectively. As part of these procedures, the 5GMS Application Provider performs service provisioning at the 5GMS AF. The 5GMS-Aware Application subsequently receives Service Access Information from the 5GMS Application Provider over reference point M8 or else acquires it directly from the 5GMS AF over reference point M5. If the UE currently has access to more than one Network Slice, it is unclear how the 5GMS-Aware Application and the 5GMS Client on the UE discover the appropriate Network Slice to use to establish a new media streaming session.\nOpen issues:\n-\tHow the bootstrapping of the application invocation on a Network Slice happens before the 5GMS Client performs 5G Media Streaming operations.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.7.2\tCandidate solutions",
+                            "text_content": "Assumptions:\n-\tThe 5GMS-Aware Application developer is aware of different OS App Ids supported by the UE operating system.\nFigure 6.7.2.1-1 below illustrates the procedure for bootstrapping application invocation on a Network Slice.\nThe figure depicts a call flow for bootstrapping application invocation on a Network Slice, illustrating the steps involved in initiating a new application on a network slice. The flow includes the initiation of a new application, the creation of a new network slice, and the deployment of the application on the new slice. The figure provides a visual representation of the process, making it easier to understand and follow.\nFigure 6.7.2.1-1: Call flow for bootstrapping application invocation on a Network Slice\nThe steps are as follows:\n1.\tThe 5GMS-Aware Application is installed on the UE, and and is programmed to invoke an OS-specific network connection API using a pre-defined OS App Id supported by the UE operating system.\n2.\tThe 5GMS Application Provider provisions the media streaming session in the 5GMS AF with one or more network slices at reference point M1. The provisioning information may include application information such as the ProvisioningSession.externalApplicationId specified in clause 7.2.3.1 of TS 26.512 [21]. The 5GMS AF uses this information to infer application traffic descriptor information used for application guidance, as specified in clause 4.15.6.10 of TS 23.502 [15].\n3.\tThe 5GMS AF uses the Nnef_ServiceParameter service defined in clause 5.2.6.1 of TS 23.502 [15] to provide application guidance for URSP determination via the NEF as described in clause 4.15.6.10 of TS 23.502 [15], which is eventually delivered to the UE as described in clause 4.15.6.7 of TS 23.502 [15].\nNOTE 1:\tURSP rules may also be configured in the UE as described in clause 4.2.2 of this present document.\n4. The 5GMS Application Provider may provide Service Access Information to the 5GMS-Aware Application at reference point M8. In the Service Access Information, the 5GMS Application Provider may include information related to Service Operation Points associated with different Network Slices.\n5.\tThe 5GMS-Aware Application initiaites a media streaming session with the 5GMS Client at reference point M6. The 5GMS Client uses an OS-specific UE-internal API to request a network connection for use at reference points M5 (step 10) and M4 (step 11).\nNOTE 2:\tIf the 5GMS-Aware Application is aware about Network Slices, the 5GMS-Aware Application may explicitly indicate the Network Slice to use as part of its request for a network connection. In this case, the following step is skipped.\n6.\tBased on the OS App Id configured for the 5GMS-Aware Application in step 1, the UE Operating System enables selection of the appropriate Network Slice using the traffic descriptor information inside the currently configured URSP rules.\nNOTE 3:\tIf multiple network slices are provided for the same traffic descriptor, the precedence information in the route selection descriptor is used to select the appropriate Network Slice.\n7.\tThe UE Operating System checks whether a PDU Session already exists in the selected Network Slice and, if so, selects this PDU Session for further interaction with the media streaming endpoints (steps 10 and 11).\n8.\tAlternatively, if no PDU Session exists in the Network Slice, the UE Operating System creates a PDU Session using the UE-requested PDU Session establishment procedure specified in clause 4.3.2.2 of TS 23.502 [15].\nNOTE 4:\tSee table A-1 in TS 23.503 [16] for an example of this procedure.\nNOTE 5:\tAccording to clause 4.2.2.2 of TS 24.526 [41], the mechanisms used by the UE Operating System to check for the existance of a PDU Session in the selected Network Slice and to establish a new PDU Session if needed are up to UE implementation.\n9.\tOnce the PDU Session is available, the 5GMS Client interacts with DNS system to resolve the IP address of the 5GMS AF and 5GMS AS instances.\n10.\tThe 5GMS Client interacts with the 5GMS AF for media session handling procedures as specified in clause 11 of TS 26.512 [21].\n11.\tThe 5GMS Client interacts witht the 5GMS AS for media streaming as specified in clause 10 of TS 26.512 [21].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.7.3\tConclusions",
+                            "text_content": "This Key Issue studied application bootstrapping onto a Network Slice based on application information provisioned by the 5GMS Application Provider and the configuration information in the 5GMS-Aware Application. The application information provisioned by the 5GMS Application Provider is used by the 5GMS AF to provide application guidance for URSP determination in the 5G System. The configuration in the 5GMS-Aware Application and the currently configured URSP rules help the UE Operating System select the appropriate Network Slice for routing application traffic.\nThe following is recommended for stage 2:\n-\tThe Key Issue description and candidate solution in clauses 6.7.1 and 6.7.2 respectively of the present document be included as an informative annex to TS 26.501 [20] as guidance for implementations.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tPotential requirements",
+            "description": "The following topics for further study are identified:\n1.\tImpact to 5G Media Streaming procedures and data model definitions in TS 26.510 [42] based on specification progress related to Network Slice replacement.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "8\tConclusions and recommendations",
+            "description": "Network slicing is one of the key features of 5G which allows Mobile Network Operators to provision logical networks to serve a specific service or service category, or to serve customers with specific service requirements. Network slicing standardization has progressed in various different 3GPP Working Groups. Specification related to this feature includes architecture, orchestration and management, network resource models, capability management and exposure. The Key Issues studied in the present document point to a need to extend the 5GMS architecture in order to take advantage of network slicing when delivering 5G Media Streaming services.\nThe present document provides an overview of network slicing architecture and aspects related to slice orchestration and management as well as network slice capability exposure. It briefly describes different network slice management options such as operator-managed network slicing and third-party-managed network slicing. The present document also collects a set of use cases for running 5G Media Streaming services in one or more network slices, and describes a number of collaboration scenarios for exploiting network slicing capabilities within the 5GMS architecture. It also documents key issues and candidate solutions related to service provisioning, moving media flows to other network slices, and bootstrapping application invocation on a network slice.\nIt is recommended that:\n1.\tThe use cases and collaboration scenarios for network slicing documented in clauses 5.3 and 5.4 respectively be included in an informative annex to TS 26.501 [20].\n2.\tThe changes to the PolicyTemplate resource data model definition described in clause 6.1.2.1 be implemented into TS 26.510 [42] to support Policy Template provisioning for a plurality of Network Slices and/or Data Networks.\n3.\tThe Key Issue description and corresponding candidate solution on bootstrapping application invocation on a Network Slice documented in clause 6.7 of the present document be included as an informative clause or annex to TS 26.501 [20] as guidance for implementations.\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 12,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

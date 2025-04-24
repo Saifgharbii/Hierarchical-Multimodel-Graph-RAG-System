@@ -1,0 +1,278 @@
+{
+    "document_name": "24275-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document defines the management object (MO) for Basic Communication Part (BCP) of IMS Multimedia Telephony (MMTEL) communication service.\nThe MO for BCP of MMTEL communication service is compatible with OMA device management protocol specifications, version 1.2 and upwards, and is defined using the OMA DM device description framework as described in the enabler release definition OMA-ERELD_DM-V1_2 [2].\nThe MO for BCP of MMTEL communication service consists of relevant configuration parameter that can be managed for a UE supporting the timer RequestTimeout specified in 3GPP TS 24.173 [3].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\tOMA-ERELD-DM-V1_2-20070209-A: \"Enabler Release Definition for OMA Device Management, Version 1.2\".\n[3]\t3GPP TS 24.173: \" IMS multimedia telephony communication service and supplementary services\".\n[4]\t3GPP TS 22.011: \"Service accessibility\".\n[5]\t3GPP TS 23.122: \"Non-Access-Stratum functions related to Mobile Station (MS) in idle mode\".\n[6]\t3GPP TS 23.003: \"Numbering, addressing and identification\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 22.011 [r22011] apply:\n3GPP PS data off\n3GPP PS data off exempt service\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 24.173 [3] apply:\nMMTEL voice\nMMTEL video\nFor the purposes of the present document, the following terms and definitions given in 3GPP TS 23.122 [5] apply:\nEquivalent Home PLMN (EHPLMN)\nHome PLMN (HPLMN)\nVisited PLMN (VPLMN)\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nBCP\tBasic Communication Part\nDDF\tDevice Description Framework\nDM\tDevice Management\nMO\tManagement Object\nOMA\tOpen Mobile Alliance\nSNPN\tStand-alone Non-Public Network\nUE\tUser Equipment\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tMO for BCP of MMTEL communication service",
+            "description": "The MO for BCP of MMTEL communication service is used to manage settings of the UE, which supports a RequestTimeout timer. The timer RequestTimeout is configurable as specified in 3GPP TS 24.173 [3].\nThe MO identifier is: urn:oma:mo:ext-3gpp-bcp:1.0.\nProtocol compatibility: This MO is compatible with OMA DM 1.2.\nThe figure depicts a MO (Multipath Overlay) for a MMTEL communication service, illustrating the various paths that a signal takes through the network. The figure shows the MO configuration, including the number of paths, the path length, and the path loss. This MO is used to ensure reliable communication by mitigating interference and providing redundancy.\nFigure 4-1: MO for BCP of MMTEL communication service\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tMO configuration parameters",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This clause describes the configuration parameters for the MO for BCP of MMTEL communication service.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tNode: /<X>",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This interior node acts as a placeholder for one or more accounts for a fixed node.\n-\tOccurrence: OneOrMore\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\nThe interior node is mandatory for a UE supporting the UE role specified in 3GPP TS 24.173 [3].\nNOTE:\tOne node is normally used. More nodes are only used in case the terminal supports multiple UICCs.\nChild nodes of this interior node which are not defined in this version of the present document are ignored.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.3\t/<X>/Name",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This leaf is a name for the settings for BCP of MMTEL communication service.\n-\tOccurrence: ZeroOrOne\n-\tFormat: chr\n-\tAccess Types: Get, Replace\n-\tValues: <User displayable name>\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.4\t/<X>/Timer_RequestTimeout",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Timer_RequestTimeout leaf defines the time between sending of an initial INVITE request and receipt of any SIP response.\n-\tOccurrence: One\n-\tFormat: int\n-\tAccess Types: Get, Replace\n-\tValues: <The time for INVITE request timeout>\nThe Timer_RequestTimeout leaf is the time between sending from the UE the initial INVITE request and the receptions of any SIP responce. The timer value shall be given in seconds. The configurable value is between 5 and 15 seconds referring to 3GPP TS 24.173 [3]. The Timer_RequestTimeout is a 16 bits unsigned integer.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.5\t/<X>/Ext/",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Ext is an interior node for where the vendor specific information about the 3GPP-IMS MO is being placed (vendor meaning application vendor, device vendor etc.). Usually the vendor extension is identified by vendor specific name under the ext node. The tree structure under the vendor identified is not defined and can therefore include one or more un-standardized sub-trees.\n-\tOccurrence: ZeroOrOne\n-\tFormat: node\n-\tAccess Types: Get\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.6\t/<X>/3GPP_PS_data_off",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The interior node contains configuration parameters for 3GPP PS data off.\n-\tOccurrence: ZeroOrOne\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.7\t/<X>/3GPP_PS_data_off/MMTEL_voice_exempt",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The leaf indicates whether the MMTEL voice is a 3GPP PS data off exempt service.\n-\tOccurrence: One\n-\tFormat: bool\n-\tAccess Types: Get, Replace\n-\tValues: 0, 1\n0 - Indicates that the MMTEL voice is not a 3GPP PS data off exempt service.\n1 - Indicates that the MMTEL voice is a 3GPP PS data off exempt service.\nNOTE:\tThis MO is used when the UE is in the home PLMN or the EHPLMN, or the UE is in the VPLMN and the MMTEL_voice_roaming_exempt node is not configured.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.7a\t/<X>/3GPP_PS_data_off/MMTEL_voice_roaming_exempt",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The leaf indicates whether the MMTEL voice is a 3GPP PS data off exempt service when the UE is in the VPLMN.\n-\tOccurrence: ZeroOrOne\n-\tFormat: bool\n-\tAccess Types: Get, Replace\n-\tValues: 0, 1\n0 - Indicates that the MMTEL voice is not a 3GPP PS data off roaming exempt service.\n1 - Indicates that the MMTEL voice is a 3GPP PS data off roaming exempt service.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.8\t/<X>/3GPP_PS_data_off/MMTEL_video_exempt",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The leaf indicates whether the MMTEL video is a 3GPP PS data off exempt service.\n-\tOccurrence: One\n-\tFormat: bool\n-\tAccess Types: Get, Replace\n-\tValues: 0, 1\n0 - Indicates that the MMTEL video is not a 3GPP PS data off exempt service.\n1 - Indicates that the MMTEL video is a 3GPP PS data off exempt service.\nNOTE:\tThis MO is used when the UE is in the home PLMN or the EHPLMN, or the MMTEL_video_roaming_exempt node is not configured when the UE is in the VPLMN.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.8a\t/<X>/3GPP_PS_data_off/MMTEL_video_roaming_exempt",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The leaf indicates whether the MMTEL video is a 3GPP PS data off exempt service when the UE is in the VPLMN.\n-\tOccurrence: ZeroOrOne\n-\tFormat: bool\n-\tAccess Types: Get, Replace\n-\tValues: 0, 1\n0 - Indicates that the MMTEL video is not a 3GPP PS data off roaming exempt service.\n1 - Indicates that the MMTEL video is a 3GPP PS data off roaming exempt service.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.9\t/<X>/SNPN_Configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This interior node contains configuration parameters regarding a UE operating in SNPN access operation mode.\n-\tOccurrence: ZeroOrOne\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.10\t/<X>/SNPN_Configuration/<X>",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This interior node acts as a placeholder for a list of:\na)\tSNPN identity; and\nb)\tconfiguration parameters.\nNOTE:\tFor each of the elements in the list, a) must be present and at least one parameter of b) needs to appear.\nA configuration parameter in an /<X>/SNPN_Configuration/<X> node other than the SNPN_identifier, is applicable when the UE selects an entry of \"list of subscriber data\" with the SNPN identity of the subscribed SNPN which is the same as the SNPN identity in the SNPN_identifier leaf.\n-\tOccurrence: OneOrMore\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.11\t/<X>/SNPN_Configuration/<X>/SNPN_identifier",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This leaf indicates the SNPN identity of the subscribed SNPN for which the list of configuration parameters are applicable.\n-\tOccurrence: One\n-\tFormat: chr\n-\tAccess Types: Get, Replace\n-\tValues: <PLMN><NID>\nThe PLMN and NID are in the format defined by 3GPP TS 23.003 [6], with each digit of the MCC and MNC of the PLMN and each digit of the assignment mode and NID value of the NID encoded as an ASCII character.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.12\t/<X>/SNPN_Configuration/<X>/Timer_RequestTimeout",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Timer_RequestTimeout leaf defines the time between sending of an initial INVITE request and receipt of any SIP response.\n-\tOccurrence: One\n-\tFormat: int\n-\tAccess Types: Get, Replace\n-\tValues: <The time for INVITE request timeout>\nThe Timer_RequestTimeout leaf is the time between sending from the UE the initial INVITE request and the receptions of any SIP responce. The timer value shall be given in seconds. The configurable value is between 5 and 15 seconds referring to 3GPP TS 24.173 [3]. The Timer_RequestTimeout is a 16 bits unsigned integer.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.13\t/<X>/SNPN_Configuration/<X>/3GPP_PS_data_off",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The interior node contains configuration parameters for 3GPP PS data off.\n-\tOccurrence: ZeroOrOne\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.14\t/<X>/SNPN_Configuration/<X>/3GPP_PS_data_off/\nMMTEL_voice_exempt",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The leaf indicates whether the MMTEL voice is a 3GPP PS data off exempt service.\n-\tOccurrence: One\n-\tFormat: bool\n-\tAccess Types: Get, Replace\n-\tValues: 0, 1\n0 - Indicates that the MMTEL voice is not a 3GPP PS data off exempt service.\n1 - Indicates that the MMTEL voice is a 3GPP PS data off exempt service.\nNOTE:\tThis MO is used when the UE is in a subscribed SNPN, or the UE is in a non-subscribed SNPN and the MMTEL_voice_non-subscribed_exempt node is not configured.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.15\t/<X>/SNPN_Configuration/<X>/3GPP_PS_data_off/\nMMTEL_voice_non-subscribed_exempt",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The leaf indicates whether the MMTEL voice is a 3GPP PS data off exempt service when the UE is in a non-subscribed SNPN.\n-\tOccurrence: ZeroOrOne\n-\tFormat: bool\n-\tAccess Types: Get, Replace\n-\tValues: 0, 1\n0 - Indicates that the MMTEL voice is not a 3GPP PS data off non-subscribed exempt service.\n1 - Indicates that the MMTEL voice is a 3GPP PS data off non-subscribed exempt service.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.16\t/<X>/SNPN_Configuration/<X>/3GPP_PS_data_off/\nMMTEL_video_exempt",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The leaf indicates whether the MMTEL video is a 3GPP PS data off exempt service.\n-\tOccurrence: One\n-\tFormat: bool\n-\tAccess Types: Get, Replace\n-\tValues: 0, 1\n0 - Indicates that the MMTEL video is not a 3GPP PS data off exempt service.\n1 - Indicates that the MMTEL video is a 3GPP PS data off exempt service.\nNOTE:\tThis MO is used when the UE is in a subscribed SNPN, or the MMTEL_video_non-subscribed_exempt node is not configured when the UE is in the non-subscribed SNPN.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.17\t/<X>/SNPN_Configuration/<X>/3GPP_PS_data_off/\nMMTEL_video_non-subscribed_exempt",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The leaf indicates whether the MMTEL video is a 3GPP PS data off exempt service when the UE is in a non-subscribed SNPN.\n-\tOccurrence: ZeroOrOne\n-\tFormat: bool\n-\tAccess Types: Get, Replace\n-\tValues: 0, 1\n0 - Indicates that the MMTEL video is not a 3GPP PS data off non-subscribed exempt service.\n1 - Indicates that the MMTEL video is a 3GPP PS data off non-subscribed exempt service.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.18\t/<X>/IMS_DC_configuration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The interior node contains configuration parameters for IMS DC (data channel) service.\n-\tOccurrence: ZeroOrOne\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.19\t/<X>/IMS_DC_configuration/DC_allowed",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The leaf indicates whether the IMS DC (data channel) is allowed for the UE.\n-\tOccurrence: One\n-\tFormat: bool\n-\tAccess Types: Get, Replace\n-\tValues: 0, 1\n0 - Indicates that the IMS data channel capability is not allowed for the UE.\n1 - Indicates that the IMS data channel capability is allowed for the UE.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.20\t/<X>/IMS_DC_configuration/DC_Setup_Option",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The leaf indicates to the UE when to setup the IMS DC (data channel).\n-\tOccurrence: One\n-\tFormat: bool\n-\tAccess Types: Get, Replace\n-\tValues: 0, 1\n0 - Indicates that the IMS data channel is to be setup after an IMS session is established.\n1 - Indicates that the IMS data channel is to be setup simultaneously while establishing an IMS session.\nThis DDF is the standardized minimal set. A vendor can define its own DDF for the complete device. This DDF can include more features than this minimal standardized version.\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE MgmtTree PUBLIC \"-//OMA//DTD-DM-DDF 1.2//EN\"\n\"http://www.openmobilealliance.org/tech/DTD/DM_DDF-V1_2.dtd\">\n<MgmtTree>\n<VerDTD>1.2</VerDTD>\n<Man>--The device manufacturer--</Man>\n<Mod>--The device model--</Mod>\n<Node>\n<NodeName/>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<Description>Configuration parameters for BCP of MMTEL communication service</Description>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<OneOrMore/>\n</Occurrence>\n<Scope>\n<Permanent/>\n</Scope>\n<DFTitle>The Management Object (MO) for Basic Communication Part (BCP) of IMS Multimedia Telephony(MMTEL) communication service.</DFTitle>\n<DFType>\n<DDFName>urn:oma:mo:ext-3gpp-bcp:1.0</DDFName>\n</DFType>\n</DFProperties>\n<Node>\n<NodeName>Name</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<chr/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>The name for BCP of MMTEL communication service.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n<Node>\n<NodeName>Timer_RequestTimeout</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<int/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<Scope>\n<Permanent/>\n</Scope>\n<DFTitle>Timer RequestTimeout.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n\n<Node>\n<NodeName>3GPP_PS_data_off</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>Configuration parameters for 3GPP PS data off.</DFTitle>\n<DFType>\n<DDFName/>\n</DFType>\n</DFProperties>\n<Node>\n<NodeName>MMTEL_voice_exempt</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<bool/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>Whether the MMTEL voice is a 3GPP PS data off exempt service.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n<Node>\n<NodeName>MMTEL_voice_roaming_exempt</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<bool/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>Whether the MMTEL voice is a 3GPP PS data off roaming exempt service.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n\n<Node>\n<NodeName>MMTEL_video_exempt</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<bool/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>Whether the MMTEL video is a 3GPP PS data off exempt service.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n<Node>\n<NodeName>MMTEL_video_roaming_exempt</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<bool/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>Whether the MMTEL video is a 3GPP PS data off roaming exempt service.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n</Node>\n<Node>\n<NodeName>SNPN_Configuration</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<Scope>\n<Permanent/>\n</Scope>\n<DFTitle>SNPN Configuration.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n<Node>\n<NodeName/>\n<DFProperties>\n<AccessType>\n<Get/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<OneOrMore/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>SNPN configuration parameters.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n<Node>\n<NodeName>Timer_RequestTimeout</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<int/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<Scope>\n<Permanent/>\n</Scope>\n<DFTitle>Timer RequestTimeout.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n<Node>\n<NodeName>SNPN_identifier</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<chr/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<Scope>\n<Permanent/>\n</Scope>\n<DFTitle>Identifier of the SNPN.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n<Node>\n<NodeName>3GPP_PS_data_off</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>Configuration parameters for 3GPP PS data off.</DFTitle>\n<DFType>\n<DDFName/>\n</DFType>\n</DFProperties>\n<Node>\n<NodeName>MMTEL_voice_exempt</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<bool/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>Whether the MMTEL voice is a 3GPP PS data off exempt service.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n<Node>\n<NodeName>MMTEL_voice_non-subscribed_exempt</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<bool/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>Whether the MMTEL voice is a 3GPP PS data off non-subscribed exempt service.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n<Node>\n<NodeName>MMTEL_video_exempt</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<bool/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>Whether the MMTEL video is a 3GPP PS data off exempt service.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n<Node>\n<NodeName>MMTEL_video_non-subscribed_exempt</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<bool/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>Whether the MMTEL video is a 3GPP PS data off non-subscribed exempt s\tervice.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n</Node>\n</Node>\n</Node>\n\n<Node>\n<NodeName>IMS_DC_configuration</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>Configuration parameters for IMS data channel.</DFTitle>\n<DFType>\n<DDFName/>\n</DFType>\n</DFProperties>\n<Node>\n<NodeName>DC_allowed</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<bool/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>Whether the IMS data channel is allowed.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n<Node>\n<NodeName>DC_Setup_Option</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<bool/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>When the IMS data channel is to be established.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n</Node>\n\n<Node>\n<NodeName>Ext</NodeName>\n<!-- The Extension node starts here. -->\n<DFProperties>\n<AccessType>\n<Get/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<Scope>\n<Dynamic/>\n</Scope>\n<DFTitle>A collection of all Extension objects.</DFTitle>\n<DFType>\n<DDFName/>\n</DFType>\n</DFProperties>\n</Node>\n</Node>\n</MgmtTree>\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 1,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}

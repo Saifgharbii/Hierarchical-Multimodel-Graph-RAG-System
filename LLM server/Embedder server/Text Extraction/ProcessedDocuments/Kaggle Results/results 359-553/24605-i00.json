@@ -1,0 +1,350 @@
+{
+    "document_name": "24605-i00.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the stage three Protocol Description of the Conference (CONF) service based on stage one and two of the ISDN CONF supplementary service. It provides the protocol details in the IP Multimedia (IM) Core Network (CN) subsystem based on the Session Initiation Protocol (SIP) and the Session Description Protocol (SDP).\nThe present document specifies centralized conferencing, using a conference focus, distributed conferencing is out of scope.\nThe present document does not cover the cases of :\na)\tcascading conference services; and\nb)\tthe support of the PSTN/ISDN conference service hosted in the PSTN.\nThe present document is applicable to User Equipment (UE) and Application Servers (AS) which are intended to support the CONF supplementary service.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TS 22.173: \"IP Multimedia Core Network Subsystem (IMS) Multimedia Telephony Service and supplementary services; Stage 1\".\n[2]\t3GPP TS 24.229: \"Internet Protocol (IP) multimedia call control protocol based on Session Initiation Protocol (SIP) and Session Description Protocol (SDP); Stage 3\".\n[3]\tVoid\n[4]\tVoid.\n[5]\tVoid.\n[6]\tVoid.\n[7]\t3GPP TS 24.147: \"Conferencing using the IP Multimedia (IM) Core Network (CN) subsystem; Stage 3\".\n[8]\tIETF RFC 3891: \"The SIP Replaces header\".\n[9]\tVoid.\n[10]\tETSI TS 183 043 V3.4.1 (2011-04):\"Telecommunications and Internet converged Services and Protocols for Advanced Networking (TISPAN); IMS - based PSTN/ISDN Emulation; Stage 3 specification\"\n[11]\t3GPP TS 24.628: \"Common Basic Communication procedures using IP Multimedia (IM) Core Network (CN) subsystem; Protocol specification\".\n[12]\t3GPP TS 24.610: \"Communication HOLD (HOLD) using IP Multimedia (IM) Core Network (CN) subsystem; Protocol specification\".\n[13]\tIETF RFC 7090 (April 2014): \"Public Safety Answering Point (PSAP) Callback\".\n[14]\t3GPP TS 24.166: \"3GPP IMS Conferencing Management Object (MO)\".\n[15]\t3GPP TS 23.003: \"Numbering, addressing and identification\".\n[16]\tIETF RFC 3261 (June 2002): \"SIP: Session Initiation Protocol\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TS 22.173 [1] and 3GPP TS 24.147 [7] apply.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following abbreviations apply:\nACR/CB\tAnonymous Communication Rejection and Communication Barring\nAS\tApplication Server\nCDIV\tCommunication DIVersion\nCONF\tCONFerence calling\nCS\tCircuit Switch\nECT\tExplicit Communication Transfer\nHOLD\tcommunication HOLD\nIMS\tIP Multimedia Subsystem\nIP\tInternet Protocol\nISDN\tIntegrated Service Data Network\nMCID\tMalicious Communication IDentification\nMGCF\tMedia Gateway Control Function\nMiD\tMulti-iDentity\nMuD\tMulti-Device\nOIP\tOriginating Identification Presentation\nOIR\tOriginating Identification Restriction\nPSAP\tPublic Safety Answering Point\nP-CSCF\tProxy CSCF\nPSTN\tPublic Switched Telephone Network\nSIP\tSession Initiation Protocol\nTIP\tTerminating Identification Presentation\nTIR\tTerminating Identification Restriction\nUE\tUser Equipment\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tCONFerence (CONF)",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The CONFerence (CONF) service enables a user to participate in and control a simultaneous communication involving a number of users.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tDescription",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.2.1\tGeneral description",
+                            "text_content": "When the CONF service is invoked, conference resources are allocated to the served user.\nOnce a conference is active, users can join and leave a conference, and remote users can be added to or removed from the conference.\nConference participants can request to be informed of these actions.\nThe Management Object as defined in 3GPP TS 24.166 [14] provides a mechanism for the UE to discover the Conference Factory URI to be used for the CONF service. If the UE is not configured with the Conference Factory URI within the Management Object then the UE shall derive a Conference Factory URI for MMTEL as described in subclause 13.10 of 3GPP TS 23.003 [15] to be used for the CONF service.\nNOTE:\tDepending on the network operator, various mechanisms can be applied to discover the Conference Factory URI (e.g., include the Conference Factory URI in a letter written to the user or publish it on a website). A derived Conference Factory URI might not be a valid URI.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.3\tOperational requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.3.1\tProvision/withdrawal",
+                            "text_content": "The CONF service shall be provided after prior arrangement with the service provider.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.2\tRequirements on the originating network side",
+                            "text_content": "No specific requirements are needed in the network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.3\tRequirements in the network",
+                            "text_content": "No specific requirements are needed in the network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.3.4\tRequirements on the terminating network side",
+                            "text_content": "No specific requirements are needed in the network.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.4\tCoding requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For coding requirements see 3GPP TS 24.147 [7], clause 5.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.5\tSignalling requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.5.1\tActivation/deactivation",
+                            "text_content": "The CONF service is activated at provisioning and deactivated at withdrawal.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.5.1a\tRegistration/erasure",
+                            "text_content": "The CONF service requires no registration. Erasure is not applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.5.1b\tInterrogation",
+                            "text_content": "Interrogation of CONF is not applicable.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.5.2\tInvocation and operation",
+                            "text_content": "This subclause describes the usage of and the changes to the procedures of 3GPP TS 24.147 [7] for invoking and operating a conference.\nProcedures according to 3GPP TS 24.147 [7], subclause 5.3.1.4 shall apply.\nProcedures according to 3GPP TS 24.147 [7], subclause 5.3.1.5 shall apply with the following additions to subclause 5.3.1.5.3 of 3GPP TS 24.147 [7]:\n-\tA UE that has initiated an emergency call, shall not perform any procedures to add the remote user in that call to a conference.\n-\tIn order to avoid the establishment of a second communication to the invited user, in case of an active session the UE may additionally include the Replaces header in the header portion of the SIP URI of the Refer-to header of the REFER request. The included Replaces header shall refer to the active dialog that is replaced by the ad-hoc conference. The Replaces header shall comply with RFC 3891 [8].\nNOTE 1:\tIn case of an interworking to the PSTN the routing of the INVITE request from the conference focus to the MGCF that handles the Replaces information is not deterministic and the replacement of the active dialog might fail.\nEXAMPLE:\tRefer-To: <sip:mgcf1.home1.net; method=INVITE?Replaces=cb0s2sdfglkj490333%3Bto-tag%3D 314159%3Bfrom-tag%3D171828&Requrie=replaces >.\nNOTE 2:\tIf a conference participant invites another user to a conference by using a REFER request targeted at the other user (following 3GPP TS 24.147 [7] , subclause 5.3.1.5.2), there can be cases where such REFER request is intercepted by an AS serving the requesting user which applies special REFER handling procedures according to 3GPP TS 24.628 [11] subclause 4.7.2.9.7.2. The consequence of this is that the conference focus AS will receive an INVITE from the referrers AS and not from the targeted user. This however does not affect the conference focus procedures in any way.\nProcedures according to 3GPP TS 24.147 [7], subclause 5.3.1.6 shall apply.\nProcedures according to 3GPP TS 24.147 [7], subclause 5.3.1.3 shall apply.\nProcedures according to 3GPP TS 24.147 [7], subclause 5.3.1.2 shall apply.\nProcedures according to 3GPP TS 24.147 [7], subclauses 5.3.2 and 6.3.2 shall apply with the following additions to subclause 5.3.2.5.2 of 3GPP TS 24.147 [7]:\n-\tIf a Referred-By header is available in the REFER request, the AS shall verify if the provided Referred-By header contains a valid identity of the requesting user. If not, the AS shall replace the Referred-By header with a valid value matching the P-Asserted-Identity header in the REFER request.\n-\tIf no Referred-By header is available in the request, the AS shall add a Referred-By header that matches the P-Asserted-Identity header in the REFER request.\nThe procedures described in subclause 5.3.2.5.5 of 3GPP TS 24.147 [7] shall not apply.\nIn case of the subscription of a conference participant to the conference notification service, procedures according to 3GPP TS 24.147 [7], subclause 5.3.3 shall apply.\nUpon receiving a REFER request in an existing dialog or outside of an existing dialog containing a Target-Dialog header field identifying an existing dialog, from a user involved also in a conference, the AS serving the originating user shall first check that the REFER request is valid:\n-\tthe Request-URI in the REFER request is targeted to the same UE instance (remote UE) that is involved in the dialog; and\n-\tthe Refer-To header in the REFER request contains an URI so that the method constructed from the URI is equal to an INVITE request to the Conference focus.\nOtherwise, the AS may, depending on operator policy:\n-\treject the REFER request; or\n-\thandle the REFER request with another service; or\n-\tproxy the REFER request on.\nIf any of the following is true:\n-\tthe dialog on which the REFER request is received or the dialog which is identified by the Target-Dialog header field in the REFER request, was that established by an initial INVITE request that was identified as a PSAP callback request; or\n-\tthe Refer-To header field in the REFER request contains a URI with which the referor is involved in a dialog where the initial INVITE request was identified as a PSAP callback request.\nthe AS shall based on local policy on how to handle PSAP callbacks reject the REFER request.\nThe mechanism to identify an INVITE request as a PSAP callback depends on local policy and can be based on the PSAP callback indicator specified in IETF RFC 7090 [13].\nIf the AS determines that the REFER request shall not be sent to the remote UE and the AS decides to apply 3pcc the AS shall follow the special REFER request handling procedures in 3GPP TS 24.628 [11] with the following addition:\n-\tthe AS shall include the \"isfocus\" header field parameter in the Contact header field in the INVITE request sent towards the remote UE.\nFor the following conditions:\n-\tthe AS serving the originating user supports priority; and\n-\tthe originating user is authorized for priority, according to operator policy, for a call that can possibly be replaced by an ad-hoc conference;\nthe following shall apply:\n-\tif an active dialog that can possibly be replaced by an ad-hoc conference contains a Resource-Priority header field, the AS shall store the Resource-Priority header field value and sufficient dialog details (e.g., the dialog ID, P-Asserted-Identity header field value and the Request-URI value) to correlate the dialog with a subsequent conference;\n-\tif the AS decides to apply 3pcc for a REFER request that pertains to an existing priority dialog that is to be replaced by an ad-hoc conference, the AS shall add the stored Resource-Priority header field value to the outgoing INVITE requests resulting from the special REFER request handling procedures in 3GPP TS 24.628 [11]. After establishing the conference leg, the AS sends an UPDATE request or a re-INVITE request to the originating user with the Resource-Priority header field;\n-\tupon receiving a REFER request that pertains to an existing priority dialog that is to be replaced by an ad-hoc conference and the REFER request includes a conference URI in the Request-URI, the AS shall add the stored Resource-Priority header field value to the REFER request and to the Refer-To header field in accordance with the procedures for adding header fields (\"?\" mechanism) described in subclause 19.1.1 of RFC 3261 [16] prior to forwarding the REFER request toward the conference AS; and\n-\tif the AS receives an INVITE request that includes a conference URI in the Request-URI, and a \"recipient-list\" message body, then for each URI in the \"recipient-list\" that pertains to an existing priority dialog that is to be replaced by an ad-hoc conference, the AS shall add the stored Resource-Priority header field value to the URI in the \"recipient-list\", in accordance with the procedures for adding header fields (\"?\" mechanism) described in subclause 19.1.1 of RFC 3261 [16]. If the AS has added a Resource-Priority header to any of the URIs in the \"recipient-list\", then the AS inserts the Resource-Priority header field in the outgoing INVITE request.\nUpon receipt of an INVITE request that includes a Replaces header, the UE shall apply the procedures described in RFC 3891 [8] to the INVITE request.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.6\tInteraction with other services",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.6.1\tCommunication HOLD (HOLD)",
+                            "text_content": "The AS supporting the CONF service shall support the procedures for the held UE as specified in 3GPP TS 24.610 [12]\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.2\tTerminating Identification Presentation (TIP)",
+                            "text_content": "No impact, i.e. neither service shall affect the operation of the other service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.3\tTerminating Identification Restriction (TIR)",
+                            "text_content": "For the conferencing AS implementing the conference focus, the following applies:\n-\tIf a participant is added to the conference and if TIR is active for the terminating party of this session, then the identity information of that participant shall not be included in conference notifications to other participants.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.4\tOriginating Identification Presentation (OIP)",
+                            "text_content": "No impact, i.e. neither service shall affect the operation of the other service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.5\tOriginating Identification Restriction (OIR)",
+                            "text_content": "For the conferencing AS implementing the conference focus, the following applies:\n-\tIf a participant joins the conference and if OIR is active for the originating party of this session, then the identity information of that participant shall not be included in conference notifications to other participants.\n-\tIf a REFER request is received and if the Privacy header field is set to \"header\" or \"user\", then for the INVITE request to the refer-to target, the conference AS shall:\na)\tnot insert the Referred-by header field, if it does not exist in the REFER request; or\nb)\tremove the Referred-By header field, if the Privacy header field of the REFER request is set to \"user\".\n-\tIf an INVITE request with \"recipient-list\" body is received, and if the Privacy header field is set to \"user\", then the conference AS shall anonymize the From header field of resulting reINVITE request, if there is established dialog between the conference controller and the target of the reINVITE request.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.6\tCONFerence calling (CONF)",
+                            "text_content": "Not applicable.\nNOTE:\tCascading conference services are out of scope of the present specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.7\tCommunication DIVersion services (CDIV)",
+                            "text_content": "No impact, i.e. neither service shall affect the operation of the other service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.8\tMalicious Communication IDentification (MCID)",
+                            "text_content": "No impact, i.e. neither service shall affect the operation of the other service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.9\tAnonymous Communication Rejection and Communication Barring (ACR/CB)",
+                            "text_content": "The focus AS shall not accept REFER requests with a refer-to target that is barred by the conference creators Outgoing Communication Barring (OCB) rules.\nThe focus AS shall remove the URI that is barred by the conference creator Outgoing Communication Barring (OCB) rules from the list of URIs in the \"recipient-list\" body of INVITE request.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.10\tExplicit Communication Transfer (ECT)",
+                            "text_content": "No impact, i.e. neither service shall affect the operation of the other service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.11\tMulti-Device (MuD)",
+                            "text_content": "No impact.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.6.12\tMulti-Identity (MiD)",
+                            "text_content": "No impact.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.7\tInterworking with other networks",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "4.7.1\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.7.2\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "4.7.3\tVoid",
+                            "text_content": "",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "4.8\tParameter values (timers)",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Not applicable.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.0\tScope of signalling flows",
+            "description": "This annex gives examples of signalling flows related to the Conference (CONF) service.\nThese signalling flows are simplified in that they do not show the AS to MRFC interactions nor the AS and MRFC functional split.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.1\tCONF interworking signalling flow in case of an active communication between IMS and PSTN",
+            "description": "Figure A.1 depictures a flow where two UEs are engaged in a call, and one of the users is located in the PSTN. At some point in time, UE A decides to activate the CONF service and move the call to a centralized conference. UE A creates the conference, and provides instructions to the conference server to contact UE B and replace the initial communication with a communication to the conference server.\nThe figure depicts the interworking signalling flow in a conferencing system, illustrating the communication between an Internet Messaging Service (IMS) and a Public Switched Telephone Network (PSTN). The flow includes various components such as signaling protocols, network protocols, and communication channels. The figure provides a visual representation of the flow, allowing for a better understanding of the communication process.\nFigure A.1: CONF interworking signalling flow in case of an active communication \nbetween IMS and PSTN\n-\tDescription figure A.1\nNOTE:\tOnly the most relevant messages are shown in figure A.1\nUE-A is in an active voice session with a PSTN/ISDN TE (SIP dialog with Call-ID, to-tag and from-tag between UE-A and MGCF). It then creates a conference and invites the PSTN/ISDN TE to the conference by sending a REFER to the conference focus, which invites the PSTN/ISDN TE to the conference by sending an INVITE which includes the Replaces header to the MGCF. The MGCF confirms the session, switches the existing bearer channel to the new RTP session, and terminates the session which is replaced.\n1. to 3. UE-A initiates a voice session with a PSTN/ISDN TE by sending an INVITE request to the MGCF.\nTable A.1: 1.INVITE (UE-A to P-CSCF)\nINVITE tel:+1-212-555-2222 SIP/2.0\nVia: SIP/2.0/UDP [5555::aaa:bbb:ccc:ddd]:1357;comp=sigcomp;branch=z9hG4bKnashds7\nMax-Forwards: 70\nRoute: <sip:pcscf1.visited1.net:7531;lr;comp=sigcomp>, <sip:scscf1.home1.net;lr>\nP-Preferred-Identity: \"John Doe\" <sip:user1_public1@home1.net>\nP-Access-Network-Info: 3GPP-UTRAN-TDD; utran-cell-id-3gpp=234151D0FCE11\nPrivacy: none\nFrom: <sip:user1_public1@home1.net>;tag=171828\nTo: <tel:+1-212-555-2222>\nCall-ID: cb03a0s09a2sdfglkj490333\nCseq: 127 INVITE\nRequire: sec-agree\nProxy-Require: sec-agree\nSupported: precondition, 100rel, gruu, 199\nSecurity-Verify: ipsec-3gpp; q=0.1; alg=hmac-sha-1-96; spi-c=98765432; spi-s=87654321; port-c=8642; port-s=7531\nContact: <sip:user1_public1@home1.net;gr=urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6;comp=sigcomp>;+g.3gpp.icsi-ref=\"urn%3Aurn-7%3gpp-service.ims.icsi.mmtel\"\nAllow: INVITE, ACK, CANCEL, BYE, PRACK, UPDATE, REFER, MESSAGE\nAccept:application/sdp,.application/3gpp-ims+xml\nAccept-Contact: *;+g.3gpp.icsi-ref=\"urn%3Aurn-7%3gpp-service.ims.icsi.mmtel\"\nP-Preferred-Service: urn:urn-7:3gpp-service.ims.icsi.mmtel\nContent-Type: application/sdp\nContent-Length: (…)\n\nv=0\no=- 2987933615 2987933615 IN IP6 5555::aaa:bbb:ccc:ddd\ns=-\nc=IN IP6 5555::aaa:bbb:ccc:ddd\nt=0 0\nm=video 3400 RTP/AVP 98 99a=tcap:1 RTP/AVPF\na=pcfg:1 t=1\nb=AS:75\na=curr:qos local none\na=curr:qos remote none\na=des:qos mandatory local sendrecv\na=des:qos none remote sendrecv\na=inactive\na=rtpmap:98 H263\na=fmtp:98 profile-level-id=0\na=rtpmap:99 MP4V-ES\nm=audio 3456 RTP/AVP 97 96a=tcap:1 RTP/AVPF\na=pcfg:1 t=1\nb=AS:25.4\na=curr:qos local none\na=curr:qos remote none\na=des:qos mandatory local sendrecv\na=des:qos none remote sendrecv\na=inactive\na=rtpmap:97 AMR\na=fmtp:97 mode-set=0,2,5,7; maxframes=2\na=rtpmap:96 telephone-event\n\n4: Interaction to reserve resources.\n5: SS7: IAM.\n7: SS7: ANM.\n8: Interaction for session establishment.\n9 to 11: The MGCF sends a final response back to the session originator.\nTable A.2: 9. 200 OK (MGCF to S-CSCF)\nSIP/2.0 200 OK\nVia: SIP/2.0/UDP bgcf1.home1.net;branch=z9hG4bK6546q2.1, SIP/2.0/UDP scscf1.home1.net;branch=z9hG4bK332b23.1, SIP/2.0/UDP pcscf1.home1.net;branch=z9hG4bK431h23.1, SIP/2.0/UDP [5555::aaa:bbb:ccc:ddd]:1357;comp=sigcomp;branch=z9hG4bKnashds7\nRecord-Route: <sip:scscf1.home1.net;lr>, <sip:pcscf1.home1.net;lr>\nP-Asserted-Identity: <tel:+1-212-555-2222>\nP-Charging-Vector:\nPrivacy: none\nFrom:\nTo: <tel:+1-212-555-2222>;tag=314159\nCall-ID:\nCSeq:\nRequire: 100rel, precondition\nContact: <sip:mgcf1.home1.net;gr>\nAllow: INVITE, ACK, CANCEL, BYE, PRACK, UPDATE\nRSeq: 9021\nContent-Type: application/sdp\nContent-Length: (…)\n\nv=0\no=- 2987933623 2987933623 IN IP6 5555::eee:fff:aaa:bbb\ns=-\nc=IN IP6 5555::eee:fff:aaa:bbb\nt=0 0\nm=video 0 RTP/AVP 98 99\nm=audio 6544 RTP/AVPF 97 96a=acfg:1 t=1\nb=AS:25.4\na=curr:qos local none\na=curr:qos remote none\na=des:qos mandatory local sendrecv\na=des:qos none remote sendrecv\na=inactive\na=conf:qos remote sendrecv\na=rtpmap:97 AMR\na=fmtp:97 mode-set=0,2,5,7; maxframes=2\na=rtpmap:96 telephone-event\n\n12 to 14: The Calling party acknowledges the final response with an ACK request.\n15 to 24: UE-A creates a conference by sending an INVITE request to the Conference Factory URI and connects to the conference.\nTable A.3: 15. INVITE request (UE-A to P-CSCF)\nINVITE sip:conference-factory1@mrfc1.home1.net SIP/2.0\nVia: SIP/2.0/UDP [5555::aaa:bbb:ccc:ddd]:1357;comp=sigcomp;branch=z9hG4bKnashds7\nMax-Forwards: 70\nRoute: <sip:pcscf1.visited1.net:7531;lr;comp=sigcomp>, <sip:orig@scscf1.home1.net;lr>\nP-Preferred-Identity: \"John Doe\" <sip:user1_public1@home1.net>\nP-Access-Network-Info: 3GPP-UTRAN-TDD; utran-cell-id-3gpp=234151D0FCE11\nPrivacy: none\nFrom: <sip:user1_public1@home1.net>; tag=171829\nTo: <sip:conference-factory1@mrfc1.home1.net>\nCall-ID: cb03a0s09a2sdfglkj490444\nCseq: 127 INVITE\nRequire: sec-agree\nProxy-Require: sec-agree\nSupported: precondition, 100rel, gruu, 199\nSecurity-Verify: ipsec-3gpp; q=0.1; alg=hmac-sha-1-96; spi-c=98765432; spi-s=87654321; port-c=8642; port-s=7531\nContact: <sip:user1_public1@home1.net;gr=urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6;comp=sigcomp>;+g.3gpp.icsi-ref=\"urn%3Aurn-7%3gpp-service.ims.icsi.mmtel\"\nAccept:application/sdp,.application/3gpp-ims+xml\nAccept-Contact: *;+g.3gpp.icsi-ref=\"urn%3Aurn-7%3gpp-service.ims.icsi.mmtel\"\nP-Preferred-Service: urn:urn-7:3gpp-service.ims.icsi.mmtel\nAllow: INVITE, ACK, CANCEL, BYE, PRACK, UPDATE, REFER, MESSAGE, SUBSCRIBE, NOTIFY\nContent-Type: application/sdp\nContent-Length: (…)\n\nv=0\no=- 2987933615 2987933615 IN IP6 5555::aaa:bbb:ccc:ddd\ns=-\nc=IN IP6 5555::aaa:bbb:ccc:ddd\nt=0 0\nm=video 3400 RTP/AVP 98 99a=tcap:1 RTP/AVPF\na=pcfg:1 t=1\nb=AS:75\na=curr:qos local none\na=curr:qos remote none\na=des:qos mandatory local sendrecv\na=des:qos none remote sendrecv\na=inactive\na=rtpmap:98 H263\na=fmtp:98 profile-level-id=0\na=rtpmap:99:MPVMP4V-ES\nm=audio 3456 RTP/AVP 97 96a=tcap:1 RTP/AVPF\na=pcfg:1 t=1\nb=AS:25.4\na=curr:qos local none\na=curr:qos remote none\na=des:qos mandatory local sendrecv\na=des:qos none remote sendrecv\na=inactive\na=rtpmap:97 AMR\na=fmtp:97 mode-set=0,2,5,7; maxframes=2\na=rtpmap:96 telephone-event\n\n25 to 27: UE-A invites the PSTN/ISDN TE to the conference by sending a REFER request to the conference focus, the \"method\" parameter set to \"INVITE\". The Refer-To header of the REFER request includes the Replaces parameter with Call-ID, to-tag and from-tag from the existing SIP dialog.\nTable A.4: 25. REFER request (UE-A to P-CSCF)\nREFER sip: conference1@mrfc1.home1.net SIP/2.0\nVia: SIP/2.0/UDP [5555::aaa:bbb:ccc:ddd]:1357;comp=sigcomp;branch=z9hG4bKnashds7\nMax-Forwards: 70\nRoute: <sip:pcscf1.visited1.net:7531;lr;comp=sigcomp>, <sip:orig@scscf1.home1.net;lr>\nP-Preferred-Identity: \"John Doe\" <sip:user1_public1@home1.net>\nP-Access-Network-Info: 3GPP-UTRAN-TDD; utran-cell-id-3gpp=234151D0FCE11\nPrivacy: none\nFrom: <sip:user1_public1@home1.net>; tag=171829\nTo: <sip:conference1@mrfc1.home1.net>\nCall-ID: cb0s2sdfglkj490555\nCseq: 127 REFER\nRequire: sec-agree\nRefer-To: <sip:mgcf1.home1.net; method=INVITE?Replaces=cb0s2sdfglkj490333%3Bto-tag%3D314159%3Bfrom-tag%3D171828&Requrie=replaces >\nReferred-By: <sip:user1_public1@home1.net>\nProxy-Require: sec-agree\nSecurity-Verify: ipsec-3gpp; q=0.1; alg=hmac-sha-1-96; spi-c=98765432; spi-s=87654321; port-c=8642; port-s=7531\nContact: <sip:user1_public1@home1.net;gr=urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6;comp=sigcomp>;+g.3gpp.icsi-ref=\"urn%3Aurn-7%3gpp-service.ims.icsi.mmtel\"\nContent-Length: 0\n\n27a: Interactions to reserve resources for an additional participant in the conference.\n28 to 30: The conference focus sends a NOTIFY request containing information about the progress of the REFER request processing. The Subscription-State is set to \"active\".\n31 to 32: The conference focus invites the PSTN/ISDN TE by sending an INVITE request to the MGCF. The INVITE request includes the Replaces header with Call-ID, to-tag and from-tag from the existing SIP dialog.\nTable A.5: 31. INVITE request (MRFC/AS to S-CSCF)\nINVITE sip:mgcf1.home1.net SIP/2.0\nVia: SIP/2.0/UDP mrfc1.home1.net;branch=z9hG4bK23273846\nMax-Forwards: 70\nP-Asserted-Identity: <sip:conference1@mrfc1.home1.net>\nP-Charging-Vector: icid-value=\"AyretyU0dm+6O2IrT5tAFrbHLso=023551024\"; orig-ioi=home1.net\nPrivacy: none\nFrom: <sip:conference1@mrfc1.home1.net>;tag=171123\nTo: <sip:mgcf1.home1.net>\nCall-ID: bc03a0s09a2sdfglkj490333\nCseq: 127 INVITE\nRequire: replaces\nReplaces: cb03a0s09a2sdfglkj490333;to-tag=314159;from-tag=171828\nSupported: precondition, 100rel\nReferred-By: <sip:user1_public1@home1.net>\nContact: <sip:conference1@mrfc1.home1.net>;isfocus\nAllow: INVITE, ACK, CANCEL, BYE, PRACK, UPDATE, REFER, MESSAGE, SUBSCRIBE, NOTIFY\nAllow-Events: conference\nContent-Type: application/sdp\nContent-Length: (…)\n\nv=0\no=- 2987933615 2987933615 IN IP6 5555::abc:def:abc:abc\ns=-\nc=IN IP6 5555::abc:def:abc:def\nt=0 0\nm=video 10001 RTP/AVP 98\na=tcap:1 RTP/AVPF\na=pcfg:1 t=1\nb=AS:75\na=curr:qos local none\na=curr:qos remote none\na=des:qos mandatory local sendrecv\na=des:qos none remote sendrecv\na=inactive\na=rtpmap:98 H263\na=fmtp:98 profile-level-id=0\nm=audio 6544 RTP/AVP 97 96a=tcap:1 RTP/AVPF\na=pcfg:1 t=1\nb=AS:25.4\na=curr:qos local none\na=curr:qos remote none\na=des:qos mandatory local sendrecv\na=des:qos none remote sendrecv\na=inactive\na=rtpmap:97 AMR\na=fmtp:97 mode-set=0,2,5,7; maxframes=2\na=rtpmap:96 telephone-event\n\n33: Interaction for switching existing bearer channel to new RTP.\n34 to 35: The MGCF sends a final response back to the session originator.\n35a: Interaction to add the participant to the conference.\n36 to 37: The Calling party acknowledges the final response with an ACK request.\n38 to 40: The conference focus sends a NOTIFY request containing information about the progress of the REFER request processing. The Subscription-State is set to \"terminated\".\n41: The MGCF replaces the existing RTP stream to UE-A with the new RTP stream to the conferencefocus.\n42 to 44: The MGCF releases the session with UE-A by sending a BYE request to UE-A.\n45 to 47: UE-A responds with a 200 OK response.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tCall flow for 3PTY CONF",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "A.2.1\tInvite other user to 3PTY CONF by sending REFER request",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Figure A.2 depictures a flow where two UEs, UE-1 and UE-2, are engaged in a call. At some point in time, UE-1 decides to involve UE-3 into the communication and activate the 3PTY CONF service. UE-1 puts UE-2 on hold, initiates a session toward UE-3 to get the user's permission to start 3PTY call, creates the conference, and moves the original communication with both UE-2 and UE-3 to the conference server.\nThe figure depicts a call flow for a 3PTY conference, illustrating the various stages and participants involved in the conference call. The flow includes the initiation of the call, the routing of the call to the appropriate conference room, and the end-to-end call management. The figure provides a visual representation of the complex network of interactions that occur during a conference call, highlighting the importance of proper call routing and management in ensuring a smooth and efficient communication experience.\nFigure A.2: Call flow for 3PTY conference\nUE-1 and UE-2 are in an active call. UE-1 decides to add UE-3 to make it a 3-way conferencing call.\n1. UE-1 and UE-2 are in an active call.\n2. UE-1 puts UE-2 on hold before invoking the 3-Way Calling with UE-3.\n3~11. UE-1 establishes a call with UE-3 following normal call setup ocedure and gets UE-3's permission to start the 3-Way Calling.\n12~14. UE-1 sends an INVITE request to the conference server to establish a conference session.\n15. The CS coordinates with MRFP to allocate conference resources.\n16~21. The CS sends a 200 (OK) response and receives an ACK request from UE-1.\n22~27. UE-1 sends a REFER request to UE-2 with the Refer-To header set to the address of the CS; UE-2 accepts the REFER request.\n28~33. UE-2 sends a NOTIFY request to UE-1 to indicate that UE-2 is acting on the REFER request.\n34~35. UE-2 sends an INVITE request to the CS to join the conference.\n36. The CS coordinates with MRFP to allocate more resources.\n37~40. The CS sends a 200 (OK) response to UE-2 and receives an ACK request.\n41~46. UE-2 sends a NOTIFY request to UE-1 to indicate that it has finished action required by the REFER request.\n47~52. UE-1 sends a BYE request to terminate the call between itself and UE-2.\n53~58. In parallel to step 22~52, UE-1 sends a REFER request to UE-3 with the Refer-To header set to the address of the CS; UE-3 accepts the REFER request.\n59~64. UE-3 sends a NOTIFY request to UE-1 to indicate that UE-3 is acting on the REFER request.\n65~66. UE-3 sends an INVITE request to the CS to join the conference.\n67. The CS coordinates with MRFP to allocate more resources.\n68~71. The CS sends a 200 (OK) response to UE-3 and receives an ACK request.\n72~77. UE-3 sends a NOTIFY request to UE-1 to indicate that it has finished action required by the REFER request.\n78~83. UE-1 sends a BYE request to terminate the call between itself and UE-3.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "A.2.2\tInvite other user to 3PTY CONF by sending INVITE request with URI list",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Figure A.3 depictures a flow where UA-A is involved in 2 communications with UA-B and UA-C, both 2 communications are on-hold. The AS is involved in both 2 communications as a B2BUA.\nWhen user A intends to start the 3PTY conference, UA-A sends an INVITE request to the AS to create the conference and indicates that certain dialogs will be re-used for this conference, The AS sends re-INVITEs in the indicated dialogs and connects the media to the conference bridge. The dialogs can be indicated by adding the Call-ID header field, the From header field and the To header field to the entries in the URI list of the initial INVITE request.\nThe figure depicts a call flow for a 3PTY conference, illustrating the various stages and participants involved in the conference call. The flow includes the initiation of the call, the routing of the call to the appropriate conference room, and the end of the call. The figure provides a visual representation of the complex process involved in managing conference calls, highlighting the importance of proper call routing and coordination.\nFigure A.3: Call flow for 3PTY conference\n1:\tBoth dialogs are in the held condition. This assumes that the AS has the correct interactions between the services call HOLD and CONF i.e. when the conference is finished the origin dialogs 1c and 2c with Session-ID 1 and Session-ID 2 will be resumed. This is needed to allow resuming the held dialogs.\n2:\tUA-A creates a conference and invites user B and user C to the conference by sending an INVITE request to the Conference Factory URI and including URI list in the INVITE request, UA-A indicates the dialogs which be re-used for this conference in the uri list by the mechanism described in 3GPP TS 24.147 [7].\n\nINVITE CONF AS\nTo: CONF AS\nFrom: A\nRequire: recipient-list-invite\n\nContent-Type: application/resource-lists+xml\nContent-Disposition: recipient-list\n\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<resource-lists xmlns=\"urn:ietf:params:xml:ns:resource-lists\"\nxmlns:cp=\"urn:ietf:params:xml:ns:copyControl\">\n<list>\n<entry uri=\"B?Call-ID=1a&amp;From=A%3Btag%3Da1&amp;To=B%3Btag%3Db&amp;Session-ID=1\" cp:copyControl=\"to\"/>\n<entry uri=\"C?Call-ID=2a&amp;From=A%3Btag%3Da2&amp;To=C%3Btag%3Dc&amp;Session-ID=2\" cp:copyControl=\"to\"/>\n</list>\n</resource-lists>\n\n2:\tAS verifies if the dialogs in URI list matches to a partial dialog which AS already involved, In the case of a match the AS use this dialog ID information to send re-INVITE request to UA-B and UA-C in the partial dialogs between the AS and the invited users in order to connect the media of the invited users to the MRFP.\n3:\tAfter the establishment of the conference a couple of possibilities exist:\n-\tRelease the two held and the active dialogs.\n-\tRelease the active dialog between UA-A and the AS and resume one of the held dialogs to active. And let the other dialog either to user B or C in status HOLD.\n-\tRelease one of the connections either to user B or user C. Which includes the release of the UA-A to AS dialog and resume the held connection.\nNOTE:\tThere are different behaviours between mobile and fixed access devices. While mobile devices are not able to provide more than two dialogs (e.g. one held one active) while the fixed line access has no restrictions. TISPAN defined in ETSI TS 183 043 [10] the IMS-based PSTN/ISDN emulation where a couple of examples are given.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "A.3\tVoid",
+            "description": "An example of an IFC Trigger Point configuration where the S-CSCF invokes the MMTel AS:\n-\tMethod=\"INVITE\".\nAn example of an IFC Trigger Point configuration where the S-CSCF does not invoke the MMTel AS for a PSAP callback:\n-\tMethod=\"INVITE\" and not Priority header field with a \"psap-callback\" header field value.\nNOTE:\tNot invoking the MMTel AS assumes that the CONF invocation request can be handled elsewhere in the network, e.g. in the PSAP itself.\n\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 4,
+                    "summary": "",
+                    "name": ""
+                },
+                {
+                    "description": "",
+                    "table number": 5,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

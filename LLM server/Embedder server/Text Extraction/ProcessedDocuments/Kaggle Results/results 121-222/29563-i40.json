@@ -1,0 +1,1280 @@
+{
+    "document_name": "29563-i40.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies the stage 3 protocol, including message flows and API specification details, for the Nhss services, as part of the 5G Service-Based Architecture, offered by the HSS for interworking with the 5G UDM Network Function.\nThe 5G System stage 2 architecture and procedures are specified in 3GPP TS 23.501 [2] and 3GPP TS 23.502 [3].\nThe User Data Interworking, Coexistence and Migration stage 2 architecture and procedures are specified in 3GPP TS 23.632 [8].\nThe Technical Realization of the Service Based Architecture and the Principles and Guidelines for Services Definition are specified in 3GPP TS 29.500 [4] and 3GPP TS 29.501 [5].\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.501: \"System Architecture for the 5G System; Stage 2\".\n[3]\t3GPP TS 23.502: \"Procedures for the 5G System; Stage 2\".\n[4]\t3GPP TS 29.500: \"5G System; Technical Realization of Service Based Architecture; Stage 3\".\n[5]\t3GPP TS 29.501: \"5G System; Principles and Guidelines for Services Definition; Stage 3\".\n[6]\t3GPP TS 23.335: \"User Data Convergence (UDC); Technical realization and information flows\".\n[7]\t3GPP TS 29.571: \"5G System; Common Data Types for Service Based Interfaces; Stage 3\".\n[8]\t3GPP TS 23.632: \"User Data Interworking, Coexistence and Migration\".\n[9]\tIETF RFC 9113: \"HTTP/2\".\n[10]\tOpenAPI Initiative, \"OpenAPI Specification Version 3.0.0\", .\n[11]\tIETF RFC 8259: \"The JavaScript Object Notation (JSON) Data Interchange Format\".\n[12]\tIETF RFC 9457: \"Problem Details for HTTP APIs\".\n[13]\t3GPP TS 29.503: \"5G System; Unified Data Management Services; Stage 3\".\n[14]\t3GPP TR 21.900: \"Technical Specification Group working methods\".\n[15]\t3GPP TS 23.003: \"Numbering, addressing and identification\".\n[16]\t3GPP TS 29.303: \"Domain Name System Procedures; Stage 3\".\n[17]\t3GPP TS 29.272: \"Evolved Packet System; MME and SGSN Related Interfaces Based on Diameter Protocol\".\n[18]\t3GPP TS 23.682: \"Architecture enhancements to facilitate communications with packet data networks and applications\".\n[19]\t3GPP TS 29.335: \"User Data Convergence (UDC); User Data Repository Access Protocol over the Ud interface\".\n[20]\t3GPP TS 29.002: \"Mobile Application Part (MAP) specification\".\n[21]\t3GPP TS 29.336: \"Home Subscriber Server (HSS) diameter interfaces for interworking with packet data networks and applications\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Void.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\n5GC\t5G Core Network\nHSS\tHome Subscriber Server\nJSON\tJavascript Object Notation\nSBI\tService Based Interface\nUDM\tUnified Data Management\nUDR\tUnified Data Repository\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tOverview",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Within the 5GC, the HSS offers services to the UDM via the Nhss service-based interface (see 3GPP TS 23.501 [2], 3GPP TS 23.502 [3] and 3GPP TS 23.632 [8]).\nFigure 4.1-1 provides the reference model in service-based interface representation with focus on the HSS.\nThe figure depicts a reference model for HSS (Hybrid Signal Strength Indication) in a 5G network, illustrating the various components and their interconnections.\nFigure 4.1-1: Reference model – HSS\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tServices offered by the HSS",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tIntroduction",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The HSS offers the following services via the Nhss interface:\n-\tNhss_UEAuthentication Service\n-\tNhss_SubscriberDataManagement Service\n-\tNhss_UEContextManagement service\nAll scenarios shown in the following clauses assume that the HSS is stateful and stores information in local memory. However, the HSS may be stateless and stores information externally in the EPS-UDR. If so, the stateless HSS makes use of Ud interface as specified in 3GPP TS 23.335 [6] and 3GPP TS 29.335 [19] to retrieve required data from the EPS-UDR and store them locally before processing an incoming request. Processing the incoming request may then include updating data in the EPS-UDR or subscribing to data change notifications at the EPS-UDR by using the Ud interface. After processing the incoming request, the HSS may delete the locally stored data.\nTable 5.1-1 summarizes the corresponding APIs defined for this specification.\nTable 5.1-1: API Descriptions\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 5.1-1: API Descriptions",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tNhss_UEAuthentication Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tService Description",
+                            "text_content": "The Nhss_UEAuthentication service allows a NF consumer (UDM) to request calculation of a fresh Authentication Vector (AV) for 5G_AKA or EAP_AKA_PRIME and provide the calculated AV to the requesting NF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tService Operations",
+                            "text_content": "For the Nhss_UEAuthentication service the following service operation is defined:\n-\tGet\nThe Nhss_UEAuthentication service is used by the UDM to request the HSS to, calculate a fresh authentication vector (AV) for authentication the method 5G_AKA or EAP_AKA_PRIME, and provide it to the UDM by means of the Get service operation. See 3GPP TS 23.632 [8] clause 4.2.2.\nThe following procedure using the Get service operation is supported:\n-\tAuthentication Vector Retrieval\nFigure 5.2.2.2.2-1 shows a scenario where the NF service consumer (UDM) retrieves an Authentication Vector for the UE from the HSS (see also 3GPP TS 23.632 [8] clause 4.2.2). The request contains the UE's identity (imsi), the serving network name, the authentication method (5G_AKA or EAP_AKA_PRIME) and may contain resynchronization info.\nThe figure depicts a NF service consumer requesting an Authentication Vector, illustrating the process of authentication in a network.\nFigure 5.2.2.2.2-1: NF service consumer requesting an Authentication Vector\n1.\tThe NF service consumer sends a POST request (custom method: generate-av) to the HSS.\n2a.\tThe HSS responds with \"200 OK\" with the message body containing the authentication vector.\n2b.\tIf the operation cannot be authorized due to e.g. UE does not have required subscription data, HTTP status code \"403 Forbidden\" should be returned including additional error information in the response body (in \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the POST response body.\nIn the case of redirection, the HSS shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint of another HSS (service) instance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tNhss_SubscriberDataManagement Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tService Description",
+                            "text_content": "This service is used to retrieve the subscriber data indicated by the requested data type from HSS. In this release, only the PGW-C+SMF FQDN for S5/S8 interface information is supported as requested data type. See 3GPP TS 23.632 [8], clause 6.1.4.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tService Operations",
+                            "text_content": "For the Nhss_SubscriberDataManagement service the following service operations are defined:\n-\tGet\n-\tSubscribe\n-\tModifySubscription\n-\tUnsubscribe\n-\tNotification\nThe Nhss_SubscriberDataManagement service is used by Consumer NF (UDM) to retrieve the UE data from the HSS due to IRAT mobility by means of the Get service operation.\nIt is also used by consumer NFs to subscribe to notifications of data change by means of the Subscribe service operation.\nIt is also used by consumer NFs to modify an existing subscription by means of the ModifySubscription service operation.\nIt is also used by consumer NFs that have previously subscribed, to unsubscribe from notifications of data changes by means of the Unsubscribe service operation.\nIt is also used by Consumer NFs that have previously subscribed, to get notified by means of the Notification service operation.\nThe following procedure using the Get service operation is supported:\n-\tUE Context In PGW Data Retrieval\nFigure 5.3.2.2.2-1 shows a scenario where the NF service consumer (UDM) sends a request to the HSS to retrieve the UE's Context In PGW data. The request contains the UE's identity (which shall be an IMSI) and the requested information.\nThe figure depicts a 3D representation of a point-to-point wireless network, specifically a Point-to-Multipoint (PGW) data network. It illustrates the various components involved in the network, such as the base station (gNB), user equipment (UE), and scatterers. The figure also shows the network's architecture, including the fiber-optic backbone, core switches, optical line terminals (OLTs), and distributed nodes. The layered design of the network aligns with the principles of Software-Defined Networking (SDN).\nFigure 5.3.2.2.2-1: Requesting a UE's Context in PGW Data\n1.\tThe NF service consumer (e.g. UDM) shall send a GET request to the resource representing the UE's Context In PGW Data.\n2a.\tOn Success, the HSS shall respond with \"200 OK\" with the message body containing the UE's Context In PGW Data as relevant for the requesting NF service consumer.\n2b.\tIf there is no valid data for the UE, HTTP status code \"404 Not Found\" shall be returned including additional error information in the response body (in the \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the GET response body.\nIn the case of redirection, the HSS shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint of another HSS (service) instance.\nThe following procedures using the Subscribe service operation are supported:\n-\tSubscription to notification of data change\nFigure 5.3.2.3.2-1 shows a scenario where the NF service consumer (e.g. UDM) sends a request to the HSS to subscribe to notifications of data change. The request contains a callback URI and the URI of the monitored resource.\nThe figure depicts a simplified representation of a NF service consumer subscribing to notifications. It shows the consumer's subscription status, with a green checkmark indicating that the subscription is active. The figure also includes a visual representation of the NF service consumer's subscription, with a checkmark next to it, indicating that the subscription is active.\nFigure 5.3.2.3.2-1: NF service consumer subscribes to notifications\n1.\tThe NF service consumer sends a POST request to the parent resource (collection of subscriptions) (.../{ueId}/subscriptions), to create a subscription as present in message body.\n2a.\tOn success, the HSS responds with \"201 Created\" with the message body containing a representation of the created subscription. The Location HTTP header shall contain the URI of the created subscription.\n2b.\tIf there is no valid subscription data for the UE, HTTP status code \"404 Not Found\" shall be returned including additional error information in the response body (in the \"ProblemDetails\" element).\n2c.\tIf the UE subscription data exist, but the requested subscription to data change notification cannot be created (e.g. due to an invalid/unsupported data reference to be monitored, contained in the SubscriptionData parameter), HTTP status code \"501 Not Implemented\" shall be returned including additional error information in the response body (in the \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the POST response body.\nIn the case of redirection, the HSS shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint of another HSS (service) instance.\nThe following procedures using the Unsubscribe service operation are supported:\n-\tUnsubscribe to notification of data change\nFigure 5.3.2.4.2-1 shows a scenario where the NF service consumer sends a request to the HSS to unsubscribe from notifications of data changes. The request contains the URI previously received in the Location HTTP header of the response to the subscription.\nThe figure depicts a simplified representation of a NF service consumer unsubscribing to notifications. The NF service consumer is represented as a rectangle with a circle at the top, indicating the consumer's subscription status. The circle is divided into two parts, with one part representing the consumer's subscription status and the other representing the unsubscription status. The rectangle is connected to a rectangle with a circle at the bottom, representing the notification service. The notification service is represented as a rectangle with a circle at the top, indicating the service's subscription status. The circle is divided into two parts, with one part representing the service's subscription status and the other representing the unsubscription status. The rectangle is connected to a rectangle with a circle at the bottom, representing the notification service. The circle is divided into two parts, with one part representing the service's subscription status and the other representing the unsubscription status. The rectangle is connected to a rectangle with a circle at the top, indicating the service's subscription status. The circle is divided into two parts, with one part representing the service's subscription status and the other representing the unsubscription status. The rectangle is connected to a rectangle with a circle at the bottom, representing the notification service. The circle is divided\nFigure 5.3.2.4.2-1: NF service consumer unsubscribes to notifications\n1.\tThe NF service consumer sends a DELETE request to the resource identified by the URI previously received during subscription creation.\n2a.\tOn success, the HSS responds with \"204 No Content\".\n2b.\tIf there is no valid subscription available (e.g. due to an unknown subscriptionId value), HTTP status code \"404 Not Found\" should be returned including additional error information in the response body (in the \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the DELETE response body.\nIn the case of redirection, the HSS shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint of another HSS (service) instance.\nThe following procedures using the Notification service operation are supported:\n-\tData change notification to NF.\nFigure 5.3.2.5.2-1 shows a scenario where the HSS notifies the NF service consumer (that has subscribed to receive such notification) about subscription data change. The request contains the callbackReference URI as previously received in the SubscriptionData.\nThe figure depicts a 3D representation of a subscription data change notification system, illustrating the various components and their interactions. The system includes a subscription data change notification (SDCN) server, a subscriber, and a network operator. The SDCN server processes the subscription data change notifications, while the subscriber receives and processes the notifications. The network operator manages the network and ensures the system's functionality. The figure provides a clear visual representation of the system's architecture and its components, making it easier to understand and interpret.\nFigure 5.3.2.5.2-1: Subscription Data Change Notification\n1.\tThe HSS sends a POST request to the callbackReference as provided by the NF service consumer during the subscription.\n2a.\tThe NF service consumer responds with \"204 No Content\".\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the POST response body.\nIn the case of redirection, the NF Service Consumer shall return 3xx status code, which shall contain a Location header with an URI pointing to an alternative notification endpoint.\nThe following procedures using the ModifySubscription service operation are supported:\n-\tModification of a Subscription to notification of data change\nFigure 5.3.2.6.2-1 shows a scenario where the NF service consumer sends a request to the HSS to modify a subscription to notifications of data changes. The request contains the URI previously received in the Location HTTP header of the response to the subscription.\nThe figure depicts a user modifying a subscription to notifications in a NF service. The NF service consumer is shown modifying the subscription, with the subscription being a subscription to notifications. The NF service consumer is shown modifying the subscription, with the subscription being a subscription to notifications.\nFigure 5.3.2.6.2-1: NF service consumer modifies a subscription to notifications\n1.\tThe NF service consumer sends a PATCH request to the resource identified by the URI previously received during subscription creation.\n2a.\tOn success, the UDM responds with \"204 No Content\".\n2b.\tIf there is no valid subscription available (e.g. due to an unknown subscriptionId value), HTTP status code \"404 Not Found\" should be returned including additional error information in the response body (in the \"ProblemDetails\" element).\n2c. If the operation cannot be authorized, HTTP status code \"403 Forbidden\" should be returned including additional error information in the response body (in \"ProblemDetails\" element)\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the PATCH response body.\nIn the case of redirection, the HSS shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint of another HSS (service) instance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\tNhss_UEContextManagement Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tService Description",
+                            "text_content": "The service allows an NF consumer (UDM) to trigger the cancellation of any previous registered serving node due to IRAT mobility. See 3GPP TS 23.632 [8], clause 6.1.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tService Operations",
+                            "text_content": "For the Nhss_UEContextManagement service the following service operations are defined:\n-\tSnDeregistration\n-\tImeiUpdate\n-\tRoamingStatusUpdate\nThe Nhss_UEContextManagement service is used by Consumer NF (UDM) to request HSS to deregister the MME/SGSN via cancel location procedure and to update the IMEI and roaming status of the UE in the HSS.\nThe following procedure using the SnDeregistration service operation is supported:\n-\tSN Deregistration\nFigure 5.4.2.2.2-1 shows a scenario where the NF service consumer (UDM) requests HSS to initiate Cancel Location procedure towards the MME/SGSN due to IRAT mobility. The request contains the UE's identity which shall be an IMSI.\nThe figure depicts a 4G network with various network elements such as base stations (BSs), mobile stations (MSs), and network elements. It illustrates the deregistration process for a specific SN (Service Number) in the network.\nFigure 5.4.2.2.2-1: SN Deregistration\n1.\tThe NF service consumer sends a POST request (custom method: deregister-sn) to the HSS; the request body contains the UE identity (IMSI) and the deregistration reason.\nThe HSS, based on the value indicated in the deregistration reason, initiates a Cancel Location towards the serving node, including a Cancellation Type value (see 3GPP TS 29.272 [17] and 3GPP TS 29.002 [20]) as follows:\n-\t\"UE_INITIAL_AND_SINGLE_REGISTRATION\": S6a/S6d/Gr(S4/Gn/Gp) Cancel Location sent towards MME/SGSN, with a Cancellation-Type set to MME_UPDATE_PROCEDURE/SGSN_UPDATE_PROCEDURE; the HSS shall delete the stored MME/SGSN address and MME/SGSN number.\nAdditionally, a MAP D Cancel Location (IMSI) shall be sent towards MSC/VLR if a VLR number was found in the HSS/HLR for the user; the HSS/HLR shall delete the stored MSC/VLR number.\n-\t\"UE_INITIAL_AND_DUAL_REGISTRATION\": S6d/Gr(S4) Cancel Location sent towards SGSN, with a Cancellation-Type set to SGSN_UPDATE_PROCEDURE; the HSS shall delete the stored SGSN address and SGSN number.\nNOTE 1:\tAs described in 3GPP TS 23.502 [3], a UE operating in dual-registration mode indicates that it is moving from EPS, which implies that there is an MME registered in HSS.\n-\t\"EPS_TO_5GS_MOBILITY\": S6a Cancel Location sent towards MME, with a Cancellation-Type set to MME_UPDATE_PROCEDURE; the HSS shall delete the stored MME address and MME number.\nAdditionally, a MAP D Cancel Location (IMSI) shall be sent towards MSC/VLR if a VLR number was found in the HSS/HLR for the user; the HSS/HLR shall delete the stored MSC/VLR number.\n-\t\"EPS_TO_5GS_MOBILITY\": S6d/Gr(S4) Cancel Location sent towards SGSN, with a Cancellation-Type set to SGSN_UPDATE_PROCEDURE; the HSS shall delete the stored SGSN address and SGSN number.\nNOTE 2:\tBased on operator policy, and the presence of GUAMI in the DeregistrationRequest, the HSS can decide whether a registered VLR in the VPLMN needs to be cancelled. It should be noted that keeping the VLR registration can impact terminating services (e.g. T-ADS, MT-SMS…) causing failed paging attempts.\n2a.\tOn success, the HSS responds with \"204 No Content\". If the HSS has a valid subscription for the UE, but the UE is not registered in EPS network, the HSS shall respond with \"204 No Content\".\n2b.\tIf there is no valid subscription data for the UE, HTTP status code \"404 Not Found\" should be returned including additional error information in the response body (in the \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the POST response body.\nIn the case of redirection, the HSS shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint of another HSS (service) instance.\nFigure 5.4.2.3-1 shows a scenario where the NF service consumer (UDM) requests HSS to update the IMEI of the UE stored in the HSS. The request contains the UE's identity which shall be an IMSI, and the new IMEI of the UE.\nFigure 5 illustrates the process of IMEI update in a 4G network. The figure shows the steps involved in updating the IMEI of a device, including the steps to update the IMEI of the device, the steps to update the IMEI of the network, and the steps to update the IMEI of the network's base station. The figure also includes a visual representation of the network's IMEI update process, with arrows indicating the flow of data and the steps involved.\nFigure 5.4.2.3-1: IMEI Update\n1.\tThe NF service consumer sends a POST request (custom method: imei-update) to the HSS; the request body contains the UE identity (IMSI) and the new IMEI of the UE.\n2a.\tOn success, the HSS responds either with \"204 No Content\", which indicates that the HSS does not have any stored IMEI(SV) value for the UE, or with a \"200 OK\", which indicates that the HSS had an IMEI value stored for the UE. In the latter case, the HSS shall update the locally stored IMEI value for the UE, and return in the response body the previous IMEI, so the NF Service Consumer (UDM) can determine whether the HSS contained a different IMEI value than the current one sent to the HSS in this IMEI Update notification.\n2b.\tIf there is no valid subscription data for the UE, HTTP status code \"404 Not Found\" should be returned including additional error information in the response body (in the \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the POST response body.\nIn the case of redirection, the HSS shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint of another HSS (service) instance.\nFigure 5.4.2.4-1 shows a scenario where the NF service consumer (UDM) requests HSS to update the Roaming Status of the UE stored in the HSS. The request contains the UE's identity which shall be an IMSI, and the new PLMN-ID where the UE is located.\nThe figure depicts a 4G roaming status update, showing the current status of roaming users and the network's response to their requests. The update includes information on the number of roaming users, the network's response time, and the status of the roaming network. This figure is crucial for network operators to ensure seamless roaming experiences for their customers.\nFigure 5.4.2.4-1: Roaming Status Update\n1.\tThe NF service consumer sends a POST request (custom method: roaming-status-update) to the HSS; the request body contains the UE identity (IMSI) and the new PLMN-ID of the UE.\n2a.\tOn success, the HSS responds with \"204 No Content\".\n2b.\tIf there is no valid subscription data for the UE, HTTP status code \"404 Not Found\" should be returned including additional error information in the response body (in the \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the POST response body.\nIn the case of redirection, the HSS shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint of another HSS (service) instance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.5\tNhss_EventExposure Service",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.5.1\tService Description",
+                            "text_content": "See 3GPP TS 23.632 [8].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.5.2\tService Operations",
+                            "text_content": "For the Nhss_EventExposure service the following service operations are defined:\n-\tSubscribe\n-\tUnsubscribe\n-\tNotify\n-\tModifySubscription\nThe Nhss_EventExposure service is used by consumer NFs (e.g. UDM) to subscribe to notifications of event occurrence by means of the Subscribe service operation.\nThe Nhss_EventExposure service is also used by the consumer NFs (e.g. UDM) that have previously subscribed to notifications, to unsubscribe by means of the Unsubscribe service operation.\nThe Nhss_EventExposure service is also used by the subscribed consumer NFs (e.g. UDM) to modify an existing subscription by means of the ModifySubscription service operation.\nThe following procedures using the Subscribe service operation are supported:\n-\tSubscribe to Notification of event occurrence\nFigure 5.5.2.2.2-1 shows a scenario where the NF service consumer sends a request to the HSS to subscribe to notifications of event occurrence. The request contains a callback URI, the type of event that is monitored and additional information e.g. SCEF Id, event filters and reporting options.\nThe figure depicts a simplified representation of a NF service consumer subscribing to notifications. It shows a user interface with various options for subscribing to notifications, such as email, SMS, and push notifications. The figure illustrates the user's interaction with the service, highlighting the various subscription options and their corresponding icons.\nFigure 5.5.2.2.2-1: NF service consumer subscribes to notifications\n1.\tThe NF service consumer sends a POST request to the parent resource (collection of subscriptions) (.../{ueId}/ee-subscriptions), to create a subscription as present in message body. The request may contain an expiry time, suggested by the NF Service Consumer, representing the time upto which the subscription is desired to be kept active and the time after which the subscribed event(s) shall stop generating notifications. Additionally, the request may include an SCEF Id if Common Network Exposure is used (i.e. if combined SCEF+NEF requested the event(s) to be subscribed/monitored in EPC)\nIf MTC Provider information is received in the request, the HSS shall check whether the MTC Provider is allowed to perform this operation for the UE; otherwise, the HSS shall skip the MTC provider authorization check.\n2a.\tOn success, the HSS responds with \"201 Created\" with the message body containing a representation of the created subscription. The Location HTTP header shall contain the URI of the created subscription.\nIf immediate reporting is requested and if both HSS and NF consumer has indicated supporting of ERIR feature (see clause 6.4.8), the HSS shall include available immediate event reports, i.e. reports already received from MME, in the response body; otherwise if the HSS and/or the NF consumer cannot support the ERIR feature, the HSS shall send a notification (see clause 5.5.2.4.2) towards the NF consumer including the current status of the events requested for immediate reporting. If immediate reporting is requested but the current status of the event(s) is not available at the time of subscription, the HSS should include the current status not available indication in the response.\nIf some of the requested monitoring configurations fails, the response may include the failedMonitoringConfigs to indicate the failed cause of the failed monitoring configurations.\n2b.\tIf the user does not exist, HTTP status code \"404 Not Found\" shall be returned including additional error information in the response body (in the \"ProblemDetails\" element).\n2c.\tIf there is no valid subscription data for the UE, i.e. based on the UE's subscription information monitoring of the requested EventType is not allowed, or the requested EventType is not supported, or the MTC Provider is not allowed to perform this operation for the UE, HTTP status code \"403 Forbidden\" shall be returned including additional error information in the response body (in the \"ProblemDetails\" element).\n2d. In the case of redirection, the HSS shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint of another HSS (service) instance.\n2e.\tIf the requested monitoring event types or reporting options are not supported, HTTP status code \"501 Not Implemented\" shall be returned including additional error information in the response body (in the \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the POST response body.\nThe following procedures using the Unsubscribe service operation are supported:\n-\tUnsubscribe to Notifications of event occurrence\nFigure 5.5.2.3.2-1 shows a scenario where the NF service consumer sends a request to the HSS to unsubscribe from notifications of event occurrence. The request contains the URI previously received in the Location HTTP header of the response to the subscription.\nThe figure depicts a scenario where a NF service consumer unsubscribes to notifications, illustrating the process of unsubscription in a network function virtualization (NFV) environment. The figure shows the consumer's interface, the notification service, and the notification system, highlighting the steps involved in unsubscribing.\nFigure 5.5.2.3.2-1: NF service consumer unsubscribes to notifications\n1.\tThe NF service consumer sends a DELETE request to the resource identified by the URI previously received during subscription creation.\n2a.\tOn success, the HSS responds with \"204 No Content\".\n2b.\tIf there is no valid subscription available (e.g. due to an unknown SubscriptionId value), HTTP status code \"404 Not Found\" shall be returned including additional error information in the response body (in the \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the DELETE response body.\nIn the case of redirection, the HSS shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint of another HSS (service) instance.\nThe following procedures using the Notify service operation are supported:\n-\tEvent Occurrence Notification\nFigure 5.5.2.4.2-1 shows a scenario where the HSS notifies the NF service consumer (that has subscribed to receive such notification) about occurrence of an event or the current status of the events requested for immediate reporting if ERIR feature (see clause 6.4.8) is not supported by the HSS and/or the NF consumer. The request contains the Reference IDs as previously received in the EeSubscription.\nThe figure depicts a system for event occurrence notification, with various components such as event sources, event destinations, and event types. The system is designed to ensure timely and efficient notification of events, potentially for security or operational purposes.\nFigure 5.5.2.4.2-1: Event Occurrence Notification\n1.\tThe HSS sends a POST request to the callbackReference URI as provided by the NF service consumer during the subscription.\n2a.\tThe NF Service Consumer responds with \"204 No Content\".\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the POST response body.\nIn the case of redirection, the NF Service Consumer shall return 3xx status code, which shall contain a Location header with an URI pointing to an alternative notification endpoint.\nThe following procedures using the ModifySubscription service operation are supported:\n-\tModification of an EE-Subscription to notification of events\nThe service operation is invoked by a NF Service Consumer, e.g. UDM, towards the HSS, when it needs to modify an existing subscription previously created by itself at the HSS.\nThe NF Service Consumer shall modify the subscription by using HTTP method PATCH with the URI of the individual subscription resource to be modified.\n\nThe figure depicts a simplified representation of a 5G network, illustrating the various components and their interactions. It shows the signal propagation in a 5G network, highlighting the importance of beamforming techniques to mitigate interference. The figure also illustrates the fiber-optic backbone architecture, highlighting the redundancy paths and the layered design that aligns with SDN principles.\nFigure 5.5.2.5.2-1: NF service consumer updates subscription\n1.\tThe NF service consumer (e.g. NEF) shall send a PATCH request to the resource representing a subscription. The modification may be for the events subscribed or for updating the event report options.\n2a.\tOn success, the request is accepted, the HSS shall respond with \"204 No Content\".\n2b.\tIf the resource does not exist e.g. the subscriptionId cannot be found, HTTP status code \"404 Not Found\" should be returned including additional error information in the response body (in the \"ProblemDetails\" element).\n2c.\tIf the modification can't be accepted, HTTP status code \"403 Forbidden\" should be returned including additional error information in the response body (in the \"ProblemDetails\" element).\nOn failure, the appropriate HTTP status code indicating the error shall be returned and appropriate additional error information should be returned in the PATCH response body.\nIn the case of redirection, the HSS shall return 3xx status code, which shall contain a Location header with an URI pointing to the endpoint of another HSS (service) instance.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tAPI Definitions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tNhss_UEAuthentication Service API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tIntroduction",
+                            "text_content": "The Nhss_UEAuthentication service shall use the Nhss_UEAuthentication API.\nThe request URI used in HTTP request from the NF service consumer towards the NF service producer shall have the structure defined in clause 4.4.1 of 3GPP TS 29.501 [5], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [5].\n-\tThe <apiName> shall be \"nhss-ueau\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 6.1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tUsage of HTTP",
+                            "text_content": "HTTP/2, as defined in IETF RFC 9113 [9], shall be used as specified in clause 5 of 3GPP TS 29.500 [4].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [4].\nHTTP messages and bodies for the Nhss_UEAuthentication service shall comply with the OpenAPI [10] specification contained in Annex A.\nThe usage of HTTP standard headers shall be supported as specified in clause 5.2.2 of 3GPP TS 29.500 [4].\nThe following content types shall be supported:\n-\tJSON, as defined in IETF RFC 8259 [11], signalled by the content type \"application/json\".\n-\tThe Problem Details JSON Object (IETF RFC 9457 [12] signalled by the content type \"application/problem+json\".\nIn this release of the specification, no specific custom headers are defined for the Nhss_UEAuthentication service.\nFor 3GPP specific HTTP custom headers used across all service based interfaces, see clause 5.2.3 of 3GPP TS 29.500 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.3\tResources",
+                            "text_content": "The figure depicts the structure of the nhss-ueau API, which is a resource URI structure used for accessing the nhss-ueau API. The API is used to manage the network hardware and software resources of the nhss-ueau network. The structure includes the resource URI, which is a unique identifier for the resource, and the resource type, which determines the type of resource that can be accessed. The figure also includes the resource URI structure for the nhss-ueau API, which is used to access the API.\nFigure 6.1.3.1-1: Resource URI structure of the nhss-ueau API\nTable 6.1.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 6.1.3.1-1: Resources and methods overview\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.3.1-1: Resources and methods overview",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.4\tCustom Operations without associated resources",
+                            "text_content": "Table 6.1.4.1-1: Custom operations without associated resources\n\nThis custom operation is used by the NF service consumer (UDM) to request calculation of an authentication vector for the provided imsi.\nThis operation shall support the response data structures and response codes specified in tables 6.1.4.2.2-1 and 6.1.4.2.2-2.\nTable 6.1.4.2.2-1: Data structures supported by the POST Request Body\n\nTable 6.1.4.2.2-2: Data structures supported by the POST Response Body\n\nTable 6.1.4.2.2-3: Headers supported by the 307 Response Code on this resource\n\nTable 6.1.4.2.2-4: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.4.1-1: Custom operations without associated resources",
+                                    "table number": 5,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.4.2.2-1: Data structures supported by the POST Request Body",
+                                    "table number": 6,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.4.2.2-2: Data structures supported by the POST Response Body",
+                                    "table number": 7,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.4.2.2-3: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 8,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.4.2.2-4: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 9,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.5\tNotifications",
+                            "text_content": "In this release of this specification, no notifications are defined for the Nhss_UEAuthentication Service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.6\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API.\nTable 6.1.6.1-1 specifies the data types defined for the Nhss service based interface protocol.\nTable 6.1.6.1-1: Nhss specific Data Types\n\nTable 6.1.6.1-2 specifies data types re-used by the Nhss service based interface protocol from other specifications, including a reference to their respective specifications and when needed, a short description of their use within the Nhss service based interface.\nTable 6.1.6.1-2: Nhss re-used Data Types\n\nThis clause defines the structures to be used in resource representations.\nTable 6.1.6.2.2-1: Definition of type AvGenerationRequest\n\nTable 6.1.6.2.3-1: Definition of type AvGenerationResponse\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nThe simple data types defined in table 6.1.6.3.2-1 shall be supported.\nTable 6.1.6.3.2-1: Simple data types\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.6.1-1: Nhss specific Data Types",
+                                    "table number": 10,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.1-2: Nhss re-used Data Types",
+                                    "table number": 11,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.2-1: Definition of type AvGenerationRequest",
+                                    "table number": 12,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.2.3-1: Definition of type AvGenerationResponse",
+                                    "table number": 13,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.1.6.3.2-1: Simple data types",
+                                    "table number": 14,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.7\tError Handling",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 5.2.4 of 3GPP TS 29.500 [4].\nProtocol errors handling shall be supported as specified in clause 5.2.7 of 3GPP TS 29.500 [4].\nThe application errors defined for the Nhss_UEAuthentication service are listed in table 6.1.7.3-1.\nTable 6.1.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.7.3-1: Application errors",
+                                    "table number": 15,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.8\tFeature negotiation",
+                            "text_content": "The optional features in table 6.1.8-1 are defined for the Nhss_UEAuthentication API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [4].\nTable 6.1.8-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.1.8-1: Supported Features",
+                                    "table number": 16,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.1.9\tSecurity",
+                            "text_content": "As indicated in 3GPP TS 33.501 [6] and 3GPP TS 29.500 [4], the access to the Nhss_UEAU API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [18]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [19]) plays the role of the authorization server.\nIf OAuth2 is used, an NF Service Consumer, prior to consuming services offered by the Nhss_UEAU API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [19], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF that the NF Service Consumer used for discovering the Nhss_UEAU service.\nThe Nhss_UEAU API defines a single scope \"nhss-ueau\" for OAuth2 authorization (as specified in 3GPP TS 33.501 [6]) for the entire API, and it does not define any additional scopes at resource or operation level.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.10\tHTTP redirection",
+                            "text_content": "An HTTP request may be redirected to a different HSS service instance when using direct or indirect communications (see 3GPP TS 29.500 [4]).\nAn SCP that reselects a different HSS producer instance will return the NF Instance ID of the new HSS producer instance in the 3gpp-Sbi-Producer-Id header, as specified in clause 6.10.3.4 of 3GPP TS 29.500 [4].\nIf an HSS redirects a service request to a different HSS using an 307 Temporary Redirect or 308 Permanent Redirect status code, the identity of the new HSS towards which the service request is redirected shall be indicated in the 3gpp-Sbi-Target-Nf-Id header of the 307 Temporary Redirect or 308 Permanent Redirect response as specified in clause 6.10.9.1 of 3GPP TS 29.500 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tNhss_SubscriberDataManagement Service API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tAPI URI",
+                            "text_content": "The Nhss_SubscriberDataManagement service shall use the Nhss_SubscriberDataManagement API.\nThe request URI used in HTTP request from the NF service consumer towards the NF service producer shall have the structure defined in clause 4.4.1 of 3GPP TS 29.501 [5], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [5].\n-\tThe <apiName> shall be \"nhss-sdm\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 6.2.3.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tUsage of HTTP",
+                            "text_content": "HTTP/2, as defined in IETF RFC 9113 [9], shall be used as specified in clause 5 of 3GPP TS 29.500 [4].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [4].\nHTTP messages and bodies for the Nhss_SubscriberDataManagement service shall comply with the OpenAPI [10] specification contained in Annex A.\nThe usage of HTTP standard headers shall be supported as specified in clause 5.2.2 of 3GPP TS 29.500 [4].\nThe following content types shall be supported:\n-\tJSON, as defined in IETF RFC 8259 [11], signalled by the content type \"application/json\".\n-\tThe Problem Details JSON Object (IETF RFC 9457 [12] signalled by the content type \"application/problem+json\".\nIn this release of the specification, no specific custom headers are defined for the Nhss_SubscriberDataManagement service.\nFor 3GPP specific HTTP custom headers used across all service-based interfaces, see clause 5.2.3 of 3GPP TS 29.500 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.3\tResources",
+                            "text_content": "\nFigure 6.2.3.1-1: Resource URI structure of the nhss-sdm API\nTable 6.2.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 6.2.3.1-1: Resources and methods overview\n\nThis resource represents the allocated PGWs for the UE.\nResource URI: {apiRoot}/nhss-sdm/<apiVersion>/{ueId}/ue-context-in-pgw-data\nThis resource shall support the resource URI variables defined in table 6.2.3.2.2-1.\nTable 6.2.3.2.2-1: Resource URI variables for this resource\n\n6.2.3.2.3.1\tGET\nThis method shall support the URI query parameters specified in table 6.2.3.2.3.1-1.\nTable 6.2.3.2.3.3-1: URI query parameters supported by the GET method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.2.3.1-2 and the response data structures and response codes specified in table 6.2.3.2.3.1-3.\nTable 6.2.3.2.3.1-2: Data structures supported by the GET Request Body on this resource\n\nTable 6.2.3.2.3.1-3: Data structures supported by the GET Response Body on this resource\n\nTable 6.2.3.2.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.2.3.1-5: Headers supported by the 308 Response Code on this resource\n\nThis resource is used to represent subscriptions to notifications.\nResource URI: {apiRoot}/nhss-sdm/<apiVersion>/{ueId}/subscriptions\nThis resource shall support the resource URI variables defined in table 6.2.3.3.2-1.\nTable 6.2.3.3.2-1: Resource URI variables for this resource\n\n6.2.3.3.3.1\tPOST\nThis method shall support the URI query parameters specified in table 6.2.3.3.3.1-1.\nTable 6.2.3.3.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.3.3.1-2 and the response data structures and response codes specified in table 6.2.3.3.3.1-3.\nTable 6.2.3.3.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 6.2.3.3.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 6.2.3.3.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.3.3.1-5: Headers supported by the 308 Response Code on this resource\n\nThis resource is used to represent an individual subscription to notifications.\nResource URI: {apiRoot}/nhss-sdm/<apiVersion>/{ueId}/subscriptions/{subscriptionId}\nThis resource shall support the resource URI variables defined in table 6.2.3.4.2-1.\nTable 6.2.3.4.2-1: Resource URI variables for this resource\n\n6.2.3.4.3.1\tDELETE\nThis method shall support the URI query parameters specified in table 6.2.3.4.3.1-1.\nTable 6.2.3.4.3.1-1: URI query parameters supported by the DELETE method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.4.3.1-2 and the response data structures and response codes specified in table 6.2.3.4.3.1-3.\nTable 6.2.3.4.3.1-2: Data structures supported by the Delete Request Body on this resource\n\nTable 6.2.3.4.3.1-3: Data structures supported by the DELETE Response Body on this resource\n\nTable 6.2.3.4.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.4.3.1-5: Headers supported by the 308 Response Code on this resource\n\n6.2.3.4.3.2\tPATCH\nThis method shall support the URI query parameters specified in table 6.2.3.4.3.2-1.\nTable 6.2.3.4.3.2-1: URI query parameters supported by the PATCH method on this resource\n\nThis method shall support the request data structures specified in table 6.2.3.4.3.2-2 and the response data structures and response codes specified in table 6.2.3.4.3.2-3.\nTable 6.2.3.4.3.2-2: Data structures supported by the PATCH Request Body on this resource\n\nTable 6.2.3.4.3.2-3: Data structures supported by the PATCH Response Body on this resource\n\nTable 6.2.3.4.3.2-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.3.4.3.2-5: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.3.1-1: Resources and methods overview",
+                                    "table number": 17,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.2-1: Resource URI variables for this resource",
+                                    "table number": 18,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.3-1: URI query parameters supported by the GET method on this resource",
+                                    "table number": 19,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.1-2: Data structures supported by the GET Request Body on this resource",
+                                    "table number": 20,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.1-3: Data structures supported by the GET Response Body on this resource",
+                                    "table number": 21,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 22,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.2.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 23,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.2-1: Resource URI variables for this resource",
+                                    "table number": 24,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 25,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 26,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 27,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 28,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.3.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 29,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.2-1: Resource URI variables for this resource",
+                                    "table number": 30,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.1-1: URI query parameters supported by the DELETE method on this resource",
+                                    "table number": 31,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.1-2: Data structures supported by the Delete Request Body on this resource",
+                                    "table number": 32,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.1-3: Data structures supported by the DELETE Response Body on this resource",
+                                    "table number": 33,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 34,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 35,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.2-1: URI query parameters supported by the PATCH method on this resource",
+                                    "table number": 36,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.2-2: Data structures supported by the PATCH Request Body on this resource",
+                                    "table number": 37,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.2-3: Data structures supported by the PATCH Response Body on this resource",
+                                    "table number": 38,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.2-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 39,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.3.4.3.2-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 40,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.4\tCustom Operations without associated resources",
+                            "text_content": "In this release of this specification, no custom operations without associated resources are defined for the Nhss_SubscriberDataManagement Service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.5\tNotifications",
+                            "text_content": "This clause specifies the use of notifications and corresponding protocol details.\nThe POST method shall be used for Data Change Notifications and the URI shall be as provided during the subscription procedure.\nResource URI: {callbackReference}\nSupport of URI query parameters is specified in table 6.2.5.2-1.\nTable 6.2.5.2-1: URI query parameters supported by the POST method\n\nSupport of request data structures is specified in table 6.2.5.2-2 and of response data structures and response codes is specified in table 6.2.5.2-3.\nTable 6.2.5.2-2: Data structures supported by the POST Request Body\n\nTable 6.2.5.2-3: Data structures supported by the POST Response Body\n\nTable 6.2.5.2-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.2.5.2-5: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.5.2-1: URI query parameters supported by the POST method",
+                                    "table number": 41,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.5.2-2: Data structures supported by the POST Request Body",
+                                    "table number": 42,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.5.2-3: Data structures supported by the POST Response Body",
+                                    "table number": 43,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.5.2-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 44,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.5.2-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 45,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.6\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API.\nTable 6.2.6.1-1 specifies the data types defined for the Nhss_SubscriberDataManagement service API.\nTable 6.2.6.1-1: Nhss_SubscriberDataManagement specific Data Types\n\nTable 6.2.6.1-2 specifies data types re-used by the Nhss_SubscriberDataManagement service API from other APIs, including a reference and when needed, a short description of their use within the Nhss_SubscriberDataManagement service API.\nTable 6.2.6.1-2: Nhss_SubscriberDataManagement re-used Data Types\n\nThis clause defines the data structures to be used in resource representations.\nTable 6.2.6.2.2-1: Definition of type UeContextInPgwData\n\nTable 6.2.6.2.3-1: Definition of type SubscriptionData\n\nTable 6.2.6.2.4-1: Definition of type SusbcriptionDataSets\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nThe simple data types defined in table 6.2.6.3.2-1 shall be supported.\nTable 6.2.6.3.2-1: Simple data types\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.6.1-1: Nhss_SubscriberDataManagement specific Data Types",
+                                    "table number": 46,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.1-2: Nhss_SubscriberDataManagement re-used Data Types",
+                                    "table number": 47,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.2-1: Definition of type UeContextInPgwData",
+                                    "table number": 48,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.3-1: Definition of type SubscriptionData",
+                                    "table number": 49,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.2.4-1: Definition of type SusbcriptionDataSets",
+                                    "table number": 50,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.2.6.3.2-1: Simple data types",
+                                    "table number": 51,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.7\tError Handling",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 5.2.4 of 3GPP TS 29.500 [4].\nProtocol errors handling shall be supported as specified in clause 5.2.7 of 3GPP TS 29.500 [4].\nThe common application errors defined in the Table 5.2.7.2-1 in 3GPP TS 29.500 [4] may also be used for the Nhss_SubscriberDataManagement service. The following application errors listed in Table 6.2.7.3-1 are specific for the Nhss_SubscriberDataManagement service.\nTable 6.2.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.7.3-1: Application errors",
+                                    "table number": 52,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.8\tFeature Negotiation",
+                            "text_content": "The optional features in table 6.2.8-1 are defined for the Nhss_SubscriberDataManagement API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [4].\nTable 6.2.8-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.2.8-1: Supported Features",
+                                    "table number": 53,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.2.9\tSecurity",
+                            "text_content": "As indicated in 3GPP TS 33.501 [6] and 3GPP TS 29.500 [4], the access to the Nhss_SDM API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [18]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [19]) plays the role of the authorization server.\nIf OAuth2 is used, an NF Service Consumer, prior to consuming services offered by the Nhss_SDM API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [19], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF that the NF Service Consumer used for discovering the Nhss_SDM service.\nThe Nhss_SDM API defines a single scope \"nhss-sdm\" for OAuth2 authorization (as specified in 3GPP TS 33.501 [6]) for the entire API, and it does not define any additional scopes at resource or operation level.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.10\tHTTP redirection",
+                            "text_content": "An HTTP request may be redirected to a different HSS service instance when using direct or indirect communications (see 3GPP TS 29.500 [4]).\nAn SCP that reselects a different HSS producer instance will return the NF Instance ID of the new HSS producer instance in the 3gpp-Sbi-Producer-Id header, as specified in clause 6.10.3.4 of 3GPP TS 29.500 [4].\nIf an HSS redirects a service request to a different HSS using an 307 Temporary Redirect or 308 Permanent Redirect status code, the identity of the new HSS towards which the service request is redirected shall be indicated in the 3gpp-Sbi-Target-Nf-Id header of the 307 Temporary Redirect or 308 Permanent Redirect response as specified in clause 6.10.9.1 of 3GPP TS 29.500 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tNhss_UEContextManagement Service API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tIntroduction",
+                            "text_content": "The Nhss_UEContextManagement service shall use the Nhss_UEContextManagement API.\nThe request URI used in HTTP request from the NF service consumer towards the NF service producer shall have the structure defined in clause 4.4.1 of 3GPP TS 29.501 [5], i.e.:\n{apiRoot}/<apiName>/<apiVersion>/<apiSpecificResourceUriPart>\nwith the following components:\n-\tThe {apiRoot} shall be set as described in 3GPP TS 29.501 [5].\n-\tThe <apiName> shall be \"nhss-uecm\".\n-\tThe <apiVersion> shall be \"v1\".\n-\tThe <apiSpecificResourceUriPart> shall be set as described in clause 6.1.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tUsage of HTTP",
+                            "text_content": "HTTP/2, as defined in IETF RFC 9113 [9], shall be used as specified in clause 5 of 3GPP TS 29.500 [4].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [4].\nHTTP messages and bodies for the Nhss_UEContextManagement service shall comply with the OpenAPI [10] specification contained in Annex A.\nThe usage of HTTP standard headers shall be supported as specified in clause 5.2.2 of 3GPP TS 29.500 [4].\nThe following content types shall be supported:\n-\tJSON, as defined in IETF RFC 8259 [11], signalled by the content type \"application/json\".\n-\tThe Problem Details JSON Object (IETF RFC 9457 [12] signalled by the content type \"application/problem+json\".\nIn this release of the specification, no specific custom headers are defined for the Nhss_UEContextManagement service.\nFor 3GPP specific HTTP custom headers used across all service-based interfaces, see clause 5.2.3 of 3GPP TS 29.500 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.3\tResources",
+                            "text_content": "The figure depicts the structure of the nhss-ue cm API, which is a resource URI structure used in the nhss-ue system. The API is used to access and manage the resources of the nhss-ue system, including the user interface, data storage, and other components. The structure is organized in a hierarchical manner, with each component having its own URI and corresponding resource. This allows for easy navigation and access to the different components of the nhss-ue system.\nFigure 6.3.3.1-1: Resource URI structure of the nhss-uecm API\nTable 6.3.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 6.3.3.1-1: Resources and methods overview\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.3.1-1: Resources and methods overview",
+                                    "table number": 54,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.4\tCustom Operations without associated resources",
+                            "text_content": "Table 6.3.4.1-1: Custom operations without associated resources\n\nThis custom operation is used by the NF service consumer (UDM) to request MME/SGSN deregistration.\nThis operation shall support the data structures and response codes specified in tables 6.3.4.2.2-1 and 6.3.4.2.2-2.\nTable 6.3.4.2.2-1: Data structures supported by the POST Request Body\n\nTable 6.3.4.2.2-2: Data structures supported by the POST Response Body\n\nTable 6.3.4.2.2-3: Headers supported by the 307 Response Code on this resource\n\nTable 6.3.4.2.2-4: Headers supported by the 308 Response Code on this resource\n\nThis custom operation is used by the NF service consumer (UDM) to request the update of the IMEI of the UE.\nThis operation shall support the data structures and response codes specified in tables 6.3.4.3.2-1 and 6.3.4.3.2-2.\nTable 6.3.4.3.2-1: Data structures supported by the POST Request Body\n\nTable 6.3.4.3.2-2: Data structures supported by the POST Response Body\n\nTable 6.3.4.3.2-3: Headers supported by the 307 Response Code on this resource\n\nTable 6.3.4.3.2-4: Headers supported by the 308 Response Code on this resource\n\nThis custom operation is used by the NF service consumer (UDM) to request the update of the roaming status of the UE.\nThis operation shall support the data structures and response codes specified in tables 6.3.4.4.2-1 and 6.3.4.4.2-2.\nTable 6.3.4.4.2-1: Data structures supported by the POST Request Body\n\nTable 6.3.4.4.2-2: Data structures supported by the POST Response Body\n\nTable 6.3.4.4.2-3: Headers supported by the 307 Response Code on this resource\n\nTable 6.3.4.4.2-4: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.4.1-1: Custom operations without associated resources",
+                                    "table number": 55,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.2.2-1: Data structures supported by the POST Request Body",
+                                    "table number": 56,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.2.2-2: Data structures supported by the POST Response Body",
+                                    "table number": 57,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.2.2-3: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 58,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.2.2-4: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 59,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.3.2-1: Data structures supported by the POST Request Body",
+                                    "table number": 60,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.3.2-2: Data structures supported by the POST Response Body",
+                                    "table number": 61,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.3.2-3: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 62,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.3.2-4: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 63,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.4.2-1: Data structures supported by the POST Request Body",
+                                    "table number": 64,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.4.2-2: Data structures supported by the POST Response Body",
+                                    "table number": 65,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.4.2-3: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 66,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.4.4.2-4: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 67,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.5\tNotifications",
+                            "text_content": "In this release of this specification, no notifications are defined for the Nhss_UEContextManagement Service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.6\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API.\nTable 6.3.6.1-1 specifies the structured data types defined for the Nhss_UECM service API.\nTable 6.3.6.1-1: Nhss_UECM specific Data Types\n\nTable 6.3.6.1-2 specifies data types re-used by the Nhss_UECM service API from other specifications, including a reference to their respective specifications and when needed, a short description of their use within the Nhss_UECM service API.\nTable 6.3.6.1-2: Nhss_UECM re-used Data Types\n\nThis clause defines the structures to be used in resource representations.\nTable 6.3.6.2.2-1: Definition of type DeregistrationRequest\n\nTable 6.3.6.2.3-1: Definition of type ImeiUpdateInfo\n\nTable 6.3.6.2.4-1: Definition of type ImeiUpdateResponse\n\nTable 6.3.6.2.5-1: Definition of type RoamingStatusUpdateInfo\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nThe simple data types defined in table 6.3.6.3.2-1 shall be supported.\nTable 6.3.6.3.2-1: Simple data types\n\nTable 6.3.6.3.3-1: Enumeration DeregistrationReason\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.6.1-1: Nhss_UECM specific Data Types",
+                                    "table number": 68,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.6.1-2: Nhss_UECM re-used Data Types",
+                                    "table number": 69,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.6.2.2-1: Definition of type DeregistrationRequest",
+                                    "table number": 70,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.6.2.3-1: Definition of type ImeiUpdateInfo",
+                                    "table number": 71,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.6.2.4-1: Definition of type ImeiUpdateResponse",
+                                    "table number": 72,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.6.2.5-1: Definition of type RoamingStatusUpdateInfo",
+                                    "table number": 73,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.6.3.2-1: Simple data types",
+                                    "table number": 74,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.3.6.3.3-1: Enumeration DeregistrationReason",
+                                    "table number": 75,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.7\tError Handling",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 5.2.4 of 3GPP TS 29.500 [4].\nProtocol errors handling shall be supported as specified in clause 5.2.7 of 3GPP TS 29.500 [4].\nThe common application errors defined in the Table 5.2.7.2-1 in 3GPP TS 29.500 [4] may also be used for the Nudm_UEContextManagement service. The application errors defined for the Nhss_UEContextManagement service are listed in Table 6.3.7.3-1.\n\nTable 6.3.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.7.3-1: Application errors",
+                                    "table number": 76,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.8\tFeature Negotiation",
+                            "text_content": "The optional features in table 6.3.8-1 are defined for the Nhss_UEContextManagement API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [4].\nTable 6.3.8-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.3.8-1: Supported Features",
+                                    "table number": 77,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.3.9\tSecurity",
+                            "text_content": "As indicated in 3GPP TS 33.501 [6] and 3GPP TS 29.500 [4], the access to the Nhss_UECM API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [18]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [19]) plays the role of the authorization server.\nIf OAuth2 is used, an NF Service Consumer, prior to consuming services offered by the Nhss_UECM API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [19], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF that the NF Service Consumer used for discovering the Nhss_UECM service.\nThe Nhss_UECM API defines a single scope \"nhss-uecm\" for OAuth2 authorization (as specified in 3GPP TS 33.501 [6]) for the entire API, and it does not define any additional scopes at resource or operation level.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.10\tHTTP redirection",
+                            "text_content": "An HTTP request may be redirected to a different HSS service instance when using direct or indirect communications (see 3GPP TS 29.500 [4]).\nAn SCP that reselects a different HSS producer instance will return the NF Instance ID of the new HSS producer instance in the 3gpp-Sbi-Producer-Id header, as specified in clause 6.10.3.4 of 3GPP TS 29.500 [4].\nIf an HSS redirects a service request to a different HSS using an 307 Temporary Redirect or 308 Permanent Redirect status code, the identity of the new HSS towards which the service request is redirected shall be indicated in the 3gpp-Sbi-Target-Nf-Id header of the 307 Temporary Redirect or 308 Permanent Redirect response as specified in clause 6.10.9.1 of 3GPP TS 29.500 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tNhss_EventExposure Service API",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tAPI URI",
+                            "text_content": "URIs of this API shall have the following root:\n{apiRoot}/<apiName>/<apiVersion>/\nwhere \"apiRoot\" is defined in clause 4.4.1 of 3GPP TS 29.501 [5], the \"apiName\" shall be set to \"nhss-ee\" and the \"apiVersion\" shall be set to \"v1\" for the current version of this specification.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.2\tUsage of HTTP",
+                            "text_content": "HTTP/2, as defined in IETF RFC 9113 [13], shall be used as specified in clause 5 of 3GPP TS 29.500 [4].\nHTTP/2 shall be transported as specified in clause 5.3 of 3GPP TS 29.500 [4].\nHTTP messages and bodies for the Nhss_EE service shall comply with the OpenAPI [14] specification contained in Annex A5.\nThe usage of HTTP standard headers shall be supported as specified in clause 5.2.2 of 3GPP TS 29.500 [4].\nThe following content types shall be supported:\nJSON, as defined in IETF RFC 8259 [15], signalled by the content type \"application/json\".\nThe Problem Details JSON Object (IETF RFC 9457 [16] signalled by the content type \"application/problem+json\"\nJSON Patch (IETF RFC 6902 [41]). The use of the JSON Patch format in a HTTP request body shall be signalled by the content type \"application/json-patch+json\".\nThe usage of HTTP custom headers shall be supported as specified in clause 5.2.3 of 3GPP TS 29.500 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.3\tResources",
+                            "text_content": "The figure depicts the resource URI structure of the NSS (Network Service Set) API, which is used to access network resources. The structure includes the resource identifier, resource type, and resource URI. The figure provides a visual representation of the API's structure, making it easier to understand and navigate.\nFigure 6.4.3.1-1: Resource URI structure of the Nhss_EE API\nTable 6.4.3.1-1 provides an overview of the resources and applicable HTTP methods.\nTable 6.4.3.1-1: Resources and methods overview\n\nThis resource is used to represent subscriptions to notifications.\nResource URI: {apiRoot}/nhss-ee/<apiVersion>/{ueId}/ee-subscriptions\nThis resource shall support the resource URI variables defined in table 6.4.3.2.2-1.\nTable 6.4.3.2.2-1: Resource URI variables for this resource\n\n6.4.3.2.3.1\tPOST\nThis method shall support the URI query parameters specified in table 6.4.3.2.3.1-1.\nTable 6.4.3.2.3.1-1: URI query parameters supported by the POST method on this resource\n\nThis method shall support the request data structures specified in table 6.4.3.2.3.1-2 and the response data structures and response codes specified in table 6.4.3.2.3.1-3.\nTable 6.4.3.2.3.1-2: Data structures supported by the POST Request Body on this resource\n\nTable 6.4.3.2.3.1-3: Data structures supported by the POST Response Body on this resource\n\nTable 6.4.3.2.3.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.4.3.2.3.1-5: Headers supported by the 308 Response Code on this resource\n\nResource URI: {apiRoot}/nhss-ee/<apiVersion>/{ueId}/ee-subscriptions/{subscriptionId}\nThis resource shall support the resource URI variables defined in table 6.4.3.3.1-1.\nTable 6.4.3.3.1-1: Resource URI variables for this resource\n\n6.4.3.3.2.1\tDELETE\nThis method shall support the URI query parameters specified in table 6.4.3.3.2.1-1.\nTable 6.4.3.3.1.1-1: URI query parameters supported by the DELETE method on this resource\n\nThis method shall support the request data structures specified in table 6.4.3.3.2.1-2 and the response data structures and response codes specified in table 6.4.3.3.2.1-3.\nTable 6.4.3.3.2.1-2: Data structures supported by the Delete Request Body on this resource\n\nTable 6.4.3.3.2.1-3: Data structures supported by the DELETE Response Body on this resource\n\nTable 6.4.3.3.2.1-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.4.3.3.2.1-5: Headers supported by the 308 Response Code on this resource\n\n6.4.3.3.2.2\tPATCH\nThis method shall support the URI query parameters specified in table 6.4.3.3.2.2-1.\nTable 6.4.3.3.2.2-1: URI query parameters supported by the PATCH method on this resource\n\nThis method shall support the request data structures specified in table 6.4.3.3.2.2-2 and the response data structures and response codes specified in table 6.4.3.3.2.2-3.\nTable 6.4.3.3.2.2-2: Data structures supported by the PATCH Request Body on this resource\n\nTable 6.4.3.3.2.2-3: Data structures supported by the PATCH Response Body on this resource\n\nTable 6.4.3.3.2.2-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.4.3.3.2.2-5: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.4.3.1-1: Resources and methods overview",
+                                    "table number": 78,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.2.2-1: Resource URI variables for this resource",
+                                    "table number": 79,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.2.3.1-1: URI query parameters supported by the POST method on this resource",
+                                    "table number": 80,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.2.3.1-2: Data structures supported by the POST Request Body on this resource",
+                                    "table number": 81,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.2.3.1-3: Data structures supported by the POST Response Body on this resource",
+                                    "table number": 82,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.2.3.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 83,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.2.3.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 84,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.3.1-1: Resource URI variables for this resource",
+                                    "table number": 85,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.3.1.1-1: URI query parameters supported by the DELETE method on this resource",
+                                    "table number": 86,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.3.2.1-2: Data structures supported by the Delete Request Body on this resource",
+                                    "table number": 87,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.3.2.1-3: Data structures supported by the DELETE Response Body on this resource",
+                                    "table number": 88,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.3.2.1-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 89,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.3.2.1-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 90,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.3.2.2-1: URI query parameters supported by the PATCH method on this resource",
+                                    "table number": 91,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.3.2.2-2: Data structures supported by the PATCH Request Body on this resource",
+                                    "table number": 92,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.3.2.2-3: Data structures supported by the PATCH Response Body on this resource",
+                                    "table number": 93,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.3.2.2-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 94,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.3.3.2.2-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 95,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.4.4\tCustom Operations without associated resources",
+                            "text_content": "In this release of this specification, no custom operations without associated resources are defined for the Nhss_EventExposure Service.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.5\tNotifications",
+                            "text_content": "This clause will specify the use of notifications and corresponding protocol details if required for the specific service. When notifications are supported by the API, it will include a reference to the general description of notifications support over the 5G SBIs specified in TS 29.500 / TS 29.501.\nThe POST method shall be used for Event Occurrence Notifications and the URI shall be as provided during the subscription procedure.\nResource URI: {callbackReference}\nSupport of URI query parameters is specified in table 6.4.5.2-1.\nTable 6.4.5.2-1: URI query parameters supported by the POST method\n\nSupport of request data structures is specified in table 6.4.5.2-2 and of response data structures and response codes is specified in table 6.4.5.2-3.\nTable 6.4.5.2-2: Data structures supported by the POST Request Body\n\nTable 6.4.5.2-3: Data structures supported by the POST Response Body\n\nTable 6.4.5.2-4: Headers supported by the 307 Response Code on this resource\n\nTable 6.4.5.2-5: Headers supported by the 308 Response Code on this resource\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.4.5.2-1: URI query parameters supported by the POST method",
+                                    "table number": 96,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.5.2-2: Data structures supported by the POST Request Body",
+                                    "table number": 97,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.5.2-3: Data structures supported by the POST Response Body",
+                                    "table number": 98,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.5.2-4: Headers supported by the 307 Response Code on this resource",
+                                    "table number": 99,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.5.2-5: Headers supported by the 308 Response Code on this resource",
+                                    "table number": 100,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.4.6\tData Model",
+                            "text_content": "This clause specifies the application data model supported by the API.\nTable 6.4.6.1-1 specifies the data types defined for the Nhss_EE service API.\nTable 6.4.6.1-1: Nhss_EE specific Data Types\n\nTable 6.4.6.1-2 specifies data types re-used by the Nhss_EE service API from other specifications, including a reference to their respective specifications and when needed, a short description of their use within the Nhss_EE service API.\nTable 6.4.6.1-2: Nhss_EE re-used Data Types\n\nThis clause defines the data structures to be used in resource representations.\nTable 6.4.6.2.2-1: Definition of type EeSubscription\n\nTable 6.4.6.2.3-1: Definition of type CreatedEeSubscription\n\nTable 6.4.6.2.4-1: Definition of type MonitoringConfiguration\n\nTable 6.4.6.2.5-1: Definition of type MonitoringReport\n\nTable 6.4.6.2.6-1: Definition of type Report\n\nTable 6.4.6.2.7-1: Definition of type ReportingOptions\n\nTable 6.4.6.2.8-1: Definition of type LocationReportingConfiguration\n\nTable 6.4.6.2.9-1: Definition of type ReachabilityForSmsReport\n\nTable 6.4.6.2.10-1: Definition of type LossConnectivityConfiguration\n\nTable 6.4.6.2.11-1: Definition of type ReachabilityForDataConfiguration\n\nTable 6.4.6.2.12-1: Definition of type PduSessionStatusCfg\n\nTable 6.4.6.2.13-1: Definition of type ReachabilityForDataReport\n\nTable 6.4.6.2.14-1: Definition of type FailedMonitoringConfiguration\n\nTable 6.4.6.2.15-1: Definition of type EeSubscriptionErrorAddInfo\n\nTable 6.4.6.2.16-1: Definition of type EeSubscriptionError as a list of to be combined data types\n\nThis clause defines simple data types and enumerations that can be referenced from data structures defined in the previous clauses.\nThe simple data types defined in table 6.4.6.3.2-1 shall be supported.\nTable 6.4.6.3.2-1: Simple data types\n\nTable 6.4.6.3.3-1: Enumeration EventType\n\nTable 6.4.6.3.4-1: Enumeration LocationAccuracy\n\nTable 6.4.6.3.5-1: Enumeration FailedCause\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.4.6.1-1: Nhss_EE specific Data Types",
+                                    "table number": 101,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.1-2: Nhss_EE re-used Data Types",
+                                    "table number": 102,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.2-1: Definition of type EeSubscription",
+                                    "table number": 103,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.3-1: Definition of type CreatedEeSubscription",
+                                    "table number": 104,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.4-1: Definition of type MonitoringConfiguration",
+                                    "table number": 105,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.5-1: Definition of type MonitoringReport",
+                                    "table number": 106,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.6-1: Definition of type Report",
+                                    "table number": 107,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.7-1: Definition of type ReportingOptions",
+                                    "table number": 108,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.8-1: Definition of type LocationReportingConfiguration",
+                                    "table number": 109,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.9-1: Definition of type ReachabilityForSmsReport",
+                                    "table number": 110,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.10-1: Definition of type LossConnectivityConfiguration",
+                                    "table number": 111,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.11-1: Definition of type ReachabilityForDataConfiguration",
+                                    "table number": 112,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.12-1: Definition of type PduSessionStatusCfg",
+                                    "table number": 113,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.13-1: Definition of type ReachabilityForDataReport",
+                                    "table number": 114,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.14-1: Definition of type FailedMonitoringConfiguration",
+                                    "table number": 115,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.15-1: Definition of type EeSubscriptionErrorAddInfo",
+                                    "table number": 116,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.2.16-1: Definition of type EeSubscriptionError as a list of to be combined data types",
+                                    "table number": 117,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.3.2-1: Simple data types",
+                                    "table number": 118,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.3.3-1: Enumeration EventType",
+                                    "table number": 119,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.3.4-1: Enumeration LocationAccuracy",
+                                    "table number": 120,
+                                    "summary": "",
+                                    "name": ""
+                                },
+                                {
+                                    "description": "Table 6.4.6.3.5-1: Enumeration FailedCause",
+                                    "table number": 121,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.4.7\tError Handling",
+                            "text_content": "HTTP error handling shall be supported as specified in clause 5.2.4 of 3GPP TS 29.500 [4].\nProtocol errors handling shall be supported as specified in clause 5.2.7 of 3GPP TS 29.500 [4].\nThe common application errors defined in the Table 5.2.7.2-1 in 3GPP TS 29.500 [4] may also be used for the Nhss_EventExposure service. The following application errors listed in Table 6.4.7.3-1 are specific for the Nhss_EventExposure service.\nTable 6.4.7.3-1: Application errors\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.4.7.3-1: Application errors",
+                                    "table number": 122,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.4.8\tFeature Negotiation",
+                            "text_content": "The optional features in table 6.4.8-1 are defined for the Nhss_EE API. They shall be negotiated using the extensibility mechanism defined in clause 6.6 of 3GPP TS 29.500 [4].\nTable 6.4.8-1: Supported Features\n\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 6.4.8-1: Supported Features",
+                                    "table number": 123,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "6.4.9\tSecurity",
+                            "text_content": "As indicated in 3GPP TS 33.501 [6] and 3GPP TS 29.500 [4], the access to the Nhss_EE API may be authorized by means of the OAuth2 protocol (see IETF RFC 6749 [18]), based on local configuration, using the \"Client Credentials\" authorization grant, where the NRF (see 3GPP TS 29.510 [19]) plays the role of the authorization server.\nIf OAuth2 is used, an NF Service Consumer, prior to consuming services offered by the Nhss_EE API, shall obtain a \"token\" from the authorization server, by invoking the Access Token Request service, as described in 3GPP TS 29.510 [19], clause 5.4.2.2.\nNOTE:\tWhen multiple NRFs are deployed in a network, the NRF used as authorization server is the same NRF that the NF Service Consumer used for discovering the Nhss_EE service.\nThe Nhss_EE API defines a single scope \"nhss-ee\" for OAuth2 authorization (as specified in 3GPP TS 33.501 [6]) for the entire API, and it does not define any additional scopes at resource or operation level.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.4.10\tHTTP redirection",
+                            "text_content": "An HTTP request may be redirected to a different HSS service instance when using direct or indirect communications (see 3GPP TS 29.500 [4]).\nAn SCP that reselects a different HSS producer instance will return the NF Instance ID of the new HSS producer instance in the 3gpp-Sbi-Producer-Id header, as specified in clause 6.10.3.4 of 3GPP TS 29.500 [4].\nIf an HSS redirects a service request to a different HSS using an 307 Temporary Redirect or 308 Permanent Redirect status code, the identity of the new HSS towards which the service request is redirected shall be indicated in the 3gpp-Sbi-Target-Nf-Id header of the 307 Temporary Redirect or 308 Permanent Redirect response as specified in clause 6.10.9.1 of 3GPP TS 29.500 [4].\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "A.1\tGeneral",
+            "description": "This Annex specifies the formal definition of the Nhss Service API(s). It consists of OpenAPI 3.0.0 specifications in YAML format.\nThis Annex takes precedence when being discrepant to other parts of the specification with respect to the encoding of information elements and methods within the API(s).\nNOTE:\tThe semantics and procedures, as well as conditions, e.g. for the applicability and allowed combinations of attributes or values, not expressed in the OpenAPI definitions but defined in other parts of the specification also apply.\nInformative copies of the OpenAPI specification files contained in this 3GPP Technical Specification are available on a Git-based repository, that uses the GitLab software version control system (see 3GPP TS 29.501 [5] clause 5.3.1 and 3GPP TR 21.900 [14] clause 5B).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.2\tNhss_UEAuthentication API",
+            "description": "openapi: 3.0.0\ninfo:\nversion: '1.2.0-alpha.2'\ntitle: 'NhssUEAU'\ndescription: |\nHSS UE Authentication Service.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: 3GPP TS 29.563 HSS Services for Interworking With UDM, version 18.4.0\nurl: 'https://www.3gpp.org/ftp/Specs/archive/29_series/29.563/'\n\nservers:\n- url: '{apiRoot}/nhss-ueau/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501.\n\nsecurity:\n- oAuth2ClientCredentials:\n- nhss-ueau\n- {}\n\npaths:\n/generate-av:\npost:\nsummary: Generate authentication vector for the UE\noperationId: GenerateAV\ntags:\n- Generate Auth Vector\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/AvGenerationRequest'\nrequired: true\nresponses:\n'200':\ndescription: Expected response to a valid request\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/AvGenerationResponse'\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'501':\n$ref: 'TS29571_CommonData.yaml#/components/responses/501'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{nrfApiRoot}/oauth2/token'\nscopes:\nnhss-ueau: Access to the nhss-ueau API\n\n\nschemas:\n\n# STRUCTURED TYPES:\n\nAvGenerationRequest:\ndescription: >\nIt represents the request body in the Authentication Vector (AV) request sent by UDM to HSS,\ncontaining the IMSI of the UE, authentication type, serving network, etc.\ntype: object\nrequired:\n- imsi\n- authType\n- servingNetworkName\nproperties:\nimsi:\ntype: string\npattern: '^[0-9]{5,15}$'\nauthType:\n$ref: 'TS29503_Nudm_UEAU.yaml#/components/schemas/AuthType'\nservingNetworkName:\n$ref: 'TS29503_Nudm_UEAU.yaml#/components/schemas/ServingNetworkName'\nresynchronizationInfo:\n$ref: 'TS29503_Nudm_UEAU.yaml#/components/schemas/ResynchronizationInfo'\n\nAvGenerationResponse:\ndescription: >\nIt represents the response body in the AV response sent by HSS to UDM, containing the 5G-AKA\nor EAP-AKA-prime authentication vector\ntype: object\noneOf:\n- required:\n- avEapAkaPrime\n- required:\n- av5GHeAka\nproperties:\navEapAkaPrime:\n$ref: 'TS29503_Nudm_UEAU.yaml#/components/schemas/AvEapAkaPrime'\nav5GHeAka:\n$ref: 'TS29503_Nudm_UEAU.yaml#/components/schemas/Av5GHeAka'\n\n\n# SIMPLE TYPES:\n\n\n# ENUMS:\n\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.3\tNhss_SubscriberDataManagement API",
+            "description": "openapi: 3.0.0\n\ninfo:\nversion: '1.2.0-alpha.2'\ntitle: 'Nhss_SDM'\ndescription: |\nHSS Subscriber Data Management.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: 3GPP TS 29.563 HSS Services for Interworking With UDM, version 18.4.0\nurl: 'https://www.3gpp.org/ftp/Specs/archive/29_series/29.563/'\n\nservers:\n- url: '{apiRoot}/nhss-sdm/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501.\n\nsecurity:\n- oAuth2ClientCredentials:\n- nhss-sdm\n- {}\n\npaths:\n/{ueId}/ue-context-in-pgw-data:\nget:\nsummary: Retrieve the UE Context In PGW\noperationId: GetUeCtxInPgwData\ntags:\n- UE Context In PGW Data Retrieval\nparameters:\n- name: ueId\nin: path\ndescription: Identifier of the UE\nrequired: true\nschema:\ntype: string\npattern: '^(imsi-[0-9]{5,15})$'\nresponses:\n'200':\ndescription: Expected response to a valid request\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/UeContextInPgwData'\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'406':\n$ref: 'TS29571_CommonData.yaml#/components/responses/406'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\n/{ueId}/subscriptions:\npost:\nsummary: subscribe to notifications\noperationId: Subscribe\ntags:\n- Subscription Creation\nparameters:\n- name: ueId\nin: path\ndescription: IMSI of the user\nrequired: true\nschema:\ntype: string\npattern: '^(imsi-[0-9]{5,15})$'\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/SubscriptionData'\nrequired: true\nresponses:\n'201':\ndescription: Expected response to a valid request\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/SubscriptionData'\nheaders:\nLocation:\ndescription: >\nContains the URI of the newly created resource, according to the structure:\n{apiRoot}/nhss-sdm/<apiVersion>/{ueId}/subscriptions/{subscriptionId}\nrequired: true\nschema:\ntype: string\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'501':\n$ref: 'TS29571_CommonData.yaml#/components/responses/501'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\ncallbacks:\ndatachangeNotification:\n'{request.body#/callbackReference}':\npost:\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\n$ref: 'TS29503_Nudm_SDM.yaml#/components/schemas/ModificationNotification'\nresponses:\n'204':\ndescription: Successful Notification response\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\n/{ueId}/subscriptions/{subscriptionId}:\ndelete:\nsummary: unsubscribe from notifications\noperationId: Unsubscribe\ntags:\n- Subscription Deletion\nparameters:\n- name: ueId\nin: path\ndescription: IMSI of the user\nrequired: true\nschema:\ntype: string\npattern: '^(imsi-[0-9]{5,15})$'\n- name: subscriptionId\nin: path\ndescription: Id of the Subscription\nrequired: true\nschema:\ntype: string\nresponses:\n'204':\ndescription: Successful response\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\npatch:\nsummary: modify the subscription\noperationId: Modify\ntags:\n- Subscription Modification\nparameters:\n- name: ueId\nin: path\ndescription: IMSI of the user\nrequired: true\nschema:\ntype: string\npattern: '^(imsi-[0-9]{5,15})$'\n- name: subscriptionId\nin: path\ndescription: Id of the Subscription\nrequired: true\nschema:\ntype: string\nrequestBody:\ncontent:\napplication/json-patch+json:\nschema:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PatchItem'\nminItems: 1\nrequired: true\nresponses:\n'204':\ndescription: Successful modification\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{nrfApiRoot}/oauth2/token'\nscopes:\nnhss-sdm: Access to the nhss-sdm API\n\n\nschemas:\n\n# STRUCTURED TYPES:\n\nUeContextInPgwData:\ndescription: >\nContains data about APNs and PGW-C+SMF FQDNs used in interworking with UDM, and the\nPGW-C+SMF FQDN to be used for emergency session\ntype: object\nproperties:\npgwInfo:\ntype: array\nitems:\n$ref: 'TS29503_Nudm_SDM.yaml#/components/schemas/PgwInfo'\nminItems: 1\nemergencyFqdn:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Fqdn'\nemergencyPlmnId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PlmnId'\nemergencyIpAddr:\n$ref: 'TS29503_Nudm_SDM.yaml#/components/schemas/IpAddress'\nemergencyRegistrationTime:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\n\nSubscriptionData:\ndescription: >\nContains data about a subscription request, to be created by a consumer to an URI of the\nHSS_SDM API to be monitored; it also represents the response containing data about the\ncreated subscription\ntype: object\nrequired:\n- nfInstanceId\n- callbackReference\n- monitoredResourceUris\nproperties:\nnfInstanceId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/NfInstanceId'\ncallbackReference:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nmonitoredResourceUris:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nminItems: 1\nexpires:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\nimmediateReport:\ntype: boolean\ndefault: false\nreport:\n$ref: '#/components/schemas/SubscriptionDataSets'\n\nSubscriptionDataSets:\ndescription: >\nContains data to be reported as an immediate report in the response to a subscription\ncreation request\ntype: object\nproperties:\nueContextInPgwData:\n$ref: '#/components/schemas/UeContextInPgwData'\n\n# SIMPLE TYPES:\n\n\n# ENUMS:\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.4\tNhss_UEContextManagement API",
+            "description": "openapi: 3.0.0\n\ninfo:\nversion: '1.2.0-alpha.2'\ntitle: 'Nhss_UECM'\ndescription: |\nHSS UE Context Management.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: 3GPP TS 29.563 HSS Services for Interworking With UDM, version 18.4.0\nurl: 'https://www.3gpp.org/ftp/Specs/archive/29_series/29.563/'\n\nservers:\n- url: '{apiRoot}/nhss-uecm/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501.\n\nsecurity:\n- oAuth2ClientCredentials:\n- nhss-uecm\n- {}\n\npaths:\n/deregister-sn:\npost:\nsummary: MME/SGSN Deregistration\noperationId: DeregisterSN\ntags:\n- MME/SGSN Deregistration\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/DeregistrationRequest'\nrequired: true\nresponses:\n'204':\ndescription: No content\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'501':\n$ref: 'TS29571_CommonData.yaml#/components/responses/501'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\n/imei-update:\npost:\nsummary: IMEI Update\noperationId: IMEIUpdate\ntags:\n- IMEI Update\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/ImeiUpdateInfo'\nrequired: true\nresponses:\n'200':\ndescription: Expected response to a valid request\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/ImeiUpdateResponse'\n'204':\ndescription: No content\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'501':\n$ref: 'TS29571_CommonData.yaml#/components/responses/501'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\n/roaming-status-update:\npost:\nsummary: Roaming Status Update\noperationId: RoamingStatusUpdate\ntags:\n- Roaming Status Update\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/RoamingStatusUpdateInfo'\nrequired: true\nresponses:\n'204':\ndescription: No content\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'501':\n$ref: 'TS29571_CommonData.yaml#/components/responses/501'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{nrfApiRoot}/oauth2/token'\nscopes:\nnhss-uecm: Access to the nhss-uecm API\n\nschemas:\n\n# STRUCTURED TYPES:\n\nDeregistrationRequest:\ndescription: >\nIt represents the request body of the deregistration request sent by UDM to HSS and contains\nthe IMSI of the UE, the deregistration reason, etc.\ntype: object\nrequired:\n- imsi\n- deregReason\nproperties:\nimsi:\ntype: string\npattern: '^[0-9]{5,15}$'\nderegReason:\n$ref: '#/components/schemas/DeregistrationReason'\nguami:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Guami'\n\nImeiUpdateInfo:\ndescription: >\nIt represents the request body of the IMEI update request sent by UDM to HSS,\nand contains the IMSI of the UE and the new IMEI(SV)\ntype: object\nrequired:\n- imsi\noneOf:\n- required: [ imei ]\n- required: [ imeisv ]\nproperties:\nimsi:\ntype: string\npattern: '^[0-9]{5,15}$'\nimei:\ntype: string\npattern: '^[0-9]{14,15}$'\nimeisv:\ntype: string\npattern: '^[0-9]{16}$'\n\nImeiUpdateResponse:\ndescription: >\nIt represents the response body of the IMEI update request sent by UDM to HSS,\nand contains the previous IMEI(SV) stored by HSS\ntype: object\nanyOf:\n- required: [ previousImei ]\n- required: [ previousImeisv ]\nproperties:\npreviousImei:\ntype: string\npattern: '^[0-9]{14,15}$'\npreviousImeisv:\ntype: string\npattern: '^[0-9]{16}$'\n\nRoamingStatusUpdateInfo:\ndescription: >\nIt represents the request body of the Roaming Status Update request sent by UDM to HSS,\nand contains the IMSI of the UE and the new PLMN-ID\ntype: object\nrequired:\n- imsi\n- plmnId\nproperties:\nimsi:\ntype: string\npattern: '^[0-9]{5,15}$'\nplmnId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PlmnId'\n\n# SIMPLE TYPES:\n\n\n# ENUMS:\n\nDeregistrationReason:\ndescription: The reason that triggers that the serving node needs to be deregistered by HSS\nanyOf:\n- type: string\nenum:\n- UE_INITIAL_AND_SINGLE_REGISTRATION\n- UE_INITIAL_AND_DUAL_REGISTRATION\n- EPS_TO_5GS_MOBILITY\n- type: string\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "A.5\tNhss_EE API",
+            "description": "openapi: 3.0.0\n\ninfo:\nversion: '1.2.0-alpha.3'\ntitle: 'Nhss_EE'\ndescription: |\nHSS Event Exposure.\n© 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n\nexternalDocs:\ndescription: 3GPP TS 29.563 HSS Services for Interworking With UDM, version 18.4.0\nurl: 'https://www.3gpp.org/ftp/Specs/archive/29_series/29.563/'\n\nservers:\n- url: '{apiRoot}/nhss-ee/v1'\nvariables:\napiRoot:\ndefault: https://example.com\ndescription: apiRoot as defined in clause 4.4 of 3GPP TS 29.501.\n\nsecurity:\n- {}\n- oAuth2ClientCredentials:\n- nhss-ee\n\npaths:\n/{ueId}/ee-subscriptions:\npost:\nsummary: Subscribe\noperationId: CreateEeSubscription\ntags:\n- EE Subscription (Collection)\nparameters:\n- name: ueId\nin: path\ndescription: IMSI of the subscriber or the identity of a group of UEs\nrequired: true\nschema:\n$ref: '#/components/schemas/UeIdOrGroupId'\nrequestBody:\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/EeSubscription'\nrequired: true\nresponses:\n'201':\ndescription: Expected response to a valid request\ncontent:\napplication/json:\nschema:\n$ref: '#/components/schemas/CreatedEeSubscription'\nheaders:\nLocation:\ndescription: >\nContains the URI of the newly created resource, according to the structure:\n{apiRoot}/nhss-ee/v1/{ueId}/ee-subscriptions/{subscriptionId}\nrequired: true\nschema:\ntype: string\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\ndescription: Forbidden\ncontent:\napplication/problem+json:\nschema:\n$ref: '#/components/schemas/EeSubscriptionError'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'501':\ndescription: Not Implemented\ncontent:\napplication/problem+json:\nschema:\n$ref: '#/components/schemas/EeSubscriptionError'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\ncallbacks:\neventOccurrenceNotification:\n'{request.body#/callbackReference}':\npost:\nrequestBody:\nrequired: true\ncontent:\napplication/json:\nschema:\ntype: array\nitems:\n$ref: '#/components/schemas/MonitoringReport'\nminItems: 1\nresponses:\n'204':\ndescription: Successful Notification response\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\n/{ueId}/ee-subscriptions/{subscriptionId}:\ndelete:\nsummary: Unsubscribe\noperationId: DeleteEeSubscription\ntags:\n- Delete EE Subscription\nparameters:\n- name: ueId\nin: path\ndescription: IMSI of the subscriber or the identity of a group of UEs\nrequired: true\nschema:\n$ref: '#/components/schemas/UeIdOrGroupId'\n- name: subscriptionId\nin: path\ndescription: Id of the EE Subscription\nrequired: true\nschema:\ntype: string\nresponses:\n'204':\ndescription: Successful response\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\npatch:\nsummary: Patch\noperationId: UpdateEeSubscription\ntags:\n- Update EE Subscription\nparameters:\n- name: ueId\nin: path\ndescription: IMSI of the subscriber or the identity of a group of UEs\nrequired: true\nschema:\n$ref: '#/components/schemas/UeIdOrGroupId'\n- name: subscriptionId\nin: path\ndescription: Id of the EE Subscription\nrequired: true\nschema:\ntype: string\nrequestBody:\ncontent:\napplication/json-patch+json:\nschema:\ntype: array\nitems:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PatchItem'\nminItems: 1\nrequired: true\nresponses:\n'200':\ndescription: Expected response to a valid request\ncontent:\napplication/json:\nschema:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/PatchResult'\n'204':\ndescription: Successful response\n'307':\n$ref: 'TS29571_CommonData.yaml#/components/responses/307'\n'308':\n$ref: 'TS29571_CommonData.yaml#/components/responses/308'\n'400':\n$ref: 'TS29571_CommonData.yaml#/components/responses/400'\n'401':\n$ref: 'TS29571_CommonData.yaml#/components/responses/401'\n'403':\n$ref: 'TS29571_CommonData.yaml#/components/responses/403'\n'404':\n$ref: 'TS29571_CommonData.yaml#/components/responses/404'\n'411':\n$ref: 'TS29571_CommonData.yaml#/components/responses/411'\n'413':\n$ref: 'TS29571_CommonData.yaml#/components/responses/413'\n'415':\n$ref: 'TS29571_CommonData.yaml#/components/responses/415'\n'429':\n$ref: 'TS29571_CommonData.yaml#/components/responses/429'\n'500':\n$ref: 'TS29571_CommonData.yaml#/components/responses/500'\n'502':\n$ref: 'TS29571_CommonData.yaml#/components/responses/502'\n'503':\n$ref: 'TS29571_CommonData.yaml#/components/responses/503'\ndefault:\ndescription: Unexpected error\n\ncomponents:\nsecuritySchemes:\noAuth2ClientCredentials:\ntype: oauth2\nflows:\nclientCredentials:\ntokenUrl: '{nrfApiRoot}/oauth2/token'\nscopes:\nnhss-ee: Access to the nhss-ee API\n\nschemas:\n\n# STRUCTURED TYPES:\n\nEeSubscription:\ndescription: >\nIt represents the request body of the subscription request sent to HSS, containing data\nrelated to the subscription to be created, such as the SCEF, Monitoring Configurations and\nreporting options\ntype: object\nrequired:\n- callbackReference\nproperties:\ncallbackReference:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'\nscefId:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DiameterIdentity'\nscefDiamRealm:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DiameterIdentity'\nmonitoringConfigurations:\ndescription: >\nA map (list of key-value pairs where ReferenceId serves as key) of\nMonitoringConfigurations\ntype: object\nadditionalProperties:\n$ref: '#/components/schemas/MonitoringConfiguration'\nminProperties: 1\nsupportedFeatures:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'\nreportingOptions:\n$ref: '#/components/schemas/ReportingOptions'\nmtcProviderInformation:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation'\nexternalIdentifier:\ntype: string\n\nCreatedEeSubscription:\ndescription: >\nIt represents the response body of the subscription request, containing data of the created\nsubscription in the HSS\ntype: object\nrequired:\n- eeSubscription\nproperties:\neeSubscription:\n$ref: '#/components/schemas/EeSubscription'\neventReports:\ntype: array\nitems:\n$ref: '#/components/schemas/MonitoringReport'\nminItems: 1\nfailedMonitoringConfigs:\ndescription: >\nA map (list of key-value pairs where referenceId converted from integer to string serves\nas key; see clause 6.4.6.3.2) of FailedMonitoringConfiguration\ntype: object\nadditionalProperties:\n$ref: '#/components/schemas/FailedMonitoringConfiguration'\nminProperties: 1\ncurrentStatusNotAvailableList:\ntype: array\nitems:\n$ref: '#/components/schemas/EventType'\nminItems: 1\nsupportedFeatures:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'\n\nFailedMonitoringConfiguration:\ndescription: >\nContains the event type and failed cause of the failed Monitoring Configuration\nin the EE subscription\ntype: object\nrequired:\n- eventType\n- failedCause\nproperties:\neventType:\n$ref: '#/components/schemas/EventType'\nfailedCause:\n$ref: '#/components/schemas/FailedCause'\n\nMonitoringConfiguration:\ndescription: >\nContains data for each Monitoring Configuration (such as event type, etc.) and\nthe configuration data needed depending on each event type\ntype: object\nrequired:\n- eventType\nproperties:\neventType:\n$ref: '#/components/schemas/EventType'\nimmediateFlag:\ntype: boolean\nlocationReportingConfiguration:\n$ref: '#/components/schemas/LocationReportingConfiguration'\nlossConnectivityConfiguration:\n$ref: '#/components/schemas/LossConnectivityConfiguration'\nreachabilityForDataConfiguration:\n$ref: '#/components/schemas/ReachabilityForDataConfiguration'\npduSessionStatusCfg:\n$ref: '#/components/schemas/PduSessionStatusCfg'\nidleStatusInd:\ntype: boolean\ndefault: false\n\nMonitoringReport:\ndescription: Contains data for each Monitoring Event Report sent by the HSS\ntype: object\nrequired:\n- referenceId\n- eventType\n- timeStamp\nproperties:\nreferenceId:\n$ref: 'TS29503_Nudm_EE.yaml#/components/schemas/ReferenceId'\neventType:\n$ref: '#/components/schemas/EventType'\ntimeStamp:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\nreport:\n$ref: '#/components/schemas/Report'\n\nReportingOptions:\ndescription: >\nContains the different reporting options associated to a given subscription created in HSS\ntype: object\nproperties:\nmaxNumOfReports:\n$ref: '#/components/schemas/MaxNumOfReports'\nexpiry:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\nreportPeriod:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DurationSec'\n\nReport:\ndescription: Contains data for a given Monitoring Event Report\ntype: object\nproperties:\nreachabilityForSmsReport:\n$ref: '#/components/schemas/ReachabilityForSmsReport'\nreachabilityForDataReport:\n$ref: '#/components/schemas/ReachabilityForDataReport'\nlossConnectivityReport:\n$ref: 'TS29503_Nudm_EE.yaml#/components/schemas/LossConnectivityReport'\nlocationReport:\n$ref: 'TS29503_Nudm_EE.yaml#/components/schemas/LocationReport'\npdnConnectivityStatReport:\n$ref: 'TS29503_Nudm_EE.yaml#/components/schemas/PdnConnectivityStatReport'\n\nReachabilityForSmsReport:\ndescription: >\nContains data for a Monitoring Event Report, specific to the 'Reachability For SMS'\nevent type\ntype: object\nrequired:\n- reachabilitySmsStatus\nproperties:\nreachabilitySmsStatus:\ntype: boolean\nmaxAvailabilityTime:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\n\nReachabilityForDataReport:\ndescription: >\nContains data for a Monitoring Event Report, specific to the 'Reachability For Data'\nevent type\ntype: object\nrequired:\n- reachabilityDataStatus\nproperties:\nreachabilityDataStatus:\ntype: boolean\nmaxAvailabilityTime:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'\n\nLossConnectivityConfiguration:\ndescription: >\nContains data needed for a Monitoring Configuration, specific to the 'Loss of Connectivity'\nevent type\ntype: object\nproperties:\nmaxDetectionTime:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DurationSec'\n\nLocationReportingConfiguration:\ndescription: >\nContains data needed for a Monitoring Configuration, specific to the 'Location Reporting'\nevent type\ntype: object\nrequired:\n- currentLocation\nproperties:\ncurrentLocation:\ntype: boolean\naccuracy:\n$ref: '#/components/schemas/LocationAccuracy'\n\nReachabilityForDataConfiguration:\ndescription: >\nContains data needed for a Monitoring Configuration, specific to the 'Reachability for Data'\nevent type\ntype: object\nanyOf:\n- required: [ maximumLatency ]\n- required: [ maximumResponseTime ]\n- required: [ suggestedPacketNumDl ]\nproperties:\nmaximumLatency:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DurationSec'\nmaximumResponseTime:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/DurationSec'\nsuggestedPacketNumDl:\ntype: integer\nminimum: 1\n\nPduSessionStatusCfg:\ndescription: >\nContains data needed for a Monitoring Configuration, specific to the 'PDN Connectivity\nStatus' event type\ntype: object\nproperties:\napn:\n$ref: 'TS29571_CommonData.yaml#/components/schemas/Dnn'\n\nEeSubscriptionErrorAddInfo:\ndescription: Additional Information for EE Subscription Error.\ntype: object\nproperties:\nfailedMonitoringConfigs:\ndescription: >\nA map (list of key-value pairs where referenceId converted from integer to string serves\nas key; see clause 6.4.6.3.2) of FailedMonitoringConfiguration\ntype: object\nadditionalProperties:\n$ref: '#/components/schemas/FailedMonitoringConfiguration'\nminProperties: 1\n\nEeSubscriptionError:\ndescription: EE Subscription Error.\nallOf:\n- $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'\n- $ref: '#/components/schemas/EeSubscriptionErrorAddInfo'\n\n# SIMPLE TYPES:\n\nImsi:\ndescription: IMSI of the UE\ntype: string\npattern: '^(imsi-[0-9]{5,15})$'\n\nUeIdOrGroupId:\ndescription: Contains the UE identifier or the Group Identifier of the UE\ntype: string\npattern: '^(imsi-[0-9]{5,15}|extgroupid-[^@]+@[^@]+|.+$)'\n\nMaxNumOfReports:\ndescription: Maximum number of events to be reported for events in a given subscription\ntype: integer\nminimum: 1\n\n# ENUMS:\n\nEventType:\ndescription: Type of Monitoring Event\nanyOf:\n- type: string\nenum:\n- LOSS_OF_CONNECTIVITY\n- UE_REACHABILITY_FOR_DATA\n- UE_REACHABILITY_FOR_SMS\n- LOCATION_REPORTING\n- COMMUNICATION_FAILURE\n- AVAILABILITY_AFTER_DDN_FAILURE\n- PDN_CONNECTIVITY_STATUS\n- type: string\n\nLocationAccuracy:\ndescription: Location accuracy used in the 'Location Reporting' event type\nanyOf:\n- type: string\nenum:\n- CELL_LEVEL\n- RAN_NODE_LEVEL\n- TA_LEVEL\n- type: string\n\nFailedCause:\ndescription: >\nIndicates the Failed cause of the failed Monitoring Configuration in the EE subscription\nanyOf:\n- type: string\nenum:\n- MTC_PROVIDER_NOT_ALLOWED\n- MONITORING_NOT_ALLOWED\n- UNSUPPORTED_MONITORING_EVENT_TYPE\n- UNSUPPORTED_MONITORING_REPORT_OPTIONS\n- UNSPECIFIED\n- type: string\n\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "B.1\tGeneral",
+            "description": "This Annex lists withdrawn API versions of the APIs defined in the present specification. 3GPP TS 29.501 [5] clause 4.3.1.6 describes the withdrawal of API versions.\n\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 124,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

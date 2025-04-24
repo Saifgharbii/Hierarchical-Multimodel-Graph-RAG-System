@@ -1,0 +1,419 @@
+{
+    "document_name": "23700-64-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document is a technical report which identifies the enhancements to the application architecture to support V2X services specified in 3GPP TS 23.286 [6] considering advanced V2X services like V2P, ToD, etc and edge computing deployments for V2X services.\nThe study takes into consideration the existing stage 1 and stage 2 work within 3GPP related to advanced V2X services and edge computing in 3GPP TS 22.185 [2], 3GPP TS 22.186 [3], 3GPP TS 23.285 [5], 3GPP TS 23.287 [7], 3GPP TS 23.548 [10] and 3GPP TS 23.558 [11].\nThe study also takes into consideration the V2X application specific services and recommendations specified by automotive industry bodies (5GAA, ETSI ITS and AECC) related to advanced V2X services for VRU, Haptics/ToD and edge deployments for V2X services.\nThis document will provide recommendations for normative work.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 22.185: \"Service requirements for V2X services; Stage 1\".\n[3]\t3GPP TS 22.186: \"Enhancement of 3GPP support for V2X scenarios; Stage 1\".\n[4]\t3GPP TS 23.222: \"Functional architecture and information flows to support Common API Framework for 3GPP Northbound APIs\".\n[5]\t3GPP TS 23.285: \"Architecture enhancements for V2X services\".\n[6]\t3GPP TS 23.286: \"Application layer support for Vehicle-to-Everything (V2X) services; Functional architecture and information flows\".\n[7]\t3GPP TS 23.287: \"Architecture enhancements for 5G System (5GS) to support Vehicle-to-Everything (V2X) services\".\n[8]\t3GPP TS 23.288: \"Architecture enhancements for 5G System (5GS) to support network data analytics services\".\n[9]\t3GPP TS 23.436: \"Procedures for Application Data Analytics Enablement Service\".\n[10]\t3GPP TS 23.548: \"5G System Enhancements for Edge Computing; Stage 2\".\n[11]\t3GPP TS 23.558: \"Architecture for enabling Edge Applications\".\n[12]\t3GPP TR 23.700-36: \"Study on Application Data Analytics Enablement Service\".\n[13]\tETSI TS 103 300-2: \" Intelligent Transport Systems (ITS); Vulnerable Road Users (VRU) awareness; Part 2: Functional Architecture and Requirements definition; Release 2\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tDefinitions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\nThe terms and definitions as specified in 3GPP TS 23.286 [6] apply.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. \nAn abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nBSM\tBasic Safety Message\nCAM\tCooperative Awareness Message\nCPM\tCollective Perception Message\nDENM\tDecentralized Environmental Notification Message\nV2P\tVehicle-to-Pedestrian\nV2X\tVehicle-to-Everything\nVAE\tV2X Application Enabler\nVAM\tVRU awareness message\nVASS\tV2X Application Specific Server\nVRU\tVulnerable Road Users\nVRUP\tVulnerable Road User Protection\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tKey issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tKey issue #1 – Support for high risk VRU zones",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "In VRU high risk zones, drivers (or automated vehicles) are delivered warnings when they enter a high risk area where there is a likely presence of many VRUs. The high-risk area can be static (e.g. a school during arrival and leaving times), or dynamic (e.g. a school bus or mobile ice-cream vendor). Dedicated roadside infrastructure could play a vital role in disseminating warning messages to VRUs and vehicles as well.\nOne issue at the scenario of the VRU high risk zone areas is how to configure the communication for the zones (which can include different types of interfaces and transmission modes) and how to translate the zone configurations (which are application driven) to network requirements and zone specific provisioning parameters considering both static and dynamic zones. Furthermore, another issue is how to assist the provisioning of zone specific parameters to the devices which can be potential VRUs and V2X-UEs and are expected to enter the zone.So, the key issue will study:\n-\tWhether and how to enhance VAE layer capabilities to support configuring the communication parameters for the zones.\n-\tWhether and how to enhance VAE layer capabilities to translate the zone configurations to network requirements and zone specific provisioning parameters.\n-\tWhether and how to assist the provisioning of zone specific parameters to the devices which can be potential VRUs and V2X-UEs.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tKey issue #2 – Support for V2P communications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Vehicle to Pedestrian (V2P) is one of the V2X scenarios, which enables communication between vehicles and pedestrians for both safety and traffic efficiency related applications. One of the key V2P applications is the Vulnerable Road User Protection (VRUP) as specified in ETSI TS 103 300-2 [13]. VRUP provides warning to vehicles of the presence of vulnerable road users, e.g. pedestrian or cyclist, in case of dangerous situation. In VRUP, multiple V2X messages need to be exchanged between the pedestrian and the vehicular UEs, originating by one or more applications. Such messages can be standard VRU messages (e.g. VAM) and other V2X messages (CAM, DENM, BSM, CPM) and can be exchanged via different transmission modes (unicast, groupcast, broadcast).\nIn such scenario, one challenge is that a pedestrian UE might have a lower battery capacity and limited radio capability, and therefore may have to work in a low power consumption mode, e.g. not being able to send/receive V2X messages with the same periodicity as a Vehicular UE. Continuous sending/receiving V2X messages by the pedestrian UE would affect UE power efficiency. A further challenge is that multiple applications related to VRU may be deployed, which may have differentiated traffic/QoS requirements as well as transmission/reception schedules.\nThe VAE layer may provide support functionality for enabling V2P applications, by consolidating the V2P application requirements and aligning the communication traffic pattern with the PC5 QoS setting and the AS layer configurations (e.g. DRX cycles).\nSo, the key issue will study:\n-\tWhether and how the VAE layer can support the V2P communications considering the UE situation (e.g. low battery power, weak radio signals)?\n-\tWhether and how the VAE layer can coordinate the alignment of the communication traffic patterns with the PC5 QoS setting and the AS layer configurations (e.g. DRX cycles)?\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.3\tKey issue #3 – V2X service deployment in edge data network",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The distributed deployment models for VAE layer are specified in clause 7.2.2 of 3GPP TS 23.286 [6]. It is possible that both VAE server and V2X application specific servers are deployed in the edge data network. Several industry bodies like 5GAA and AECC have studied the deployments of V2X services in edge computing domain.\nThe edge enabler architecture is specified in 3GPP TS 23.558 [11] which supports Edge Application Servers (EAS) deployed at EDN with enabler capabilities like Application Context Relocation.\nIt is required to investigate the impact of edge deployments of V2X application architecture considering the Edge enabler architecture. The following open issues can be studied:\na.\tWhether and how V2X application architecture supports the edge enabler architecture specified in 3GPP TS 23.558 [11].\nb.\tInvestigate the the impact on V2X enabler services for edge deployments.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.4\tKey issue #4 – Enhancement to support non-simultaneous multiple service providers control for advanced V2X services",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Some capabilities (e.g. session oriented services) are specified in 3GPP TS 23.286 [6] which supports advanced V2X services (e.g. ToD service) controlled by a V2X application specific server operated by a V2X service provider. It is possible that a host vehicle can be controlled by multiple V2X service providers in different regions. Example: A host vehicle may be controlled by V2X service provider X in normal driving zone region and by V2X service provider Y in remote parking zone region. The multiple service providers may be utilizing the VAE services to support their ToD services. It can be investigated whether and how VAE services (e.g. Session oriented services) can support non-simultaneous multiple V2X service provider control for advanced V2X services (e.g. ToD).\nThe following open issues can be studied:\na.\tWhether and how V2X enabler services (e.g. session oriented services) can support non-simultaneous multiple V2X service provider control for advanced V2X services.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.5\tKey issue #5 – Usage of network analytics",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Exposure capabilities for various network analytics information (e.g. DN performance analytics) is specified in 3GPP TS 23.288 [8] via NWDAF (at network layer) and 3GPP TR 23.700-36 [12] via SEAL ADAE service (at application layer).\nSome capabilities (e.g. session oriented services) are specified in 3GPP TS 23.286 [5] which supports ToD service controlled by a V2X application specific server operated by a V2X service provider. These services require very good and stable network performance for successful service operation. It is hence required to study how network analytics (e.g. performance information or performance predictions) can be used to enhance the VAE capabilities which support advanced V2X services.\nThe following open issue can be studied:\na.\tWhether and how V2X enabler services (e.g. session oriented services, V2X message delivery) can be enhanced to utilize the network analytics services specified in 3GPP TS 23.288 [8] and 3GPP TS 23.436 [9].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.6\tKey issue #6 – Enhanced network monitoring to support advanced V2X services",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For advanced V2X scenarios the communication service situation is very important. The V2X UE should be able to choose the communication services (e.g. Uu or PC5) with another V2X UE or a group of V2X UEs considering the network situation towards the V2X UE(s) and/or the proximity of the V2X UEs within which the V2X UEs can communicate.\nIn 3GPP TS 23.286 [6] clause 9.7, a V2X UE can subscribe for the network situation monitoring events in an area of interest. Once the V2X UE receives notification, it can further decide to switch between different modes of operations for V2X communications. However, it does not support network situation monitoring events for a specific V2X UE or a group of V2X UEs as required for advanced V2X applications (e.g. ToD, platooning).\nThe open issue for the study is:\na.\tHow to enhance the network monitoring procedures considering specific V2X UE information or group of V2X UE(s) information?\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tArchitectural requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "[AR-5.1-a] The V2X application architecture shall be able to support the V2X applications and V2X enabler services deployments in edge data network.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tVRU zone configuration requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tDescription",
+                            "text_content": "This subclause specifies the VRU zone configuration related requirements.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tRequirements",
+                            "text_content": "[AR-5.2.2-a] The VAE capabilities shall support VRU zone configurations (e.g. distribution of VRU zone related configuration information) to the relevant V2X UEs.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tV2P communications requirements",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tDescription",
+                            "text_content": "This subclause specifies the V2P communications related requirements.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tRequirements",
+                            "text_content": "[AR-5.3.2-a] The VAE capabilities shall provide mechanisms (e.g. configurations) to support V2P communications.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tSolutions",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tSolution #1 - VAE support for Energy Efficient V2P communications",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.1.1\tSolution description",
+                            "text_content": "Vehicle to Pedestrian (V2P) is one of the V2X scenarios, which enables communication between vehicles and pedestrians for both safety and traffic efficiency related applications.  One of the key V2P applications is the Vulnerable Road User Protection (VRUP) as specified in ETSI TS 103 300-2 [13]. VRUP provides warning to vehicles of the presence of vulnerable road users, e.g. pedestrian or cyclist, in case of dangerous situation. In VRUP, multiple V2X messages need to be exchanged between the pedestrian and the vehicular UEs, originating by one or more applications. Such messages can be standard VRU messages (e.g. VAM) and other V2X messages (CAM, DENM, BSM, CPM) and can be exchanged via different transmission modes (unicast, groupcast, broadcast).\nIn such scenario, one challenge is that a pedestrian UE might have a lower battery capacity and limited radio capability, and therefore may have to work in a low power consumption mode, e.g. not being able to send/receive V2X messages with the same periodicity as a Vehicular UE. Continuous sending/receiving V2X messages by the pedestrian UE would affect UE power efficiency. A further challenge is that multiple applications related to VRU may be deployed, which may have differentiated traffic/QoS requirements as well as transmission/reception schedules.\nThe VAE layer may provide support functionality for enabling V2P applications, by consolidating the V2P application requirements and aligning the communication traffic pattern with the PC5 QoS setting and the AS layer configurations (e.g. DRX cycles). Such alignment may be in the form of triggering the update of QoS / AS layer configuration based on application requirement (procedure is shown in clause 6.1.1.2.1 for client-triggered alignment and in clause 6.1.1.2.2 for VAE-server triggered alignment).\nThe different procedures correspond to different solution variants to address different use cases.\nClause 6.1.1.2.1 provides a VAE-client enabled V2P communication schedule configuration which could be applicable to off-network deployments and could be triggered by the application of the V2X UE (e.g. if UE battery drops while the V2P session is ongoing) based on prior configuration from the VAE server.\nOn the other hand, clause 6.1.1.2.2 provides a VAE server enabled V2P communication schedule configuration, which could be applicable to use cases where the VAE server after receiving the VASS requirement, it configures/aligns the schedules for the V2X UEs (e.g. can be used within VRU zones to avoid flooding/interference by continuous sending/receiving V2X messages).\nThis subclause describes the procedures for V2P communication schedule configuration and update support by the VAE layer. This includes an off-network (VAE client enabled) and on-network (VAE server enabled) procedures for V2P communication schedule configuration.\nFigure 6.1.1.2.1-1 illustrates the procedure where the VAE client configures the traffic schedule for V2P communications based on application requirement; and triggers the translation to an AS layer/ QoS configurations update.\nPre-conditions:\n1.\tVASS or VASC has subscribed to VAE layer to provide support for V2P communication.\n2.\tVAE client 1 has been configured by the VAE server to configure the communication schedule for V2P communications.\n3.\tV2X UE #1 and V2X UE#2 have discovered each other based upon V2P service and established a unicast connection using the V2X Service oriented Layer-2 link establishment procedure as specified in 3GPP TS 23.287 [7] clause 6.3.3.1\nThe figure depicts a V2P communication schedule configuration for a VAE client, enabling V2P communication. The schedule includes the VAE client's V2P communication schedule, which is enabled, and the V2P communication schedule of the VAE client's V2P communication partner. The schedule is configured to ensure efficient and reliable communication between the VAE client and its V2P communication partner.\nFigure 6.1.1.2.1-1: VAE client - enabled V2P communication schedule configuration\n1.\tOn V2X UE #1, the V2X application specific client 1 and 2 provide the V2X application requirements to the VAE client, including delay requirements, etc., for the PC5 communication. Here, this V2X Application specific client 1 may be requesting a groupcast communication and V2X Application specific client 2 may be requesting a unicast communication.\n2.\tV2X UE #1's VAE client consolidates requirements from both applications and generates a UE level transmission schedule, so that the off-duration is maximized. The determination of the transmission schedule can be determined based on the configuration on the UE (energy efficiency target) and the service KPIs.\n3.\tV2X UE #1's VAE client sends a V2P communication schedule update message which includes the generated UE level transmission schedule to other VAE client 2 (in vicinity, or in service-based group), in order to negotiate the optimal transmission pattern or inform on the expected reception pattern.\n4.\tV2X UE #2's VAE client either accepts or provides its transmission cycle or negotiates the traffic pattern.\n5.\tVAE clients of V2X UE #2 may optionally send a V2P communication schedule update message indicating the expected/generated UE #2 transmission pattern.\n6.\tV2X UE #1's and V2X UE #2's VAE clients (VAE clients are deployed at V2X application layer), provide the updated traffic pattern as V2X Application Requirements to V2X layer, also including QoS requirements such as delay requirements, priority, etc., for the PC5 communication for both applications, as specified in 3GPP TS 23.287 [7] clause 5.4.1.1. VAE client may also indicate the transmission mode (unicast, groupcast) per application. The V2X/AS layer of UE #1 and #2 applies/configures the DRX schedule for the corresponding V2X communication, based on the updated traffic pattern per cast type and/or destination Layer ID (as specified in 3GPP TS 23.287 [7] clause 5.9).\nEditor's Note: It is FFS to identify possible dependencies to RAN2/SA2 for the consideration of the Tx Profile which may impact the details of step 6.\n7.\tVAE clients of V2X UEs #1 and #2 may send a notification to the V2X application specific client(s) to inform on the communication traffic pattern.\nFigure 6.1.1.2.2-1 illustrates the procedure where the VAE server configures the traffic schedule for V2P communications based on application requirement; and communicates with the VAE clients to trigger the translation to an AS layer/ QoS configurations update.\nPre-conditions:\n1.\tVASS has subscribed to VAE server to provide support for V2P communication.\n2.\tVAE client of V2X UE #1 and V2X UE #2 are registered with VAE server.\nThe figure depicts a VAE server-enabled V2P communication schedule configuration, illustrating the scheduling of V2P communication between VAE servers. The configuration includes the VAE server, V2P communication, and VAE server-to-server communication. The figure highlights the importance of V2P communication in VAE systems, as it enables efficient and reliable communication between VAE servers.\nFigure 6.1.1.2.2-1: VAE server - enabled V2P communication schedule configuration\n1.\tOne or more V2X application specific servers provide the V2X application requirements to the VAE server, including application QoS requirements for the V2P applications and provisioning policies and parameters for the PC5 communication.\n2.\tThe VAE server generates a communication schedule for one or more involved V2X UEs, so that the off duration is maximized. The determination of the transmission schedule can be determined based on the V2P service KPIs. Such communication schedule may include the transmission/reception schedule for the application messages and may also include the DRX cycle configuration for out of coverage and groupcast/broadcast communications.\n3.\tThe VAE server sends a V2P communication schedule configuration message to the involved VAE clients. This includes the generated UE level transmission schedules and may also include the DRX cycle configuration for PC5 communication in out of coverage and groupcast/broadcast modes.\n4.\tV2X UE #1's and V2X UE #2's VAE clients provide the updated traffic pattern as V2X Application Requirements to V2X layer, also including QoS requirements such as delay requirements, priority, etc., for the PC5 communication for both applications, as specified in 3GPP TS 23.287 [7] clause 5.4.1.1. VAE client may also indicate the transmission mode (unicast, groupcast) per application. The V2X layer of UEs #1 and #2 process the requirements from VAE client and generates a UE level DRX schedule. The AS layer of UE #1 and #2 applies/configures the DRX schedule for the corresponding V2X communication.\n5.\tVAE clients of V2X UEs #1 and #2 may send an acknowledgement to the VAE server.\n6.\tVAE clients of V2X UEs #1 and #2 may send a notification to the V2X application specific client(s) to inform on the communication traffic pattern.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.1.2\tSolution evaluation",
+                            "text_content": "In this solution, the VAE layer provides a support functionality for enabling V2P applications, by consolidating the V2P application requirements and aligning the communication traffic pattern with the PC5 QoS setting and the AS layer configurations (e.g. DRX cycles). Such alignment may be in the form of triggering the update of QoS/AS layer configuration based on application requirement.\nThere are two solution variants captured in this solution:\n-\tClient-triggered alignment in clause 6.1.1.2.1, has possible dependency on the SA2 work (for the consideration of the Tx Profile which may impact the details of step 6). Also, for this variant the relationship of service KPIs and energy efficiency target (as discussed in step 2) requires further consideration during the normative phase.\n-\tVAE-server triggered alignment in clause 6.1.1.2.2) has no dependencies to SA2 and is a viable technical solution to address key issue#2.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.2\tSolution #2 - Support for VRU zone configuration and operation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.2.1\tSolution description",
+                            "text_content": "This procedure supports the configuration and provisioning of the VRU high risk zone at the VAE layer based on a request from the VASS / VAL server.\nFigure 6.2.1.1-1 illustrates the procedure where the VAE client configures the VRU zone based on application requirement; and supports the run-time operation based on an expected UE entrance to the zone.\nPre-conditions:\n1.\tVASS or VASC has subscribed to VAE layer to provide support for V2P communication.\nThe figure depicts a VAL server, which is a key component in the VRU (Virtual Reality User Interface) system. The VAL server is triggered by a VRU zone creation event, which is a crucial step in the VRU system's operation. The figure shows the server's interface, including the VRU zone creation process, the VRU zone, and the VRU zone's status. The VAL server is responsible for managing the VRU zone and ensuring that the VRU zone is properly created and functioning.\nFigure 6.2.1.1-1: VAL server - triggered VRU zone creation\n1.\tThe V2X application specific server sends a subscription request to manage the creation and configuration of a new high-risk area zone, and requires the VAE server support to translate it to a network-related zone configuration and provisioning to the UEs within the requested area. The subscription request consists of the Requestor ID (VASS ID or App ID), the VRU zone type (based on the scenario, which type of UEs are to be considered), geographical area, time validity and initiation trigger, types of supported messages and requirements (e.g. requirements for VAM messages), application QoS requirement dedicated for the VRU zone (e.g. URLLC like), whether it is a dynamic or static zone, etc.\nNOTE:\tIf the zone is dynamically changing based on an event (e.g. school bus mobility / route), such mobility/route information will be provided to the VAE server, or the VASS needs to provide new configuration every time the configuration changes.\n2.\tThe VAE server processes the request and stores the subscription. The processing includes the translation of the zone requirement of step 1 and determines a set of network-related zone parameters which indicates the configuration parameters for example: the topological area for the zone (cell IDs, TAs), the QoS requirements within the zone, the exposure requirements within the zone, the value added services required within the zone (e.g. location tracking, V2X message bundling), the transmission modes (unicast, groupcast, broadcast) within the applications within the zone, the interface selection within the zone (Uu, PC5), the use of application relaying or not, whether the zone is dynamic or not, and if it is dynamic to take into account the configuration adaptation every time the configuration changes or to provide the planning (e.g. based on a school bus route) to allow the network to adapt the configuration.\n3.\tThe VAE sever sends a VRU zone creation subscription response to VASS.\n4.\tThe VAE server initiates the SEAL LMS service for location tracking both for static location and dynamically changing location for all UEs within the VRU zone area. VAE server obtains and initiates tracking the V2X UEs location from the location management server 1 as specified in 3GPP TS 23.434 (clause 9.3.12).\n5.\tThe VAE server sends a notification message including the VRU zone configuration parameters. Parameters can be based on the parameters provided in step 2. This configuration will be provided to the V2X-UEs (and pedestrians) within the area that will be covered by the VRU zone, and will also indication when the zone will be activated, for how much time and if the zone configuration will be dynamically changing (e.g. where a school bus moves) and parameters related to the dynamicity (as discussed in steps 1, 2).\n6.\tThe VAE server keeps monitoring the VRU zone area based on monitoring SEAL LMS events. This includes events on whether a UE (e.g. UE1) is moving in or out a target area of interest.\nThe VAE server translates the UE1 mobility event to an expected entrance to a VRU high risk zone, and based on the configuration of the zone, it identifies when an action needs to be taken and when to communicate this with the involved application entities.\n7.\tThe VAE server alerts the VASS that the UE1 is expected to move to the VRU zone area in X time and provides also information on its mobility as well as the UE1 capabilities (e.g. VRU capable). The notification / alert message may include the UE ID (GPSI, or external ID), the group ID (if it is a group of UEs), an expected start time of VRUP, an expected duration, expected mobility/speed/direction, etc. Alternatively, when UE is leaving the zone, a message can be sent to VASS to notify that the UE1 is expected to leave this area and the VRUP is no longer needed.\n8.\tThe VAE server may also alert the VAE client (if deployed at the UE1) that it is expected to enter the VRU zone and requests the confirmation for allowing the push of VRU messages within the zone. Such notification / request will include zone area information and configuration parameters. Alternatively, when UE is leaving the zone, a message can be sent to VAE client to notify that the UE1 is expected to leave this area and the VRUP is no longer needed.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.2.2\tSolution evaluation",
+                            "text_content": "This solution addresses KI #1 on zone configuration and provisioning for VRUP applications. The solution supports the configuration and provisioning of the VRU high risk zone at the VAE layer based on a request from the VASS / VAL server. This solution enables distribution of zones and notifications related to those zones, but any usage of this information is up to the application as this information is not directly used by the VAE layer. This solution is technically viable.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.3\tSolution #3 - Deployment of V2X application layer with Edge Enabler Layer",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.3.1\tSolution description",
+                            "text_content": "This solution corresponds to key issue#3. The architecture for edge enabler layer is specified in 3GPP TS 23.558 [11]. This clause describes the deployment of V2X application layer services at Edge Data Network by utilizing the Edge Enabler Layer services.\nFigure 6.3.1-1 illustrates the edge deployment example for the V2X application layer. For simplicity, the reference points between enabler server and 5GS are omitted, and the reference points for inter-enabler server communication in the same enabler layer are also omitted. At UE side, V2X Application Specific client(s) and VAE client interact with the Edge Enabler Client (EEC) via EDGE-5 reference point. In an Edge Data Network (EDN), V2X Application Specific Server and VAE server assume the role of EAS (Edge Application Server) and interacts with the Edge Enabler Server (EES) via EDGE-3 reference point, for instance, to register its profile into the EES. Upon service provisioning, the EEC interacts with the EES via EDGE-1 reference point, for instance, to discover V2X Application Specific Server(s) and VAE Server and further the EEC provides the discovered V2X Application Specific Server(s) and VAE server to the V2X Application Specific client and VAE client respectively.\nThe deployment of V2X application layer with the Edge Enabler Layer in Figure 6.3.1 illustrates the integration of V2X technology into the existing network infrastructure, enabling seamless communication between vehicles and other road users. The figure showcases the Edge Enabler Layer, which is responsible for managing the V2X communication, ensuring efficient data transmission and processing. The deployment of the V2X application layer with the Edge Enabler Layer demonstrates the seamless integration of V2X technology into the existing network infrastructure, enabling communication between vehicles and other road users.\nFigure 6.3.1-1: Deployment of V2X application layer with Edge Enabler Layer\nIn an EDN, there could be several EES(s) provided by the same or different ECSP. The V2X application specific server(s) and VAE server shall be able to discover and register into an appropriate EES. If CAPIF is used, this can be done by utilizing the AEF serving area and/or the AEF location as described in 3GPP TS 23.222 [4]; otherwise, local configuration of the EES endpoint may be used.\nNote that the services provided by EES over EDGE-3 are not re-exposed by the VAE server or SEAL servers to the V2X application specific server but are directly consumed by the SEAL servers, VAE server and V2X application specific server(s).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.3.2\tSolution evaluation",
+                            "text_content": "This solution addresses key issue#3 for \"Whether and how V2X application architecture supports the edge enabler architecture specified in 3GPP TS 23.558 [11]\" and provides a solution for the deployment of V2X application layer with Edge Enabler Layer.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.4\tSolution #4 - UE initiated request for VRU zones",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.4.1\tSolution description",
+                            "text_content": "A cyclist training for long-distance competitions is vulnerable to road collisions during the entire training route. The cyclist would like to create a protection zone that tracks their route for use as part of the services provided by the V2X service provider. The V2X infrastructure, including edge enabler servers, receives a request to create a protection zone and dynamically update the protection zone to follow the route of the cyclist. When an incoming vehicle is detected, the infrastructure can alert the vehicle and provision V2P communication configurations to enable the vehicle to communicate with the cyclist.\nThe following solution is provided for key issues #1 and 2 and complements solution #1. This solution also enhances solution #2 by providing an option to employ the VAE layer to receive protection zone configuration requests from the UE and notify VASS. The two solutions can coexist in any deployment, with the VRU application determining whether solution#4 may be used based on a policy specifying whether:\na.\tUse of VAE service for protection zone notification is allowed; and\nb.\tProtection zone requests initiated by UEs are allowed.\nPre-conditions:\n1.\tVASS has subscribed to VAE server to provide support for V2P communication.\n2.\tVAE clients of V2X cyclist UE and vehicular UE are registered with VAE server.\n3.\tThe VRU application (at VASS and Application client at the cyclist UE) are pre-configured so that:\na.\tUse of VAE service for protection zone notification is allowed; and\nb.\tProtection zone requests be initiated by UEs are allowed.\nNOTE 1:\tPre-condition 3 allows VAE server to determine that use of solution#4 mechanism is allowed.\nThe figure depicts a user request for a protection zone, which is a crucial component in a 5G network. The request is made by an UE (User Equipment) to the network, indicating the need for additional security measures to protect the network from potential threats. The figure illustrates the process of the UE making the request, with the network responding to the request and providing necessary information to the UE. This process is crucial for ensuring the security and reliability of the 5G network.\nFigure 6.4.1.2-1: UE request for protection zone\n1.\tOptionally, an application client on a cyclist UE makes a request to the VAE client to create a protection zone.\n2.\tA VAE client sends a request to a VAE server to create a protection zone. The request may include V2X Service ID, UE ID, application ID, UE location and location reporting configuration, destination location, request for dynamic protection zone, V2P communication configuration, user consent for using user application context information, user activity, active applications, etc.\n3.\tThe VAE server sends a request to a VASS to authorize the creation of the protection zone for the cyclist UE and includes the information provided by the cyclist UE.\n4.\tThe VASS authorizes the request and creates a protection zone based on information received from the VAE server. The VASS provides the VAE server with the protection zone and V2P communication configuration.\n5.\tThe VASS responds with an authorization response to the VAE server. The response includes the status of the authorization, the protection zone type, geographical area, time validity and initiation trigger, types of supported messages and requirements (e.g. requirements for VAM messages), application QoS requirement dedicated for the protection zone (e.g. URLLC like), whether it is a dynamic or static zone, an expiration for the protection zone, V2P communication configuration information, etc.\n6.\tThe VAE server configures subscriptions to obtain UE location from the 5G system. Sources of UE mobility information may come from SEAL LMS servers, EES, an analytics function (e.g. from ADAES or NWDAF), and the 5G core network. For V2X UEs location obtained from the location management server, the procedures specified in 3GPP TS 23.434 (clause 9.3.12) apply.\n7.\tThe VAE server sends a response message to the cyclist UE with a status for the request, the information of the protection zone, and updated V2P communication configuration. The VAE server may also subscribe to receive notifications from the VAE client about application context events such as user activity, active applications, application notifications, navigation information, etc.\n8.\tOptionally, the VAE client returns a response to the application client.\n9.\tThe VAE server receives UE mobility information from the 5G network and/or from the UEs. The cyclist UE and vehicular UE may also provide application context information to the VAE server, such as battery level, user activity, active applications, and routing information from a navigation app. The battery level of the UE may help the VAE server determine the V2P communication configuration to provide to UEs in the protection zone. For example, if the battery level of a cyclist UE is low, the VAE server may provide V2P communication configurations to vehicular UEs to align with when the cyclist UE is able to receive V2P communication. Alternatively, the VAE server can provide V2P communication parameters to vehicular UEs to communicate with nearby UEs instead.\n10.\tThe VAE server updates the protection zone based on information the VAE server has obtained about the cyclist UE. For example, the protection zone may be updated due to a change in UE location. In addition, the VAE server may broadcast the new protection zone information to all the UEs in the protection zone.\n11.\tThe VAE server detects that a vehicular UE is now in the updated protection zone and sends a notification alert to the vehicular UE and includes the V2P communication configuration for use by the vehicular UE to communicate directly with the cyclist UE.\n6.4.2\tSolution evaluation\nThis solution addresses KI #1 and aspects of KI #2 and provides a procedure for a VAL client on a cyclist UE to request the creation of a dynamic protection zone via the VAE client. The VAE server checks with a VASS to authorize the request and if authorized, the VASS creates a protection zone based on the information provided by the VAE client. After the creation of the protection zone, the VAE server monitors the UE’s mobility information and updates the protection zone accordingly. If the VAE server detects the presence of other vehicular UEs in the updated protection zone, the VAE server sends a notification alert to the vehicular UE and includes V2P communication configuration information.\nFurther agreement is needed for the scenario of this solution where UEs can initiate VRU protection zone creation.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.5\tSolution #5 - Enhanced network monitoring",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.5.1\tSolution description",
+                            "text_content": "This solution corresponds to key issue#6. The network monitoring subscription and notification procedures specified in clause 9.7 of 3GPP TS 23.286 [6] are enhanced to allow a V2X UE for subscription and notification of network situation monitoring events considering a single V2X UE or a group of V2X UE(s) in addition to area information.\nIn step 1, the network monitoring information subscription request from VAE client to VAE server can include target V2X UE ID(s) in addition to area information.\nIn step 2, the VAE server is enhanced to initiate network monitoring considering the requested information in step 1.\nIn step 1, the network monitoring of VAE server with 5GC is enhanced to include configuring and receiving network monitoring events for V2X UE ID(s) also as per the subscription.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.5.2\tSolution evaluation",
+                            "text_content": "This is a viable technical solution to address key issue#6.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "6.6\tSolution #6 – Network situation enhanced with analytics",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "6.6.1\tSolution description",
+                            "text_content": "This solution corresponds to key issue#5. The network situation monitoring procedures specified in clause 9.7 and clause 9.20 of 3GPP TS 23.286 [6] are enhanced to utilize the SEAL's ADAE services for application performance analytics and prediction.\nIn clause 9.7.3, step 2 of 3GPP TS 23.286 [6], the VAE server is enhanced to utilize the SEAL's ADAE service for application performance analytics and prediction.\nIn clause 9.7.4, step 1 of 3GPP TS 23.286 [6], the network monitoring also includes the SEAL's ADAE service. In step 2, the VAE server processes the information obtained from SEAL's ADAE service corresponding to the application session. In step 3, the VAE server provides the notification to the V2X UE about both network situation and the predicted network situation.\nIn clause 9.20.3, step 2 of 3GPP TS 23.286 [6], the VAE server is enhanced to utilize the SEAL's ADAE service for application performance analytics and prediction.\nIn clause 9.20.4, step 1 of 3GPP TS 23.286 [6], the monitoring reports also includes the SEAL's ADAE service. In step 2, the VAE server processes the information obtained from SEAL's ADAE service corresponding to the application session. In step 3, the VAE server provides the service requirement adaptation notification request to V2X application specific server about both network situation and the predicted network situation to initiate any application session adaptation (e.g. session oriented service update or terminate).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "6.6.2\tSolution evaluation",
+                            "text_content": "This is a viable technical solution to address key issue#5 for supporting utilization of improved analytics.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7\tOverall evaluation",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The following subclauses contain an overall evaluation of the solutions presented in this technical report, and their applicability to the identified key issues.\n-\tClause 7.2 lists the solutions for the key issues including impact on other working groups that will need consideration.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.2\tKey issue and solution evaluation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "All the key issues and solutions specified in this technical report are listed in table 7.2-1. It includes the mapping of the key issues (clause 4) to the solutions and corresponding solution evaluations. Also it lists the impact on other working groups that will need consideration during the Release 18 normative phase.\nTable 7.2-1: Key issue and solution evaluation\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 7.2-1: Key issue and solution evaluation",
+                            "table number": 1,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.3\tOverall evaluation of key issue#1",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Key issue#1 on support for high risk VRU zones discussed the following open issues:\na.\tWhether and how to enhance VAE layer capabilities to support configuring the communication parameters for the zones.\nb.\tWhether and how to enhance VAE layer capabilities to translate the zone configurations to network requirements and zone specific provisioning parameters.\nc.\tWhether and how to assist the provisioning of zone specific parameters to the devices which can be potential VRUs and V2X-UEs.\nSolution#2 provides a solution for network initiated VRU zone configuration and operation. It addresses the open issues in a, b and c.\nSolution#4 provides a solution for UE initiated configuration and operation of protection zones.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.4\tOverall evaluation of key issue#2",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Key issue#2 on support for V2P communications discussed the following open issues:\na.\tWhether and how the VAE layer can support the V2P communications considering the UE situation (e.g. low battery power, weak radio signals)?\nb.\tWhether and how the VAE layer can coordinate the alignment of the communication traffic patterns with the PC5 QoS setting and the AS layer configurations (e.g. DRX cycles)?\nSolution#1 provides a solution for VAE support for energy efficicent V2P communications. It addresses the open issues in a and b. The solution#1 is dependent on SA2 and RAN2.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.5\tOverall evaluation of key issue#3",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Key issue#3 on V2X service deployment on edge data network discussed the following open issues:\na.\tWhether and how V2X application architecture supports the edge enabler architecture specified in 3GPP TS 23.558 [11].\nb.\tInvestigate the the impact on V2X enabler services for edge deployments.\nSolution#3 addresses the open issue a of key issue#3 which further enables the V2X service deployments to utilize edge enabler layer for V2X service deployments. No impact on V2X enabler services for edge deployments were identified as per open issue b.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.6\tOverall evaluation of key issue#4",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Key issue#4 on enhancement to support non-simultaneous multiple service providers control for advanced V2X services discussed the following open issues:\na.\tWhether and how V2X enabler services (e.g. session oriented services) can support non-simultaneous multiple V2X service provider control for advanced V2X services.\nNo solutions were proposed to address this key issue.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.7\tOverall evaluation of key issue#5",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Key issue#5 on usage of network analytics discussed the following open issues:\na.\tWhether and how V2X enabler services (e.g. session oriented services, V2X message delivery) can be enhanced to utilize the network analytics services specified in 3GPP TS 23.288 [8] and 3GPP TS 23.436 [9].\nSolution#6 provides a solution for usage of network analytics offered by ADAE. It addresses the open issue a.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.8\tOverall evaluation of key issue#6",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "Key issue#6 on enhanced network monitoring to support advanced V2X services discussed the following open issues:\na.\tHow to enhance the network monitoring procedures considering specific V2X UE information or group of V2X UE(s) information?\nSolution#5 provides a solution for enhanced network monitoring. It addresses the open issue a.\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tConclusions",
+            "description": "This technical report fulfills the objectives of the study on enhancements to application layer to support advanced V2X services like V2P, ToD, etc and edge computing deployments for V2X services. The study includes the following:\n1)\tIdentification of key issues (clause 4) and corresponding architecture requirements (clause 5) for enhanced V2X application enabler capabilities.\n2)\tIndividual solutions (clause 5) addressing the key issues.\n3)\tOverall evaluation (clause 7) of all the key issues and solutions.\nThe results from the study will be considered for follow-up normative work in Release 18 as follows:\n1)\tThe architecture requirements (in clause 5) will be considered as the basis for technical specification with necessary enhancements and additions;\n2)\tThe following key issues (clause 4) and individual solutions (clause 6) are considered to be the candidate solutions with necessary enhancements as appropriate, according to the overall evaluation (clause 7):\n-\tFor key issue#1, solution#2 is considered and solution#4 can be considered based on the agreement on the use of protection zones.\n- \tFor key issue#2, solution#1 is considered subjected to capabilities enabled by SA2 and RAN2.\n-\tFor key issue#3, solution#3 is considered.\n-\tFor key issue#4, there is no solution proposed.\n-\tFor key issue#5, solution#6 is considered.\n-\tFor key issue#6, solution#5 is considered.\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 2,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

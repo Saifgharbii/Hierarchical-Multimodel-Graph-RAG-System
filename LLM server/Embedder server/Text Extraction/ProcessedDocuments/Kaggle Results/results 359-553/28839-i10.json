@@ -1,0 +1,516 @@
+{
+    "document_name": "28839-i10.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\t\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\t\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\t\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\t\tindicates that something is possible\ncannot\t\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\t\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\t\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document studies the charging aspects for the support of Time Sensitive Networking based on requirements from TS 22.261 [2] and TS 22.104 [7] of 5G system and vertical domains, the architecture, functional and protocol to enable Time Sensitive Communication and Time Synchronization, described in TS 23.501 [3], TS 23.502 [4], TS 23.503 [5], TR 23.734 [6] and TS 24.519 [8].\nThe following are studied:\n-\tpossible charging scenarios and requirements for 5G System integration as a bridge in TSN network;\n-\tpossible charging scenarios and requirements for the Time Sensitive Communications and Time Synchronization service;\n-\tpossible new charging aspects for the following key items:\n-\tQoS requirements for TSN (e.g. support for TSC QoS Flows, QoS mapping from TSN QoS information to 5GS QoS profile);\n-\tEdge computing scenario support in TSN Transport (e.g. DS-TT and NW-TT);\n-\tcharging enhancement (e.g. new triggers) due to policy control for TSN traffic which may impact the charging;\n-\tpotential charging solutions for the above charging scenarios and requirements and taking in account TSN application requirements (e.g. instance survival time).\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 22.261: \"Service requirements for the 5G system; Stage 1\".\n[3]\t3GPP TS 23.501: \"System architecture for the 5G System (5GS); Stage 2\".\n[4]\t3GPP TS 23.502: \"Procedures for the 5G System (5GS); Stage 2\".\n[5]\t3GPP TS 23.503: \"Policy and charging control framework for the 5G System (5GS); Stage 2\".\n[6]\t3GPP TR 23.734: \"Study on enhancement of 5G System (5GS) for vertical and Local Area Network (LAN) services\".\n[7]\t3GPP TS 22.104: \"Service requirements for cyber-physical control applications in vertical domains\".\n[8]\t3GPP TS 24.519: \"5G System (5GS); Time-Sensitive Networking (TSN) Application Function (AF) to Device-Side TSN Translator (DS-TT) and Network-Side TSN Translator (NW-TT) protocol aspects; Stage 3.\"\n[9]\t3GPP TS 32.254: \"Telecommunication management; Charging management; Exposure function Northbound Application Program Interfaces (APIs) charging\".\n[10]\t3GPP TR 32.255: \"Telecommunication management; Charging management; 5G data connectivity domain charging; Stage 2\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].\nsurvival time: time that an application consuming a communication service may continue without an anticipated message. as defined in TS 22.261 [2]\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tSymbols",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the following symbols apply:\nN84\tReference point between TSCTSF and NEF\nN85\tReference point between TSCTSF and NEF\nN86\tReference point between TSCTSF and AF\nN87\tReference point between TSCTSF and UDR\nNtsctsf\t\tService-based interface exhibited by TSCTSF\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.3\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].\n5GS\t5G System\nASTI\tAccess Stratum TIme\nCNC\tCentralized Network Configuration\nDS-TT\tDevice-Side TSN Translator\nMNO\tMobile Network Operator\nNW-TT\tNetwork-Side TSN Translator\nTS\tTime Synchronization\nTSC\tTime Sensitive Communications\nTSCTSF\tTime Sensitive Communication and Time Synchronization function\nTSN\tTime-Sensitive Networking\nTSN AF\tTime Sensitive Networking Application Function\nTSN-SC\tTSN Service Customer\nTSN-SP\tTSN Service Provider\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tBackground",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "4.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "As per the requirements described in TS 22.261 [2] and TS 22.104 [7] about clock synchronization, time-sensitive communication, the corresponding description to support of integration with TSN and enablers for Time Sensitive Communications and Time Synchronization are specified in TS 23.501 [3], clause 5.27 and clause 5.28:\n-\t5GS acts as a Layer 2 Ethernet Bridge. When integrated with IEEE TSN network, 5GS functions acts as one or more TSN Bridges of the TSN network. The configuration of the 5GS Bridge can be provided by TSN AF and CNC.\n-\t5G System features that can be used independently or in combination to enable time-sensitive communication and time synchronization.\nFigure 4.1-1 describes the architecture for 5GS appearing as TSN bridge, specified in clause 4.4.8.2 of TS 23.501 [3] and figure 4.1-2 describes the architecture for AF requested support of Time Sensitive Communication and Time Synchronization, specified in clause 4.4.8.3 of TS 23.501 [3].\nThe figure depicts a system architecture view with 5G appearing as a TSN bridge, illustrating the interconnection of various components such as base stations (BSs), user equipment (UE), and scatterers. The diagram highlights the use of beamforming techniques to mitigate interference and the importance of redundancy paths for failover reliability.\nFigure 4.1-1: System architecture view with 5GS appearing as TSN bridge\nThe figure depicts a layered architecture to enable Time Sensitive Communication (TS) and Time Synchronization (TS) services, with key components including Time Sensitive Networking (TSN) nodes, Time Sensitive Networking (TSN) switches, and Time Sensitive Networking (TSN) routers. The architecture is designed to support high-speed data transmission and synchronization, ensuring reliable and efficient communication services.\nFigure 4.1-2: Architecture to enable Time Sensitive Communication and\nTime Synchronization services\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "4.2\tBusiness Roles for the TSN Charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "5G system as the 5GS Bridge to support the integration with TSN, the TSN charging can be built upon the business roles as following, related to 5G Bridge management, TSN traffic transmission over the PDU Session:\n-\tMobile Network Operator (MNO): provides 5GS system as the 5GS Bridge.\n-\tTSN Service Provider (TSN-SP): provides communication services for TSN Bridge use, e.g. enterprise.\n-\tTSN Service Customer (TSN-SC): consumes communication services for TSN Bridge use, e.g. end user, enterprise.\n5G System features that can be used independently or in combination to enable time-sensitive communication and time synchronization, the TSN charging can be built upon the business roles as following, related to the time synchronization configuration and capability, including the exposure of the time sensitive service, time-sensitive communication:\n-\tMobile Network Operator (MNO): provides the 5GS system features.\n-\tTS Service Provider (TS-SP): provides communication services for time-sensitive communication and time synchronization, e.g. enterprise.\n-\tTS Service Customer (TS-SC): consumes communication services for time-sensitive communication and time synchronization, e.g. end user, enterprise.\nIn deployments, there could be business scenarios where one or more of the business roles are supported by a single enterprise. The present document does not impose any restrictions to the possible deployment scenarios.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "5\tCharging scenarios and potential requirements",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tExposure of Time Synchronization",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.1.1\tGeneral",
+                            "text_content": "5G system supports time synchronization service that can be activated and deactivated by AF. In order to enable Time Sensitive Communication AF requested time sensitive communication and time synchronization services, The TSCTSF/NEF exposes 5GS capability to support Time Synchronization service. The TSCTSF (directly or via NEF) exposes the 5GS and/or UE availability and capabilities for synchronization service to the AF as described in TS 23.502 [4].\nExposure of time synchronization comprises the following capabilities:\n-\tThe AF may learn 5GS and/or UE availability and capabilities for time synchronization service.\n-\tThe AF controls activation and deactivation of the time synchronization service for the target UE(s).\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.2\tUse Case",
+                            "text_content": "TS-SC actives the time synchronization service via AF and the AF provides request to the NEF and the NEF forwards the parameters to the TSCTSF. The AF trusted by the operator provides these parameters to the TSCTSF directly.\nTS-SC de-actives the time synchronization service via AF and the AF provides request to the NEF and the NEF forwards the parameters to the TSCTSF or directly to TSCTSF.\nThe 5GS provides the requested 5GS and/or UE availability and capabilities for TS-SC.\nThe MNO may charge the TS-SC based on the exposure events for Time Synchronization Service.\nThe corresponding potential charging requirements and key issues: REQ-CH_ETS-01, REQ-CH_ ETS -02, and the Key Issue #1a, Key Issue #1b.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.3\tPotential charging requirements",
+                            "text_content": "REQ-CH_ETS-01: The 5GS charging system should support the Exposure of Time Synchronization charging per 5GS bridge.\nREQ-CH_ETS-02: The 5GS charging system should support the Exposure of Time Synchronization charging per TSN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.1.4\tKey issues",
+                            "text_content": "The following key issues are identified:\n-\tKey Issue #1a: Identify the charging scenarios and network function which can be support the Exposure of Time Synchronization charging.\n-\tKey Issue #1b: Identify the charging information which can be support the Exposure of Time Synchronization charging.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.2\tEnablers for Time Sensitive Communications and Time Synchronization",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.2.1\tGeneral",
+                            "text_content": "5G System features can be used independently or in combination to enable time-sensitive communication and time synchronization as specified in TS 23.501 [3], including the following:\n-\tDelay-critical GBR.\n-\tA hold and forward mechanism to schedule traffic.\n-\tTSC Assistance Information: describes TSC flow traffic characteristics.\n-\tTime Synchronization: describes how 5GS can operate as a PTP Relay.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.2\tUse Case",
+                            "text_content": "If the AF is considered to be trusted by the operator, the AF could interact directly with TSCTSF, using the same service as the NEF for Time Sensitive Communications and Time Synchronization. The TSCTSF (directly or via NEF) exposes the 5GS and/or UE availability and capabilities for synchronization service to the AF as described in clause 4.15.9.2 of TS 23.502 [4].\nFor supporting time synchronization service requested by TS-SC, the 5GS is configured to operate in one or multiple PTP instances, including the support for derivation of Uu time synchronization error budget.\nFor supporting transmission gate schedules requested by TS-SC, the 5GS Bridge is required to provide Bridge Delays for each port pair and traffic class of the 5GS bridge to an TSN system.\nFor supporting the TSC traffic characteristics requested by TS-SC, TSC QoS Flows use a Delay-critical GBR resource type and TSC Assistance Information.\nThe MNO may charge the TS-SC based on the enabler event for Time Synchronization Service.\nThe corresponding potential charging requirements and key issues: REQ-CH_ETS-01, and the Key Issue #2a, Key Issue #2b.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.3\tPotential charging requirements",
+                            "text_content": "REQ-CH_ENTS-01: The 5GS charging system should support the Exposure of Time Synchronization charging per TSN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.2.4\tKey issues",
+                            "text_content": "The following key issues are identified:\n-\tKey Issue #2a: Identify the charging scenarios and network function which can be support the enabler of Time Synchronization charging.\n-\tKey Issue #2b: Identify the charging information which can be support the enabler of Time Synchronization charging.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.3\tTime Sensitive Communication",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.3.1\tGeneral",
+                            "text_content": "The Time Sensitive Communication related features are supported based on AF request are described in TS 23.501 [3]. For each 5GS Bridge of a TSN network, the port on NW-TT support the connectivity to the TSN network, the ports on DS-TT side are associated to the PDU Session providing connectivity to the TSN network. The TSN End station/TSN Bridge support the Time Sensitive Communication over the 5GS bridge, via the DS-TT, UE, UPF, NW-TT based on the PDU session.\nThe granularity of the 5GS TSN bridge is per UPF for each network instance or DNN/S-NSSAI.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.2\tUse Case",
+                            "text_content": "During the PDU session, Time sensitive communication between the TSN End stations via DS-TT and NW-TT.\nIf the TSN AF determines that the TSN stream is for UE-Network communication. The UE1/DS-TT sends the traffic data from TSN stations via UPF/NW-TT to TSN network for the Time Sensitive Communication over TSN 5GS Bridge.\nIf the TSN AF determines that the TSN stream is for UE-UE communication (i.e. ingress and egress ports are in DS-TTs), the TSN AF divides the stream into one uplink stream and one or more downlink streams and provides the streams on AF Session basis to the PCF(s). The SMF applies local switching in order to enable UPF locally forward uplink stream from one PDU session as downlink stream in another PDU session.\nThe MNO may charge the UE based on the traffic data volume.\nThe MNO may charge the TSN based on the traffic data volume.\nThe corresponding potential charging requirements and key issues: REQ-CH_TSC-01, REQ-CH_TSC-02, REQ-CH_TSC-03 and the Key Issue #3a, Key Issue #3b.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.3\tPotential charging requirements",
+                            "text_content": "REQ-CH_TSC-01: The 5GS charging system should support the data connectivity charging for Time Sensitive Communication per 5GS bridge.\nREQ-CH_TSC-02: The 5GS charging system should support the data connectivity charging for Time Sensitive Communication per TSN.\nREQ-CH_TSC-03: The 5GS charging system should support the data connectivity charging for Time Sensitive Communication per UE based on the data volume.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.3.4\tKey issues",
+                            "text_content": "The following key issues are identified:\n-\tKey Issue #3a: Identify the charging scenarios and network function which can be support the Time Sensitive Communication charging.\n-\tKey Issue #3b: Identify the charging information which can be support the Time Sensitive Communication charging.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "5.4\t5GS Bridge Management and Configuration Charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "5.4.1\tGeneral",
+                            "text_content": "To support of integration with TSN, the 5GS acts as a Layer 2 Ethernet Bridge. The TSN AF in 5GS is responsible to receive the bridge information of 5GS Bridge from 5GS, as well as register or update this information to the TSN CNC. The bridge information of 5GS Bridge is used by the TSN network (via TSN CNC) to make appropriate management and configuration for the 5GS Bridge.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.2\tUse Case",
+                            "text_content": "When the TSN Service Customer (TSN-SC) initiates the TSN services, the 5GS reports the 5GS Bridge information and receiving the configuration via TSN AF to the TSN network, including but not limited to the following aspects specified in TS 23.501 [3].\n-\t5GS Bridge information.\n-\tCapabilities of 5GS Bridge.\n-\tTopology of 5GS Bridge.\n-\tTraffic classes and their priorities per port.\n-\tStream Parameters in order to support PSFP.\nThe MNO can charge TSN-SP for the interaction between the 5GS and TSN for the 5GS bridge management.\nThe corresponding potential charging requirements and key issues: REQ-CH_BC-01 and the Key Issue #4a, Key Issue #4b.\nBased on the agreement between the TSN Service Provider (TSN-SP) and MNO, the pre-configuration of 5GS bridge may be deployed in the PCF or UPF.\nWhen the TSN Service Customer (TSN-SC) initiates the TSN services, the TSN network can configure the 5GS Bridge via TSN AF or TSCTSF, including but not limited to the following aspects specified in TS 23.501 [3]:\n-\tBridge ID of 5GS Bridge.\n-\tConfiguration information of scheduled traffic on ports of DS-TT and NW-TT.\n-\tChassis ID of 5GS Bridge.\n-\tTraffic forwarding information.\n-\tConfiguration information per stream.\nThe MNO can charge TSN-SP for the interaction between the 5GS and TSN for the 5GS bridge configuration during PDU session.\nThe corresponding potential charging requirements and key issues: REQ-CH_BC-02and the Key Issue #4c, Key Issue #4d.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.3\tPotential charging requirements",
+                            "text_content": "REQ-CH_BC-01: The 5GS charging system should support the 5GS bridge management charging per 5GS bridge.\nREQ-CH_BC-02: The 5GS charging system should support the 5GS bridge configuration charging per 5GS bridge.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "5.4.4\tKey issues",
+                            "text_content": "The following key issues are identified:\n-\tKey Issue #4a: Identify the charging scenarios and network function which can be support the 5GS bridge management charging.\n-\tKey Issue #4b: Identify the charging information which can be support the 5GS bridge management charging.\n-\tKey Issue #4c: Identify the charging scenarios and network function which can be support the 5GS bridge configuration charging.\n-\tKey Issue #4d: Identify the charging information which can be support the 5GS bridge configuration charging.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6\tKey issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For supporting of the exposure of Time Synchronization charging, the key issues are identified from the corresponding use cases and potential charging requirements as described in clause 5.1.\nFor supporting of the Enablers for Time Sensitive Communications and Time Synchronization, the key issues are identified from the corresponding use cases and potential charging requirements as described in clause 5.2.\nFor supporting of the Time Sensitive Communication, the key issues are identified from the corresponding use cases and potential charging requirements as described in clause 5.3.\nFor supporting of 5GS Bridge Management and Configuration Charging, the key issues are identified from the corresponding use cases and potential charging requirements as described in clause 5.4.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tKey issues and solutions mapping",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The mapping between the key issues and the potential solutions are present as shown in table 6.2-1.\nTable 6.2-1: Mapping of Potential Solutions to Key Issues\n\n",
+                    "tables": [
+                        {
+                            "description": "Table 6.2-1: Mapping of Potential Solutions to Key Issues",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "7\tSolutions for Key issues",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "7.1\tSolution #1: Exposure of Time Synchronization Service via NEF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.1.1\tGeneral",
+                            "text_content": "The solution #1, addresses the Key Issue #1a and #1b, covering the REQ-CH_ETS-02.\nBased on the clause 4.15.9.2 Exposure of UE availability for Time Synchronization service, specified in TS 23.502 [4], the AF subscribes to notifications and to explicitly cancel a previous subscription for UE availability for time synchronization service, via the following NEF services:\n-\tNnef_TimeSynchronization create or update time synchronization configuration as well as to activate and deactivate the time synchronization service for which the NEF uses service operations provided by TSCTSF. Described in TS 23.501 [3], clause 5.27.1.8.\n-\tNnef_ASTI service to control the 5G access stratum time distribution configuration, for which the NEF uses service operations provided by TSCTSF. Described in TS 23.501 [3], clause 5.27.1.8.\n-\tNnef_AFsessionWithQoS to reserve resources for an AF session. Described in TS 23.503 [5], clause 6.1.3.22.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.2\tArchitecture description",
+                            "text_content": "The figure depicts a converged charging architecture for NEF (Non-Euclidean Field) systems, showcasing a simplified model of the charging process. The architecture includes a central charging station, multiple charging stations, and a charging line. The figure illustrates the flow of energy from the central station to the charging stations, with the charging line connecting all stations. The simplified model highlights the key components and their interactions, providing a clear understanding of the charging process in NEF systems.\nFigure 7.1.2-1: NEF converged charging architecture\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.1.3\tFlow description",
+                            "text_content": "Figure 7.1.3-1 describes the high-level charging procedure for Time Synchronization service based on NEF.\nThe figure depicts a network-based approach to AF request via NEF using PEC. It illustrates the process of requesting an AF through the use of a network-based approach, which involves the use of a network-based approach to request an AF. The figure also shows the process of requesting an AF through the use of a network-based approach, which involves the use of a network-based approach to request an AF. The figure also shows the process of requesting an AF through the use of a network-based approach, which involves the use of a network-based approach to request an AF. The figure also shows the process of requesting an AF through the use of a network-based approach, which involves the use of a network-based approach to request an AF. The figure also shows the process of requesting an AF through the use of a network-based approach, which involves the use of a network-based approach to request an AF. The figure also shows the process of requesting an AF through the use of a network-based approach, which involves the use of a network-based approach to request an AF. The figure also shows the process of requesting an AF through the use of a network-based approach, which involves the use of a network-based approach\nFigure 7.1.3-1: AF Request via NEF using PEC\n1.\tNEF receives a Time Synchronization Service Request from an AF, including a list of UE identities (GPSIs) or Groups of UEs identified by an External Group Identifier that further define the subset of the target UEs and AF-Service-Identifier, or DNN and optionally S-NSSAI which used to indicate the TS-SC. The subscriber may be identified by the External Group Identifier\n2.\tNEF performs the actions needed to fulfil the Time Synchronization Service Request.\n3.\tIf authorized, the NEF continues the Time Synchronization Service Request processing and sends the Time Synchronization Service Response to the AF.\n3ch-a.\tThe NEF sends Charging Data Request [Event] to CHF for the received Time Synchronization Service Request.\n3ch-b.\tThe CHF creates a CDR for this Time Synchronization Service Request.\n3ch-c.\tThe CHF acknowledges by sending Charging Data Response [Event] to the NEF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.2\tSolution #2: 5GS Bridge management and configuration charging via SMF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.2.1\tGeneral",
+                            "text_content": "The solution #2, addresses the Key Issue #4a and #4b, covering the REQ-CH_BC-01.\nBased on the clause 4.3.2 and clause 4.3.3 Non-roaming and Roaming with Local Breakout for UE requested PDU Session Establishment and PDU modification, specified in TS 23.502 [4], the SMF supports 5GS Bridge management and configuration.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.2\tArchitecture description",
+                            "text_content": "The figure depicts a converged charging architecture for smart micro-grid (SMG) systems, showcasing a simplified model of the charging infrastructure. The SMG system is designed to provide a reliable and efficient power supply to various devices, such as electric vehicles (EVs), residential and commercial buildings, and other critical loads. The architecture includes a combination of micro-inverters, battery storage systems, and smart meters to optimize energy consumption and manage the charging process. The figure illustrates the interconnection of various components, such as the micro-inverter, battery storage, and smart meters, to ensure a seamless and efficient power supply.\nFigure 7.2.2-1: SMF converged charging architecture\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.2.3\tFlow description",
+                            "text_content": "Figure 7.2.3-1 describes the high-level charging procedure for 5GS bridge information reporting based on SMF during the PDU session establishment.\nThe figure depicts a 5G bridge management and configuration charging scenario, where the SMF (Service Management Function) is utilized during the PDU (Physical Data Unit) session establishment. The bridge is equipped with various components such as the SMF, PDU, and other necessary equipment, all connected to the network infrastructure. The figure illustrates the process of managing and configuring the bridge, ensuring efficient and secure communication between the network and the devices.\nFigure 7.2.3-1: 5GS Bridge management and configuration charging via\nSMF during the PDU session establishment\n1-9.\tPDU session establishment charging, based on figure 5.2.2.2.2-1 of TS 32.255 [10] description. During SM Policy Association, the PCF may provide policy control request trigger for 5GS Bridge Information as defined in clause 6.1.3.5 of TS 23.503 [5]. The SMF may perform a Session Management Policy Modification procedure to report some event to the PCF that has previously subscribed.\n9ch-a.\tThe SMF sends Charging Data Request [Initial] to CHF for start of the PDU session.\n9ch-b.\tThe CHF open a CDR for this PDU session.\n9ch-c.\tThe CHF acknowledges by sending Charging Data Response [Initial] to the SMF. The CHF may provide charging related trigger for 5GS Bridge Information reporting. e.g. enable/disable the trigger or change the category.\n10-20.\tPDU session establishment, figure 4.3.2.2.1-1 in TS 23.502 [4] description.\n20ch-a.\tWhen the trigger for 5GS Bridge information available is armed, the SMF sends Charging Data Request [Update] to CHF, in order to support the integrate with IEEE TSN, if the 5GS Bridget information available is immediate report, with 5GS Bridge information (e.g. 5GS user-plane Node ID, port number of the DS-TT port, MAC address of the DS-TT Ethernet port for Ethernet PDU Session type, UE IP address for IP PDU Session type and UE-DS-TT Residence Time (if available) as provided by the UE).\n20ch-b.\tThe CHF updates the CDR for 5GS Bridget information available.\n20ch-c.\tThe CHF acknowledges by sending Charging Data Response [Update] to the SMF.\nFigure 7.2.3-2 describes the high-level charging procedure for 5GS bridge management and configuration charging based on SMF during the PDU session modification.\nThe figure depicts a 5G bridge management and configuration charging process during the PDU session modification. The bridge is equipped with various components such as the PDU, PDU-S, and PDU-T, which are essential for managing and configuring the network. The figure illustrates the process of charging the bridge during the PDU session modification, ensuring that the network remains operational and efficient.\nFigure 7.2.3-2: 5GS Bridge management and configuration charging\nduring the PDU session modification\n1.\tPDU session establishment as described in TS 23.502 [4] clause 4.3.2.2 UE Requested PDU Session Establishment.\n2.\tSMF establish the charging session for start of the PDU session.\n3.\tSMF receive the configuration of 5GS bridge from CNC.\n4.\tThe PDU session may be modified because the configuration request from CNC.\n4ch-a.\tThe SMF sends Charging Data Request [Update] to CHF for PDU session modification, with the trigger QoS change.\n4ch-b.\tThe CHF update a CDR for the configuration request from CNC.\n4ch-c.\tThe CHF acknowledges by sending Charging Data Response [Update] to the SMF.\n5.\tSMF reports the 5GS bridge information to the CNC.\n5ch-a.\tThe SMF sends Charging Data Request [Update] to CHF for the reporting of the configuration.\n5ch-b.\tThe CHF updates a CDR.\n5ch-c.\tThe CHF acknowledges by sending Charging Data Response [Update] to the SMF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.3\tSolution #3: 5GS Bridge management and configuration charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.3.1\tGeneral",
+                            "text_content": "The solution #3, addresses the Key Issue #4a, Key Issue #4b, Key Issue #4c and #4d, covering the REQ-CH_BC-01 and REQ-CH_BC-02.\nBased on the clause 6.2.32 of TS 23.501 [3], the TSN AF supports control plane translator functionality for the integration of the 5GS with a TSN network, this involves e.g.:\n-\t5GS Bridge management.\n-\tPort and bridge management information exchange with DS-TT or NW-TT.\n-\tInteractions with the CNC for 5GS Bridge configuration and reporting.\n-\tDetermining the TSC Assistance Container and TSN QoS information by mapping TSN Stream(s).\nTSN AF can support the 5GS Bridge management and configuration charging via the interactions with the CNC.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.3.2\tArchitecture description",
+                            "text_content": "The figure depicts a converged charging architecture for TSN (Time-Sensitive Networking) in a 5G network. It shows the various components involved in the charging process, including the charging station (CS), charging line (CL), and the charging device (CD). The architecture is designed to optimize energy efficiency and ensure reliable charging.\nFigure 7.3.2-1: TSN AF converged charging architecture\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.3.3\tFlow description",
+                            "text_content": "Figure 7.3.3-1 describes the high-level charging procedure for 5GS bridge management and configuration charging based on TSN AF interaction with the PCF and CNC. In this case, the TSN AF, PCF and CHF belong to the same MNO.\nThe figure depicts a 5G-based bridge management and configuration charging system, illustrating the use of TSN AF (Time-Sensitive Networking) for efficient charging of devices. The system includes a 5G base station (gNB) and a 5G network, with the 5GS bridge acting as a central hub for managing and configuring the network. The figure also shows the charging process, with TSN AF being used to ensure that the charging process is synchronized and efficient.\nFigure 7.3.3-1: 5GS bridge management and configuration charging via TSN AF\n1.\tTSN AF receives the 5GS bridge management and configuration from CNC. The capabilities of each port on UE/DS-TT side and UPF/NW-TT side are integrated as part of the configuration of the 5GS Bridge and are notified to TSN AF and delivered to CNC for TSN bridge registration and modification.\n2.\tTSN AF forwards the 5GS bridge management and configuration to PCF.\n2ch-a.\tThe TSN AF sends Charging Data Request [Event] to CHF for the request from the CNC about the 5GS bridge and configuration.\n2ch-b.\tThe CHF creates a CDR for the request from CNC.\n2ch-c.\tThe CHF acknowledges by sending Charging Data Response [Event] to the TSN AF.\n3.\tPCF sends the 5GS bridge management and configuration response to the TSN AF.\n4.\tTSN AF forwards the 5GS bridge management and configuration response to the CNC.\nNote: The different solution for having the CHF and TNS AF belonging to different enterprises is not addressed in the present document.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.4\tSolution #4: Time Sensitive Communications charging from TSN station to TSN station",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.4.1\tGeneral",
+                            "text_content": "The solution #4, addresses the Key Issue #3a and #3b, covering the REQ-CH_TSC-01, REQ-CH_TSC-02 and REQ-CH_TSC-03.\nBased on the clause 5.28.1 of TS 23.501[3], 5.28.1 5GS bridge management, there is only one PDU Session per DS-TT port for a given UPF. All PDU Sessions which connect to the same TSN network via a specific UPF are grouped into a single 5GS bridge.\nFor time sensitive communications, the following options are present in figure 7.4.1-1:\n-\tTSN Bridge/End station to TSN Bridge/End station: based on the PDU session 1B, UE1-DS_TT interact with the UPF-B/NW-TT. based on the PDU session 2B, UE2-DS-TT interact with the UPF-B/NW-TT. The UPF-B/NW-TT is responsible for the traffic communication between TSN Bridget/End stations. The SMF applies local switching in order to enable UPF locally forward uplink stream from one PDU session as downlink stream in another PDU session.\nThe figure depicts a schematic representation of the TSC (Time-Sensitive Coding) for TSN (Time-Sensitive Networking) signal to TSN station. The TSC is a technique used in TSN to ensure reliable transmission of data packets. The figure shows the TSC process, including the time-sensitive coding, which is used to ensure that the data packets are transmitted in the correct order. The TSC is an essential component of TSN, as it helps to ensure the reliability and integrity of the data transmission.\nFigure 7.4.1-1: TSC for TSN Station to TSN Station\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.4.2\tArchitecture description",
+                            "text_content": "The figure depicts a converged charging architecture for smart micro-grid (SMG) systems, illustrating the various components and their interconnections. The SMF system comprises a central micro-grid controller, a battery management system (BMS), and a charging station. The BMS manages the energy flow and ensures the safety of the system. The charging station is responsible for charging the batteries of the SMG system. The figure shows the various components and their interconnections, highlighting the importance of proper design and management in ensuring the reliability and efficiency of the SMG system.\nFigure 7.4.2-1: SMF converged charging architecture\n\"UE CCS\" performs charging functionalities for individual UEs, and includes in particular:\n-\tCHF exposing Nchf services associated to individual UEs.\n\"TSN CCS\" performs charging functionalities for TS-SC, and includes in particular:\n-\tCHF exposing Charging service(s) associated to the TS-SC.\nNchf interface is used for interaction between CHF (UE CCS) and CHF (TSN CCS).\nDeployments can choose to collocate TSN CCS with UE CCS.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.4.3\tFlow description",
+                            "text_content": "The traffic data of Time sensitive communication is transferred on the 5GS Bridge. The granularity of the 5GS TSN bridge is per UPF for each network instance or DNN/S-NSSAI. The bridge ID of the 5GS TSN bridge is bound to the UPF ID of the UPF.\nFigure 7.4.3.1-1 describes the high-level charging procedure for TSN Bridge/End station to TSN Bridge/End station of the Time Sensitive Communication based on SMF during the PDU session.\nThe figure depicts a TSC (Time-Sensitive Coding) protocol for a TSN (Time-Sensitive Networking) bridge/end station to TSN bridge/end station, illustrating the transmission of time-sensitive data. The TSC protocol is used to ensure the timely delivery of data packets, which is crucial for maintaining the reliability and efficiency of the network.\nFigure 7.4.3.1-1: TSC for TSN Bridge/End station to TSN Bridge/End station\n1-3.\tUE 1 and UE 2 performs the Time Sensitive Communications on the same 5GS bridge.\n4.\tUPF sends the usage reporting for the Time sensitive communications.\n5ch-a.\tThe SMF sends Charging Data Request [Initial] to the UE CHF for the TSN stream delivery with the 5GS Bridge id and related 5GS bridge information based on the trigger event specified in TS 32.255 [10].\n5ch-b.\tThe UE CHF creates a CDR.\n5ch-c.\tThe UE CHF acknowledges by sending Charging Data Response [Initial] to the SMF.\n6ch-a.\tIf traffic data volume is related to the TSC, for example 5G Bridge ID, the UE CHF sends Charging Data Request [Initial] to the TSN CHF for the TSN stream delivery with the 5GS Bridge id and related 5GS bridge information.\n6ch-b.\tThe TSN CHF creates a CDR for the start of the TSN stream.\n6ch-c.\tThe TSN CHF acknowledges by sending Charging Data Response [Initial] to the UE CHF.\nFor Time Sensitive Communications service, the message flows for the PDU session establishment, PDU session modification, PDU session release of 5G data connectivity charging would be the same as in clauses 5.2.2.13.2.1, 5.2.2.13.3.1 and 5.2.2.13.4.1 of TS 32.255 [10].\nTSN CCS or billing domain aggregates the volume usage per 5GS bridge via 5GS bridge Id for TSC based on the accumulation of usage reporting via the 5GS bridge.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.5\tSolution #5: Time Sensitive Communications charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.5.1\tGeneral",
+                            "text_content": "The solution #5, addresses the Key Issue #3a and #3b, covering the REQ-CH_TSC-01, REQ-CH_TSC-02 and REQ-CH_TSC-03.\nBased on the clause 5.28.1 in TS 23.501 [3], 5.28.15GS bridge management, there is only one PDU Session per DS-TT port for a given UPF. All PDU Sessions which connect to the same TSN network via a specific UPF are grouped into a single 5GS bridge.\nFor time sensitive communications, the following options are present in figure 7.5.1-1:\n-\tTSN Bridge/End station to the TSN System: based on the PDU session 1A, the UE1-DS_TT and TSN system transfers the TSN stream via the UPF-A/NW-TT on the 5GS Bridge A.\nThe figure depicts a TSC (Time-Sensitive Coding) system for a TSN (Time-Sensitive Networking) system, illustrating the encoding and decoding processes. The figure shows the TSC system in a 5G network, with the TSN system being a key component. The TSC system is responsible for encoding and decoding data packets, ensuring the efficient transmission of data over the network.\nFigure 7.5.1-1: TSC for TSN Station to TSN system\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.5.2\tArchitecture description",
+                            "text_content": "The figure depicts a converged charging architecture for smart micro-grid (SMG) systems, illustrating the interconnection of various components such as energy storage, distribution, and demand management. The SMG system is designed to optimize energy efficiency and reliability, with a focus on smart grid integration and energy storage solutions.\nFigure 7.5.2-1: SMF converged charging architecture\n\"UE CCS\" performs charging functionalities for individual UEs, and includes in particular:\n-\tCHF exposing Nchf services associated to individual UEs.\n-\tquota management for the individual UEs.\n\"TSN CCS\" performs charging functionalities for TS-SC, and includes in particular:\n-\tCHF exposing Charging service(s) associated to the TS-SC.\n-\tquota management for the TS-SC.\nNchf interface is used for interaction between CHF (UE CCS) and CHF (TSN CCS).\nDeployments can choose to collocate TSN CCS with UE CCS.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.5.3\tFlow description",
+                            "text_content": "The traffic data of Time sensitive communication is transferred on the 5GS Bridge. The granularity of the 5GS TSN bridge is per UPF for each network instance or DNN/S-NSSAI. The bridge ID of the 5GS TSN bridge is bound to the UPF ID of the UPF.\nFigure 7.5.3.1-1 describes the high-level charging procedure for TSN Bridge/End station to the TSN System of the Time Sensitive Communication based on SMF during the PDU session.\nThe figure depicts a TSC (Time-Sensitive Coding) system for a TSN (Time-Sensitive Networking) bridge/end station to TSN system. It illustrates the TSC algorithm, which is used to encode and decode data packets in a TSN network. The figure shows the TSC system in action, with the TSN bridge/end station receiving and transmitting data packets, and the TSN system decoding and encoding the packets. The figure also includes a TSN system with a TSN bridge/end station and a TSN system with a TSN bridge/end station, demonstrating the TSN system's ability to handle different network configurations.\nFigure 7.5.3.1-1: TSC for TSN Bridge/End station to TSN System\n1.\tSMF collects the usage of the TSN stream and reports the charging data information per UE per PDU session from UPF.\n2ch-a.\tThe SMF sends Charging Data Request [Initial, Requested Quota] to the UE CHF for the TSN stream delivery with the 5GS Bridge id and related 5GS bridge information based on the trigger event specified in TS 32.255[10].\n2ch-b.\tThe UE CHF creates a CDR.\n2ch-c.\tThe UE CHF acknowledges by sending Charging Data Response [Initial, Granted Quota] to the SMF.\n3ch-a.\tIf traffic data volume is related to the TSC, for example 5G Bridge ID, the UE CCS sends Charging Data Request [Initial] to TSN CHF for the request for the TSC on the 5GS bridge.\n3ch-b.\tThe TSN CHF creates a CDR for the request for TSC.\n3ch-c.\tThe TSN CHF acknowledges by sending Charging Data Response [Initial, Granted Quota] to the UE CHF.\nNOTE:\tIf the charged party is the individual UE, the step 3ch-a, 3ch-b and 3ch-c is not required.\nFor Time Sensitive Communications service, the message flows for the PDU session establishment, PDU session modification, PDU session release of 5G data connectivity charging would be the same as in clauses 5.2.2.13.2.1, 5.2.2.13.3.1 and 5.2.2.13.4.1 of TS 32.255 [10].\nThe UE CCS charges the volume usage per UE based on the charging information reporting for the UE.\nTSN CCS or billing domain aggregates the volume usage per 5GS bridge via 5GS bridge Id for TSC based on the accumulation of usage reporting per UE via the 5GS bridge.\nTSN CCS or billing domain aggregates the volume usage per TSN via UPF ID for TSC based on the accumulation of usage reporting per UE via the 5GS bridge of TSN.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.6\tSolution #6: Enablers for TSC and TS Charging",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.6.1\tGeneral",
+                            "text_content": "The solution #6, addresses the Key Issue #2a and #2b, covering the REQ-CH_ETS-01.\nBased on the clause 5.2.27 TSCTSF Services in TS 23.502 [4], TSCTSF Services and Service Operations are present in table 7.6.1-1.\nThe NF consumer AF invokes the TSCTSF service directly or via NEF based on the whether the AF is considered to be trusted by the operator or not.\nTable 7.6.1-1: NF Services provided by the TSCTSF\n\nFor the Time Synchronization service charging, if the NEF charging described in clause 7.1 solution #1 is supported, TSCTSF(CTF) charging is not required. If the AF is trusted party, interacting with TSCTSF without NEF, the TSCTSF(CTF) charging may be supported.\n",
+                            "figures_meta_data": [],
+                            "tables": [
+                                {
+                                    "description": "Table 7.6.1-1: NF Services provided by the TSCTSF",
+                                    "table number": 4,
+                                    "summary": "",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "7.6.2\tArchitecture description",
+                            "text_content": "The figure depicts a converged charging architecture for TSCTSF, which is a type of charging system. It shows the various components and their connections, including the charging station, the charging cable, and the power source. The architecture is designed to be efficient and reliable, with a focus on energy conservation and cost-effectiveness.\nFigure 7.6.2-1: TSCTSF converged charging architecture - CEF\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.6.3\tFlow description",
+                            "text_content": "If the AF is considered to be trusted by the operator, the TSCTSF sends the Ntsctsf_TimeSynchronization message directly to the AF. Figure 7.6.3.1-1 describes the high-level charging procedure for enablers for TSC and TS Charging based on TSCTSF.\nThe figure depicts a 5G-based bridge management charging system, showcasing the various components involved in managing charging for 5G-enabled devices. The system includes a 5G-enabled base station (gNB), a 5G-enabled user equipment (UE), and a 5G-enabled charging infrastructure (SMF). The figure highlights the importance of network slicing and SDN principles in managing charging for 5G-enabled devices.\nFigure 7.6.3.1-1: 5GS Bridge management charging via SMF\n1.\tTSCTSF receives a Time Synchronization Service Request/subscribe message from an AF, including a list of UE identities (GPSIs) or Groups of UEs identified by an External Group Identifier that further define the subset of the target UEs and AF-Service-Identifier, or DNN and optionally S-NSSAI which used to indicate the TS-SC.\n2.\tTSCTSF performs the actions needed to fulfil the Time Synchronization Service Request/subscribe and If authorized, the TSCTSF sends the Time Synchronization Service Response/notify message.\n2ch-a.\tThe TSCTSF sends Charging Data Request [Event] to CHF for the received Time Synchronization Service Request/subscribe.\n2ch-b.\tThe CHF creates a CDR for this Time Synchronization Service Request/subscribe.\n2ch-c.\tThe CHF acknowledges by sending Charging Data Response [Event] to the TSCTSF.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.7\tSolution #7: Exposure of Time Synchronization Service with trusted AF",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": [
+                        {
+                            "title": "7.7.1\tGeneral",
+                            "text_content": "The solution #7, addresses the Key Issue #1a and #1b, covering the REQ-CH_ETS-02.\nThe TS 23.501 [3] clause 4.4.8.3 states that if the AF is considered to be trusted by the operator, the AF could interact directly with TSCTSF. The TS 23.502 [4], clause 5.2.27, describes the TSCTSF services that either the AF or NEF can consume:\n-\tNtsctsf_TimeSynchronization_: create update and delete time synchronization configuration and to activate and deactivate the time synchronization service, further described in TS 23.501 [3], clause 5.27.1.8.\n-\tNtsctsf_ASTI_: control the 5G access stratum time distribution configuration, further described in TS 23.501 [3], clause 5.27.1.8.\n-\tNtsctsf_QoSandTSCAssistance_: specific QoS and provide assistance for handling traffic characterized by TSC QoS parameters, further described in TS 23.503 [5], clause 6.1.3.22.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.7.2\tArchitecture description",
+                            "text_content": "The figure depicts a converged charging architecture for electric vehicles (EVs), showcasing a simplified charging infrastructure with a focus on energy efficiency and cost-effectiveness. The architecture includes a centralized charging station, a network of charging points, and a charging management system. The figure illustrates the integration of various components, such as charging stations, power distribution, and communication networks, to ensure seamless and efficient charging for EVs.\nFigure 7.7.2-1: AF converged charging architecture\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        },
+                        {
+                            "title": "7.7.3\tFlow description",
+                            "text_content": "Figure 7.7.3-1 describes the AF session with required QoS update procedure, based on figure 4.15.6.6-1 TS 23.502 [4] description.\nThe figure depicts a communication scenario where an AF (Automatic Frequency Control) request is sent directly to the TSCTSF (Telecommunication Service Control Tower) using PEC (Power Exchange Control). The figure illustrates the process of frequency control in a telecommunications network, where the TSCTSF is responsible for managing the frequency spectrum and ensuring that the network operates within the desired range. The figure also shows the use of PEC, which is a method of frequency control that allows for the exchange of power between the network and the TSCTSF. This process is crucial for maintaining the stability and reliability of the telecommunications network.\nFigure 7.7.3-1: AF Request directly to TSCTSF using PEC\n1 to 4b.\tStart and determination that TSCTSF needs to be invoked, implying that steps 3a, 3b, 4a, 4b, 5, 6a, 7a, 7b, and 8 from figure 4.15.6.6-1 of TS 23.502 [4] are applicable.\n4ch-a.\tThe AF sends Charging Data Request [Event] to CHF for the received Ntsctsf_QoSandTSCAssistance_Create response.\n4ch-b.\tThe CHF creates a CDR.\n4ch-c.\tThe CHF acknowledges by sending Charging Data Response [Event] to the AF.\n6a to 6b.\tFrom figure 4.15.6.6a-1 of TS 23.502 [4].\n6ch-a.\tThe AF sends Charging Data Request [Event] to CHF for the received Ntsctsf_QoSandTSCAssistance_Notify.\n6ch-b.\tThe CHF creates a CDR.\n6ch-c.\tThe CHF acknowledges by sending Charging Data Response [Event] to the AF.\nNote: the subscriber id is not addressed in the present document.\n",
+                            "figures_meta_data": [],
+                            "tables": []
+                        }
+                    ]
+                },
+                {
+                    "title": "7.8\tSolution Evaluation",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The solution #1, solution #6 and solution #7 solve the key issue  #1a, #1b, #2a and #2b.\n-\tSolution #1 proposed to reuse the NEF functionality to support the time synchronization service exposure charging. The AF invokes the TSC and TS services via NEF when the AF is considered to not be trusted by the operator. For the trusted AF, the NEF cannot trigger the charging because the service interactions are directly from trusted AF to the TSCTSF.\n-\tSolution #6 proposed to add a new TSCTSF(CTF). The AF invokes the TSCTSF service directly or via NEF based on the whether the AF is considered to be trusted by the operator or not. The TSCTSF(CTF) charging can be supported for the enabler of TSC and TS charging when the AF is trusted party or not-trusted party.\n-\tSolution #7 proposed to trusted AF to support the times sensitive communication and time synchronization service invocation charging. If the AF is considered to not be trusted by the operator, the AF(CTF) does not work.\nThe solution #4 and solution #5 solve the key issue  #3a and  #3b.\n-\tSolution #4 proposed to reuse the SMF to identify TSC traffic and support data connectivity charging for TSN Station to TSN station\n-\tSolution #5 proposed to reuse the SMF to identify TSC traffic and support data connectivity charging for TSN Station to TSN system.\nThe solution #2 and solution #3 solve the key issue  #4a, #4b, #4c and #4d.\n-\tSolution #2 proposed to reuse the SMF for the 5GS bridge information and configuration reporting, which is different from the SMF current supported functionality, data connectivity. The SMF should distinguish the 5GS bridge management and configuration charging information from the usage reporting.\n-\tSolution #3 proposed to add a new TSN AF (CTF) for the 5GS bridge management and configuration charging reporting.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "7.9\tSolution conclusions",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For key issue #1a, #1b, #2a and #2b, the solution #1 and solution #6 proposed to be selected for normative work. The enhancement of NEF charging specified in TS 32.254 [9] for solution #1 is required.\nFor key issue #3a and #3b, the solution # 4 and #5 proposed to be selected for normative work. The enhancement of SMF charging specified in TS 32.255 [10] for solution #4 and #5 is required.\nFor key issue #4a, #4b, #4c and #4d, the solution #3 proposed to be selected for normative work.\nA new charging specification is concluded to specify the new consumer TSCTSF(CTF).\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "8\tConclusions and recommendations",
+            "description": "The following is concluded for normative work:\n-\tSolution #1 and solution #6 for key issues #1a, #1b, #2a and #2b per clause7.9 conclusion;\n-\tSolution #3 for key issues #3a and #3b per clause7.9 conclusion;\n-\tSolution #4 and solution #5 for key issues #4a, #4b, #4c and #4d, per clause7.9 conclusion.\nTA new charging specification is concluded to specify the new consumer TSCTSF(CTF).\nIt is recommended to incorporate the description for the normative work into the WID on Charging Aspects of TSN.\nThe high-level architecture and charging principle between UE CCS and TSN CCS involved in the CHF and CHF communication is covered by the WID B2B_CH.\n\n\n\n",
+            "summary": "",
+            "tables": [
+                {
+                    "description": "",
+                    "table number": 5,
+                    "summary": "",
+                    "name": ""
+                }
+            ],
+            "figures_meta_data": [],
+            "subsections": []
+        }
+    ]
+}

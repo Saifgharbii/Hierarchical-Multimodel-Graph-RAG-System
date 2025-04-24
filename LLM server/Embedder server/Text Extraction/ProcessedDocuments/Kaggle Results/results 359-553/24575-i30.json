@@ -1,0 +1,323 @@
+{
+    "document_name": "24575-i30.docx",
+    "content": [
+        {
+            "title": "Foreword",
+            "description": "This Technical Specification has been produced by the 3rd Generation Partnership Project (3GPP).\nThe contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:\nVersion x.y.z\nwhere:\nx\tthe first digit:\n1\tpresented to TSG for information;\n2\tpresented to TSG for approval;\n3\tor greater indicates TSG approved document under change control.\ny\tthe second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.\nz\tthe third digit is incremented when editorial only changes have been incorporated in the document.\nIn the present document, modal verbs have the following meanings:\nshall\tindicates a mandatory requirement to do something\nshall not\tindicates an interdiction (prohibition) to do something\nThe constructions \"shall\" and \"shall not\" are confined to the context of normative provisions, and do not appear in Technical Reports.\nThe constructions \"must\" and \"must not\" are not used as substitutes for \"shall\" and \"shall not\". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.\nshould\tindicates a recommendation to do something\nshould not\tindicates a recommendation not to do something\nmay\tindicates permission to do something\nneed not\tindicates permission not to do something\nThe construction \"may not\" is ambiguous and is not used in normative elements. The unambiguous constructions \"might not\" or \"shall not\" are used instead, depending upon the meaning intended.\ncan\tindicates that something is possible\ncannot\tindicates that something is impossible\nThe constructions \"can\" and \"cannot\" are not substitutes for \"may\" and \"need not\".\nwill\tindicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nwill not\tindicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document\nmight\tindicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nmight not\tindicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document\nIn addition:\nis\t(or any other verb in the indicative mood) indicates a statement of fact\nis not\t(or any other negative verb in the indicative mood) indicates a statement of fact\nThe constructions \"is\" and \"is not\" do not indicate requirements.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "1\tScope",
+            "description": "The present document specifies UE pre-configuration for multicast/broadcast services (MBS) in order to receive the data of multicast communication services and broadcast communication services as specified in 3GPP TS 23.247 [3].\nThe present document defines a management object (MO) that can be used to configure the UE with parameters related to reception of data of multicast communication services and broadcast communication services.\nThe MO is compatible with the OMA Device Management (DM) protocol specifications, version 1.2 and upwards, and is defined using the OMA DM device description framework (DDF) as described in the Enabler Release Definition OMA-ERELD-DM-V1_2 [8].\nThe MO consists of nodes and leaves conveying UE pre-configuration parameters used for multicast communication service and broadcast communication service selection and data reception.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "2\tReferences",
+            "description": "The following documents contain provisions which, through reference in this text, constitute provisions of the present document.\n-\tReferences are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.\n-\tFor a specific reference, subsequent revisions do not apply.\n-\tFor a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.\n[1]\t3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".\n[2]\t3GPP TS 23.003: \"Numbering, addressing and identification\".\n[3]\t3GPP TS 23.247: \"Architectural enhancements for 5G multicast-broadcast services; Stage 2\".\n[4]\t3GPP TS 26.346: \"Multimedia Broadcast/Multicast Service (MBMS); Protocols and Codecs\".\n[5]\t3GPP TS 38.101-1: \"NR; User Equipment (UE) radio transmission and reception; Part 1: Range 1 Standalone\".\n[6]\t3GPP TS 38.101-2: \"NR; User Equipment (UE) radio transmission and reception; Part 2: Range 1 Standalone\".\n[7]\tIETF RFC 3629: \"UTF-8, a transformation format of ISO 10646\".\n[8]\tOMA-ERELD-DM-V1_2: \"Enabler Release Definition for OMA Device Management\".\n[9]\t\"Unicode 6.3.0, Unicode Standard Annex #15; Unicode Normalization Forms\", September 2013. .\n[10]\t3GPP TS 24.501: \"Non-Access-Stratum (NAS) protocol for 5G System (5GS); Stage 3\".\n[11]\t3GPP TS 26.517: \"5G Multicast-Broadcast User Services; Protocols and Formats\".\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "3\tDefinitions of terms, symbols and abbreviations",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "3.1\tTerms",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "3.2\tAbbreviations",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].\nDNN\tData Network Name\nMBS\tMulticast/Broadcast Services\nS-NSSAI\tSingle Network Slice Selection Assistance Information\nTMGI\tTemporary Mobile Group Identity\nUSD\tUser Service Description\nSDP\tSession Description Protocol\n\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "4\tGeneral description",
+            "description": "A UE can support multicast and broadcast service (MBS) that is a point-to-multipoint service in which data is transmitted from a single source entity to multiple recipients either to all users in a broadcast service area (MBS broadcast communication), or to users in a multicast group (MBS multicast communication) as defined in 3GPP TS 23.247 [3]. The UE may support pre-configuration of information for services using MBS.\nIf the UE is pre-configured with information related to services using MBS, the UE can discover and receive data for services by using the provisioned configuration.\nThe UE pre-configuration contains a list of PLMNs in which for each PLMN, the following information is configured:\na)\tPLMN ID of the PLMN for which the configuration applies;\nb)\tRAN information based on NR-ARFCN on which the broadcast communication service is available;\nc)\tlist of TMGI, on which the broadcast communication service is available, each associated with user service description (USD) information (see 3GPP TS 26.517 [11]) for the MBS broadcast service. If TMGI and USD information for the MBS user service is configured for the PLMN selected for broadcast communication service, the UE uses the information configured therein to acquire the broadcast communication service;\nd)\tlist of TMGI, on which the service announcement for broadcast communication service is available along with the associated USD information (see 3GPP TS 26.517 [11]) for the MBS user service announcement service. If TMGI and USD information for MBS user service announcement is configured for a PLMN selected for broadcast communication service, the UE uses the information configured therein to acquire the service announcement for broadcast communication service; and\ne)\tdefault DNN and S-NSSAI pair for PDU sessions that can be used to join MBS multicast sessions (as specified in 3GPP TS 24.501 [10]) for which no other information is available.\n",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": []
+        },
+        {
+            "title": "5\tMulticast/Broadcast UE pre-configuration",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "5.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The UE pre-configuration MO is used to configure the UE with parameters related to MBS (see 3GPP TS 23.247 [3]).\nThe MO identifier is: urn:\toma:mo:ext-3gpp-UE-pre-config-MBS:1.0.\nEditor’s note:\tThe MO identifier needs to be registered.\nThe OMA DM access control list (ACL) property mechanism (see OMA-ERELD-DM-V1_2 [8]) may be used to grant or deny access rights to OMA DM servers in order to modify nodes and leaf objects of the UE pre-configuration MO.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "5.2\tUE pre-configuration MO structure",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The structure of the UE pre-configuration MO is shown in figure 5.2.1 and figure 5.2.1 below.\nThe figure depicts a UE pre-configuration MO, which is a crucial step in the network setup process. It shows the various configurations that can be applied to the UE, such as the number of antennas, power levels, and other parameters. This figure is essential for ensuring that the network is set up correctly and that the desired performance is achieved.\nFigure 5.2.1: UE pre-configuration MO\n\nThe figure depicts a network topology with various nodes, including a PLMNList node, which is a key component in a 5G network. The PLMNList node is responsible for managing the network's physical layer, ensuring efficient communication between the various nodes. The figure also includes a network diagram, illustrating the path of signals and the connections between nodes.\nFigure 5.2.2: PLMNList node\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        },
+        {
+            "title": "6\tUE pre-configuration MO parameters",
+            "description": "",
+            "summary": "",
+            "tables": [],
+            "figures_meta_data": [],
+            "subsections": [
+                {
+                    "title": "6.1\tGeneral",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This clause describes the nodes and leaves of the UE pre-configuration MO parameters.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.2\tNode: <X>",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This interior node acts as a placeholder for zero or one accounts for a fixed node.\n-\tOccurrence: ZeroOrOne\n-\tFormat: node\n-\tAccess Types: Get\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.3\t<X>/Name",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Name leaf is a name for the UE pre-configuration MO settings.\n-\tOccurrence: ZeroOrOne\n-\tFormat: chr\n-\tAccess Types: Get\n-\tValues: <User displayable name>\nThe User displayable name shall be represented by Unicode characters encoded as UTF-8 as specified in IETF RFC 3629 [7] and formatted using normalization form KC (NFKC) as specified in Unicode Standard Annex #15; Unicode Normalization Forms [9].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.4\t<X>/PLMNList",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The PlmnList node acts as a placeholder for per-PLMN configuration.\n-\tOccurrence: ZeroOrOne\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.5\t<X>/PLMNList/<X>/",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This interior node acts as a placeholder for UE pre-configuration parameters for one PLMN.\n-\tOccurrence: OneOrMore\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.6\t<X>/PLMNList/<X>/PLMNId",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The PLMNId leaf indicates a PLMN identity of the PLMN for which the UE pre-configuration parameters applies.\n-\tOccurrence: One\n-\tFormat: chr\n-\tAccess Types: Get, Replace\n-\tValues: <PLMN identity>\nThe format of the PLMN identity is specified in 3GPP TS 23.003 [2].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.7\t<X>/PLMNList/<X>/TMGIConfiguration",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The TMGIConfiguration node acts as a placeholder for the TMGI configuration in the PLMN identified by the PLMNId leaf.\n-\tOccurrence: One\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.8\t<X>/PLMNList/<X>/TMGIConfiguration/TMGIListForSA",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The TMGIListForSA node acts as a placeholder for the TMGI list and the MBS service announcement information for broadcast or multicast communication services.\n-\tOccurrence: ZeroOrOne\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.9\t<X>/PLMNList/<X>/TMGIConfiguration/TMGIListForSA/<X>",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This node acts as a placeholder for one or more TMGI and the MBS service announcement information for broadcast or multicast communication service.\n-\tOccurrence: OneOrMore\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.10\t<X>/PLMNList/<X>/TMGIConfiguration/TMGIListForSA/<X>/TMGI",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The TMGI leaf indicates a TMGI for the MBS service announcement information for broadcast or multicast communication service.\n-\tOccurrence: One\n-\tFormat: chr\n-\tAccess Types: Get, Replace\n-\tValues: <TMGI>\nThe format of the TMGI is specified in 3GPP TS 23.003 [2].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.11\t<X>/PLMNList/<X>/TMGIConfiguration/TMGIListForSA/<X>/USD",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The USD leaf provides MBS service announcement information for MBS service announcement service for broadcast or multicast communication service.\n-\tOccurrence: ZeroOrOne\n-\tFormat: chr\n-\tAccess Types: Get, Replace\n-\tValues: <USD>\nThe format of the USD is defined in 3GPP TS 26.517 [11].\nNOTE:\t3GPP TS 26.346 [4] specifies the session description and parameters based on SDP.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.12\t<X>/PLMNList/<X>/TMGIConfiguration/TMGIListForService",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The TMGIListForService node acts as a placeholder for the TMGI list and the MBS user service announcement information for the MBS service for broadcast communication services.\n-\tOccurrence: ZeroOrOne\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.13\t<X>/PLMNList/<X>/TMGIConfiguration/TMGIListForService/<X>",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This node acts as a placeholder for one or more TMGI and MBS user service announcement information for the MBS service for broadcast communication services.\n-\tOccurrence: OneOrMore\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.14\t<X>/PLMNList/<X>/TMGIConfiguration/TMGIListForService/<X>/TMGI",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The TMGI leaf indicates a TMGI for broadcast communication service.\n-\tOccurrence: One\n-\tFormat: chr\n-\tAccess Types: Get, Replace\n-\tValues: <TMGI>\nThe format of the TMGI is specified in 3GPP TS 23.003 [2].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.15\t<X>/PLMNList/<X>/TMGIConfiguration/TMGIListForService/<X>/USD",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The USD leaf provides the MBS user service announcement information for the MBS service corresponding to the broadcast communication service.\n-\tOccurrence: ZeroOrOne\n-\tFormat: chr\n-\tAccess Types: Get, Replace\n-\tValues: <USD>\nThe format of the USD is defined in 3GPP TS 26.517 [11].\nNOTE:\t3GPP TS 26.346 [4] specifies the session description and parameters based on SDP.\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.16\t<X>/PLMNList/<X>/RANInfo",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The RANInfo node acts as a placeholder for the RAN-specific information.\n-\tOccurrence: ZeroOrOne\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.17\t<X>/PLMNList/<X>/RANInfo/<X>",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This node acts as a placeholder for one or more NR ARFCN values of one or more MBS frequencies.\n-\tOccurrence: OneOrMore\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.18\t<X>/PLMNList/<X>/RANInfo/<X>/NRARFCN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The NRARFCN leaf indicates the NR-ARFCN value of one MBS frequency.\n-\tOccurrence: One\n-\tFormat: int\n-\tAccess Types: Get, Replace\n-\tValues: <NRARFCN>\nThe value of the NRARFCN is a 32-bit long unsigned integer. The format of the NR-ARFCN is specified in 3GPP TS 38.101-1 [5] and 3GPP TS 38.101-2 [6].\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.19\t<X>/PLMNList/<X>/PDUInfo",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The PDUInfo node acts as a placeholder for the PDU session-specific information.\n-\tOccurrence: ZeroOrOne\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.20\tVoid",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.21\t<X>/PLMNList/<X>/PDUInfo/<X>",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "This node acts as a placeholder for one or more PDU session-specific information values. PDU session-specific information consists of DNN and S-NSSAI pair for a PDU session that can be used to join MBS multicast session(s).\n-\tOccurrence: OneOrMore\n-\tFormat: node\n-\tAccess Types: Get, Replace\n-\tValues: N/A\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.22\t<X>/PLMNList/<X>/PDUInfo/<X>/DNN",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The DNN leaf indicates the DNN value of one PDU session associated with an MBS session.\n-\tOccurrence: One\n-\tFormat: chr\n-\tAccess Types: Get, Replace\n-\tValues: <DNN>\nThe format of the DNN is defined by 3GPP TS 23.003 [2] in clause 9A.\nEXAMPLE:\tmycompany.mnc012.mcc340.gprs\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.23\t<X>/PLMNList/<X>/PDUInfo/<X>/S-NSSAI",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The S-NSSAI leaf indicates the S-NSSAI value of one PDU session associated with an MBS session.\n-\tOccurrence: One\n-\tFormat: int\n-\tAccess Types: Get, Replace\n-\tValues: <S-NSSAI>\nThe format of the S-NSSAI is defined by 3GPP TS 23.003 [2] in clause 28.4.2\n",
+                    "tables": [],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                },
+                {
+                    "title": "6.24\t<X>/Ext",
+                    "description": "",
+                    "summary": "",
+                    "text_content": "The Ext is an interior node for where the vendor specific information about the UE pre-configuration MO is being placed (vendor meaning application vendor, device vendor etc.). Usually the vendor extension is identified by vendor specific name under the ext node. The tree structure under the vendor identifier is not defined and can therefore include one or more non-standardized sub-trees.\n-\tOccurrence: ZeroOrOne\n-\tFormat: node\n-\tAccess Types: Get\n-\tValues: N/A\nThis DDF is the standardized minimal set. A vendor can define its own DDF for the complete device. This DDF can include more features than this minimal standardized version.\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE MgmtTree PUBLIC \"-//OMA//DTD-DM-DDF 1.2//EN\"\n\"http://www.openmobilealliance.org/tech/DTD/dm_ddf-v1_2.dtd\">\n\n<MgmtTree>\n<VerDTD>1.2</VerDTD>\n<Man>--The device manufacturer--</Man>\n<Mod>--The device model--</Mod>\n\n<Node>\n<NodeName/>\n<DFProperties>\n<AccessType>\n<Get/>\n</AccessType>\n<Description>UE pre-configuration for MBS</Description>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<DFTitle>The UE pre-configuration management object (MO).</DFTitle>\n<DFType>\n<DDFName>urn:oma:mo:ext-3gpp-UE-pre-config-MBS:1.0</DDFName>\n</DFType>\n</DFProperties>\n\n<Node>\n<NodeName>Name</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n</AccessType>\n<DFFormat>\n<chr/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<DFTitle>User displayable name for the node.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n\n<Node>\n<NodeName>PLMNList</NodeName>\n<!-- The per-PLMN configuration starts here. -->\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<DFTitle>Per-PLMN configuration for MBS UE pre-configuration.</DFTitle>\n<DFType>\n<DDFName/>\n</DFType>\n</DFProperties>\n\n<Node>\n<NodeName></NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<OneOrMore/>\n</Occurrence>\n<DFType>\n<DDFName></DDFName>\n</DFType>\n</DFProperties>\n\n<Node>\n<NodeName>PLMNId</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<chr/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<DFTitle>PLMN identity.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n\n<Node>\n<NodeName>TMGIConfiguration</NodeName>\n<!-- The TMGI configuration per PLMN starts here. -->\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<DFTitle>Per-PLMN TMGI configuration.</DFTitle>\n<DFType>\n<DDFName/>\n</DFType>\n</DFProperties>\n\n<Node>\n<NodeName>TMGIListForSA</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<DFTitle>TMGI provided via service announcement.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n\n<Node>\n<NodeName>TMGIList</NodeName>\n<!-- The per-PLMN configuration starts here. -->\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<DFTitle>List of TMGI for service announcement information for MBS broadcast communication services.</DFTitle>\n<DFType>\n<DDFName/>\n</DFType>\n</DFProperties>\n\n<Node>\n<NodeName></NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<OneOrMore/>\n</Occurrence>\n<DFType>\n<DDFName></DDFName>\n</DFType>\n</DFProperties>\n\n<Node>\n<NodeName>TMGI</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<chr/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<DFTitle>TMGI for MBS broadcast communication services.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n</Node>\n</Node>\n</Node>\n\n<Node>\n<NodeName>USD</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<chr/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<DFTitle>User service description.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n</Node>\n</Node>\n\n<Node>\n<NodeName>TMGIListForService</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<DFTitle>TMGI provided via MBS user service announcement.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n\n<Node>\n<NodeName>TMGIList</NodeName>\n<!-- The per-PLMN configuration starts here. -->\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<DFTitle>List of TMGI for MBS user service announcement information for MBS broadcast communication services.</DFTitle>\n<DFType>\n<DDFName/>\n</DFType>\n</DFProperties>\n\n<Node>\n<NodeName></NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<OneOrMore/>\n</Occurrence>\n<DFType>\n<DDFName></DDFName>\n</DFType>\n</DFProperties>\n\n<Node>\n<NodeName>TMGI</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<chr/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<DFTitle>TMGI for MBS broadcast communication services.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n</Node>\n</Node>\n</Node>\n\n<Node>\n<NodeName>USD</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<chr/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<DFTitle>User service description.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n</Node>\n</Node>\n\n<Node>\n<NodeName>RANInfo</NodeName>\n<!-- The RAN configuration per PLMN starts here. -->\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<DFTitle>RAN-specific info for MBS broadcast communication services.</DFTitle>\n<DFType>\n<DDFName/>\n</DFType>\n</DFProperties>\n\n<Node>\n<NodeName></NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<OneOrMore/>\n</Occurrence>\n<DFType>\n<DDFName></DDFName>\n</DFType>\n</DFProperties>\n\n<Node>\n<NodeName>NRARFCN</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<int/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<DFTitle>NRARFCN of one MBS broadcast frequency.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n</Node>\n</Node>\n\n<Node>\n<NodeName>PDUInfo</NodeName>\n<!-- The PDU session configuration per PLMN starts here. -->\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<DFTitle>PDU session specific informnation for MBS multicast communication services.</DFTitle>\n<DFType>\n<DDFName/>\n</DFType>\n</DFProperties>\n\n<Node>\n<NodeName></NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<OneOrMore/>\n</Occurrence>\n<DFType>\n<DDFName></DDFName>\n</DFType>\n</DFProperties>\n\n<Node>\n<NodeName>DNN</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<int/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<DFTitle>DNN of a PDU session for MBS multicast communication services.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n</Node>\n</Node>\n\n<Node>\n<NodeName>S-NSSAI</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n<Replace/>\n</AccessType>\n<DFFormat>\n<int/>\n</DFFormat>\n<Occurrence>\n<One/>\n</Occurrence>\n<DFTitle>S-NSSAI of a PDU session for MBS multicast communication services.</DFTitle>\n<DFType>\n<MIME>text/plain</MIME>\n</DFType>\n</DFProperties>\n</Node>\n</Node>\n</Node>\n\n<Node>\n<NodeName>Ext</NodeName>\n<DFProperties>\n<AccessType>\n<Get/>\n</AccessType>\n<DFFormat>\n<node/>\n</DFFormat>\n<Occurrence>\n<ZeroOrOne/>\n</Occurrence>\n<DFTitle>A collection of all extension objects.</DFTitle>\n<DFType>\n<DDFName/>\n</DFType>\n</DFProperties>\n</Node>\n</Node>\n</MgmtTree>\n\n\n",
+                    "tables": [
+                        {
+                            "description": "",
+                            "table number": 3,
+                            "summary": "",
+                            "name": ""
+                        }
+                    ],
+                    "figures_meta_data": [],
+                    "subsubsections": []
+                }
+            ]
+        }
+    ]
+}
