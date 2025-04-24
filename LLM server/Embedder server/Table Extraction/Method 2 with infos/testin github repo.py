@@ -1,5 +1,5 @@
 # -*- coding: utf8 -*-
-import unicodedata
+
 import csv
 import xlwt
 import openpyxl
@@ -34,7 +34,6 @@ def __extract_table(table, strip_space=False):
                     value = value.strip()
                 r.append(value)
         results.append(r)
-#        print(r)
         n += 1
     return results
 
