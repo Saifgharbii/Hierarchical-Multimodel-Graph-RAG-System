@@ -113,7 +113,7 @@ def query_vision_model(image_bytes, prompt) -> str:
                 payload["options"]["vram_limit_mb"] = MAX_VRAM_USAGE_MB
 
             logger.info(f"Sending request to Ollama with model: {OLLAMA_MODEL}")
-            response = requests.post(f"{OLLAMA_API_URL}/api/chat", json=payload, timeout=120)
+            response = requests.post(f"{OLLAMA_API_URL}/api/chat", json=payload, timeout=500)
             response.raise_for_status()
 
             result = response.json().get("message", {}).get("content", "")
