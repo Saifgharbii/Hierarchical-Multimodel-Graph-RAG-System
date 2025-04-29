@@ -4,8 +4,10 @@ import ollama
 
 LLM_MODEL = "llama3.1"
 
-TITEL_GENERATION_MODEL = "llama3.2:1b"
-TITLE_GENERATION_SYSTEM_PROMPT = "You are a chat title generator. Given a user request or response, generate a short, relevant, and natural-sounding title in plain text. Keep it under 7 words. Do not use underscores, symbols, or formatting—just a clean, readable title."
+TITLE_GENERATION_MODEL = "llama3.2:1b"
+TITLE_GENERATION_SYSTEM_PROMPT = ("You are a chat title generator. Given a user request or response, generate a short, "
+                                  "relevant, and natural-sounding title in plain text. Keep it under 7 words. Do not "
+                                  "use underscores, symbols, or formatting—just a clean, readable title.")
 TITLE_GENERATION_PROMPT = """Generate short and relevant conversation title based on this user message: "{}".  
 Respond with the title only, without any explanations or additional text.  
 The title must be plain text with no punctuation, special characters, or Markdown formatting."""
@@ -15,6 +17,7 @@ app = Flask(__name__)
 # API Key Configuration
 API_KEY = os.getenv("API_KEY", "Secret")
 
+
 # Middleware to check API key
 def require_api_key(func):
     def wrapper(*args, **kwargs):
@@ -22,8 +25,10 @@ def require_api_key(func):
         if key != f"Bearer {API_KEY}":  # Use Bearer token format
             return jsonify({"error": "Unauthorized"}), 401
         return func(*args, **kwargs)
+
     wrapper.__name__ = func.__name__
     return wrapper
+
 
 @app.route('/generate', methods=['POST'])
 @require_api_key
@@ -46,7 +51,7 @@ def generate_response():
     # Call the Ollama API using the ollama library
     try:
         response = ollama.chat(
-            model= LLM_MODEL,
+            model=LLM_MODEL,
             messages=messages,
             options=options,
             stream=False
@@ -64,6 +69,7 @@ def generate_response():
         print(f"Error calling Ollama API: {e}")
         return jsonify({"error": "Failed to get response from LLM service"}), 500
 
+
 @app.route('/generate-title', methods=['POST'])
 @require_api_key
 def generate_title():
@@ -73,7 +79,6 @@ def generate_title():
 
     if not user_message:
         return jsonify({"error": "No message provided"}), 400
-
 
     # Prepare the options for the Ollama API
     options = {
@@ -86,19 +91,19 @@ def generate_title():
 
     messages = [
         {
-        "role" : "system",
-        "content" : TITLE_GENERATION_SYSTEM_PROMPT
+            "role": "system",
+            "content": TITLE_GENERATION_SYSTEM_PROMPT
         },
         {
-            "role" : "user",
-            "content" : TITLE_GENERATION_PROMPT.format(user_message)
+            "role": "user",
+            "content": TITLE_GENERATION_PROMPT.format(user_message)
         }
     ]
 
     # Call the Ollama API using the ollama library
     try:
         response = ollama.chat(
-            model= TITEL_GENERATION_MODEL,
+            model=TITLE_GENERATION_MODEL,
             messages=messages,
             options=options,
             stream=False
@@ -106,7 +111,7 @@ def generate_title():
 
         # Extract the model's response
         model_response = response['message']['content']
-        if "\n" in model_response :
+        if "\n" in model_response:
             model_response = model_response.split("\n")[0]
         # Return the response to the client
         return jsonify({
