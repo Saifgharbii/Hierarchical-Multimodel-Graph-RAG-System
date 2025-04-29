@@ -29,7 +29,7 @@ This service provides an API endpoint that accepts images and text prompts, proc
 2. Install dependencies:
 
 ```bash
-pip install flask requests pillow
+pip install -r requirements.txt
 ```
 
 3. Ensure Ollama is installed and running:
