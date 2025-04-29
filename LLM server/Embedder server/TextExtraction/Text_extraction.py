@@ -11,7 +11,7 @@ from docx.oxml.ns import nsmap as default_nsmap
 
 import os
 
-from typing import Dict, List, Any, Tuple
+from typing import Dict, List, Any
 import json
 import requests
 import io
@@ -375,12 +375,12 @@ def extract_docx_structure(file_path: str) -> tuple[dict[str: Any], list[Any]]:
                         figure_data["subsection_title"], figure_data["subsection_idx"] = \
                             ((current_subsection["title"], subsection_idx) if current_subsection else ("", -1))
                         # if current_subsection:
-                            # print(f"\tSubSection {subsection_idx} of name {current_subsection['title']}")
+                        # print(f"\tSubSection {subsection_idx} of name {current_subsection['title']}")
                         figure_data["subsubsection_title"], figure_data["subsubsection_idx"] = \
                             (current_subsubsection["title"], subsubsection_idx) if current_subsubsection else (
                                 "", -1)
                         # if current_subsubsection:
-                            # print(f"\t\tSubSubSection {subsubsection_idx} of name {current_subsubsection['title']}")
+                        # print(f"\t\tSubSubSection {subsubsection_idx} of name {current_subsubsection['title']}")
                     figures_for_preprocessing.extend(figures_data)
                 last_processed_paragraph = paragraph
         elif isinstance(element, Table):
@@ -446,7 +446,7 @@ def process_image_document(
         response = requests.post(endpoint_url, files=files, data=data)
         try:
             response.raise_for_status()
-        except  :
+        except:
             print(f"Error {response.json()}")
             continue
         description = response.text.strip()
@@ -468,23 +468,30 @@ def process_image_document(
     return document_json
 
 
-def extract_from_all_files(directory):
+def extract_from_all_files(directory, output_dir="./ProcessedDocuments/KaggleResults"):
     list_dir = os.listdir(directory)
     print("here's the list of directory :", list_dir)
     for idx, filename in enumerate(list_dir):
         if filename.endswith(".docx"):
+            name = os.path.splitext(filename)[0]
             t1 = time.time()
             results = extract_docx_structure(os.path.join(directory, filename))
-            t2 = time.time()
-            print(f"it takes to extract from this file : {filename}  :", t2 - t1, end="\n\n")
-            print(f"the {idx} file has been extracted \n\n\n")
+            t2 = time.time() - t1
+            print(f"it takes to extract from this file : {filename}  :", t2, end="\n\n")
+            print(f"the {idx} file has been extracted \n\n")
+            # output_dir = "/kaggle/working/processed_documents/" #On Kaggle
+            os.makedirs(output_dir, exist_ok=True)
+            # Save to JSON
+            output_path = os.path.join(output_dir, name + ".json")
+            with open(output_path, "w", encoding="utf-8") as f:
+                json.dump(results, f, ensure_ascii=False, indent=4)
 
 
 # if __name__ == "__main__":
-#     directory = "../RAG_dataset"
+#     directory = "../DocxDataset"
 #     extract_from_all_files(directory)
 
-testing_docx_path = "../RAG_dataset/23003-i40.docx"
+testing_docx_path = "../DocxDataset/23003-i40.docx"
 doc = Document(testing_docx_path)
 t1 = time.time()
 results, figures_for_preprocessing = extract_docx_structure(testing_docx_path)
