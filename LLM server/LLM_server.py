@@ -2,8 +2,9 @@ from flask import Flask, request, jsonify
 import os
 import ollama
 
-llm_model = "llama3.1"
-title_generation_model = "llama3.2:1b"
+LLM_MODEL = "llama3.1"
+
+TITEL_GENERATION_MODEL = "llama3.2:1b"
 TITLE_GENERATION_SYSTEM_PROMPT = "You are a chat title generator. Given a user request or response, generate a short, relevant, and natural-sounding title in plain text. Keep it under 7 words. Do not use underscores, symbols, or formatting—just a clean, readable title."
 TITLE_GENERATION_PROMPT = """Generate short and relevant conversation title based on this user message: "{}".  
 Respond with the title only, without any explanations or additional text.  
@@ -12,7 +13,7 @@ The title must be plain text with no punctuation, special characters, or Markdow
 app = Flask(__name__)
 
 # API Key Configuration
-API_KEY = os.getenv("API_KEY", "Secret")  # Store this securely
+API_KEY = os.getenv("API_KEY", "Secret")
 
 # Middleware to check API key
 def require_api_key(func):
@@ -35,8 +36,6 @@ def generate_response():
     if not messages:
         return jsonify({"error": "No message provided"}), 400
 
-
-    # Prepare the options for the Ollama API
     options = {
         "temperature": settings.get("temperature", 0.5),
         "top_p": settings.get("topP", 1.0),
@@ -47,10 +46,10 @@ def generate_response():
     # Call the Ollama API using the ollama library
     try:
         response = ollama.chat(
-            model= llm_model,  # Specify the model
-            messages=messages,  # Pass the conversation history
-            options=options,  # Pass the model settings
-            stream=False  # Set to True if you want streaming responses
+            model= LLM_MODEL,
+            messages=messages,
+            options=options,
+            stream=False
         )
 
         # Extract the model's response
@@ -99,10 +98,10 @@ def generate_title():
     # Call the Ollama API using the ollama library
     try:
         response = ollama.chat(
-            model= title_generation_model,  # Specify the model
+            model= TITEL_GENERATION_MODEL,
             messages=messages,
-            options=options,  # Pass the model settings
-            stream=False  # System prompt for title generation
+            options=options,
+            stream=False
         )
 
         # Extract the model's response
@@ -120,4 +119,4 @@ def generate_title():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True)  # Run on a different port (e.g., 5001)
+    app.run(host='0.0.0.0', port=5001, debug=True)
