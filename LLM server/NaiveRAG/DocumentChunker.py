@@ -52,34 +52,26 @@ def process_file(file_path, markdown_text, text_splitter):
         return file_path, None
 
 
-def chunk_markdwon_documents(input_dir, model_name="gpt2", max_chunk_size=1024, chunk_overlap=200, workers=None,
-                         pattern="*.md"):
+def chunk_markdwon_documents(input_dir, output_dir, model_name="gpt2", max_chunk_size=1024, chunk_overlap=200,
+                             workers=None, pattern="*.md"):
     """
-    Process JSON documents and chunk text content using LangChain's RecursiveCharacterTextSplitter.
+    Process Markdown documents, chunk text content, and save chunks to separate files.
 
-    Args:
-        input_dir (str): Directory containing JSON files
-        model_name (str): Model name for tokenizer
-        max_chunk_size (int): Maximum chunk size in tokens
-        chunk_overlap (int): Overlap between chunks in tokens
-        workers (int): Number of worker threads (defaults to CPU count)
-        pattern (str): File pattern to match
-
-    Returns:
-        dict: Dictionary with processed JSON data including chunks
+    Added functionality: Save chunks to output directory preserving folder structure
     """
-    # Set default number of workers if not specified
+    # Create output directory if it doesn't exist
+    os.makedirs(output_dir, exist_ok=True)
+
+    # (Existing processing code remains the same until after processed_data is created)
     if workers is None:
         workers = os.cpu_count()
 
-    # Load tokenizer
     print(f"Loading tokenizer for model: {model_name}")
     tokenizer = AutoTokenizer.from_pretrained(model_name)
 
     def token_counter(text):
         return len(tokenizer.encode(text))
 
-    # Create the LangChain text splitter
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=max_chunk_size,
         chunk_overlap=chunk_overlap,
@@ -87,13 +79,11 @@ def chunk_markdwon_documents(input_dir, model_name="gpt2", max_chunk_size=1024, 
         separators=["\n\n", "\n", " ", ""]
     )
 
-    # Load JSON files
     file_data = load_markdwon_files(input_dir, pattern)
 
     if not file_data:
         return {}
 
-    # Process files in parallel
     processed_data = {}
     with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = [
@@ -107,39 +97,46 @@ def chunk_markdwon_documents(input_dir, model_name="gpt2", max_chunk_size=1024, 
                 processed_data[file_path] = result
 
     print(f"Successfully processed {len(processed_data)} files")
+
+    print(f"\nSaving chunks to output directory: {output_dir}")
+    for file_path, chunks in processed_data.items():
+        try:
+            relative_path = os.path.relpath(file_path, input_dir)
+            new_relative = os.path.splitext(relative_path)[0] + '_chunks.json'
+            output_path = os.path.join(output_dir, new_relative)
+
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+            # Save chunks as JSON
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(chunks, f, ensure_ascii=False, indent=2)
+
+            print(f"Saved {len(chunks)} chunks to {output_path}")
+        except Exception as e:
+            print(f"Error saving chunks for {file_path}: {e}")
+
+    print(f"\nFinished saving all chunks to {output_dir}")
     return processed_data
 
 
-# Example usage
 if __name__ == "__main__":
-    input_directory = "../TextExtraction/ProcessedDocuments/KaggleResults"
-    output_dir = "./ChunkedDocuments"
-    model = "dunzhang/stella_en_400M_v5"
-    chunk_size = 2048  # Maximum chunk size in tokens
-    overlap = 200  # Overlap between chunks in tokens
+    input_directory = "/kaggle/input/markdown-p2m-dataset-files"
+    output_dir = "/kaggle/working/ChunkedDocuments"
+    model_name = "dunzhang/stella_en_400M_v5"
+    chunk_size = 1024  # Maximum chunk size in tokens
+    overlap = 100  # Overlap between chunks in tokens
     num_workers = os.cpu_count()
-    file_pattern = "*.json"
-    os.makedirs("./ChunkedDocuments/", exist_ok=True)
+    file_pattern = "*.md"
+    batch_size = 64
+    max_length = 1024
 
     # Run the chunking process
     chunked_documents = chunk_markdwon_documents(
         input_dir=input_directory,
-        model_name=model,
+        output_dir=output_dir,
+        model_name=model_name,
         max_chunk_size=chunk_size,
         chunk_overlap=overlap,
         workers=num_workers,
         pattern=file_pattern
     )
-
-    # If you want to save the processed data
-    if chunked_documents:
-        output_dir = "chunked_documents"
-        os.makedirs(output_dir, exist_ok=True)
-
-        print(f"Saving processed documents to {output_dir}")
-        for i, (file_path, data) in enumerate(chunked_documents.items()):
-            output_file = os.path.join(output_dir, f"chunked_{i}_{os.path.basename(file_path)}")
-            with open(output_file, 'w', encoding='utf-8') as f:
-                json.dump(data, f, indent=2)
-
-        print(f"Saved {len(chunked_documents)} processed documents")

@@ -99,3 +99,55 @@ class DocumentEmbedder:
         # Sort results back by original ID
         results.sort(key=lambda x: x[0])
         return [emb for _, emb in results]
+
+
+if __name__ == "__main__":
+    model_name = "dunzhang/stella_en_400M_v5"
+    batch_size = 64
+    max_length = 1024
+    print(f"Initializing embedder with model: {model_name}")
+    embedder = DocumentEmbedder(
+        model_name=model_name,
+        batch_size=batch_size,
+        max_length=max_length
+    )
+
+    input_dir = "/kaggle/input/chunkeddocsnaiverag/ChunkedDocuments"  # Change this to your dataset path
+    output_dir = "/kaggle/working/embedded_jsons"
+    os.makedirs(output_dir, exist_ok=True)
+
+    idx = 0
+    for filename in tqdm(os.listdir(input_dir)):
+        idx += 1
+        print(f"processing the {idx} file")
+        if not filename.endswith(".json"):
+            continue
+
+        file_path = os.path.join(input_dir, filename)
+
+        # Load chunks
+        with open(file_path, "r", encoding="utf-8") as f:
+            chunks = json.load(f)  # assuming it's a list of strings
+
+        # Embed the chunks
+        try:
+            embeddings = embedder.embed_texts(chunks)
+        except Exception as e:
+            print(f"Failed embedding for {filename}: {str(e)}")
+            continue
+
+        # Combine chunk and embedding
+        json_output = {
+            "file_content": [
+                {
+                    "chunk": chunks[i],
+                    "embedding": embeddings[i]
+                }
+                for i in range(len(embeddings))
+            ]
+        }
+
+        # Write to output file
+        out_path = os.path.join(output_dir, filename)
+        with open(out_path, "w", encoding="utf-8") as f:
+            json.dump(json_output, f, ensure_ascii=False, indent=2)
