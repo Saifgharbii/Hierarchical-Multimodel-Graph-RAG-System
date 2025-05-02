@@ -112,8 +112,8 @@ if __name__ == "__main__":
         max_length=max_length
     )
 
-    input_dir = "/kaggle/input/chunkeddocsnaiverag/ChunkedDocuments"  # Change this to your dataset path
-    output_dir = "/kaggle/working/embedded_jsons"
+    input_dir = "./ChunkedDocuments"  # Change this to your dataset path
+    output_dir = "./EmbeddedJsons"
     os.makedirs(output_dir, exist_ok=True)
 
     idx = 0

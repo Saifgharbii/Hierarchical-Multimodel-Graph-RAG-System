@@ -120,8 +120,8 @@ def chunk_markdwon_documents(input_dir, output_dir, model_name="gpt2", max_chunk
 
 
 if __name__ == "__main__":
-    input_directory = "/kaggle/input/markdown-p2m-dataset-files"
-    output_dir = "/kaggle/working/ChunkedDocuments"
+    input_directory = "./MarkdownFiles"
+    output_dir = "./ChunkedDocuments"
     model_name = "dunzhang/stella_en_400M_v5"
     chunk_size = 1024  # Maximum chunk size in tokens
     overlap = 100  # Overlap between chunks in tokens
