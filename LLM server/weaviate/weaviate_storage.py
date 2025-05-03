@@ -4,7 +4,7 @@ import json
 import traceback
 import time
 from pathlib import Path
-from storage import HierarchicalGraphRAG  # Make sure this import works
+from setup import HierarchicalGraphRAG  # Make sure this import works
 
 class JsonProcessor:
     def __init__(self, weaviate_url="http://localhost:8080", backup_fixed=True):
