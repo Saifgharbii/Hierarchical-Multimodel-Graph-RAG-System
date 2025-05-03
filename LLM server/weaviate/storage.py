@@ -9,20 +9,18 @@ from tqdm import tqdm
  
  
 class HierarchicalGraphRAG:
-    def __init__(self, weaviate_url: str, optimize_disk: bool = True, num_clusters: int = 10):
+    def __init__(self, weaviate_url: str, num_clusters: int = 10):
         """
         Initialize the Hierarchical Graph RAG system.
  
         Args:
             weaviate_url (str): URL for Weaviate instance
-            optimize_disk (bool): Enable disk optimization features
             num_clusters (int): Number of clusters for K-means clustering
         """
         self.client = weaviate.Client(
             url=weaviate_url,
  
         )
-        self.optimize_disk = optimize_disk
         self.num_clusters = num_clusters
         self._create_schema()
  
@@ -792,25 +790,6 @@ class HierarchicalGraphRAG:
         
         return results
     
-    def optimize_storage(self):
-        """Apply disk space optimization techniques."""
-        if not self.optimize_disk:
-            return
- 
-        # This would implement storage optimization techniques:
-        # 1. Vector compression strategies
-        # 2. Cluster-based storage (already implemented with clustering)
-        # 3. Shard management
-        # 4. Index optimization
- 
-        print("Running storage optimization...")
- 
-        # In a real implementation, you might add:
-        # - Vector quantization
-        # - Sparse vector representations
-        # - Dynamic index rebuilding
- 
-        print("Storage optimization complete")
  
 def find_json_files(dir_path):
     """Find all JSON embedding files in the given directory"""
@@ -825,13 +804,12 @@ def find_json_files(dir_path):
  
 # Example usage
 if __name__ == "__main__":
-    jsons_dir = "C:/Users/rimba/Downloads/results/embedded_files"
+    jsons_dir = r"..\EmbeddingProcess\EmbeddedDocuments\embedded_files"
     json_files = find_json_files(jsons_dir)
  
     # Initialize the system
     rag_system = HierarchicalGraphRAG(
         weaviate_url="http://localhost:8080",  # Use your actual Weaviate instance URL
-        optimize_disk=True,
         num_clusters=10
     )
  
