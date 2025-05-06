@@ -647,6 +647,7 @@ class HierarchicalGraphRAG:
             "operator": "Equal",
             "valueString": doc_name
         }).do()
+        print(doc_result)
  
         if ("data" not in doc_result or "Get" not in doc_result["data"] or
                 "Document" not in doc_result["data"]["Get"] or
@@ -657,7 +658,7 @@ class HierarchicalGraphRAG:
  
         # Then search for sections in this document
         result = self.client.query.get(
-            "Section", ["title", "description", "summary", "_additional {id}"]
+            "subsections", ["title", "description", "summary", "_additional {id}"]
         ).with_where({
             "path": ["id"],
             "operator": "ContainsAny",
@@ -665,6 +666,7 @@ class HierarchicalGraphRAG:
         }).with_near_vector({
             "vector": query_vector,
         }).with_limit(limit).do()
+        print(f"those are the section for the {doc_name} \n {result}")
  
         sections = []
         if "data" in result and "Get" in result["data"] and "Section" in result["data"]["Get"]:
@@ -731,8 +733,8 @@ class HierarchicalGraphRAG:
         return chunks
     
     def hierarchical_search(self, query_vector: List[float], max_documents: int = 3, 
-                       max_sections_per_doc: int = 2, max_subsections_per_section: int = 2,
-                       max_chunks_per_subsection: int = 3) -> Dict[str, Any]:
+                   max_sections_per_doc: int = 2, max_subsections_per_section: int = 2,
+                   max_chunks_per_subsection: int = 3) -> Dict[str, Any]:
         '''
         Perform a complete hierarchical search using the query vector.
         
@@ -744,7 +746,7 @@ class HierarchicalGraphRAG:
             max_chunks_per_subsection: Maximum number of chunks to retrieve per subsection
             
         Returns:
-            Dictionary containing results at each hierarchical level with parent-child relationships
+            Dictionary co  ntaining results at each hierarchical level with parent-child relationships
         '''
         results = {"documents": [], "sections": [], "subsections": [], "chunks": []}
         
@@ -788,7 +790,7 @@ class HierarchicalGraphRAG:
                         chunk_with_context["parent_document"] = doc_name
                         results["chunks"].append(chunk_with_context)
         
-        return results
+        return results  # Just
     
  
 def find_json_files(dir_path):
