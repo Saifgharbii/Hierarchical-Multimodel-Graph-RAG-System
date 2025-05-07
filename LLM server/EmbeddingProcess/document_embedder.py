@@ -10,7 +10,7 @@ from transformers import AutoTokenizer, AutoModel
 
 
 class DocumentEmbedder:
-    def __init__(self, model_name: str, batch_size: int = 32, max_length: int = 2048):
+    def __init__(self, model_name: str = "dunzhang/stella_en_400M_v5", batch_size: int = 32, max_length: int = 2048):
         """Initialize the embedder with model and parameters."""
         self.model_name = model_name
         self.batch_size = batch_size
@@ -31,7 +31,9 @@ class DocumentEmbedder:
                 self.models[device].to(device)
         else:
             self.devices = ["cpu"]
-            self.models["cpu"] = AutoModel.from_pretrained(model_name, trust_remote_code=True)
+            self.models["cpu"] = AutoModel.from_pretrained(model_name, trust_remote_code=True, device="cpu",
+                                                           config_kwargs={"use_memory_efficient_attention": False,
+                                                                          "unpad_inputs": False})
 
     def _get_embeddings_batch(self, texts: List[str], device: str) -> List[List[float]]:
         """Get embeddings for a batch of texts on a specific device."""

@@ -12,6 +12,23 @@ TITLE_GENERATION_PROMPT = """Generate short and relevant conversation title base
 Respond with the title only, without any explanations or additional text.  
 The title must be plain text with no punctuation, special characters, or Markdown formatting."""
 
+SYNTETHIC_GENERATION_PROMPT = """
+You are an AI tasked with generating a concise, synthetic description of the content 
+and focus of a technical document related to **telecommunications** that would be highly relevant to answering the 
+user's question. Imagine you do not have access to any real documents, only the user's query. Your goal is to infer 
+the key topics, concepts, and potential details within the field of telecommunications that such a document would cover.
+
+Based on the following user question:
+
+{user_question}
+
+Generate a single paragraph that describes the likely scope and content of a technical document designed to 
+comprehensively address this question. Be specific about the areas of focus, potential definitions, key performance 
+indicators (if applicable), processes, protocols, network architectures, or requirements within telecommunications 
+that the document would likely include. Focus on the 'what' and 'why' of the information needed to answer the 
+question, keeping in mind its relevance to telecommunications.
+"""
+
 app = Flask(__name__)
 
 # API Key Configuration
@@ -28,6 +45,20 @@ def require_api_key(func):
 
     wrapper.__name__ = func.__name__
     return wrapper
+
+
+def generate_synthetic(query) -> str:
+    prompt = SYNTETHIC_GENERATION_PROMPT.format(user_question=query)
+    response = ollama.chat(
+        model=LLM_MODEL,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
+    return response['message']['content']
 
 
 @app.route('/generate', methods=['POST'])
@@ -47,6 +78,8 @@ def generate_response():
         "top_k": settings.get("topK", 5),
         "num_predict": settings.get("maxTokens", 2000)
     }
+    # Generating synthetic data
+    synthetic_scope = generate_synthetic(messages[-1]['content'])
 
     # Call the Ollama API using the ollama library
     try:
