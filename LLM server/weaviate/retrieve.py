@@ -52,7 +52,6 @@ class HierarchicalSearchEngine:
             print(f"Connecting to Weaviate at: {weaviate_url}")
             self.rag_system = HierarchicalGraphRAG(
                 weaviate_url=weaviate_url,
-                optimize_disk=optimize_disk,
                 num_clusters=num_clusters
             )
             print("Search engine initialized successfully!")
@@ -66,8 +65,9 @@ class HierarchicalSearchEngine:
         max_documents: int = 2,
         max_sections_per_doc: int = 2,
         max_subsections_per_section: int = 2,
-        max_chunks_per_subsection: int = 2,
-        verbose: bool = False
+        max_subsubsections_per_subsection: int=2,
+        max_chunks_per_container: int = 3,
+        verbose: bool = False,
     ) -> Dict[str, Any]:
         """
         Run a hierarchical search with a given query using the initialized components.
@@ -95,14 +95,25 @@ class HierarchicalSearchEngine:
                 max_documents=max_documents, 
                 max_sections_per_doc=max_sections_per_doc,
                 max_subsections_per_section=max_subsections_per_section,
-                max_chunks_per_subsection=max_chunks_per_subsection
+                max_subsubsections_per_subsection=max_subsubsections_per_subsection,
+                max_chunks_per_container=max_chunks_per_container,
             )
-            
+
+
+
+
+
             # Print summary statistics
             print("\n----- Search Results Summary -----")
             print(f"Found {len(results['documents'])} documents")
+            print(f"Found {results['documents']} documents")
             print(f"Found {len(results['sections'])} sections")
+            print(f"Found {results['sections']} sections")
             print(f"Found {len(results['subsections'])} subsections")
+            print(f"Found {results['subsections']} subsections")
+            print(f"Found {len(results['chunks'])} chunks")
+            print(f"Found {results['chunks']} chunks")
+            print(f"Found {len(results['subsubsections'])} subbsubsections")
             print(f"Found {len(results['chunks'])} chunks")
             
             # Display the results in a hierarchical manner
@@ -172,7 +183,8 @@ def main():
     parser.add_argument("--max-docs", type=int, default=3, help="Maximum number of documents")
     parser.add_argument("--max-sections", type=int, default=2, help="Maximum sections per document")
     parser.add_argument("--max-subsections", type=int, default=2, help="Maximum subsections per section")
-    parser.add_argument("--max-chunks", type=int, default=3, help="Maximum chunks per subsection")
+    parser.add_argument("--max-subsubsections", type=int, default=2, help="Maximum subsubsections per subsection")
+    parser.add_argument("--max-chunks", type=int, default=3, help="Maximum chunks")
     parser.add_argument("--verbose", action="store_true", help="Print detailed results")
     parser.add_argument("--output", default="results.json", help="Save results to JSON file")
     
@@ -207,9 +219,11 @@ def main():
             max_documents=args.max_docs,
             max_sections_per_doc=args.max_sections,
             max_subsections_per_section=args.max_subsections,
-            max_chunks_per_subsection=args.max_chunks,
+            max_subsubsections_per_subsection=args.max_subsubsections,
+            max_chunks_per_container=args.max_chunks,
             verbose=args.verbose
         )
+
         
         # Save results to JSON file
         with open(args.output, 'w', encoding='utf-8') as f:
