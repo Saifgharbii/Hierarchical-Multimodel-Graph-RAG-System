@@ -9,7 +9,7 @@ from tqdm import tqdm
  
  
 class HierarchicalGraphRAG:
-    def __init__(self, weaviate_url: str, num_clusters: int = 10):
+    def __init__(self, weaviate_url: str, num_clusters: int = 5):
         """
         Initialize the Hierarchical Graph RAG system.
  
@@ -22,7 +22,7 @@ class HierarchicalGraphRAG:
  
         )
         self.num_clusters = num_clusters
-        self._create_schema()
+        # self._create_schema()
  
     def _create_schema(self):
         """Create the Weaviate schema for hierarchical document representation."""

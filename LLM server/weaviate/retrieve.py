@@ -20,7 +20,6 @@ class HierarchicalSearchEngine:
         self,
         weaviate_url: str = "http://localhost:8080",
         model_name: str = "dunzhang/stella_en_400M_v5",
-        optimize_disk: bool = True,
         num_clusters: int = 10,
     ):
         """
@@ -29,7 +28,6 @@ class HierarchicalSearchEngine:
         Args:
             weaviate_url: URL of the Weaviate instance
             model_name: Name of the sentence transformer model
-            optimize_disk: Whether to optimize for disk usage
             num_clusters: Number of clusters for the RAG system
 
         """
@@ -203,6 +201,7 @@ def main():
         search_engine = HierarchicalSearchEngine(
             weaviate_url=args.weaviate_url,
             model_name=args.model,
+            num_clusters=5
         )
     except Exception as e:
         print(f"Failed to initialize search engine: {e}")
