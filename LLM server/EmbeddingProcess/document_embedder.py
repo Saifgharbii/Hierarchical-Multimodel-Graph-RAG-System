@@ -8,6 +8,15 @@ from typing import List, Dict, Any, Tuple
 import torch
 from transformers import AutoTokenizer, AutoModel
 
+import warnings
+import gc
+
+warnings.filterwarnings("ignore")  # hides Python warnings (including traceback)
+
+from transformers import logging
+
+logging.set_verbosity_error()  # hides HF warnings about unused weights
+
 
 class DocumentEmbedder:
     def __init__(self, model_name: str = "dunzhang/stella_en_400M_v5", batch_size: int = 32, max_length: int = 2048):
@@ -21,6 +30,7 @@ class DocumentEmbedder:
 
         # Check available GPUs
         if torch.cuda.is_available():
+            # print("GPU available")
             gpu_count = torch.cuda.device_count()
             for i in range(gpu_count):
                 device = f"cuda:{i}"
@@ -31,9 +41,7 @@ class DocumentEmbedder:
                 self.models[device].to(device)
         else:
             self.devices = ["cpu"]
-            self.models["cpu"] = AutoModel.from_pretrained(model_name, trust_remote_code=True, device="cpu",
-                                                           config_kwargs={"use_memory_efficient_attention": False,
-                                                                          "unpad_inputs": False})
+            self.models["cpu"] = AutoModel.from_pretrained(model_name, trust_remote_code=True, device="cpu")
 
     def _get_embeddings_batch(self, texts: List[str], device: str) -> List[List[float]]:
         """Get embeddings for a batch of texts on a specific device."""
@@ -47,7 +55,7 @@ class DocumentEmbedder:
                                            max_length=2048, return_tensors='pt').to(device)
             local_model = self.models[device]
             # Compute token embeddings
-            with torch.no_grad():
+            with torch.inference_mode():
                 outputs = local_model(**encoded_input)
 
             # Use CLS token embedding or mean pooling as needed
@@ -101,6 +109,14 @@ class DocumentEmbedder:
         # Sort results back by original ID
         results.sort(key=lambda x: x[0])
         return [emb for _, emb in results]
+
+    def cleanup(self):
+        for model in self.models.values():
+            model.to("cpu")  # move to CPU to release GPU memory
+        del self.models
+        del self.tokenizer
+        torch.cuda.empty_cache()
+        gc.collect()
 
 
 def extract_content_for_embedding(document: Dict[Any, Any]) -> Tuple[List[str], List[str]]:
@@ -275,4 +291,3 @@ if __name__ == "__main__":
     max_length = 2048
     main(input_path["Local"], model_name, batch_size, max_length)
     # main(input_path["Kaggle"], model_name, batch_size, max_length) #On Kaggle
-

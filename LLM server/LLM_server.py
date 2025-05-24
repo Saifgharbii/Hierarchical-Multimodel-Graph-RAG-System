@@ -1,8 +1,10 @@
+import requests
 from flask import Flask, request, jsonify
 import os
 import ollama
 
 LLM_MODEL = "llama3.1"
+EMBEDDER_URL = os.getenv("EMBEDDER_URL", "http://localhost:5003")
 
 TITLE_GENERATION_MODEL = "llama3.2:1b"
 TITLE_GENERATION_SYSTEM_PROMPT = ("You are a chat title generator. Given a user request or response, generate a short, "
@@ -80,7 +82,7 @@ def generate_response():
     }
     # Generating synthetic data
     synthetic_scope = generate_synthetic(messages[-1]['content'])
-
+    context = requests.post(EMBEDDER_URL + "/retrieve", json={"query": synthetic_scope, "user_query": messages[-1]['content']})
     # Call the Ollama API using the ollama library
     try:
         response = ollama.chat(
