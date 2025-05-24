@@ -1,24 +1,107 @@
-├── .gitignore
 ├── LLM server
-│   ├── Chroma DB server
+│   ├── ChromaServer
 │   │   ├── Chroma Server.py
+│   │   ├── TestingChroma.py
+│   │   ├── UploadEmbeddingToChroma.py
+│   │   ├── WeaviateTesting.py
 │   │   └── requirements.txt
-│   ├── Embedder server
-│   ├── ollama_server_with_ollama_librairy.py
-│   ├── ollma_server_with_http_rqs.py
-│   └── requirements.txt
+│   ├── EmbeddingProcess
+│   │   ├── DocumentsChunking
+│   │   │   ├── README.md
+│   │   │   ├── json_chunking.py
+│   │   │   └── token_length_distribution.png
+│   │   ├── INSTALL.md
+│   │   ├── Retriever
+│   │   │   ├── retrieve.py
+│   │   │   └── setup.py
+│   │   ├── TableExtraction
+│   │   │   ├── JsonTables
+│   │   │   │   └── output.json
+│   │   │   ├── Method 1 without infos
+│   │   │   │   ├── table extractor.py
+│   │   │   │   └── tables_testing
+│   │   │   │       └── tables.json
+│   │   │   ├── Method 2 with infos
+│   │   │   │   ├── table_extractor.py
+│   │   │   │   └── tables_testing
+│   │   │   │       └── 22104-i30.json
+│   │   │   ├── Table Extraction Pipeline.png
+│   │   ├── TextExtraction
+│   │   │   ├── ImageOCR_Server
+│   │   │   │   ├── ModelManager
+│   │   │   │   │   ├── ModelManager.py
+│   │   │   │   │   └── __init__.py
+│   │   │   │   ├── README.md
+│   │   │   │   ├── app.py
+│   │   │   │   ├── appLlama.py
+│   │   │   │   ├── deepseek_vl
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── inference.py
+│   │   │   │   │   ├── models
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── clip_encoder.py
+│   │   │   │   │   │   ├── image_processing_vlm.py
+│   │   │   │   │   │   ├── modeling_vlm.py
+│   │   │   │   │   │   ├── processing_vlm.py
+│   │   │   │   │   │   ├── projector.py
+│   │   │   │   │   │   ├── sam.py
+│   │   │   │   │   │   └── siglip_vit.py
+│   │   │   │   │   └── utils
+│   │   │   │   │       ├── __init__.py
+│   │   │   │   │       ├── conversation.py
+│   │   │   │   │       └── io.py
+│   │   │   │   └── requirements.txt
+│   │   │   ├── ImageProcessing
+│   │   │   │   ├── FigureProcessingModule.py
+│   │   │   │   ├── Image_manipulation.py
+│   │   │   │   ├── LLaMaProcessing.py
+│   │   │   │   ├── README.md
+│   │   │   │   └── __init__.py
+│   │   │   ├── ProcessedDocuments
+│   │   │   ├── README.md
+│   │   │   ├── Text Extraction Full Pipeline.png
+│   │   │   └── Text_extraction.py
+│   │   ├── document_embedder.py
+│   │   ├── embedder_downloader.py
+│   │   ├── embedder_server.py
+│   │   └── requirements.txt
+│   ├── LLM_server.py
+│   ├── NaiveRAG
+│   │   ├── DocumentChunker.py
+│   │   ├── DocumentEmbedder.py
+│   │   ├── DocxToMarkdown.py
+│   │   ├── chunk_count_boxplot.png
+│   │   ├── chunk_count_distribution.png
+│   │   └── requirements.txt
+│   ├── README.md
+│   ├── chunker
+│   │   ├── chunk_1.py
+│   │   ├── chunk_textcontent.py
+│   │   ├── embedd.py
+│   │   └── requirements.txt
+│   ├── requirements.txt
+│   └── weaviate
+│       ├── docker-config
+│       │   └── docker-compose.yml
+│       ├── embedder_downloader.py
+│       ├── requirements.txt
+│       ├── retrieve.py
+│       ├── setup.py
+│       ├── test.py
+│       └── weaviate_storage.py
+├── System design.png
 ├── base_server.py
-├── embedder_downloader.py
 ├── front_end
 │   ├── index.html
-│   ├── script_interface.js
-│   ├── static
-│   │   ├── css
-│   │   └── js
-│   │       ├── api-service.js
-│   │       ├── conversation-manager.js
-│   │       ├── main.js
-│   │       ├── settings-manager.js
-│   │       └── ui-utils.js
-│   └── style.css
-└── requirements.txt
+│   └── static
+│       ├── css
+│       │   └── style.css
+│       └── js
+│           ├── api-service.js
+│           ├── conversation-manager.js
+│           ├── main.js
+│           ├── settings-manager.js
+│           └── ui-utils.js
+├── requirements.txt
+├── structure code.py
+└── structure.txt

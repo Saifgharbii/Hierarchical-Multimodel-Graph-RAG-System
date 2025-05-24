@@ -21,7 +21,7 @@ def print_tree(start_path, prefix="", ignored_patterns=None, output_file=None):
         ignored_patterns = set()
 
     entries = sorted(os.listdir(start_path))  # Sort alphabetically
-    entries = [e for e in entries if e not in ignored_patterns]  # Apply ignore filter
+    entries = [e for e in entries if e not in ignored_patterns and ".git" not in e]  # Apply ignore filter
 
     for index, entry in enumerate(entries):
         path = os.path.join(start_path, entry)
