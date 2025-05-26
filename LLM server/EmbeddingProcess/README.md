@@ -88,12 +88,12 @@ Flask API server providing embedding and retrieval services.
 
 ```bash
 # Embed texts
-curl -X POST http://localhost:5003/embed \
+curl -X POST http://localhost:5004/embed \
   -H "Content-Type: application/json" \
   -d '{"texts": ["Your text here"]}'
 
 # Retrieve documents
-curl -X POST http://localhost:5003/retrieve \
+curl -X POST http://localhost:5004/retrieve \
   -H "Content-Type: application/json" \
   -d '{"query": "search query", "user_query": "original user question"}'
 ```
@@ -196,7 +196,7 @@ For detailed instructions on each step, refer to the component-specific document
 python embedder_server.py
 ```
 
-The server will start on port 5003 (configurable via PORT environment variable).
+The server will start on port 5004 (configurable via PORT environment variable).
 
 ### Processing Local Files
 
@@ -223,7 +223,7 @@ main(
 
 ### Environment Variables
 
-- `PORT`: Server port (default: 5003)
+- `PORT`: Server port (default: 5004)
 
 ## Data Flow and Output Formats
 

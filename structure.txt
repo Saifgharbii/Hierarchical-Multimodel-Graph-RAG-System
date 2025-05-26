@@ -1,16 +1,11 @@
 ├── LLM server
-│   ├── ChromaServer
-│   │   ├── Chroma Server.py
-│   │   ├── TestingChroma.py
-│   │   ├── UploadEmbeddingToChroma.py
-│   │   ├── WeaviateTesting.py
-│   │   └── requirements.txt
 │   ├── EmbeddingProcess
 │   │   ├── DocumentsChunking
 │   │   │   ├── README.md
 │   │   │   ├── json_chunking.py
 │   │   │   └── token_length_distribution.png
 │   │   ├── INSTALL.md
+│   │   ├── README.md
 │   │   ├── Retriever
 │   │   │   ├── retrieve.py
 │   │   │   └── setup.py
@@ -26,6 +21,8 @@
 │   │   │   │   └── tables_testing
 │   │   │   │       └── 22104-i30.json
 │   │   │   ├── Table Extraction Pipeline.png
+│   │   │   └── Testing Docx
+│   │   │       └── 22104-i30.docx
 │   │   ├── TextExtraction
 │   │   │   ├── ImageOCR_Server
 │   │   │   │   ├── ModelManager
@@ -50,6 +47,7 @@
 │   │   │   │   │       ├── __init__.py
 │   │   │   │   │       ├── conversation.py
 │   │   │   │   │       └── io.py
+│   │   │   │   ├── embedding models.csv
 │   │   │   │   └── requirements.txt
 │   │   │   ├── ImageProcessing
 │   │   │   │   ├── FigureProcessingModule.py
@@ -70,17 +68,14 @@
 │   │   ├── DocumentChunker.py
 │   │   ├── DocumentEmbedder.py
 │   │   ├── DocxToMarkdown.py
+│   │   ├── README.md
 │   │   ├── chunk_count_boxplot.png
 │   │   ├── chunk_count_distribution.png
 │   │   └── requirements.txt
 │   ├── README.md
-│   ├── chunker
-│   │   ├── chunk_1.py
-│   │   ├── chunk_textcontent.py
-│   │   ├── embedd.py
-│   │   └── requirements.txt
 │   ├── requirements.txt
 │   └── weaviate
+│       ├── README.md
 │       ├── docker-config
 │       │   └── docker-compose.yml
 │       ├── embedder_downloader.py

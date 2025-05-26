@@ -70,6 +70,7 @@ text_splitter = RecursiveCharacterTextSplitter(
   - Model: `dunzhang/stella_en_400M_v5`
   - Max chunk size: 1,024 tokens
   - Overlap: 100 tokens
+  - Vector Size: 768
 - **Limitations**: Ignores document structure and hierarchy
 
 ### 3. Document Embedding (`DocumentEmbedder.py`)

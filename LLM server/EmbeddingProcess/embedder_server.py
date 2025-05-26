@@ -5,7 +5,7 @@ import os
 from document_embedder import DocumentEmbedder
 from Retriever.retrieve import HierarchicalSearchEngine
 
-PORT = int(os.getenv('PORT', 5003))
+PORT = int(os.getenv('PORT', 5004))
 
 app = Flask(__name__)
 
