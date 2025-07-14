@@ -1,4 +1,4 @@
-# RAG System - Comprehensive Document Intelligence Platform
+# Hierarchical-Multimodel-Graph-RAG-System - Comprehensive Document Intelligence Platform
 
 A state-of-the-art Retrieval-Augmented Generation (RAG) system that transforms document processing and knowledge retrieval through hierarchical organization, advanced embedding techniques, and intelligent conversation management. This project combines cutting-edge AI technologies to create a sophisticated document intelligence platform.
 
