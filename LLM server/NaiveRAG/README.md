@@ -79,7 +79,7 @@ text_splitter = RecursiveCharacterTextSplitter(
 embeddings = embedder.embed_texts(chunks)
 ```
 - **Input**: Chunked JSON files
-- **Output**: Embedded JSON files in `EmbeddedJsons/`
+- **Output**: Embedded JSON files in `NaiveRAG_EmbeddedDocuments/`
 - **Features**:
   - Multi-GPU support for faster processing
   - Batch processing (64 chunks per batch)
