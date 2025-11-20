@@ -2,6 +2,8 @@
 
 A state-of-the-art Retrieval-Augmented Generation (RAG) system that transforms document processing and knowledge retrieval through hierarchical organization, advanced embedding techniques, and intelligent conversation management. This project combines cutting-edge AI technologies to create a sophisticated document intelligence platform.
 
+> **📄 [Read the Technical Analysis](./PROJECT_ANALYSIS.md)** - A comprehensive paper-style analysis covering the preprocessing pipeline, RAG architecture, and novel hierarchical graph-based retrieval technique with quantitative performance comparisons.
+
 ## 🌟 Project Overview
 
 This RAG system revolutionizes how organizations interact with their document repositories by providing:
